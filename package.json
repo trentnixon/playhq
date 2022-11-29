@@ -1,5 +1,5 @@
 {
-    "name": "pungent",
+    "name": "playhqvideocreator",
     "version": "2.0.0",
     "private": true,
     "scripts": {
@@ -7,7 +7,7 @@
         "build": "next build",
         "start": "next start"
     },
-    "author": "EnvyTheme.com",
+    "author": "playhqvideocreator.com",
     "license": "ISC",
     "dependencies": {
         "animate.css": "^4.1.1",
