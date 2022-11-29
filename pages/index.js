@@ -1,6 +1,6 @@
 import React from "react";
-import Navbar from "../components/Layouts/Navbar";
-import MainBanner from "../components/HomePages/DefaultHome/MainBanner";
+import Navbar from "../components/Layouts/NavbarTwo";
+import MainBanner from "../components/HomePages/PLAYHQ/MainBanner";
 import Services from "../components/HomePages/DefaultHome/Services";
 import About from "../components/HomePages/DefaultHome/About";
 import OurWorks from "../components/HomePages/DefaultHome/OurWorks";
@@ -18,7 +18,7 @@ const Index = () => {
     <>
       <Navbar />
 
-      <MainBanner />
+      <MainBanner /> 
 
       <Services />
 

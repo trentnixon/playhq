@@ -9,8 +9,8 @@ const MainBanner = () => {
           <div className="row align-items-center">
             <div className="col-lg-6 col-md-12">
               <div className="marketing-banner-content">
-                <span className="sub-title">MARKETING AGENCY</span>
-                <h1>We Help You Take Your Business to The Next Level</h1>
+                <span className="sub-title">PLAYHQ VIDEOS</span>
+                <h1>Set and Forget</h1>
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.

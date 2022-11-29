@@ -10,6 +10,8 @@ import PartnerTwo from "../components/Common/PartnerTwo";
 import CtaAreaTwo from "../components/Common/CtaAreaTwo";
 import LatestNews from "../components/Common/LatestNews";
 import Footer from "../components/Layouts/Footer";
+import Navbar from "../components/Layouts/Navbar";
+import NavbarFour from "../components/Layouts/NavbarFour";
 
 const MarketingAgency = () => {
   return (

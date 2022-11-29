@@ -22,7 +22,7 @@ const StartupAgency = () => {
     <>
       <NavbarThree />
 
-      <MainBanner />
+      <MainBanner /> 
 
       <FeaturedServices />
 
