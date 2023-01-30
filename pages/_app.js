@@ -57,3 +57,10 @@ function MyApp({ Component, pageProps }) {
 }
 
 export default MyApp;
+
+/*
+  how to deploy.
+  USe the git options within VSC, commit and push new code.
+  chec on vercel that the build worked.
+
+*/

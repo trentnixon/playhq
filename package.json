@@ -56,5 +56,8 @@
         "sweetalert2-react-content": "^5.0.0",
         "swiper": "^8.2.2",
         "tinycolor2": "^1.5.1"
-    }
+    },
+    "engines": {
+        "node": "16.x"
+      }
 }
