@@ -27,7 +27,7 @@ const WorkProcess = () => {
                 <div className="icon">
                   <i className="pe-7s-display1"></i>
                 </div>
-                <h3>Surface</h3>
+                <h3>Your Account</h3>
                 <span>Visual Design</span>
               </div>
 
@@ -35,7 +35,7 @@ const WorkProcess = () => {
                 <div className="icon">
                   <i className="pe-7s-display2"></i>
                 </div>
-                <h3>Skeleton</h3>
+                <h3>Your Association/Club</h3>
                 <span>Wireframes</span>
               </div>
 
@@ -43,7 +43,7 @@ const WorkProcess = () => {
                 <div className="icon">
                   <i className="pe-7s-airplay"></i>
                 </div>
-                <h3>Structure</h3>
+                <h3>Your look</h3>
                 <span>Screen Flow</span>
               </div>
 
@@ -51,7 +51,7 @@ const WorkProcess = () => {
                 <div className="icon">
                   <i className="pe-7s-note2"></i>
                 </div>
-                <h3>Scope</h3>
+                <h3>Data from PlayHQ</h3>
                 <span>Requirements</span>
               </div>
 
@@ -59,7 +59,7 @@ const WorkProcess = () => {
                 <div className="icon">
                   <i className="pe-7s-light"></i>
                 </div>
-                <h3>User Research</h3>
+                <h3>Create Videos</h3>
                 <span>User Research</span>
               </div>
 
@@ -67,7 +67,7 @@ const WorkProcess = () => {
                 <div className="icon">
                   <i className="pe-7s-sun"></i>
                 </div>
-                <h3>Implement</h3>
+                <h3>Your Email</h3>
                 <span>Lunch/Analyse</span>
               </div>
             </div>

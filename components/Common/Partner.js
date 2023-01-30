@@ -1,114 +1,33 @@
 import React from "react";
 
-const Partner = () => {
+const Partner = ({associations}) => {
+  console.log(associations)
   return (
     <>
       <div className="partner-area pt-100 pb-60">
         <div className="container">
           <div className="section-title">
-            <h2>Trusted By</h2>
+            <h2>Available Associations</h2>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            Fixtura partners with cricket clubs and associations to provide personalized digital assets that help them connect with their fans and promote their teams and events.
             </p>
           </div>
-
           <div className="row align-items-center justify-content-center">
-            <div className="col-lg-2 col-6 col-sm-4">
+    {
+      associations.data.map((ass,i)=>{
+        return(
+        
+            <div className="col-lg-2 col-6 col-sm-4" key={i}>
               <div className="single-partner">
                 <a href="#" target="_blank">
-                  <img src="/images/partners/partner1.png" alt="image" />
+                 {/*  <img src="/images/partners/partner1.png" alt="image" /> */}
+                 {ass.attributes.Name}
                 </a>
               </div>
             </div>
-
-            <div className="col-lg-2 col-6 col-sm-4">
-              <div className="single-partner">
-                <a href="#" target="_blank">
-                  <img src="/images/partners/partner2.png" alt="image" />
-                </a>
-              </div>
-            </div>
-
-            <div className="col-lg-2 col-6 col-sm-4">
-              <div className="single-partner">
-                <a href="#" target="_blank">
-                  <img src="/images/partners/partner3.png" alt="image" />
-                </a>
-              </div>
-            </div>
-
-            <div className="col-lg-2 col-6 col-sm-4">
-              <div className="single-partner">
-                <a href="#" target="_blank">
-                  <img src="/images/partners/partner4.png" alt="image" />
-                </a>
-              </div>
-            </div>
-
-            <div className="col-lg-2 col-6 col-sm-4">
-              <div className="single-partner">
-                <a href="#" target="_blank">
-                  <img src="/images/partners/partner5.png" alt="image" />
-                </a>
-              </div>
-            </div>
-
-            <div className="col-lg-2 col-6 col-sm-4">
-              <div className="single-partner">
-                <a href="#" target="_blank">
-                  <img src="/images/partners/partner6.png" alt="image" />
-                </a>
-              </div>
-            </div>
-
-            <div className="col-lg-2 col-6 col-sm-4">
-              <div className="single-partner">
-                <a href="#" target="_blank">
-                  <img src="/images/partners/partner7.png" alt="image" />
-                </a>
-              </div>
-            </div>
-
-            <div className="col-lg-2 col-6 col-sm-4">
-              <div className="single-partner">
-                <a href="#" target="_blank">
-                  <img src="/images/partners/partner8.png" alt="image" />
-                </a>
-              </div>
-            </div>
-
-            <div className="col-lg-2 col-6 col-sm-4">
-              <div className="single-partner">
-                <a href="#" target="_blank">
-                  <img src="/images/partners/partner9.png" alt="image" />
-                </a>
-              </div>
-            </div>
-
-            <div className="col-lg-2 col-6 col-sm-4">
-              <div className="single-partner">
-                <a href="#" target="_blank">
-                  <img src="/images/partners/partner10.png" alt="image" />
-                </a>
-              </div>
-            </div>
-
-            <div className="col-lg-2 col-6 col-sm-4">
-              <div className="single-partner">
-                <a href="#" target="_blank">
-                  <img src="/images/partners/partner11.png" alt="image" />
-                </a>
-              </div>
-            </div>
-
-            <div className="col-lg-2 col-6 col-sm-4">
-              <div className="single-partner">
-                <a href="#" target="_blank">
-                  <img src="/images/partners/partner12.png" alt="image" />
-                </a>
-              </div>
-            </div>
+        )
+      })
+    }
           </div>
         </div>
       </div>

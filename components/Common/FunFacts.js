@@ -13,14 +13,12 @@ const FunFacts = () => {
                 data-aos-duration="1200"
                 data-aos-delay="100"
               >
-                <i className="pe-7s-like"></i>
+                <i className="pe-7s-video"></i>
                 <h3>
-                  799 <span>k</span>
+                  23 <span>videos</span>
                 </h3>
                 <p>
-                  But I must explain to you how all this mistaken idea of
-                  denouncing pleasure and praising pain was born and I will give
-                  you a complete
+                Fixtura videos are a great way to keep your members and followers informed about upcoming matches and competitions, with dynamic layouts and all the important details clearly displayed.
                 </p>
               </div>
             </div>
@@ -32,14 +30,12 @@ const FunFacts = () => {
                 data-aos-duration="1200"
                 data-aos-delay="200"
               >
-                <i className="pe-7s-diamond"></i>
+                <i className="pe-7s-photo"></i>
                 <h3>
-                  499 <span>k</span>
+                  50 <span>Images</span>
                 </h3>
                 <p>
-                  But I must explain to you how all this mistaken idea of
-                  denouncing pleasure and praising pain was born and I will give
-                  you a complete
+                Fixtura's images are high-quality and tailored to showcase your club or association in a professional and visually appealing way.
                 </p>
               </div>
             </div>
@@ -51,14 +47,12 @@ const FunFacts = () => {
                 data-aos-duration="1200"
                 data-aos-delay="200"
               >
-                <i className="pe-7s-portfolio"></i>
+                <i className="pe-7s-news-paper"></i>
                 <h3>
-                  990 <span>k</span>
+                  8 <span>Writeups</span>
                 </h3>
                 <p>
-                  But I must explain to you how all this mistaken idea of
-                  denouncing pleasure and praising pain was born and I will give
-                  you a complete
+                Fixtura's AI write ups provide high-quality, customizable content for clubs and associations to use in their communication and marketing efforts. Our advanced AI technology generates unique and engaging articles that can be tailored to your specific needs and goals.
                 </p>
               </div>
             </div>

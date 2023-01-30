@@ -16,7 +16,7 @@ const AboutContent = () => {
             <div className="col-lg-5 col-md-12">
               <div className="about-image">
                 <img
-                  src="/images/about-img2.jpg"
+                  src="/images/man-with-mobile.png"
                   alt="image"
                   className="rounded-10"
                 />
@@ -35,30 +35,24 @@ const AboutContent = () => {
             <div className="col-lg-7 col-md-12">
               <div className="about-content about-content-two">
                 <div className="section-title">
-                  <h2>About Us</h2>
+                  <h2>What is a Fixtura?</h2>
                   <p>
-                    Lorem ipsum dolor sit amet, con se ctetur adipiscing elit.
-                    In sagittis eg esta ante, sed viverra nunc tinci dunt nec
-                    elei fend et tiram.
-                  </p>
+                  Fixtura is a website that specializes in creating personalized digital assets for cricket clubs and associations. Our experts use the latest technology, including AI, to produce high-quality, innovative content tailored to the specific needs and goals of our clients. Whether you are a club looking to showcase your players and achievements or an association looking to engage with your fans and promote the sport, we have the expertise and resources to help you succeed.                  </p>
                 </div>
 
                 <div className="about-text">
-                  <h4>Who We Are</h4>
                   <p>
-                    Sed ut perspiciatis unde omnis iste natus error sit
-                    voluptatem accusantium doloremque laudantium, totam rem
-                    aperiam, eaque ipsa quae ab illo inventore veritatis..
-                  </p>
+                  Our services include a range of digital assets such as videos, images, and AI-generated content. Our videos include a range of content such as match reviews, upcoming fixtures, game results, and profiles of top players. All of these videos are customized to the specific club or association, featuring players and games representative of their experience and season. We also use AI to generate detailed match reports and weekend summaries that provide valuable insights and analysis of cricket matches and events                  </p>
                 </div>
 
                 <div className="about-text">
-                  <h4>Our History</h4>
                   <p>
-                    But I must explain to you how all this mistaken idea of
-                    denouncing pleasure and praising pain was born and I will
-                    give you a complete account of the.
-                  </p>
+                  In addition to our videos and AI-generated content, we also offer a range of images and other digital assets that can be used by cricket clubs and associations to promote their teams and events. We are dedicated to providing our clients with the tools and resources they need to connect with their fans and showcase their achievements.                  </p>
+                </div>
+
+                <div className="about-text">
+                  <p>
+                  We are committed to delivering a high level of customer service and support to our clients and work closely with them to ensure their digital assets meet their specific needs and goals. If you are interested in using our services to promote your club or association, we welcome the opportunity to learn more about your needs and how we can help.                  </p>
                 </div>
 
                 <div className="about-text">
@@ -66,20 +60,23 @@ const AboutContent = () => {
                   <ul>
                     <li>
                       <i className="fa-solid fa-circle-check"></i>
-                      Lorem Ipsum is simply dummy text of the printing and
-                      typesetting industry.
+                      To provide personalized, high-quality digital assets to cricket clubs and associations.
                     </li>
                     <li>
                       <i className="fa-solid fa-circle-check"></i>
-                      It is a long established fact that a reader will be
-                      distracted by the readable content of a page when looking
-                      at its layout.
+                      To help these organizations connect with their fans, showcase their achievements, and gain a competitive edge.
                     </li>
                     <li>
                       <i className="fa-solid fa-circle-check"></i>
-                      Contrary to popular belief, Lorem Ipsum is not simply
-                      random text. It has roots in a piece of classical Latin
-                      literature.
+                      To use expertise in sports media, AI, and technology to create innovative, engaging content.
+                    </li>
+                    <li>
+                      <i className="fa-solid fa-circle-check"></i>
+                      To meet the specific needs and goals of clients through customization and personalized service.
+                    </li>
+                    <li>
+                      <i className="fa-solid fa-circle-check"></i>
+                      To be a trusted partner for cricket clubs and associations looking to promote their teams and events.
                     </li>
                   </ul>
                 </div>

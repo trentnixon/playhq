@@ -8,15 +8,12 @@ import Footer from "../components/Layouts/Footer";
 const PortfolioDetails = () => {
   return (
     <>
-      <NavbarTwo />
-
+  
       <PageBanner pageTitle="UX for Mobile Apps" BGImage="/images/page-banner2.jpg" />
 
       <PortfolioDetailsContent />
 
       <CtaAreaTwo />
-
-      <Footer />
     </>
   );
 };

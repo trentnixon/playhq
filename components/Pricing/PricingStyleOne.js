@@ -1,59 +1,32 @@
 import React from "react";
 import Link from "next/link";
 
+/*
+Fixtura
+Wicketly
+Bowlify
+*/
+
 const PricingStyleOne = () => {
   return (
     <>
       <div className="pricing-area ptb-100 bg-f9f6f6">
         <div className="container">
           <div className="section-title">
-            <h2>Pricing Plans</h2>
+            <h2>One plan One Price Policy</h2>
+            <p>Need help choosing a plan? No problem, we only offer one!</p>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Unlike other services that may have multiple tiers of plans to
+              choose from, we have a single, all-inclusive option that covers
+              everything you need and any future additions we make.
+            </p>
+            <p>
+              So you can focus on getting the best value for your club, without
+              worrying about what's included in each plan.
             </p>
           </div>
 
           <div className="row justify-content-center">
-            <div className="col-lg-4 col-md-6">
-              <div
-                className="pricing-table"
-                data-aos="fade-up"
-                data-aos-duration="1200"
-                data-aos-delay="100"
-              >
-                <div className="pricing-header">
-                  <h3>Basic Plan</h3>
-                </div>
-
-                <div className="price">
-                  <span>
-                    <sup>$</sup>59
-                    <span>/Monthly</span>
-                  </span>
-                </div>
-
-                <div className="pricing-features">
-                  <ul>
-                    <li className="active">5 GB Bandwidth</li>
-                    <li className="active">Highest Speed</li>
-                    <li className="active">1 GB Storage</li>
-                    <li className="active">Unlimited Website</li>
-                    <li className="active">Unlimited Users</li>
-                    <li className="active">24x7 Great Support</li>
-                    <li>Data Security and Backups</li>
-                    <li>Monthly Reports and Analytics</li>
-                  </ul>
-                </div>
-
-                <div className="pricing-footer">
-                  <Link href="#">
-                    <a className="btn btn-primary">Select Plan</a>
-                  </Link>
-                </div>
-              </div>
-            </div>
-
             <div className="col-lg-4 col-md-6">
               <div
                 className="pricing-table active-plan"
@@ -62,71 +35,29 @@ const PricingStyleOne = () => {
                 data-aos-delay="200"
               >
                 <div className="pricing-header">
-                  <h3>Advanced Plan</h3>
+                  <h3>The Only Plan</h3>
                 </div>
 
                 <div className="price">
                   <span>
-                    <sup>$</sup>79
-                    <span>/Monthly</span>
+                    <sup>$</sup>12.50
+                    <span>/Weekly</span>
                   </span>
                 </div>
 
                 <div className="pricing-features">
                   <ul>
-                    <li className="active">10 GB Bandwidth</li>
-                    <li className="active">Highest Speed</li>
-                    <li className="active">3 GB Storage</li>
-                    <li className="active">Unlimited Website</li>
-                    <li className="active">Unlimited Users</li>
-                    <li className="active">24x7 Great Support</li>
-                    <li className="active">Data Security and Backups</li>
-                    <li>Monthly Reports and Analytics</li>
+                    <li className="active">10 video options covering various grades and games</li>
+                    <li className="active">Up to 44* customized images generated per weekend</li>
+                    <li className="active">AI-generated match reports, summaries, posts, and emails for all games</li>
+                    <li className="active">Customization with your club's colors and branding</li>
+                    <li className="active">Option to include title sponsors in your assets</li>
                   </ul>
                 </div>
 
                 <div className="pricing-footer">
-                  <Link href="#">
-                    <a className="btn btn-primary">Select Plan</a>
-                  </Link>
-                </div>
-              </div>
-            </div>
-
-            <div className="col-lg-4 col-md-6">
-              <div
-                className="pricing-table"
-                data-aos="fade-up"
-                data-aos-duration="1200"
-                data-aos-delay="300"
-              >
-                <div className="pricing-header">
-                  <h3>Expert Plan</h3>
-                </div>
-
-                <div className="price">
-                  <span>
-                    <sup>$</sup>100
-                    <span>/Monthly</span>
-                  </span>
-                </div>
-
-                <div className="pricing-features">
-                  <ul>
-                    <li className="active">15 GB Bandwidth</li>
-                    <li className="active">Highest Speed</li>
-                    <li className="active">5 GB Storage</li>
-                    <li className="active">Unlimited Website</li>
-                    <li className="active">Unlimited Users</li>
-                    <li className="active">24x7 Great Support</li>
-                    <li className="active">Data Security and Backups</li>
-                    <li className="active">Monthly Reports and Analytics</li>
-                  </ul>
-                </div>
-
-                <div className="pricing-footer">
-                  <Link href="#">
-                    <a className="btn btn-primary">Select Plan</a>
+                  <Link href="/SignUp/">
+                    <a className="btn btn-primary">Sign up</a>
                   </Link>
                 </div>
               </div>

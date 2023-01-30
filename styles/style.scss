@@ -45,13 +45,14 @@ This files table contents are outlined below >>>>>
 
 // Global Variable
 
-$main-color: #ff2c9c;
-$gradient-color: linear-gradient(to left top, #ff2c9c, #ff287b, #ff395a, #ff5137, #ff6a00);
+$main-color: #2F4858;
+$fixtura-color:#4C72A0;
+$gradient-color: linear-gradient(to left top, #2CFF48, #00DE85, #00B9A2, #0093A2, #006C87);
 $main-font-family: 'Open Sans', sans-serif;
 $heading-font-family: 'Saira', sans-serif;
 $font-size: 15px;
-$black-color: #18181b;
-$paragraph-color: #646464;
+$black-color: #222222;
+$paragraph-color: #2F4858;
 $white-color: #ffffff;
 $transition: all 0.5s ease;
 
@@ -337,7 +338,7 @@ a {
 }
 /* form control */
 .form-group {
-    margin-bottom: 25px;
+    margin-bottom: 5px;
 }
 label {
     color: $black-color;
@@ -650,6 +651,44 @@ Navbar CSS
                     padding-right: 15px;
                     a {
                         color: $white-color;
+                    }
+                }
+            }
+        }
+        &.is-sticky {
+            .navbar-brand {
+                color: $black-color;
+
+                .black-logo {
+                    display: block;
+                }
+                .white-logo {
+                    display: none;
+                }
+            }
+            .navbar-nav > {
+                .nav-item {
+                    > a {
+                        color: $black-color;
+                    }
+                }
+            }
+        }
+    }
+    &.navbar-style-3 {
+        nav {
+            .navbar-brand {
+                color: $white-color;
+                .white-logo {
+                    display: none;
+                }
+            }
+            .navbar-nav {
+                .nav-item {
+                    padding-left: 15px;
+                    padding-right: 15px;
+                    a {
+                        color: $black-color;
                     }
                 }
             }
@@ -3263,7 +3302,7 @@ Pricing CSS
     }
     .pricing-features {
         ul {
-            padding: 0;
+            padding: 0 20px;
             list-style-type: none;
             margin-bottom: 30px;
 
@@ -3688,7 +3727,7 @@ CTA CSS
 }
 
 .cta-area-two {
-    background-image: url('/images/cta-bg.jpg');
+    background-image: url('/images/BG-Images/0D5A3099.jpg'); 
     background-position: center center;
     background-size: cover;
     text-align: center;
@@ -4782,10 +4821,10 @@ Page Title CSS
 .page-title-area {
     position: relative;
     background-size: cover;
-    background-position: center center;
+    background-position: top center;
     padding: {
-        top: 230px;
-        bottom: 160px;
+        top: 280px;
+        bottom: 280px;
     }
     text-align: center;
 
@@ -4799,7 +4838,7 @@ Page Title CSS
 
     &::before {
         content: '';
-        background-color: $black-color;
+        background-color: $fixtura-color;
         position: absolute;
         top: 0;
         left: 0;

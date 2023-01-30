@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import AOS from "aos";
 import "../node_modules/aos/dist/aos.css";
 import "../styles/bootstrap.min.css";
@@ -10,7 +10,9 @@ import "react-accessible-accordion/dist/fancy-example.css";
 import "swiper/css";
 import "swiper/css/bundle";
 
-// Software Startup Home Style
+import Layout from "../components/Layouts/Layout";
+
+/* // Software Startup Home Style
 import "../styles/software-home-page.css";
 // App Showcase Home Style
 import "../styles/app-home-page.css";
@@ -25,32 +27,31 @@ import "../styles/saas-startup-home-page.css";
 // Freelancer Portfolio Home Page Style
 import "../styles/freelancer-portfolio-home-page.css";
 // Cyber Security Agency Home Page Style
-import "../styles/cyber-security-agency-home-page.css";
+import "../styles/cyber-security-agency-home-page.css"; */
 
 // Global Style
-import "../styles/style.css";
-import "../styles/responsive.css";
+import "../styles/style.scss";
+import "../styles/responsive.scss";
 
 import Head from "next/head";
 import GoTop from "../components/Layouts/GoTop";
-
+import { MantineProviderWrapper } from "../utils/MantineTheme";
+import { NotificationsProvider } from "@mantine/notifications";
 function MyApp({ Component, pageProps }) {
-  React.useEffect(() => {
+  useEffect(() => {
     AOS.init();
   }, []);
+
   return (
     <>
-      <Head>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>
-          PLAYHQ Video Creator [BETA SITE]
-        </title>
-      </Head>
-
-      <Component {...pageProps} />
-
-      <GoTop />
+      <MantineProviderWrapper>
+        <NotificationsProvider>
+          <Layout>
+            <Component {...pageProps} />
+            <GoTop />
+          </Layout>
+        </NotificationsProvider>
+      </MantineProviderWrapper>
     </>
   );
 }

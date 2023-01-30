@@ -1,0 +1,39 @@
+ {
+  "RunScorers": [
+    
+    {
+      "name": "Lakeside Lions",
+      "player": "Matthew Hayden",
+      "score": "150 (120)",
+      "state": "Queensland",
+      "strike rate": 125
+    },{
+      "name": "Valley View Vultures",
+      "player": "Michael Clarke",
+      "score": "120* (80)",
+      "state": "New South Wales",
+      "strike rate": 150
+    },
+    {
+      "name": "Mountain Ridge Mavericks",
+      "player": "Adam Gilchrist",
+      "score": "110 (70)",
+      "state": "Western Australia",
+      "strike rate": 157
+    },
+    {
+      "name": "Sunnyvale Snipers",
+      "player": "Steve Waugh",
+      "score": "100* (60)",
+      "state": "New South Wales",
+      "strike rate": 167
+    },
+    {
+      "name": "Riverbank Rhinos",
+      "player": "Shane Warne",
+      "score": "50 (40)",
+      "state": "Victoria",
+      "strike rate": 125
+    }
+  ]
+}

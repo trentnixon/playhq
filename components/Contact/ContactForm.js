@@ -49,12 +49,15 @@ const ContactForm = () => {
 
   return (
     <>
-      <div className="contact-form">
+      <div className="contact-form ptb-100">
         <div className="contact-title">
           <h2>Get In Touch</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            If you have any questions or need assistance with your account, our
+            team is here to help. Please fill out the form below and we will get
+            back to you as soon as possible.  We look
+            forward to hearing from you and helping you get the most out of your
+            Fixtura experience.
           </p>
         </div>
 
@@ -87,20 +90,8 @@ const ContactForm = () => {
                   />
                 </div>
               </div>
-              <div className="col-lg-6">
-                <div className="form-group">
-                  <input
-                    type="text"
-                    name="number"
-                    placeholder="Phone number"
-                    className="form-control"
-                    value={contact.number}
-                    onChange={handleChange}
-                    required
-                  />
-                </div>
-              </div>
-              <div className="col-lg-6">
+             
+              <div className="col-lg-12">
                 <div className="form-group">
                   <input
                     type="text"

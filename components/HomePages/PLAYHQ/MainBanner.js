@@ -22,28 +22,32 @@ const MainBanner = () => {
               <div className="row align-items-center">
                 <div className="col-lg-8">
                   <div className="main-banner-content">
-                  <h1>PlayHQ Video Creator</h1>
+                  <img
+                  src="/images/FixturaLogoLarge.png"
+                  className="white-logo"
+                  alt="logo"
+                />
+                   
 
                     <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor incididunt ut labore et dolore magna
-                      aliqua.
+                      The social media content creator for PlayHQ clubs and
+                      Associations
                     </p>
 
                     <Link href="/contact">
-                      <a className="btn btn-primary">Get Started</a>
+                      <a className="btn btn-primary">Sign up</a>
                     </Link>
                   </div>
                 </div>
- 
+
                 <div className="col-lg-4">
                   <div className="video-box">
-                    <Link href="#play-video">
+                    <Link href="/SignUp">
                       <a
-                        onClick={() => setToggler(!toggler)}
+                       /*  onClick={() => setToggler(!toggler)} */
                         className="video-btn"
                       >
-                        <i className="fa-solid fa-play"></i>
+                        <i class="fa-solid fa-user-plus"></i>
                       </a>
                     </Link>
                   </div>

@@ -9,8 +9,8 @@ const CtaArea = () => {
           <div className="row align-items-center">
             <div className="col-lg-7 col-md-8">
               <div className="cta-content">
-                <h3>Have a project in mind?</h3>
-                <p>Let's get to work</p>
+                <h3>Sign up today</h3>
+                <p>And be posting video content before this weekends games</p>
               </div>
             </div>
 

@@ -1,48 +1,48 @@
 import React from "react";
-import Navbar from "../components/Layouts/NavbarTwo";
-import MainBanner from "../components/HomePages/PLAYHQ/MainBanner";
-import Services from "../components/HomePages/DefaultHome/Services";
-import About from "../components/HomePages/DefaultHome/About";
-import OurWorks from "../components/HomePages/DefaultHome/OurWorks";
-import WorkProcess from "../components/HomePages/DefaultHome/WorkProcess";
-import Feedback from "../components/Common/Feedback";
-import Team from "../components/Common/Team";
-import FunFacts from "../components/Common/FunFacts";
-import LatestNewsSlider from "../components/Common/LatestNewsSlider";
-import CtaArea from "../components/Common/CtaArea";
-import Partner from "../components/Common/Partner";
-import Footer from "../components/Layouts/Footer";
+//import Navbar from "../components/Layouts/NavbarTwo";
 
-const Index = () => {
+// Components
+import MainBanner from "../components/HomePages/PLAYHQ/MainBanner";
+import PricingStyleOne from "../components/Pricing/PricingStyleOne";
+import OurWorks from "../components/HomePages/PortfolioAgency/OurWorks";
+import Services from "../components/HomePages/DefaultHome/Services";
+import FunFacts from "../components/Common/FunFacts";
+import CtaArea from "../components/Common/CtaAreaTwo";
+import Partner from "../components/Common/Partner";
+
+import { fetcher } from "../lib/api";
+//import Footer from "../components/Layouts/Footer";
+
+const Index = ({ associations,CaseStudies }) => {
   return (
     <>
-      <Navbar />
-
-      <MainBanner /> 
-
+      <MainBanner />
       <Services />
-
-      <About />
-
-      <OurWorks />
-
-      <WorkProcess />
-
-      <Feedback />
-
-      <Team />
-
+      <OurWorks CaseStudies={CaseStudies}/>
+      <Partner associations={associations}/>
       <FunFacts />
-
-      <LatestNewsSlider />
-
-      <CtaArea />
-
-      <Partner />
-
-      <Footer />
+      <PricingStyleOne />
+      <CtaArea />      
     </>
   );
 };
 
 export default Index;
+
+export const getServerSideProps = async (context) => {
+  const response = await fetcher(
+    `${process.env.NEXT_PUBLIC_STRAPI_URL}/associations`
+  );
+  const CaseStudies = await fetcher(
+    `${process.env.NEXT_PUBLIC_STRAPI_URL}/case-studies`
+  );
+  //
+
+  console.log(response);
+  return {
+    props: {
+      associations: response,
+      CaseStudies:CaseStudies
+    },
+  };
+};

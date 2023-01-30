@@ -1,109 +1,134 @@
 import React from "react";
 import NavbarTwo from "../components/Layouts/NavbarTwo";
 import PageBanner from "../components/Common/PageBanner";
-import Footer from "../components/Layouts/Footer";
 
 const PrivacyPolicy = () => {
   return (
     <>
       <NavbarTwo />
 
-      <PageBanner pageTitle="Privacy Policy" BGImage="/images/page-banner5.jpg" />
+      <PageBanner
+        pageTitle="Privacy Policy"
+        BGImage="/images/BG-Images/f180918696.jpg"
+        position={`center center`}
+      />
 
       <div class="text-container ptb-100">
         <div class="container">
-          <h4>What is Lorem Ipsum?</h4>
-
+          <h1>Privacy Policy</h1>
           <p>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book. It has survived not
-            only five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged. It was popularised in the 1960s
-            with the release of Letraset sheets containing Lorem Ipsum passages,
-            and more recently with desktop publishing software like Aldus
-            PageMaker including versions of Lorem Ipsum.
+            Fixtura is committed to protecting your privacy and personal
+            information. This privacy policy explains how we collect, use, and
+            share your personal information when you use our website,
+            Fixtura.com, and our digital assets, including videos, images, and
+            AI-generated match reports, emails, and write-ups.
           </p>
-
-          <h4>Where does it come from?</h4>
           <p>
-            Contrary to popular belief, Lorem Ipsum is not simply random text.
-            It has roots in a piece of classical Latin literature from 45 BC,
-            making it over 2000 years old. Richard McClintock, a Latin professor
-            at Hampden-Sydney College in Virginia, looked up one of the more
-            obscure Latin words, consectetur, from a Lorem Ipsum passage, and
-            going through the cites of the word in classical literature,
-            discovered the undoubtable source. Lorem Ipsum comes from sections
-            1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes
-            of Good and Evil) by Cicero, written in 45 BC. This book is a
-            treatise on the theory of ethics, very popular during the
-            Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit
-            amet..".
+            By using our website and digital assets, you agree to the
+            collection, use, and sharing of your personal information as
+            described in this privacy policy.
           </p>
-
+          <h2>Information we collect</h2>
           <p>
-            Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-            accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-            quae ab illo inventore veritatis et quasi architecto beatae vitae
-            dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
-            aspernatur aut odit aut fugit, sed quia consequuntur magni dolores
-            eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est,
-            qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit,
-            sed quia non numquam eius modi tempora incidunt ut labore et dolore
-            magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis
-            nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut
-            aliquid ex ea commodi consequatur? Quis autem vel eum iure
-            reprehenderit qui in ea voluptate velit esse quam nihil molestiae
-            consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla
+            We collect the following types of information from you when you use
+            our website and digital assets:
           </p>
-
-          <h4>Where can I get some?</h4>
+          <ul>
+            <li>
+              Personal information that you provide directly to us, such as your
+              name, email address, and billing information when you create an
+              account or purchase a subscription.
+            </li>
+            <li>
+              Usage data, such as information about how you interact with our
+              website and digital assets, including pages viewed, time spent on
+              the website, and the date and time of your visit.
+            </li>
+            <li>
+              Device data, such as information about the device you are using to
+              access our website and digital assets, including the device's IP
+              address, operating system, and browser type.
+            </li>
+          </ul>
+          <h2>How we use your information</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-            culpa qui officia deserunt mollit anim.
+            We use the information we collect from you to provide, maintain, and
+            improve our website and digital assets, and to communicate with you.
+            Specifically, we may use your information for the following
+            purposes:
           </p>
-
+          <ul>
+            <li>To create and manage your account on our website.</li>
+            <li>
+              To process and fulfill your orders and subscriptions for our
+              digital assets.
+            </li>
+            <li>To provide customer support and respond to your inquiries.</li>
+            <li>
+              To analyze and improve the performance and functionality of our
+              website and digital assets.
+            </li>
+            <li>
+              To send you marketing communications, such as newsletters and
+              promotional offers, if you have opted in to receive them.
+            </li>
+          </ul>
+          <h2>Sharing your information</h2>
           <p>
-            There are many variations of passages of Lorem Ipsum available, but
-            the majority have suffered alteration in some form, by injected
-            humour, or randomised words which don't look even slightly
-            believable. If you are going to use a passage of Lorem Ipsum, you
-            need to be sure there isn't anything embarrassing hidden in the
-            middle of text. All the Lorem Ipsum generators on the Internet tend
-            to repeat predefined chunks as necessary, making this the first true
-            generator on the Internet. It uses a dictionary of over 200 Latin
-            words, combined with a handful of model sentence structures, to
-            generate Lorem Ipsum which looks reasonable. The generated Lorem
-            Ipsum is therefore always free from repetition, injected.
+            We may share your information with third parties for the following
+            purposes:
           </p>
-
+          <ul>
+            <li>
+              To fulfill orders and subscriptions for our digital assets, we may
+              share your billing information with payment processors, such as
+              Stripe.
+            </li>
+            <li>
+              To provide customer support and respond to your inquiries, we may
+              share your information with our service providers, such as
+              customer support software.
+            </li>
+            <li>
+              To analyze and improve the performance and functionality of our
+              website and digital assets, we may share your usage data with
+              analytics tools, such as Google Analytics.
+            </li>
+            <li>
+              To comply with legal requirements, we may share your information
+              with law enforcement agencies or other government agencies as
+              required by law.
+            </li>
+          </ul>
+          <h2>Cookies and tracking technologies</h2>
           <p>
-            But I must explain to you how all this mistaken idea of denouncing
-            pleasure and praising pain was born and I will give you a complete
-            account of the system, and expound the actual teachings of the great
-            explorer of the truth, the master-builder of human happiness. No one
-            rejects, dislikes, or avoids pleasure itself, because it is
-            pleasure, but because those who do not know how to pursue pleasure
-            rationally encounter consequences that are extremely painful. Nor
-            again is there anyone who loves or pursues or desires to obtain pain
-            of itself, because it is pain, but because occasionally
-            circumstances occur in which toil and pain can procure him some
-            great pleasure. To take a trivial example, which of us ever
-            undertakes laborious physical exercise, except to obtain some
-            advantage from it? But who has any right to find fault with a man
-            who chooses to enjoy a pleasure that has no annoying consequences,
-            or one who avoids a pain that produces no resultant pleasure?
+            We may use cookies and other tracking technologies to collect
+            information about your use of our website and digital assets.
+            Cookies are small text files that are stored on your device when you
+            visit a website, and are used to recognize your device and track
+            your activity on the website. You can disable cookies in your
+            browser settings, but doing so may affect your ability to use
+            certain features of our website and digital assets.
           </p>
+          <h2>Data retention</h2>
+<p>We retain your personal information for as long as is necessary to provide our website and digital assets to you, or as required by law. We may also retain your personal information for a reasonable period of time after you stop using our website and digital assets in case you decide to use them again in the future. When we no longer need to retain your personal information, we will delete it from our systems.</p>
+<h2>Data security</h2>
+<p>We take reasonable measures to protect your personal information from unauthorized access, use, or disclosure. However, no internet-based service is completely secure, and we cannot guarantee the security of your personal information. You are responsible for protecting your login details and other personal information, and for taking reasonable precautions to protect your device and computer from unauthorized access.</p>
+<h2>International data transfer</h2>
+<p>Our website and digital assets are hosted and operated in the country where Fixtura is based. If you are accessing our website and digital assets from outside of this country, please be aware that your information may be transferred to, stored, and processed in this country. By using our website and digital assets, you consent to the transfer of your information to this country.</p>
+<h2>Privacy policy updates</h2>
+<p>We may update this privacy policy from time to time to reflect changes to our practices or for other operational, legal, or regulatory reasons. When we update our privacy policy, we will post the revised policy on this page and update the effective date. We encourage you to review this privacy policy regularly to stay informed about how we are protecting your personal information.</p>
+<h2>Your rights and choices</h2>
+<p>You have the following rights and choices with respect to your personal information:</p>
+<ul>
+  <li>You can access and update your personal information by logging in to your account on our website.</li>
+  <li>You can opt out of receiving marketing communications by following the unsubscribe instructions included in the communications, or by contacting us at [insert contact information].</li>
+  <li>You can request that we delete your personal information by contacting us at [insert contact information]. Please note that we may be required to retain some of your personal information for legal or regulatory reasons.</li>
+</ul>
+<h2>Contact us</h2>
+<p>If you have any questions or concerns about our privacy policy or the handling of your personal information, please contact us at [insert contact information].</p>
         </div>
       </div>
-
-      <Footer />
     </>
   );
 };

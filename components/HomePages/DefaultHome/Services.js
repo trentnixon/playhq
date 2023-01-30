@@ -7,11 +7,18 @@ const Services = () => {
       <div className="bg-fcfbfb pt-100 pb-70">
         <div className="container">
           <div className="section-title">
-            <h2>Our Services</h2>
+            <h2>What We Do</h2>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna.
+              FIXTURA, the premier provider of AI-generated social
+              media content for sports clubs and associations. In partnership with PlayHQ, we offer a range of video and image content that can
+              be easily shared with your members via social media and email.</p> 
+              <br />
+            <p>
+              Our AI-powered platform allows you to effortlessly publish match
+              reports and weekend summaries, keeping your members informed and
+              engaged with your club's activity.
             </p>
+          
           </div>
 
           <div className="row justify-content-center">
@@ -19,40 +26,37 @@ const Services = () => {
               className="col-lg-4 col-sm-6"
               data-aos="fade-up"
               data-aos-duration="1200"
-              data-aos-delay="100"
+              data-aos-delay="200"
             >
               <div className="service-card-one">
-                <i className="pe-7s-comment bg-13c4a1"></i>
+                <i className="pe-7s-video bg-6610f2"></i>
                 <h3>
                   <Link href="/service-details">
-                    <a>Business Consultancy</a>
+                    <a>High quality video with no effort</a>
                   </Link>
                 </h3>
                 <p>
-                  Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                  accusantium doloremque laudantium, totam rem aperiam, eaque
-                  ipsa quae ab illo.
+                  Create HD video for all social media platforms without looking
+                  at a video editor or hiring a professional.
                 </p>
               </div>
             </div>
-
             <div
               className="col-lg-4 col-sm-6"
               data-aos="fade-up"
               data-aos-duration="1200"
-              data-aos-delay="200"
+              data-aos-delay="100"
             >
               <div className="service-card-one">
-                <i className="pe-7s-display2 bg-6610f2"></i>
+                <i className="pe-7s-clock bg-13c4a1"></i>
                 <h3>
                   <Link href="/service-details">
-                    <a>Web Development</a>
+                    <a>Set and Forget</a>
                   </Link>
                 </h3>
                 <p>
-                  Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                  accusantium doloremque laudantium, totam rem aperiam, eaque
-                  ipsa quae ab illo.
+                  Sign up, Select your prefered layouts and upload your clubs
+                  colors, then sit back and we will do all the rest.
                 </p>
               </div>
             </div>
@@ -64,79 +68,15 @@ const Services = () => {
               data-aos-delay="300"
             >
               <div className="service-card-one">
-                <i className="pe-7s-light bg-ffb700"></i>
+                <i className="pe-7s-mail-open-file bg-ffb700"></i>
                 <h3>
                   <Link href="/service-details">
-                    <a>Digital Marketing</a>
+                    <a>Content Delivered to you</a>
                   </Link>
                 </h3>
                 <p>
-                  Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                  accusantium doloremque laudantium, totam rem aperiam, eaque
-                  ipsa quae ab illo.
-                </p>
-              </div>
-            </div>
-
-            <div
-              className="col-lg-4 col-sm-6"
-              data-aos="fade-up"
-              data-aos-duration="1200"
-              data-aos-delay="400"
-            >
-              <div className="service-card-one">
-                <i className="pe-7s-phone bg-fc3549"></i>
-                <h3>
-                  <Link href="/service-details">
-                    <a>Mobile App Development</a>
-                  </Link>
-                </h3>
-                <p>
-                  Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                  accusantium doloremque laudantium, totam rem aperiam, eaque
-                  ipsa quae ab illo.
-                </p>
-              </div>
-            </div>
-
-            <div
-              className="col-lg-4 col-sm-6"
-              data-aos="fade-up"
-              data-aos-duration="1200"
-              data-aos-delay="500"
-            >
-              <div className="service-card-one">
-                <i className="pe-7s-cart bg-00d280"></i>
-                <h3>
-                  <Link href="/service-details">
-                    <a>eCommerce Development</a>
-                  </Link>
-                </h3>
-                <p>
-                  Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                  accusantium doloremque laudantium, totam rem aperiam, eaque
-                  ipsa quae ab illo.
-                </p>
-              </div>
-            </div>
-
-            <div
-              className="col-lg-4 col-sm-6"
-              data-aos="fade-up"
-              data-aos-duration="1200"
-              data-aos-delay="600"
-            >
-              <div className="service-card-one">
-                <i className="pe-7s-users bg-ff612f"></i>
-                <h3>
-                  <Link href="/service-details">
-                    <a>Marketing & Reporting</a>
-                  </Link>
-                </h3>
-                <p>
-                  Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                  accusantium doloremque laudantium, totam rem aperiam, eaque
-                  ipsa quae ab illo.
+                  Videos and Images emailed to you once a week ready to go.
+                  Simply download and post away.
                 </p>
               </div>
             </div>

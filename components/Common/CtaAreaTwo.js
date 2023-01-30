@@ -7,10 +7,9 @@ const CtaAreaTwo = () => {
       <div className="cta-area-two ptb-100">
         <div className="container">
           <div className="cta-content">
-            <span>So What is Next?</span>
-            <h3>Are You Ready? Let's get to work!</h3>
+            <h3>Effortless fixture and results content creation.</h3>
+            <span>Save time and hassle by letting Fixtura handle the creation of fixture and results content for you</span>
           </div>
-
           <div
             className="cta-btn-box"
             data-aos="fade-up"

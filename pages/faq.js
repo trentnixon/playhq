@@ -11,19 +11,17 @@ const Faq = () => {
     <>
       <NavbarTwo />
 
-      <PageBanner pageTitle="Frequently Asked Questions" BGImage="/images/page-banner1.jpg" />
+      <PageBanner pageTitle="Frequently Asked Questions" BGImage="/images/BG-Images/0D5A3369.jpg" position={`top center`}  />
 
       <FaqContent />
 
-      <div className="pb-100">
-        <FaqForm />
-      </div>
-
       <CtaAreaTwo />
 
-      <Footer />
     </>
   );
 };
 
 export default Faq;
+
+
+

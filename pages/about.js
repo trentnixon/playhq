@@ -14,23 +14,20 @@ const Aabout = () => {
     <>
       <NavbarTwo />
 
-      <PageBanner pageTitle="About Us" BGImage="/images/page-banner1.jpg" />
+      <PageBanner pageTitle="About Fixtura" BGImage="/images/BG-Images/0D5A0607.jpg" position={`top center`} />
 
       <AboutContent />
 
-      <FunFactsTwo />
+      
 
-      <TeamStyleThree />
+     
 
-      <Feedback />
+      
 
-      <Partner />
-
-      <CtaAreaTwo />
-
-      <Footer />
     </>
   );
 };
 
 export default Aabout;
+//<FunFactsTwo />
+//<Feedback />

@@ -1,27 +1,45 @@
 import React from "react";
 import NavbarTwo from "../components/Layouts/NavbarTwo";
 import PageBanner from "../components/Common/PageBanner";
-import WorksStyleOne from "../components/Portfolio/WorksStyleOne";
 import WorksStyleTwo from "../components/Portfolio/WorksStyleTwo";
 import CtaAreaTwo from "../components/Common/CtaAreaTwo";
-import Footer from "../components/Layouts/Footer";
-
-const Portfolio = () => {
+import { fetcher } from "../lib/api";
+const qs = require("qs");
+const Portfolio = ({ associations,CaseStudies }) => {
   return (
     <>
       <NavbarTwo />
 
-      <PageBanner pageTitle="Our Portfolio" BGImage="/images/page-banner3.jpg" />
-
-      <WorksStyleOne />
-
-      <WorksStyleTwo />
+      <PageBanner
+        pageTitle="Digital Content"
+        BGImage="/images//BG-Images/0D5A0766.jpg"
+      />
+      <WorksStyleTwo CaseStudies={CaseStudies}/>
 
       <CtaAreaTwo />
-
-      <Footer />
     </>
   );
 };
 
 export default Portfolio;
+
+export const getServerSideProps = async (context) => {
+  const query = qs.stringify(
+    {
+      populate: ["Cover", "asset_category"]
+    },
+    {
+      encodeValuesOnly: true,
+    }
+  );
+  const CaseStudies = await fetcher(
+    `${process.env.NEXT_PUBLIC_STRAPI_URL}/case-studies?${query}`
+  );
+
+  return {
+    props: {
+
+      CaseStudies:CaseStudies
+    },
+  };
+};
