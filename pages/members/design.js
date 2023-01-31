@@ -19,7 +19,7 @@ import {
   Wrapper,
 } from "../../components/Members/Common/Containers";
 import { IconColorPicker } from "@tabler/icons";
-import { RemotionPreview } from "./Remotion/ThemePreviewer";
+import RemotionPreview from "./Remotion/ThemePreviewer";
 
 import { Tabs } from "@mantine/core";
 import { IconTemplate, IconBadgeTm, IconMusic } from "@tabler/icons";

@@ -28,7 +28,7 @@ export const BTN_ManageSubscription = () => {
     }
   }, [Portal]);
 
-  return userAccount?.attributes?.order.data === null ? (
+  return userAccount?.attributes?.order.data === null || userAccount?.attributes?.order.data.stripe_status !== 'complete' ? (
     false
   ) : (
     <BTN_ONCLICK

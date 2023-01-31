@@ -5,7 +5,7 @@ import { useAccountDetails } from "../../../lib/userContext";
 import { Template_Basic_Sqaure } from "./templates/BasicSqaure/index";
 import DATA from "./utils/Data.json";
 
-export const RemotionPreview = ({ setIsPlaying }) => {
+const RemotionPreview = ({ setIsPlaying }) => {
   const { account } = useAccountDetails();
 
   const ID = "Top5LeadingRunScorers";

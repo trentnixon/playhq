@@ -79,7 +79,12 @@ const OrderHistory = (props) => {
 
   function checkDeliveryDate(RENDERS) {
     const Ordered = orderedArray(Response.attributes.renders.data);
-    console.log(Ordered[0].attributes.createdAt);
+    console.log(Ordered, Ordered.length);
+    if(Ordered?.length === 0 )
+      return false;
+
+  
+    
     const currentDate = new Date();
     const createdOnDate = new Date(Ordered[0].attributes.createdAt);
 
@@ -94,6 +99,7 @@ const OrderHistory = (props) => {
   if (Response?.attributes.renders.data === undefined) return <AwaitingFirstDownload />;
   if (user === false) return false;
   if (Response === null) return false;
+  
   return (
     <MembersWrapper>
       <PageTitle Copy={`Downloads`} ICON={<IconDownload size={40} />} />
@@ -244,6 +250,7 @@ const LatestOrderStatus = ({ Orders, Response }) => {
   }, []);
 
   if (Ordered === null) return true;
+  if(Orders.length === 0) return false
   return (
     <>
       <P

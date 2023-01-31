@@ -84,8 +84,9 @@ const Account = () => {
     }
   }, [account]);
 
+  console.log(userAccount)
   if (!user) return <></>;
-  if (account === null) {
+  if (userAccount === null) {
     return <FixturaLoading />;
   }
   return (
@@ -183,7 +184,7 @@ const Account = () => {
           <UserDetails user={userAccount} setHasUpdated={ReRender} />
           <Group pos={"center"}>
             <BTN_SubscribeToFixtura />
-            <BTN_ManageSubscription />
+            <BTN_ManageSubscription /> 
           </Group>
         </Paper>
       </Container>

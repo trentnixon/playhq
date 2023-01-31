@@ -27,7 +27,7 @@ import {
 import { IconColorPicker } from "@tabler/icons";
 import { useGetAIExample } from "../../Hooks/useAI";
 import { FixturaLoading } from "../../components/Members/Common/Loading";
-import { RemotionPreview } from "./Remotion/ThemePreviewer";
+import RemotionPreview from "./Remotion/ThemePreviewer";
 import { useAccountDetails } from "../../lib/userContext";
 const qs = require("qs");
 

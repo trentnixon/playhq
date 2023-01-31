@@ -44,10 +44,10 @@ export const BTN_SubscribeToFixtura = () => {
       <Wrapper>
         {loading ? (
           <FixturaLoading />
-        ) : userAccount?.attributes?.order.data === null ? (
+        ) : userAccount?.attributes?.order.data === null ||userAccount?.attributes?.order.data.stripe_status !== 'complete'? (
           <BTN_ONCLICK
             LABEL={"Purchase Subscription"}
-            HANDLE={handleBuy}
+            HANDLE={handleBuy} 
             THEME="success"
           />
         ) : (
