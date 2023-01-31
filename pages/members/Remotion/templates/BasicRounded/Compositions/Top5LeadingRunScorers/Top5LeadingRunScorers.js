@@ -1,21 +1,21 @@
-import { AbsoluteFill, useVideoConfig, useCurrentFrame } from "remotion";
+import { AbsoluteFill, useCurrentFrame } from "remotion";
 
 import TitleSequence from './TitleSequence'
 
 export const Top5LeadingRunsScorers = () => {
-  const { fps } = useVideoConfig();
+
 
   return (
     <AbsoluteFill>
-      <TitleSequenceContaner fps={fps} durationInFrames={90} />
-      <MainSequence fps={fps} durationInFrames={1000} label="Main Sequence" />
-      <EndTitlesSequence fps={fps} durationInFrames={90} />
+      <TitleSequenceContaner fps={30} durationInFrames={90} />
+      <MainSequence fps={30} durationInFrames={1000} label="Main Sequence" />
+      <EndTitlesSequence fps={30} durationInFrames={90} />
     </AbsoluteFill>
   );
 };
 
 const TitleSequenceContaner = ({
-  fps,
+
   durationInFrames,
 }) => {
   const frame = useCurrentFrame();
@@ -31,7 +31,7 @@ const TitleSequenceContaner = ({
   );
 };
 
-const MainSequence = ({ fps, durationInFrames, label }) => {
+const MainSequence = ({  durationInFrames, label }) => {
   const frame = useCurrentFrame();
 
   if (frame > durationInFrames) {
@@ -46,7 +46,7 @@ const MainSequence = ({ fps, durationInFrames, label }) => {
   );
 };
 
-const EndTitlesSequence = ({ fps, durationInFrames }) => {
+const EndTitlesSequence = ({  durationInFrames }) => {
   const frame = useCurrentFrame();
 
   if (frame > durationInFrames) {

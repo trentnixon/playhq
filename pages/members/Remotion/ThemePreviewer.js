@@ -52,12 +52,14 @@ const RemotionPreview = ({ setIsPlaying }) => {
   return (
     <Center>
       <Player 
-        ref={playerRef}
+        ref={playerRef} 
         id={ID}
         component={OBJ[userAccount.attributes?.template?.data?.attributes.Name]}
         durationInFrames={460}
         compositionWidth={1440}
         compositionHeight={1920}
+        width={1440}
+        height={1920}
         fps={30}
         numberOfSharedAudioTags={0}
         inputProps={{

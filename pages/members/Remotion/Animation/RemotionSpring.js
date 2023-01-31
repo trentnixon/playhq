@@ -1,4 +1,4 @@
-import {useCurrentFrame, useVideoConfig,spring,} from 'remotion';
+import {useCurrentFrame,spring,} from 'remotion';
 
  const SpringConfig ={
     Default:{ 
@@ -68,13 +68,13 @@ ContainerHeight(fps,frame,int,FROM,TO)
 */
 export const SpringToFrom = (int,FROM,TO,effect='Default', Speed='normal')=>{
     const frame = useCurrentFrame();
-    const { fps } = useVideoConfig();
+ 
 
   
     const SPEED={
-        fast:(fps/5),
-        normal:fps/2,
-        slow:fps/1
+        fast:(30/5),
+        normal:30/2,
+        slow:30/1
     }
 
     return  spring({

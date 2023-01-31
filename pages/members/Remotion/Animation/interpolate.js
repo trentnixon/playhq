@@ -1,4 +1,4 @@
-import {interpolate,useCurrentFrame, useVideoConfig} from 'remotion';
+import {interpolate} from 'remotion';
 
 export const interpolateOpacity = (frame)=>{
     const opacity = interpolate(frame, [0, 30], [0, 1], {extrapolateRight: "clamp",});
