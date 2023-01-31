@@ -71,3 +71,5 @@ export const RemotionPreview = ({setIsPlaying}) => {
     </Center>
   );
 };
+
+export default RemotionPreview;

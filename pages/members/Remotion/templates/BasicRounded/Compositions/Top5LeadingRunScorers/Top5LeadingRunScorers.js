@@ -60,3 +60,4 @@ const EndTitlesSequence = ({ fps, durationInFrames }) => {
   );
 };
 
+export default Top5LeadingRunsScorers

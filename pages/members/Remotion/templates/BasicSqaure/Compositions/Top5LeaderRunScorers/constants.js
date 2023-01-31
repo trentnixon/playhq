@@ -5,4 +5,4 @@ export const COLOR_2 = '#91EAE4';
 
 export const FONT_FAMILY = 'SF Pro Text, Helvetica, Arial, sans-serif';
  
-export default COLOR_1
+export default ()=>{}
