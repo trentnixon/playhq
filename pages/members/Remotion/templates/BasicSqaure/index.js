@@ -17,6 +17,8 @@ import Top5LeaderRunScorers from "./Compositions/Top5LeaderRunScorers/index";
 export const Template_Basic_Sqaure = (props) => {
   const { THEME, DATA, ID,AUDIO } = props;
   const {fontFamily} = loadFont();
+ 
+  console.log(THEME)
 
   const TEMPLATES = { 
     Top5LeadingRunScorers: <Top5LeaderRunScorers DATA={DATA} theme={THEME.Theme} fontFamily={fontFamily}/>,

@@ -139,11 +139,11 @@ const Account = () => {
               height: parseInt(1920) * 0.25,
             })}
           >
-            <RemotionPreview
+            {/* <RemotionPreview
               THEME={userAccount.attributes?.theme?.data?.attributes}
               TEMPLATE={userAccount.attributes?.template?.data?.attributes}
               AUDIO={userAccount.attributes?.audio_option?.data?.attributes}
-            />
+            /> */}
           </Paper>
         </SimpleGrid>
       </Container>

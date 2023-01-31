@@ -62,7 +62,7 @@ export const Input_FixturaSetting = ({ Input, user, setHasUpdated }) => {
         <Group position="apart">
           <Box>
             {!editing ? (
-              <P Copy={user.attributes[Input.Field]} marginBottom={0} />
+              <P Copy={user?.attributes[Input.Field]} marginBottom={0} />
             ) : (
               <div className="form-group">
                 {loading ? (

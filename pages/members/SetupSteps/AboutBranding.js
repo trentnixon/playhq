@@ -1,4 +1,3 @@
-import { Button, Center } from "@mantine/core";
 import { Wrapper } from "../../../components/Members/Common/Containers";
 import { P } from "../../../components/Members/Common/Type";
 import { FixturaCustomiser } from "../../../components/Members/userFixturaCustomiser";
@@ -24,4 +23,4 @@ export const StepAboutBranding = ({ user, setHasUpdated }) => {
     </>
   );
 };
-export default StepAboutBranding
+export default StepAboutBranding;
