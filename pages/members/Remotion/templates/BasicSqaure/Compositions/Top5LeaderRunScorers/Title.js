@@ -16,7 +16,7 @@ import {
 } from '../../../../utils/colors';
 import {calculateLetterSpacing} from '../../../../utils/copy';
 
-const LogoClubTitleHeader = ({THEME, fontFamily}) => {
+export const LogoClubTitleHeader = ({THEME, fontFamily}) => {
 	const frame = useCurrentFrame();
 
 	return (

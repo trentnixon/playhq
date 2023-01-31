@@ -4,7 +4,8 @@ import { Series} from 'remotion';
 // Components
 import {LogoClubTitleHeader} from './Title';
 import {Top5PlayersMap} from './Top5Map';
-const Top5LeaderRunScorers = ({AUDIO, DATA, theme, fontFamily}) => {
+
+export const Top5LeaderRunScorers = ({AUDIO, DATA, theme, fontFamily}) => {
 
 	return (
 		<Series>

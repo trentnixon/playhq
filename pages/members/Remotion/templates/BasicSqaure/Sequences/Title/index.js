@@ -18,7 +18,7 @@ const VIDEO = {
 	opacity: 0.1,
 };
 
-const TitleSequenceFrame = ({theme, fontFamily}) => {
+export const TitleSequenceFrame = ({theme, fontFamily}) => {
   const frame = useCurrentFrame();
 	return (
 		<>

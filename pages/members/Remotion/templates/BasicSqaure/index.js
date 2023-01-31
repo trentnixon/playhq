@@ -14,7 +14,7 @@ import { Top5LeaderRunScorers } from "./Compositions/Top5LeaderRunScorers/index"
 
 // END
 
-const Template_Basic_Sqaure = (props) => {
+export const Template_Basic_Sqaure = (props) => {
   const { THEME, DATA, ID,AUDIO } = props;
   const {fontFamily} = loadFont();
 

@@ -14,7 +14,7 @@ import {
 
 
 
-const Top5PlayersMap = ({DATA, THEME, fontFamily})=>{
+export const Top5PlayersMap = ({DATA, THEME, fontFamily})=>{
 	
 	const frame = useCurrentFrame();
   return(

@@ -21,7 +21,7 @@ const VIDEO = {
 	opacity: 0.1,
 };
 
- const OutroSequenceFrame = ({theme, fontFamily}) => {
+export const OutroSequenceFrame = ({theme, fontFamily}) => {
 	const frame = useCurrentFrame();
 	return (
 		<>
