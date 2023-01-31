@@ -1,12 +1,14 @@
 import { Center } from "@mantine/core";
 import { Player } from "@remotion/player";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useAccountDetails } from "../../../lib/userContext";
 import { Template_Basic_Sqaure } from "./templates/BasicSqaure/index";
 import DATA from "./utils/Data.json";
 
 const RemotionPreview = ({ setIsPlaying }) => {
-  const { account } = useAccountDetails();
+  const { account, ReRender } = useAccountDetails();
+  
+  const [userAccount, setUserAccount] = useState(account);
 
   const ID = "Top5LeadingRunScorers";
   const OBJ = {
@@ -41,22 +43,25 @@ const RemotionPreview = ({ setIsPlaying }) => {
   }, []);
 
   useEffect(() => {
-    console.log(account);
-  }, [account]);
+    console.log(userAccount);
+  }, [userAccount]);
+  if (userAccount === null) {
+    return <FixturaLoading />;
+  }
   return (
     <Center>
       <Player 
         ref={playerRef}
         id={ID}
-        component={OBJ[account.attributes?.template?.data?.attributes.Name]}
+        component={OBJ[userAccount.attributes?.template?.data?.attributes.Name]}
         durationInFrames={460}
         compositionWidth={1440}
         compositionHeight={1920}
         fps={30}
         numberOfSharedAudioTags={0}
         inputProps={{
-          THEME: account.attributes?.theme?.data?.attributes,
-          AUDIO: account.attributes?.audio_option?.data?.attributes,
+          THEME: userAccount.attributes?.theme?.data?.attributes,
+          AUDIO: userAccount.attributes?.audio_option?.data?.attributes,
           DATA: DATA,
           ID: ID,
         }}
