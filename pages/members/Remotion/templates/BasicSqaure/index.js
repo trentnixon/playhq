@@ -10,7 +10,7 @@ import {loadFont} from '@remotion/google-fonts/Heebo';
 import { TitleSequenceFrame } from "./Sequences/Title";
 import { OutroSequenceFrame } from "./Sequences/Outro/index";
 // Assets
-import { Top5LeaderRunScorers } from "./Compositions/Top5LeaderRunScorers/index";
+import Top5LeaderRunScorers from "./Compositions/Top5LeaderRunScorers/index";
 
 // END
 

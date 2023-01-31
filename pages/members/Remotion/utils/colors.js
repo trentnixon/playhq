@@ -16,4 +16,6 @@ export function getContrastColor(hexColor,COLORS={white:'#ffffff',dark:'#111111'
     return darkColor.toHexString(); // return the color as a hex string
   };
 
+
+  export default getContrastColor;
   /*. END COLORS */
