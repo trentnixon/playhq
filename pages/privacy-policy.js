@@ -46,7 +46,7 @@ const PrivacyPolicy = () => {
             </li>
             <li>
               Device data, such as information about the device you are using to
-              access our website and digital assets, including the device's IP
+              access our website and digital assets, including the device&apos;s IP
               address, operating system, and browser type.
             </li>
           </ul>

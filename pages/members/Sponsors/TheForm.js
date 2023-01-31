@@ -178,6 +178,7 @@ export const CreateaSponsorForm = ({ OBJ }) => {
                 {FORMOBJ.map((Input, i) => {
                   return (
                     <InputContainer
+                    key={i}
                       Input={Input}
                       FORMMETA={FORMMETA}
                       setFORMMETA={setFORMMETA}

@@ -1,5 +1,5 @@
-import { Box, Group, Text, useMantineTheme } from "@mantine/core";
-import { IconUpload, IconPhoto, IconX } from "@tabler/icons";
+import { Box, Group, List, Text, ThemeIcon, useMantineTheme } from "@mantine/core";
+import { IconUpload, IconCircleCheck } from "@tabler/icons";
 import {
   Dropzone,
   DropzoneProps,
@@ -8,7 +8,8 @@ import {
 } from "@mantine/dropzone";
 import { useUploadImageViaDropzone } from "../../../Hooks/useUploadViaDropzone";
 import { useEffect, useState } from "react";
-import { BTN_ONCLICK } from "../../../components/Members/Common/utils/Buttons";
+import { BTN_ONCLICK,BTN_CREATE } from "../../../components/Members/Common/utils/Buttons";
+import { P,SubHeaders } from "../../../components/Members/Common/Type";
 
 export function UploadSponsorsLogos({ setLogo, setLogoPath, SAVEDLOGO }) {
   const theme = useMantineTheme();
@@ -37,6 +38,7 @@ export function UploadSponsorsLogos({ setLogo, setLogoPath, SAVEDLOGO }) {
   if (rejected)
     return <RejectedFiles setRejected={setRejected} rejected={rejected} />;
   return (
+    
     <Box
       sx={(theme) => ({
         textAlign: "center",
@@ -86,10 +88,12 @@ const RejectedFiles = ({ rejected, setRejected }) => {
   console.log(rejected[0].errors);
   return (
     <>
-      <H3>ERROR!</H3>
+      <SubHeaders>ERROR!</SubHeaders>
+      
       <P>
         The following errors occurred whilst attempting to upload your image.
       </P>
+      
       <List
         size="lg"
         withPadding
@@ -104,9 +108,10 @@ const RejectedFiles = ({ rejected, setRejected }) => {
         }}
       >
         {rejected[0].errors.map((err, i) => {
-          return <List.Item>{err.message}</List.Item>;
+          return <List.Item key={i}>{err.message}</List.Item>;
         })}
       </List>
+
 
       <BTN_CREATE
         CALLBACK={() => {

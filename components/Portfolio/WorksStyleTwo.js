@@ -32,8 +32,8 @@ const WorksStyleTwo = ({ CaseStudies }) => {
             <p>
               Our collection of personalized digital assets includes options
               such as videos, images, and AI-generated content, all designed to
-              enhance your club's social media presence. Explore our examples
-              and see how we can help bring your club's online presence to new
+              enhance your club&lsquo;s social media presence. Explore our examples
+              and see how we can help bring your club&lsquo;s online presence to new
               heights.
             </p>
           </div>
@@ -45,10 +45,9 @@ const WorksStyleTwo = ({ CaseStudies }) => {
                   <h1>{key}S</h1>
                   <div className="row justify-content-center">
             {groupByIdentifier(CaseStudies.data,VAR)[key].map((study, i) => {
-             //data[0].attributes.asset_category.data.attributes.Identifier
-             console.log(study)
+          
               return (
-                <div className="col-lg-4 col-sm-6">
+                <div className="col-lg-4 col-sm-6" key={i}>
                   <div className="work-card">
                     <img src={`${study.attributes.Cover.data.attributes.url}`} alt="image" />
 

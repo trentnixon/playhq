@@ -209,11 +209,11 @@ const MembersNavItem = ({ user }) => {
             <a className="nav-link">Assets</a>
           </Link>
         </li>
-        <li className="nav-item">
+        {/* <li className="nav-item">
           <Link href={`${PATH}/design`} activeClassName="active">
             <a className="nav-link">Design</a>
           </Link>
-        </li>
+        </li> */}
         <li className="nav-item">
           <Link href={`${PATH}/ai-assistant`} activeClassName="active">
             <a className="nav-link">AI Assistant</a>
@@ -224,11 +224,7 @@ const MembersNavItem = ({ user }) => {
             <a className="nav-link">Sponsors</a>
           </Link>
         </li>
-       {/*  <li className="nav-item">
-          <Link href={`${PATH}/customiser`} activeClassName="active">
-            <a className="nav-link">Customiser</a>
-          </Link>
-        </li> */}
+
         
         <li>
           <hr />

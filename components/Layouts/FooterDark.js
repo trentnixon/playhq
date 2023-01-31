@@ -19,23 +19,23 @@ const FooterDark = () => {
                 </div>
 
                 <p>
-                Fixtura provides personalized digital assets to help cricket clubs and associations connect with fans, showcase achievements, and gain a competitive edge. We create innovative content using sports media, AI, and technology, and offer customization and personalized service to meet clients' specific needs and goals. We aim to be a trusted partner for cricket clubs and associations looking to promote their teams and events 
+                Fixtura provides personalized digital assets to help cricket clubs and associations connect with fans, showcase achievements, and gain a competitive edge. We create innovative content using sports media, AI, and technology, and offer customization and personalized service to meet clients&apos; specific needs and goals. We aim to be a trusted partner for cricket clubs and associations looking to promote their teams and events 
                 </p>
 
                 <ul className="social-links">
                   <li>
-                    <a href="https://www.facebook.com/" target="_blank">
+                    <a href="https://www.facebook.com/" target="_blank" without rel="noreferrer">
                       <i className="fa-brands fa-facebook-f"></i>
                     </a>
                   </li>
                   <li>
-                    <a href="https://twitter.com/" target="_blank">
+                    <a href="https://twitter.com/" target="_blank" without rel="noreferrer">
                       <i className="fa-brands fa-twitter"></i>
                     </a>
                   </li>
                 
                   <li>
-                    <a href="https://www.instagram.com/" target="_blank">
+                    <a href="https://www.instagram.com/" target="_blank" without rel="noreferrer">
                       <i className="fa-brands fa-instagram"></i>
                     </a>
                   </li>

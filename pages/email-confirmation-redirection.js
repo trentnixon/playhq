@@ -13,7 +13,7 @@ const Emailconfirmationredirection = () => {
           <p>
             Thank you for confirming your email address! Your registration for a
             Fixtura account is now complete, and you are just a few steps away
-            from enhancing your club's social media presence with our
+            from enhancing your club&apos;s social media presence with our
             personalized digital assets.
           </p>
           <p>
@@ -21,7 +21,7 @@ const Emailconfirmationredirection = () => {
             for your club or association. Simply sign in to your account and
             follow the prompts to select your colors, fonts, and logos, choose
             the assets you want to receive, and set your delivery schedule and
-            frequency. We'll handle the rest, creating and delivering
+            frequency. We&apos;ll handle the rest, creating and delivering
             high-quality content that is tailored to your specific needs and
             goals.
           </p>

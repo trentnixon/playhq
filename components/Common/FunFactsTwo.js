@@ -70,7 +70,7 @@ const FunFactsTwo = () => {
 
           <div className="contact-cta-box">
             <h3>Have any questions about us?</h3>
-            <p>Don't hesitate to contact us</p>
+            <p>Don&apos;t hesitate to contact us</p>
 
             <Link href="/contact">
               <a className="btn btn-primary">Contact Us</a>

@@ -66,6 +66,7 @@ export const SelectATemplate = () => {
           //console.log(item);
           return (
             <tr
+              key={i}
               style={{
                 backgroundColor:
                   userAccount.attributes.template.data.id === item.id

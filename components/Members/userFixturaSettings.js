@@ -3,7 +3,7 @@ import { ShadowWrapper, Wrapper } from "./Common/Containers";
 import { SelectFixturaSetting } from "./Common/formelements/Select_FixturaSettings";
 import { P, SubHeaders } from "./Common/Type";
 import { createStyles, Text } from "@mantine/core";
-import { IconSelect,IconUsers,IconTrophy } from "@tabler/icons";
+import { IconSelect, IconUsers, IconTrophy } from "@tabler/icons";
 
 const useStyles = createStyles((theme) => ({
   root: {
@@ -85,6 +85,7 @@ export const FixturaSettings = ({ user, setHasUpdated }) => {
 
   const stats = data.map((stat) => (
     <Paper
+      key={i}
       radius="md"
       shadow="lg"
       withBorder
@@ -96,12 +97,12 @@ export const FixturaSettings = ({ user, setHasUpdated }) => {
       })}
     >
       <Group position="right">
-      <Avatar color={"gray"} size={50} radius={"md"}>
-        <stat.icon size={25} stroke={1} />
-      </Avatar>
+        <Avatar color={"gray"} size={50} radius={"md"}>
+          <stat.icon size={25} stroke={1} />
+        </Avatar>
       </Group>
-      <P Copy={stat.title} color={4} size={20} marginBottom={0}/>
-      <P Copy={stat.stats} color={3} Weight={900} size={20} marginBottom={0}/>
+      <P Copy={stat.title} color={4} size={20} marginBottom={0} />
+      <P Copy={stat.stats} color={3} Weight={900} size={20} marginBottom={0} />
     </Paper>
   ));
 

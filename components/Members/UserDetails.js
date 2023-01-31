@@ -19,6 +19,7 @@ export const UserDetails = ({ user, setHasUpdated }) => {
       {INPUTS.map((Input, i) => {
         return (
           <Input_FixturaSetting
+          key={i}
             Input={Input}
             user={user} 
             setHasUpdated={setHasUpdated}

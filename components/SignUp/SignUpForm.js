@@ -211,19 +211,19 @@ const SuccessfulRegistration = () => {
           <h2> Successful Registration</h2>
           <p>
             Congratulations, you have successfully registered for a Fixtura
-            account! You are now one step closer to enhancing your club's social
+            account! You are now one step closer to enhancing your club&lsquo;s social
             media presence with our personalized digital assets.
           </p>
           <p>
             An email has been sent to the address you provided, containing
             instructions on how to verify your account and set up your account
             preferences. Please follow these steps to complete the registration
-            process and start using Fixtura.{" "}
+            process and start using Fixtura.
           </p>
           <p>
             With Fixtura, you can customize your look and feel, select the
             assets you want to receive, and set your delivery schedule and
-            frequency - all with just a few clicks. We'll handle the rest,
+            frequency - all with just a few clicks. We&lsquo;ll handle the rest,
             creating and delivering high-quality content that is tailored to
             your specific needs and goals. Thank you for choosing Fixtura, and
             we look forward to helping you succeed on social media.

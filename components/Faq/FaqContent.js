@@ -181,7 +181,7 @@ const FaqContent = () => {
                 <Accordion allowZeroExpanded preExpanded={["a"]}>
                   {faqs.map((faq, i) => {
                     return (
-                      <AccordionItem uuid={i}>
+                      <AccordionItem uuid={i} key={i}>
                         <AccordionItemHeading>
                           <AccordionItemButton>
                             {faq.question}

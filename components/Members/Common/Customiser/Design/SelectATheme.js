@@ -120,6 +120,7 @@ const ColorTable = (props) => {
             if (!item.attributes.isPublic) return false;
             return (
               <tr
+                key={i}
                 style={{
                   backgroundColor:
                     userAccount.attributes.theme.data.id === item.id

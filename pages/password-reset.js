@@ -54,7 +54,7 @@ const ResetPasswordForm = () => {
           <p>
             To reset your password, enter your new password in the first field
             on the password reset page, re-enter it in the second field to
-            confirm it, and then click on the "Submit" or "Reset password"
+            confirm it, and then click on the &quot;Submit&quot; or &quot;Reset password&quot;
             button to save it.
           </p>
         </div>

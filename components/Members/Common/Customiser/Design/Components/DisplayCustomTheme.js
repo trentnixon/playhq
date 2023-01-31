@@ -64,6 +64,7 @@ export const DisplayCustomTheme = (props) => {
           {CTHEME.map((item, i) => {
             return (
               <tr
+                key={i}
                 style={{
                   backgroundColor:
                     userAccount.attributes.theme.data.id === item.id

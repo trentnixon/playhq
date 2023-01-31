@@ -355,7 +355,7 @@ const ReviewContainer = ({ OBJ, Title }) => {
       <h2>{Title}</h2>
       {OBJ.map((item, i) => {
         return (
-          <Group position="apart">
+          <Group position="apart" key={i}>
             <h5>{item.key}</h5>
             <h5>{item.value}</h5>
           </Group>

@@ -53,7 +53,7 @@ export const ListOf = ({ SPONSORS,SPONSORLIMIT,setIsCreate }) => {
         <tbody>
           {SPONSORS.map((s, i) => {
             return (
-              <tr>
+              <tr key={i}>
                 <td>
                   <Image
                     src={

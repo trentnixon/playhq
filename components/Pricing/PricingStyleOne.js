@@ -22,7 +22,7 @@ const PricingStyleOne = () => {
             </p>
             <p>
               So you can focus on getting the best value for your club, without
-              worrying about what's included in each plan.
+              worrying about what&lsquo;s included in each plan.
             </p>
           </div>
 
@@ -50,7 +50,7 @@ const PricingStyleOne = () => {
                     <li className="active">10 video options covering various grades and games</li>
                     <li className="active">Up to 44* customized images generated per weekend</li>
                     <li className="active">AI-generated match reports, summaries, posts, and emails for all games</li>
-                    <li className="active">Customization with your club's colors and branding</li>
+                    <li className="active">Customization with your club&lsquo;s colors and branding</li>
                     <li className="active">Option to include title sponsors in your assets</li>
                   </ul>
                 </div>

@@ -62,18 +62,18 @@ const TermsConditions = () => {
           </ul>
           <p>
             Fixtura obtains all data for its digital assets from PLAYHQ. By
-            using Fixtura's website and digital assets, you acknowledge and
+            using Fixtura&apos;s website and digital assets, you acknowledge and
             agree that you will not use this data for any unauthorized or
             unlawful purposes.
           </p>
           <p>
             Fixtura uses GTP-3 as its AI source for generating materials. By
-            using Fixtura's website and digital assets, you acknowledge and
+            using Fixtura&apos;s website and digital assets, you acknowledge and
             agree to the terms of use for GTP-3 as set forth by its provider.
           </p>
           <p>
             Fixtura uses Stripe as its payment gateway for all subscriptions. By
-            subscribing to Fixtura's services and accessing its digital assets,
+            subscribing to Fixtura&apos;s services and accessing its digital assets,
             you acknowledge and agree to the terms of use for Stripe as set
             forth by its provider.
           </p>
@@ -118,7 +118,7 @@ const TermsConditions = () => {
           <h1>Restricted access</h1>
           <p>
             Fixtura reserves the right to restrict access to areas of our
-            website, or indeed our whole website, at Fixtura's discretion and
+            website, or indeed our whole website, at Fixtura&apos;s discretion and
             without notice.
           </p>
           <p>
@@ -129,7 +129,7 @@ const TermsConditions = () => {
           </p>
           <p>
             Fixtura may disable your user ID and password at any time in
-            Fixtura's sole discretion without notice or explanation.
+            Fixtura&apos;s sole discretion without notice or explanation.
           </p>
           <h1>User content</h1>
           <p>
@@ -147,7 +147,7 @@ const TermsConditions = () => {
           </p>
           <p>
             Your user content must not be illegal or unlawful, must not infringe
-            any third party's legal rights, and must not be capable of giving
+            any third party&apos;s legal rights, and must not be capable of giving
             rise to legal action whether against you or Fixtura or a third party
             (in each case under any applicable law).
           </p>
@@ -162,13 +162,13 @@ const TermsConditions = () => {
             upon our website.
           </p>
           <p>
-            Notwithstanding Fixtura's rights under these terms and conditions in
+            Notwithstanding Fixtura&apos;s rights under these terms and conditions in
             to do so, Fixtura does not undertake to monitor the submission of
             such content to, or the publication of such content on, our website.
           </p>
           <h1>No warranties</h1>
           <p>
-            This website is provided "as is" without any representations or
+            This website is provided &quot;as is&quot; without any representations or
             warranties, express or implied. Fixtura makes no representations or
             warranties in relation to this website or the information and
             materials provided on this website.
@@ -220,10 +220,10 @@ const TermsConditions = () => {
             Nothing in these terms and conditions will exclude or limit any
             warranty implied by law that it would be unlawful to exclude or
             limit; and nothing in these terms and conditions will exclude or
-            limit Fixtura's liability in respect of any:
+            limit Fixtura&apos;s liability in respect of any:
           </p>
           <ul>
-            <li>death or personal injury caused by Fixtura's negligence;</li>
+            <li>death or personal injury caused by Fixtura&apos;s negligence;</li>
             <li>
               fraud or fraudulent misrepresentation on the part of Fixtura; or
             </li>
@@ -247,13 +247,13 @@ const TermsConditions = () => {
             You accept that, as a limited liability entity, Fixtura has an
             interest in limiting the personal liability of its officers and
             employees. You agree that you will not bring any claim personally
-            against Fixtura's officers or employees in respect of any losses you
+            against Fixtura&apos;s officers or employees in respect of any losses you
             suffer in connection with the website.
           </p>
           <p>
             Without prejudice to the foregoing paragraph, you agree that the
             limitations of warranties and liability set out in this website
-            disclaimer will protect Fixtura's officers, employees, agents,
+            disclaimer will protect Fixtura&apos;s officers, employees, agents,
             subsidiaries, successors, assigns and sub-contractors as well as
             Fixtura.
           </p>
@@ -269,14 +269,14 @@ const TermsConditions = () => {
             indemnified against any losses, damages, costs, liabilities and
             expenses (including without limitation legal expenses and any
             amounts paid by Fixtura to a third party in settlement of a claim or
-            dispute on the advice of Fixtura's legal advisers) incurred or
+            dispute on the advice of Fixtura&apos;s legal advisers) incurred or
             suffered by Fixtura arising out of any breach by you of any
             provision of these terms and conditions, or arising out of any claim
             that you have breached any provision of these terms and conditions.
           </p>
           <h1>Breaches of these terms and conditions</h1>
           <p>
-            Without prejudice to Fixtura's other rights under these terms and
+            Without prejudice to Fixtura&apos;s other rights under these terms and
             conditions, if you breach these terms and conditions in any way,
             Fixtura may take such action as Fixtura deems appropriate to deal
             with the breach, including suspending your access to the website,
@@ -295,7 +295,7 @@ const TermsConditions = () => {
           </p>
           <h1>Assignment</h1>
           <p>
-            Fixtura may transfer, sub-contract or otherwise deal with Fixtura's
+            Fixtura may transfer, sub-contract or otherwise deal with Fixtura&apos;s
             rights and/or obligations under these terms and conditions without
             notifying you or obtaining your consent.
           </p>

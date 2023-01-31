@@ -5,8 +5,7 @@ import Cookies from "js-cookie";
 import { fetcher } from "../../lib/api";
 function withAuth(WrappedComponent) {
 
-
-
+  // eslint-disable-next-line react/display-name
   return function (props) {
 
 

@@ -35,7 +35,7 @@ const FunFacts = () => {
                   50 <span>Images</span>
                 </h3>
                 <p>
-                Fixtura's images are high-quality and tailored to showcase your club or association in a professional and visually appealing way.
+                Fixtura&apos;s images are high-quality and tailored to showcase your club or association in a professional and visually appealing way.
                 </p>
               </div>
             </div>
@@ -52,7 +52,7 @@ const FunFacts = () => {
                   8 <span>Writeups</span>
                 </h3>
                 <p>
-                Fixtura's AI write ups provide high-quality, customizable content for clubs and associations to use in their communication and marketing efforts. Our advanced AI technology generates unique and engaging articles that can be tailored to your specific needs and goals.
+                Fixtura&apos;s AI write ups provide high-quality, customizable content for clubs and associations to use in their communication and marketing efforts. Our advanced AI technology generates unique and engaging articles that can be tailored to your specific needs and goals.
                 </p>
               </div>
             </div>

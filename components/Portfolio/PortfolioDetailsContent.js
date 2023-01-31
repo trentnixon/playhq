@@ -42,22 +42,22 @@ const PortfolioDetailsContent = () => {
               <h4>Share</h4>
               <ul className="social">
                 <li>
-                  <a href="https://www.facebook.com/" target="_blank">
+                  <a href="https://www.facebook.com/" target="_blank" without rel="noreferrer">
                     <i className="fa-brands fa-facebook-f"></i>
                   </a>
                 </li>
                 <li>
-                  <a href="https://twitter.com/" target="_blank">
+                  <a href="https://twitter.com/" target="_blank" without rel="noreferrer">
                     <i className="fa-brands fa-twitter"></i>
                   </a>
                 </li>
                 <li>
-                  <a href="https://www.linkedin.com/" target="_blank">
+                  <a href="https://www.linkedin.com/" target="_blank" without rel="noreferrer">
                     <i className="fa-brands fa-linkedin-in"></i>
                   </a>
                 </li>
                 <li>
-                  <a href="https://www.instagram.com/" target="_blank">
+                  <a href="https://www.instagram.com/" target="_blank" without rel="noreferrer">
                     <i className="fa-brands fa-instagram"></i>
                   </a>
                 </li>
@@ -65,7 +65,7 @@ const PortfolioDetailsContent = () => {
             </div>
 
             <div className="single-info-box">
-              <a href="#" className="default-btn" target="_blank">
+              <a href="#" className="default-btn" target="_blank" without rel="noreferrer">
                 Live Preview
               </a>
             </div>
