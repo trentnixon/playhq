@@ -16,7 +16,7 @@ export const Top5LeaderRunScorers = ({AUDIO, DATA, theme, fontFamily}) => {
 					DATA={DATA.RunScorers}
 					fontFamily={fontFamily} 
 				/>
-			</Series.Sequence>
+			</Series.Sequence> 
 		</Series>
 	);
 };

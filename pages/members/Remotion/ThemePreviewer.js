@@ -1,13 +1,13 @@
 import { Center } from "@mantine/core";
 import { Player } from "@remotion/player";
-import { useEffect,useRef } from "react";
+import { useEffect, useRef } from "react";
 import { useAccountDetails } from "../../../lib/userContext";
 import { Template_Basic_Sqaure } from "./templates/BasicSqaure/index";
 import DATA from "./utils/Data.json";
 
-export const RemotionPreview = ({setIsPlaying}) => {
-  const {account} = useAccountDetails()
-  
+export const RemotionPreview = ({ setIsPlaying }) => {
+  const { account } = useAccountDetails();
+
   const ID = "Top5LeadingRunScorers";
   const OBJ = {
     "Basic Sqaure": Template_Basic_Sqaure,
@@ -15,22 +15,22 @@ export const RemotionPreview = ({setIsPlaying}) => {
   };
 
   const playerRef = useRef(null);
- 
+
   useEffect(() => {
     const { current } = playerRef;
     if (!current) {
       return;
     }
- 
+
     const listener = () => {
       console.log("paused");
-      setIsPlaying(false)
+      setIsPlaying(false);
     };
- 
-    const Playlistener = ()=>{
+
+    const Playlistener = () => {
       console.log("playing");
-      setIsPlaying(true)
-    }
+      setIsPlaying(true);
+    };
 
     current.addEventListener("play", Playlistener);
     current.addEventListener("pause", listener);
@@ -40,15 +40,13 @@ export const RemotionPreview = ({setIsPlaying}) => {
     };
   }, []);
 
-
-  useEffect(()=>{
-    console.log(account)
-  },[account])
+  useEffect(() => {
+    console.log(account);
+  }, [account]);
   return (
-    
     <Center>
-      <Player
-      ref={playerRef}
+      <Player 
+        ref={playerRef}
         id={ID}
         component={OBJ[account.attributes?.template?.data?.attributes.Name]}
         durationInFrames={460}
@@ -63,7 +61,7 @@ export const RemotionPreview = ({setIsPlaying}) => {
           ID: ID,
         }}
         controls
-        style={{ 
+        style={{
           width: parseInt(1440) * 0.25,
           height: parseInt(1920) * 0.25,
         }}

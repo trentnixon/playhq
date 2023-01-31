@@ -135,7 +135,7 @@ function DesignTabs(props) {
   const [activeTab, setActiveTab] = useState("Templates");
 
   return (
-    <Tabs
+    <Tabs 
       value={activeTab}
       onTabChange={setActiveTab}
       variant="pills"

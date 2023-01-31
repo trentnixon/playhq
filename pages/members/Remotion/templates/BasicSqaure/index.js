@@ -18,7 +18,7 @@ export const Template_Basic_Sqaure = (props) => {
   const { THEME, DATA, ID,AUDIO } = props;
   const {fontFamily} = loadFont();
 
-  const TEMPLATES = {
+  const TEMPLATES = { 
     Top5LeadingRunScorers: <Top5LeaderRunScorers DATA={DATA} theme={THEME.Theme} fontFamily={fontFamily}/>,
   };
   return ( 
@@ -38,7 +38,7 @@ export const Template_Basic_Sqaure = (props) => {
        
         <Audio volume={0.5} src={AUDIO.URL} />
       </AbsoluteFill>
-    </ThemeProvider>
+    </ThemeProvider> 
   );
 };
 
