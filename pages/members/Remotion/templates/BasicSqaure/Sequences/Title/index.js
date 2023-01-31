@@ -18,7 +18,7 @@ const VIDEO = {
 	opacity: 0.1,
 };
 
-export const TitleSequenceFrame = ({theme, fontFamily}) => {
+const TitleSequenceFrame = ({theme, fontFamily}) => {
   const frame = useCurrentFrame();
 	return (
 		<>
@@ -67,6 +67,7 @@ export const TitleSequenceFrame = ({theme, fontFamily}) => {
 	);
 };
 
+export default TitleSequenceFrame
 const SqareBG = styled.div`
 	position: absolute;
 	width: 1246px;

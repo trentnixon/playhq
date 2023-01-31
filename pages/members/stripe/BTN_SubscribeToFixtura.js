@@ -57,3 +57,4 @@ export const BTN_SubscribeToFixtura = () => {
     </>
   );
 };
+export default BTN_SubscribeToFixtura

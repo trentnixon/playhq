@@ -85,3 +85,6 @@ export const SpringToFrom = (int,FROM,TO,effect='Default', Speed='normal')=>{
         config:SpringConfig[effect],
       })
 }
+
+const temp=()=>{ return(<></>)}
+export default temp

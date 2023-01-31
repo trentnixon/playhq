@@ -20,3 +20,4 @@ export const StepHeaderandDescription = ({ Header, Description }) => {
       </>
     );
   };
+  export default StepHeaderandDescription

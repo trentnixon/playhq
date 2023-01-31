@@ -38,3 +38,4 @@ export const BTN_ManageSubscription = () => {
     />
   );
 };
+export default BTN_ManageSubscription

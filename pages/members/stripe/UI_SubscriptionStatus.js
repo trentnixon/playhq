@@ -64,3 +64,4 @@ export const UI_SubscriptionStatus_Light = () => {
     </>
   );
 };
+export default UI_SubscriptionStatus_TEXT

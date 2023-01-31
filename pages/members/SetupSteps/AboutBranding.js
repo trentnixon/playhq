@@ -24,3 +24,4 @@ export const StepAboutBranding = ({ user, setHasUpdated }) => {
     </>
   );
 };
+export default StepAboutBranding

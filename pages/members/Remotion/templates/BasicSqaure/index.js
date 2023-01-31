@@ -14,7 +14,7 @@ import { Top5LeaderRunScorers } from "./Compositions/Top5LeaderRunScorers/index"
 
 // END
 
-export const Template_Basic_Sqaure = (props) => {
+const Template_Basic_Sqaure = (props) => {
   const { THEME, DATA, ID,AUDIO } = props;
   const {fontFamily} = loadFont();
 
@@ -41,5 +41,8 @@ export const Template_Basic_Sqaure = (props) => {
     </ThemeProvider>
   );
 };
+
+
+export default Template_Basic_Sqaure
 
 // {TEMPLATES[RENDER.THEME.VideoTemplate]}

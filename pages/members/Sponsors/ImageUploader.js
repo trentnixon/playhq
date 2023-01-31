@@ -81,7 +81,7 @@ export function UploadSponsorsLogos({ setLogo, setLogoPath, SAVEDLOGO }) {
     </Box>
   );
 }
-
+export default UploadSponsorsLogos
 const RejectedFiles = ({ rejected, setRejected }) => {
   console.log(rejected[0].errors);
   return (

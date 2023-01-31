@@ -205,6 +205,9 @@ export const CreateaSponsorForm = ({ OBJ }) => {
   );
 };
 
+export default CreateaSponsorForm
+
+
 const InputContainer = ({ Input, FORMMETA, setFORMMETA }) => {
   const [error, setError] = useState(null);
 

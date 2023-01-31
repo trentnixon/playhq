@@ -3,7 +3,7 @@ import { StepHeaderandDescription } from "./StepHeaderandDescription";
 import { Button, Center } from "@mantine/core";
 import { Wrapper } from "../../../components/Members/Common/Containers";
 import { P } from "../../../components/Members/Common/Type";
-export const StepAboutAISettings= ({ user, setHasUpdated }) => {
+const StepAboutAISettings= ({ user, setHasUpdated }) => {
   return (
     <>
       <StepHeaderandDescription
@@ -24,3 +24,6 @@ export const StepAboutAISettings= ({ user, setHasUpdated }) => {
     </>
   );
 };
+
+
+export default StepAboutAISettings

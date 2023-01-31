@@ -16,7 +16,7 @@ import {
 } from '../../../../utils/colors';
 import {calculateLetterSpacing} from '../../../../utils/copy';
 
-export const LogoClubTitleHeader = ({THEME, fontFamily}) => {
+const LogoClubTitleHeader = ({THEME, fontFamily}) => {
 	const frame = useCurrentFrame();
 
 	return (
@@ -70,6 +70,8 @@ export const LogoClubTitleHeader = ({THEME, fontFamily}) => {
 		</>
 	);
 };
+
+export default LogoClubTitleHeader
 
 const Logo = styled.div`
 	position: absolute;

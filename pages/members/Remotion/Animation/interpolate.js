@@ -15,3 +15,5 @@ export const interpolateValueByFrame=(FRAME, START, END, IN, OUT)=>{
     const opacity = interpolate(FRAME, [START, END], [IN, OUT], {extrapolateRight: "clamp",});
     return opacity;
 }
+const temp=()=>{ return(<></>)}
+export default temp

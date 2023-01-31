@@ -96,7 +96,7 @@ function convertUnixTimestamp(timestamp) {
   );
 };
 
-export default function StatsRingCard({ invoice }) {
+export function StatsRingCard({ invoice }) {
   const {
     customer_name,
     customer_email,
@@ -176,3 +176,4 @@ export default function StatsRingCard({ invoice }) {
     </Card>
   );
 }
+export default StatsRingCard

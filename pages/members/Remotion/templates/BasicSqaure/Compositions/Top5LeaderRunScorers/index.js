@@ -4,8 +4,7 @@ import { Series} from 'remotion';
 // Components
 import {LogoClubTitleHeader} from './Title';
 import {Top5PlayersMap} from './Top5Map';
-
-export const Top5LeaderRunScorers = ({AUDIO, DATA, theme, fontFamily}) => {
+const Top5LeaderRunScorers = ({AUDIO, DATA, theme, fontFamily}) => {
 
 	return (
 		<Series>
@@ -20,3 +19,6 @@ export const Top5LeaderRunScorers = ({AUDIO, DATA, theme, fontFamily}) => {
 		</Series>
 	);
 };
+
+
+export default Top5LeaderRunScorers

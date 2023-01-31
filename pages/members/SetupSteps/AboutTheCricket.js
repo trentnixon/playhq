@@ -15,3 +15,4 @@ export const StepAboutTheCricket = ({ user, setHasUpdated }) => {
     </>
   );
 };
+export default StepAboutTheCricket

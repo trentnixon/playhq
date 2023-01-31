@@ -21,7 +21,7 @@ const VIDEO = {
 	opacity: 0.1,
 };
 
-export const OutroSequenceFrame = ({theme, fontFamily}) => {
+ const OutroSequenceFrame = ({theme, fontFamily}) => {
 	const frame = useCurrentFrame();
 	return (
 		<>
@@ -110,6 +110,8 @@ export const OutroSequenceFrame = ({theme, fontFamily}) => {
 		</>
 	);
 };
+
+export default OutroSequenceFrame
 
 // Sponsors
 const SponsorpOuterContainer = styled.div`

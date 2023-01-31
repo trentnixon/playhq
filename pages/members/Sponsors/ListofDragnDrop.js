@@ -11,7 +11,7 @@ import {
   useUpdateSponsor,
   useDeleteSponsor,
 } from "../../../Hooks/useSponsorships";
-import { P, SubHeaders } from "../../../components/Members/Common/Type";
+
 const useStyles = createStyles((theme) => ({
   item: {
     backgroundColor:
@@ -31,6 +31,7 @@ const useStyles = createStyles((theme) => ({
         : theme.colors.gray[6],
   },
 }));
+
 
 export function DragnDropSponsorList({ SPONSORS, SPONSORLIMIT }) {
   // STYLES
@@ -195,6 +196,10 @@ export function DragnDropSponsorList({ SPONSORS, SPONSORLIMIT }) {
     </>
   );
 }
+
+export default DragnDropSponsorList
+
+
 
 const EditSponsor = ({ Sponsor, setHasEdit, Order }) => {
   console.log(Sponsor.attributes.Name);

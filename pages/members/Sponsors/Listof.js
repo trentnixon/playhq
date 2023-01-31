@@ -103,6 +103,9 @@ export const ListOf = ({ SPONSORS,SPONSORLIMIT,setIsCreate }) => {
   );
 };
 
+export default ListOf
+
+
 const EditSponsor = ({ Sponsor, setHasEdit }) => {
   console.log(Sponsor.attributes.Name);
   // HOOKS

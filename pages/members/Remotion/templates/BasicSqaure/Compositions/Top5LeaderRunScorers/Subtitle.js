@@ -21,3 +21,6 @@ export const Subtitle= () => {
 	);
 };
  
+
+
+export default Subtitle

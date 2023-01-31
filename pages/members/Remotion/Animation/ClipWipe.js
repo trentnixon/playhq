@@ -1,6 +1,6 @@
 import {SpringToFrom} from './RemotionSpring'
 
-const temp=()=>{ return(<></>)}
+
 
 export const FromMiddle= (START=0, EASE='fast')=>{
     return `inset(0 ${SpringToFrom(START,50,0,EASE)}% 0 ${SpringToFrom(START,50,0,EASE)}%)`
@@ -31,4 +31,5 @@ export const FromRightToLeft = (START=0, EASE='fast')=>{
 export const SquareWipe= (START=0, EASE='fast')=>{
     return `inset(${SpringToFrom(START,50,0,EASE)}% ${SpringToFrom(START,50,0,EASE)}% ${SpringToFrom(START,50,0,EASE)}% ${SpringToFrom(START,50,0,EASE)}%)`
 }
+const temp=()=>{ return(<></>)}
 export default temp

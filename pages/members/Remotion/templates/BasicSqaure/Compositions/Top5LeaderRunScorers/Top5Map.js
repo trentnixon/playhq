@@ -14,7 +14,7 @@ import {
 
 
 
-export const Top5PlayersMap = ({DATA, THEME, fontFamily})=>{
+const Top5PlayersMap = ({DATA, THEME, fontFamily})=>{
 	
 	const frame = useCurrentFrame();
   return(
@@ -92,6 +92,8 @@ export const Top5PlayersMap = ({DATA, THEME, fontFamily})=>{
   )
 }
 
+
+export default Top5PlayersMap
 
 const PlayerContainer = styled.div`
 	position: absolute;

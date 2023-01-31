@@ -1,6 +1,6 @@
 import { SwitchAssets } from "../../../components/Members/Common/Switch_Assets";
 import { StepHeaderandDescription } from "./StepHeaderandDescription";
-export const StepAboutAssets= ({ user, setHasUpdated }) => {
+const StepAboutAssets= ({ user, setHasUpdated }) => {
   return (
     <>
     
@@ -18,3 +18,5 @@ export const StepAboutAssets= ({ user, setHasUpdated }) => {
     </>
   );
 };
+
+export default StepAboutAssets

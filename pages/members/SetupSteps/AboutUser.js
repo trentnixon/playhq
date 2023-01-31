@@ -14,3 +14,4 @@ export const StepAboutUser = ({ user, setHasUpdated }) => {
     </>
   );
 };
+export default StepAboutUser
