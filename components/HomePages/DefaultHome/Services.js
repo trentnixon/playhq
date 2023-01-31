@@ -16,7 +16,7 @@ const Services = () => {
             <p>
               Our AI-powered platform allows you to effortlessly publish match
               reports and weekend summaries, keeping your members informed and
-              engaged with your club's activity.
+              engaged with your club&apos;s activity.
             </p>
           
           </div>

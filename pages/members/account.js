@@ -1,11 +1,14 @@
+// react
 import React from "react";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { useUser } from "../../lib/authContext";
-import Cookies from "js-cookie";
+
+// UTILS
 import { fetcher } from "../../lib/api";
-// components
 import { UserDetails } from "../../components/Members/UserDetails";
+import Cookies from "js-cookie";
+// PACK
 import {
   Container,
   Space,
@@ -17,22 +20,28 @@ import {
   Box,
   Divider,
 } from "@mantine/core";
+import {  IconAlertTriangle, IconUser } from "@tabler/icons";
+// Components
 import {
   MembersWrapper,
   Wrapper,
 } from "../../components/Members/Common/Containers";
 import { P, PageTitle } from "../../components/Members/Common/Type";
-import { BTN_SubscribeToFixtura } from "./stripe/BTN_SubscribeToFixtura";
-import { BTN_ManageSubscription } from "./stripe/BTN_ManageAccount";
-import { UI_SubscriptionStatus_TEXT } from "./stripe/UI_SubscriptionStatus";
+import { BTN_SubscribeToFixtura } from "../../components/Members/stripe/BTN_SubscribeToFixtura";
+import { BTN_ManageSubscription } from "../../components/Members/stripe/BTN_ManageAccount";
+import { UI_SubscriptionStatus_TEXT } from "../../components/Members/stripe/UI_SubscriptionStatus";
 import { showNotification } from "@mantine/notifications";
-import { Invoicing } from "./stripe/Invoicing";
-import {  IconAlertTriangle, IconUser } from "@tabler/icons";
+import { Invoicing } from "../../components/Members/stripe/Invoicing";
+
 import { FixturaLoading } from "../../components/Members/Common/Loading";
 import { BTN_TOINTERALLINK } from "../../components/Members/Common/utils/Buttons";
 import { SelectFixturaSetting } from "../../components/Members/Common/formelements/Select_FixturaSettings";
 import { FixturaSettings } from "../../components/Members/userFixturaSettings";
 import { useAccountDetails } from "../../lib/userContext";
+
+
+
+
 
 const qs = require("qs");
 
@@ -145,7 +154,7 @@ const Account = () => {
         <Divider size={10} color={"#f1f1f1"} />
         <Space h={50} />
       </Wrapper>
-
+ 
       <Wrapper>
         <Group position="apart">
           <Box
@@ -183,6 +192,7 @@ const Account = () => {
           <SubscriptionHeader user={userAccount} />
           <UserDetails user={userAccount} setHasUpdated={ReRender} />
           <Group pos={"center"}>
+          
             <BTN_SubscribeToFixtura />
             <BTN_ManageSubscription /> 
           </Group>

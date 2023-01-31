@@ -1,4 +1,4 @@
-import { UserDetails } from "../../../components/Members/UserDetails";
+import { UserDetails } from "../UserDetails";
 import { StepHeaderandDescription } from "./StepHeaderandDescription";
 
 export const StepAboutUser = ({ user, setHasUpdated }) => {

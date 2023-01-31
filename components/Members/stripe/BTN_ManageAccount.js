@@ -3,12 +3,12 @@ import { useEffect, useState } from "react";
 
 import { useCreateStripePortal } from "../../../Hooks/useSubscription";
 
-import { BTN_ONCLICK } from "../../../components/Members/Common/utils/Buttons";
+import { BTN_ONCLICK } from "../Common/utils/Buttons";
 import { useAccountDetails } from "../../../lib/userContext";
 
 export const BTN_ManageSubscription = () => {
   const [Portal, setPortal] = useCreateStripePortal();
-  const { account, ReRender } = useAccountDetails();
+  const { account, ReRender } = useAccountDetails(); 
   const [userAccount, setUserAccount] = useState(account);
 
 

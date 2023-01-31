@@ -1,28 +1,28 @@
+// Core
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
-
-// LIB
+// UTILS
 import { useAccountDetails } from "../../lib/userContext";
 import { useUser } from "../../lib/authContext";
-///api/orders/confirm
 import { useConfirmOrder } from "../../Hooks/useOrder";
 import {
   MembersWrapper,
   ShadowWrapper,
   Wrapper,
 } from "../../components/Members/Common/Containers";
+
 import { PageTitle, P, SubHeaders } from "../../components/Members/Common/Type";
-import { Box, Button, Center, Container, Group, Paper } from "@mantine/core";
-import { IconCheck } from "@tabler/icons";
 import {
   BTN_ONCLICK,
   BTN_TOINTERALLINK,
 } from "../../components/Members/Common/utils/Buttons";
-
+// PACK
+import { Box, Container, Group, Paper } from "@mantine/core";
+import { IconCheck } from "@tabler/icons";
 // Components
-import { CreateaSponsorForm } from "./Sponsors/TheForm";
-import { FixturaLoading } from "../../components/Members/Common/Loading";
-import { DragnDropSponsorList } from "./Sponsors/ListofDragnDrop";
+//import { FixturaLoading } from "../../components/Members/Common/Loading";
+import { CreateaSponsorForm } from "../../components/Members/Sponsors/TheForm";
+import { DragnDropSponsorList } from "../../components/Members/Sponsors/ListofDragnDrop";
 
 const SPONSORS = () => {
   // VARS

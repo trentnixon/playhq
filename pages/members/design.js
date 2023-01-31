@@ -1,10 +1,18 @@
+// Core
 import React from "react";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+// UTILS
+import { useAccountDetails } from "../../lib/userContext";
 import { useUser } from "../../lib/authContext";
 import Cookies from "js-cookie";
 import { fetcher } from "../../lib/api";
 import { P, PageTitle, SubHeaders } from "../../components/Members/Common/Type";
+import {
+  MembersWrapper,
+  Wrapper,
+} from "../../components/Members/Common/Containers";
+// PACK
 import {
   Box,
   Container,
@@ -13,20 +21,17 @@ import {
   Paper,
   SimpleGrid,
   Space,
+  Tabs
 } from "@mantine/core";
-import {
-  MembersWrapper,
-  Wrapper,
-} from "../../components/Members/Common/Containers";
-import { IconColorPicker } from "@tabler/icons";
-import RemotionPreview from "./Remotion/ThemePreviewer";
-
-import { Tabs } from "@mantine/core";
 import { IconTemplate, IconBadgeTm, IconMusic } from "@tabler/icons";
+import { IconColorPicker } from "@tabler/icons";
+// Components
+
+import RemotionPreview from "../../components/Members/Remotion/ThemePreviewer";
 import { SelectATemplate } from "../../components/Members/Common/Customiser/Design/SelectATemplate";
 import { SelectATheme } from "../../components/Members/Common/Customiser/Design/SelectATheme";
 import { SelectAudio } from "../../components/Members/Common/Customiser/Design/SelectAudio";
-import { useAccountDetails } from "../../lib/userContext";
+
 
 const qs = require("qs");
 
@@ -185,12 +190,12 @@ const RemotionPlayerContainer = (props) => {
   const { isPlaying, userAccount, setIsPlaying } = props;
   return (
     <Paper>
-      {/* <RemotionPreview
+      <RemotionPreview
         THEME={userAccount.attributes?.theme?.data?.attributes}
         TEMPLATE={userAccount.attributes?.template?.data?.attributes}
         AUDIO={userAccount.attributes?.audio_option?.data?.attributes}
         setIsPlaying={setIsPlaying}
-      /> */}
+      />
     </Paper>
   );
 };

@@ -9,11 +9,11 @@ import { CreateAccountInit } from "../../components/setup/CreateAccountInit";
 import { P } from "../../components/Members/Common/Type";
 
 // Steps
-import { StepAboutUser } from "./SetupSteps/AboutUser";
-import { StepAboutTheCricket } from "./SetupSteps/AboutTheCricket";
-import { StepAboutBranding } from "./SetupSteps/AboutBranding";
-import { StepAboutAISettings } from "./SetupSteps/AboutAIsettings";
-import { StepAboutAssets } from "./SetupSteps/AboutAssets";
+import { StepAboutUser } from "../../components/Members/SetupSteps/AboutUser";
+import { StepAboutTheCricket } from "../../components/Members/SetupSteps/AboutTheCricket";
+import { StepAboutBranding } from "../../components/Members/SetupSteps/AboutBranding";
+import { StepAboutAISettings } from "../../components/Members/SetupSteps/AboutAIsettings";
+import { StepAboutAssets } from "../../components/Members/SetupSteps/AboutAssets";
 import { FixturaLoading } from "../../components/Members/Common/Loading";
 import { BTN_ONCLICK } from "../../components/Members/Common/utils/Buttons";
 import { fetcher } from "../../lib/api";

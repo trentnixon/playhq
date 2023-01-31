@@ -27,7 +27,7 @@ import {
 import { IconColorPicker } from "@tabler/icons";
 import { useGetAIExample } from "../../Hooks/useAI";
 import { FixturaLoading } from "../../components/Members/Common/Loading";
-import RemotionPreview from "./Remotion/ThemePreviewer";
+import RemotionPreview from "../../components/Members/Remotion/ThemePreviewer";
 import { useAccountDetails } from "../../lib/userContext";
 const qs = require("qs");
 
@@ -139,11 +139,11 @@ const Account = () => {
               height: parseInt(1920) * 0.25,
             })}
           >
-            {/* <RemotionPreview
+            <RemotionPreview
               THEME={userAccount.attributes?.theme?.data?.attributes}
               TEMPLATE={userAccount.attributes?.template?.data?.attributes}
               AUDIO={userAccount.attributes?.audio_option?.data?.attributes}
-            /> */}
+            />
           </Paper>
         </SimpleGrid>
       </Container>

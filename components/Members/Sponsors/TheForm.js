@@ -9,16 +9,16 @@ import {
 
 import { DatePicker } from "@mantine/dates";
 import { useEffect, useState } from "react";
-import { FixturaLoading } from "../../../components/Members/Common/Loading";
+import { FixturaLoading } from "../Common/Loading";
 import {
   useCreateSponsor,
   useUpdateSponsor,
 } from "../../../Hooks/useSponsorships";
 import { UploadSponsorsLogos } from "./ImageUploader";
 import { IconCheck } from "@tabler/icons";
-import { P } from "../../../components/Members/Common/Type";
+import { P } from "../Common/Type";
 import { useAccountDetails } from "../../../lib/userContext";
-import { BTN_ONCLICK } from "../../../components/Members/Common/utils/Buttons";
+import { BTN_ONCLICK } from "../Common/utils/Buttons";
 const PRIMARY_COL_HEIGHT = 300;
 
 export const CreateaSponsorForm = ({ OBJ }) => {
@@ -40,7 +40,7 @@ export const CreateaSponsorForm = ({ OBJ }) => {
   const [formErrors, setFormErrors] = useState({
     Name: "",
     URL: "",
-    Tagline: "",
+    Tagline: "", 
   });
 
   const validateForm = () => {

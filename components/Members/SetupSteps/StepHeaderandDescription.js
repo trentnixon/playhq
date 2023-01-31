@@ -1,6 +1,6 @@
 import { Space } from "@mantine/core";
-import { Wrapper } from "../../../components/Members/Common/Containers";
-import { P } from "../../../components/Members/Common/Type";
+import { Wrapper } from "../Common/Containers";
+import { P } from "../Common/Type";
 
 export const StepHeaderandDescription = ({ Header, Description }) => {
     return (

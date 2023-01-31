@@ -1,15 +1,21 @@
+// Core
 import React from "react";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+// UTILS
+import { useAccountDetails } from "../../lib/userContext";
+import { useGetAIExample } from "../../Hooks/useAI";
 import { useUser } from "../../lib/authContext";
 import { showNotification } from "@mantine/notifications";
-import Cookies from "js-cookie";
-
 import { fetcher } from "../../lib/api";
 import { P, PageTitle, SubHeaders } from "../../components/Members/Common/Type";
-// components
-
-import { FixturaAIsettings } from "../../components/Members/userFixturaAIsettings";
+import {
+  MembersWrapper,
+  Wrapper,
+} from "../../components/Members/Common/Containers";
+import { FixturaLoading } from "../../components/Members/Common/Loading";
+// PACK
+import Cookies from "js-cookie";
 import {
   Box,
   Container,
@@ -19,15 +25,9 @@ import {
   SimpleGrid,
   Space,
 } from "@mantine/core";
-import {
-  MembersWrapper,
-  Wrapper,
-} from "../../components/Members/Common/Containers";
 import { IconColorPicker } from "@tabler/icons";
-import { useGetAIExample } from "../../Hooks/useAI";
-import { FixturaLoading } from "../../components/Members/Common/Loading";
-import { useAccountDetails } from "../../lib/userContext";
-
+// components
+import { FixturaAIsettings } from "../../components/Members/userFixturaAIsettings";
 const qs = require("qs");
 
 const query = qs.stringify(
@@ -75,8 +75,9 @@ const Account = () => {
     }
   }, [account]);
 
-  if (!user) return false;
 
+  if (!user) return false;
+  if(userAccount===null) return(<FixturaLoading />)
   return (
     <MembersWrapper>
       <PageTitle Copy={"AI Assistant"} ICON={<IconColorPicker size={40} />} />

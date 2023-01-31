@@ -18,6 +18,7 @@ const OurWorks = ({ CaseStudies }) => {
             {CaseStudies.data.map((study, i) => {
               return (
                 <div
+                  key={i}
                   className="col-lg-3 col-sm-6"
                   data-aos="fade-up"
                   data-aos-duration="1200"

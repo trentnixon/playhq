@@ -10,10 +10,10 @@ import {
   Button,
 } from "@mantine/core";
 import { useGetInvoice } from "../../../Hooks/useInvoicing";
-import { ShadowWrapper } from "../../../components/Members/Common/Containers";
-import { SubHeaders } from "../../../components/Members/Common/Type";
-import { FixturaLoading } from "../../../components/Members/Common/Loading";
-import { BTN_TOEXTLINK } from "../../../components/Members/Common/utils/Buttons";
+import { ShadowWrapper } from "../Common/Containers";
+import { SubHeaders } from "../Common/Type";
+import { FixturaLoading } from "../Common/Loading";
+import { BTN_TOEXTLINK } from "../Common/utils/Buttons";
 
 const useStyles = createStyles((theme) => ({
   card: {
