@@ -12,28 +12,11 @@ import "swiper/css/bundle";
 
 import Layout from "../components/Layouts/Layout";
 
-/* // Software Startup Home Style
-import "../styles/software-home-page.css";
-// App Showcase Home Style
-import "../styles/app-home-page.css";
-// Digital Marketing Home Page Style
-import "../styles/digital-marketing-home-page.css";
-// Personal Portfolio Home Style
-import "../styles/personal-portfolio-home-page.css";
-// Business Consulting Home Page Style
-import "../styles/business-consulting-home-page.css";
-// SaaS Startup Home Page Style
-import "../styles/saas-startup-home-page.css";
-// Freelancer Portfolio Home Page Style
-import "../styles/freelancer-portfolio-home-page.css";
-// Cyber Security Agency Home Page Style
-import "../styles/cyber-security-agency-home-page.css"; */
-
 // Global Style
 import "../styles/style.scss";
 import "../styles/responsive.scss";
 
-import Head from "next/head";
+//import Head from "next/head";
 import GoTop from "../components/Layouts/GoTop";
 import { MantineProviderWrapper } from "../utils/MantineTheme";
 import { NotificationsProvider } from "@mantine/notifications";
