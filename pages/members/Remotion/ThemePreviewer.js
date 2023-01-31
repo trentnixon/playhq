@@ -1,6 +1,7 @@
 import { Center } from "@mantine/core";
 import { Player } from "@remotion/player";
 import { useEffect, useRef, useState } from "react";
+import { FixturaLoading } from "../../../components/Members/Common/Loading";
 import { useAccountDetails } from "../../../lib/userContext";
 import { Template_Basic_Sqaure } from "./templates/BasicSqaure/index";
 import DATA from "./utils/Data.json";
