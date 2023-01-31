@@ -133,7 +133,7 @@ const TermsConditions = () => {
           </p>
           <h1>User content</h1>
           <p>
-            In these terms and conditions, "your user content" means material
+            In these terms and conditions, &quot;your user content&quot; means material
             (including without limitation text, images, audio material, video
             material and audio-visual material) that you submit to our website,
             for whatever purpose.
