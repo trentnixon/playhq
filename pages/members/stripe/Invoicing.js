@@ -68,7 +68,7 @@ function convertUnixTimestamp(timestamp) {
   return `${day}-${month}-${year}`;
 }
 
-export const Invoicing = () => {
+ export const Invoicing = () => {
   const [invoice, Getinvoice] = useGetInvoice();
 
   useEffect(() => {
@@ -96,7 +96,7 @@ export const Invoicing = () => {
   );
 };
 
-export function StatsRingCard({ invoice }) {
+export default function StatsRingCard({ invoice }) {
   const {
     customer_name,
     customer_email,
