@@ -85,7 +85,7 @@ export const FixturaSettings = ({ user, setHasUpdated }) => {
 
   const stats = data.map((stat) => (
     <Paper
-      key={i}
+      key={stat.title}
       radius="md"
       shadow="lg"
       withBorder
