@@ -14,8 +14,8 @@ const TermsConditions = () => {
         position={`top center`}
       />
 
-      <div class="text-container ptb-100">
-        <div class="container">
+      <div className="text-container ptb-100">
+        <div className="container">
           <h1>USER AGREEMENT</h1>
           <p>
             This User Agreement ("Agreement") is between Fixtura and the cricket

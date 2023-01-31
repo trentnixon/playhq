@@ -13,8 +13,8 @@ const PrivacyPolicy = () => {
         position={`center center`}
       />
 
-      <div class="text-container ptb-100">
-        <div class="container">
+      <div className="text-container ptb-100">
+        <div className="container">
           <h1>Privacy Policy</h1>
           <p>
             Fixtura is committed to protecting your privacy and personal

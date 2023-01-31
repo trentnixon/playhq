@@ -16,7 +16,7 @@ const ResetPasswordForm = () => {
 
     // Make a request to the Strapi API to reset the password
     const response = await fetch(
-      "http://localhost:1337/api/auth/reset-password",
+      "https://playhq-backend.herokuapp.com/api/auth/reset-password",
       {
         method: "POST",
         headers: {

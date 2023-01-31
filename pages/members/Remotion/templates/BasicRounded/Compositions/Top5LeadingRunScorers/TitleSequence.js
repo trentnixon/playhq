@@ -61,15 +61,3 @@ const TitleSequence = ({ fps=30, durationInFrames }) => {
 };
 
 export default TitleSequence;
-
-/*
-<img
-        src={`http://localhost:3000/public/images/LogoF.png`}
-        alt="Title"
-        style={{
-          opacity,
-          transform,
-          width: "50%",
-        }}
-      />
-*/

@@ -15,7 +15,7 @@ const ForgotPasswordForm = () => {
     setMessage("Sending password reset email...");
 
     try {
-      await axios.post("http://localhost:1337/api/auth/forgot-password", {
+      await axios.post("https://playhq-backend.herokuapp.com/api/auth/forgot-password", {
         email,
       });
       setMessage("A password reset email has been sent to your email address.");

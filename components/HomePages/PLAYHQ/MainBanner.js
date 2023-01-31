@@ -47,7 +47,7 @@ const MainBanner = () => {
                        /*  onClick={() => setToggler(!toggler)} */
                         className="video-btn"
                       >
-                        <i class="fa-solid fa-user-plus"></i>
+                        <i className="fa-solid fa-user-plus"></i>
                       </a>
                     </Link>
                   </div>

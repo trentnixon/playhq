@@ -13,8 +13,8 @@ const TermsConditions = () => {
         position={`center center`}
       />
 
-      <div class="text-container ptb-100">
-        <div class="container">
+      <div className="text-container ptb-100">
+        <div className="container">
           <h1>Introduction</h1>
           <p>
             These Website Standard Terms and Conditions written on this webpage

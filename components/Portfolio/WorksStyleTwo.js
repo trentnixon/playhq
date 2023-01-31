@@ -5,6 +5,7 @@ import Link from "next/link";
 
 const WorksStyleTwo = ({ CaseStudies }) => {
 
+
   const VAR='attributes.asset_category.data.attributes.Identifier'
 
   function groupByIdentifier(array) {
@@ -17,7 +18,7 @@ const WorksStyleTwo = ({ CaseStudies }) => {
       grouped[identifier].push(item);
     });
     return grouped;
-  }
+  } 
 
 
   
@@ -45,11 +46,11 @@ const WorksStyleTwo = ({ CaseStudies }) => {
                   <div className="row justify-content-center">
             {groupByIdentifier(CaseStudies.data,VAR)[key].map((study, i) => {
              //data[0].attributes.asset_category.data.attributes.Identifier
-             console.log(study.attributes.asset_category.data.attributes.Identifier)
+             console.log(study)
               return (
                 <div className="col-lg-4 col-sm-6">
                   <div className="work-card">
-                    <img src={`http://localhost:1337${study.attributes.Cover.data.attributes.formats.medium.url}`} alt="image" />
+                    <img src={`${study.attributes.Cover.data.attributes.url}`} alt="image" />
 
                     <div className="content">
                       <h3>
