@@ -1,7 +1,14 @@
-import { useState, useEffect } from "react";
+import Cookies from "js-cookie";
+import { useState } from "react";
 import { fetcher } from "../lib/api";
+import {
+  getUserFromLocalCookie,
+  getAccountFromLocalCookie,
+  getAccountIDFromServer,
+  getTokenFromLocalCookie,
+} from "../lib/auth";
 const qs = require("qs");
-import { getAccountIDFromServer, getTokenFromLocalCookie } from "../lib/auth";
+
 
 export const useAccount = (ctx) => {
   const [data, setData] = useState(null);
@@ -23,8 +30,7 @@ export const useAccount = (ctx) => {
         "assets",
         "order",
         "sponsors",
-        "sponsors.Logo"
-        
+        "sponsors.Logo",
       ],
     },
     {
@@ -37,7 +43,6 @@ export const useAccount = (ctx) => {
     const JWT = getTokenFromLocalCookie();
     //console.log("fetchData accounts on id ", ID);
     if (ID !== undefined) {
-      
       const res = await fetcher(
         `${process.env.NEXT_PUBLIC_STRAPI_URL}/accounts/${ID.account?.id}?${query}`,
         {
@@ -55,4 +60,35 @@ export const useAccount = (ctx) => {
   };
 
   return [data, fetchData];
+};
+
+export const useSetAccountTrue = (ctx) => {
+  const [AccountTrue, SetAccountTrue] = useState(null);
+
+  const CreateSetAccountTrue = async (_ID) => {
+    SetAccountTrue(false)
+    const ID = await getAccountIDFromServer();
+    if (ID !== undefined) {
+      const res = await fetcher(
+        `${process.env.NEXT_PUBLIC_STRAPI_URL}/accounts/${_ID}`,
+        {
+          method: "PUT",
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${Cookies.get("jwt")}`,
+          },
+          body: JSON.stringify({
+            data: {
+              isSetup: true,
+            },
+          }),
+        }
+      );
+      console.log(res)
+      SetAccountTrue(res.data);
+    }
+  };
+
+  return [AccountTrue, CreateSetAccountTrue]; 
 };
