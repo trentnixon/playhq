@@ -13,25 +13,11 @@ import {
   Wrapper,
 } from "../../components/Members/Common/Containers";
 // PACK
-import {
-  Box,
-  Container,
-  Flex,
-  Group,
-  Paper,
-  SimpleGrid,
-  Space,
-  Tabs
-} from "@mantine/core";
-import { IconTemplate, IconBadgeTm, IconMusic } from "@tabler/icons";
+import { Box, Container, Group, Space } from "@mantine/core";
+
 import { IconColorPicker } from "@tabler/icons";
 // Components
-
-import RemotionPreview from "../../components/Members/Remotion/ThemePreviewer";
-import { SelectATemplate } from "../../components/Members/Common/Customiser/Design/SelectATemplate";
-import { SelectATheme } from "../../components/Members/Common/Customiser/Design/SelectATheme";
-import { SelectAudio } from "../../components/Members/Common/Customiser/Design/SelectAudio";
-
+import { DesignTabs } from "../../components/Members/Design/DesignTabs";
 
 const qs = require("qs");
 
@@ -52,7 +38,7 @@ const query = qs.stringify(
 );
 
 const Design = () => {
-  const { account, ReRender } = useAccountDetails();
+  const { account } = useAccountDetails();
   const [userAccount, setUserAccount] = useState(account);
 
   const [isPlaying, setIsPlaying] = useState(false);
@@ -98,11 +84,6 @@ const Design = () => {
           userAccount={userAccount}
           setIsPlaying={setIsPlaying}
         />
-
-        <SimpleGrid
-          cols={2}
-          breakpoints={[{ maxWidth: "sm", cols: 1, spacing: "md" }]}
-        ></SimpleGrid>
       </Container>
     </MembersWrapper>
   );
@@ -128,127 +109,3 @@ Design.getInitialProps = async (ctx) => {
   };
 };
 export default Design;
-
-/*
-This component renders a set of tabs, each with its own icon and label. 
-It uses the "useState" hook to manage the active tab state and it also renders additional UI 
-elements and other functional components that are being passed the props from the parent component.
-It also uses some props such as variant, color and position, these are used to style the tab and
- other elements as per the requirements.
-*/
-function DesignTabs(props) {
-  const [activeTab, setActiveTab] = useState("Templates");
-
-  return (
-    <Tabs 
-      value={activeTab}
-      onTabChange={setActiveTab}
-      variant="pills"
-      color="blue.8"
-    >
-      <Tabs.List position="center" grow={true}>
-        <Tabs.Tab value="Templates" icon={<IconTemplate size={14} />}>
-          <P
-            marginBottom={0}
-            color={activeTab === "Templates" ? 0 : 2}
-            Weight={400}
-            Copy={`Templates`}
-          />
-        </Tabs.Tab>
-        <Tabs.Tab value="Branding" icon={<IconBadgeTm size={14} />}>
-          <P
-            marginBottom={0}
-            color={activeTab === "Branding" ? 0 : 2}
-            Weight={400}
-            Copy={`Branding`}
-          />
-        </Tabs.Tab>
-        <Tabs.Tab value="Audio options" icon={<IconMusic size={14} />}>
-          <P
-            marginBottom={0}
-            color={activeTab === "Audio options" ? 0 : 2}
-            Weight={400}
-            Copy={`Audio options`}
-          />
-        </Tabs.Tab>
-      </Tabs.List>
-
-      <Space h={20} />
-      <P
-        Copy={`Customize your assets to match your club's unique style by selecting an option from the template, theme, and audio list. Make sure your assets stand out and effectively promote your club or association.`}
-      />
-
-      <Flex wrap="wrap">
-        <TABCONTENT {...props} />
-        <RemotionPlayerContainer {...props} />
-      </Flex>
-    </Tabs>
-  );
-}
-
-const RemotionPlayerContainer = (props) => {
-  const { isPlaying, userAccount, setIsPlaying } = props;
-  return (
-    <Paper>
-      <RemotionPreview
-        THEME={userAccount.attributes?.theme?.data?.attributes}
-        TEMPLATE={userAccount.attributes?.template?.data?.attributes}
-        AUDIO={userAccount.attributes?.audio_option?.data?.attributes}
-        setIsPlaying={setIsPlaying}
-      />
-    </Paper>
-  );
-};
-
-const TABCONTENT = (props) => {
-  const { isPlaying } = props;
-  //const [activeTab, setActiveTab] = useState("Templates");
-  const [width, setWidth] = useState(0);
-  function getContainerWidth() {
-    if (width < 890) {
-      return "100%";
-    } else if (width >= 890 && width < 980) {
-      return "450px";
-    } else if (width >= 980 && width < 1124) {
-      return "550px";
-    } else if (width >= 1124) {
-      return "700px";
-    }
-  }
-  useEffect(() => {
-    function handleResize() {
-      setWidth(window.innerWidth);
-    }
-    if (width === 0) {
-      handleResize();
-    }
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-  return (
-    <Paper
-      radius="md"
-      shadow="0"
-      p="lg"
-      sx={(theme) => ({
-        backgroundColor: theme.white,
-        width: getContainerWidth(),
-      })}
-    >
-      <Tabs.Panel value="Templates" pt="xs">
-        <SelectATemplate />
-      </Tabs.Panel>
-
-      <Tabs.Panel value="Branding" pt="xs">
-        <SelectATheme />
-      </Tabs.Panel>
-
-      <Tabs.Panel value="Audio options" pt="xs">
-        <SelectAudio isPlaying={isPlaying} />
-      </Tabs.Panel>
-    </Paper>
-  );
-};

@@ -54,7 +54,7 @@ export const useAssignDesignElement = () => {
         */
     setDesignElement(true);
     try {
-      console.log("CreateDesignElement");
+      //console.log("CreateDesignElement");
       const response = await fetcher(
         `${process.env.NEXT_PUBLIC_STRAPI_URL}/${OBJ.CollectionSaveTo}/${OBJ.COLLECTIONID}`,
         {
@@ -71,8 +71,6 @@ export const useAssignDesignElement = () => {
           }),
         }
       );
-
-      console.log(response.data.id);
       setDesignElement(response);
     } catch (err) {
       setDesignElement(null);

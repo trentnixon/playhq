@@ -63,7 +63,6 @@ export const SelectATemplate = () => {
     <Table>
       <tbody>
         {GetElement.map((item, i) => {
-          //console.log(item);
           return (
             <tr
               key={i}
@@ -83,12 +82,12 @@ export const SelectATemplate = () => {
                   Copy={item.attributes.Name}
                 />
               </td>
-             
+
               <td>
                 {userAccount.attributes.template.data.id === item.id ? (
-                 <Center>
-                 <IconCircleCheck color={theme.colors.gray[2]}/>
-              </Center>
+                  <Center>
+                    <IconCircleCheck color={theme.colors.gray[2]} />
+                  </Center>
                 ) : (
                   <Center>
                     <BTN_ONCLICK

@@ -9,7 +9,6 @@ import DATA from "./utils/Data.json";
 
 const RemotionPreview = ({ setIsPlaying }) => {
   const { account, ReRender } = useAccountDetails();
-  
   const [userAccount, setUserAccount] = useState(account);
 
   const ID = "Top5LeadingRunScorers";
@@ -44,9 +43,10 @@ const RemotionPreview = ({ setIsPlaying }) => {
     };
   }, []);
 
+  useEffect(() => { console.log(userAccount); }, [userAccount]);
   useEffect(() => {
-    console.log(userAccount);
-  }, [userAccount]);
+    setUserAccount(account)
+  }, [account]);
   if (userAccount === null) {
     return <FixturaLoading />;
   }

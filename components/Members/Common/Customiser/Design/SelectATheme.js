@@ -8,7 +8,7 @@ import {
   useMantineTheme,
 } from "@mantine/core";
 import {
-  useAssignDesignElement,
+  useAssignDesignElement, 
   useGETDesignElement,
 } from "../../../../../Hooks/useCustomizer";
 import { BTN_ONCLICK } from "../../utils/Buttons";
@@ -37,7 +37,7 @@ export const SelectATheme = () => {
   const [loading, setLoading] = useState(false);
   const [createNew, setCreateNew] = useState(false);
   // Assign Hook
-  const [DesignElement, CreateDesignElement] = useAssignDesignElement();
+  const [DesignElement, CreateDesignElement] = useAssignDesignElement(); 
   const [GetElement, FetchElement] = useGETDesignElement();
 
   // Fetch Design Element
@@ -66,7 +66,10 @@ export const SelectATheme = () => {
   };
   // change UI on return Value
   useEffect(() => {
-    ReRender();
+    if(DesignElement != true){
+      console.log("NEW THEME", DesignElement)
+      ReRender();
+    }
   }, [DesignElement]);
 
   useEffect(() => {}, [userAccount]);
@@ -99,6 +102,8 @@ export const SelectATheme = () => {
     </>
   );
 };
+
+
 
 const ColorTable = (props) => {
   const { GetElement, userAccount, StoreUSerChange } = props;

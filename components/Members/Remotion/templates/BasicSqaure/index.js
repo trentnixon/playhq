@@ -18,7 +18,7 @@ export const Template_Basic_Sqaure = (props) => {
   const { THEME, DATA, ID,AUDIO } = props;
   const {fontFamily} = loadFont();
  
-  console.log(THEME)
+  //console.log(THEME)
 
   const TEMPLATES = { 
     Top5LeadingRunScorers: <Top5LeaderRunScorers DATA={DATA} theme={THEME.Theme} fontFamily={fontFamily}/>,
