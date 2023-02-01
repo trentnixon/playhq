@@ -51,7 +51,7 @@ export const P = (props) => {
     marginBottom = "14px",
     textAlign = "left",
     lineHeight = "1.2em",
-    textTransform = "normal",
+    textTransform = "normal", 
     fontStyle='normal'
   } = props;
   return (

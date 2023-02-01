@@ -3,7 +3,7 @@ import { fetcher } from "../../../../lib/api";
 import Cookies from "js-cookie";
 import { Select, Button, Group, Box, ActionIcon, Loader } from "@mantine/core";
 
-import { IconSquareX, IconEdit } from "@tabler/icons";
+import { IconSquareX, IconEdit, IconCheck } from "@tabler/icons";
 import { P } from "../Type";
 import { FixturaLoading } from "../Loading";
 import { BTN_ONCLICK } from "../utils/Buttons";
@@ -50,7 +50,7 @@ export function SelectFixturaSetting({
     setLoading(true);
     setError(null);
 
-    try { 
+    try {
       const response = await fetcher(
         `${process.env.NEXT_PUBLIC_STRAPI_URL}/${CollectionSaveTo}/${COLLECTIONID}`,
         {
@@ -132,7 +132,7 @@ const UI_WithSelectedAndButton = ({
     <Group position="apart">
       <Box>
         {error ? (
-          <p className="text-danger">{error}</p>
+          <P Copy={error} />
         ) : showSelect ? (
           <Select
             onChange={handleChange}
@@ -140,7 +140,26 @@ const UI_WithSelectedAndButton = ({
             data={Data}
           />
         ) : (
-          <p>Selected: {selected ? selected.Name : "None"}</p>
+          <Group>
+            <P
+              textTransform={`uppercase`}
+              size={`sm`}
+              marginBottom={0}
+              Copy={`${selected ? selected.Name : "Select Option"}`}
+            />
+            {selected ? (
+              <ActionIcon
+                variant="filled"
+                sx={(theme) => ({
+                  backgroundColor: theme.colors.members[6],
+                })}
+              >
+                <IconCheck size={18} />
+              </ActionIcon>
+            ) : (
+              false
+            )}
+          </Group>
         )}
       </Box>
 

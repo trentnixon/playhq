@@ -6,11 +6,11 @@ const Emailconfirmationredirection = () => {
   return (
     <>
       <NavbarTwo />
-      <PageBanner pageTitle="SIGN UP" BGImage="/images/page-banner1.jpg" />
+      <PageBanner pageTitle="SIGN UP" BGImage="/images/BG-Images/0D5A3369.jpg" />
       <div className="contact-form ptb-100">
         <div className="contact-title">
           <h2>Email Confirmation Complete</h2>
-          <p>
+          <p> 
             Thank you for confirming your email address! Your registration for a
             Fixtura account is now complete, and you are just a few steps away
             from enhancing your club&apos;s social media presence with our

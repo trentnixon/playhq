@@ -1,6 +1,6 @@
-import { Wrapper } from "../../../components/Members/Common/Containers";
-import { P } from "../../../components/Members/Common/Type";
-import { FixturaCustomiser } from "../../../components/Members/userFixturaCustomiser";
+import { Wrapper } from "../../../../components/Members/Common/Containers";
+import { P } from "../../../../components/Members/Common/Type";
+import { FixturaCustomiser } from "../../../../components/Members/userFixturaCustomiser";
 import { StepHeaderandDescription } from "./StepHeaderandDescription";
 
 export const StepAboutBranding = ({ user, setHasUpdated }) => {

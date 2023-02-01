@@ -1,4 +1,4 @@
-import { SetupInputs } from "../../../components/Members/userFixturaSettings";
+import { SetupInputs } from "../../../../components/Members/userFixturaSettings";
 import { StepHeaderandDescription } from "./StepHeaderandDescription";
 
 export const StepAboutTheCricket = ({ user, setHasUpdated }) => {

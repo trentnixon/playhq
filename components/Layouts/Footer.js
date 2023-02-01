@@ -26,22 +26,22 @@ const Footer = () => {
 
                 <ul className="social-links">
                   <li>
-                    <a href="https://www.facebook.com/" target="_blank" without rel="noreferrer">
+                    <a href="https://www.facebook.com/" target="_blank" rel="noreferrer">
                       <i className="fa-brands fa-facebook-f"></i>
                     </a>
                   </li>
                   <li>
-                    <a href="https://twitter.com/" target="_blank" without rel="noreferrer">
+                    <a href="https://twitter.com/" target="_blank" rel="noreferrer">
                       <i className="fa-brands fa-twitter"></i>
                     </a>
                   </li>
                   <li>
-                    <a href="https://linkedin.com/" target="_blank" without rel="noreferrer">
+                    <a href="https://linkedin.com/" target="_blank" rel="noreferrer">
                       <i className="fa-brands fa-linkedin-in"></i>
                     </a>
                   </li>
                   <li>
-                    <a href="https://www.instagram.com/" target="_blank" without rel="noreferrer">
+                    <a href="https://www.instagram.com/" target="_blank" rel="noreferrer">
                       <i className="fa-brands fa-instagram"></i>
                     </a>
                   </li>
@@ -147,7 +147,7 @@ const Footer = () => {
           <div className="container">
             <p>
               Copyright &copy; {currentYear} Pungent. All Rights Reserved By{" "}
-              <a href="https://envytheme.com" target="_blank" without rel="noreferrer">
+              <a href="https://envytheme.com" target="_blank" rel="noreferrer">
                 EnvyTheme
               </a>
             </p>

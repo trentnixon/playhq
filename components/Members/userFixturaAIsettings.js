@@ -7,8 +7,9 @@ import { ShadowWrapper, Wrapper } from "./Common/Containers";
 import { Space } from "@mantine/core";
 
 //Components
-import { StepHeaderandDescription } from "./SetupSteps/StepHeaderandDescription";
+
 import { SelectFixturaSetting } from "./Common/formelements/Select_FixturaSettings";
+import {StepHeaderandDescription} from "./SetupSteps/Steps/StepHeaderandDescription";
 
 export const FixturaAIsettings = ({
   user,

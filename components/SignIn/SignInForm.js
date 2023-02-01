@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { fetcher } from "../../lib/api";
 import { setToken } from "../../lib/auth";
 import { useUser } from "../../lib/authContext";
 import UserLoggedIn from './LoginSuccess'
+import { useLogUser } from "../../Hooks/useAuthLocal";
 // Form initial state
 const INITIAL_STATE = {
   email: "",
@@ -12,7 +13,7 @@ const INITIAL_STATE = {
 
 const SignInForm = () => {
   const [contact, setContact] = useState(INITIAL_STATE);
-
+  const [LogUser, CreateLogUser] = useLogUser()
   // user Context
   const { user, loading } = useUser();
 
@@ -22,7 +23,7 @@ const SignInForm = () => {
     // console.log(contact)
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e) => { 
     e.preventDefault();
     try {
       const { email, password } = contact;
@@ -30,23 +31,16 @@ const SignInForm = () => {
         identifier: email,
         password: password,
       };
-      const data = await fetcher(
-        `${process.env.NEXT_PUBLIC_STRAPI_URL}/auth/local`,
-        {
-          method: "POST",
-          headers: {
-            Accept: "application/json",
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(loginInfo),
-        }
-      );
-
-      setToken(data);
+      CreateLogUser(loginInfo)
     } catch (error) {
       console.log(error);
     }
   };
+
+  useEffect(()=>{
+    console.log(LogUser)
+  },[LogUser])
+
 
   if (user) return <UserLoggedIn user={user} />;
   return (

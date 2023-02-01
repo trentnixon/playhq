@@ -1,4 +1,5 @@
-import { Button, Group, Box, Space, Loader } from "@mantine/core";
+import { Button, Group, Box, Space, Loader, ActionIcon } from "@mantine/core";
+import { IconCheck } from "@tabler/icons";
 import Cookies from "js-cookie";
 
 import { useState } from "react";
@@ -55,6 +56,7 @@ export const Input_FixturaSetting = ({ Input, user, setHasUpdated }) => {
     }
   };
 
+  console.log(user?.attributes[Input.Field]);
   return (
     <>
       <LabelMe label={Input.Label} />
@@ -62,7 +64,41 @@ export const Input_FixturaSetting = ({ Input, user, setHasUpdated }) => {
         <Group position="apart">
           <Box>
             {!editing ? (
-              <P Copy={user?.attributes[Input.Field]} marginBottom={0} />
+              <Group position="apart">
+                
+                <Box
+                  sx={(theme) => ({
+                    padding: theme.spacing.md,
+                    border: `1px solid ${theme.colors.members[1]}`,
+                    backgroundColor:
+                      theme.colors.members[
+                        user?.attributes[Input.Field] === null ? 1 : 3
+                      ],
+                    borderRadius: "5px",
+                    textAlign: "right",
+                  })}
+                >
+                  {user?.attributes[Input.Field] === null ? (
+                    <P Copy={"Required"} color={8} marginBottom={0} />
+                  ) : (
+                    <P
+                      Copy={user?.attributes[Input.Field]}
+                      color={0}
+                      marginBottom={0}
+                    />
+                  )}
+                </Box>
+                {user?.attributes[Input.Field] === null ? (
+                    false
+                  ) : (
+                    <ActionIcon variant="filled"
+                    sx={(theme) => ({
+                     backgroundColor: theme.colors.members[6]
+                   })}
+                   > <IconCheck size={18} /></ActionIcon>
+                  )}
+              
+              </Group>
             ) : (
               <div className="form-group">
                 {loading ? (
@@ -83,7 +119,11 @@ export const Input_FixturaSetting = ({ Input, user, setHasUpdated }) => {
           <Box>
             <Group position="right">
               {!editing ? (
-                <BTN_ONCLICK LABEL="Edit" HANDLE={() => setEditing(true)} THEME="cta"/>
+                <BTN_ONCLICK
+                  LABEL="Edit"
+                  HANDLE={() => setEditing(true)}
+                  THEME="cta"
+                />
               ) : (
                 <>
                   <BTN_ONCLICK
@@ -95,7 +135,7 @@ export const Input_FixturaSetting = ({ Input, user, setHasUpdated }) => {
                     LABEL="Save"
                     HANDLE={handleSubmit}
                     idDisabled={disabled}
-                    THEME='success'
+                    THEME="success"
                   />
                 </>
               )}

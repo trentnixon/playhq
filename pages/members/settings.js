@@ -22,6 +22,7 @@ import { IconAlertTriangle, IconHome } from "@tabler/icons";
 import { useAccount } from "../../Hooks/useAccount";
 import { showNotification } from "@mantine/notifications";
 import { useAccountDetails } from "../../lib/userContext";
+import { FixturaLoading } from "../../components/Members/Common/Loading";
 const qs = require("qs");
 
 const query = qs.stringify(
@@ -73,8 +74,11 @@ const Overview = () => {
     }
   }, [account]);
 
-  if (!user) return <>Loading</>;
-  if (Response === null) return <>Loading</>;
+  if (!user) return <FixturaLoading />;
+  if (Response === null) return <FixturaLoading />;
+  if (userAccount === null) {
+    return <FixturaLoading />;
+  }
   return (
     <MembersWrapper>
       <PageTitle Copy={"Overview"} ICON={<IconHome size={40} />} />

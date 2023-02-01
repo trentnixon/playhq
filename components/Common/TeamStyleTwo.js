@@ -29,30 +29,30 @@ const TeamStyleTwo = () => {
                       <div className="d-table-cell">
                         <ul>
                           <li>
-                            <a href="linkedin.com" target="_blank" without rel="noreferrer">
+                            <a href="linkedin.com" target="_blank" rel="noreferrer">
                               <i className="fa-brands fa-linkedin-in"></i>
                             </a>
                           </li>
                           <li>
-                            <a href="https://twitter.com/" target="_blank" without rel="noreferrer">
+                            <a href="https://twitter.com/" target="_blank" rel="noreferrer">
                               <i className="fa-brands fa-twitter"></i>
                             </a>
                           </li>
                           <li>
-                            <a href="https://www.facebook.com/" target="_blank" without rel="noreferrer">
+                            <a href="https://www.facebook.com/" target="_blank" rel="noreferrer">
                               <i className="fa-brands fa-facebook-f"></i>
                             </a>
                           </li>
                           <li>
                             <a
                               href="https://www.instagram.com/"
-                              target="_blank" without rel="noreferrer"
+                              target="_blank" rel="noreferrer"
                             >
                               <i className="fa-brands fa-instagram"></i>
                             </a>
                           </li>
                           <li>
-                            <a href="https://dribbble.com/" target="_blank" without rel="noreferrer">
+                            <a href="https://dribbble.com/" target="_blank" rel="noreferrer">
                               <i className="fa-brands fa-dribbble"></i>
                             </a>
                           </li>
@@ -84,30 +84,30 @@ const TeamStyleTwo = () => {
                       <div className="d-table-cell">
                         <ul>
                           <li>
-                            <a href="linkedin.com" target="_blank" without rel="noreferrer">
+                            <a href="linkedin.com" target="_blank" rel="noreferrer">
                               <i className="fa-brands fa-linkedin-in"></i>
                             </a>
                           </li>
                           <li>
-                            <a href="https://twitter.com/" target="_blank" without rel="noreferrer">
+                            <a href="https://twitter.com/" target="_blank" rel="noreferrer">
                               <i className="fa-brands fa-twitter"></i>
                             </a>
                           </li>
                           <li>
-                            <a href="https://www.facebook.com/" target="_blank" without rel="noreferrer">
+                            <a href="https://www.facebook.com/" target="_blank" rel="noreferrer">
                               <i className="fa-brands fa-facebook-f"></i>
                             </a>
                           </li>
                           <li>
                             <a
                               href="https://www.instagram.com/"
-                              target="_blank" without rel="noreferrer"
+                              target="_blank" rel="noreferrer"
                             >
                               <i className="fa-brands fa-instagram"></i>
                             </a>
                           </li>
                           <li>
-                            <a href="https://dribbble.com/" target="_blank" without rel="noreferrer">
+                            <a href="https://dribbble.com/" target="_blank" rel="noreferrer">
                               <i className="fa-brands fa-dribbble"></i>
                             </a>
                           </li>
@@ -139,30 +139,30 @@ const TeamStyleTwo = () => {
                       <div className="d-table-cell">
                         <ul>
                           <li>
-                            <a href="linkedin.com" target="_blank" without rel="noreferrer">
+                            <a href="linkedin.com" target="_blank" rel="noreferrer">
                               <i className="fa-brands fa-linkedin-in"></i>
                             </a>
                           </li>
                           <li>
-                            <a href="https://twitter.com/" target="_blank" without rel="noreferrer">
+                            <a href="https://twitter.com/" target="_blank" rel="noreferrer">
                               <i className="fa-brands fa-twitter"></i>
                             </a>
                           </li>
                           <li>
-                            <a href="https://www.facebook.com/" target="_blank" without rel="noreferrer">
+                            <a href="https://www.facebook.com/" target="_blank" rel="noreferrer">
                               <i className="fa-brands fa-facebook-f"></i>
                             </a>
                           </li>
                           <li>
                             <a
                               href="https://www.instagram.com/"
-                              target="_blank" without rel="noreferrer"
+                              target="_blank" rel="noreferrer"
                             >
                               <i className="fa-brands fa-instagram"></i>
                             </a>
                           </li>
                           <li>
-                            <a href="https://dribbble.com/" target="_blank" without rel="noreferrer">
+                            <a href="https://dribbble.com/" target="_blank" rel="noreferrer">
                               <i className="fa-brands fa-dribbble"></i>
                             </a>
                           </li>

@@ -1,8 +1,8 @@
-import { FixturaAIsettings } from "../../../components/Members/userFixturaAIsettings";
+import { FixturaAIsettings } from "../../userFixturaAIsettings";
 import { StepHeaderandDescription } from "./StepHeaderandDescription";
 import { Button, Center } from "@mantine/core";
-import { Wrapper } from "../../../components/Members/Common/Containers";
-import { P } from "../../../components/Members/Common/Type";
+import { Wrapper } from "../../Common/Containers";
+import { P } from "../../Common/Type";
 
 export const StepAboutAISettings= ({ user, setHasUpdated }) => {
   return (

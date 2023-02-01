@@ -18,6 +18,7 @@ import { SwitchAssets } from "../../components/Members/Common/Switch_Assets";
 import { IconHome } from "@tabler/icons";
 import { showNotification } from "@mantine/notifications";
 import { useAccountDetails } from "../../lib/userContext";
+import { FixturaLoading } from "../../components/Members/Common/Loading";
 const qs = require("qs");
 
 const query = qs.stringify(
@@ -72,8 +73,11 @@ const Overview = () => {
     //console.log(userAccount.attributes.order.data.attributes.Status);
   }, [userAccount]);
 
-  if (!user) return <>Loading</>;
-  if (Response === null) return <>Loading</>;
+  if (!user) return <FixturaLoading />;
+  if (Response === null) return <FixturaLoading />;
+  if (userAccount === null) {
+    return <FixturaLoading />;
+  }
   return (
     <MembersWrapper>
       <PageTitle Copy={"Assets"} ICON={<IconHome size={40} />} />

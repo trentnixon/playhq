@@ -136,7 +136,7 @@ export const SwitchAssets = ({
     <Container size={"md"}>
       {Object.entries(items).map(([key, value]) => {
         return (
-          <div key={value}>
+          <div key={key}>
             <SubHeaders Copy={key} />
             <ShadowWrapper BGColor={1} p={20}>
               <P Copy={AssetCategories[key]} />

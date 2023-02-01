@@ -24,18 +24,18 @@ const FooterDark = () => {
 
                 <ul className="social-links">
                   <li>
-                    <a href="https://www.facebook.com/" target="_blank" without rel="noreferrer">
+                    <a href="https://www.facebook.com/" target="_blank" rel="noreferrer">
                       <i className="fa-brands fa-facebook-f"></i>
                     </a>
                   </li>
                   <li>
-                    <a href="https://twitter.com/" target="_blank" without rel="noreferrer">
+                    <a href="https://twitter.com/" target="_blank" rel="noreferrer">
                       <i className="fa-brands fa-twitter"></i>
                     </a>
                   </li>
                 
                   <li>
-                    <a href="https://www.instagram.com/" target="_blank" without rel="noreferrer">
+                    <a href="https://www.instagram.com/" target="_blank" rel="noreferrer">
                       <i className="fa-brands fa-instagram"></i>
                     </a>
                   </li>

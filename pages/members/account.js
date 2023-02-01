@@ -94,7 +94,7 @@ const Account = () => {
   }, [account]);
 
   console.log(userAccount)
-  if (!user) return <></>;
+  if (!user) return <FixturaLoading />;
   if (userAccount === null) {
     return <FixturaLoading />;
   }

@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
-import { getIdFromLocalCookie } from "../../lib/auth";
-import { fetcher } from "../../lib/api";
+import { getIdFromLocalCookie } from "../../../lib/auth";
+import { fetcher } from "../../../lib/api";
 import Cookies from "js-cookie";
 
-import { useCreateScheduler } from "../../Hooks/useScheduler";
-import { BTN_ONCLICK } from "../Members/Common/utils/Buttons";
+import { useCreateScheduler } from "../../../Hooks/useScheduler";
+import { BTN_ONCLICK } from "../Common/utils/Buttons";
+import { Box } from "@mantine/core";
 export const CreateAccountInit = ({ setAccountsetup }) => {
   const [ACCOUNTID, setACCOUNTID] = useState(false);
   const [data, CreateData] = useCreateScheduler();
@@ -38,6 +39,17 @@ export const CreateAccountInit = ({ setAccountsetup }) => {
     CreateAccount(ID);
   }
 
-  return <BTN_ONCLICK LABEL={"Next"} HANDLE={fetchData} THEME="success"/>;
-  
+  return (
+    <Box
+      sx={(theme) => ({
+        padding: theme.spacing.md,
+        border: `1px solid ${theme.colors.members[1]}`,
+        backgroundColor: theme.colors.members[1],
+        borderRadius: "5px",
+        textAlign:'right'
+      })}
+    >
+      <BTN_ONCLICK LABEL={"Next"} HANDLE={fetchData} THEME="success" />
+    </Box>
+  );
 };

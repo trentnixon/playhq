@@ -1,7 +1,8 @@
-import { UserDetails } from "../UserDetails";
+import { UserDetails } from "../../UserDetails";
 import { StepHeaderandDescription } from "./StepHeaderandDescription";
 
 export const StepAboutUser = ({ user, setHasUpdated }) => {
+  console.log(user.id)
   return (
     <>
       <StepHeaderandDescription
@@ -14,4 +15,4 @@ export const StepAboutUser = ({ user, setHasUpdated }) => {
     </>
   );
 };
-export default StepAboutUser
+export default StepAboutUser  
