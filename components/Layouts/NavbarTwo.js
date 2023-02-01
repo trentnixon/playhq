@@ -142,7 +142,7 @@ const SignIn = () => {
 const MembersNavItem = ({ user }) => {
   const router = useRouter();
   const PATH = "/members";
-  const hasSetup =getAccountFromLocalCookie()
+  const hasSetup =getAccountFromLocalCookie() 
 
   const handleLogout = () => {
     
