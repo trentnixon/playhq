@@ -120,7 +120,7 @@ export const SetupStages = ({ setReview }) => {
   return (
     <>
       <Container size={"md"}>
-        <Stepper
+        <Stepper 
           active={active}
           breakpoint="sm"
           color={theme.colors.members[3]}

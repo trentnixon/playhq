@@ -107,8 +107,8 @@ export const SelectAudio = ({ isPlaying }) => {
                 style={{
                   backgroundColor:
                     userAccount.attributes.audio_option.data.id === item.id
-                      ? theme.colors.blue[8]
-                      : theme.colors.members[0],
+                    ? theme.colors.members[4]
+                    : theme.colors.members[0],
                 }}
               >
                 <td>

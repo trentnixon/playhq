@@ -14,7 +14,6 @@ import { IconCircleCheck, IconEditCircle } from "@tabler/icons";
 
 import { P, SubHeaders } from "../../../Type";
 
-
 export const DisplayCustomTheme = (props) => {
   const { GetElement, userAccount, StoreUSerChange, setCreateNew } = props;
   //useEffect(()=>{},[userAccount])
@@ -74,13 +73,13 @@ export const DisplayCustomTheme = (props) => {
               >
                 <td>
                   <Group>
-                    <ActionIcon
-                      onClick={() => {
-                        setCreateNew(true);
-                      }}
-                    >
-                      <IconEditCircle color={theme.colors.green[5]} />
-                    </ActionIcon>
+                    {userAccount.attributes.theme.data.id === item.id ? (
+                      <Center>
+                        <IconCircleCheck color={theme.colors.gray[2]} />
+                      </Center>
+                    ) : (
+                      false
+                    )}
                     <P
                       marginBottom={0}
                       color={
@@ -100,9 +99,13 @@ export const DisplayCustomTheme = (props) => {
                 </td>
                 <td>
                   {userAccount.attributes.theme.data.id === item.id ? (
-                    <Center>
-                      <IconCircleCheck color={theme.colors.gray[2]} />
-                    </Center>
+                    <ActionIcon
+                      onClick={() => {
+                        setCreateNew(true);
+                      }}
+                    >
+                      <IconEditCircle color={theme.colors.green[5]} />
+                    </ActionIcon>
                   ) : (
                     <Center>
                       <BTN_ONCLICK

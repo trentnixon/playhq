@@ -13,7 +13,7 @@ import {
   Wrapper,
 } from "../../components/Members/Common/Containers";
 // PACK
-import { Box, Container, Group, Space } from "@mantine/core";
+import { Box, Container, Group, Paper, Space } from "@mantine/core";
 
 import { IconColorPicker } from "@tabler/icons";
 // Components
@@ -61,24 +61,23 @@ const Design = () => {
   return (
     <MembersWrapper>
       <PageTitle Copy={"Asset Design"} ICON={<IconColorPicker size={40} />} />
+      <SubHeaders Copy={"Design Settings"} />
 
+      <Wrapper>
+        <Group position="apart">
+          <Box
+            sx={(theme) => ({
+              width: "60%",
+            })}
+          >
+            <P
+              Copy={`To change your design settings, simply select the desired theme and layout from the options provided. You can also choose an audio track to accompany your assets. The preview area will update to reflect your changes, so you can see how your assets will look and sound before you save them.`}
+            />
+          </Box>
+        </Group>
+      </Wrapper>
+      <Space h={20} />
       <Container size={"lg"} mb={40}>
-        <SubHeaders Copy={"Design Settings"} />
-        <Wrapper>
-          <Group position="apart">
-            <Box
-              sx={(theme) => ({
-                width: "60%",
-              })}
-            >
-              <P
-                Copy={`To change your design settings, simply select the desired theme and layout from the options provided. You can also choose an audio track to accompany your assets. The preview area will update to reflect your changes, so you can see how your assets will look and sound before you save them.`}
-              />
-            </Box>
-          </Group>
-        </Wrapper>
-        <Space h={20} />
-
         <DesignTabs
           isPlaying={isPlaying}
           userAccount={userAccount}

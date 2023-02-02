@@ -19,7 +19,7 @@ export const CreateNewTheme = (props) => {
 
   const [Primary, SetPrimary] = useState(false);
   const [Secondary, SetSecondary] = useState(false);
-  const [disabled, setDisabled] = useState(true);
+  const [disabled, setDisabled] = useState(true); 
 
   const [THEME, CreateTHEME] = UserCreateTheme();
   const [UPDATE, UpdateTHEME] = UserUpdateTheme();
@@ -69,11 +69,11 @@ export const CreateNewTheme = (props) => {
       },
       CreatedBy: userAccount.id,
       isPublic: false,
-      accounts: [1],
+      accounts: [userAccount.id], 
       Name: `Custom Theme created by ${userAccount.attributes.FirstName}`,
     };
 
-    console.log(CTHEME[0]?.id);
+    
     CTHEME[0]?.attributes?.Theme
       ? UpdateTHEME(OBJ, CTHEME[0].id)
       : CreateTHEME(OBJ);

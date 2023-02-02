@@ -67,9 +67,11 @@ export const SelectATemplate = () => {
             <tr
               key={i}
               style={{
+                borderRadius:'10px',
+                padding:'10px',
                 backgroundColor:
                   userAccount.attributes.template.data.id === item.id
-                    ? theme.colors.blue[8]
+                    ? theme.colors.members[4]
                     : theme.colors.members[0],
               }}
             >

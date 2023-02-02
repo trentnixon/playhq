@@ -25,10 +25,35 @@ export function DesignTabs(props) {
       value={activeTab}
       onTabChange={setActiveTab}
       variant="pills"
-      color="blue.8"
+      
+      sx={(theme) => ({
+        ".mantine-Tabs-tab":{
+          backgroundColor: theme.colors.members[1],
+          '&:hover': {
+            backgroundColor: theme.colors.members[3],
+            color:theme.colors.members[0],
+            ".mantine-Text-root":{
+              color:theme.colors.members[0],
+            },
+          },
+          '&[data-active]': {
+            backgroundColor: theme.colors.members[4],
+          },
+          '&[data-active]:hover': {
+            backgroundColor: theme.colors.members[4],
+          },
+        },
+        
+        ".mantine-Tabs-tabsList": {
+          backgroundColor: theme.colors.members[1],
+          padding: "10px 20px",
+          borderRadius: "10px 10px 0 0 ",
+          borderBottom: `1px solid ${theme.colors.members[3]}`,
+        },
+      })}
     >
       <Tabs.List position="center" grow={true}>
-        <Tabs.Tab value="Templates" icon={<IconTemplate size={14} />}>
+        <Tabs.Tab value="Templates" icon={<IconTemplate size={20} />}>
           <P
             marginBottom={0}
             color={activeTab === "Templates" ? 0 : 2}
@@ -36,7 +61,7 @@ export function DesignTabs(props) {
             Copy={`Templates`}
           />
         </Tabs.Tab>
-        <Tabs.Tab value="Branding" icon={<IconBadgeTm size={14} />}>
+        <Tabs.Tab value="Branding" icon={<IconBadgeTm size={20} />}>
           <P
             marginBottom={0}
             color={activeTab === "Branding" ? 0 : 2}
@@ -44,7 +69,7 @@ export function DesignTabs(props) {
             Copy={`Branding`}
           />
         </Tabs.Tab>
-        <Tabs.Tab value="Audio options" icon={<IconMusic size={14} />}>
+        <Tabs.Tab value="Audio options" icon={<IconMusic size={20} />}>
           <P
             marginBottom={0}
             color={activeTab === "Audio options" ? 0 : 2}
@@ -59,7 +84,7 @@ export function DesignTabs(props) {
         Copy={`Customize your assets to match your club's unique style by selecting an option from the template, theme, and audio list. Make sure your assets stand out and effectively promote your club or association.`}
       />
 
-      <Flex wrap="wrap">
+      <Flex wrap="wrap" justify="center">
         <TABCONTENT {...props} />
         <RemotionPlayerContainer {...props} /> 
       </Flex>

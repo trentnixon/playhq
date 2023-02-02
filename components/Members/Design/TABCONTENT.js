@@ -23,7 +23,7 @@ export const TABCONTENT = (props) => {
     } else if (width >= 890 && width < 980) {
       return "450px";
     } else if (width >= 980 && width < 1124) {
-      return "550px";
+      return "500px";
     } else if (width >= 1124) {
       return "700px";
     }
