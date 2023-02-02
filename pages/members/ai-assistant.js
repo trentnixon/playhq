@@ -102,7 +102,7 @@ const Account = () => {
           breakpoints={[{ maxWidth: "sm", cols: 1, spacing: "md" }]}
         >
           <Paper
-            radius="md"
+            radius="md" 
             shadow="0"
            
             sx={(theme) => ({

@@ -10,7 +10,7 @@ import {
   Wrapper,
 } from "../../components/Members/Common/Containers";
 import { PageTitle, P } from "../../components/Members/Common/Type";
-import { Box, Button, Center, Group } from "@mantine/core";
+import { Box, Button, Center, Container, Group } from "@mantine/core";
 import { IconCheck } from "@tabler/icons";
 import { BTN_TOINTERALLINK } from "../../components/Members/Common/utils/Buttons";
 
@@ -34,24 +34,33 @@ const StripeSuccess = () => {
         ICON={<IconCheck size={40} />}
       />
 
+      <Container>
       <Wrapper>
         <Group position="apart">
           <Box
-            sx={(theme) => ({
-              width: "60%",
-            })}
+           
           >
             <P
-              Copy={`Thank you for subscribing to Fixtura! Your subscription is now active, and you will begin receiving personalized digital assets according to your preferences. Thank you for choosing Fixtura, and we look forward to helping you enhance your club's social media presence.`}
+              Copy={`Thank you for subscribing to Fixtura!`}
             />
+            <P
+              Copy={`Your subscription is now active, and you will begin receiving personalized digital assets according to your preferences. Thank you for choosing Fixtura, and we look forward to helping you enhance your club's social media presence.`}
+            />
+            <P
+              Copy={`Thank you for choosing Fixtura, and we look forward to helping you enhance your club's social media presence.`}
+            />
+            
           </Box>
         </Group>
       </Wrapper>
+
       <ShadowWrapper>
         <Center>
-          <BTN_TOINTERALLINK LABEL="Go To Account" URL="/members/settings/" THEME="cta" />
+          <BTN_TOINTERALLINK LABEL="Go To Account" URL="/members/account/" THEME="cta" />
         </Center>
       </ShadowWrapper>
+      </Container>
+      
     </MembersWrapper>
   );
 };

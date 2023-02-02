@@ -138,8 +138,9 @@ export const SwitchAssets = ({
         return (
           <div key={key}>
             <SubHeaders Copy={key} />
+            <P Copy={AssetCategories[key]} />
             <ShadowWrapper BGColor={1} p={20}>
-              <P Copy={AssetCategories[key]} />
+              
               <SimpleGrid cols={1} breakpoints={[{ minWidth: "lg", cols: 2 }]}>
                 {value.map((Asset, i) => {
                   return (

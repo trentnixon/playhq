@@ -185,12 +185,6 @@ const MembersNavItem = ({ user }) => {
 
       <ul className="dropdown-menu">
      
-       {/*  <li className="nav-item">
-          <Link href={`${PATH}/settings`} activeClassName="active">
-            <a className="nav-link">Overview</a>
-          </Link>
-        </li> */}
-        
         <li className="nav-item">
           <Link href={`${PATH}/account`} activeClassName="active">
             <a className="nav-link">Account</a>

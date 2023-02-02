@@ -20,7 +20,7 @@ import {
   Box,
   Divider,
 } from "@mantine/core";
-import {  IconAlertTriangle, IconUser } from "@tabler/icons";
+import { IconAlertTriangle, IconUser, IconBrandStripe } from "@tabler/icons";
 // Components
 import {
   MembersWrapper,
@@ -38,10 +38,6 @@ import { BTN_TOINTERALLINK } from "../../components/Members/Common/utils/Buttons
 import { SelectFixturaSetting } from "../../components/Members/Common/formelements/Select_FixturaSettings";
 import { FixturaSettings } from "../../components/Members/userFixturaSettings";
 import { useAccountDetails } from "../../lib/userContext";
-
-
-
-
 
 const qs = require("qs");
 
@@ -93,7 +89,7 @@ const Account = () => {
     }
   }, [account]);
 
-  console.log(userAccount)
+  console.log(userAccount);
   if (!user) return <FixturaLoading />;
   if (userAccount === null) {
     return <FixturaLoading />;
@@ -101,6 +97,8 @@ const Account = () => {
   return (
     <MembersWrapper>
       <PageTitle Copy={"Account Settings"} ICON={<IconUser size={40} />} />
+
+      <FixturaSettings user={userAccount} setHasUpdated={ReRender} />
       <Wrapper>
         <Group position="apart">
           <Box
@@ -108,13 +106,14 @@ const Account = () => {
               width: "60%",
             })}
           >
-            <P
+            {/* <P
               Copy={`The overview page allows subscribed users to view their account type, selected association and club, delivery schedule, and selected assets all in one place. This page makes it easy to manage and customize your subscription, ensuring that you have access to the personalized digital assets you need to enhance your club's social media presence.`}
-            />
+            /> */}
           </Box>
           <Paper
             shadow="lg"
             p="md"
+            mt={20}
             withBorder
             radius="md"
             sx={(theme) => ({
@@ -146,26 +145,20 @@ const Account = () => {
           </Paper>
         </Group>
       </Wrapper>
-
-      <FixturaSettings user={userAccount} setHasUpdated={ReRender} />
-
       <Wrapper>
         <Space h={50} />
         <Divider size={10} color={"#f1f1f1"} />
         <Space h={50} />
       </Wrapper>
- 
+
+      <PageTitle Copy={"Subscription"} ICON={<IconBrandStripe size={40} />} />
       <Wrapper>
         <Group position="apart">
           <Box
             sx={(theme) => ({
               width: "60%",
             })}
-          >
-            <P
-              Copy={`Here you can update your name and email address, as well as change your subscription status. You can also view when you joined Fixtura, your current subscription status, and any invoices associated with your account. By regularly updating your account settings, you can ensure that your information is accurate and up-to-date. Simply make any desired changes and click "Save" to apply them to your account.`}
-            />
-          </Box>
+          ></Box>
           <BTN_TOINTERALLINK
             LABEL="What is in the Subscription"
             URL="/members/settings/"
@@ -192,9 +185,8 @@ const Account = () => {
           <SubscriptionHeader user={userAccount} />
           <UserDetails user={userAccount} setHasUpdated={ReRender} />
           <Group pos={"center"}>
-          
             <BTN_SubscribeToFixtura />
-            <BTN_ManageSubscription /> 
+            <BTN_ManageSubscription />
           </Group>
         </Paper>
       </Container>
