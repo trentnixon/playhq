@@ -1,11 +1,15 @@
-
-import { Center } from "@mantine/core";
-import { Player } from "@remotion/player";
+// CORE
 import { useEffect, useRef, useState } from "react";
+// UTILS
 import { FixturaLoading } from "../Common/Loading";
 import { useAccountDetails } from "../../../lib/userContext";
-import { Template_Basic_Sqaure } from "./templates/BasicSqaure/index";
 import DATA from "./utils/Data.json";
+// PACK
+import { Center } from "@mantine/core";
+import { Player } from "@remotion/player";
+//COMPONENTS
+import { Template_Basic_Sqaure } from "./templates/BasicSqaure/index";
+
 
 const RemotionPreview = ({ setIsPlaying }) => {
   const { account, ReRender } = useAccountDetails();
