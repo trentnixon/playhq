@@ -1,4 +1,4 @@
-import { createStyles, Table, Image, Avatar, Group } from "@mantine/core";
+import { createStyles, Table, Image, Avatar, Group, Box, Container } from "@mantine/core";
 import { useListState } from "@mantine/hooks";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import { IconCheck, IconGripVertical } from "@tabler/icons";
@@ -11,6 +11,8 @@ import {
   useUpdateSponsor,
   useDeleteSponsor,
 } from "../../../Hooks/useSponsorships";
+import { EditSponsor } from "./EditSponsor";
+import { SponsorDeleteBtn } from "./SponsorDeleteBtn";
 
 const useStyles = createStyles((theme) => ({
   item: {
@@ -31,7 +33,6 @@ const useStyles = createStyles((theme) => ({
         : theme.colors.gray[6],
   },
 }));
-
 
 export function DragnDropSponsorList({ SPONSORS, SPONSORLIMIT }) {
   // STYLES
@@ -84,14 +85,15 @@ export function DragnDropSponsorList({ SPONSORS, SPONSORLIMIT }) {
   const StoreOrder = () => {
     const OBJ = [];
     state.map((O, i) => {
-      UpdateSponsor({ 
-        Order: i, 
-        isPrimary: i === 0 ? true : false, 
-        isActive :i === 0 ? true : O.attributes.isActive 
-      }
-        , O.id);
+      UpdateSponsor(
+        {
+          Order: i,
+          isPrimary: i === 0 ? true : false,
+          isActive: i === 0 ? true : O.attributes.isActive,
+        },
+        O.id
+      );
     });
-  
   };
 
   // MAPS
@@ -129,7 +131,7 @@ export function DragnDropSponsorList({ SPONSORS, SPONSORLIMIT }) {
                 <IconCheck size={40} />
               </Avatar>
             ) : (
-              <DeleteBtn itemId={item.id} onDelete={onDelete} />
+              <SponsorDeleteBtn itemId={item.id} onDelete={onDelete} />
             )}
           </td>
           <td>
@@ -162,25 +164,35 @@ export function DragnDropSponsorList({ SPONSORS, SPONSORLIMIT }) {
     );
 
   return (
-    <>
-      
-
+    <Container size={'md'}>
+    <Box
+      mt={50}
+      sx={(theme) => ({
+        padding: "10px 20px",
+      })}
+    >
       <DragDropContext
         onDragEnd={({ destination, source }) => {
           handlers.reorder({ from: source.index, to: destination?.index || 0 });
           setrerendering(false);
         }}
       >
-        <Table sx={{ textAlign:'center', minWidth: 420, "& tbody tr td": { borderBottom: 0 } }}>
+        <Table
+          sx={{
+            textAlign: "center",
+            minWidth: 420,
+            "& tbody tr td": { borderBottom: 0 },
+          }}
+        >
           <thead>
-            <tr  >
+            <tr>
               <th></th>
               <th></th>
-              <th  style={{ textAlign:'center' }}>Name</th>
-              <th  style={{ textAlign:'center' }}>Tagline</th>
-              <th  style={{ textAlign:'center' }}>Active</th>
-              <th  style={{ textAlign:'center' }}>Primary</th>
-              <th  style={{ textAlign:'center' }}>Edit</th>
+              <th style={{ textAlign: "center" }}>Name</th>
+              <th style={{ textAlign: "center" }}>Tagline</th>
+              <th style={{ textAlign: "center" }}>Active</th>
+              <th style={{ textAlign: "center" }}>Primary</th>
+              <th style={{ textAlign: "center" }}>Edit</th>
             </tr>
           </thead>
           <Droppable droppableId="dnd-list" direction="vertical">
@@ -193,83 +205,8 @@ export function DragnDropSponsorList({ SPONSORS, SPONSORLIMIT }) {
           </Droppable>
         </Table>
       </DragDropContext>
-    </>
+    </Box>
+    </Container>
   );
 }
-
-export default DragnDropSponsorList
-
-
-
-const EditSponsor = ({ Sponsor, setHasEdit, Order }) => {
-  console.log(Sponsor.attributes.Name);
-  // HOOKS
-  const { account, ReRender } = useAccountDetails();
-
-  const [userAccount, setUserAccount] = useState(account);
-  return (
-    <>
-      <CreateaSponsorForm
-        OBJ={{
-          Name: Sponsor.attributes.Name,
-          URL: Sponsor.attributes.URL,
-          Tagline: Sponsor.attributes.Tagline,
-          Logo: Sponsor.attributes.Logo.data.id,
-          LogoPath: Sponsor.attributes.Logo.data,
-          account: [userAccount.id],
-          Create: false,
-          UpdateSponsor: Sponsor.id,
-          isActive: Sponsor.attributes.isActive,
-          Order: Order,
-        }}
-      />
-      <BTN_ONCLICK
-        LABEL={`Back`}
-        HANDLE={() => {
-          setHasEdit(false);
-        }}
-      />
-    </>
-  );
-};
-
-const DeleteBtn = ({ itemId, onDelete }) => {
-  const [isConfirming, setIsConfirming] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
-
-  const handleDelete = async () => {
-    if (isConfirming) {
-      setIsLoading(true);
-      onDelete(itemId);
-      //setIsLoading(false);
-    } else {
-      setIsConfirming(true);
-    }
-  };
-
-  const handleBack = () => {
-    setIsConfirming(false);
-  };
-
-  if (isLoading) {
-    return <FixturaLoading />;
-  }
-  return (
-    <>
-      {isConfirming ? (
-        <>
-          <Group position="apart">
-            <BTN_ONCLICK LABEL={"Back"} HANDLE={handleBack} THEME={`error`} />
-            <BTN_ONCLICK
-              LABEL={"Confirm"}
-              HANDLE={handleDelete}
-              THEME={`success`}
-            />
-          </Group>
-        </>
-      ) : (
-        <BTN_ONCLICK LABEL={"Delete"} HANDLE={handleDelete} THEME={`error`} />
-      )}
-    </>
-  );
-};
+export default DragnDropSponsorList;

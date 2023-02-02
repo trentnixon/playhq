@@ -4,25 +4,28 @@ import { useRouter } from "next/router";
 // UTILS
 import { useAccountDetails } from "../../lib/userContext";
 import { useUser } from "../../lib/authContext";
-import { useConfirmOrder } from "../../Hooks/useOrder";
+
 import {
   MembersWrapper,
-  ShadowWrapper,
   Wrapper,
 } from "../../components/Members/Common/Containers";
 
-import { PageTitle, P, SubHeaders } from "../../components/Members/Common/Type";
-import {
-  BTN_ONCLICK,
-  BTN_TOINTERALLINK,
-} from "../../components/Members/Common/utils/Buttons";
+import { PageTitle, P } from "../../components/Members/Common/Type";
+
 // PACK
-import { Box, Container, Group, Paper } from "@mantine/core";
+import { Box, Group, Paper } from "@mantine/core";
 import { IconCheck } from "@tabler/icons";
 // Components
 //import { FixturaLoading } from "../../components/Members/Common/Loading";
 import { CreateaSponsorForm } from "../../components/Members/Sponsors/TheForm";
 import { DragnDropSponsorList } from "../../components/Members/Sponsors/ListofDragnDrop";
+import { SPONSOR_CTABTN } from "../../components/Members/Sponsors/SPONSOR_CTABTN";
+import { CreateFirstSponsor } from "../../components/Members/Sponsors/CreateFirstSponsor";
+
+/*
+-explaination as to what a sponsor is and where they will be positioned
+      -icons explaintion as to what a title sponsor is.
+*/
 
 const SPONSORS = () => {
   // VARS
@@ -39,8 +42,6 @@ const SPONSORS = () => {
 
   // Set SET ACCOUNT DATA
   useEffect(() => {
-    console.log("NEW ACCOUNT DATA FOUND");
-    console.log(account);
     setUserAccount(account);
     setSponsors(account?.attributes?.sponsors?.data);
   }, [account]);
@@ -62,7 +63,6 @@ const SPONSORS = () => {
   return (
     <MembersWrapper>
       <PageTitle Copy={"SPONSORS"} ICON={<IconCheck size={40} />} />
-
       <Wrapper>
         <Group position="apart">
           <Box
@@ -80,8 +80,6 @@ const SPONSORS = () => {
               With Fixtura, it's easy to give your sponsors the recognition they deserve 
               while keeping your assets looking professional and cohesive.`}
             />
-            -explaination as to what a sposnor -icons explaintion as to what a
-            title sponsor is.
           </Box>
           <Paper
             shadow="lg"
@@ -95,22 +93,36 @@ const SPONSORS = () => {
             <P
               color={0}
               marginBottom={0}
-              Copy={`${
-                SPONSORLIMIT - Sponsors.length
-              } spaces remaining`}
+              Copy={`${SPONSORLIMIT - Sponsors.length} spaces remaining`}
             />
           </Paper>
         </Group>
 
-
-
-        {Sponsors.length > SPONSORLIMIT ? (
-        false
-      ) : (
-        <Group position="right">
-          <CTABTN setIsCreate={setIsCreate} isCreate={isCreate} />
-        </Group>
-      )}
+        <Box
+          sx={(theme) => ({
+            backgroundColor: theme.colors.members[1],
+            padding: "10px 20px",
+            borderRadius: "10px 10px 0 0 ",
+            borderBottom: `1px solid ${theme.colors.members[3]}`,
+          })}
+        >
+          <Group position="right">
+            {Sponsors.length > SPONSORLIMIT ? (
+              false
+            ) : (
+              <Group position="right">
+                <P
+                  color={3}
+                  Weight={400}
+                  textTransform={`uppercase`}
+                  Copy={`sponsors : ${Sponsors.length}`}
+                  marginBottom={0}
+                />
+                <SPONSOR_CTABTN setIsCreate={setIsCreate} isCreate={isCreate} />
+              </Group>
+            )}
+          </Group>
+        </Box>
 
         {isCreate ? (
           <CreateaSponsorForm
@@ -131,11 +143,6 @@ const SPONSORS = () => {
           <CreateFirstSponsor setIsCreate={setIsCreate} isCreate={isCreate} />
         ) : (
           <>
-            <P
-              color={2}
-              textTransform={`uppercase`}
-              Copy={`sponsors : ${Sponsors.length} `}
-            />
             <DragnDropSponsorList
               SPONSORS={Sponsors}
               SPONSORLIMIT={SPONSORLIMIT}
@@ -143,35 +150,8 @@ const SPONSORS = () => {
             />
           </>
         )}
-      
       </Wrapper>
-
-      
     </MembersWrapper>
   );
 };
-
 export default SPONSORS;
-
-const CreateFirstSponsor = (props) => {
-  return (
-    <>
-      <Container>
-        <SubHeaders Copy={`Create First Sponsor`} />
-        <P Copy={`No Sponsors Found`} />
-        <CTABTN {...props} />
-      </Container>
-    </>
-  );
-};
-
-const CTABTN = ({ setIsCreate, isCreate }) => {
-  return (
-    <BTN_ONCLICK
-      LABEL={isCreate ? `back` : `Create New`}
-      HANDLE={() => {
-        setIsCreate(!isCreate);
-      }}
-    />
-  );
-};
