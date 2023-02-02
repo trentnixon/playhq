@@ -1,6 +1,6 @@
 /* eslint-disable camelcase */
 import { ThemeProvider } from "styled-components";
-import { Series, AbsoluteFill, Audio } from "remotion";
+import { Series, AbsoluteFill, Audio, Sequence } from "remotion";
 // Import {RemotionThemes} from '../../theme/themes'
 import { loadFont } from "@remotion/google-fonts/Heebo";
 
@@ -68,11 +68,9 @@ export const Test_Basic_Sqaure = (props) => {
   return (
     <ThemeProvider theme={THEME.Theme}>
       <AbsoluteFill style={{ backgroundColor: THEME.Theme.primary }}>
-        <Series>
-          <Series.Sequence durationInFrames={90} offset={0}>
-            <h1>HELLO THERE</h1>
-          </Series.Sequence>
-        </Series>
+        <Sequence durationInFrames={90}>
+          <h1>HELLO THERE</h1>
+        </Sequence>
       </AbsoluteFill>
     </ThemeProvider>
   );
