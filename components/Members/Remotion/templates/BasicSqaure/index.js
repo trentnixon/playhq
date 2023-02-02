@@ -69,9 +69,14 @@ export const Test_Basic_Sqaure = (props) => {
     <ThemeProvider theme={THEME.Theme}>
       <AbsoluteFill style={{ backgroundColor: THEME.Theme.primary }}>
         <Sequence durationInFrames={90}>
-        <TitleSequenceFrame theme={THEME.Theme} fontFamily={fontFamily} />
+          <TitleSequenceFrame theme={THEME.Theme} fontFamily={fontFamily} />
+        </Sequence>
+        <Sequence durationInFrames={300} from={90}>{TEMPLATES[ID]}</Sequence>
+        <Sequence durationInFrames={180} from={390}>
+          <OutroSequenceFrame theme={THEME.Theme} fontFamily={fontFamily} durationInFrames={180} />
         </Sequence>
       </AbsoluteFill>
+      <Audio volume={0.5} src={AUDIO.URL} />
     </ThemeProvider>
   );
 };
@@ -91,6 +96,6 @@ export default Test_Basic_Sqaure;
           </Series.Sequence>
         </Series>
 
-        <Audio volume={0.5} src={AUDIO.URL} />
+        
       </AbsoluteFill>
 */

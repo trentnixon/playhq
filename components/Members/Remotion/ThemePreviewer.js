@@ -59,7 +59,7 @@ const RemotionPreview = ({ setIsPlaying }) => {
     ref={playerRef} 
     id={ID}
     component={OBJ[userAccount.attributes?.template?.data?.attributes.Name]}
-    durationInFrames={460}
+    durationInFrames={550}
     compositionWidth={1440}
     compositionHeight={1920}
     fps={30}
