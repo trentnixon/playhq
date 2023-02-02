@@ -71,9 +71,15 @@ export const Test_Basic_Sqaure = (props) => {
         <Sequence durationInFrames={90}>
           <TitleSequenceFrame theme={THEME.Theme} fontFamily={fontFamily} />
         </Sequence>
-        <Sequence durationInFrames={300} from={90}>{TEMPLATES[ID]}</Sequence>
+        <Sequence durationInFrames={300} from={90}>
+          {TEMPLATES[ID]}
+        </Sequence>
         <Sequence durationInFrames={180} from={390}>
-          <OutroSequenceFrame theme={THEME.Theme} fontFamily={fontFamily} durationInFrames={180} />
+          <OutroSequenceFrame
+            theme={THEME.Theme}
+            fontFamily={fontFamily}
+            durationInFrames={180}
+          />
         </Sequence>
       </AbsoluteFill>
       <Audio volume={0.5} src={AUDIO.URL} />

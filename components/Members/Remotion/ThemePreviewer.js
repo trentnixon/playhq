@@ -8,8 +8,10 @@ import DATA from "./utils/Data.json";
 import { Center } from "@mantine/core";
 import { Player } from "@remotion/player";
 //COMPONENTS
-import { Template_Basic_Sqaure, Test_Basic_Sqaure } from "./templates/BasicSqaure/index";
-
+import {
+  Template_Basic_Sqaure,
+  Test_Basic_Sqaure,
+} from "./templates/BasicSqaure/index";
 
 const RemotionPreview = ({ setIsPlaying }) => {
   const { account, ReRender } = useAccountDetails();
@@ -48,44 +50,47 @@ const RemotionPreview = ({ setIsPlaying }) => {
     };
   }, []);
 
-  useEffect(() => { console.log(userAccount); }, [userAccount]);
   useEffect(() => {
-    setUserAccount(account)
+    console.log(userAccount);
+  }, [userAccount]);
+  useEffect(() => {
+    setUserAccount(account);
   }, [account]);
 
-
   const PlayerOnly = ({ playerRef }) => {
-    return <Player 
-    ref={playerRef} 
-    id={ID}
-    component={OBJ[userAccount.attributes?.template?.data?.attributes.Name]}
-    durationInFrames={550}
-    compositionWidth={1440}
-    compositionHeight={1920}
-    fps={30}
-    numberOfSharedAudioTags={0}
-    inputProps={{
-      THEME: userAccount.attributes?.theme?.data?.attributes,
-      AUDIO: userAccount.attributes?.audio_option?.data?.attributes,
-      DATA: DATA,
-      ID: ID,
-    }}
-    controls
-    style={{
-      width: parseInt(1440) * 0.25,
-      height: parseInt(1920) * 0.25,
-    }}
-  />;
+    return (
+      <Player
+        ref={playerRef}
+        id={ID}
+        component={OBJ[userAccount.attributes?.template?.data?.attributes.Name]}
+        durationInFrames={550}
+        compositionWidth={1440}
+        compositionHeight={1920}
+        fps={30}
+        numberOfSharedAudioTags={0}
+        inputProps={{
+          THEME: userAccount.attributes?.theme?.data?.attributes,
+          AUDIO: userAccount.attributes?.audio_option?.data?.attributes,
+          DATA: DATA,
+          ID: ID,
+        }}
+        controls
+        style={{
+          width: parseInt(1440) * 0.25,
+          height: parseInt(1920) * 0.25,
+        }}
+      />
+    );
   };
-  const ControlsOnly  = ({ playerRef }) => {
+  const ControlsOnly = ({ playerRef }) => {
     const [currentTime, setCurrentTime] = useState(0);
-   
+
     useEffect(() => {
       playerRef.current?.addEventListener("timeupdate", (e) => {
         setCurrentTime(e.detail.frame);
       });
     }, []);
-   
+
     return <div>Current time: {currentTime}</div>;
   };
 
@@ -94,12 +99,12 @@ const RemotionPreview = ({ setIsPlaying }) => {
   }
   return (
     <>
-    <Center>
-      <PlayerOnly playerRef={playerRef} />
-     
-      
-    </Center>
-    <ControlsOnly playerRef={playerRef} />
+      <Center>
+        <PlayerOnly playerRef={playerRef} />
+      </Center>
+      <Center>
+      <ControlsOnly playerRef={playerRef} />
+      </Center>
     </>
   );
 };
