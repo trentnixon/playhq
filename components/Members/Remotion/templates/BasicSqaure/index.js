@@ -5,7 +5,7 @@ import { Series, AbsoluteFill, Audio } from "remotion";
 import {loadFont} from '@remotion/google-fonts/Heebo';
 
 // Import Design Templates for MATCHDAYRESULT.
-// Add new deisng patterns below
+// Add new design patterns below
 // Componnets
 import { TitleSequenceFrame } from "./Sequences/Title";
 import { OutroSequenceFrame } from "./Sequences/Outro/index";
@@ -18,7 +18,7 @@ export const Template_Basic_Sqaure = (props) => {
   const { THEME, DATA, ID,AUDIO } = props;
   const {fontFamily} = loadFont();
  
-  //console.log(THEME)
+  console.log(THEME, DATA, ID,AUDIO)
 
   const TEMPLATES = { 
     Top5LeadingRunScorers: <Top5LeaderRunScorers DATA={DATA} theme={THEME.Theme} fontFamily={fontFamily}/>,
