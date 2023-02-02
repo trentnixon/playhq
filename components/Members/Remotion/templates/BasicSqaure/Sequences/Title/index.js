@@ -23,8 +23,7 @@ export const TitleSequenceFrame = ({theme, fontFamily}) => {
 	return (
 		<>
 			
-				<Series>
-					<Series.Sequence durationInFrames={90} layout="none">
+			
 						<LogoContainer 
             style={{
               fontFamily,
@@ -53,8 +52,7 @@ export const TitleSequenceFrame = ({theme, fontFamily}) => {
               clipPath:EraseToMiddleFromTop(65,'Slow'),
             }}
             />
-					</Series.Sequence>
-				</Series>
+				
 		
 			<AbsoluteFill>
 				<Video
