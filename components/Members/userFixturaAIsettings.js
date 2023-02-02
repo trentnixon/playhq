@@ -47,7 +47,7 @@ export const FixturaAIsettings = ({
           "Please select the day of the week that you would like to receive your personalized digital assets via email."
         }
       />
-      <LabelMe label="Select a publication style for your Write ups" />
+      <LabelMe label="Select a publication style." />
       <ShadowWrapper size={"lg"}>
         <SelectFixturaSetting
           CollectionFrom={"ai-publications"}
@@ -64,7 +64,7 @@ export const FixturaAIsettings = ({
         />
       </ShadowWrapper>
       <Space h="lg" />
-      <LabelMe label="Select a Writting style you would like our AI to adopt" />
+      <LabelMe label="Select a Writting style." />
       <ShadowWrapper size={"lg"}>
         <SelectFixturaSetting
           CollectionFrom={"ai-writting-styles"}
@@ -81,7 +81,7 @@ export const FixturaAIsettings = ({
         />
       </ShadowWrapper>
       <Space h="lg" />
-      <LabelMe label="Select a AI writing tone to be used" />
+      <LabelMe label="Select a AI writing tone." />
       <ShadowWrapper size={"lg"}>
         <SelectFixturaSetting
           CollectionFrom={"ai-writting-tones"}

@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 // UTILS
 import { useAccountDetails } from "../../lib/userContext";
-import { useGetAIExample } from "../../Hooks/useAI";
 import { useUser } from "../../lib/authContext";
 import { showNotification } from "@mantine/notifications";
 import { fetcher } from "../../lib/api";
@@ -26,8 +25,11 @@ import {
   Space,
 } from "@mantine/core";
 import { IconColorPicker } from "@tabler/icons";
+
 // components
 import { FixturaAIsettings } from "../../components/Members/userFixturaAIsettings";
+import { AIEXAMPLE } from "../../components/Members/AIASSISTANT/AIEXAMPLE";
+
 const qs = require("qs");
 
 const query = qs.stringify(
@@ -47,7 +49,6 @@ const query = qs.stringify(
 );
 
 const Account = () => {
-
   const { account, ReRender } = useAccountDetails();
   const [userAccount, setUserAccount] = useState(account);
 
@@ -75,30 +76,27 @@ const Account = () => {
     }
   }, [account]);
 
-
   if (!user) return false;
-  if(userAccount===null) return(<FixturaLoading />)
+  if (userAccount === null) return <FixturaLoading />;
   return (
     <MembersWrapper>
       <PageTitle Copy={"AI Assistant"} ICON={<IconColorPicker size={40} />} />
-
-      <Container size={"lg"} mb={40}>
-        <SubHeaders Copy={"AI Article Settings"} />
-        <Wrapper>
-          <Group position="apart">
-            <Box
-              sx={(theme) => ({
-                width: "60%",
-              })}
-            >
-              <P
-                Copy={`To change your AI writing settings, simply select the desired publication, style, and tone from the dropdown menus on the settings page. These settings will determine the style and tone of the AI-generated articles and writeups that you receive. You can preview the changes to your writing settings by looking at the example text next to the dropdown menus.`}
-              />
-            </Box>
-          </Group>
-        </Wrapper>
-        <Space h={20} />
-
+      <SubHeaders Copy={"AI Article Settings"} />
+      <Wrapper>
+        <Group position="apart">
+          <Box
+            sx={(theme) => ({
+              width: "60%",
+            })}
+          >
+            <P
+              Copy={`To change your AI writing settings, simply select the desired publication, style, and tone from the dropdown menus on the settings page. These settings will determine the style and tone of the AI-generated articles and writeups that you receive. You can preview the changes to your writing settings by looking at the example text next to the dropdown menus.`}
+            />
+          </Box>
+        </Group>
+      </Wrapper>
+      <Space h={20} />
+      <Container size={"md"} mb={40}>
         <SimpleGrid
           cols={2}
           breakpoints={[{ maxWidth: "sm", cols: 1, spacing: "md" }]}
@@ -106,7 +104,7 @@ const Account = () => {
           <Paper
             radius="md"
             shadow="0"
-            p="lg"
+           
             sx={(theme) => ({
               backgroundColor: theme.white,
             })}
@@ -154,64 +152,3 @@ Account.getInitialProps = async (ctx) => {
   };
 };
 export default Account;
-
-const AIEXAMPLE = ({ AISETTINGS }) => {
-  const [AIExample, CreateAIExample] = useGetAIExample();
-  const [prompt, setPrompt] = useState(false);
-
-  const CreateSentence = (AISETTINGS) => {
-    const Sentence = `Write a ${AISETTINGS.ai_writting_tone}, 
-    1 paragraph article about world cricket in 2022, that is ${AISETTINGS.ai_writting_style} for 
-    ${AISETTINGS.ai_publication}`;
-    //setPrompt(Sentence)
-    return Sentence;
-  };
-
-  useEffect(() => {
-    if (AIExample === null) {
-      CreateAIExample(CreateSentence(AISETTINGS));
-    }
-  }, []);
-
-  useEffect(() => {
-    CreateAIExample(CreateSentence(AISETTINGS));
-  }, [
-    AISETTINGS.ai_writting_tone,
-    AISETTINGS.ai_publication,
-    AISETTINGS.ai_writting_style,
-  ]);
-
-  return (
-    <Paper
-      radius="0"
-      shadow="0"
-      sx={(theme) => ({
-        backgroundColor: theme.white,
-      })}
-    >
-      <P fontStyle="italic" Copy={`Example`} />
-      <P
-        Weight={600}
-        textTransform={"uppercase"}
-        lineHeight={"1em"}
-        Copy={CreateSentence(AISETTINGS)}
-      />
-      <P fontStyle="italic" Copy={`Response`} />
-      <Paper
-        radius="md"
-        shadow="md"
-        withBorder
-        p="lg"
-        sx={(theme) => ({
-          backgroundColor: theme.white,
-        })}
-      >
-        {typeof AIExample !== "string" ? (
-          <FixturaLoading />
-        ) : (
-          <P lineHeight={"1.4em"} Copy={AIExample} />
-        )}
-      </Paper>
-    </Paper>
-  );
-};
