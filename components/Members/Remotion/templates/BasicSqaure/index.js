@@ -69,8 +69,8 @@ export const Test_Basic_Sqaure = (props) => {
     <ThemeProvider theme={THEME.Theme}>
       <AbsoluteFill style={{ backgroundColor: THEME.Theme.primary }}>
         <Series>
-          <Series.Sequence durationInFrames={100}>
-            <h1>HELLO</h1>
+        <Series.Sequence durationInFrames={90}>
+            <TitleSequenceFrame theme={THEME.Theme} fontFamily={fontFamily} />
           </Series.Sequence>
         </Series>
       </AbsoluteFill>

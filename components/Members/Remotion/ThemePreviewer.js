@@ -64,8 +64,6 @@ const RemotionPreview = ({ setIsPlaying }) => {
         durationInFrames={460}
         compositionWidth={1440}
         compositionHeight={1920}
-        width={1440}
-        height={1920}
         fps={30}
         numberOfSharedAudioTags={0}
         inputProps={{
