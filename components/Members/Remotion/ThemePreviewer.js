@@ -52,12 +52,64 @@ const RemotionPreview = ({ setIsPlaying }) => {
   useEffect(() => {
     setUserAccount(account)
   }, [account]);
+
+
+  const PlayerOnly = ({ playerRef }) => {
+    return <Player 
+    ref={playerRef} 
+    id={ID}
+    component={OBJ[userAccount.attributes?.template?.data?.attributes.Name]}
+    durationInFrames={460}
+    compositionWidth={1440}
+    compositionHeight={1920}
+    fps={30}
+    numberOfSharedAudioTags={0}
+    inputProps={{
+      THEME: userAccount.attributes?.theme?.data?.attributes,
+      AUDIO: userAccount.attributes?.audio_option?.data?.attributes,
+      DATA: DATA,
+      ID: ID,
+    }}
+    controls
+    style={{
+      width: parseInt(1440) * 0.25,
+      height: parseInt(1920) * 0.25,
+    }}
+  />;
+  };
+  const ControlsOnly  = ({ playerRef }) => {
+    const [currentTime, setCurrentTime] = useState(0);
+   
+    useEffect(() => {
+      playerRef.current?.addEventListener("timeupdate", (e) => {
+        setCurrentTime(e.detail.frame);
+      });
+    }, []);
+   
+    return <div>Current time: {currentTime}</div>;
+  };
+
   if (userAccount === null) {
     return <FixturaLoading />;
   }
   return (
+    <>
     <Center>
-      <Player 
+      <PlayerOnly playerRef={playerRef} />
+     
+      
+    </Center>
+    <ControlsOnly playerRef={playerRef} />
+    </>
+  );
+};
+
+export default RemotionPreview;
+
+// 271B4D
+// ED9206
+/*
+<Player 
         ref={playerRef} 
         id={ID}
         component={OBJ[userAccount.attributes?.template?.data?.attributes.Name]}
@@ -78,11 +130,4 @@ const RemotionPreview = ({ setIsPlaying }) => {
           height: parseInt(1920) * 0.25,
         }}
       />
-    </Center>
-  );
-};
-
-export default RemotionPreview;
-
-// 271B4D
-// ED9206
+*/
