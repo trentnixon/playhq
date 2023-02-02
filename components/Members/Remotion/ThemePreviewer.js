@@ -17,6 +17,9 @@ const RemotionPreview = ({ setIsPlaying }) => {
     "Basic Rounded": Template_Basic_Sqaure,
   };
 
+
+  console.log(userAccount.attributes?.template?.data?.attributes.Name)
+  console.log(OBJ)
   const playerRef = useRef(null);
 
   useEffect(() => {
@@ -80,3 +83,6 @@ const RemotionPreview = ({ setIsPlaying }) => {
 };
 
 export default RemotionPreview;
+
+// 271B4D
+// ED9206
