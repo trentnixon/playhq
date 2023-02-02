@@ -70,7 +70,7 @@ export const Test_Basic_Sqaure = (props) => {
       <AbsoluteFill style={{ backgroundColor: THEME.Theme.primary }}>
         <Series>
           <Series.Sequence durationInFrames={90} offset={0}>
-            HELLO THERE
+            <h1>HELLO THERE</h1>
           </Series.Sequence>
         </Series>
       </AbsoluteFill>
