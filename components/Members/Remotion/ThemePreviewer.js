@@ -8,7 +8,7 @@ import DATA from "./utils/Data.json";
 import { Center } from "@mantine/core";
 import { Player } from "@remotion/player";
 //COMPONENTS
-import { Template_Basic_Sqaure } from "./templates/BasicSqaure/index";
+import { Template_Basic_Sqaure, Test_Basic_Sqaure } from "./templates/BasicSqaure/index";
 
 
 const RemotionPreview = ({ setIsPlaying }) => {
@@ -17,8 +17,8 @@ const RemotionPreview = ({ setIsPlaying }) => {
 
   const ID = "Top5LeadingRunScorers";
   const OBJ = {
-    "Basic Sqaure": Template_Basic_Sqaure,
-    "Basic Rounded": Template_Basic_Sqaure,
+    "Basic Sqaure": Test_Basic_Sqaure,
+    "Basic Rounded": Test_Basic_Sqaure,
   };
 
   //console.log(DATA)

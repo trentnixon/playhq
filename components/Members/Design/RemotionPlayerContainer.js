@@ -10,7 +10,7 @@ export const RemotionPlayerContainer = (props) => {
         TEMPLATE={userAccount.attributes?.template?.data?.attributes}
         AUDIO={userAccount.attributes?.audio_option?.data?.attributes}
         setIsPlaying={setIsPlaying}
-      />
+      /> 
     </Paper>
   );
 };

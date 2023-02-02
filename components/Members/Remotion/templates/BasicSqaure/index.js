@@ -50,6 +50,48 @@ export const Template_Basic_Sqaure = (props) => {
   );
 };
 
-export default Template_Basic_Sqaure;
+export const Test_Basic_Sqaure = (props) => {
+  const { THEME, DATA, ID, AUDIO } = props;
+  const { fontFamily } = loadFont();
 
-// {TEMPLATES[RENDER.THEME.VideoTemplate]}
+  //console.log(THEME, DATA, ID,AUDIO)
+
+  const TEMPLATES = {
+    Top5LeadingRunScorers: (
+      <Top5LeaderRunScorers
+        DATA={DATA}
+        theme={THEME.Theme}
+        fontFamily={fontFamily}
+      />
+    ),
+  };
+  return (
+    <ThemeProvider theme={THEME.Theme}>
+      <AbsoluteFill style={{ backgroundColor: THEME.Theme.primary }}>
+      <Series>
+          <Series.Sequence durationInFrames={300}>
+            <h1>HELLO</h1>
+          </Series.Sequence></Series>
+      </AbsoluteFill>
+    </ThemeProvider>
+  );
+};
+export default Test_Basic_Sqaure;
+
+/*
+<AbsoluteFill style={{ backgroundColor: THEME.Theme.primary }}>
+        <Series>
+          <Series.Sequence durationInFrames={90}>
+            <TitleSequenceFrame theme={THEME.Theme} fontFamily={fontFamily} />
+          </Series.Sequence>
+          <Series.Sequence durationInFrames={300}>
+            {TEMPLATES[ID]}
+          </Series.Sequence>
+          <Series.Sequence durationInFrames={90}>
+            <OutroSequenceFrame theme={THEME.Theme} fontFamily={fontFamily} />
+          </Series.Sequence>
+        </Series>
+
+        <Audio volume={0.5} src={AUDIO.URL} />
+      </AbsoluteFill>
+*/
