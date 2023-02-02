@@ -22,7 +22,7 @@ export const TitleSequenceFrame = ({theme, fontFamily}) => {
   const frame = useCurrentFrame();
 	return (
 		<>
-			<Sequence>
+			
 				<Series>
 					<Series.Sequence durationInFrames={90} layout="none">
 						<LogoContainer 
@@ -55,7 +55,7 @@ export const TitleSequenceFrame = ({theme, fontFamily}) => {
             />
 					</Series.Sequence>
 				</Series>
-			</Sequence>
+		
 			<AbsoluteFill>
 				<Video
 					startFrom={0}
