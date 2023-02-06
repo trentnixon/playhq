@@ -8,11 +8,8 @@ import Footer from "../components/Layouts/Footer";
 const PortfolioDetails = () => {
   return (
     <>
-  
       <PageBanner pageTitle="Example Deep Dive" BGImage="/images/BG-Images/f180918696.jpg" />
-
       <PortfolioDetailsContent />
-
       <CtaAreaTwo />
     </>
   );
