@@ -48,20 +48,21 @@ export const Template_Basic_Sqaure = (props) => {
       </AbsoluteFill>
     </ThemeProvider>
   );
-};
+}; 
 
 export const Test_Basic_Sqaure = (props) => {
-  const { THEME, DATA, ID, AUDIO } = props;
+  const { THEME, DATA, ID, AUDIO,TIMINGS } = props;
   const { fontFamily } = loadFont();
 
   //console.log(THEME, DATA, ID,AUDIO)
+
 
   const TEMPLATES = {
     Top5LeadingRunScorers: (
       <Top5LeaderRunScorers
         DATA={DATA}
         theme={THEME.Theme}
-        fontFamily={fontFamily}
+        fontFamily={fontFamily} 
       />
     ),
   };

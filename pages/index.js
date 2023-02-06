@@ -12,7 +12,18 @@ import Partner from "../components/Common/Partner";
 
 import { fetcher } from "../lib/api";
 //import Footer from "../components/Layouts/Footer";
+const qs = require("qs");
 
+const CS_query = qs.stringify(
+  {
+    populate: [
+      "Cover",
+    ],
+  },
+  {
+    encodeValuesOnly: true,
+  }
+);
 const Index = ({ associations,CaseStudies }) => {
   return (
     <>
@@ -34,10 +45,10 @@ export const getServerSideProps = async (context) => {
     `${process.env.NEXT_PUBLIC_STRAPI_URL}/associations`
   );
   const CaseStudies = await fetcher(
-    `${process.env.NEXT_PUBLIC_STRAPI_URL}/case-studies`
+    `${process.env.NEXT_PUBLIC_STRAPI_URL}/case-studies?${CS_query}`
   );
   //
-
+ 
   console.log(response);
   return {
     props: {

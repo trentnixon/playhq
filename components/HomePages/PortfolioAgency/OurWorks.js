@@ -16,6 +16,7 @@ const OurWorks = ({ CaseStudies }) => {
 
           <div className="row justify-content-center">
             {CaseStudies.data.map((study, i) => {
+              console.log(study.attributes.Cover.data.attributes.url)
               return (
                 <div
                   key={i}
@@ -25,7 +26,7 @@ const OurWorks = ({ CaseStudies }) => {
                   data-aos-delay="100"
                 >
                   <div className="work-card">
-                    <img src="/images/works/work1.jpg" alt="image" />
+                    <img src={study.attributes.Cover.data.attributes.url} alt="image" />
 
                     <div className="content text-center">
                       <span>
@@ -33,13 +34,6 @@ const OurWorks = ({ CaseStudies }) => {
                           <a>{study.attributes.Name}</a>
                         </Link>
                       </span>
-
-                      <h3>
-                        <Link href="/portfolio-details">
-                          <a>{study.attributes.description}</a>
-                        </Link>
-                      </h3>
-
                       <Link href="/portfolio-details">
                         <a className="custom-btn">
                           View {study.attributes.Name}

@@ -12,7 +12,7 @@ const Portfolio = ({ associations,CaseStudies }) => {
 
       <PageBanner
         pageTitle="Digital Content"
-        BGImage="/images//BG-Images/0D5A0766.jpg"
+        BGImage="/images/BG-Images/0D5A3099.jpg"
       />
       <WorksStyleTwo CaseStudies={CaseStudies}/>
 
@@ -28,7 +28,7 @@ export const getServerSideProps = async (context) => {
     {
       populate: ["Cover", "asset_category"]
     },
-    {
+    { 
       encodeValuesOnly: true,
     }
   );

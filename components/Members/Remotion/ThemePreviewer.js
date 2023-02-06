@@ -23,6 +23,11 @@ const RemotionPreview = ({ setIsPlaying }) => {
     "Basic Rounded": Test_Basic_Sqaure,
   };
 
+  const FPS_INTRO =120 
+	const FPS_OUTRO =180
+	const FPS_MAIN =300
+
+
   //console.log(DATA)
   const playerRef = useRef(null);
 
@@ -73,6 +78,11 @@ const RemotionPreview = ({ setIsPlaying }) => {
           AUDIO: userAccount.attributes?.audio_option?.data?.attributes,
           DATA: DATA,
           ID: ID,
+          TIMINGS:{
+						FPS_INTRO,
+						FPS_OUTRO,
+						FPS_MAIN
+					},
         }}
         controls
         style={{

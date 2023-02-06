@@ -9,7 +9,7 @@ const PortfolioDetails = () => {
   return (
     <>
   
-      <PageBanner pageTitle="UX for Mobile Apps" BGImage="/images/page-banner2.jpg" />
+      <PageBanner pageTitle="Example Deep Dive" BGImage="/images/BG-Images/f180918696.jpg" />
 
       <PortfolioDetailsContent />
 
