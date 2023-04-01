@@ -29,7 +29,7 @@ import { CreateFirstSponsor } from "../../components/Members/Sponsors/CreateFirs
 
 const SPONSORS = () => {
   // VARS
-  const SPONSORLIMIT = 10;
+  const SPONSORLIMIT = 5;
   // HOOKS
   const { account, ReRender } = useAccountDetails();
 
