@@ -1,6 +1,15 @@
 /** @type {import('next').NextConfig} */
 const path = require('path')
 const nextConfig = {
+  async redirects() {
+    return [
+      {
+        source: '/',
+        destination: '/expressionofinterest',
+        permanent: true,
+      },
+    ]
+  },
   reactStrictMode: false,
   swcMinify: true,
   trailingSlash: true,
@@ -14,6 +23,7 @@ const nextConfig = {
     // your project has ESLint errors.
     ignoreDuringBuilds: true,
   }
+  
 }
 
 module.exports = nextConfig

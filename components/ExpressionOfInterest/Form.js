@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Cookies from "js-cookie";
 import {
   useClubs,
   useAssociations,
@@ -6,7 +7,7 @@ import {
 } from "../../Hooks/useExpressionOfInterest";
 import { motion, AnimatePresence } from "framer-motion";
 
-export const ExpressionOfInterestForm = ({setHasSent}) => {
+export const ExpressionOfInterestForm = ({ setHasSent }) => {
   const [clubs, fetchClubs] = useClubs();
   const [associations, fetchAssociations] = useAssociations();
   const [expression, createExpression] = useSendExpressionOfInterestForm();
@@ -14,6 +15,7 @@ export const ExpressionOfInterestForm = ({setHasSent}) => {
   const [submissionStatus, setSubmissionStatus] = useState(""); // Add this line
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [hasSubmittedBefore, setHasSubmittedBefore] = useState(false);
   const [formData, setFormData] = useState({
     fullName: "",
     email: "",
@@ -74,7 +76,9 @@ export const ExpressionOfInterestForm = ({setHasSent}) => {
       try {
         await createExpression(formData);
         setSubmitted(true);
-        setHasSent(true)
+        setHasSent(true);
+        // Set the cookie with an expiration of 30 days
+        Cookies.set("submitted_form", "true", { expires: 30 });
       } catch (error) {
         console.error("Error submitting form:", error);
       } finally {
@@ -122,9 +126,18 @@ export const ExpressionOfInterestForm = ({setHasSent}) => {
     console.log(formData);
   }, [formData]);
 
+  useEffect(() => {
+    const submittedBefore = Cookies.get("submitted_form");
+    if (submittedBefore) {
+      setHasSubmittedBefore(true);
+      setHasSent(true); // Add this line
+    }
+  }, []);
+
   return (
     <AnimatePresence>
-      {!submitted && (
+      
+      {!submitted && !hasSubmittedBefore && (
         <motion.div
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
@@ -177,8 +190,23 @@ export const ExpressionOfInterestForm = ({setHasSent}) => {
           </p>
         </motion.div>
       )}
+      {hasSubmittedBefore && (
+        <motion.div
+        initial={{ opacity: 0, y: -50 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 0, y: -50 }}
+        transition={{ duration: 0.5 }}
+        className="text-center"
+        >
+          <h3>We already have a request from you!</h3>
+          <p>
+            Thank you for your interest in early access to Fixtura. We have already received your expression of interest. We will be in touch soon with more information on how to access the platform before the official launch. Stay tuned!
+          </p>
+        </motion.div>
+      )}
     </AnimatePresence>
   );
+  
 };
 
 const Form_ExpressionofInterest = ({
@@ -286,7 +314,7 @@ const Form_ExpressionofInterest = ({
       </div>
       <button
         type="submit"
-        className="btn btn-primary"
+        className="btn btn-secondary"
         disabled={!isFormValid() || loading}
       >
         {loading ? "Loading..." : "Submit"}

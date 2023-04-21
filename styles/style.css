@@ -400,6 +400,39 @@ Navbar CSS
   height: auto;
 }
 
+.saas-how-it-works-content ul {
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style-type: none;
+}
+
+.saas-how-it-works-content ul li {
+  margin-bottom: 30px;
+  position: relative;
+  padding-left: 65px;
+}
+
+.saas-how-it-works-content ul li i {
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 45px;
+  background: -webkit-gradient(linear, right bottom, left top, from(#ff2c9c), color-stop(#ff287b), color-stop(#ff395a), color-stop(#ff5137), to(#ff6a00));
+  background: linear-gradient(to left top, #ff2c9c, #ff287b, #ff395a, #ff5137, #ff6a00);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.saas-how-it-works-content ul li h3 {
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.saas-how-it-works-content ul li:last-child {
+  margin-bottom: 0;
+}
+
 .navbar-area nav ul {
   padding: 0;
   margin: 0;

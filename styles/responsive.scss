@@ -11,6 +11,7 @@ $value_seven: 1650px;
 
 $main-color: #2F4858;
 $gradient-color: linear-gradient(to left top, #2CFF48, #00DE85, #00B9A2, #0093A2, #006C87);
+$webkit-gradient-color: -webkit-gradient(linear, right bottom, left top, from(#2CFF48), color-stop(#00DE85), color-stop(#00B9A2), color-stop(#0093A2), to(#006C87));
 $font-size: 14px;
 $black-color: #000000;
 $paragraph-color: #646464;
@@ -255,6 +256,7 @@ $transition: .5s;
                 font-size: 14px;
                 padding: 10px 20px;
             }
+           
         }
     }
     .slider-area {
@@ -1151,6 +1153,7 @@ $transition: .5s;
                 font-size: 14px;
                 padding: 10px 20px;
             }
+            
         }
     }
     .service-style-two {
@@ -3166,3 +3169,36 @@ $transition: .5s;
     }
 }
 
+.saas-how-it-works-content ul {
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style-type: none;
+  }
+  
+  .saas-how-it-works-content ul li {
+    margin-bottom: 30px;
+    position: relative;
+    padding-left: 65px;
+  }
+  
+  .saas-how-it-works-content ul li i {
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 45px;
+    background: $webkit-gradient-color;
+    background: $gradient-color;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .saas-how-it-works-content ul li h3 {
+    font-size: 20px;
+    margin-bottom: 12px;
+  }
+  
+  .saas-how-it-works-content ul li:last-child {
+    margin-bottom: 0;
+  }
+  

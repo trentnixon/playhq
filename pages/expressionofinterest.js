@@ -4,29 +4,17 @@ import PromotionalBanner from "../components/HomePages/PLAYHQ/PromotionalBanner"
 import LayoutNoNavbar from "../components/Layouts/LayoutNoNavbar";
 import { ExpressionOfInterestForm } from "../components/ExpressionOfInterest/Form";
 import { useState } from "react";
+import FunFactsTwo from "../components/Common/FunFactsTwo";
+
 const EarlyAccess = () => {
   const [hasSent, setHasSent] = useState(false);
   return (
     <>
       <PromotionalBanner />
-      <SectionContainers>
-        <div className="container mt-5 col-lg-8 offset-lg-2">
-          <h3 className="text-center mb-4">
-            Be one of the First to Try Our Innovative New Product and Elevate
-            Your Club's Online Presence
-          </h3>
-          <p>
-            Fixtura is changing the game for cricket clubs and associations with
-            our innovative AI-powered platform that makes it easy to create
-            high-quality videos, images, and written content. Our goal is to
-            help you keep your members and players informed and engaged, so you
-            can elevate your club's online presence and build a stronger
-            community.
-          </p>
-        </div>
-      </SectionContainers>
 
+      <Benefits />
       <FunFacts />
+
       <SectionContainers BG={`bg-f9f9f9`}>
         <div className="container mt-5 col-lg-8 offset-lg-2">
           {hasSent ? (
@@ -50,31 +38,8 @@ const EarlyAccess = () => {
           <ExpressionOfInterestForm setHasSent={setHasSent} />
         </div>
       </SectionContainers>
-      <SectionContainers>
-        <h4 className="mb-3">Benefits:</h4>
-        <ul>
-          <li>
-            Stay ahead of the competition with personalized and professional
-            digital assets
-          </li>
-          <li>
-            Save time and hassle by letting Fixtura handle the creation of
-            fixture and results content for you
-          </li>
-          <li>
-            Engage your members with dynamic and eye-catching videos, images,
-            and written content
-          </li>
-          <li>
-            Access exclusive early access to our platform before the official
-            launch
-          </li>
-          <li>
-            Be part of a select group of 50 clubs and associations to experience
-            Fixtura's benefits first-hand
-          </li>
-        </ul>
-      </SectionContainers>
+
+      <FunFactsTwo />
     </>
   );
 };
@@ -88,6 +53,90 @@ const SectionContainers = (props) => {
   return (
     <div className={`${BG} pt-100 pb-70`}>
       <div className="container">{props.children}</div>
+    </div>
+  );
+};
+
+const Benefits = () => {
+  return (
+    <div className=" ptb-100">
+      <div className="container">
+        <div class="section-title">
+          <h2>Join Our Early Access Program</h2>
+          <h3 class="text-center mb-4">
+            Be Among the First to Try Our Revolutionary AI-Powered Content
+            Creation Platform for Cricket Clubs and Associations
+          </h3>
+          <p>
+            Fixtura is an innovative AI-powered platform designed to make it
+            easy for cricket clubs and associations to create high-quality
+            videos, images, and written content that engage their members and
+            players. With our early access program, you can be one of the first
+            50 clubs and associations to experience Fixtura's benefits
+            first-hand.
+          </p>
+        </div>
+        <div className="row align-items-center">
+          <div className="col-lg-6 col-md-12">
+            <div className="saas-how-it-works-content white-color">
+              <ul>
+                <li
+                  data-aos="fade-in"
+                  data-aos-duration="1200"
+                  data-aos-delay="100"
+                  className="aos-init aos-animate"
+                >
+                  <i class="fa-solid fa-clock"></i>
+                  <h3>Save Time and Resources</h3>
+                  <p>
+                    Let Fixtura handle the creation of fixture and results
+                    content for you, so you can save time and hassle.
+                  </p>
+                </li>
+                <li
+                  data-aos="fade-in"
+                  data-aos-duration="1200"
+                  data-aos-delay="200"
+                  className="aos-init aos-animate"
+                >
+                  <i className="icon fa-solid fa-pencil-alt"></i>
+                  <h3>Create High-Quality Content</h3>
+                  <p>
+                    Engage your members with dynamic and eye-catching videos,
+                    images, and written content that showcase your club or
+                    association in a professional and visually appealing way.
+                  </p>
+                </li>
+                <li
+                  data-aos="fade-in"
+                  data-aos-duration="1200"
+                  data-aos-delay="300"
+                  className="aos-init aos-animate"
+                >
+                  <i className="icon fa-solid fa-users"></i>
+                  <h3>Engage your members</h3>
+                  <p>
+                    Keep your members informed and engaged with dynamic and
+                    eye-catching videos, images, and written content
+                  </p>{" "}
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className="col-lg-6 col-md-12">
+            <div
+              className="saas-how-it-works-image aos-init aos-animate"
+              data-aos="fade-up"
+              data-aos-duration="1200"
+            >
+              <img
+                src="/images/Moss_Vale_Cricket_Club_Ladder_3d3a441b8864.png"
+                alt="image"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
