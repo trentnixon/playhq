@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import AOS from "aos";
 import "../node_modules/aos/dist/aos.css";
 import "../styles/bootstrap.min.css";
@@ -25,14 +25,14 @@ function MyApp({ Component, pageProps }) {
     AOS.init();
   }, []);
 
+  const getLayout = Component.getLayout || ((page) => <Layout>{page}</Layout>);
+
   return (
     <>
       <MantineProviderWrapper>
         <NotificationsProvider>
-          <Layout>
-            <Component {...pageProps} />
-            <GoTop />
-          </Layout>
+          {getLayout(<Component {...pageProps} />)}
+          <GoTop />
         </NotificationsProvider>
       </MantineProviderWrapper>
     </>
@@ -40,10 +40,3 @@ function MyApp({ Component, pageProps }) {
 }
 
 export default MyApp;
-
-/*
-  how to deploy.
-  USe the git options within VSC, commit and push new code.
-  chec on vercel that the build worked.
-
-*/

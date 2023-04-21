@@ -80,11 +80,8 @@ const OrderHistory = (props) => {
   function checkDeliveryDate(RENDERS) {
     const Ordered = orderedArray(Response.attributes.renders.data);
     console.log(Ordered, Ordered.length);
-    if(Ordered?.length === 0 )
-      return false;
+    if (Ordered?.length === 0) return false;
 
-  
-    
     const currentDate = new Date();
     const createdOnDate = new Date(Ordered[0].attributes.createdAt);
 
@@ -95,11 +92,11 @@ const OrderHistory = (props) => {
     }
   }
 
-  
-  if (Response?.attributes.renders.data === undefined) return <AwaitingFirstDownload />;
+  if (Response?.attributes.renders.data === undefined)
+    return <AwaitingFirstDownload />;
   if (user === false) return false;
   if (Response === null) return false;
-  
+
   return (
     <MembersWrapper>
       <PageTitle Copy={`Downloads`} ICON={<IconDownload size={40} />} />
@@ -250,7 +247,7 @@ const LatestOrderStatus = ({ Orders, Response }) => {
   }, []);
 
   if (Ordered === null) return true;
-  if(Orders.length === 0) return false
+  if (Orders.length === 0) return false;
   return (
     <>
       <P
@@ -266,38 +263,39 @@ const LatestOrderStatus = ({ Orders, Response }) => {
   );
 };
 
-
-const AwaitingFirstDownload = ()=>{
-  return(
+const AwaitingFirstDownload = () => {
+  return (
     <MembersWrapper>
-    <PageTitle Copy={`Downloads`} ICON={<IconDownload size={40} />} />
+      <PageTitle Copy={`Downloads`} ICON={<IconDownload size={40} />} />
 
-    <Wrapper>
-      <Group position="apart">
-        <Box
-          sx={(theme) => ({
-            width: "60%",
-          })}
-        >
-          <P
-            Copy={`Awaiting first download.`}
-          />
-          <P
-            Copy={`To ensure you receive weekly deliveries check the following items`}
-          />
-          <ul>
-  <li>Active Subscription with Fixtura</li>
-  <li>Selection of assets (match reports, videos, images)</li>
-  <li>Day of the week for delivery</li>
-  <li>Club/Association logo and colors</li>
-  <li>Any specific information or branding to be included in the assets</li>
-  <li>Up-to-date email address for the delivery</li>
-</ul>
-        </Box>
-      </Group>
-    </Wrapper></MembersWrapper>
-  )
-}
+      <Wrapper>
+        <Group position="apart">
+          <Box
+            sx={(theme) => ({
+              width: "60%",
+            })}
+          >
+            <P Copy={`Awaiting first download.`} />
+            <P
+              Copy={`To ensure you receive weekly deliveries check the following items`}
+            />
+            <ul>
+              <li>Active Subscription with Fixtura</li>
+              <li>Selection of assets (match reports, videos, images)</li>
+              <li>Day of the week for delivery</li>
+              <li>Club/Association logo and colors</li>
+              <li>
+                Any specific information or branding to be included in the
+                assets
+              </li>
+              <li>Up-to-date email address for the delivery</li>
+            </ul>
+          </Box>
+        </Group>
+      </Wrapper>
+    </MembersWrapper>
+  );
+};
 /*
 Active account with Fixtura
 Selection of assets (match reports, videos, images)

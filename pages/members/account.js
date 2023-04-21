@@ -98,7 +98,6 @@ const Account = () => {
     <MembersWrapper>
       <PageTitle Copy={"Account Settings"} ICON={<IconUser size={40} />} />
 
-      <FixturaSettings user={userAccount} setHasUpdated={ReRender} />
       <Wrapper>
         <Group position="apart">
           <Box
@@ -113,7 +112,7 @@ const Account = () => {
           <Paper
             shadow="lg"
             p="md"
-            mt={20}
+            mb={20}
             withBorder
             radius="md"
             sx={(theme) => ({
@@ -145,6 +144,7 @@ const Account = () => {
           </Paper>
         </Group>
       </Wrapper>
+      <FixturaSettings user={userAccount} setHasUpdated={ReRender} />
       <Wrapper>
         <Space h={50} />
         <Divider size={10} color={"#f1f1f1"} />

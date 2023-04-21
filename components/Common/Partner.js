@@ -1,7 +1,7 @@
 import React from "react";
 
 const Partner = ({associations}) => {
-  console.log(associations)
+
   return (
     <>
       <div className="partner-area pt-100 pb-60">
@@ -14,7 +14,7 @@ const Partner = ({associations}) => {
           </div>
           <div className="row align-items-center justify-content-center">
     {
-      associations.data.map((ass,i)=>{
+      associations.data.slice(0,5).map((ass,i)=>{
         return(
         
             <div className="col-lg-2 col-6 col-sm-4" key={i}>

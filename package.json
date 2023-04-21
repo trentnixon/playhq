@@ -9,7 +9,8 @@
         "upgrade": "remotion upgrade",
         "outdated": "npm outdated",
         "updateALL": "npm update",
-        "lint": "next lint"
+        "lint": "next lint",
+        "LOGS": "heroku logs --tail"
     },
     "author": "fixtura.com",
     "license": "ISC",
@@ -36,6 +37,7 @@
         "axios": "^0.21.4",
         "dayjs": "^1.11.7",
         "eslint-config-next": "^13.1.6",
+        "framer-motion": "^10.12.4",
         "fslightbox-react": "^1.6.2-2",
         "generate-password": "^1.7.0",
         "hex-rgb": "^5.0.0",

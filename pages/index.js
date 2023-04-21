@@ -16,24 +16,24 @@ const qs = require("qs");
 
 const CS_query = qs.stringify(
   {
-    populate: [
-      "Cover",
-    ],
+    populate: ["Cover"],
   },
   {
     encodeValuesOnly: true,
   }
 );
-const Index = ({ associations,CaseStudies }) => {
+const Index = ({ associations, CaseStudies }) => {
   return (
     <>
       <MainBanner />
+
       <Services />
-      <OurWorks CaseStudies={CaseStudies}/>
-      <Partner associations={associations}/>
       <FunFacts />
+      <OurWorks CaseStudies={CaseStudies} />
+      <Partner associations={associations} />
+
       <PricingStyleOne />
-      <CtaArea />      
+      <CtaArea />
     </>
   );
 };
@@ -48,12 +48,12 @@ export const getServerSideProps = async (context) => {
     `${process.env.NEXT_PUBLIC_STRAPI_URL}/case-studies?${CS_query}`
   );
   //
- 
+
   console.log(response);
   return {
     props: {
       associations: response,
-      CaseStudies:CaseStudies
+      CaseStudies: CaseStudies,
     },
   };
 };

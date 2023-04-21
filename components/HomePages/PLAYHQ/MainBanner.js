@@ -30,7 +30,7 @@ const MainBanner = () => {
                    
 
                     <p>
-                      The social media content creator for PlayHQ clubs and
+                      The social media content creator for PlayHQ cricket clubs and
                       Associations
                     </p>
 
