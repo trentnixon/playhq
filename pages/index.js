@@ -8,7 +8,7 @@ import OurWorks from "../components/HomePages/PortfolioAgency/OurWorks";
 import Services from "../components/HomePages/DefaultHome/Services";
 import FunFacts from "../components/Common/FunFacts";
 import CtaArea from "../components/Common/CtaAreaTwo";
-import Partner from "../components/Common/Partner";
+import Partner from "../components/Common/Partner"; 
 
 import { fetcher } from "../lib/api";
 //import Footer from "../components/Layouts/Footer";
