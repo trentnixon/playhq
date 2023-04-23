@@ -56,7 +56,7 @@
         "react-visibility-sensor": "^5.1.1",
         "remotion": "3.3.41",
         "sass": "^1.43.4",
-        "styled-components": "^5.3.6",
+        "styled-components": "^5.3.10",
         "sweetalert2": "^11.4.8",
         "sweetalert2-react-content": "^5.0.0",
         "swiper": "^8.2.2",

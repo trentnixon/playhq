@@ -16,7 +16,7 @@ const FunFacts = () => {
             data-aos-duration="1200"
             data-aos-delay="200"
           >
-            <i className="pe-7s-news-paper"></i>
+            <i className="pe-7s-news-paper"></i> 
             <h3>Writeups</h3>
             <Writeup />
             <p>
@@ -54,7 +54,7 @@ const FunFacts = () => {
           >
             <i className="pe-7s-photo"></i>
             <h3>Images</h3>
-            <VideoModel />
+            <ImageModel />
             <p>
               Fixtura's images are high-quality and tailored to showcase your
               club or association in a professional and visually appealing way.
@@ -158,6 +158,42 @@ function VideoModel() {
         <Button className="btn btn-secondary-a" onClick={()=>{open(); setVideo("/video/Moss_Vale_Cricket_Club_Weekend_Results_e7d1ff0d5585.mp4")}}>results</Button>
         <Button className="btn btn-secondary-a" onClick={()=>{open(); setVideo("/video/Runaway_Bay_Cricket_Club_Inc_Top_5_fa16ec8aa992.mp4")}}>Top 5</Button>
         <Button className="btn btn-secondary-a" onClick={()=>{open(); setVideo("/video/Logan_District_Cricket_Association_Fixtures_83ce0597cee2.mp4")}}>Fixtures</Button>
+        
+      </Group>
+    </>
+  );
+}
+
+
+function ImageModel() {
+  const [opened, { open, close }] = useDisclosure(false);
+  const [video, setVideo] = useState(false)
+
+
+
+  return (
+    <>
+      <Modal
+        padding={0}
+        opened={opened}
+        onClose={close}
+        size="lg"
+        centered
+        withCloseButton={false}
+      >
+        <div
+          className="video-background"
+          style={{ position: "relative", overflow: "hidden" }}
+        >
+         <img src={video} />
+        </div>
+      </Modal>
+      <p>Examples</p>
+      <Group position="center" mb={20}>
+      
+        <Button className="btn btn-secondary-a" onClick={()=>{open(); setVideo("/video/Image_Results.png")}}>results</Button>
+        <Button className="btn btn-secondary-a" onClick={()=>{open(); setVideo("/video/Image_Top5.png")}}>Top 5</Button>
+        <Button className="btn btn-secondary-a" onClick={()=>{open(); setVideo("/video/Image_Ladder.png")}}>Ladder</Button>
         
       </Group>
     </>

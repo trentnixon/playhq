@@ -61,9 +61,9 @@ const Benefits = () => {
   return (
     <div className=" ptb-100">
       <div className="container">
-        <div class="section-title">
+        <div className="section-title">
           <h2>Join Our Early Access Program</h2>
-          <h3 class="text-center mb-4">
+          <h3 className="text-center mb-4">
             Be Among the First to Try Our Revolutionary AI-Powered Content
             Creation Platform for Cricket Clubs and Associations
           </h3>
@@ -86,7 +86,7 @@ const Benefits = () => {
                   data-aos-delay="100"
                   className="aos-init aos-animate"
                 >
-                  <i class="fa-solid fa-clock"></i>
+                  <i className="fa-solid fa-clock"></i>
                   <h3>Save Time and Resources</h3>
                   <p>
                     Let Fixtura handle the creation of fixture and results

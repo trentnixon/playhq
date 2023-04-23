@@ -22,16 +22,15 @@ const MainBanner = () => {
               <div className="row align-items-center">
                 <div className="col-lg-8">
                   <div className="main-banner-content">
-                  <img
-                  src="/images/FixturaLogoLarge.png"
-                  className="white-logo"
-                  alt="logo"
-                />
-                   
+                    <img
+                      src="/images/FixturaLogoLarge.png"
+                      className="white-logo"
+                      alt="logo"
+                    />
 
                     <p>
-                      The social media content creator for PlayHQ cricket clubs and
-                      Associations
+                      The social media content creator for PlayHQ cricket clubs
+                      and Associations
                     </p>
 
                     <Link href="/contact">
@@ -44,7 +43,7 @@ const MainBanner = () => {
                   <div className="video-box">
                     <Link href="/SignUp">
                       <a
-                       /*  onClick={() => setToggler(!toggler)} */
+                        /*  onClick={() => setToggler(!toggler)} */
                         className="video-btn"
                       >
                         <i className="fa-solid fa-user-plus"></i>
