@@ -169,7 +169,7 @@ const ICONH3 = ({ COPY }) => {
 
 const AnimateTerm = ({ term }) => {
   const theme = useMantineTheme();
-  const matches = useMediaQuery("(min-width: 56.25em)");
+  const matches = useMediaQuery("(min-width: 1200px)");
 
   return (
     <span
@@ -188,6 +188,7 @@ const AnimateTerm = ({ term }) => {
             opacity: 0,
             animation: `slideUp 5s ${index * 0.1}s forwards`,
             color: `${theme.colors.members[0]}`,
+            fontSize:matches ? '1.2em' : '4.8em'
           }}
         >
           {letter}
