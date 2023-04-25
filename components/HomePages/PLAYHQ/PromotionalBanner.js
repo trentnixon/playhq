@@ -72,7 +72,7 @@ const PromotionalBanner = () => {
                   </div>
                 </div>
                 <div className="col-lg-4 order-1 order-lg-2">
-                  <div className="main-banner-content d-flex justify-content-center justify-content-md-left">
+                  <div className="main-banner-content d-flex justify-content-center justify-content-md-left mb-5">
                     <Image
                       src="/images/fixturaHeaderLogo.png"
                       className="img-fluid w-75 "
@@ -188,7 +188,7 @@ const AnimateTerm = ({ term }) => {
             opacity: 0,
             animation: `slideUp 5s ${index * 0.1}s forwards`,
             color: `${theme.colors.members[0]}`,
-            fontSize:matches ? '1.2em' : '4.8em'
+            fontSize:matches ? '1em' : '4.8em'
           }}
         >
           {letter}
