@@ -188,7 +188,7 @@ const AnimateTerm = ({ term }) => {
             opacity: 0,
             animation: `slideUp 5s ${index * 0.1}s forwards`,
             color: `${theme.colors.members[0]}`,
-            fontSize:matches ? '1em' : '4.8em'
+            fontSize:matches ? '1em' : '3.5em'
           }}
         >
           {letter}
