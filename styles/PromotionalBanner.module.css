@@ -1,0 +1,12 @@
+/* PromotionalBanner.module.css */
+.term-letter {
+    display: inline-block;
+    opacity: 0;
+    animation: slideUp 5s;
+  }
+  
+  @media (max-width: 576px) {
+    .term-letter {
+      font-size: 1.5em;
+    }
+  }

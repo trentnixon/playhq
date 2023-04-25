@@ -77,7 +77,7 @@ export const FixturaSettings = ({ user, setHasUpdated }) => {
     },
     {
       title: "My Club",
-      stats: user.attributes.clubs.data[0].attributes.Name,
+      stats: user.attributes?.clubs?.data[0]?.attributes.Name,
       description: "",
       icon: IconTrophy,
     },

@@ -155,9 +155,9 @@ function VideoModel() {
       <p>Examples</p>
       <Group position="center" mb={20}>
       
-        <Button className="btn btn-secondary-a" onClick={()=>{open(); setVideo("/video/Moss_Vale_Cricket_Club_Weekend_Results_e7d1ff0d5585.mp4")}}>results</Button>
-        <Button className="btn btn-secondary-a" onClick={()=>{open(); setVideo("/video/Runaway_Bay_Cricket_Club_Inc_Top_5_fa16ec8aa992.mp4")}}>Top 5</Button>
-        <Button className="btn btn-secondary-a" onClick={()=>{open(); setVideo("/video/Logan_District_Cricket_Association_Fixtures_83ce0597cee2.mp4")}}>Fixtures</Button>
+        <Button className="btn btn-secondary-a" onClick={()=>{open(); setVideo("/video/Video_Results.mp4")}}>results</Button>
+        <Button className="btn btn-secondary-a" onClick={()=>{open(); setVideo("/video/Video_Ladder.mp4")}}>Ladder</Button>
+        <Button className="btn btn-secondary-a" onClick={()=>{open(); setVideo("/video/Video_Fixtures.mp4")}}>Fixtures</Button>
         
       </Group>
     </>
