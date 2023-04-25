@@ -8,7 +8,7 @@ const FooterDark = () => {
       <footer className="footer-area footer">
         <div className="container">
           <div className="row justify-content-center">
-            <div className="col-lg-4 col-sm-12">
+            <div className="col-lg-12 col-sm-12">
               <div className="single-footer-widget">
                 <div className="logo">
                   <Link href="/">
@@ -22,7 +22,7 @@ const FooterDark = () => {
                 Fixtura provides personalized digital assets to help cricket clubs and associations connect with fans, showcase achievements, and gain a competitive edge. We create innovative content using sports media, AI, and technology, and offer customization and personalized service to meet clients&apos; specific needs and goals. We aim to be a trusted partner for cricket clubs and associations looking to promote their teams and events 
                 </p>
 
-                <ul className="social-links">
+               {/*  <ul className="social-links">
                   <li>
                     <a href="https://www.facebook.com/" target="_blank" rel="noreferrer">
                       <i className="fa-brands fa-facebook-f"></i>
@@ -39,12 +39,12 @@ const FooterDark = () => {
                       <i className="fa-brands fa-instagram"></i>
                     </a>
                   </li>
-                </ul>
+                </ul> */}
               </div>
             </div>
 
             
-
+{/* 
             <div className="col-lg-4 col-sm-6">
               <div className="single-footer-widget ml-4">
                 <h3>Business Links</h3>
@@ -68,8 +68,8 @@ const FooterDark = () => {
                   </li>
                 </ul>
               </div>
-            </div>
-
+            </div> */}
+{/* 
             <div className="col-lg-4 col-sm-6">
               <div className="single-footer-widget">
                 <h3>Get in Touch</h3>
@@ -88,7 +88,7 @@ const FooterDark = () => {
                   </li>
                 </ul>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
 
