@@ -94,7 +94,7 @@ export default PromotionalBanner;
 
 const ThreePillars = () => {
   return (
-    <div className="pb-0  bg-eaf6ff ">
+    <div className="pb-0  bg-eaf6ff">
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-lg-4 col-sm-6">
@@ -102,7 +102,8 @@ const ThreePillars = () => {
               className="funfact-card"
               data-aos="fade-up"
               data-aos-duration="1200"
-              data-aos-delay="300"
+              data-aos-delay="100"
+              
             >
               <BannerIcons color={7} icon="far fa-file-pdf" delay={0.3} />
               <ICONH3 COPY="Writeups" />
@@ -113,7 +114,7 @@ const ThreePillars = () => {
               className="funfact-card"
               data-aos="fade-up"
               data-aos-duration="1200"
-              data-aos-delay="600"
+              data-aos-delay="300"
             >
               <BannerIcons color={6} icon="fas fa-file-video" delay={0.6} />
               <ICONH3 COPY="Videos" />
@@ -125,7 +126,7 @@ const ThreePillars = () => {
               className="funfact-card"
               data-aos="fade-up"
               data-aos-duration="1200"
-              data-aos-delay="900"
+              data-aos-delay="600"
             >
               <BannerIcons color={8} icon="fas fa-file-image" delay={0.9} />
               <ICONH3 COPY="Images" />
