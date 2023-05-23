@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Analytics } from '@vercel/analytics/react';
 import AOS from "aos";
 import "../node_modules/aos/dist/aos.css";
 import "../styles/bootstrap.min.css";
@@ -35,6 +36,7 @@ function MyApp({ Component, pageProps }) {
           <GoTop />
         </NotificationsProvider>
       </MantineProviderWrapper>
+      <Analytics />
     </>
   );
 }
