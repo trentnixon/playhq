@@ -13,7 +13,7 @@ const EarlyAccess = () => {
       <PromotionalBanner />
 
       <Benefits />
-      <FunFacts />
+      <FunFacts /> 
 
       <SectionContainers BG={`bg-f9f9f9`}>
         <div className="container mt-5 col-lg-8 offset-lg-2">
