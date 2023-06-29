@@ -13,14 +13,13 @@ const EarlyAccess = () => {
       <PromotionalBanner />
 
       <Benefits />
-      <FunFacts /> 
 
       <SectionContainers BG={`bg-f9f9f9`}>
         <div className="container mt-5 col-lg-8 offset-lg-2">
           {hasSent ? (
             false
           ) : (
-            <h4 className="mb-3">Register for early access:</h4>
+            <h1 className="mb-3 ">SIGN UP FOR EARLY ACCESS</h1>
           )}
 
           {hasSent ? (
@@ -39,6 +38,7 @@ const EarlyAccess = () => {
         </div>
       </SectionContainers>
 
+      <FunFacts />
       <FunFactsTwo />
     </>
   );

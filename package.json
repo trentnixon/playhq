@@ -64,7 +64,7 @@
         "tinycolor2": "^1.5.1"
     },
     "engines": {
-        "node": "16.x"
+        "node": "18.x"
     },
     "devDependencies": {
         "eslint": "^8.33.0"

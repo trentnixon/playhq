@@ -23,7 +23,7 @@ import { MantineProviderWrapper } from "../utils/MantineTheme";
 import { NotificationsProvider } from "@mantine/notifications";
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
-    AOS.init();
+    AOS.init(); 
   }, []);
 
   const getLayout = Component.getLayout || ((page) => <Layout>{page}</Layout>);
