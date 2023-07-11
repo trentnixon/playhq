@@ -15,7 +15,7 @@ const Contact = () => {
         BGImage="/images/BG-Images/f21573128.jpg"
         position={`center center`}
       />
-      <SignUpForm />
+      <SignUpForm /> 
     </>
   );
 };

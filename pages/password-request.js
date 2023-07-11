@@ -13,10 +13,9 @@ const ForgotPasswordForm = () => {
     event.preventDefault();
     setLoading(true);
     setMessage("Sending password reset email...");
-
     try {
-      await axios.post("https://playhq-backend.herokuapp.com/api/auth/forgot-password", {
-        email,
+      await axios.post("https://fixtura-backend.herokuapp.com/api/auth/forgot-password", {
+        email, 
       });
       setMessage("A password reset email has been sent to your email address.");
     } catch (error) {
