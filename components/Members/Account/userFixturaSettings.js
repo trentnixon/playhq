@@ -119,7 +119,7 @@ export const FixturaSettings = ({ user, setHasUpdated }) => {
   );
 };
 
-export const SetupInputs = ({ user, setHasUpdated }) => {
+export const SetupInputs = ({ user, setHasUpdated }) => { 
   //console.log(user.attributes?.account_type?.data?.attributes.Name)
   return (
     <>

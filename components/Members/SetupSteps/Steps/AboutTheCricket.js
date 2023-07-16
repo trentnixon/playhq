@@ -1,8 +1,8 @@
-import { SetupInputs } from "../../../../components/Members/userFixturaSettings";
+import { SetupInputs } from "../../Account/userFixturaSettings";
 import { StepHeaderandDescription } from "./StepHeaderandDescription";
 
 export const StepAboutTheCricket = ({ user, setHasUpdated }) => {
-  return (
+  return ( 
     <>
       <StepHeaderandDescription
         Header={"About your association and or club"}
