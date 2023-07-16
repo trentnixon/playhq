@@ -1,7 +1,8 @@
-import { Avatar, Container, Group, Space, Text, Title } from "@mantine/core";
+import { Avatar, Container, Group, Space, Text, Title, useMantineTheme } from "@mantine/core";
 import { Wrapper } from "./Containers";
 export const PageTitle = (props) => {
   const { Copy, ICON } = props;
+  const theme = useMantineTheme()
   return (
     <Wrapper>
       <Group position={"apart"}>
@@ -9,13 +10,13 @@ export const PageTitle = (props) => {
           order={1}
           transform="uppercase"
           sx={(theme) => ({
-            color: theme.colors[theme.primaryColor][2],
+            color: theme.colors.gray[8],
             fontFamily: theme.fontFamily,
           })}
         >
           {Copy}
         </Title>
-        <Avatar color={"blue"} size={80} radius={80}>
+        <Avatar color='blue.5' size={60} radius={60}>
           {ICON}
         </Avatar>
       </Group>
@@ -32,7 +33,7 @@ export const SubHeaders = (props) => {
         order={3}
         transform="uppercase"
         sx={(theme) => ({
-          color: theme.colors[theme.primaryColor][2],
+          color: theme.colors.gray[8],
           fontFamily: theme.fontFamily,
         })}
       >

@@ -1,9 +1,10 @@
-import { Avatar, Group, Paper, Space, Stack } from "@mantine/core";
-import { ShadowWrapper, Wrapper } from "./Common/Containers";
-import { SelectFixturaSetting } from "./Common/formelements/Select_FixturaSettings";
-import { P, SubHeaders } from "./Common/Type";
-import { createStyles, Text } from "@mantine/core";
+import { Avatar, Container, Group, Paper, Space, Stack } from "@mantine/core";
+import { ShadowWrapper, Wrapper } from "../Common/Containers";
+import { SelectFixturaSetting } from "../Common/formelements/Select_FixturaSettings";
+import { P } from "../Common/Type";
+import { createStyles } from "@mantine/core";
 import { IconSelect, IconUsers, IconTrophy } from "@tabler/icons";
+import { FixturaDivider } from "../Common/Divider";
 
 const useStyles = createStyles((theme) => ({
   root: {
@@ -107,11 +108,14 @@ export const FixturaSettings = ({ user, setHasUpdated }) => {
   ));
 
   return (
-    <Wrapper>
-      <Group position="apart" grow>
-        {stats}
-      </Group>
-    </Wrapper>
+    <>
+      <Wrapper>
+        <Group position="apart" grow>
+          {stats}
+        </Group>
+      </Wrapper>
+      <FixturaDivider />
+    </>
   );
 };
 
@@ -198,5 +202,22 @@ const LabelMe = ({ label }) => {
         Copy={label}
       />
     </Wrapper>
+  );
+};
+
+export const FixturaHeaderMeta = ({ user, setHasUpdated }) => {
+  return (
+    <Group
+      position="apart"
+      grow
+      py={3}
+      sx={(theme) => ({
+        background: theme.fn.linearGradient(
+          45,
+          theme.colors.blue[5],
+          theme.colors.cyan[5]
+        ),
+      })}
+    ></Group>
   );
 };

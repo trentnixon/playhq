@@ -32,6 +32,7 @@
         "@remotion/player": "3.3.87",
         "@stripe/stripe-js": "^1.46.0",
         "@tabler/icons": "^1.117.0",
+        "@tabler/icons-react": "^2.25.0",
         "@vercel/analytics": "^1.0.1",
         "animate.css": "^4.1.1",
         "aos": "^2.3.4",

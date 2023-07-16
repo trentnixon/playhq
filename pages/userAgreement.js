@@ -1,15 +1,11 @@
 import React from "react";
-import NavbarTwo from "../components/Layouts/NavbarTwo";
 import PageBanner from "../components/Common/PageBanner";
 
 const TermsConditions = () => {
   return (
     <>
-      <NavbarTwo />
-
       <PageBanner
         pageTitle="User Agreement"
-      
         BGImage="/images/BG-Images/f157110576.jpg"
         position={`top center`}
       />
@@ -18,11 +14,12 @@ const TermsConditions = () => {
         <div className="container">
           <h1>USER AGREEMENT</h1>
           <p>
-            This User Agreement (&quot;Agreement&quot;) is between Fixtura and the cricket
-            associations (each, a &quot;Party&quot; and together, the &quot;Parties&quot;). This
-            Agreement outlines the terms and conditions under which Fixtura will
-            access and use the PLAYHQ API and player game data, as well as the
-            storage and access to such data.
+            This User Agreement (&quot;Agreement&quot;) is between Fixtura and
+            the cricket associations (each, a &quot;Party&quot; and together,
+            the &quot;Parties&quot;). This Agreement outlines the terms and
+            conditions under which Fixtura will access and use the PLAYHQ API
+            and player game data, as well as the storage and access to such
+            data.
           </p>
           <h2>Purpose of Agreement</h2>
           <p>

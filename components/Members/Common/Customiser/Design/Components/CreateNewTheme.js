@@ -1,6 +1,13 @@
 import { useEffect, useRef, useState } from "react";
 
-import { Center, Group, Loader, Table, useMantineTheme } from "@mantine/core";
+import {
+  Center,
+  Group,
+  Loader,
+  Paper,
+  Table,
+  useMantineTheme,
+} from "@mantine/core";
 import {
   UserCreateTheme,
   UserUpdateTheme,
@@ -19,7 +26,7 @@ export const CreateNewTheme = (props) => {
 
   const [Primary, SetPrimary] = useState(false);
   const [Secondary, SetSecondary] = useState(false);
-  const [disabled, setDisabled] = useState(true); 
+  const [disabled, setDisabled] = useState(true);
 
   const [THEME, CreateTHEME] = UserCreateTheme();
   const [UPDATE, UpdateTHEME] = UserUpdateTheme();
@@ -69,11 +76,10 @@ export const CreateNewTheme = (props) => {
       },
       CreatedBy: userAccount.id,
       isPublic: false,
-      accounts: [userAccount.id], 
+      accounts: [userAccount.id],
       Name: `Custom Theme created by ${userAccount.attributes.FirstName}`,
     };
 
-    
     CTHEME[0]?.attributes?.Theme
       ? UpdateTHEME(OBJ, CTHEME[0].id)
       : CreateTHEME(OBJ);
@@ -91,103 +97,108 @@ export const CreateNewTheme = (props) => {
   }, [THEME, UPDATE]);
 
   useEffect(() => {
-    
-    if(CTHEME[0]?.attributes?.Theme != undefined){
-        SetPrimary({
-            r: hexRgb(CTHEME[0].attributes.Theme.primary).red,
-            g: hexRgb(CTHEME[0].attributes.Theme.primary).green,
-            b: hexRgb(CTHEME[0].attributes.Theme.primary).blue,
-            a: hexRgb(CTHEME[0].attributes.Theme.primary).alpha,
-          })
-          SetSecondary({
-            r: hexRgb(CTHEME[0].attributes.Theme.secondary).red,
-            g: hexRgb(CTHEME[0].attributes.Theme.secondary).green,
-            b: hexRgb(CTHEME[0].attributes.Theme.secondary).blue,
-            a: hexRgb(CTHEME[0].attributes.Theme.secondary).alpha,
-          })
+    if (CTHEME[0]?.attributes?.Theme != undefined) {
+      SetPrimary({
+        r: hexRgb(CTHEME[0].attributes.Theme.primary).red,
+        g: hexRgb(CTHEME[0].attributes.Theme.primary).green,
+        b: hexRgb(CTHEME[0].attributes.Theme.primary).blue,
+        a: hexRgb(CTHEME[0].attributes.Theme.primary).alpha,
+      });
+      SetSecondary({
+        r: hexRgb(CTHEME[0].attributes.Theme.secondary).red,
+        g: hexRgb(CTHEME[0].attributes.Theme.secondary).green,
+        b: hexRgb(CTHEME[0].attributes.Theme.secondary).blue,
+        a: hexRgb(CTHEME[0].attributes.Theme.secondary).alpha,
+      });
     }
   }, []);
 
   if (IsLoading) return <FixturaLoading />;
   return (
     <>
-      <Group position="right">
-        <BTN_ONCLICK
-          LABEL={"Back"}
-          THEME={"error"}
-          HANDLE={() => {
-            setCreateNew(false);
-          }}
-        />
-      </Group>
       <SubHeaders Copy={`Create your own Theme`} />
       <P
         Copy={`To create a new theme, simply select your primary and secondary brand colors from the color selector and click the "Create" button. This theme will automatically be assigned as your current theme, and can be updated at any time by clicking the "Update" option.`}
       />
+      <Paper
+        radius="md"
+        shadow="md"
+        withBorder
+        mb={20}
+        p="lg"
+        sx={(theme) => ({ backgroundColor: theme.white })}
+      >
+        <Table>
+          <tbody>
+            <tr>
+              <td>
+                <Group>
+                  <Center>
+                    <IconCircleCheck
+                      color={
+                        Primary ? theme.colors.green[6] : theme.colors.gray[1]
+                      }
+                    />
+                  </Center>
 
-      <Table>
-        <tbody>
-          <tr>
-            <td>
-              <Group>
-                <Center>
-                  <IconCircleCheck
-                    color={
-                      Primary ? theme.colors.green[6] : theme.colors.gray[1]
-                    }
+                  <P
+                    marginBottom={0}
+                    Weight={900}
+                    textTransform={"uppercase"}
+                    Copy={`Primary Color`}
                   />
-                </Center>
-
-                <P
-                  marginBottom={0}
-                  Weight={900}
-                  textTransform={"uppercase"}
-                  Copy={`Primary Color`}
+                </Group>
+              </td>
+              <td>
+                <SketchExample
+                  SetColor={SetPrimary}
+                  UsersTheme={UseBaseColor("primary")}
                 />
-              </Group>
-            </td>
-            <td>
-              <SketchExample
-                SetColor={SetPrimary}
-                UsersTheme={UseBaseColor("primary")}
-              />
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <Group>
-                <Center>
-                  <IconCircleCheck
-                    color={
-                      Secondary ? theme.colors.green[6] : theme.colors.gray[1]
-                    }
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <Group>
+                  <Center>
+                    <IconCircleCheck
+                      color={
+                        Secondary ? theme.colors.green[6] : theme.colors.gray[1]
+                      }
+                    />
+                  </Center>
+
+                  <P
+                    marginBottom={0}
+                    Weight={900}
+                    textTransform={"uppercase"}
+                    Copy={`Secondary Color`}
                   />
-                </Center>
-
-                <P
-                  marginBottom={0}
-                  Weight={900}
-                  textTransform={"uppercase"}
-                  Copy={`Secondary Color`}
+                </Group>
+              </td>
+              <td>
+                <SketchExample
+                  SetColor={SetSecondary}
+                  UsersTheme={UseBaseColor("secondary")}
                 />
-              </Group>
-            </td>
-            <td>
-              <SketchExample
-                SetColor={SetSecondary}
-                UsersTheme={UseBaseColor("secondary")}
-              />
-            </td>
-          </tr>
-        </tbody>
-      </Table>
-      <Group position="right" my={20}>
-        <BTN_ONCLICK
-          LABEL={CTHEME[0]?.attributes ? "Update" : "Create"}
-          HANDLE={CreateANewTheme}
-          idDisabled={disabled}
-        />
-      </Group>
+              </td>
+            </tr>
+          </tbody>
+        </Table>
+        <Group position="apart" mt={20}>
+          <BTN_ONCLICK
+            LABEL={"Back"}
+            THEME={"error"}
+            HANDLE={() => {
+              setCreateNew(false);
+            }}
+          />
+          <BTN_ONCLICK
+            LABEL={CTHEME[0]?.attributes ? "Update" : "Create"}
+            HANDLE={CreateANewTheme}
+            idDisabled={disabled}
+          />
+        </Group>
+      </Paper>
     </>
   );
 };

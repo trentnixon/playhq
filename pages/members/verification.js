@@ -16,8 +16,7 @@ const UserVerification = () => {
   const { prev } = router.query;
 
   useEffect(() => {
-    console.log(user);
-    
+    //console.log(user);
     user === undefined ? router.push('/') : "WAITING...";
     user != null ? router.push(prev) : "WAITING...";
   }, [router, user]);

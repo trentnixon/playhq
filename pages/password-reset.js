@@ -1,7 +1,4 @@
 import React, { useState } from "react";
-import axios from "axios";
-
-import NavbarTwo from "../components/Layouts/NavbarTwo";
 import PageBanner from "../components/Common/PageBanner";
 import { useRouter } from "next/router";
 
@@ -42,8 +39,6 @@ const ResetPasswordForm = () => {
 
   return (
     <>
-      <NavbarTwo />
-
       <PageBanner
         pageTitle="Reset password"
         BGImage="/images/PLAYHQ-BG-RAINDROPS.jpg"

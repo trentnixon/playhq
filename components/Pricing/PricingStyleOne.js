@@ -1,13 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Link from "next/link";
-
-/*
-Fixtura
-Wicketly
-Bowlify
-*/
+import { ProductCard } from "./ProductCard";
+import { useGetSubscriptionTiers } from "../../Hooks/useSubscriptionTiers";
 
 const PricingStyleOne = () => {
+  const [products, GetsetSubscriptionTiers] = useGetSubscriptionTiers();
+
+  useEffect(() => {
+    if (products === null) GetsetSubscriptionTiers();
+  }, [GetsetSubscriptionTiers]);
+
+  if (products === null) return <>Creating Subscriptions Options</>;
   return (
     <>
       <div className="pricing-area ptb-100 bg-f9f6f6">
@@ -27,41 +30,11 @@ const PricingStyleOne = () => {
           </div>
 
           <div className="row justify-content-center">
-            <div className="col-lg-4 col-md-6">
-              <div
-                className="pricing-table active-plan"
-                data-aos="fade-up"
-                data-aos-duration="1200"
-                data-aos-delay="200"
-              >
-                <div className="pricing-header">
-                  <h3>The Only Plan</h3>
-                </div>
-
-                <div className="price">
-                  <span>
-                    <sup>$</sup>12.50
-                    <span>/Weekly</span>
-                  </span>
-                </div>
-
-                <div className="pricing-features">
-                  <ul>
-                    <li className="active">10 video options covering various grades and games</li>
-                    <li className="active">Up to 44* customized images generated per weekend</li>
-                    <li className="active">AI-generated match reports, summaries, posts, and emails for all games</li>
-                    <li className="active">Customization with your club&lsquo;s colors and branding</li>
-                    <li className="active">Option to include title sponsors in your assets</li>
-                  </ul>
-                </div>
-
-                <div className="pricing-footer">
-                  <Link href="/SignUp/">
-                    <a className="btn btn-primary">Sign up</a>
-                  </Link>
-                </div>
-              </div>
-            </div>
+            {products.map((product, i) => {
+              console.log(product);
+              if (product.attributes.isActive)
+                return <ProductCard key={i} product={product.attributes} signUp={true} />;
+            })}
           </div>
         </div>
       </div>

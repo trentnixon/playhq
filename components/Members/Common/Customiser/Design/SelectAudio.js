@@ -5,7 +5,6 @@ import dynamic from "next/dynamic";
 import {
   ActionIcon,
   Center,
-
   Group,
   Paper,
   Table,
@@ -24,7 +23,7 @@ import {
   IconSquareX,
 } from "@tabler/icons";
 import { useAccountDetails } from "../../../../../lib/userContext";
-import { P } from "../../Type";
+import { P, SubHeaders } from "../../Type";
 
 export const SelectAudio = ({ isPlaying }) => {
   const { account, ReRender } = useAccountDetails();
@@ -98,78 +97,78 @@ export const SelectAudio = ({ isPlaying }) => {
 
   return (
     <>
-      <Table>
-        <tbody>
-          {GetElement.map((item, i) => {
-            return (
-              <tr
-                key={i}
-                style={{
-                  backgroundColor:
-                    userAccount.attributes.audio_option.data.id === item.id
-                    ? theme.colors.members[4]
-                    : theme.colors.members[0],
-                }}
-              >
-                <td>
-                  <Group>
-                    {isPlaying ? (
-                      <IconEarOff color={theme.colors.gray[2]} />
-                    ) : (
-                      <Center>
-                        {item.id === currentSong?.id ? (
-                          <IconVolume color={theme.colors.blue[3]} />
-                        ) : (
-                          <ActionIcon
-                            color="gray.5"
-                            size="lg"
-                            onClick={() => {
-                              SelectAudio(item);
-                            }}
-                          >
-                            <IconEar />
-                          </ActionIcon>
-                        )}
-                      </Center>
-                    )}
-                    <P
-                      marginBottom={0}
-                      color={
-                        userAccount.attributes.audio_option.data.id === item.id
-                          ? 0
-                          : 2
-                      }
-                      Copy={item.attributes.Name}
-                    />
-                  </Group>
-                </td>
+      <SubHeaders Copy={`Audio Options`} />
+      <Paper
+        radius="md"
+        shadow="md"
+        withBorder
+        p="lg"
+        sx={(theme) => ({
+          backgroundColor: theme.white,
+        })}
+      >
+        <Table>
+          <tbody>
+            {GetElement.map((item, i) => {
+              return (
+                <tr key={i}>
+                  <td>
+                    <Group>
+                      {isPlaying ? (
+                        <IconEarOff color={theme.colors.green[5]} />
+                      ) : (
+                        <Center>
+                          {item.id === currentSong?.id ? (
+                            <IconVolume color={theme.colors.blue[9]} />
+                          ) : (
+                            <ActionIcon
+                              color="gray.5"
+                              size="lg"
+                              onClick={() => {
+                                SelectAudio(item);
+                              }}
+                            >
+                              <IconEar />
+                            </ActionIcon>
+                          )}
+                        </Center>
+                      )}
+                      <P
+                        marginBottom={0}
+                        color={
+                          userAccount.attributes.audio_option.data.id ===
+                          item.id
+                            ? 2
+                            : 2
+                        }
+                        Copy={item.attributes.Name}
+                      />
+                    </Group>
+                  </td>
 
-                <td>
-                  {userAccount.attributes.audio_option.data.id === item.id ? (
-                    <Center>
-                      <IconCircleCheck color={theme.colors.gray[2]} />
-                    </Center>
-                  ) : (
-                    <Center>
+                  <td style={{ textAlign: "right" }}>
+                    {userAccount.attributes.audio_option.data.id === item.id ? (
+                      <IconCircleCheck color={theme.colors.green[5]} />
+                    ) : (
                       <BTN_ONCLICK
                         HANDLE={() => {
                           StoreUSerChange(item);
                         }}
-                        LABEL={`Select Audio`}
+                        LABEL={`Select`}
                       />
-                    </Center>
-                  )}
-                </td>
-              </tr>
-            );
-          })}
-        </tbody>
-      </Table>
-      {isPlayer ? (
-        <Player currentSong={currentSong} DeSelectAudio={DeSelectAudio} />
-      ) : (
-        false
-      )}
+                    )}
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </Table>
+        {isPlayer ? (
+          <Player currentSong={currentSong} DeSelectAudio={DeSelectAudio} />
+        ) : (
+          false
+        )}
+      </Paper>
     </>
   );
 };

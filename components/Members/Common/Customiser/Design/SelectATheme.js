@@ -1,14 +1,14 @@
 import { useEffect, useState } from "react";
 import { FixturaLoading } from "../../Loading";
 import {
-  Center,
   ColorSwatch,
   Group,
+  Paper,
   Table,
   useMantineTheme,
 } from "@mantine/core";
 import {
-  useAssignDesignElement, 
+  useAssignDesignElement,
   useGETDesignElement,
 } from "../../../../../Hooks/useCustomizer";
 import { BTN_ONCLICK } from "../../utils/Buttons";
@@ -17,43 +17,27 @@ import { useAccountDetails } from "../../../../../lib/userContext";
 import { P, SubHeaders } from "../../Type";
 import { DisplayCustomTheme } from "./Components/DisplayCustomTheme";
 import { CreateNewTheme } from "./Components/CreateNewTheme";
-
-/*
-This component is called "SelectATheme", it is a functional component that allows the user to select a 
-theme from a list of available options. It uses several hooks such as "useAccountDetails", "useState", 
-"useAssignDesignElement" and "useGETDesignElement" to manage the state of the component and make API calls.
-
-It also has several useEffect hooks that are used to fetch data and update the state of the component 
-when certain conditions are met. The component also renders other functional components such as 
-"FixturaLoading", "CreateNewTheme" and "ColorTable" based on certain conditions.
-This component is based on the data that is passed from the parent component and it allows the 
-user to select a theme from available options and store the selected theme on the user's account.
-
-*/
+import { FixturaDivider } from "../../Divider";
 
 export const SelectATheme = () => {
   const { account, ReRender } = useAccountDetails();
   const [userAccount, setuserAccount] = useState(account);
   const [loading, setLoading] = useState(false);
   const [createNew, setCreateNew] = useState(false);
-  // Assign Hook
-  const [DesignElement, CreateDesignElement] = useAssignDesignElement(); 
+
+  const [DesignElement, CreateDesignElement] = useAssignDesignElement();
   const [GetElement, FetchElement] = useGETDesignElement();
 
-  // Fetch Design Element
   useEffect(() => {
     FetchElement({ COLLECTIONID: "themes" });
   }, []);
 
-  // Set SET ACCOUNT DATA
   useEffect(() => {
-    console.log("DID THIS FIRE AFTER THEME CREATE?");
     FetchElement({ COLLECTIONID: "themes" });
     setuserAccount(account);
     setLoading(false);
   }, [account]);
 
-  // Fire HOOK to sotre new Design Element to user
   const StoreUSerChange = (item) => {
     const OBJ = {
       CollectionSaveTo: "accounts",
@@ -64,22 +48,34 @@ export const SelectATheme = () => {
     setLoading(true);
     CreateDesignElement(OBJ);
   };
-  // change UI on return Value
+
   useEffect(() => {
-    if(DesignElement != true){
-      console.log("NEW THEME", DesignElement)
+    if (DesignElement != true) {
       ReRender();
     }
   }, [DesignElement]);
 
   useEffect(() => {}, [userAccount]);
+
   if (
     loading ||
     GetElement === true ||
     GetElement === null ||
     userAccount === false
   ) {
-    return <FixturaLoading />;
+    return  <>
+    <SubHeaders Copy={`Storing New Theme`} />
+    <Paper
+      radius="md"
+      shadow="md"
+      withBorder
+      mb={20}
+      p="lg"
+      sx={(theme) => ({ backgroundColor: theme.white })}
+    >
+      <FixturaLoading />
+    </Paper>
+    </>;
   }
 
   return (
@@ -89,7 +85,7 @@ export const SelectATheme = () => {
           userAccount={userAccount}
           setCreateNew={setCreateNew}
           ReRender={ReRender}
-          GetElement={GetElement} 
+          GetElement={GetElement}
         />
       ) : (
         <ColorTable
@@ -103,74 +99,75 @@ export const SelectATheme = () => {
   );
 };
 
+const Swatches = ({ colors }) => {
+  return colors.map((color) => (
+    <ColorSwatch key={color} color={color} size={15} radius="sm" />
+  ));
+};
 
+const SelectButton = ({ isSelected, onClick, label }) => {
+  const theme = useMantineTheme()
+  if (isSelected) {
+    return <IconCircleCheck color={theme.colors.green[5]} />;
+  }
+
+  return <BTN_ONCLICK HANDLE={onClick} LABEL={label} />;
+};
+
+const TableRow = ({ item, userAccount, StoreUSerChange }) => {
+  const theme = useMantineTheme()
+  if (!item.attributes.isPublic) return false;
+  const isSelected = userAccount.attributes.theme.data.id === item.id;
+
+  return (
+    <tr>
+      <td>
+        <Group position="center" spacing="xs">
+          <Swatches colors={[item.attributes.Theme.primary, item.attributes.Theme.secondary]} />
+        </Group>
+      </td>
+      <td>
+        <P
+          marginBottom={0}
+          color={isSelected ? 2 : 2}
+          Copy={item.attributes.Name}
+        />
+      </td>
+      <td style={{ textAlign: "right" }}>
+        <SelectButton isSelected={isSelected} onClick={() => StoreUSerChange(item)} label="Select" />
+      </td>
+    </tr>
+  );
+};
 
 const ColorTable = (props) => {
   const { GetElement, userAccount, StoreUSerChange } = props;
-  const theme = useMantineTheme();
-  const swatches = (ARR) => {
-    return ARR.map((color) => (
-      <ColorSwatch key={color} color={color} size={15} radius="sm" />
-    ));
-  };
 
   return (
     <>
-      <DisplayCustomTheme {...props} />
+      <SubHeaders Copy={`Color themes`} />
+      <Paper
+        radius="md"
+        shadow="md"
+        withBorder
+        p="lg"
+        sx={(theme) => ({
+          backgroundColor: theme.white,
+        })}
+      >
+        <DisplayCustomTheme {...props} />
 
-      <SubHeaders Copy={`Public Themes`} />
-      <Table>
-        <tbody>
-          {GetElement.map((item, i) => {
-            if (!item.attributes.isPublic) return false;
-            return (
-              <tr
-                key={i}
-                style={{
-                  backgroundColor:
-                    userAccount.attributes.theme.data.id === item.id
-                    ? theme.colors.members[4]
-                    : theme.colors.members[0],
-                }}
-              >
-                <td>
-                  <P
-                    marginBottom={0}
-                    color={
-                      userAccount.attributes.theme.data.id === item.id ? 0 : 2
-                    }
-                    Copy={item.attributes.Name}
-                  />
-                </td>
-                <td>
-                  <Group position="center" spacing="xs">
-                    {swatches([
-                      item.attributes.Theme.primary,
-                      item.attributes.Theme.secondary,
-                    ])}
-                  </Group>
-                </td>
-                <td>
-                  {userAccount.attributes.theme.data.id === item.id ? (
-                    <Center>
-                      <IconCircleCheck color={theme.colors.gray[2]} />
-                    </Center>
-                  ) : (
-                    <Center>
-                      <BTN_ONCLICK
-                        HANDLE={() => {
-                          StoreUSerChange(item);
-                        }}
-                        LABEL={`Select Theme`}
-                      />
-                    </Center>
-                  )}
-                </td>
-              </tr>
-            );
-          })}
-        </tbody>
-      </Table>
+        <SubHeaders Copy={`Public Themes`} />
+
+        <Table>
+          <tbody>
+            {GetElement.map((item, i) => (
+              <TableRow key={i} item={item} userAccount={userAccount} StoreUSerChange={StoreUSerChange} />
+            ))}
+          </tbody>
+        </Table>
+      </Paper>
+      <FixturaDivider />
     </>
   );
 };

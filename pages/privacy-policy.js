@@ -1,12 +1,9 @@
 import React from "react";
-import NavbarTwo from "../components/Layouts/NavbarTwo";
 import PageBanner from "../components/Common/PageBanner";
 
 const PrivacyPolicy = () => {
   return (
     <>
-      <NavbarTwo />
-
       <PageBanner
         pageTitle="Privacy Policy"
         BGImage="/images/BG-Images/f180918696.jpg"

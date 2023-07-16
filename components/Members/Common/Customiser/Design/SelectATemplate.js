@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react";
 import { FixturaLoading } from "../../Loading";
-import { ActionIcon, Center, Table, useMantineTheme } from "@mantine/core";
+import {
+  Paper,
+  Table,
+  useMantineTheme,
+} from "@mantine/core";
 import {
   useAssignDesignElement,
   useGETDesignElement,
@@ -8,103 +12,104 @@ import {
 import { BTN_ONCLICK } from "../../utils/Buttons";
 import { IconCircleCheck } from "@tabler/icons";
 import { useAccountDetails } from "../../../../../lib/userContext";
-import { P } from "../../Type";
+import { P, SubHeaders } from "../../Type";
+import { FixturaDivider } from "../../Divider";
+
 export const SelectATemplate = () => {
   const { account, ReRender } = useAccountDetails();
   const [userAccount, setuserAccount] = useState(account);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const theme = useMantineTheme();
-  // Assign Hook
+
   const [DesignElement, CreateDesignElement] = useAssignDesignElement();
   const [GetElement, FetchElement] = useGETDesignElement();
 
-  // Fetch Design Element
   useEffect(() => {
-    FetchElement({
-      COLLECTIONID: "templates",
-    });
+    FetchElement({ COLLECTIONID: "templates" });
   }, []);
-  useEffect(() => {}, [GetElement]);
 
-  // Set SET ACCOUNT DATA
   useEffect(() => {
     setuserAccount(account);
     setLoading(false);
   }, [account]);
 
-  // Fire HOOK to sotre new Design Element to user
   const StoreUSerChange = (item) => {
-    const OBJ = {
+    setLoading(true);
+    CreateDesignElement({
       CollectionSaveTo: "accounts",
       Body: [item.id],
       COLLECTIONID: userAccount.id,
       RelationProperty: "template",
-    };
-
-    setLoading(true);
-    CreateDesignElement(OBJ);
+    });
   };
 
-  // change UI on return Value
   useEffect(() => {
     ReRender();
   }, [DesignElement]);
 
-  if (
-    loading ||
-    GetElement === true ||
-    GetElement === null ||
-    userAccount === false
-  ) {
-    return <FixturaLoading />;
+  if (loading || !GetElement || !userAccount) {
+    return (
+      <>
+      <SubHeaders Copy={`Storing New Template`} />
+      <Paper
+        radius="md"
+        shadow="md"
+        withBorder
+        mb={20}
+        p="lg"
+        sx={(theme) => ({ backgroundColor: theme.white })}
+      >
+        <FixturaLoading />
+      </Paper>
+      </>
+    );
   }
 
   return (
-    <Table>
-      <tbody>
-        {GetElement.map((item, i) => {
-          return (
-            <tr
-              key={i}
-              style={{
-                borderRadius:'10px',
-                padding:'10px',
-                backgroundColor:
-                  userAccount.attributes.template.data.id === item.id
-                    ? theme.colors.members[4]
-                    : theme.colors.members[0],
-              }}
-            >
-              <td>
-                <P
-                  marginBottom={0}
-                  color={
-                    userAccount.attributes.template.data.id === item.id ? 0 : 2
-                  }
-                  Copy={item.attributes.Name}
-                />
-              </td>
-
-              <td>
-                {userAccount.attributes.template.data.id === item.id ? (
-                  <Center>
-                    <IconCircleCheck color={theme.colors.gray[2]} />
-                  </Center>
-                ) : (
-                  <Center>
-                    <BTN_ONCLICK
-                      HANDLE={() => {
-                        StoreUSerChange(item);
-                      }}
-                      LABEL={`Select Template`}
+    <>
+      <SubHeaders Copy={`Select a Template`} />
+      <Paper
+        radius="md"
+        shadow="md"
+        withBorder
+        p="lg"
+        sx={(theme) => ({ backgroundColor: theme.white })}
+      >
+        <Table>
+          <tbody>
+            {Array.isArray(GetElement) &&
+              GetElement.map((item, i) => (
+                <tr key={i} style={{ borderRadius: "10px", padding: "10px" }}>
+                  <td>
+                    <P
+                      marginBottom={0}
+                      color={
+                        userAccount.attributes.template.data.id === item.id
+                          ? 6
+                          : 2
+                      }
+                      Copy={item.attributes.Name}
                     />
-                  </Center>
-                )}
-              </td>
-            </tr>
-          );
-        })}
-      </tbody>
-    </Table>
+                  </td>
+
+                  <td style={{ textAlign: "right" }}>
+                    {userAccount.attributes.template.data.id === item.id ? (
+                      <IconCircleCheck color={theme.colors.green[5]} />
+                    ) : (
+                      <BTN_ONCLICK
+                        HANDLE={() => {
+                          StoreUSerChange(item);
+                        }}
+                        LABEL={`Select`}
+                      />
+                    )}
+                  </td>
+                </tr>
+              ))}
+          </tbody>
+        </Table>
+      </Paper>
+      <FixturaDivider />
+    </>
   );
 };

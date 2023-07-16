@@ -70,10 +70,15 @@ export const Input_FixturaSetting = ({ Input, user, setHasUpdated }) => {
                   sx={(theme) => ({
                     padding: theme.spacing.md,
                     border: `1px solid ${theme.colors.members[1]}`,
-                    backgroundColor:
-                      theme.colors.members[
+                    /* backgroundColor:
+                      theme.colors.members[ 
                         user?.attributes[Input.Field] === null ? 1 : 3
-                      ],
+                      ], */
+                      background: theme.fn.linearGradient(
+                        45,
+                        theme.colors.blue[5],
+                        theme.colors.cyan[5]
+                      ),
                     borderRadius: "5px",
                     textAlign: "right",
                   })}

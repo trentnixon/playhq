@@ -1,12 +1,9 @@
 import React from "react";
-import NavbarTwo from "../components/Layouts/NavbarTwo";
 import PageBanner from "../components/Common/PageBanner";
 
 const TermsConditions = () => {
   return (
     <>
-      <NavbarTwo />
-
       <PageBanner
         pageTitle="Terms Conditions"
         BGImage="/images/BG-Images/f158985720.jpg"

@@ -1,8 +1,5 @@
-// Core
-import React from "react";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-// UTILS
 import { useAccountDetails } from "../../lib/userContext";
 import { useUser } from "../../lib/authContext";
 import Cookies from "js-cookie";
@@ -12,13 +9,9 @@ import {
   MembersWrapper,
   Wrapper,
 } from "../../components/Members/Common/Containers";
-// PACK
-import { Box, Container, Group, Paper, Space } from "@mantine/core";
-
+import { Box, Container, Group, Space } from "@mantine/core";
 import { IconColorPicker } from "@tabler/icons";
-// Components
 import { DesignTabs } from "../../components/Members/Design/DesignTabs";
-
 const qs = require("qs");
 
 const query = qs.stringify(
@@ -40,11 +33,10 @@ const query = qs.stringify(
 const Design = () => {
   const { account } = useAccountDetails();
   const [userAccount, setUserAccount] = useState(account);
-
   const [isPlaying, setIsPlaying] = useState(false);
 
   /* is User Auth */
-  const { user, loading } = useUser();
+  const { user } = useUser();
   const router = useRouter();
   const currentRoute = router.pathname;
   useEffect(() => {
@@ -56,7 +48,7 @@ const Design = () => {
     console.log("userAccount ", userAccount);
   }, [userAccount]);
 
-  if (!user || !userAccount) return false;
+  if (!user || !userAccount) return null;
 
   return (
     <MembersWrapper>
@@ -67,7 +59,7 @@ const Design = () => {
         <Group position="apart">
           <Box
             sx={(theme) => ({
-              width: "60%",
+              width: "80%",
             })}
           >
             <P
@@ -77,7 +69,7 @@ const Design = () => {
         </Group>
       </Wrapper>
       <Space h={20} />
-      <Container size={"lg"} mb={40}>
+      <Container fluid mb={40}>
         <DesignTabs
           isPlaying={isPlaying}
           userAccount={userAccount}

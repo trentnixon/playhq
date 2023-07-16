@@ -3,7 +3,10 @@ import { getAccountFromLocalCookie, unsetToken } from "../../lib/auth";
 import { useUser } from "../../lib/authContext";
 import Link from "../../utils/ActiveLink";
 import { useRouter } from "next/router";
-const NavbarTwo = ({navBarClass='navbar-style-2'}) => {
+
+
+
+const NavbarTwo = () => {
   const [menu, setMenu] = React.useState(true);
   const toggleNavbar = () => {
     setMenu(!menu);
@@ -13,7 +16,7 @@ const NavbarTwo = ({navBarClass='navbar-style-2'}) => {
   const { user, loading } = useUser();
 
   React.useEffect(() => {
-    let elementId = document.getElementById("navbar");
+    let elementId = document.getElementById("navbarTwo");
     document.addEventListener("scroll", () => {
       if (window.scrollY > 170) {
         elementId.classList.add("is-sticky");
@@ -32,7 +35,7 @@ const NavbarTwo = ({navBarClass='navbar-style-2'}) => {
 
   return (
     <>
-      <div id="navbar" className={`navbar-area ${navBarClass}`}>
+       <div id="navbarTwo" className={`navbar-area navbar-style-2`}>
         <nav className="navbar navbar-expand-md navbar-light">
           <div className="container-fluid">
             <Link href="/">
@@ -68,46 +71,37 @@ const NavbarTwo = ({navBarClass='navbar-style-2'}) => {
 
             <div className={classOne} id="navbarSupportedContent">
               <ul className="navbar-nav">
-              {user ? <MembersNavItem user={user} /> : false}
+                {user && <MembersNavItem user={user} />}
                 <li className="nav-item">
                   <Link href="/">
                     <a className="nav-link">Home</a>
                   </Link>
                 </li>
+
                 <li className="nav-item">
-                      <Link href="/portfolio" activeClassName="active">
-                        <a className="nav-link">Examples</a>
-                      </Link>
-                    </li>
-            
+                  <Link href="/portfolio" activeClassName="active">
+                    <a className="nav-link">Examples</a>
+                  </Link>
+                </li>
 
                 <li className="nav-item">
                   <Link href="/about" activeClassName="active">
                     <a className="nav-link">About us</a>
                   </Link>
                 </li>
-                {user ? false : <li className="nav-item">
-                      <Link href="/pricing" activeClassName="active">
-                        <a className="nav-link">Pricing</a>
-                      </Link>
-                    </li>}
-                
+
                 <li className="nav-item">
-                      <Link href="/faq" activeClassName="active">
-                        <a className="nav-link">FAQ</a>
-                      </Link>
-                    </li>
+                  <Link href="/faq" activeClassName="active">
+                    <a className="nav-link">FAQ</a>
+                  </Link>
+                </li>
 
                 <li className="nav-item">
                   <Link href="/contact" activeClassName="active">
                     <a className="nav-link">Contact Us</a>
                   </Link>
                 </li>
-                
-                {user ? null : <SignIn />}
               </ul>
-
-              {user ? null : <SignUp />}
             </div>
           </div>
         </nav>
@@ -117,27 +111,6 @@ const NavbarTwo = ({navBarClass='navbar-style-2'}) => {
 };
 
 export default NavbarTwo;
-
-const SignUp = () => {
-
-  return (
-    <div className="others-options">
-      <Link href="/SignUp">
-        <a className="btn btn-primary">Get Started</a>
-      </Link>
-    </div>
-  );
-};
-
-const SignIn = () => {
-  return (
-    <li className="nav-item">
-      <Link href="/SignIn" activeClassName="active">
-        <a className="nav-link">Sign In</a>
-      </Link>
-    </li>
-  );
-};
 
 const MembersNavItem = ({ user }) => {
   const router = useRouter();
@@ -185,22 +158,16 @@ const MembersNavItem = ({ user }) => {
 
       <ul className="dropdown-menu">
      
-        <li className="nav-item">
-          <Link href={`${PATH}/account`} activeClassName="active">
-            <a className="nav-link">Account</a>
-          </Link>
-        </li>
+        
         <li className="nav-item">
           <Link href={`${PATH}/orderHistory`} activeClassName="active">
             <a className="nav-link">Downloads</a>
           </Link>
         </li>
-        <li>
-          <hr />
-        </li>
+       
         <li className="nav-item">
-          <Link href={`${PATH}/assets`} activeClassName="active">
-            <a className="nav-link">Assets</a>
+          <Link href={`${PATH}/tracking`} activeClassName="active">
+            <a className="nav-link">Tracking</a>
           </Link>
         </li>
         <li className="nav-item">
@@ -208,24 +175,25 @@ const MembersNavItem = ({ user }) => {
             <a className="nav-link">Design</a>
           </Link>
         </li>
-        <li className="nav-item">
-          <Link href={`${PATH}/ai-assistant`} activeClassName="active">
-            <a className="nav-link">AI Assistant</a>
-          </Link>
-        </li>
+     
         <li className="nav-item">
           <Link href={`${PATH}/sponsors`} activeClassName="active">
             <a className="nav-link">Sponsors</a>
           </Link>
         </li>
-
+        <li className="nav-item">
+          <Link href={`${PATH}/HowToUse`} activeClassName="active">
+            <a className="nav-link">How to Use</a>
+          </Link>
+        </li>
         
         <li>
           <hr />
         </li>
+       
         <li className="nav-item">
-          <Link href={`${PATH}/HowToUse`} activeClassName="active">
-            <a className="nav-link">How to Use</a>
+          <Link href={`${PATH}/account`} activeClassName="active">
+            <a className="nav-link">Account</a>
           </Link>
         </li>
         <li className="nav-item">

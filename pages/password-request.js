@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import axios from "axios";
-
-import NavbarTwo from "../components/Layouts/NavbarTwo";
 import PageBanner from "../components/Common/PageBanner";
 
 const ForgotPasswordForm = () => {
@@ -14,9 +12,12 @@ const ForgotPasswordForm = () => {
     setLoading(true);
     setMessage("Sending password reset email...");
     try {
-      await axios.post("https://fixtura-backend.herokuapp.com/api/auth/forgot-password", {
-        email, 
-      });
+      await axios.post(
+        "https://fixtura-backend.herokuapp.com/api/auth/forgot-password",
+        {
+          email,
+        }
+      );
       setMessage("A password reset email has been sent to your email address.");
     } catch (error) {
       setMessage("An error occurred. Please try again.");
@@ -25,13 +26,11 @@ const ForgotPasswordForm = () => {
 
   return (
     <>
-      <NavbarTwo />
-
       <PageBanner
         pageTitle="Forgot your Password"
         BGImage="/images/PLAYHQ-BG-RAINDROPS.jpg"
       />
-      {message && <MessageContainer message={message}/>}
+      {message && <MessageContainer message={message} />}
       {!loading && (
         <div className="contact-form ptb-100">
           <div className="contact-title">
@@ -81,11 +80,12 @@ const ForgotPasswordForm = () => {
 export default ForgotPasswordForm;
 
 const MessageContainer = ({ message }) => {
-  return(
+  return (
     <div className="contact-form ptb-100">
-          <div className="contact-title">
-            <h2>Forgot your Password?</h2>
-            <p>{message}</p>
-          </div></div>
+      <div className="contact-title">
+        <h2>Forgot your Password?</h2>
+        <p>{message}</p>
+      </div>
+    </div>
   );
 };

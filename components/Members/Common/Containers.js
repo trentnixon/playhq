@@ -1,8 +1,8 @@
-import { Container } from "@mantine/core";
+import { Container, Grid } from "@mantine/core";
 
 export const MembersWrapper = (props) => {
   return (
-    <Container size={"xl"} pt={150} pb={100}>
+    <Container fluid pt={40} pb={100}>
       {props.children}
     </Container>
   );
@@ -28,6 +28,7 @@ export const ShadowWrapper = (props) => {
       })}
     >
       {props.children}
+      
     </Container>
   );
 };

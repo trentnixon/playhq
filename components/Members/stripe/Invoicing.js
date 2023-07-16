@@ -8,13 +8,27 @@ import {
   Group,
   Loader,
   Button,
+  Table,
+  ActionIcon,
+  useMantineTheme,
+  Tooltip,
 } from "@mantine/core";
 import { useGetInvoice } from "../../../Hooks/useInvoicing";
 import { ShadowWrapper } from "../Common/Containers";
-import { SubHeaders } from "../Common/Type";
+import { PageTitle, SubHeaders } from "../Common/Type";
 import { FixturaLoading } from "../Common/Loading";
 import { BTN_TOEXTLINK } from "../Common/utils/Buttons";
-
+import {
+  IconAppWindowFilled,
+  IconCalendarDue,
+  IconCalendarStats,
+  IconDownload,
+  IconExternalLink,
+  IconFileInvoice,
+  IconFileTypePdf,
+  IconReceipt2,
+  IconStatusChange,
+} from "@tabler/icons-react";
 const useStyles = createStyles((theme) => ({
   card: {
     backgroundColor:
@@ -68,34 +82,156 @@ function convertUnixTimestamp(timestamp) {
   return `${day}-${month}-${year}`;
 }
 
- export const Invoicing = () => {
-  const [invoice, Getinvoice] = useGetInvoice();
+export const Invoicing = () => {
+  const [invoice, getInvoice, loading] = useGetInvoice();
 
+  const theme = useMantineTheme();
   useEffect(() => {
-    if (invoice === null) {
-      Getinvoice();
-    }
+    getInvoice();
   }, []);
 
-  useEffect(() => {
-    console.log(invoice?.data);
-  }, [invoice]);
-  if (invoice === null) {
+  useEffect(() => {}, [invoice]);
+
+  if (loading) {
     return <FixturaLoading />;
   }
-  if (invoice.data === null) {
-    return false;
+
+  if (invoice === null || invoice.data === null) {
+    return <div>No invoices available</div>;
   }
+
   return (
     <>
-      <SubHeaders Copy={"Invoicing"} />
+      <PageTitle Copy={"Invoicing"} ICON={<IconFileInvoice size={40} />} />
       <ShadowWrapper>
-        <StatsRingCard invoice={invoice} />
+        <Table>
+          <thead>
+            <tr>
+              <th></th>
+              <th>
+                <Tooltip
+                  label="From"
+                  color={theme.colors.cyan[3]}
+                  position="bottom-start"
+                  withArrow
+                >
+                  <IconCalendarStats
+                    size="1.5rem"
+                    color={theme.colors.cyan[5]}
+                  />
+                </Tooltip>
+              </th>
+              <th>
+                <Tooltip
+                  label="To"
+                  color={theme.colors.cyan[3]}
+                  position="bottom-start"
+                  withArrow
+                >
+                  <IconCalendarDue size="1.5rem" color={theme.colors.cyan[5]} />
+                </Tooltip>
+              </th>
+              <th>
+                <Tooltip
+                  label="Total"
+                  color={theme.colors.cyan[3]}
+                  position="bottom-start"
+                  withArrow
+                >
+                  <IconReceipt2 size="1.5rem" color={theme.colors.cyan[5]} />
+                </Tooltip>
+              </th>
+              <th>
+                <Tooltip
+                  label="Status"
+                  color={theme.colors.cyan[3]}
+                  position="bottom-start"
+                  withArrow
+                >
+                  <IconStatusChange
+                    size="1.5rem"
+                    color={theme.colors.cyan[5]}
+                  />
+                </Tooltip>
+              </th>
+              <th>
+                <Tooltip
+                  label="View Invoice"
+                  color={theme.colors.cyan[3]}
+                  position="bottom-start"
+                  withArrow
+                >
+                  <IconAppWindowFilled
+                    size="1.5rem"
+                    color={theme.colors.cyan[5]}
+                  />
+                </Tooltip>
+              </th>
+              <th>
+                <Tooltip
+                  label="Download Invoice"
+                  color={theme.colors.cyan[3]}
+                  position="bottom-start"
+                  withArrow
+                >
+                  <IconDownload size="1.5rem" color={theme.colors.cyan[5]} />
+                </Tooltip>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {invoice.map((inv, index) => (
+              <tr key={index}>
+                <td>{inv.account_name}</td>
+                <td>{convertUnixTimestamp(inv.period_start)}</td>
+                <td>{convertUnixTimestamp(inv.period_end)}</td>
+                <td>${parseInt(inv.subtotal / 100).toFixed(2)}</td>
+                <td>{inv.status}</td>
+                <td>
+                  <Tooltip
+                    label="View Invoice of Stripe"
+                    color={theme.colors.blue[3]}
+                    position="bottom-start"
+                    withArrow
+                  >
+                    <ActionIcon
+                      component="a"
+                      target="_blank"
+                      href={inv.hosted_invoice_url}
+                    >
+                      <IconExternalLink
+                        size="1.5rem"
+                        color={theme.colors.blue[5]}
+                      />
+                    </ActionIcon>
+                  </Tooltip>
+                </td>
+                <td>
+                  <Tooltip
+                    label="Download PDF"
+                    color={theme.colors.blue[3]}
+                    position="bottom-start"
+                    withArrow
+                  >
+                    <ActionIcon component="a" href={inv.invoice_pdf}>
+                      <IconFileTypePdf
+                        size="1.5rem"
+                        color={theme.colors.blue[5]}
+                      />
+                    </ActionIcon>
+                  </Tooltip>
+                </td>
+                {/* Add more data cells as per your requirement */}
+              </tr>
+            ))}
+          </tbody>
+        </Table>
       </ShadowWrapper>
     </>
   );
 };
 
+//<StatsRingCard invoice={invoice} />
 export function StatsRingCard({ invoice }) {
   const {
     customer_name,
@@ -143,7 +279,11 @@ export function StatsRingCard({ invoice }) {
           </div>
           <Group position="apart">
             <BTN_TOEXTLINK LABEL="Download PDF" URL={invoice_pdf} THEME="cta" />
-            <BTN_TOEXTLINK LABEL="Stripe Webviewer" URL={hosted_invoice_url} THEME="cta" />
+            <BTN_TOEXTLINK
+              LABEL="Stripe Webviewer"
+              URL={hosted_invoice_url}
+              THEME="cta"
+            />
           </Group>
         </div>
 
@@ -176,4 +316,4 @@ export function StatsRingCard({ invoice }) {
     </Card>
   );
 }
-export default StatsRingCard
+export default StatsRingCard;

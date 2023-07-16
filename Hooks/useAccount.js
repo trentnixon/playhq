@@ -9,10 +9,14 @@ import {
 } from "../lib/auth";
 const qs = require("qs");
 
-
 export const useAccount = (ctx) => {
   const [data, setData] = useState(null);
-
+  /*
+"ai_publication",
+        "ai_writting_tone",
+        "ai_writting_style",
+        "assets",
+*/
   const query = qs.stringify(
     {
       populate: [
@@ -20,17 +24,16 @@ export const useAccount = (ctx) => {
         "scheduler.days_of_the_week",
         "account_type",
         "associations",
+        "associations.Logo",
         "clubs",
+        "clubs.Logo",
         "template",
         "theme",
         "audio_option",
-        "ai_publication",
-        "ai_writting_tone",
-        "ai_writting_style",
-        "assets",
         "order",
         "sponsors",
         "sponsors.Logo",
+        "subscription_tier"
       ],
     },
     {
@@ -66,7 +69,7 @@ export const useSetAccountTrue = (ctx) => {
   const [AccountTrue, SetAccountTrue] = useState(null);
 
   const CreateSetAccountTrue = async (_ID) => {
-    SetAccountTrue(false)
+    SetAccountTrue(false);
     const ID = await getAccountIDFromServer();
     if (ID !== undefined) {
       const res = await fetcher(
@@ -85,10 +88,10 @@ export const useSetAccountTrue = (ctx) => {
           }),
         }
       );
-      console.log(res)
+      console.log(res);
       SetAccountTrue(res.data);
     }
   };
 
-  return [AccountTrue, CreateSetAccountTrue]; 
+  return [AccountTrue, CreateSetAccountTrue];
 };

@@ -43,7 +43,7 @@ export const DisplayCustomTheme = (props) => {
         })}
       >
         <Group position="apart">
-          <P marginBottom={0} Copy={`Create your own Theme!`} />
+          {/* <P marginBottom={0} Copy={`Create your own Theme!`} /> */}
           <BTN_ONCLICK
             LABEL={"Create New"}
             THEME={"success"}
@@ -56,45 +56,38 @@ export const DisplayCustomTheme = (props) => {
     );
   return (
     <>
-      <SubHeaders Copy={`Your Custom Theme`} />
+      {/* <SubHeaders Copy={`Your Custom Theme`} /> */}
 
       <Table>
         <tbody>
           {CTHEME.map((item, i) => {
             return (
-              <tr
-                key={i}
-                style={{
-                  backgroundColor:
-                    userAccount.attributes.theme.data.id === item.id
-                    ? theme.colors.members[4]
-                    : theme.colors.members[0],
-                }}
-              >
-                <td>
-                  <Group>
-                    {userAccount.attributes.theme.data.id === item.id ? (
-                      <Center>
-                        <IconCircleCheck color={theme.colors.gray[2]} />
-                      </Center>
-                    ) : (
-                      false
-                    )}
-                    <P
-                      marginBottom={0}
-                      color={
-                        userAccount.attributes.theme.data.id === item.id ? 0 : 2
-                      }
-                      Copy={item.attributes.Name}
-                    />
-                  </Group>
-                </td>
+              <tr key={i} style={{}}>
                 <td>
                   <Group position="center" spacing="xs">
                     {swatches([
                       item.attributes.Theme.primary,
                       item.attributes.Theme.secondary,
                     ])}
+                  </Group>
+                </td>
+
+                <td>
+                  <Group>
+                    <P
+                      marginBottom={0}
+                      color={
+                        userAccount.attributes.theme.data.id === item.id ? 2 : 2
+                      }
+                      Copy={`Custom Theme`}
+                    />
+                    {userAccount.attributes.theme.data.id === item.id ? (
+                      <Center>
+                        <IconCircleCheck color={theme.colors.green[5]} />
+                      </Center>
+                    ) : (
+                      false
+                    )}
                   </Group>
                 </td>
                 <td>
@@ -104,7 +97,7 @@ export const DisplayCustomTheme = (props) => {
                         setCreateNew(true);
                       }}
                     >
-                      <IconEditCircle color={theme.colors.green[5]} />
+                      <IconEditCircle color={theme.colors.orange[5]} />
                     </ActionIcon>
                   ) : (
                     <Center>
