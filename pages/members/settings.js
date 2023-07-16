@@ -8,7 +8,7 @@ import Cookies from "js-cookie";
 import { fetcher } from "../../lib/api";
 // components
 
-import { FixturaSettings } from "../../components/Members/userFixturaSettings";
+
 
 import {
   MembersWrapper,
@@ -23,6 +23,7 @@ import { useAccount } from "../../Hooks/useAccount";
 import { showNotification } from "@mantine/notifications";
 import { useAccountDetails } from "../../lib/userContext";
 import { FixturaLoading } from "../../components/Members/Common/Loading";
+import { FixturaSettings } from "../../components/Members/Account/userFixturaSettings";
 const qs = require("qs");
 
 const query = qs.stringify(
