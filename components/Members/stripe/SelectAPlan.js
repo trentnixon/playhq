@@ -57,6 +57,11 @@ export const SelectAPlan = () => {
     setSelectedProductId(productId);
   };
 
+  useEffect(()=>{
+    // delete this
+    console.log(products)
+  },[products])
+
   return (
     <ShadowWrapper>
       select a plan is here?
