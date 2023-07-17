@@ -98,7 +98,7 @@ export const Invoicing = () => {
     return <FixturaLoading />;
   }
 
-  if (invoice === null || invoice.length === 0) {
+  if (!invoice || invoice === null || invoice.length === 0) {
     return <ShadowWrapper><P marginBottom={0} textAlign={'center'} Copy={`Sorry, but there are no invoices available at the moment. `}/></ShadowWrapper>;
   }
 
