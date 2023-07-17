@@ -182,7 +182,7 @@ export const Invoicing = () => {
             </tr>
           </thead>
           <tbody>
-            {invoice.map((inv, index) => (
+          {Array.isArray(invoice) && invoice.map((inv, index) => (
               <tr key={index}>
                 <td>{inv.account_name}</td>
                 <td>{convertUnixTimestamp(inv.period_start)}</td>
