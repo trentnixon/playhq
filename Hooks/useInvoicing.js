@@ -11,7 +11,7 @@ export const useGetInvoice = () => {
   const [loading, setLoading] = useState(false);
 
   const Getinvoice = async () => {
-    const user = await getAccountFromLocalCookie();
+    const user = await getAccountFromLocalCookie();  
     console.log(user);
     setLoading(true);
     if (user) {

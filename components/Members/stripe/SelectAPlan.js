@@ -56,13 +56,8 @@ export const SelectAPlan = () => {
   const onConfirm = (productId) => {
     setSelectedProductId(productId);
   };
-
-  
-  console.log(products)
-
   return (
-    <ShadowWrapper>
-      select a plan is here?
+    <>
       <div className="row justify-content-center">
         {products.map((product, i) =>
           selectedProductId === null || product.id === selectedProductId
@@ -74,11 +69,12 @@ export const SelectAPlan = () => {
                   timing={i}
                   
                   BTN={
+                    <Group position="center" px={10}>
                     <NewSubscriber
                       productId={product.id}
                       selected={product.id === selectedProductId}
                       onConfirm={onConfirm}
-                    />
+                    /></Group>
                   }
                   selected={product.id === selectedProductId}
                 />
@@ -86,7 +82,7 @@ export const SelectAPlan = () => {
             : null
         )}
       </div>
-    </ShadowWrapper>
+    </>
   );
 };
 
@@ -239,7 +235,7 @@ const NewSubscriber = ({ productId, selected, onConfirm }) => {
           loading
             ? "Processing..."
             : confirmState
-            ? "Confirm Purchase"
+            ? "Confirm"
             : "Purchase"
         }
         HANDLE={handleClick}
@@ -247,7 +243,7 @@ const NewSubscriber = ({ productId, selected, onConfirm }) => {
         DISABLED={loading || !selected}
       />
       {confirmState && (
-        <BTN_ONCLICK LABEL="Cancel" HANDLE={resetConfirmState} THEME="danger" />
+        <BTN_ONCLICK LABEL="Cancel" HANDLE={resetConfirmState} THEME="error" />
       )}
     </Group>
   );
