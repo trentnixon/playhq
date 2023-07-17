@@ -15,7 +15,7 @@ import {
 } from "@mantine/core";
 import { useGetInvoice } from "../../../Hooks/useInvoicing";
 import { ShadowWrapper } from "../Common/Containers";
-import { PageTitle, SubHeaders } from "../Common/Type";
+import { P, PageTitle, SubHeaders } from "../Common/Type";
 import { FixturaLoading } from "../Common/Loading";
 import { BTN_TOEXTLINK } from "../Common/utils/Buttons";
 import {
@@ -90,14 +90,16 @@ export const Invoicing = () => {
     getInvoice();
   }, []);
 
-  useEffect(() => {}, [invoice]);
+  useEffect(() => {
+    console.log("invoice", invoice)
+  }, [invoice]);
 
   if (loading) {
     return <FixturaLoading />;
   }
 
-  if (invoice === null || invoice.data === null) {
-    return <div>No invoices available</div>;
+  if (invoice === null || invoice.length === 0) {
+    return <ShadowWrapper><P marginBottom={0} textAlign={'center'} Copy={`Sorry, but there are no invoices available at the moment. `}/></ShadowWrapper>;
   }
 
   return (

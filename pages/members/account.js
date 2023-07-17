@@ -65,7 +65,7 @@ const Account = () => {
     <MembersWrapper>
       <UserSubscription />
       <FixturaDivider />
-      {/* <Invoicing /> */}
+      <Invoicing /> 
       <Space h="lg" />
       <FixturaDivider />
     </MembersWrapper>
