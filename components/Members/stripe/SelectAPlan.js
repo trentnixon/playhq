@@ -59,6 +59,7 @@ export const SelectAPlan = () => {
 
   return (
     <ShadowWrapper>
+      select a plan is here?
       <div className="row justify-content-center">
         {products.map((product, i) =>
           selectedProductId === null || product.id === selectedProductId
