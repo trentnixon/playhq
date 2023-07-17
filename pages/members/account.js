@@ -21,7 +21,7 @@ import qs from 'qs';
 const query = qs.stringify(
   {
     populate: [
-      "scheduler",
+      "scheduler", 
       "scheduler.days_of_the_week",
       "account_type",
       "associations",
@@ -65,7 +65,7 @@ const Account = () => {
     <MembersWrapper>
       <UserSubscription />
       <FixturaDivider />
-      <Invoicing />
+      {/* <Invoicing /> */}
       <Space h="lg" />
       <FixturaDivider />
     </MembersWrapper>
