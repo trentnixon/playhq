@@ -58,10 +58,7 @@ export const SelectAPlan = () => {
   };
 
   
-  useEffect(()=>{
-    // delete this
-    console.log(products)
-  },[products])
+  console.log(products)
 
   return (
     <ShadowWrapper>
