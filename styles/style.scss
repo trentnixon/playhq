@@ -57,6 +57,15 @@ $paragraph-color: #2F4858;
 $white-color: #ffffff;
 $transition: all 0.5s ease;
 
+#gradient-canvas {
+    width:100%;
+    height:100%;
+    position: absolute;
+    --gradient-color-1: #A5D8FF; 
+    --gradient-color-2: #338C81; 
+    --gradient-color-3: #EDFBFF;  
+    --gradient-color-4: #D7F0EC;
+  }
 body {
     padding: 0;
     margin: 0;
@@ -863,8 +872,8 @@ Main Banner CSS
                 }
             }
             .btn-secondary {
-                border-color: $white-color;
-                color: $white-color;
+                border-color: $black-color;
+                color: $black-color;
 
                 &:hover, &:focus {
                     border-color: $main-color;
@@ -976,11 +985,11 @@ Main Banner CSS
             color: $main-color;
         }
         h1 {
-            color: $white-color;
+            color: $black-color;
             font-size: 80px;
         }
         p {
-            color: $white-color;
+            color: $black-color;
             margin-bottom: 30px;
             font-size: 19px;
         }
@@ -996,13 +1005,15 @@ Main Banner CSS
             }
         }
         .btn-secondary {
-            border-color: $white-color;
-            color: $white-color;
+            border-color: $black-color;
+            color: $black-color;
             font-size: 16px;
             padding: 15px 30px;
 
             &:hover, &:focus {
-                border-color: $main-color;
+               
+                color: $white-color;
+                border-color: $white-color;
                 background: transparent;
             }
         }
@@ -6065,18 +6076,18 @@ Go Top CSS
         right: 20px;
         font-size: 35px;
         color: $white-color;
-        background-color: $black-color;
+        background: $gradient-color; 
         z-index: 4;
         width: 40px;
         text-align: center;
         height: 40px;
         line-height: 40px;
-        border-radius: 50%;
+        border-radius: 10%;
         transition: $transition;
         
         &:hover {
-            color: $white-color;
-            background: $main-color;
+            border-radius: 50%;
+            background: $gradient-color; 
         }
     }
 }

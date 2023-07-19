@@ -6,21 +6,18 @@ import { useUser } from "../../lib/authContext";
 import { fetcher } from "../../lib/api";
 import Cookies from "js-cookie";
 // PACK
-import { Container, Paper, Space } from "@mantine/core";
+import { Container, Paper } from "@mantine/core";
 // Components
 import { MembersWrapper } from "../../components/Members/Common/Containers";
 import { showNotification } from "@mantine/notifications";
-import {
-  Invoicing,
-  UpcomingInvoicing,
-} from "../../components/Members/stripe/Invoicing";
+
 import { FixturaLoading } from "../../components/Members/Common/Loading";
 import { useAccountDetails } from "../../lib/userContext";
 import { FixturaDivider } from "../../components/Members/Common/Divider";
-import { UserSubscription } from "../../components/Members/Account/userSubscription";
 
 import qs from "qs";
-import Link from "next/link";
+import { PageTitle } from "../../components/Members/Common/Type";
+import { IconAddressBook } from "@tabler/icons-react";
 
 const query = qs.stringify(
   {
@@ -41,7 +38,7 @@ const query = qs.stringify(
   }
 );
 
-const Account = () => {
+const Support = () => {
   const { account, ReRender } = useAccountDetails();
   const [userAccount, setUserAccount] = useState(account);
   /* is User Auth */
@@ -67,11 +64,7 @@ const Account = () => {
 
   return (
     <MembersWrapper>
-      <UserSubscription />
-      <FixturaDivider />
-      <UpcomingInvoicing />
-      <Invoicing />
-      <Space h="lg" />
+      <PageTitle Copy={"Plan"} ICON={<IconAddressBook size={40} />} />
 
       <Container size={"lg"}>
         <Paper
@@ -80,20 +73,14 @@ const Account = () => {
           sx={(theme) => ({
             backgroundColor: theme.white,
           })}
-        >
-          Have any questions about Fixturas Subscriptions please contact our
-          support team{" "}
-          <Link href="/members/support">
-            <a>Customer Support</a>
-          </Link>
-        </Paper>
+        ></Paper>
       </Container>
       <FixturaDivider />
     </MembersWrapper>
   );
 };
 
-Account.getInitialProps = async (ctx) => {
+Support.getInitialProps = async (ctx) => {
   const response = await fetcher(
     `${process.env.NEXT_PUBLIC_STRAPI_URL}/accounts/${Cookies.get(
       "LinkedAccount"
@@ -110,4 +97,4 @@ Account.getInitialProps = async (ctx) => {
   };
 };
 
-export default Account;
+export default Support;

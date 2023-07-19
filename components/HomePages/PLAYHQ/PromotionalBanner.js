@@ -40,6 +40,7 @@ const PromotionalBanner = () => {
                         fontWeight: 100,
                         textTransform: "uppercase",
                         textAlign: "right",
+                        color:'white'
                       }}
                     >
                       The new era of
@@ -72,10 +73,10 @@ const PromotionalBanner = () => {
                   </div>
                 </div>
                 <div className="col-lg-4 order-1 order-lg-2">
-                  <div className="main-banner-content d-flex justify-content-center justify-content-md-left mb-5">
+                  <div className="main-banner-content d-flex justify-content-center justify-content-md-left ">
                     <Image
                       src="/images/fixturaHeaderLogo.png"
-                      className="img-fluid w-75 "
+                      className="img-fluid  "
                     />
                   </div>
                 </div>

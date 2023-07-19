@@ -1,20 +1,13 @@
-import React, { useState } from "react";
-import FsLightbox from "fslightbox-react";
+import React, { useEffect, useRef } from "react";
+
 import Link from "next/link";
+import { Gradient } from "../../../utils/Gradient";
 
 const MainBanner = () => {
-  const [toggler, setToggler] = useState(false);
   return (
     <>
-      <FsLightbox
-        toggler={toggler}
-        sources={["https://www.youtube.com/embed/bk7McNUjWgw"]}
-      />
-
-      <div className="hero-banner video-studio overly-6">
-        <div className="video-background">
-          <video autoPlay loop src="/video/promo-video.mp4" />
-        </div>
+      <div className="hero-banner video-studio overly-0">
+        <MainCSSBanner />
 
         <div className="d-table">
           <div className="d-table-cell">
@@ -27,28 +20,26 @@ const MainBanner = () => {
                       className="white-logo"
                       alt="logo"
                     />
-
-                    <p>
-                      The social media content creator for PlayHQ cricket clubs
-                      and Associations
-                    </p>
-
-                    <Link href="/contact">
-                      <a className="btn btn-primary">Sign up</a>
-                    </Link>
                   </div>
                 </div>
 
                 <div className="col-lg-4">
-                  <div className="video-box">
-                    <Link href="/SignUp">
+                  <div className="main-banner-content">
+                    <p className="">
+                      The social media content creator for PlayHQ cricket clubs
+                      and Associations
+                    </p>
+                    <Link href="/contact">
+                      <a className="btn btn-secondary">Get Started</a>
+                    </Link>
+                    {/*  <Link href="/SignUp">
                       <a
-                        /*  onClick={() => setToggler(!toggler)} */
+                    
                         className="video-btn"
                       >
                         <i className="fa-solid fa-user-plus"></i>
                       </a>
-                    </Link>
+                    </Link> */}
                   </div>
                 </div>
               </div>
@@ -61,3 +52,12 @@ const MainBanner = () => {
 };
 
 export default MainBanner;
+
+const MainCSSBanner = () => {
+  useEffect(() => {
+    const gradient = new Gradient();
+    gradient.initGradient("#gradient-canvas");
+  }, []);
+
+  return <canvas id="gradient-canvas" data-transition-in />;
+};

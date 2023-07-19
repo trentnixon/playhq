@@ -2,28 +2,28 @@ import React from "react";
 import Link from "../../utils/ActiveLink";
 
 const NavbarOne = () => {
-    const [menu, setMenu] = React.useState(true);
-    const toggleNavbar = () => {
-      setMenu(!menu);
-    };
-  
-    React.useEffect(() => {
-      let elementId = document.getElementById("navbarOne");
-      document.addEventListener("scroll", () => {
-        if (window.scrollY > 170) {
-          elementId.classList.add("is-sticky");
-        } else {
-          elementId.classList.remove("is-sticky");
-        }
-      });
+  const [menu, setMenu] = React.useState(true);
+  const toggleNavbar = () => {
+    setMenu(!menu);
+  };
+
+  React.useEffect(() => {
+    let elementId = document.getElementById("navbarOne");
+    document.addEventListener("scroll", () => {
+      if (window.scrollY > 170) {
+        elementId.classList.add("is-sticky");
+      } else {
+        elementId.classList.remove("is-sticky");
+      }
     });
-  
-    const classOne = menu
-      ? "collapse navbar-collapse mean-menu"
-      : "collapse navbar-collapse show";
-    const classTwo = menu
-      ? "navbar-toggler navbar-toggler-right collapsed"
-      : "navbar-toggler navbar-toggler-right";
+  });
+
+  const classOne = menu
+    ? "collapse navbar-collapse mean-menu"
+    : "collapse navbar-collapse show";
+  const classTwo = menu
+    ? "navbar-toggler navbar-toggler-right collapsed"
+    : "navbar-toggler navbar-toggler-right";
 
   return (
     <>
@@ -35,11 +35,6 @@ const NavbarOne = () => {
                 <img
                   src="/images/image_processing20220611-3013-fimmni.png"
                   className="black-logo"
-                  alt="logo"
-                />
-                <img
-                  src="/images/image_processing_white.png"
-                  className="white-logo"
                   alt="logo"
                 />
               </a>

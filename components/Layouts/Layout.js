@@ -51,7 +51,7 @@ const MembersLayout = ({ children }) => {
       <Container size={"xl"}>
         <Grid>
           <Grid.Col span={3}>
-            <AdminSideBar /> 
+            <AdminSideBar />  
           </Grid.Col>
           <Grid.Col span={9}>
             <main>{children}</main>

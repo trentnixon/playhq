@@ -25,7 +25,7 @@ const EarlyAccess = () => {
           {hasSent ? (
             false
           ) : (
-            <p>
+            <p >
               Fill out the form below to express your interest in early access
               to Fixtura. We will be in touch with you soon with more
               information on how to become part of our exclusive group of 50

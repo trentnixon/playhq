@@ -10,11 +10,14 @@ export const BTN_ChangePlan = ({ setChangePlan, changePlan }) => {
     userAccount?.attributes?.order?.data?.attributes
   );
 
-  return ORDER === undefined ? (
+  // Check if the subscription is active
+  const isActive = ORDER?.isActive && ORDER?.Status && !ORDER?.cancel_at_period_end;
+
+  return ORDER === undefined || !isActive ? (
     false
   ) : (
     <BTN_ONCLICK
-      LABEL={changePlan ?'Close Plans':"Change Plan"}
+      LABEL={changePlan ? 'Close Plans' : "Change Plan"}
       HANDLE={() => {
         setChangePlan(!changePlan);
       }}
