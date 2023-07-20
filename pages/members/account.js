@@ -23,35 +23,19 @@ import { useAccountDetails } from "../../lib/userContext";
 import { FixturaDivider } from "../../components/Members/Common/Divider";
 import { UserSubscription } from "../../components/Members/Account/userSubscription";
 
-import qs from "qs";
+import { getIdFromLocalCookie } from "../../lib/auth";
+import Adminfetcher from "../../lib/Adminfetcher";
 
-
-const query = qs.stringify(
-  {
-    populate: [
-      "scheduler",
-      "scheduler.days_of_the_week",
-      "account_type",
-      "associations",
-      "clubs",
-      "renders",
-      "renders.downloads",
-      "assets",
-      "order",
-    ],
-  },
-  {
-    encodeValuesOnly: true,
-  }
-);
-
-const Account = () => {
+const Account = ({fixtureDateRange}) => {
   const { account } = useAccountDetails();
   const [userAccount, setUserAccount] = useState(account);
   /* is User Auth */
   const { user, loading } = useUser();
   const router = useRouter();
   const currentRoute = router.pathname;
+
+
+  console.log("fixtureDateRange", fixtureDateRange)
 
   useEffect(() => {
     if (!user) router.push(`/members/verification/?prev=${currentRoute}`);
@@ -100,19 +84,13 @@ const Account = () => {
 };
 
 Account.getInitialProps = async (ctx) => {
-  const response = await fetcher(
-    `${process.env.NEXT_PUBLIC_STRAPI_URL}/accounts/${Cookies.get(
-      "LinkedAccount"
-    )}?${query}`,
-    {
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${Cookies.get("jwt")}`,
-      },
-    }
+  const ID = await getIdFromLocalCookie();
+
+  const fixtureDateRange = await Adminfetcher(
+    `/account/fixtureDateRange/${ID}`
   );
   return {
-    Response: response.data,
+    fixtureDateRange: fixtureDateRange,
   };
 };
 

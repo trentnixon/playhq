@@ -102,7 +102,7 @@ Tracking.getInitialProps = async (ctx) => {
     return { DATA: false }
   }
 
-  const res = await Adminfetcher(`/account/createTracking/${ID}`);
+  const res = await Adminfetcher(`/account/createTracking/${ID}`); 
   let DATA = res;
 
   return { DATA };
