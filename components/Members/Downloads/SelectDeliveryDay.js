@@ -3,7 +3,7 @@ import { Wrapper } from "../Common/Containers";
 import { SelectFixturaSetting } from "../Common/formelements/Select_FixturaSettings";
 import { IconAlertTriangle } from "@tabler/icons";
 import { useAccountDetails } from "../../../lib/userContext";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FixturaLoading } from "../Common/Loading";
 
 export const SelectDeliveryDay = () => {
@@ -12,6 +12,16 @@ export const SelectDeliveryDay = () => {
   const [ORDER, setOrder] = useState(
     userAccount?.attributes?.order?.data?.attributes
   );
+
+  const setHasUpdated = () => {
+    console.log("setHasUpdated setHasUpdated setHasUpdated")
+    ReRender();
+  };
+  useEffect(() => {
+    //console.log(userAccount.attributes.scheduler.data.attributes.days_of_the_week.data.attributes.Name)
+    console.log("Account data changed: ", userAccount);
+  }, [userAccount]);
+
   if (userAccount === null) {
     return <FixturaLoading />;
   }
@@ -21,7 +31,6 @@ export const SelectDeliveryDay = () => {
         <Paper
           shadow="lg"
           p="md"
-          
           mb={20}
           withBorder
           radius="md"
@@ -38,7 +47,7 @@ export const SelectDeliveryDay = () => {
               SelectLabel={`Delivered on : ${userAccount.attributes.scheduler.data.attributes.days_of_the_week.data.attributes.Name}`}
               SelectPlaceholder={"Select a day of the week"}
               user={userAccount}
-              setHasUpdated={ReRender}
+              setHasUpdated={setHasUpdated}
               COLLECTIONID={userAccount.attributes.scheduler.data.id}
               WithIcon={true}
             />

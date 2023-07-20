@@ -34,7 +34,7 @@ const SETUP = () => {
   }, [account]);
 
   useEffect(() => {
-    if (!user) router.push("/SignIn/");
+    //if (!user) router.push("/SignIn/");
   }, []);
 
   useEffect(() => {
@@ -56,7 +56,7 @@ const SETUP = () => {
             Copy={`With just a few clicks, you can customize your look and feel, select the assets you want to receive, and set your delivery schedule and frequency. We'll handle the rest.`}
           />
           <Space h={20} />
-          <SetupStages DATA={UserAccount} setReview={setReview} />
+         {/*  <SetupStages DATA={UserAccount} setReview={setReview} /> */}
         </Container>
       ) : (
         <Container size={"lg"}>
@@ -74,7 +74,7 @@ const SETUP = () => {
                    look and feel, selecting the assets you want to receive, and setting your delivery schedule 
                    and frequency.`}
           />
-          <CreateAccountInit setAccountsetup={setAccountsetup} />
+          {/* <CreateAccountInit setAccountsetup={setAccountsetup} /> */}
         </Container>
       )}
     </Container>

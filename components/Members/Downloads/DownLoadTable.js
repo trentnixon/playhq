@@ -52,8 +52,8 @@ export function DownloadTable({ data, Token }) {
   const theme = useMantineTheme();
   const { classes, cx } = useStyles();
   const [scrolled, setScrolled] = useState(false);
-  const rows = orderedArray(data).map((row) => (
-    <TableRow key={row.name} row={row} Token={Token} />
+  const rows = orderedArray(data).map((row, i) => (
+    <TableRow key={i} row={row} Token={Token} />
   ));
 
   return (
@@ -132,12 +132,13 @@ export function DownloadTable({ data, Token }) {
 
 const TableRow = ({ row, Token }) => {
   return (
+   
     <tr key={row.name}>
-      <td>{row.attributes.Name}</td>
-      <td>{FormattDateFormDownloadTable(row.attributes.createdAt)}</td>
-      <td>{row.attributes.downloads.data.length}</td>
-      <td>{row.attributes.game_results_in_renders.data.length}</td>
-      <td>{row.attributes.upcoming_games_in_renders.data.length}</td>
+      <td>{row.Name}</td>
+      <td>{FormattDateFormDownloadTable(row.createdAt)}</td>
+      <td>{row.downloads}</td>
+      <td>{row.game_results_in_renders}</td>
+      <td>{row.upcoming_games_in_renders}</td>
       <td>
         <BTN_TOEXTLINK
           LABEL="Visit"

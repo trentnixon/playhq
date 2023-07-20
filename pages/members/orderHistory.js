@@ -16,6 +16,8 @@ import AwaitingFirstDownload from "../../components/Downloads/AwaitingFirstDownl
 import Adminfetcher from "../../lib/Adminfetcher";
 import { DownloadCopy } from "../../components/Downloads/DownloadCopy";
 import { DownloadsSelectDays } from "../../components/Downloads/DownloadsSelectDays";
+import SetupCheck from "../../components/Members/Account/HOC/SetupCheck";
+import { LoadingStateWrapper } from "../../components/Members/Account/HOC/LoadingStateWrapper";
 
 const qs = require("qs");
 
@@ -35,25 +37,34 @@ const OrderHistory = (props) => {
     console.log(Renders);
   }, [Renders]);
 
-  if (Renders?.scheduler.data.attributes.renders.data === undefined)
-    return <AwaitingFirstDownload />;
-  if (user === false) return false;
-  if (Renders === null) return false;
+   if (Renders?.renders === undefined)
+    return (
+      <MembersWrapper>
+        <SetupCheck>
+          {/* <AwaitingFirstDownload scheduler={Renders?.scheduler} /> */}
+        </SetupCheck>
+      </MembersWrapper>
+    );
 
   return (
     <MembersWrapper>
-      <PageTitle Copy={`Downloads`} ICON={<IconDownload size={40} />} />
-      <DownloadCopy />
-      <Space h={20} />
-      <DownloadsSelectDays Renders={Renders} />
-      <Space h={20} />
-      <SubHeaders
-        Copy={`Renders (${Renders.scheduler.data.attributes.renders.data.length})`}
-      />
-      <DownloadTable
-        data={Renders.scheduler.data.attributes.renders.data}
-        Token={Renders.render_token.data.attributes.token}
-      />
+      <SetupCheck>
+        <LoadingStateWrapper conditions={[user, Renders]}>
+           <PageTitle Copy={`Downloads`} ICON={<IconDownload size={40} />} />
+          <DownloadCopy />
+          <Space h={20} />
+          <DownloadsSelectDays days_of_the_week={Renders.days_of_the_week} renders={Renders.renders} />
+          <Space h={20} />
+          <SubHeaders
+            Copy={`Renders (${Renders.renders.length})`}
+          />
+          
+          <DownloadTable
+            data={Renders.renders}
+            Token={Renders?.render_token?.token}
+          />
+        </LoadingStateWrapper>
+      </SetupCheck>
     </MembersWrapper>
   );
 };
@@ -62,31 +73,7 @@ export default OrderHistory;
 
 OrderHistory.getInitialProps = async (ctx) => {
   const ID = await getIdFromLocalCookie();
-  const query = qs.stringify(
-    {
-      populate: [
-        "scheduler",
-        "scheduler.renders",
-        "scheduler.renders.downloads",
-        "scheduler.renders.game_results_in_renders",
-        "scheduler.renders.upcoming_games_in_renders",
-        "scheduler.renders.grades_in_renders",
-        "scheduler.days_of_the_week",
-        "render_token",
-      ],
-      where: {
-        account: {
-          id: ID,
-        },
-      },
-    },
-    {
-      encodeValuesOnly: true,
-    }
-  );
-  const res = await Adminfetcher(`/accounts/${Cookies.get("id")}?${query}`);
-  let Renders = res.attributes;
-  console.group("Renders", Renders);
+  const Renders = await Adminfetcher(`/scheduler/getDownloads/${ID}`);
   return {
     Renders,
   };

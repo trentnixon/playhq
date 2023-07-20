@@ -3,12 +3,13 @@ import { MembersWrapper, Wrapper } from "../Members/Common/Containers";
 import { P, PageTitle } from "../Members/Common/Type";
 import { IconDownload } from "@tabler/icons";
 import { Box, Group } from "@mantine/core";
+import { DownloadsSelectDays } from "./DownloadsSelectDays";
 
-const AwaitingFirstDownload = () => {
+const AwaitingFirstDownload = ({scheduler}) => {
   return (
     <MembersWrapper>
       <PageTitle Copy={`Downloads`} ICON={<IconDownload size={40} />} />
-
+    
       <Wrapper>
         <Group position="apart">
           <Box
@@ -17,6 +18,7 @@ const AwaitingFirstDownload = () => {
             })}
           >
             <P Copy={`Awaiting first download.`} />
+            <DownloadsSelectDays scheduler={scheduler} />
             <P
               Copy={`To ensure you receive weekly deliveries check the following items`}
             />

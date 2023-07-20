@@ -1,5 +1,5 @@
 import { Image, useMantineTheme } from "@mantine/core";
-import styles from "../../../styles/PromotionalBanner.module.css";
+import { Gradient } from "../../../utils/Gradient";
 import React, { useState, useEffect } from "react";
 import { useMediaQuery } from "@mantine/hooks";
 const PromotionalBanner = () => {
@@ -23,10 +23,7 @@ const PromotionalBanner = () => {
   return (
     <>
       <div className="hero-banner video-studio overly-6">
-        <div className="video-background">
-          <video autoPlay loop src="/video/WebsiteHeader.mp4" />
-        </div>
-
+        <MainCSSBanner />
         <div className="d-table">
           <div className="d-table-cell">
             <div className="container">
@@ -40,7 +37,7 @@ const PromotionalBanner = () => {
                         fontWeight: 100,
                         textTransform: "uppercase",
                         textAlign: "right",
-                        color:'white'
+                        color:'black'
                       }}
                     >
                       The new era of
@@ -75,7 +72,7 @@ const PromotionalBanner = () => {
                 <div className="col-lg-4 order-1 order-lg-2">
                   <div className="main-banner-content d-flex justify-content-center justify-content-md-left ">
                     <Image
-                      src="/images/fixturaHeaderLogo.png"
+                      src="/images/FixturaLogoLarge.png"
                       className="img-fluid  "
                     />
                   </div>
@@ -93,6 +90,16 @@ const PromotionalBanner = () => {
 
 export default PromotionalBanner;
 
+const MainCSSBanner = () => {
+  useEffect(() => {
+    const gradient = new Gradient();
+    gradient.initGradient("#gradient-canvas");
+  }, []);
+
+  return <canvas id="gradient-canvas" data-transition-in />;
+};
+
+
 const ThreePillars = () => {
   return (
     <div className="pb-0  bg-eaf6ff">
@@ -102,7 +109,7 @@ const ThreePillars = () => {
             <div
               className="funfact-card"
               data-aos="fade-up"
-              data-aos-duration="1200"
+              data-aos-duration="800"
               data-aos-delay="100"
               
             >
@@ -161,7 +168,7 @@ const ICONH3 = ({ COPY }) => {
       style={{
         textTransform: "uppercase",
         fontWeight: 100,
-        color: `${theme.colors.members[1]}`,
+        color: `${theme.colors.members[3]}`,
       }}
     >
       {COPY}
@@ -189,7 +196,7 @@ const AnimateTerm = ({ term }) => {
             display: "inline-block",
             opacity: 0,
             animation: `slideUp 5s ${index * 0.1}s forwards`,
-            color: `${theme.colors.members[0]}`,
+            color: `${theme.colors.cyan[5]}`,
             fontSize:matches ? '1em' : '3.5em'
           }}
         >

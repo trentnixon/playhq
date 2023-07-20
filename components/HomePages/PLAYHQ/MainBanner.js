@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 
 import Link from "next/link";
 import { Gradient } from "../../../utils/Gradient";
+import { Text, Title } from "@mantine/core";
 
 const MainBanner = () => {
   return (
@@ -25,21 +26,23 @@ const MainBanner = () => {
 
                 <div className="col-lg-4">
                   <div className="main-banner-content">
-                    <p className="">
-                      The social media content creator for PlayHQ cricket clubs
-                      and Associations
-                    </p>
-                    <Link href="/contact">
-                      <a className="btn btn-secondary">Get Started</a>
-                    </Link>
-                    {/*  <Link href="/SignUp">
-                      <a
-                    
-                        className="video-btn"
-                      >
-                        <i className="fa-solid fa-user-plus"></i>
-                      </a>
-                    </Link> */}
+                    <Title
+                      style={{ fontSize: "2.5em", lineHeight: "1em" }}
+                      align="right"
+                      color="blue.9"
+                    >
+                      From Scintillating Scorecards to Captivating Chronicles
+                    </Title>
+
+                    <Text fz="xl" align="right">
+                      Elevate Your Organization's Story with Fixtura's
+                      Effortless Content Creation
+                    </Text>
+                    <Text align="right">
+                      <Link href="/contact">
+                        <a className="btn btn-secondary">Get Started</a>
+                      </Link>
+                    </Text>
                   </div>
                 </div>
               </div>

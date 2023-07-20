@@ -32,11 +32,12 @@ import {
 } from "../../components/Members/Common/Containers";
 import { showNotification } from "@mantine/notifications";
 
-import { FixturaLoading } from "../../components/Members/Common/Loading";
 import { useAccountDetails } from "../../lib/userContext";
 import { FixturaDivider } from "../../components/Members/Common/Divider";
 
 import { P, PageTitle } from "../../components/Members/Common/Type";
+import SetupCheck from "../../components/Members/Account/HOC/SetupCheck";
+import { LoadingStateWrapper } from "../../components/Members/Account/HOC/LoadingStateWrapper";
 
 const Tracking = ({ DATA }) => {
   const { account, ReRender } = useAccountDetails();
@@ -45,6 +46,8 @@ const Tracking = ({ DATA }) => {
   const { user, loading } = useUser();
   const router = useRouter();
   const currentRoute = router.pathname;
+
+  console.log("DATA", DATA);
 
   useEffect(() => {
     if (!user) router.push(`/members/verification/?prev=${currentRoute}`);
@@ -59,29 +62,33 @@ const Tracking = ({ DATA }) => {
       });
     }
   }, [account]);
+// then in the component
 
-  if (!user || !userAccount) return <FixturaLoading />;
 
   return (
     <MembersWrapper>
-      <PageTitle Copy={`Tracking`} ICON={<IconTrack size={40} />} />
-      <Wrapper>
-        <Group position="apart">
-          <Box
-            sx={(theme) => ({
-              width: "80%",
-            })}
-          >
-            <P
-              Copy={`Get an overview of the fixtures Fixtura is tracking for your club or association. Simply hover over the icons to see the games scheduled for each date. Rest assured that Fixtura regularly checks and updates your fixtures, so you don't need to worry about any changes to your playing schedule. Stay organized and informed with Fixtura's reliable tracking feature.`}
-            />
-          </Box>
-        </Group>
-      </Wrapper>
-      <P Copy={`Next Round`} />
-      <P Copy={`Full Calendar`} />
-      <GamesCalendar gamesData={DATA} />
-      <FixturaDivider />
+      <SetupCheck>
+        <LoadingStateWrapper conditions={[user, userAccount,DATA]}>
+          <PageTitle Copy={`Tracking`} ICON={<IconTrack size={40} />} />
+          <Wrapper>
+            <Group position="apart">
+              <Box
+                sx={(theme) => ({
+                  width: "80%",
+                })}
+              >
+                <P
+                  Copy={`Get an overview of the fixtures Fixtura is tracking for your club or association. Simply hover over the icons to see the games scheduled for each date. Rest assured that Fixtura regularly checks and updates your fixtures, so you don't need to worry about any changes to your playing schedule. Stay organized and informed with Fixtura's reliable tracking feature.`}
+                />
+              </Box>
+            </Group>
+          </Wrapper>
+          <P Copy={`Next Round`} />
+          <P Copy={`Full Calendar`} />
+          <GamesCalendar gamesData={DATA} />
+          <FixturaDivider />
+        </LoadingStateWrapper>
+      </SetupCheck>
     </MembersWrapper>
   );
 };
@@ -90,14 +97,15 @@ export default Tracking;
 
 Tracking.getInitialProps = async (ctx) => {
   const ID = await getIdFromLocalCookie();
+  
+  if (ID === undefined) {
+    return { DATA: false }
+  }
 
-  ///api/account/createTracking/:ID
   const res = await Adminfetcher(`/account/createTracking/${ID}`);
   let DATA = res;
-  console.group("DATA", DATA);
-  return {
-    DATA,
-  };
+
+  return { DATA };
 };
 
 const GamesCalendar = ({ gamesData }) => {

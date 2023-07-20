@@ -32,8 +32,8 @@ export function daysUntil(targetDay) {
 
 export const orderedArray = (array) => {
   const orderedArray = array.sort((a, b) => {
-    const dateA = new Date(a.attributes.createdAt);
-    const dateB = new Date(b.attributes.createdAt);
+    const dateA = new Date(a.createdAt);
+    const dateB = new Date(b.createdAt);
     return dateB - dateA;
   });
   return orderedArray;
@@ -41,12 +41,13 @@ export const orderedArray = (array) => {
 
 
 export function checkDeliveryDate(Response) {
-  const Ordered = orderedArray(Response.attributes.renders.data);
+  console.log("checkDeliveryDate", Response)
+  const Ordered = orderedArray(Response);
   console.log(Ordered, Ordered.length);
   if (Ordered?.length === 0) return false;
 
   const currentDate = new Date();
-  const createdOnDate = new Date(Ordered[0].attributes.createdAt);
+  const createdOnDate = new Date(Ordered[0].createdAt);
 
   if (currentDate.toDateString() === createdOnDate.toDateString()) {
     return "delivered today";

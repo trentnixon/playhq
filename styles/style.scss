@@ -985,7 +985,7 @@ Main Banner CSS
             color: $main-color;
         }
         h1 {
-            color: $black-color;
+            
             font-size: 80px;
         }
         p {
@@ -2504,22 +2504,25 @@ Services CSS
 .service-card-one {
     margin-bottom: 30px;
     transition: $transition;
-    i {
-        width: 70px;
-        height: 70px;
-        line-height: 70px;
-        font-size: 35px;
+    text-align: center;
+    i { 
+        width: 100px;
+        height: 100px;
+        line-height: 100px;
+        font-size: 50px;
         text-align: center;
-        border-radius: 100%;
+        border-radius: 30%;
         color: #ffffff;
         margin-bottom: 25px;
         display: inline-block;
         transition: $transition;
+        background: linear-gradient(to left top, #339AF0, #3BC9DB);
     }
     h3 {
         font-size: 24px;
         margin-bottom: 10px;
         font-weight: 600;
+        text-align: center;
         a {
             color: $black-color;
             &:hover {
@@ -2529,6 +2532,7 @@ Services CSS
     }
     p {
         margin: 0;
+     
     }
 
     &.white-bg {

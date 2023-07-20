@@ -26,7 +26,6 @@ const Index = ({ associations, CaseStudies }) => {
   return (
     <>
       <MainBanner />
-
       <Services />
       <FunFacts />
       <OurWorks CaseStudies={CaseStudies} />

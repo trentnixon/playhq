@@ -1,12 +1,13 @@
 import { useState, useEffect } from "react";
 import { fetcher } from "../../../../lib/api";
 import Cookies from "js-cookie";
-import { Select, Button, Group, Box, ActionIcon, Loader } from "@mantine/core";
+import { Select, Group, Box, ActionIcon } from "@mantine/core";
 
 import { IconSquareX, IconEdit, IconCheck } from "@tabler/icons";
 import { P } from "../Type";
 import { FixturaLoading } from "../Loading";
 import { BTN_ONCLICK } from "../utils/Buttons";
+
 export function SelectFixturaSetting({
   user,
   setHasUpdated,
@@ -19,6 +20,7 @@ export function SelectFixturaSetting({
   COLLECTIONID,
   WithIcon = false,
 }) {
+  
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
   const [selected, setSelected] = useState(SelectedBaseValueObject);
@@ -68,11 +70,13 @@ export function SelectFixturaSetting({
         }
       );
 
+      console.log("response", response)
       if (response) {
+       
         setLoading(false);
         setSelected(event);
         setShowSelect(false);
-        setHasUpdated(true);
+        setHasUpdated();
       }
     } catch (err) {
       setError(err.message);
@@ -118,6 +122,9 @@ export function SelectFixturaSetting({
     />
   );
 }
+
+
+
 
 const UI_WithSelectedAndButton = ({
   error,

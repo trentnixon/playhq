@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { useUser } from "../../lib/authContext";
+import Link from "next/link";
 // UTILS
 import { fetcher } from "../../lib/api";
 import Cookies from "js-cookie";
@@ -10,17 +11,20 @@ import { Container, Paper, Space } from "@mantine/core";
 // Components
 import { MembersWrapper } from "../../components/Members/Common/Containers";
 import { showNotification } from "@mantine/notifications";
+// HOC
+import { LoadingStateWrapper } from "../../components/Members/Account/HOC/LoadingStateWrapper";
+import SetupCheck from "../../components/Members/Account/HOC/SetupCheck";
+
 import {
   Invoicing,
   UpcomingInvoicing,
 } from "../../components/Members/stripe/Invoicing";
-import { FixturaLoading } from "../../components/Members/Common/Loading";
 import { useAccountDetails } from "../../lib/userContext";
 import { FixturaDivider } from "../../components/Members/Common/Divider";
 import { UserSubscription } from "../../components/Members/Account/userSubscription";
 
 import qs from "qs";
-import Link from "next/link";
+
 
 const query = qs.stringify(
   {
@@ -42,7 +46,7 @@ const query = qs.stringify(
 );
 
 const Account = () => {
-  const { account, ReRender } = useAccountDetails();
+  const { account } = useAccountDetails();
   const [userAccount, setUserAccount] = useState(account);
   /* is User Auth */
   const { user, loading } = useUser();
@@ -63,32 +67,34 @@ const Account = () => {
     }
   }, [account]);
 
-  if (!user || !userAccount) return <FixturaLoading />;
-
   return (
     <MembersWrapper>
-      <UserSubscription />
-      <FixturaDivider />
-      <UpcomingInvoicing />
-      <Invoicing />
-      <Space h="lg" />
+      <SetupCheck>
+        <LoadingStateWrapper conditions={[user, userAccount]}>
+          <UserSubscription />
+          <FixturaDivider />
+          <UpcomingInvoicing />
+          <Invoicing />
+          <Space h="lg" />
 
-      <Container size={"lg"}>
-        <Paper
-          withBorder
-          p="lg"
-          sx={(theme) => ({
-            backgroundColor: theme.white,
-          })}
-        >
-          Have any questions about Fixturas Subscriptions please contact our
-          support team{" "}
-          <Link href="/members/support">
-            <a>Customer Support</a>
-          </Link>
-        </Paper>
-      </Container>
-      <FixturaDivider />
+          <Container size={"lg"}>
+            <Paper
+              withBorder
+              p="lg"
+              sx={(theme) => ({
+                backgroundColor: theme.white,
+              })}
+            >
+              Have any questions about Fixturas Subscriptions please contact our
+              support team{" "}
+              <Link href="/members/support">
+                <a>Customer Support</a>
+              </Link>
+            </Paper>
+          </Container>
+          <FixturaDivider />
+        </LoadingStateWrapper>
+      </SetupCheck>
     </MembersWrapper>
   );
 };

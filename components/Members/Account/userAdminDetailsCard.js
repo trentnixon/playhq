@@ -5,6 +5,7 @@ import { IconCheck, IconAlertTriangle, IconX, IconClock } from "@tabler/icons";
 
 export function UserDetailsCard({ user }) {
   const ORDER = user.attributes.order?.data;
+ 
   const UserTheme = useMemo(
     () => user.attributes.theme.data.attributes.Theme,
     [user]
@@ -26,8 +27,8 @@ export function UserDetailsCard({ user }) {
 
   const theme = useMantineTheme();
 
-  const { isActive, Status, cancel_at_period_end, cancel_at } =
-    ORDER.attributes;
+  const { isActive, Status, cancel_at_period_end, cancel_at } = ORDER?.attributes ?? {};
+
 
   let statusMessage = "Unknown status";
   let statusColor = theme.colors.blue[4]; // default color
