@@ -57,6 +57,7 @@ $paragraph-color: #2F4858;
 $white-color: #ffffff;
 $transition: all 0.5s ease;
 
+.gradient-color{background: $gradient-color;}
 #gradient-canvas {
     width:100%;
     height:100%;
@@ -936,6 +937,7 @@ Main Banner CSS
 .hero-banner {
     position: relative;
     height: 100vh;
+    margin-bottom: 50px;
     background: {
         position: center center;
         size: cover;
@@ -6262,3 +6264,11 @@ span.new {
         }
     }
 }
+
+// Additions
+@media (max-width: 768px) {
+    .responsive-image {
+      width: 60%; /* or any other size you prefer */
+      height: auto;
+    }
+  }

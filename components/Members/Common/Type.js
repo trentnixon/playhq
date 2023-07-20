@@ -1,13 +1,15 @@
 import { Avatar, Container, Group, Space, Text, Title, useMantineTheme } from "@mantine/core";
 import { Wrapper } from "./Containers";
+import { useMediaQuery } from '@mantine/hooks';
 export const PageTitle = (props) => {
   const { Copy, ICON } = props;
-  const theme = useMantineTheme()
-  return (
-    <Wrapper>
+
+  const matches = useMediaQuery('(min-width: 48em)');
+  return ( 
+    <>
       <Group position={"apart"}>
         <Title
-          order={1}
+          order={matches ? 1 : 3}
           transform="uppercase"
           sx={(theme) => ({
             color: theme.colors.gray[8],
@@ -16,19 +18,19 @@ export const PageTitle = (props) => {
         >
           {Copy}
         </Title>
-        <Avatar color='blue.5' size={60} radius={60}>
+        <Avatar color='blue.5' size={matches ? 60 : 40} radius={60}>
           {ICON}
         </Avatar>
       </Group>
       <Space h={10}/>
-    </Wrapper>
+    </>
   );
 };
 
 export const SubHeaders = (props) => {
   const { Copy } = props;
   return (
-    <Container size={"lg"} >
+    <Container fluid px={0} >
       <Title
         order={3}
         transform="uppercase"

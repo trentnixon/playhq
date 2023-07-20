@@ -7,6 +7,7 @@ import { useUser } from "../../lib/authContext";
 
 import {
   MembersWrapper,
+  PageCopyWrapper,
   Wrapper,
 } from "../../components/Members/Common/Containers";
 
@@ -65,11 +66,7 @@ const SPONSORS = () => {
       <PageTitle Copy={"SPONSORS"} ICON={<IconCheck size={40} />} />
       <Wrapper>
         <Group position="apart">
-          <Box
-            sx={(theme) => ({
-              width: "60%",
-            })}
-          >
+        <PageCopyWrapper>
             <P
               Copy={`Sponsors are a great way to add a personal touch to your assets and show your 
               appreciation for your club's supporters. To create a sponsor, 
@@ -80,7 +77,7 @@ const SPONSORS = () => {
               With Fixtura, it's easy to give your sponsors the recognition they deserve 
               while keeping your assets looking professional and cohesive.`}
             />
-          </Box>
+          </PageCopyWrapper>
           <Paper
             shadow="lg"
             p="md"

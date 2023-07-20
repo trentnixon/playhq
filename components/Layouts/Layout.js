@@ -5,11 +5,13 @@ import NavbarTwo from "./NavbarTwo";
 import Footer from "./FooterDark";
 import { useRouter } from "next/router";
 import { useFetchUser, UserProvider } from "../../lib/authContext";
-import { AccountDetailsProvider, useAccountDetails } from "../../lib/userContext";
+import {
+  AccountDetailsProvider,
+  useAccountDetails,
+} from "../../lib/userContext";
 import { Box, Container, Grid } from "@mantine/core";
 import { FixturaHeaderMeta } from "../Members/Account/userFixturaSettings";
 import { UserDetailsCard } from "../Members/Account/userAdminDetailsCard";
-
 
 const Layout = ({ children }) => {
   const { user, loading } = useFetchUser();
@@ -22,7 +24,7 @@ const Layout = ({ children }) => {
     <StaticLayout>{children}</StaticLayout>
   );
 
-  console.log("isMemberPage", isMemberPage)
+  console.log("isMemberPage", isMemberPage);
   return (
     <UserProvider value={{ user, loading }}>
       <AccountDetailsProvider>
@@ -50,12 +52,12 @@ const MembersLayout = ({ children }) => {
       <AdminHero />
       <Container size={"xl"}>
         <Grid>
-          <Grid.Col span={3}>
-            <AdminSideBar />  
+          <Grid.Col span={12} sm={4} md={3}>
+            <AdminSideBar />
           </Grid.Col>
-          <Grid.Col span={9}>
+          <Grid.Col span={12} sm={8} md={9}>
             <main>{children}</main>
-          </Grid.Col>
+          </Grid.Col> 
         </Grid>
       </Container>
     </>
@@ -68,7 +70,7 @@ const AdminSideBar = () => {
   if (!account) return null;
   return (
     <Container fluid mx={0} p={0}>
-      <UserDetailsCard user={account}/>
+      <UserDetailsCard user={account} />
     </Container>
   );
 };

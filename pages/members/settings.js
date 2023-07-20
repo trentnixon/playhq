@@ -12,6 +12,7 @@ import { fetcher } from "../../lib/api";
 
 import {
   MembersWrapper,
+  PageCopyWrapper,
   Wrapper,
 } from "../../components/Members/Common/Containers";
 
@@ -85,15 +86,11 @@ const Overview = () => {
       <PageTitle Copy={"Overview"} ICON={<IconHome size={40} />} />
       <Wrapper>
         <Group position="apart">
-          <Box
-            sx={(theme) => ({
-              width: "60%",
-            })}
-          >
+          <PageCopyWrapper>
             <P
               Copy={`The overview page allows subscribed users to view their account type, selected association and club, delivery schedule, and selected assets all in one place. This page makes it easy to manage and customize your subscription, ensuring that you have access to the personalized digital assets you need to enhance your club's social media presence.`}
             />
-          </Box>
+          </PageCopyWrapper>
           <Paper
             shadow="lg"
             p="md"

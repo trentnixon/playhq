@@ -1,4 +1,4 @@
-import { Image, useMantineTheme } from "@mantine/core";
+import { Box, Image, useMantineTheme } from "@mantine/core";
 import { Gradient } from "../../../utils/Gradient";
 import React, { useState, useEffect } from "react";
 import { useMediaQuery } from "@mantine/hooks";
@@ -22,13 +22,14 @@ const PromotionalBanner = () => {
 
   return (
     <>
-      <div className="hero-banner video-studio overly-6">
-        <MainCSSBanner />
+       <MainCSSBanner />
+      <div className="hero-banner ">
+     
         <div className="d-table">
           <div className="d-table-cell">
-            <div className="container">
+            <div className="container p-md-0 p-3">
               <div className="row align-items-center pb-100">
-                <div className="col-lg-7  order-2 order-lg-1 ">
+                <div className="col-lg-7 col-md-6 order-2 order-lg-1 ">
                   <div className="main-banner-content">
                     <h1
                       className="text-center text-lg-end fs-1 mb-0 lh-1 BannerFont"
@@ -37,7 +38,7 @@ const PromotionalBanner = () => {
                         fontWeight: 100,
                         textTransform: "uppercase",
                         textAlign: "right",
-                        color:'black'
+                        color: "black",
                       }}
                     >
                       The new era of
@@ -57,7 +58,6 @@ const PromotionalBanner = () => {
                             display: "inline-block",
                             position: "relative",
                             overflow: "hidden",
-                            
                           }}
                         >
                           <AnimateTerm term={term} />
@@ -69,17 +69,33 @@ const PromotionalBanner = () => {
                     </h1>
                   </div>
                 </div>
-                <div className="col-lg-4 order-1 order-lg-2">
+                <div className="col-lg-4 col-md-6 order-1 order-md-2">
                   <div className="main-banner-content d-flex justify-content-center justify-content-md-left ">
-                    <Image
-                      src="/images/FixturaLogoLarge.png"
-                      className="img-fluid  "
-                    />
+                    <Box
+                      sx={(theme) => ({
+                        "@media (max-width: 768px)": {
+                          width: "60%" /* adjust this as needed */,
+                          marginBottom: "50px",
+                        },
+                      })}
+                    >
+                      <Image
+                        src="/images/FixturaLogoLarge.png"
+                        className="img-fluid"
+                      />
+                    </Box>
                   </div>
                 </div>
               </div>
-
-              <ThreePillars />
+              {/* <Box
+                sx={(theme) => ({
+                  "@media (max-width: 768px)": {
+                    display: "none",
+                  },
+                })}
+              >
+                <ThreePillars />
+              </Box> */}
             </div>
           </div>
         </div>
@@ -99,19 +115,17 @@ const MainCSSBanner = () => {
   return <canvas id="gradient-canvas" data-transition-in />;
 };
 
-
 const ThreePillars = () => {
   return (
     <div className="pb-0  bg-eaf6ff">
       <div className="container">
         <div className="row justify-content-center">
-          <div className="col-lg-4 col-sm-6">
+          <div className="col-lg-4 col-sm-4  col-xs-6">
             <div
               className="funfact-card"
               data-aos="fade-up"
               data-aos-duration="800"
               data-aos-delay="100"
-              
             >
               <BannerIcons color={7} icon="far fa-file-pdf" delay={0.3} />
               <ICONH3 COPY="Writeups" />
@@ -152,7 +166,7 @@ const BannerIcons = ({ color, icon, delay }) => {
     <i
       className={icon}
       style={{
-        fontSize: "5rem",
+        fontSize: "3.5rem",
         color: `${theme.colors.members[color]}`,
         animation: `pulse 2s ease-in-out infinite ${delay}s`,
       }}
@@ -163,16 +177,17 @@ const BannerIcons = ({ color, icon, delay }) => {
 const ICONH3 = ({ COPY }) => {
   const theme = useMantineTheme();
   return (
-    <h3
+    <h4
       className="BannerFont"
       style={{
         textTransform: "uppercase",
         fontWeight: 100,
         color: `${theme.colors.members[3]}`,
+        
       }}
     >
       {COPY}
-    </h3>
+    </h4>
   );
 };
 
@@ -197,7 +212,7 @@ const AnimateTerm = ({ term }) => {
             opacity: 0,
             animation: `slideUp 5s ${index * 0.1}s forwards`,
             color: `${theme.colors.cyan[5]}`,
-            fontSize:matches ? '1em' : '3.5em'
+            fontSize: matches ? "1em" : "3.5em",
           }}
         >
           {letter}

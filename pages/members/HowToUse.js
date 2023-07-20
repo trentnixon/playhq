@@ -21,6 +21,7 @@ import { fetcher } from "../../lib/api";
 
 import {
   MembersWrapper,
+  PageCopyWrapper,
   ShadowWrapper,
   Wrapper,
 } from "../../components/Members/Common/Containers";
@@ -125,19 +126,11 @@ const HowToUse = (props) => {
   return (
     <MembersWrapper>
       <PageTitle Copy={"How to use"} ICON={<IconQuestionMark size={40} />} />
-      <Wrapper>
-        <Group position="apart">
-          <Box
-            sx={(theme) => ({
-              width: "60%",
-            })}
-          >
-            <P
-              Copy={`Welcome to Fixtura! We're excited to have you on board as a new member. Here's a quick guide on how to use our platform to get the most out of your subscription.`}
-            />
-          </Box>
-        </Group>
-      </Wrapper>
+      <PageCopyWrapper>
+        <P
+          Copy={`Welcome to Fixtura! We're excited to have you on board as a new member. Here's a quick guide on how to use our platform to get the most out of your subscription.`}
+        />
+      </PageCopyWrapper>
 
       <Wrapper>
         <SimpleGrid cols={2} breakpoints={[{ maxWidth: "sm", cols: 1 }]}>

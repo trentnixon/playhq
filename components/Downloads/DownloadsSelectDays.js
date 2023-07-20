@@ -6,7 +6,7 @@ import { SelectDeliveryDay } from "../Members/Downloads/SelectDeliveryDay";
 import { daysUntil, checkDeliveryDate } from "./helpers";
 export const DownloadsSelectDays = ({ days_of_the_week, renders }) => {
   return (
-    <Wrapper>
+    <>
       <Group position="apart">
         <Box p={0} m={0}>
           <SelectDeliveryDay />
@@ -18,7 +18,7 @@ export const DownloadsSelectDays = ({ days_of_the_week, renders }) => {
           false
         )}
       </Group>
-    </Wrapper>
+    </>
   );
 };
 

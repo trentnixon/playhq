@@ -28,6 +28,7 @@ import {
 // Components
 import {
   MembersWrapper,
+  PageCopyWrapper,
   Wrapper,
 } from "../../components/Members/Common/Containers";
 import { showNotification } from "@mantine/notifications";
@@ -62,27 +63,18 @@ const Tracking = ({ DATA }) => {
       });
     }
   }, [account]);
-// then in the component
-
+  // then in the component
 
   return (
     <MembersWrapper>
       <SetupCheck>
-        <LoadingStateWrapper conditions={[user, userAccount,DATA]}>
+        <LoadingStateWrapper conditions={[user, userAccount, DATA]}>
           <PageTitle Copy={`Tracking`} ICON={<IconTrack size={40} />} />
-          <Wrapper>
-            <Group position="apart">
-              <Box
-                sx={(theme) => ({
-                  width: "80%",
-                })}
-              >
-                <P
-                  Copy={`Get an overview of the fixtures Fixtura is tracking for your club or association. Simply hover over the icons to see the games scheduled for each date. Rest assured that Fixtura regularly checks and updates your fixtures, so you don't need to worry about any changes to your playing schedule. Stay organized and informed with Fixtura's reliable tracking feature.`}
-                />
-              </Box>
-            </Group>
-          </Wrapper>
+          <PageCopyWrapper>
+            <P
+              Copy={`Get an overview of the fixtures Fixtura is tracking for your club or association. Simply hover over the icons to see the games scheduled for each date. Rest assured that Fixtura regularly checks and updates your fixtures, so you don't need to worry about any changes to your playing schedule. Stay organized and informed with Fixtura's reliable tracking feature.`}
+            />
+          </PageCopyWrapper>
           <P Copy={`Next Round`} />
           <P Copy={`Full Calendar`} />
           <GamesCalendar gamesData={DATA} />
@@ -97,12 +89,12 @@ export default Tracking;
 
 Tracking.getInitialProps = async (ctx) => {
   const ID = await getIdFromLocalCookie();
-  
+
   if (ID === undefined) {
-    return { DATA: false }
+    return { DATA: false };
   }
 
-  const res = await Adminfetcher(`/account/createTracking/${ID}`); 
+  const res = await Adminfetcher(`/account/createTracking/${ID}`);
   let DATA = res;
 
   return { DATA };
@@ -133,10 +125,10 @@ const GamesCalendar = ({ gamesData }) => {
           (!sortedGamesData[index - 1] ||
             sortedGamesData[index - 1].date < today)
         ) {
-          bgColor = theme.colors.green[3];
+          bgColor = theme.colors.blue[5];
           opacity = 1;
         } else {
-          bgColor = theme.colors.blue[1];
+          bgColor = theme.colors.green[3];
           opacity = 1;
         }
 

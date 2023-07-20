@@ -26,7 +26,7 @@ export const SelectDeliveryDay = () => {
     return <FixturaLoading />;
   }
   return (
-    <Wrapper>
+    <>
       <Group position="apart">
         <Paper
           shadow="lg"
@@ -62,6 +62,6 @@ export const SelectDeliveryDay = () => {
           </Group>
         </Paper>
       </Group>
-    </Wrapper>
+    </>
   );
 };

@@ -1,8 +1,8 @@
-import { Container, Grid } from "@mantine/core";
-
+import { Box, Container, Grid } from "@mantine/core";
+import { useMediaQuery } from "@mantine/hooks";
 export const MembersWrapper = (props) => {
   return (
-    <Container fluid pt={40} pb={100}>
+    <Container fluid pt={40} pb={100} px={0}>
       {props.children}
     </Container>
   );
@@ -10,6 +10,19 @@ export const MembersWrapper = (props) => {
 
 export const Wrapper = (props) => {
   return <Container size={"lg"}>{props.children}</Container>;
+};
+
+export const PageCopyWrapper = (props) => {
+  const matches = useMediaQuery("(min-width: 48em)");
+  return (
+    <Box
+      sx={(theme) => ({
+        width: matches ? "80%" : "100%",
+      })}
+    >
+      {props.children}
+    </Box>
+  );
 };
 
 export const ShadowWrapper = (props) => {
@@ -28,7 +41,6 @@ export const ShadowWrapper = (props) => {
       })}
     >
       {props.children}
-      
     </Container>
   );
 };

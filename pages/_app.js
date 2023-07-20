@@ -30,7 +30,7 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <>
-      <MantineProviderWrapper>
+      <MantineProviderWrapper> 
         <NotificationsProvider>
           {getLayout(<Component {...pageProps} />)}
           <GoTop />

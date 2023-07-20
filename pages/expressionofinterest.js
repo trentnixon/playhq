@@ -59,7 +59,7 @@ const SectionContainers = (props) => {
 
 const Benefits = () => {
   return (
-    <div className=" ptb-100">
+    <div className="">
       <div className="container">
         <div className="section-title">
           <h2>Join Our Early Access Program</h2>

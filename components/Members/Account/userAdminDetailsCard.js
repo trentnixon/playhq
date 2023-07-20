@@ -1,11 +1,11 @@
-import { Card, Avatar, Text, Group, useMantineTheme } from "@mantine/core";
+import { Card, Avatar, Text, Group, useMantineTheme, Box } from "@mantine/core";
 import { useState, useMemo } from "react";
 import { FixturaDivider } from "../Common/Divider";
 import { IconCheck, IconAlertTriangle, IconX, IconClock } from "@tabler/icons";
 
 export function UserDetailsCard({ user }) {
   const ORDER = user.attributes.order?.data;
- 
+
   const UserTheme = useMemo(
     () => user.attributes.theme.data.attributes.Theme,
     [user]
@@ -27,8 +27,8 @@ export function UserDetailsCard({ user }) {
 
   const theme = useMantineTheme();
 
-  const { isActive, Status, cancel_at_period_end, cancel_at } = ORDER?.attributes ?? {};
-
+  const { isActive, Status, cancel_at_period_end, cancel_at } =
+    ORDER?.attributes ?? {};
 
   let statusMessage = "Unknown status";
   let statusColor = theme.colors.blue[4]; // default color
@@ -67,6 +67,9 @@ export function UserDetailsCard({ user }) {
             UserTheme.secondary
           ),
           height: 70,
+          "@media (max-width: 768px)": {
+            height: 30,
+          },
         }}
       />
 
@@ -84,7 +87,15 @@ export function UserDetailsCard({ user }) {
         {AccountType}
       </Text>
 
-      <FixturaDivider />
+      <Box
+        sx={(theme) => ({
+          "@media (max-width: 768px)": {
+            display: "none",
+          },
+        })}
+      >
+        <FixturaDivider />
+     
 
       <Group position="apart">
         <Text ta="center" fz="sm" c={statusColor} fw={500}>
@@ -110,6 +121,7 @@ export function UserDetailsCard({ user }) {
           Subscription
         </Text>
       </Group>
+      </Box>
     </Card>
   );
-};
+}

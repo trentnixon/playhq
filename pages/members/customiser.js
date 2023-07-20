@@ -22,6 +22,7 @@ import {
 } from "@mantine/core";
 import {
   MembersWrapper,
+  PageCopyWrapper,
   Wrapper,
 } from "../../components/Members/Common/Containers";
 import { IconColorPicker } from "@tabler/icons";
@@ -81,21 +82,13 @@ const Account = () => {
     <MembersWrapper>
       <PageTitle Copy={"Customiser"} ICON={<IconColorPicker size={40} />} />
 
-      <Wrapper>
-        <Group position="apart">
-          <Box
-            sx={(theme) => ({
-              width: "60%",
-            })}
-          >
-            <P
-              Copy={
-                "Customize the appearance of your assets by selecting from a range of colors and templates, including the option to add your brand colors. You can also use the music options to set the tone of your videos."
-              }
-            />
-          </Box>
-        </Group>
-      </Wrapper>
+      <PageCopyWrapper>
+        <P
+          Copy={
+            "Customize the appearance of your assets by selecting from a range of colors and templates, including the option to add your brand colors. You can also use the music options to set the tone of your videos."
+          }
+        />
+      </PageCopyWrapper>
 
       <SubHeaders Copy={"Logo"} />
       <Container size={"lg"} mb={40}>
