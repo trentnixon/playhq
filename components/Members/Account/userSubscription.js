@@ -23,8 +23,9 @@ import {
   IconCheck,
   IconClock,
   IconX,
+  IconClockPause,
 } from "@tabler/icons-react";
-import Link from "next/link";
+import { getReadableDate } from "../../../lib/actions";
 
 export const UserSubscription = () => {
   const { account, ReRender } = useAccountDetails();
@@ -49,11 +50,32 @@ export const UserSubscription = () => {
   const isCancelling =
     ORDER?.cancel_at_period_end && ORDER?.isActive && ORDER?.Status;
   const isCancelled = !ORDER?.isActive || !ORDER?.Status;
+  const isPaused = ORDER?.isPaused;
 
   // Decide what to display based on the status
   let statusDisplay;
   if (ORDER === undefined) {
     statusDisplay = <SelectAPlan />;
+  } else if (isPaused) {
+    statusDisplay = (
+      <>
+        <UserDetails
+          user={userAccount}
+          setHasUpdated={ReRender}
+          subscriptionTier={subscriptionTier}
+          Value={`Paused until  ${getReadableDate(ORDER.Fixture_start)}`}
+        />
+        <P
+          color={3}
+          size="sm"
+          Weight={400}
+          textAlign="center"
+          Copy={`Your subscription is on hold and billing will resume one week prior to next season's first fixture. 
+          ${getReadableDate(ORDER.Fixture_start)}.`}
+        />
+        <SubscriptionActiveFrom ORDER={ORDER} />
+      </>
+    );
   } else if (isActive) {
     statusDisplay = (
       <>
@@ -65,7 +87,7 @@ export const UserSubscription = () => {
               user={userAccount}
               setHasUpdated={ReRender}
               subscriptionTier={subscriptionTier}
-              Value={`$${subscriptionTier.price}/W ${subscriptionTier.currency}`}
+              Value={`$${subscriptionTier.price}/w ${subscriptionTier.currency}`}
             />
           </>
         )}
@@ -155,7 +177,7 @@ const ManageSubscriptionCTA = ({ ORDER, setChangePlan, changePlan }) => {
   const isCancelling =
     ORDER?.cancel_at_period_end && ORDER?.isActive && ORDER?.Status;
   const isCancelled = !ORDER?.isActive || !ORDER?.Status;
-
+  const isPaused = ORDER?.isPaused;
   return (
     <Group position="right" my={10}>
       {isActive && (
@@ -164,13 +186,18 @@ const ManageSubscriptionCTA = ({ ORDER, setChangePlan, changePlan }) => {
             setChangePlan={setChangePlan}
             changePlan={changePlan}
           />
-          <BTN_ManageSubscription Label="Manage Subscription" />
+          {!isPaused ? (
+            <BTN_ManageSubscription Label="Manage Subscription" />
+          ) : (
+            false
+          )}
           <BTN_ManageSubscription Label="Cancel Subscription" theme="error" />
         </>
       )}
       {isCancelling && (
         <BTN_ManageSubscription Label="Renew Subscription" theme="cta" />
       )}
+
       {isCancelled && <></>}
     </Group>
   );
@@ -183,7 +210,7 @@ const SubscriptionActiveFrom = ({ ORDER }) => {
   let statusColor = theme.colors.blue[4]; // default color
   let PColor = 8;
   let StatusIcon = IconCheck; // default icon
-
+  const isPaused = ORDER?.isPaused;
   if (ORDER?.strapi_created) {
     try {
       const date = new Date(ORDER.strapi_created * 1000);
@@ -196,8 +223,12 @@ const SubscriptionActiveFrom = ({ ORDER }) => {
       console.error("Error formatting date: ", err);
     }
   }
-
-  if (ORDER.isActive) {
+  if (isPaused) {
+    statusMessage = "Subscription is paused";
+    statusColor = theme.colors.yellow[9];
+    PColor = 8;
+    StatusIcon = IconClockPause;
+  } else if (ORDER.isActive) {
     if (ORDER.Status) {
       if (ORDER.cancel_at_period_end) {
         const cancelDate = new Date(ORDER.cancel_at * 1000);

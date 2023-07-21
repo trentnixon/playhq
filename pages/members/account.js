@@ -51,7 +51,7 @@ const Account = ({fixtureDateRange}) => {
     }
   }, [account]);
 
-  return (
+  return ( 
     <MembersWrapper>
       <SetupCheck>
         <LoadingStateWrapper conditions={[user, userAccount]}>

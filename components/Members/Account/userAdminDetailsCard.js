@@ -1,7 +1,7 @@
 import { Card, Avatar, Text, Group, useMantineTheme, Box } from "@mantine/core";
 import { useState, useMemo } from "react";
 import { FixturaDivider } from "../Common/Divider";
-import { IconCheck, IconAlertTriangle, IconX, IconClock } from "@tabler/icons";
+import { IconCheck, IconAlertTriangle, IconX, IconClock,IconClockPause } from "@tabler/icons";
 
 export function UserDetailsCard({ user }) {
   const ORDER = user.attributes.order?.data;
@@ -27,7 +27,7 @@ export function UserDetailsCard({ user }) {
 
   const theme = useMantineTheme();
 
-  const { isActive, Status, cancel_at_period_end, cancel_at } =
+  const { isActive, Status, cancel_at_period_end, cancel_at, isPaused } =
     ORDER?.attributes ?? {};
 
   let statusMessage = "Unknown status";
@@ -36,7 +36,11 @@ export function UserDetailsCard({ user }) {
 
   if (isActive) {
     if (Status) {
-      if (cancel_at_period_end) {
+      if (isPaused) {
+        statusMessage = "Paused";
+        statusColor = theme.colors.yellow[6];
+        StatusIcon = IconClockPause;
+      } else if (cancel_at_period_end) {
         //const cancelDate = new Date(cancel_at * 1000);
         statusMessage = `Cancelling`;
         statusColor = theme.colors.red[8];

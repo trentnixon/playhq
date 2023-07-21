@@ -1,18 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { useEffect } from "react";
-import {
-  Table,
-  ActionIcon,
-  useMantineTheme,
-  Tooltip,
-} from "@mantine/core";
+import { Table, ActionIcon, useMantineTheme, Tooltip } from "@mantine/core";
 import {
   useGetInvoice,
   useGetUpcomingInvoice,
 } from "../../../Hooks/useInvoicing";
 import { ShadowWrapper } from "../Common/Containers";
 import { P, PageTitle } from "../Common/Type";
-import { FixturaLoading } from "../Common/Loading";
 import {
   IconAppWindowFilled,
   IconCalendarDue,
@@ -24,6 +18,8 @@ import {
   IconReceipt2,
   IconStatusChange,
 } from "@tabler/icons-react";
+import { useAccountDetails } from "../../../lib/userContext";
+import { LoadingStateWrapper } from "../Account/HOC/LoadingStateWrapper";
 
 function convertUnixTimestamp(timestamp) {
   // Create a new JavaScript Date object based on the timestamp
@@ -49,24 +45,22 @@ export const Invoicing = () => {
 
   useEffect(() => {}, [invoice]);
 
-  if (loading) {
-    return <FixturaLoading />;
-  }
-
   if (!invoice || invoice === null || invoice.length === 0) {
     return (
-      <ShadowWrapper>
-        <P
-          marginBottom={0}
-          textAlign={"center"}
-          Copy={`Sorry, but there are no invoices available at the moment. `}
-        />
-      </ShadowWrapper>
+      <LoadingStateWrapper conditions={[!loading]}>
+        <ShadowWrapper>
+          <P
+            marginBottom={0}
+            textAlign={"center"}
+            Copy={`Sorry, but there are no invoices available at the moment. `}
+          />
+        </ShadowWrapper>
+      </LoadingStateWrapper>
     );
   }
 
   return (
-    <>
+    <LoadingStateWrapper conditions={[!loading]}>
       <PageTitle
         Copy={"Invoice History"}
         ICON={<IconFileInvoice size={40} />}
@@ -196,38 +190,45 @@ export const Invoicing = () => {
           </tbody>
         </Table>
       </ShadowWrapper>
-    </>
+    </LoadingStateWrapper>
   );
 };
 
 export const UpcomingInvoicing = () => {
   const [invoice, getInvoice, loading] = useGetUpcomingInvoice();
-
+  const { account, ReRender } = useAccountDetails();
+  const [ORDER, setOrder] = useState(
+    account?.attributes?.order?.data?.attributes
+  );
+  const isPaused = ORDER?.isPaused;
+  console.log(isPaused);
   const theme = useMantineTheme();
   useEffect(() => {
     getInvoice();
   }, []);
 
-  useEffect(() => {}, [invoice]);
+  useEffect(() => {}, [invoice, loading]);
 
-  if (loading) {
-    return <FixturaLoading />;
-  }
+  console.log("loading", loading);
+
+  if (isPaused) return true;
 
   if (!invoice || invoice === null || invoice.length === 0) {
     return (
-      <ShadowWrapper>
-        <P
-          marginBottom={0}
-          textAlign={"center"}
-          Copy={`Sorry, but there are no invoices available at the moment. `}
-        />
-      </ShadowWrapper>
+      <LoadingStateWrapper conditions={[!loading]}>
+        <ShadowWrapper>
+          <P
+            marginBottom={0}
+            textAlign={"center"}
+            Copy={`Sorry, but there are no invoices available at the moment. `}
+          />
+        </ShadowWrapper>
+      </LoadingStateWrapper>
     );
   }
 
   return (
-    <>
+    <LoadingStateWrapper conditions={[!loading]}>
       <PageTitle
         Copy={"Upcoming Invoice"}
         ICON={<IconFileInvoice size={40} />}
@@ -285,6 +286,6 @@ export const UpcomingInvoicing = () => {
           </tbody>
         </Table>
       </ShadowWrapper>
-    </>
+    </LoadingStateWrapper>
   );
 };

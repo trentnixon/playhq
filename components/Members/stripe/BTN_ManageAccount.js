@@ -38,6 +38,7 @@ export const BTN_ManageSubscription = ({Label, theme='cta'}) => {
       LABEL={Label}
       HANDLE={manageSubscription}
       THEME={theme}
+      
     />
   );
 };
