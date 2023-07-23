@@ -3,8 +3,8 @@ import { MantineProvider } from "@mantine/core";
 export const MantineProviderWrapper = (props) => {
   return (
     <MantineProvider
-      withGlobalStyles
-      withNormalizeCSS
+    withGlobalStyles
+    withNormalizeCSS
       theme={{
         /** Put your mantine theme override here */
         colorScheme: "light",

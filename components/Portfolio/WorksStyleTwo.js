@@ -4,25 +4,22 @@ import Link from "next/link";
 //data[0].attributes.asset_category.data.attributes.Identifier
 
 const WorksStyleTwo = ({ CaseStudies }) => {
-
-
-  const VAR='attributes.asset_category.data.attributes.Identifier'
+  const VAR = "attributes.asset_category.data.attributes.Identifier";
 
   function groupByIdentifier(array) {
     const grouped = {};
-    array.forEach(item => {
-      const identifier = item.attributes.asset_category.data.attributes.Identifier;
+    array.forEach((item) => {
+      const identifier =
+        item.attributes.asset_category.data.attributes.Identifier;
       if (!grouped[identifier]) {
         grouped[identifier] = [];
       }
       grouped[identifier].push(item);
     });
     return grouped;
-  } 
+  }
 
-
-  
-  console.log(groupByIdentifier(CaseStudies.data,VAR))
+  console.log(groupByIdentifier(CaseStudies.data, VAR));
   return (
     <>
       <div className="case-studies-area ptb-100 bg-fcfbfb">
@@ -32,26 +29,28 @@ const WorksStyleTwo = ({ CaseStudies }) => {
             <p>
               Our collection of personalized digital assets includes options
               such as videos, images, and AI-generated content, all designed to
-              enhance your club&lsquo;s social media presence. Explore our examples
-              and see how we can help bring your club&lsquo;s online presence to new
-              heights.
+              enhance your club&lsquo;s social media presence. Explore our
+              examples and see how we can help bring your club&lsquo;s online
+              presence to new heights.
             </p>
           </div>
 
-        {
-          Object.keys(groupByIdentifier(CaseStudies.data,VAR)).map((key,i)=>{
-              return(
+          {Object.keys(groupByIdentifier(CaseStudies.data, VAR)).map(
+            (key, i) => {
+              return (
                 <>
                   <h1>{key}S</h1>
                   <div className="row justify-content-center">
-            {groupByIdentifier(CaseStudies.data,VAR)[key].map((study, i) => {
-          
-              return (
-                <div className="col-lg-4 col-sm-6" key={i}>
-                  <div className="work-card">
-                    <img src={`${study.attributes.Cover.data.attributes.url}`} alt="image" />
+                    {groupByIdentifier(CaseStudies.data, VAR)[key].map(
+                      (study, i) => {
+                        return (
+                          <div className="col-lg-4 col-sm-6" key={i}>
+                            <img
+                              src={`${study.attributes.Cover.data.attributes.url}`}
+                              alt="image"
+                            />
 
-                    <div className="content">
+                            {/* <div className="content">
                       <h3>
                         <Link href="/portfolio-details">
                           <a>{study.attributes.Name}</a>
@@ -66,19 +65,16 @@ const WorksStyleTwo = ({ CaseStudies }) => {
                           View {study.attributes.Name}
                         </a>
                       </Link>
-                    </div>
+                    </div> */}
+                          </div>
+                        );
+                      }
+                    )}
                   </div>
-                </div>
-              );
-            })}
-          </div>
                 </>
-              )
-          })
-        }
-
-
-         
+              );
+            }
+          )}
         </div>
       </div>
     </>

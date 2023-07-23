@@ -1,6 +1,6 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
-//import { createGetInitialProps } from "@mantine/next";
-//const getInitialProps = createGetInitialProps();
+/* import { createGetInitialProps } from "@mantine/next";
+const getInitialProps = createGetInitialProps(); */
 
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
@@ -14,7 +14,11 @@ class MyDocument extends Document {
       <Html lang="zxx">
         <Head>
           <link rel="preconnect" href="https://fonts.googleapis.com" />
-          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
+          <link
+            rel="preconnect"
+            href="https://fonts.gstatic.com"
+            crossOrigin="true"
+          />
           <link
             href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&display=swap"
             rel="stylesheet"

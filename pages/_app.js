@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Analytics } from '@vercel/analytics/react';
+import { Analytics } from "@vercel/analytics/react";
 import AOS from "aos";
 import "../node_modules/aos/dist/aos.css";
 import "../styles/bootstrap.min.css";
@@ -23,18 +23,16 @@ import { MantineProviderWrapper } from "../utils/MantineTheme";
 import { NotificationsProvider } from "@mantine/notifications";
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
-    AOS.init(); 
+    AOS.init();
   }, []);
 
   const getLayout = Component.getLayout || ((page) => <Layout>{page}</Layout>);
 
   return (
     <>
-      <MantineProviderWrapper> 
-        <NotificationsProvider>
-          {getLayout(<Component {...pageProps} />)}
-          <GoTop />
-        </NotificationsProvider>
+      <MantineProviderWrapper>
+        {getLayout(<Component {...pageProps} />)}
+        <GoTop />
       </MantineProviderWrapper>
       <Analytics />
     </>

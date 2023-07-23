@@ -1,15 +1,16 @@
 import React, { useEffect } from "react";
 import { Gradient } from "../../utils/Gradient";
+import { Title } from "@mantine/core";
 
 const PageBanner = ({ pageTitle, BGImage, position = "center center" }) => {
   return (
     <>
-     {/*  <MainCSSBanner /> */}
       <div className="page-title-area">
+        <MainCSSBanner />
         <div className="d-table">
           <div className="d-table-cell">
             <div className="container">
-              <h2>{pageTitle}</h2>
+              <Title>{pageTitle}</Title>
             </div>
           </div>
         </div>
@@ -23,8 +24,14 @@ export default PageBanner;
 const MainCSSBanner = () => {
   useEffect(() => {
     const gradient = new Gradient();
-    gradient.initGradient("#gradient-canvas");
+    gradient.initGradient("#gradient-canvas-innerPage");
   }, []);
 
-  return <canvas id="gradient-canvas" className="innerPage" data-transition-in />;
+  return (
+    <canvas
+      id="gradient-canvas-innerPage"
+      className="innerPage"
+      data-transition-in
+    />
+  );
 };

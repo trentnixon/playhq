@@ -15,8 +15,8 @@ const CtaAreaTwo = () => {
             data-aos="fade-up"
             data-aos-duration="1200"
           >
-            <Link href="/contact">
-              <a className="custom-btn">Contact Us</a>
+            <Link href="/SignUp/">
+              <a className="custom-btn">Get Started</a>
             </Link>
           </div>
         </div>

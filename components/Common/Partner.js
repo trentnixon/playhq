@@ -1,34 +1,118 @@
-import React from "react";
+import { Box, Container, Loader } from "@mantine/core";
+import React, { useEffect, useState } from "react";
+import { useAssociations, useClubs } from "../../Hooks/useExpressionOfInterest";
+import { P } from "../Members/Common/Type";
+import Link from "next/link";
 
-const Partner = ({associations}) => {
+const Partner = () => {
+  const [clubs, fetchClubs] = useClubs();
+  const [associations, fetchAssociations] = useAssociations();
+  const [showAutocomplete, setShowAutocomplete] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [storedName, setStoredName] = useState(false);
+
+  const handleInputClubOrAssociationChange = (event) => {
+    const inputValue = event.target.value;
+
+    if (inputValue.length >= 3) {
+      setShowAutocomplete(true);
+      setIsLoading(true);
+      fetchClubs(inputValue);
+      fetchAssociations(inputValue);
+    } else {
+      setShowAutocomplete(false);
+    }
+  };
+
+  const renderAutocompleteOptions = () => {
+    if (isLoading) {
+      return <Loader />; // Show spinner while data is loading
+    }
+
+    const options = [
+      ...(Array.isArray(clubs) ? clubs : []),
+      ...(Array.isArray(associations) ? associations : []),
+    ];
+
+    return options.map((option) => (
+      <li
+        key={option.id}
+        className="list-group-item"
+        onClick={() => handleAutocompleteClick(option.attributes.Name)}
+      >
+        {option.attributes.Name}
+      </li>
+    ));
+  };
+
+  useEffect(() => {
+    if (clubs !== true || associations !== true) {
+      setIsLoading(false);
+    }
+  }, [clubs, associations]);
+
+  const handleAutocompleteClick = (name) => {
+    setStoredName(name);
+    setShowAutocomplete(false);
+  };
 
   return (
     <>
       <div className="partner-area pt-100 pb-60">
         <div className="container">
           <div className="section-title">
-            <h2>Is my Club or Association available?</h2>
+            <h2>Is my Club or Association eligible?</h2>
             <p>
-            Fixtura partners with cricket clubs and associations to provide personalized digital assets that help them connect with their fans and promote their teams and events.
+              Curious if your club or association is eligible to benefit from
+              Fixtura's services? Simply enter your club's name or association
+              below, and we'll let you know if you're covered!
             </p>
-            search
           </div>
           <div className="row align-items-center justify-content-center">
-    {
-      associations.data.slice(0,5).map((ass,i)=>{
-        return(
-        
-            <div className="col-lg-2 col-6 col-sm-4" key={i}>
-              <div className="single-partner">
-                <a href="#" target="_blank">
-                 {/*  <img src="/images/partners/partner1.png" alt="image" /> */}
-                 {ass.attributes.Name}
-                </a>
-              </div>
-            </div>
-        )
-      })
-    }
+            <Container>
+              <Box
+                sx={(theme) => ({
+                  backgroundColor:theme.colors.gray[8],
+                  textAlign: "center",
+                  padding: theme.spacing.xl,
+                  borderRadius: theme.radius.md,
+                  cursor: "pointer",
+
+                
+                })}
+              >
+                <div className="mb-3">
+                  <label
+                    htmlFor="inputClubOrAssociation"
+                    className="form-label"
+                  >
+                    <P color={0} Copy={`Name of Club or Association`} />
+                    
+                  </label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    id="inputClubOrAssociation"
+                    name="clubOrAssociation"
+                    /* value={formData.clubOrAssociation} */
+                    minLength="3"
+                    onChange={handleInputClubOrAssociationChange}
+                    /*  disabled={!registerAs} */
+                    required
+                  />
+                  {(clubs || associations) && showAutocomplete && (
+                    <ul className="list-group">
+                      {renderAutocompleteOptions()}
+                    </ul>
+                  )}
+                </div>
+                {storedName ? (
+                  <PositiveResult storedName={storedName} />
+                ) : (
+                  false
+                )}
+              </Box>
+            </Container>
           </div>
         </div>
       </div>
@@ -37,3 +121,25 @@ const Partner = ({associations}) => {
 };
 
 export default Partner;
+
+const PositiveResult = ({ storedName }) => {
+  return (
+    <Box>
+      <P
+      color={0}
+        textAlign={`center`}
+        Weight={`bold`}
+        Copy={`Great news! ${storedName} is eligible to join Fixtura's exclusive network of cricket clubs and associations.`}
+      />
+      <P
+      color={0}
+        textAlign={`center`}
+        Weight={400}
+        Copy={`Join now to experience the ease and efficiency of Fixtura's content creation services and take your club's online presence to the next level!`}
+      />
+      <Link href="/SignUp/">
+        <a className="btn btn-primary">Sign up</a>
+      </Link>
+    </Box>
+  );
+};
