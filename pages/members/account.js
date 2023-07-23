@@ -58,7 +58,7 @@ const Account = ({fixtureDateRange}) => {
           <UserSubscription />
           <FixturaDivider />
           <UpcomingInvoicing />
-          <Invoicing />
+          <Invoicing /> 
           <Space h="lg" />
 
           <Container size={"lg"}>

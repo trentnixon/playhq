@@ -67,6 +67,11 @@ $transition: all 0.5s ease;
     --gradient-color-3: #EDFBFF;  
     --gradient-color-4: #D7F0EC;
   }
+  #gradient-canvas .innerPage{ height:200px !important;}
+
+  .bg-2C2E33{
+    background-color: #373A40;
+}
 body {
     padding: 0;
     margin: 0;
@@ -3268,7 +3273,6 @@ Pricing CSS
     z-index: 1;
 }
 .pricing-table {
-	text-align: center;
 	background: $white-color;
 	box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.06);
 	border-radius: 5px;
@@ -3310,7 +3314,7 @@ Pricing CSS
         }
     }
     .price {
-        margin-bottom: 20px;
+        margin-bottom: 0px;
         font-weight: bold;
 
         span {
@@ -4854,8 +4858,8 @@ Page Title CSS
     background-size: cover;
     background-position: top center;
     padding: {
-        top: 280px;
-        bottom: 280px;
+        top: 120px;
+        bottom: 120px;
     }
     text-align: center;
 

@@ -16,16 +16,14 @@ const PricingStyleOne = () => {
       <div className="pricing-area ptb-100 bg-f9f6f6">
         <div className="container">
           <div className="section-title">
-            <h2>One plan One Price Policy</h2>
-            <p>Need help choosing a plan? No problem, we only offer one!</p>
+            <h2>Customized Coverage for Every Club</h2>
+
             <p>
-              Unlike other services that may have multiple tiers of plans to
-              choose from, we have a single, all-inclusive option that covers
-              everything you need and any future additions we make.
-            </p>
-            <p>
-              So you can focus on getting the best value for your club, without
-              worrying about what&lsquo;s included in each plan.
+              Our three distinct subscription tiers are designed to cater to
+              your specific goals and budget. With flexibility at your
+              fingertips, you can choose the level of content and analysis that
+              best serves your club. Here, your focus stays where it belongs, on
+              the game.
             </p>
           </div>
 
@@ -33,7 +31,13 @@ const PricingStyleOne = () => {
             {products.map((product, i) => {
               console.log(product);
               if (product.attributes.isActive)
-                return <ProductCard key={i} product={product.attributes} signUp={true} />;
+                return (
+                  <ProductCard
+                    key={i}
+                    product={product.attributes}
+                    signUp={true}
+                  />
+                );
             })}
           </div>
         </div>

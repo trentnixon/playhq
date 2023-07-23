@@ -41,7 +41,8 @@ const CreateCards = ({ product, signUp, BTN, selected, timing = 1,isActive=false
       BTN={BTN}
       className={selected ? "" : "opacity-5"}
       timing={timing}
-      isActive={isActive}
+      isActive={isActive} 
+      withTool={false}
     />
   );
 };
@@ -156,7 +157,7 @@ export const UpdateYourPlan = ({user,setHasUpdated}) => {
             selectedProductId === null || product.id === selectedProductId
               ? product.attributes.isActive && (
                   <CreateCards
-                    key={i}
+                    key={i} 
                     product={product.attributes}
                     signUp={false}
                     timing={i}

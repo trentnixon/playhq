@@ -1,7 +1,13 @@
 import { Card, Avatar, Text, Group, useMantineTheme, Box } from "@mantine/core";
 import { useState, useMemo } from "react";
 import { FixturaDivider } from "../Common/Divider";
-import { IconCheck, IconAlertTriangle, IconX, IconClock,IconClockPause } from "@tabler/icons";
+import {
+  IconCheck,
+  IconAlertTriangle,
+  IconX,
+  IconClock,
+  IconClockPause,
+} from "@tabler/icons";
 
 export function UserDetailsCard({ user }) {
   const ORDER = user.attributes.order?.data;
@@ -36,15 +42,15 @@ export function UserDetailsCard({ user }) {
 
   if (isActive) {
     if (Status) {
-      if (isPaused) {
-        statusMessage = "Paused";
-        statusColor = theme.colors.yellow[6];
-        StatusIcon = IconClockPause;
-      } else if (cancel_at_period_end) {
+      if (cancel_at_period_end) {
         //const cancelDate = new Date(cancel_at * 1000);
         statusMessage = `Cancelling`;
         statusColor = theme.colors.red[8];
         StatusIcon = IconClock;
+      } else if (isPaused) {
+        statusMessage = "Paused";
+        statusColor = theme.colors.yellow[6];
+        StatusIcon = IconClockPause;
       } else {
         statusMessage = "Active";
         statusColor = theme.colors.green[6];
@@ -99,32 +105,31 @@ export function UserDetailsCard({ user }) {
         })}
       >
         <FixturaDivider />
-     
 
-      <Group position="apart">
-        <Text ta="center" fz="sm" c={statusColor} fw={500}>
-          {` ${
-            subscriptionTier?.Name === undefined
-              ? "Awaiting Selection"
-              : subscriptionTier?.Name
-          }`}
-        </Text>
-        <Text ta="center" fz="sm" c="dimmed">
-          Plan
-        </Text>
-      </Group>
-
-      <Group position="apart">
-        <Group position="left" spacing="xs" align="center">
-          <StatusIcon size={`1.1em`} color={statusColor} />
+        <Group position="apart">
           <Text ta="center" fz="sm" c={statusColor} fw={500}>
-            {statusMessage}
+            {` ${
+              subscriptionTier?.Name === undefined
+                ? "Awaiting Selection"
+                : subscriptionTier?.Name
+            }`}
+          </Text>
+          <Text ta="center" fz="sm" c="dimmed">
+            Plan
           </Text>
         </Group>
-        <Text ta="center" fz="sm" c="dimmed">
-          Subscription
-        </Text>
-      </Group>
+
+        <Group position="apart">
+          <Group position="left" spacing="xs" align="center">
+            <StatusIcon size={`1.1em`} color={statusColor} />
+            <Text ta="center" fz="sm" c={statusColor} fw={500}>
+              {statusMessage}
+            </Text>
+          </Group>
+          <Text ta="center" fz="sm" c="dimmed">
+            Subscription
+          </Text>
+        </Group>
       </Box>
     </Card>
   );

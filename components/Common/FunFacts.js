@@ -1,71 +1,107 @@
 import React from "react";
 import { useDisclosure } from "@mantine/hooks";
-import { Modal, Button, Group, useMantineTheme } from "@mantine/core";
+import {
+  Modal,
+  Button,
+  Group,
+  useMantineTheme,
+  Title,
+  Text,
+} from "@mantine/core";
 import { useState } from "react";
-
+import { IconPhotoAi, IconVideo, IconNews } from "@tabler/icons-react";
 const FunFacts = () => {
+  const theme = useMantineTheme();
   return (
     <>
-  <div className="pt-100 pb-70 bg-eaf6ff">
-    <div className="container">
-      <div className="row justify-content-center">
-        <div className="col-lg-4 col-sm-6">
-          <div
-            className="funfact-card"
-            data-aos="fade-up"
-            data-aos-duration="1200"
-            data-aos-delay="200"
-          >
-            <i className="pe-7s-news-paper"></i> 
-            <h3>Writeups</h3>
-            <Writeup />
-            <p>
-              Fixtura's AI write ups provide high-quality, customizable
-              content for clubs and associations to use in their communication
-              and marketing efforts. Our advanced AI technology generates unique
-              and engaging articles that can be tailored to your specific needs
-              and goals.
-            </p>
-          </div>
-        </div>
-        <div className="col-lg-4 col-sm-6">
-          <div
-            className="funfact-card"
-            data-aos="fade-up"
-            data-aos-duration="1200"
-            data-aos-delay="100"
-          >
-            <i className="pe-7s-video"></i>
-            <h3>Videos</h3>
-            <VideoModel />
-            <p>
-              Fixtura videos are a great way to keep your members and followers
-              informed about upcoming matches and competitions, with dynamic
-              layouts and all the important details clearly displayed.
-            </p>
-          </div>
-        </div>
-        <div className="col-lg-4 col-sm-6">
-          <div
-            className="funfact-card"
-            data-aos="fade-up"
-            data-aos-duration="1200"
-            data-aos-delay="200"
-          >
-            <i className="pe-7s-photo"></i>
-            <h3>Images</h3>
-            <ImageModel />
-            <p>
-              Fixtura's images are high-quality and tailored to showcase your
-              club or association in a professional and visually appealing way.
-            </p>
+      <div className="pt-100 pb-70 bg-2C2E33">
+        <div className="container">
+          <div className="row justify-content-center">
+            <div className="col-lg-4 col-sm-6">
+              <div
+                className="funfact-card"
+                data-aos="fade-up"
+                data-aos-duration="1200"
+                data-aos-delay="100"
+              >
+                <IconNews size="4rem" stroke={1} color={theme.colors.blue[6]} />
+                <Title
+                  mb={20}
+                  variant="gradient"
+                  gradient={{ from: "#339AF0", to: "#3BC9DB", deg: 45 }}
+                >
+                  AI-generated Write-ups
+                </Title>
+
+                {/*  <Writeup /> */}
+                <Text c={`white`}>
+                  Fixtura's AI write ups provide high-quality, customizable
+                  content for clubs and associations to use in their
+                  communication and marketing efforts. Our advanced AI
+                  technology generates unique and engaging articles that can be
+                  tailored to your specific needs and goals.
+                </Text>
+              </div>
+            </div>
+            <div className="col-lg-4 col-sm-6">
+              <div
+                className="funfact-card"
+                data-aos="fade-up"
+                data-aos-duration="1200"
+                data-aos-delay="300"
+              >
+                <IconVideo
+                  size="4rem"
+                  stroke={1}
+                  color={theme.colors.blue[6]}
+                />
+                <Title
+                  mb={20}
+                  variant="gradient"
+                  gradient={{ from: "#339AF0", to: "#3BC9DB", deg: 45 }}
+                >
+                  Tailored Videos
+                </Title>
+                {/*  <VideoModel /> */}
+                <Text c={`white`}>
+                  Fixtura videos are a great way to keep your members and
+                  followers informed about upcoming matches and competitions,
+                  with dynamic layouts and all the important details clearly
+                  displayed.
+                </Text>
+              </div>
+            </div>
+            <div className="col-lg-4 col-sm-6">
+              <div
+                className="funfact-card"
+                data-aos="fade-up"
+                data-aos-duration="1200"
+                data-aos-delay="500"
+              >
+                <IconPhotoAi
+                  size="4rem"
+                  stroke={1}
+                  color={theme.colors.blue[6]}
+                />
+                <Title
+                  mb={20}
+                  variant="gradient"
+                  gradient={{ from: "#339AF0", to: "#3BC9DB", deg: 45 }}
+                >
+                  High-quality Images
+                </Title>
+                {/*   <ImageModel /> */}
+                <Text c={`white`}>
+                  Fixtura's images are high-quality and tailored to showcase
+                  your club or association in a professional and visually
+                  appealing way.
+                </Text>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</>
-
+    </>
   );
 };
 
@@ -113,10 +149,11 @@ function Writeup() {
           Vale 3rd Grade.
         </p>
       </Modal>
-      <p>Examples</p> 
+      <p>Examples</p>
       <Group position="center" mb={20}>
-        
-        <Button onClick={open} className="btn btn-secondary-a">Game Review</Button>
+        <Button onClick={open} className="btn btn-secondary-a">
+          Game Review
+        </Button>
       </Group>
     </>
   );
@@ -124,9 +161,7 @@ function Writeup() {
 
 function VideoModel() {
   const [opened, { open, close }] = useDisclosure(false);
-  const [video, setVideo] = useState(false)
-
-
+  const [video, setVideo] = useState(false);
 
   return (
     <>
@@ -154,22 +189,41 @@ function VideoModel() {
       </Modal>
       <p>Examples</p>
       <Group position="center" mb={20}>
-      
-        <Button className="btn btn-secondary-a" onClick={()=>{open(); setVideo("/video/Video_Results.mp4")}}>results</Button>
-        <Button className="btn btn-secondary-a" onClick={()=>{open(); setVideo("/video/Video_Ladder.mp4")}}>Ladder</Button>
-        <Button className="btn btn-secondary-a" onClick={()=>{open(); setVideo("/video/Video_Fixtures.mp4")}}>Fixtures</Button>
-        
+        <Button
+          className="btn btn-secondary-a"
+          onClick={() => {
+            open();
+            setVideo("/video/Video_Results.mp4");
+          }}
+        >
+          results
+        </Button>
+        <Button
+          className="btn btn-secondary-a"
+          onClick={() => {
+            open();
+            setVideo("/video/Video_Ladder.mp4");
+          }}
+        >
+          Ladder
+        </Button>
+        <Button
+          className="btn btn-secondary-a"
+          onClick={() => {
+            open();
+            setVideo("/video/Video_Fixtures.mp4");
+          }}
+        >
+          Fixtures
+        </Button>
       </Group>
     </>
   );
 }
 
-
 function ImageModel() {
   const [opened, { open, close }] = useDisclosure(false);
-  const [video, setVideo] = useState(false)
-
-
+  const [video, setVideo] = useState(false);
 
   return (
     <>
@@ -185,16 +239,38 @@ function ImageModel() {
           className="video-background"
           style={{ position: "relative", overflow: "hidden" }}
         >
-         <img src={video} />
+          <img src={video} />
         </div>
       </Modal>
       <p>Examples</p>
       <Group position="center" mb={20}>
-      
-        <Button className="btn btn-secondary-a" onClick={()=>{open(); setVideo("/video/Image_Results.png")}}>results</Button>
-        <Button className="btn btn-secondary-a" onClick={()=>{open(); setVideo("/video/Image_Top5.png")}}>Top 5</Button>
-        <Button className="btn btn-secondary-a" onClick={()=>{open(); setVideo("/video/Image_Ladder.png")}}>Ladder</Button>
-        
+        <Button
+          className="btn btn-secondary-a"
+          onClick={() => {
+            open();
+            setVideo("/video/Image_Results.png");
+          }}
+        >
+          results
+        </Button>
+        <Button
+          className="btn btn-secondary-a"
+          onClick={() => {
+            open();
+            setVideo("/video/Image_Top5.png");
+          }}
+        >
+          Top 5
+        </Button>
+        <Button
+          className="btn btn-secondary-a"
+          onClick={() => {
+            open();
+            setVideo("/video/Image_Ladder.png");
+          }}
+        >
+          Ladder
+        </Button>
       </Group>
     </>
   );

@@ -6,45 +6,51 @@ import { useUser } from "../../lib/authContext";
 import { fetcher } from "../../lib/api";
 import Cookies from "js-cookie";
 // PACK
-import { Container, Paper } from "@mantine/core";
+import {
+  ActionIcon,
+  Box,
+  Container,
+  Group,
+  List,
+  Paper,
+  Table,
+  Text,
+  Title,
+  Tooltip,
+  useMantineTheme,
+} from "@mantine/core";
 // Components
 import { MembersWrapper } from "../../components/Members/Common/Containers";
 import { showNotification } from "@mantine/notifications";
 
-import { FixturaLoading } from "../../components/Members/Common/Loading";
 import { useAccountDetails } from "../../lib/userContext";
 import { FixturaDivider } from "../../components/Members/Common/Divider";
-
+import {
+  IconCircleCheck,
+  IconCircleX,
+  IconHelpHexagon,
+  IconPhotoAi,
+  IconVideo,
+  IconNews,
+  IconCurrencyDollar,
+  IconUserCheck,
+} from "@tabler/icons-react";
 import qs from "qs";
-import { PageTitle } from "../../components/Members/Common/Type";
+import { P, PageTitle, SubHeaders } from "../../components/Members/Common/Type";
 import { IconAddressBook } from "@tabler/icons-react";
+import { LoadingStateWrapper } from "../../components/Members/Account/HOC/LoadingStateWrapper";
 
-const query = qs.stringify(
-  {
-    populate: [
-      "scheduler",
-      "scheduler.days_of_the_week",
-      "account_type",
-      "associations",
-      "clubs",
-      "renders",
-      "renders.downloads",
-      "assets",
-      "order",
-    ],
-  },
-  {
-    encodeValuesOnly: true,
-  }
-);
-
-const Support = () => {
+const MyPlan = () => {
   const { account, ReRender } = useAccountDetails();
   const [userAccount, setUserAccount] = useState(account);
+  const [subscriptionTier, setsubscriptionTier] = useState(
+    userAccount?.attributes.subscription_tier.data.attributes
+  );
   /* is User Auth */
   const { user, loading } = useUser();
   const router = useRouter();
   const currentRoute = router.pathname;
+  const theme = useMantineTheme();
 
   useEffect(() => {
     if (!user) router.push(`/members/verification/?prev=${currentRoute}`);
@@ -59,42 +65,139 @@ const Support = () => {
       });
     }
   }, [account]);
-
-  if (!user || !userAccount) return <FixturaLoading />;
-
-  return (
-    <MembersWrapper>
-      <PageTitle Copy={"Plan"} ICON={<IconAddressBook size={40} />} />
-
-      <Container size={"lg"}>
-        <Paper
-          withBorder
-          p="lg"
-          sx={(theme) => ({
-            backgroundColor: theme.white,
-          })}
-        ></Paper>
-      </Container>
-      <FixturaDivider />
-    </MembersWrapper>
-  );
-};
-
-Support.getInitialProps = async (ctx) => {
-  const response = await fetcher(
-    `${process.env.NEXT_PUBLIC_STRAPI_URL}/accounts/${Cookies.get(
-      "LinkedAccount"
-    )}?${query}`,
-    {
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${Cookies.get("jwt")}`,
-      },
-    }
-  );
-  return {
-    Response: response.data,
+  const ICONS = {
+    IconPhotoAi: (
+      <IconPhotoAi size="1.7rem" stroke={1} color={theme.colors.gray[6]} />
+    ),
+    IconVideo: (
+      <IconVideo size="1.7rem" stroke={1} color={theme.colors.gray[6]} />
+    ),
+    IconNews: (
+      <IconNews size="1.7rem" stroke={1} color={theme.colors.gray[6]} />
+    ),
+    IconCurrencyDollar: (
+      <IconCurrencyDollar
+        size="1.7rem"
+        stroke={1}
+        color={theme.colors.gray[6]}
+      />
+    ),
   };
+
+  console.log(userAccount);
+  return (
+    <LoadingStateWrapper conditions={[user, userAccount, subscriptionTier]}>
+      <MembersWrapper>
+        <PageTitle
+          Copy={`My Plan : ${subscriptionTier?.Name}`}
+          ICON={<IconAddressBook size={40} />}
+        />
+
+        <P Copy={subscriptionTier?.description}></P>
+        <Container fluid>
+          <Paper
+            withBorder
+            p="lg"
+            sx={(theme) => ({
+              backgroundColor: theme.white,
+            })}
+          >
+            {subscriptionTier?.subscription_items.items.map((category) => (
+              <Box
+                key={category.category}
+                sx={(theme) => ({
+                  backgroundColor: theme.colors.gray[0],
+                  padding: theme.spacing.xs,
+                  borderBottom: `1px solid ${theme.colors.gray[2]}`,
+                  cursor: "pointer",
+
+                  "&:hover": {
+                    backgroundColor: theme.colors.gray[2],
+                  },
+                })}
+              >
+                <Group position="center">
+                  {ICONS[category.icon]}
+                  <Title
+                    order={2}
+                    align="left"
+                    c={theme.colors.gray[8]}
+                    my={20}
+                    mx={5}
+                  >
+                    {category.category}
+                  </Title>
+                </Group>
+
+                <Table>
+                  <thead>
+                    <tr>
+                      <th>Included</th>
+                      <th>Asset</th>
+                      <th>Details</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {category.details.map((detail) => (
+                      <tr
+                        key={detail.type}
+                        style={{ width: "100%", marginBottom: "10px" }}
+                      >
+                        <td>
+                          {detail.hasOption ? (
+                            <IconCircleCheck
+                              size="1.3rem"
+                              color={theme.colors.green[5]}
+                            />
+                          ) : (
+                            <IconCircleX
+                              size="1.3rem"
+                              color={theme.colors.red[5]}
+                            />
+                          )}
+                        </td>
+
+                        <td>
+                          <Text
+                            align="left"
+                            c={detail.hasOption ? "black" : "dimmed"}
+                            fz={"sm"}
+                          >
+                            {detail.type}
+                          </Text>
+                        </td>
+
+                        <td>
+                          <Tooltip
+                            label={detail.description}
+                            width={200}
+                            withArrow={true}
+                            multiline={true}
+                          >
+                            <ActionIcon>
+                              <IconHelpHexagon
+                                size="1.125rem"
+                                color={theme.colors.blue[5]}
+                              />
+                            </ActionIcon>
+                          </Tooltip>
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </Table>
+              </Box>
+            ))}
+          </Paper>
+        </Container>
+        <FixturaDivider />
+      </MembersWrapper>
+    </LoadingStateWrapper>
+  );
 };
 
-export default Support;
+/* MyPlan.getInitialProps = async (ctx) => {
+  
+};
+ */
+export default MyPlan;

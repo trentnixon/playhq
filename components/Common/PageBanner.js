@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { Gradient } from "../../utils/Gradient";
 
-const PageBanner = ({ pageTitle, BGImage, position='center center' }) => {
+const PageBanner = ({ pageTitle, BGImage, position = "center center" }) => {
   return (
     <>
-      <div className="page-title-area" style={{ backgroundImage: `url(${BGImage})`, backgroundPosition:position }}>
+     {/*  <MainCSSBanner /> */}
+      <div className="page-title-area">
         <div className="d-table">
           <div className="d-table-cell">
             <div className="container">
@@ -17,3 +19,12 @@ const PageBanner = ({ pageTitle, BGImage, position='center center' }) => {
 };
 
 export default PageBanner;
+
+const MainCSSBanner = () => {
+  useEffect(() => {
+    const gradient = new Gradient();
+    gradient.initGradient("#gradient-canvas");
+  }, []);
+
+  return <canvas id="gradient-canvas" className="innerPage" data-transition-in />;
+};

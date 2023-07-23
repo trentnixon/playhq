@@ -5,7 +5,7 @@ import { Space, Text } from "@mantine/core";
 const Services = () => {
   return (
     <>
-      <div className="bg-fcfbfb pt-100 pb-70">
+      <div className="bg-eaf6ff pt-100 pb-70">
         <div className="container">
           <div className="section-title">
             <h2>Your Premier Destination for Customized Cricket content</h2>

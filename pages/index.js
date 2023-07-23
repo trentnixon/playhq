@@ -28,8 +28,9 @@ const Index = ({ associations, CaseStudies }) => {
       <MainBanner />
       <Services />
       <FunFacts />
-      <OurWorks CaseStudies={CaseStudies} />
       <Partner associations={associations} />
+      <OurWorks CaseStudies={CaseStudies} />
+    
 
       <PricingStyleOne />
       <CtaArea />
@@ -46,9 +47,7 @@ export const getServerSideProps = async (context) => {
   const CaseStudies = await fetcher(
     `${process.env.NEXT_PUBLIC_STRAPI_URL}/case-studies?${CS_query}`
   );
-  //
 
-  console.log(response);
   return {
     props: {
       associations: response,

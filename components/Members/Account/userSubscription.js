@@ -7,7 +7,6 @@ import {
   Container,
   Group,
   Paper,
-  Text,
   useMantineTheme,
 } from "@mantine/core";
 import { IconBrandStripe } from "@tabler/icons";
@@ -56,6 +55,28 @@ export const UserSubscription = () => {
   let statusDisplay;
   if (ORDER === undefined) {
     statusDisplay = <SelectAPlan />;
+  } else if (isCancelling) {
+    statusDisplay = (
+      <>
+        <UserDetails
+          user={userAccount}
+          setHasUpdated={ReRender}
+          subscriptionTier={subscriptionTier}
+          Value={`Your subscription is cancelling...`}
+        />
+        <P
+          color={3}
+          size="sm"
+          Weight={400}
+          textAlign="center"
+          Copy={`By cancelling your plan, you will no longer receive automated assets
+          from Fixtura. This change will take effect from the date of
+          cancellation. To continue enjoying our services, please consider
+          renewing or changing your plan.`}
+        />
+        <SubscriptionActiveFrom ORDER={ORDER} />
+      </>
+    );
   } else if (isPaused) {
     statusDisplay = (
       <>
@@ -92,28 +113,6 @@ export const UserSubscription = () => {
           </>
         )}
 
-        <SubscriptionActiveFrom ORDER={ORDER} />
-      </>
-    );
-  } else if (isCancelling) {
-    statusDisplay = (
-      <>
-        <UserDetails
-          user={userAccount}
-          setHasUpdated={ReRender}
-          subscriptionTier={subscriptionTier}
-          Value={`Your subscription is cancelling...`}
-        />
-        <P
-          color={3}
-          size="sm"
-          Weight={400}
-          textAlign="center"
-          Copy={`By cancelling your plan, you will no longer receive automated assets
-          from Fixtura. This change will take effect from the date of
-          cancellation. To continue enjoying our services, please consider
-          renewing or changing your plan.`}
-        />
         <SubscriptionActiveFrom ORDER={ORDER} />
       </>
     );
@@ -171,6 +170,7 @@ export const UserSubscription = () => {
   );
 };
 
+
 const ManageSubscriptionCTA = ({ ORDER, setChangePlan, changePlan }) => {
   const isActive =
     ORDER?.isActive && ORDER?.Status && !ORDER?.cancel_at_period_end;
@@ -211,6 +211,10 @@ const SubscriptionActiveFrom = ({ ORDER }) => {
   let PColor = 8;
   let StatusIcon = IconCheck; // default icon
   const isPaused = ORDER?.isPaused;
+  const isCancelling = ORDER?.cancel_at_period_end && ORDER?.isActive && ORDER?.Status;
+  const isActive = ORDER?.isActive && ORDER?.Status && !ORDER?.cancel_at_period_end;
+  const isCancelled = !ORDER?.isActive || !ORDER?.Status;
+  
   if (ORDER?.strapi_created) {
     try {
       const date = new Date(ORDER.strapi_created * 1000);
@@ -223,45 +227,37 @@ const SubscriptionActiveFrom = ({ ORDER }) => {
       console.error("Error formatting date: ", err);
     }
   }
-  if (isPaused) {
+
+  if (isCancelling) {
+    const cancelDate = new Date(ORDER.cancel_at * 1000);
+    statusMessage = `Subscription will be cancelled after ${cancelDate.toLocaleDateString(
+      "en-AU",
+      {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+      }
+    )}`;
+    statusColor = theme.colors.red[9];
+    PColor = 8;
+    StatusIcon = IconClock;
+  } else if (isPaused) {
     statusMessage = "Subscription is paused";
     statusColor = theme.colors.yellow[9];
     PColor = 8;
     StatusIcon = IconClockPause;
-  } else if (ORDER.isActive) {
-    if (ORDER.Status) {
-      if (ORDER.cancel_at_period_end) {
-        const cancelDate = new Date(ORDER.cancel_at * 1000);
-        statusMessage = `Subscription will be cancelled after ${cancelDate.toLocaleDateString(
-          "en-AU",
-          {
-            year: "numeric",
-            month: "long",
-            day: "numeric",
-          }
-        )}`;
-        statusColor = theme.colors.red[9];
-        PColor = 8;
-        StatusIcon = IconClock;
-      } else {
-        statusMessage = "Subscription is active";
-        statusColor = theme.colors.green[5];
-        PColor = 6;
-        StatusIcon = IconCheck;
-      }
-    } else {
-      statusMessage = "Stripe subscription is not active";
-      statusColor = theme.colors.red[9];
-      PColor = 8;
-      StatusIcon = IconAlertTriangle;
-    }
-  } else {
-    statusMessage = "Account is not active";
+  } else if (isActive) {
+    statusMessage = "Subscription is active";
+    statusColor = theme.colors.green[5];
+    PColor = 6;
+    StatusIcon = IconCheck;
+  } else if (isCancelled) {
+    statusMessage = "Subscription is cancelled";
     statusColor = theme.colors.red[9];
     PColor = 8;
     StatusIcon = IconX;
   }
-
+  
   return (
     <Group position="apart">
       <Group position="left" spacing="xs" align="center">
