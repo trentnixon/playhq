@@ -42,6 +42,7 @@
         "dayjs": "^1.11.7",
         "embla-carousel-react": "^7.1.0",
         "eslint-config-next": "^13.1.6",
+        "framer-motion": "^10.13.0",
         "fslightbox-react": "^1.6.2-2",
         "generate-password": "^1.7.0",
         "hex-rgb": "^5.0.0",

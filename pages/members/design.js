@@ -60,9 +60,9 @@ const Design = () => {
         <P
           Copy={`To change your design settings, simply select the desired theme and layout from the options provided. You can also choose an audio track to accompany your assets. The preview area will update to reflect your changes, so you can see how your assets will look and sound before you save them.`}
         />
-      </PageCopyWrapper>
+      </PageCopyWrapper>  
       <Space h={20} />
-      <Container fluid mb={40}>
+      <Container fluid mb={40} m={0}>
         <DesignTabs
           isPlaying={isPlaying}
           userAccount={userAccount}
