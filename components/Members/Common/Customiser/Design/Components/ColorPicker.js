@@ -1,6 +1,6 @@
 import React from 'react'
 import reactCSS from 'reactcss'
-import { SketchPicker } from 'react-color'
+import { SketchPicker, ChromePicker,BlockPicker } from 'react-color'
 
 class SketchExample extends React.Component {
   state = {
@@ -63,7 +63,7 @@ class SketchExample extends React.Component {
         </div>
         { this.state.displayColorPicker ? <div style={ styles.popover }>
           <div style={ styles.cover } onClick={ this.handleClose }/>
-          <SketchPicker color={ this.state.color } onChange={ this.handleChange } />
+          <ChromePicker color={ this.state.color } onChange={ this.handleChange } />
         </div> : null }
 
       </div>

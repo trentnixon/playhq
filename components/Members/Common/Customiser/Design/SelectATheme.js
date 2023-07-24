@@ -146,6 +146,9 @@ const ColorTable = (props) => {
   return (
     <>
       <SubHeaders Copy={`Color themes`} />
+      <P
+          Copy={`Select Your Brand Colors: Customize Your Assets with Your Brand Colors. Choose from a variety of predefined themes or create a custom theme that reflects your club's unique personality. By selecting your brand colors, you'll create visually appealing videos and images that showcase your team's achievements in a style that's true to your brand`}
+        />
       <Paper
         radius="md"
         shadow="md"

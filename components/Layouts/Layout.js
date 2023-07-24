@@ -28,7 +28,7 @@ const Layout = ({ children }) => {
   return (
     <UserProvider value={{ user, loading }}>
       <AccountDetailsProvider>
-        <Meta />
+        <Meta /> 
         <div className="Container Main">
           {SelectedNavbar}
           {SelectedLayout}

@@ -1,7 +1,14 @@
-import { Box, Group, List, Text, ThemeIcon, useMantineTheme } from "@mantine/core";
+import {
+  Box,
+  Group,
+  List,
+  Text,
+  ThemeIcon,
+  useMantineTheme,
+} from "@mantine/core";
 import { IconUpload, IconCircleCheck } from "@tabler/icons";
 import {
-  Dropzone, 
+  Dropzone,
   DropzoneProps,
   DropzoneStatus,
   MIME_TYPES,
@@ -9,7 +16,7 @@ import {
 import { useUploadImageViaDropzone } from "../../../Hooks/useUploadViaDropzone";
 import { useEffect, useState } from "react";
 import { BTN_ONCLICK } from "../Common/utils/Buttons";
-import { P,SubHeaders } from "../Common/Type";
+import { P, SubHeaders } from "../Common/Type";
 
 export function UploadSponsorsLogos({ setLogo, setLogoPath, SAVEDLOGO }) {
   const theme = useMantineTheme();
@@ -38,7 +45,6 @@ export function UploadSponsorsLogos({ setLogo, setLogoPath, SAVEDLOGO }) {
   if (rejected)
     return <RejectedFiles setRejected={setRejected} rejected={rejected} />;
   return (
-    
     <Box
       sx={(theme) => ({
         textAlign: "center",
@@ -60,7 +66,9 @@ export function UploadSponsorsLogos({ setLogo, setLogoPath, SAVEDLOGO }) {
           spacing="xl"
           style={{ minHeight: 220, pointerEvents: "none" }}
         >
-          <Dropzone.Idle><IconUpload /></Dropzone.Idle>
+          <Dropzone.Idle>
+            <IconUpload />
+          </Dropzone.Idle>
 
           <div>
             <Text size="xl" inline>
@@ -83,17 +91,17 @@ export function UploadSponsorsLogos({ setLogo, setLogoPath, SAVEDLOGO }) {
     </Box>
   );
 }
-export default UploadSponsorsLogos
+export default UploadSponsorsLogos;
 const RejectedFiles = ({ rejected, setRejected }) => {
   console.log(rejected[0].errors);
   return (
     <>
       <SubHeaders>ERROR!</SubHeaders>
-      
+
       <P>
         The following errors occurred whilst attempting to upload your image.
       </P>
-      
+
       <List
         size="lg"
         withPadding
@@ -111,7 +119,6 @@ const RejectedFiles = ({ rejected, setRejected }) => {
           return <List.Item key={i}>{err.message}</List.Item>;
         })}
       </List>
-
 
       <BTN_ONCLICK
         HANDLE={() => {

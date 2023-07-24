@@ -171,8 +171,13 @@ const MembersNavItem = ({ user }) => {
           </Link>
         </li>
         <li className="nav-item">
+          <Link href={`${PATH}/brand`} activeClassName="active">
+            <a className="nav-link">Your Brand</a>
+          </Link>
+        </li>
+        <li className="nav-item">
           <Link href={`${PATH}/design`} activeClassName="active">
-            <a className="nav-link">Design</a>
+            <a className="nav-link">Asset Design</a>
           </Link>
         </li>
      

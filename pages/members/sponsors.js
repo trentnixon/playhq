@@ -66,7 +66,7 @@ const SPONSORS = () => {
       <PageTitle Copy={"SPONSORS"} ICON={<IconCheck size={40} />} />
       <Wrapper>
         <Group position="apart">
-        <PageCopyWrapper>
+        <PageCopyWrapper> 
             <P
               Copy={`Sponsors are a great way to add a personal touch to your assets and show your 
               appreciation for your club's supporters. To create a sponsor, 

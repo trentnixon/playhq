@@ -14,6 +14,7 @@ import { Box, Container, Group, Space } from "@mantine/core";
 import { IconColorPicker } from "@tabler/icons";
 import { DesignTabs } from "../../components/Members/Design/DesignTabs";
 import { AccountLogo } from "../../components/Members/Design/AddLogo";
+import { SelectATheme } from "../../components/Members/Common/Customiser/Design/SelectATheme";
 const qs = require("qs");
 
 const query = qs.stringify(
@@ -32,7 +33,7 @@ const query = qs.stringify(
   }
 );
 
-const Design = () => {
+const OurBrand = () => {
   const { account } = useAccountDetails();
   const [userAccount, setUserAccount] = useState(account);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -54,28 +55,27 @@ const Design = () => {
 
   return (
     <MembersWrapper>
-      <PageTitle Copy={"Asset Design"} ICON={<IconColorPicker size={40} />} />
-      <SubHeaders Copy={"Design Settings"} />
+      <PageTitle Copy={"Your Brand"} ICON={<IconColorPicker size={40} />} />
+      <SubHeaders Copy={"Brand Settings"} />
 
       <PageCopyWrapper>
+        {/* <P
+          Copy={`Personalize Your Content with a Distinct Identity. Showcasing your brand is essential to building a strong online presence. By uploading your logo and selecting brand colors, you'll ensure that all visual assets created by Fixtura represent your club or association in a consistent and professional manner.`}
+        /> */}
         <P
-          Copy={`To change your design settings, simply select the desired theme and layout from the options provided. You can also choose an audio track to accompany your assets. The preview area will update to reflect your changes, so you can see how your assets will look and sound before you save them.`}
+          Copy={`Take control of your club's visual identity and create a compelling brand presence with Fixtura's Your Brand section. Upload your logo and select brand colors to elevate your online presence and connect with your audience on a deeper level. Show your team's spirit and build a lasting connection with your members and fans through personalized content that embodies the essence of your club or association.`}
         />
       </PageCopyWrapper>
       <Space h={20} />
       <Container fluid mb={40} m={0}>
-  
-        <DesignTabs
-          isPlaying={isPlaying}
-          userAccount={userAccount}
-          setIsPlaying={setIsPlaying}
-        />
+        <AccountLogo />
+        <SelectATheme />
       </Container>
     </MembersWrapper>
   );
 };
 
-Design.getInitialProps = async (ctx) => {
+OurBrand.getInitialProps = async (ctx) => {
   console.log(`${Cookies.get("id")}`);
 
   const response = await fetcher(
@@ -94,4 +94,4 @@ Design.getInitialProps = async (ctx) => {
     Response,
   };
 };
-export default Design;
+export default OurBrand;

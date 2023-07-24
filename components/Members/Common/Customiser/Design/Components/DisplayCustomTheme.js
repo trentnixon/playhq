@@ -12,7 +12,7 @@ import {
 import { BTN_ONCLICK } from "../../../utils/Buttons";
 import { IconCircleCheck, IconEditCircle } from "@tabler/icons";
 
-import { P, SubHeaders } from "../../../Type";
+import { P } from "../../../Type";
 
 export const DisplayCustomTheme = (props) => {
   const { GetElement, userAccount, StoreUSerChange, setCreateNew } = props;
@@ -43,7 +43,7 @@ export const DisplayCustomTheme = (props) => {
         })}
       >
         <Group position="apart">
-          {/* <P marginBottom={0} Copy={`Create your own Theme!`} /> */}
+          <P marginBottom={0} Copy={`Create your own Theme!`} />
           <BTN_ONCLICK
             LABEL={"Create New"}
             THEME={"success"}
