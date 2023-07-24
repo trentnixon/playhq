@@ -107,7 +107,7 @@ const RemotionPreview = ({ setIsPlaying }) => {
 
   return (
     <LoadingStateWrapper conditions={[userAccount]}>
-      <P Weight={900} size={'xl'} textAlign={'right'} marginBottom={0} Copy={`Preview`} />
+      <P Weight={900} size={'xl'} textAlign={'left'} marginBottom={0} Copy={`Preview`} />
       <Center>
         <PlayerOnly playerRef={playerRef} />
       </Center>
