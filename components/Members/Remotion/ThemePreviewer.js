@@ -5,13 +5,15 @@ import { FixturaLoading } from "../Common/Loading";
 import { useAccountDetails } from "../../../lib/userContext";
 import DATA from "./utils/Data.json";
 // PACK
-import { Center } from "@mantine/core";
+import { Center, Paper } from "@mantine/core";
 import { Player } from "@remotion/player";
 //COMPONENTS
 import {
   Template_Basic_Sqaure,
   Test_Basic_Sqaure,
 } from "./templates/BasicSqaure/index";
+import { LoadingStateWrapper } from "../Account/HOC/LoadingStateWrapper";
+import { P, SubHeaders } from "../Common/Type";
 
 const RemotionPreview = ({ setIsPlaying }) => {
   const { account, ReRender } = useAccountDetails();
@@ -23,10 +25,9 @@ const RemotionPreview = ({ setIsPlaying }) => {
     "Basic Rounded": Test_Basic_Sqaure,
   };
 
-  const FPS_INTRO =120 
-	const FPS_OUTRO =180
-	const FPS_MAIN =300
-
+  const FPS_INTRO = 120;
+  const FPS_OUTRO = 180;
+  const FPS_MAIN = 300;
 
   //console.log(DATA)
   const playerRef = useRef(null);
@@ -78,11 +79,11 @@ const RemotionPreview = ({ setIsPlaying }) => {
           AUDIO: userAccount.attributes?.audio_option?.data?.attributes,
           DATA: DATA,
           ID: ID,
-          TIMINGS:{
-						FPS_INTRO,
-						FPS_OUTRO,
-						FPS_MAIN
-					},
+          TIMINGS: {
+            FPS_INTRO,
+            FPS_OUTRO,
+            FPS_MAIN,
+          },
         }}
         controls
         style={{
@@ -92,7 +93,7 @@ const RemotionPreview = ({ setIsPlaying }) => {
       />
     );
   };
-  const ControlsOnly = ({ playerRef }) => {
+  /*  const ControlsOnly = ({ playerRef }) => {
     const [currentTime, setCurrentTime] = useState(0);
 
     useEffect(() => {
@@ -102,25 +103,27 @@ const RemotionPreview = ({ setIsPlaying }) => {
     }, []);
 
     return <div>Current time: {currentTime}</div>;
-  };
+  }; */
 
-  if (userAccount === null) {
-    return <FixturaLoading />;
-  }
   return (
-    <>
+    <LoadingStateWrapper conditions={[userAccount]}>
+      <P Weight={900} size={'xl'} textAlign={'right'} marginBottom={0} Copy={`Preview`} />
       <Center>
         <PlayerOnly playerRef={playerRef} />
       </Center>
-      <Center>
-      <ControlsOnly playerRef={playerRef} />
-      </Center>
-    </>
+      
+      <P textAlign={'center'} size={'xs'} lineHeight={'1.2em'} color={3} Copy={`Options to modify the theme and logos can be found on the Brand page.`} />
+    </LoadingStateWrapper>
   );
 };
 
 export default RemotionPreview;
 
+{
+  /*  <Center>
+      <ControlsOnly playerRef={playerRef} />
+      </Center> */
+}
 // 271B4D
 // ED9206
 /*

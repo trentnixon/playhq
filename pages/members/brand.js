@@ -8,13 +8,13 @@ import { P, PageTitle, SubHeaders } from "../../components/Members/Common/Type";
 import {
   MembersWrapper,
   PageCopyWrapper,
-  Wrapper,
 } from "../../components/Members/Common/Containers";
-import { Box, Container, Group, Space } from "@mantine/core";
+import { Container, Space } from "@mantine/core";
 import { IconColorPicker } from "@tabler/icons";
-import { DesignTabs } from "../../components/Members/Design/DesignTabs";
+//import { DesignTabs } from "../../components/Members/Design/DesignTabs";
 import { AccountLogo } from "../../components/Members/Design/AddLogo";
 import { SelectATheme } from "../../components/Members/Common/Customiser/Design/SelectATheme";
+import { LoadingStateWrapper } from "../../components/Members/Account/HOC/LoadingStateWrapper";
 const qs = require("qs");
 
 const query = qs.stringify(
@@ -47,31 +47,29 @@ const OurBrand = () => {
   }, []);
   /* End User Check*/
 
-  useEffect(() => {
-    console.log("userAccount ", userAccount);
-  }, [userAccount]);
-
-  if (!user || !userAccount) return null;
+  useEffect(() => {}, [userAccount]);
 
   return (
-    <MembersWrapper>
-      <PageTitle Copy={"Your Brand"} ICON={<IconColorPicker size={40} />} />
-      <SubHeaders Copy={"Brand Settings"} />
+    <LoadingStateWrapper conditions={[user, userAccount]}>
+      <MembersWrapper>
+        <PageTitle Copy={"Your Brand"} ICON={<IconColorPicker size={40} />} />
+        <SubHeaders Copy={"Brand Settings"} />
 
-      <PageCopyWrapper>
-        {/* <P
+        <PageCopyWrapper>
+          {/* <P
           Copy={`Personalize Your Content with a Distinct Identity. Showcasing your brand is essential to building a strong online presence. By uploading your logo and selecting brand colors, you'll ensure that all visual assets created by Fixtura represent your club or association in a consistent and professional manner.`}
         /> */}
-        <P
-          Copy={`Take control of your club's visual identity and create a compelling brand presence with Fixtura's Your Brand section. Upload your logo and select brand colors to elevate your online presence and connect with your audience on a deeper level. Show your team's spirit and build a lasting connection with your members and fans through personalized content that embodies the essence of your club or association.`}
-        />
-      </PageCopyWrapper>
-      <Space h={20} />
-      <Container fluid mb={40} m={0}>
+          <P
+            Copy={`Take control of your club's visual identity and create a compelling brand presence with Fixtura's Your Brand section. Upload your logo and select brand colors to elevate your online presence and connect with your audience on a deeper level. Show your team's spirit and build a lasting connection with your members and fans through personalized content that embodies the essence of your club or association.`}
+          />
+        </PageCopyWrapper>
+        <Space h={20} />
         <AccountLogo />
+        <Space h={20} />
         <SelectATheme />
-      </Container>
-    </MembersWrapper>
+        <Space h={20} />
+      </MembersWrapper>
+    </LoadingStateWrapper>
   );
 };
 

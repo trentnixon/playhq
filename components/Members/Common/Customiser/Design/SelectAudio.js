@@ -24,6 +24,7 @@ import {
 } from "@tabler/icons";
 import { useAccountDetails } from "../../../../../lib/userContext";
 import { P, SubHeaders } from "../../Type";
+import { FixturaDivider } from "../../Divider";
 
 export const SelectAudio = ({ isPlaying }) => {
   const { account, ReRender } = useAccountDetails();
@@ -97,7 +98,8 @@ export const SelectAudio = ({ isPlaying }) => {
 
   return (
     <>
-      <SubHeaders Copy={`Audio Options`} />
+      <SubHeaders Copy={`Set the Tone`} />
+      <P Copy={`Pick the Perfect Audio for Your Assets. Sound is an essential part of creating engaging content. Preview and choose from our collection of audio tracks that resonate with your club's personality and add that extra touch of excitement to your videos and images.`} />
       <Paper
         radius="md"
         shadow="md"
@@ -169,6 +171,7 @@ export const SelectAudio = ({ isPlaying }) => {
           false
         )}
       </Paper>
+      <FixturaDivider />
     </>
   );
 };

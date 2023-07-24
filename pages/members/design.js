@@ -14,6 +14,7 @@ import { Box, Container, Group, Space } from "@mantine/core";
 import { IconColorPicker } from "@tabler/icons";
 import { DesignTabs } from "../../components/Members/Design/DesignTabs";
 import { AccountLogo } from "../../components/Members/Design/AddLogo";
+import { LoadingStateWrapper } from "../../components/Members/Account/HOC/LoadingStateWrapper";
 const qs = require("qs");
 
 const query = qs.stringify(
@@ -50,28 +51,25 @@ const Design = () => {
     console.log("userAccount ", userAccount);
   }, [userAccount]);
 
-  if (!user || !userAccount) return null;
-
-  return (
+  return ( 
+    <LoadingStateWrapper conditions={[user, userAccount]}>
     <MembersWrapper>
       <PageTitle Copy={"Asset Design"} ICON={<IconColorPicker size={40} />} />
-      <SubHeaders Copy={"Design Settings"} />
+      <SubHeaders Copy={"Design Your Vision"} />
 
       <PageCopyWrapper>
         <P
-          Copy={`To change your design settings, simply select the desired theme and layout from the options provided. You can also choose an audio track to accompany your assets. The preview area will update to reflect your changes, so you can see how your assets will look and sound before you save them.`}
+          Copy={`Elevate Your Content with Personalized Templates and Audio. The design aspect of Fixtura allows you to choose a template that best suits your club or association's style, and select the perfect audio that aligns with your brand identity. With customizable logos and colors available through the 'Your Brand' page, your visual assets will be tailored to represent your team's unique spirit.`}
         />
       </PageCopyWrapper>
       <Space h={20} />
-      <Container fluid mb={40} m={0}>
-  
-        <DesignTabs
+      <DesignTabs
           isPlaying={isPlaying}
           userAccount={userAccount}
           setIsPlaying={setIsPlaying}
         />
-      </Container>
     </MembersWrapper>
+    </LoadingStateWrapper>
   );
 };
 

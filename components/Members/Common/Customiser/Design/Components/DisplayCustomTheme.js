@@ -6,6 +6,7 @@ import {
   Paper,
   Space,
   Table,
+  Tooltip,
   useMantineTheme,
 } from "@mantine/core";
 
@@ -13,9 +14,13 @@ import { BTN_ONCLICK } from "../../../utils/Buttons";
 import { IconCircleCheck, IconEditCircle } from "@tabler/icons";
 
 import { P } from "../../../Type";
+import { IconEdit } from "@tabler/icons-react";
+import { FindAccountLabel } from "../../../../../../lib/actions";
 
 export const DisplayCustomTheme = (props) => {
   const { GetElement, userAccount, StoreUSerChange, setCreateNew } = props;
+
+  
   //useEffect(()=>{},[userAccount])
 
   const CTHEME = GetElement.filter(
@@ -79,7 +84,7 @@ export const DisplayCustomTheme = (props) => {
                       color={
                         userAccount.attributes.theme.data.id === item.id ? 2 : 2
                       }
-                      Copy={`Custom Theme`}
+                      Copy={`${FindAccountLabel(userAccount)} `}
                     />
                     {userAccount.attributes.theme.data.id === item.id ? (
                       <Center>
@@ -90,24 +95,23 @@ export const DisplayCustomTheme = (props) => {
                     )}
                   </Group>
                 </td>
-                <td>
+                <td style={{textAlign:'right'}}>
                   {userAccount.attributes.theme.data.id === item.id ? (
-                    <ActionIcon
-                      onClick={() => {
+                    <BTN_ONCLICK
+                      HANDLE={() => {
                         setCreateNew(true);
                       }}
-                    >
-                      <IconEditCircle color={theme.colors.orange[5]} />
-                    </ActionIcon>
+                      LABEL={`Edit`}
+                    />
                   ) : (
-                    <Center>
+                  
                       <BTN_ONCLICK
                         HANDLE={() => {
                           StoreUSerChange(item);
                         }}
                         LABEL={`Select Theme`}
                       />
-                    </Center>
+                   
                   )}
                 </td>
               </tr>

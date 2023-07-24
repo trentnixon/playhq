@@ -1,10 +1,6 @@
 import { useEffect, useState } from "react";
 import { FixturaLoading } from "../../Loading";
-import {
-  Paper,
-  Table,
-  useMantineTheme,
-} from "@mantine/core";
+import { Paper, Table, useMantineTheme } from "@mantine/core";
 import {
   useAssignDesignElement,
   useGETDesignElement,
@@ -50,24 +46,29 @@ export const SelectATemplate = () => {
   if (loading || !GetElement || !userAccount) {
     return (
       <>
-      <SubHeaders Copy={`Storing New Template`} />
-      <Paper
-        radius="md"
-        shadow="md"
-        withBorder
-        mb={20}
-        p="lg"
-        sx={(theme) => ({ backgroundColor: theme.white })}
-      >
-        <FixturaLoading />
-      </Paper>
+        <SubHeaders Copy={`Storing New Template`} />
+
+        <Paper
+          radius="md"
+          shadow="md"
+          withBorder
+          mb={20}
+          p="lg"
+          sx={(theme) => ({ backgroundColor: theme.white })}
+        >
+          <FixturaLoading />
+        </Paper>
       </>
     );
   }
 
   return (
     <>
-      <SubHeaders Copy={`Select a Template`} />
+      <FixturaDivider />
+      <SubHeaders Copy={`Choose Your Theme`} />
+      <P
+        Copy={`Tailor Your Assets with Custom Templates. Our themed layout templates bring out the best in your content, giving it a cohesive and professional look. Explore our selection of design options, and see how each template complements your brand in the preview video.`}
+      />
       <Paper
         radius="md"
         shadow="md"

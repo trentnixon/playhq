@@ -20,11 +20,11 @@ export function DesignTabs(props) {
   return (
     <>
       <Grid>
-        <Grid.Col span={6}>
+        <Grid.Col span={7}>
           <SelectATemplate />
           <SelectAudio isPlaying={props.isPlaying} />
         </Grid.Col>
-        <Grid.Col span={6}>
+        <Grid.Col span={5}>
           <RemotionPlayerContainer {...props} />
         </Grid.Col>
       </Grid>
