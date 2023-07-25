@@ -95,7 +95,7 @@ const SignUpForm = () => {
         <div className="contact-title">
           <h2>Sign Up</h2>
           <p>
-            Sign up for a free PlayHD account now. Set up a Club or associations
+            Sign up for a free Fixtura account now. Set up a Club or associations
             profile and preview video options now.
           </p>
         </div>

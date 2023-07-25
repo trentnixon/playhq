@@ -19,7 +19,7 @@ export const CreateAccountInit = ({ setAccountsetup }) => {
         const data = await postAccountData(ID);
         setAccountsetup(data);
         setACCOUNTID(true);
-        CreateData(data.data.id);
+        CreateData(data.data.id); 
       } catch (error) {
         console.error(error);
       } finally {
@@ -34,7 +34,7 @@ export const CreateAccountInit = ({ setAccountsetup }) => {
       body: JSON.stringify({
         data: {
           user: [ID],
-          theme: [8],
+          theme: [7],
           template: [1],
           audio_option: [1],
         },
