@@ -19,6 +19,27 @@ const buildQueryString = (name) => {
   );
 };
 
+const buildQueryStringClubs = (name,ID) => {
+  return qs.stringify(
+    {
+      filters: {
+        Name: {
+          $containsi: name,
+        },
+        associations :{
+          id:{
+            $in:[ID]
+          }
+        }
+      },
+      fields: ["Name"],
+    },
+    {
+      encodeValuesOnly: true,
+    }
+  );
+};
+
 const fetchData = async (url) => {
   try {
     const response = await fetcher(url, {
@@ -38,9 +59,9 @@ const fetchData = async (url) => {
 export const useClubs = () => {
   const [clubs, setClubs] = useState(null);
 
-  const fetchClubs = async (name) => {
+  const fetchClubs = async (name, AssociationID) => {
     setClubs(true);
-    const query = buildQueryString(name);
+    const query = buildQueryStringClubs(name, AssociationID);
     const data = await fetchData(
       `${process.env.NEXT_PUBLIC_STRAPI_URL}/clubs?${query}`
     );

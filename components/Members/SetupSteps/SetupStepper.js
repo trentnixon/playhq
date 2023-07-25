@@ -1,11 +1,4 @@
-import React from "react";
-
-import { useEffect, useState } from "react";
-// UTILS
-import { useAccountDetails } from "../../../lib/userContext";
-
-// PACK
-
+import React, { useEffect, useState, useCallback } from "react";
 import {
   Stepper,
   Group,
@@ -14,52 +7,42 @@ import {
   Box,
   useMantineTheme,
 } from "@mantine/core";
-
-// Steps
+import { useAccountDetails } from "../../../lib/userContext";
 import { StepAboutUser } from "./Steps/AboutUser";
 import { StepAboutTheCricket } from "./Steps/AboutTheCricket";
-import { StepAboutBranding } from "./Steps/AboutBranding";
-import { StepAboutAISettings } from "./Steps/AboutAIsettings";
-import { StepAboutAssets } from "./Steps/AboutAssets";
-import { FixturaLoading } from "../Common/Loading";
 import { BTN_ONCLICK } from "../Common/utils/Buttons";
 import { P } from "../Common/Type";
+import { LoadingStateWrapper } from "../Account/HOC/LoadingStateWrapper";
 
 export const SetupStages = ({ setReview }) => {
-  const [active, setActive] = useState(0);
   const theme = useMantineTheme();
   const { account, ReRender } = useAccountDetails();
-
   const [DATA, setDATA] = useState(account);
-
   const [disabled, setDisabled] = useState(true);
   const [progress, setProgress] = useState({
     step1: {},
     step2: {},
-    step3: {},
-    step4: {},
-    step5: {},
-    step6: {},
   });
+  const [active, setActive] = useState(0);
 
-  const finished = () => {
-    setReview(true); 
-  };
-
-  const nextStep = () =>
-    setActive((current) => (current < 6 ? current + 1 : current));
-  const prevStep = () =>
-    setActive((current) => (current > 0 ? current - 1 : current));
-
-  useEffect(() => {
-    if (account !== null) {
-      setDATA(account);
-    }
+  const updateData = useCallback(() => {
+    if (account) setDATA(account);
   }, [account]);
 
-  useEffect(() => {
-    if (DATA !== null) {
-      console.log(DATA);
+  useEffect(updateData, [account]);
+
+  const nextStep = useCallback(() =>
+    setActive((current) => (current < 3 ? current + 1 : current))
+  , []);
+
+  const prevStep = useCallback(() =>
+    setActive((current) => (current > 0 ? current - 1 : current))
+  , []);
+
+  const finished = useCallback(() => setReview(true), []);
+
+  const checkProgress = useCallback(() => {
+    if (DATA) {
       setProgress({
         ...progress,
         step1: {
@@ -77,80 +60,47 @@ export const SetupStages = ({ setReview }) => {
               ? false
               : DATA.attributes?.clubs?.data[0]?.attributes,
         },
-        step3: {
-          ...progress.step3,
-          template: DATA.attributes?.template?.data?.attributes,
-          theme: DATA.attributes?.theme?.data?.attributes,
-          audio_option: DATA.attributes?.audio_option?.data?.attributes,
-        },
-        step4: {
-          ...progress.step4,
-          days_of_the_week:
-            DATA.attributes?.scheduler?.data?.attributes?.days_of_the_week?.data
-              ?.attributes?.Name,
-          ai_publication: DATA.attributes?.ai_publication?.data?.attributes,
-          ai_writting_style:
-            DATA.attributes?.ai_writting_style?.data?.attributes,
-          ai_writting_tone: DATA.attributes?.ai_writting_tone?.data?.attributes,
-        },
-        step5: {
-          ...progress.step5,
-          assets: DATA.attributes.assets.data[0]?.attributes?.Name,
-        },
       });
     }
   }, [DATA]);
 
-  useEffect(() => {
-    console.log(progress, active);
+  useEffect(checkProgress, [DATA]);
+
+  const checkDisabled = useCallback(() => {
     const KEYS = Object.keys(progress);
     const hasNullValue = Object.keys(progress[KEYS[active]]).some(
       (key) =>
         progress[KEYS[active]][key] === null ||
         progress[KEYS[active]][key] === undefined
     );
-    console.log(progress[KEYS[active]], active, hasNullValue);
     setDisabled(hasNullValue);
   }, [progress, active]);
 
-  if (DATA === null) {
-    return <FixturaLoading />;
-  }
+  useEffect(checkDisabled, [progress, active]);
 
   return (
-    <>
+    <LoadingStateWrapper conditions={[DATA]}>
       <Container size={"md"}>
-        <Stepper 
+        <Stepper
           active={active}
           breakpoint="sm"
           color={theme.colors.members[3]}
           sx={(theme) => ({
             ".mantine-Stepper-steps": {
-              backgroundColor: theme.colors.members[1],
+              background: 'transparent',
               padding: "10px 20px",
               borderRadius: "10px 10px 0 0 ",
               borderBottom: `1px solid ${theme.colors.members[3]}`,
             },
           })}
         >
-          <Stepper.Step label="" description="About the Owner">
-            <StepAboutUser user={DATA} setHasUpdated={ReRender} />
-          </Stepper.Step>
-          <Stepper.Step label="" description="About the Cricket">
+          <Stepper.Step label="About the Cricket">
             <StepAboutTheCricket user={DATA} setHasUpdated={ReRender} />
           </Stepper.Step>
-          <Stepper.Step label="" description="Branding">
-            <StepAboutBranding user={DATA} setHasUpdated={ReRender} />
+          <Stepper.Step color="blue" label="All About the Assets">
+            <StepAboutUser user={DATA} setHasUpdated={ReRender} />
           </Stepper.Step>
-          <Stepper.Step label="" description="Personal Assistant">
-            <StepAboutAISettings user={DATA} setHasUpdated={ReRender} />
-          </Stepper.Step>
-          <Stepper.Step label="" description="Assets">
-            <StepAboutAssets user={DATA} setHasUpdated={ReRender} />
-          </Stepper.Step>
-          {/* <Stepper.Step label="" description="Subscription">
-            6. up to stripe!
-          </Stepper.Step> */}
+          
 
           <Stepper.Completed>
             <P
@@ -163,7 +113,8 @@ export const SetupStages = ({ setReview }) => {
         </Stepper>
       </Container>
       <Space h={10} />
-      {active === 5 ? (
+
+      {active === 1 ? (
         <Box
           sx={(theme) => ({
             padding: theme.spacing.md,
@@ -174,7 +125,12 @@ export const SetupStages = ({ setReview }) => {
           })}
         >
           <Group position="right">
-            <BTN_ONCLICK LABEL={"Review"} HANDLE={finished} THEME="success" />
+            <BTN_ONCLICK
+              LABEL={"Review"}
+              HANDLE={finished}
+              THEME="success"
+              idDisabled={disabled}
+            />
           </Group>
         </Box>
       ) : (
@@ -198,6 +154,6 @@ export const SetupStages = ({ setReview }) => {
           />
         </Group>
       )}
-    </>
+    </LoadingStateWrapper>
   );
 };

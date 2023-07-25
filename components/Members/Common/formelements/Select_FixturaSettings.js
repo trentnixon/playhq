@@ -9,7 +9,6 @@ import { FixturaLoading } from "../Loading";
 import { BTN_ONCLICK } from "../utils/Buttons";
 
 export function SelectFixturaSetting({
-  user,
   setHasUpdated,
   RelationProperty,
   SelectedBaseValueObject,
@@ -20,7 +19,6 @@ export function SelectFixturaSetting({
   COLLECTIONID,
   WithIcon = false,
 }) {
-  
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
   const [selected, setSelected] = useState(SelectedBaseValueObject);
@@ -70,9 +68,8 @@ export function SelectFixturaSetting({
         }
       );
 
-      console.log("response", response)
+      //console.log("response", response);
       if (response) {
-       
         setLoading(false);
         setSelected(event);
         setShowSelect(false);
@@ -122,9 +119,6 @@ export function SelectFixturaSetting({
     />
   );
 }
-
-
-
 
 const UI_WithSelectedAndButton = ({
   error,

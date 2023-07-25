@@ -1,17 +1,18 @@
-import { UserDetails } from "../../UserDetails";
+import { P } from "../../Common/Type";
+import { UserDetailsForSetup } from "../../UserDetails";
 import { StepHeaderandDescription } from "./StepHeaderandDescription";
 
 export const StepAboutUser = ({ user, setHasUpdated }) => {
-  console.log(user.id)
   return (
     <>
       <StepHeaderandDescription
-        Header={"About you"}
+        Header={"Asset Delivery"}
         Description={
-          "Please provide your name and the email address to which you would like the assets to be delivered."
+          "To ensure our dynamic assets reach the right hands, please provide us with the delivery email and the name you want the assets addressed to. Your weekly email will contain a personalized link to access all the latest content."
         }
       />
-      <UserDetails user={user} setHasUpdated={setHasUpdated} />
+      <UserDetailsForSetup user={user} setHasUpdated={setHasUpdated} />
+      <P Copy={` *These settings can be changes in your admin panel`} />
     </>
   );
 };

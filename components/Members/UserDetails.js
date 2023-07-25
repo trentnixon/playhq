@@ -3,6 +3,7 @@ import { ShadowWrapper, Wrapper } from "./Common/Containers";
 import { P } from "./Common/Type";
 import { Input_FixturaSetting } from "./Common/formelements/Input_FixtruaSettings";
 import { BTN_ONCLICK, BTN_TOINTERALLINK } from "./Common/utils/Buttons";
+
 export const UserDetails = ({
   user,
   setHasUpdated,
@@ -13,13 +14,20 @@ export const UserDetails = ({
   const INPUTS = [
     {
       Name: "Name",
-      Label: "Account Holders Name",
+      Label: "Who would you like the emails addressed to?",
       Field: "FirstName",
+      Validators: [
+        value => value.length > 0 || 'Name is required',
+      ],
     },
     {
       Name: "Email",
       Label: "Email address for delivery",
       Field: "DeliveryAddress",
+      Validators: [
+        value => value.length > 0 || 'Email is required',
+        value => value.includes('@') || 'Email must contain @',
+      ],
     },
   ];
 
@@ -34,7 +42,11 @@ export const UserDetails = ({
             textTransform={"uppercase"}
             Copy={`Plan`}
           />
-          <BTN_TOINTERALLINK LABEL={"View Plan"} URL={`/members/myplan`} THEME="info" /> 
+          <BTN_TOINTERALLINK
+            LABEL={"View Plan"}
+            URL={`/members/myplan`}
+            THEME="info"
+          />
         </Group>
       </Wrapper>
       <ShadowWrapper>
@@ -57,7 +69,7 @@ export const UserDetails = ({
               Weight={400}
               marginBottom={0}
               textTransform={"uppercase"}
-              Copy={subscriptionTier.Name}
+              Copy={subscriptionTier?.Name}
             />
           </Box>
 
@@ -71,6 +83,47 @@ export const UserDetails = ({
         </Group>
       </ShadowWrapper>
 
+      {INPUTS.map((Input, i) => {
+        return (
+          <Input_FixturaSetting
+            key={i}
+            Input={Input}
+            user={user}
+            setHasUpdated={setHasUpdated}
+          />
+        );
+      })}
+    </>
+  );
+};
+
+export const UserDetailsForSetup = ({
+  user,
+  setHasUpdated,
+}) => {
+ 
+  const INPUTS = [
+    {
+      Name: "Name",
+      Label: "Who would you like the emails addressed to?",
+      Field: "FirstName",
+      Validators: [
+        value => value.length > 0 || 'Name is required',
+      ],
+    },
+    {
+      Name: "Email",
+      Label: "Email address for delivery",
+      Field: "DeliveryAddress",
+      Validators: [
+        value => value.length > 0 || 'Email is required',
+        value => value.includes('@') || 'Email must contain @',
+      ],
+    },
+  ];
+
+  return (
+    <>
       {INPUTS.map((Input, i) => {
         return (
           <Input_FixturaSetting

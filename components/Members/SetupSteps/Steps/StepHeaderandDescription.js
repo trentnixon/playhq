@@ -10,11 +10,11 @@ export const StepHeaderandDescription = ({ Header, Description }) => {
         <P
           color={2}
           Weight={900}
-          marginBottom={0}
+          marginBottom={10}
           textTransform={"uppercase"}
           Copy={Header}
         />
-        <P color={2} Copy={Description} />
+        <P color={2} Copy={Description} lineHeight={'1.3em'}/>
       </Wrapper>
     </>
   );

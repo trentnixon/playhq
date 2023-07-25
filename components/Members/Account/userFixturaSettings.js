@@ -5,6 +5,9 @@ import { P } from "../Common/Type";
 import { createStyles } from "@mantine/core";
 import { IconSelect, IconUsers, IconTrophy } from "@tabler/icons";
 import { FixturaDivider } from "../Common/Divider";
+import { AutoCompleteSelectAssociation } from "../Common/formelements/AutoComplete_Assoications";
+import { AutoCompleteSelectClub } from "../Common/formelements/AutoComplete_Clubs";
+import { useEffect, useState } from "react";
 
 const useStyles = createStyles((theme) => ({
   root: {
@@ -119,15 +122,19 @@ export const FixturaSettings = ({ user, setHasUpdated }) => {
   );
 };
 
-export const SetupInputs = ({ user, setHasUpdated }) => { 
+export const SetupInputs = ({ user, setHasUpdated }) => {
   //console.log(user.attributes?.account_type?.data?.attributes.Name)
+  const [AssociationID, setAssociationID] = useState(
+    user.attributes?.associations?.data[0]?.id || false
+  );
+  useEffect(() => {}, [AssociationID]);
+
   return (
     <>
       <LabelMe label="Account Type" />
 
-      <ShadowWrapper>
+      <ShadowWrapper> 
         <SelectFixturaSetting
-          user={user}
           RelationProperty={"account_type"}
           setHasUpdated={setHasUpdated}
           CollectionFrom={"account-types"}
@@ -144,18 +151,13 @@ export const SetupInputs = ({ user, setHasUpdated }) => {
 
       <LabelMe label="Select Your Association" />
       <ShadowWrapper>
-        <SelectFixturaSetting
-          CollectionFrom={"associations"}
-          CollectionSaveTo={"accounts"}
-          RelationProperty={"associations"}
+        <AutoCompleteSelectAssociation
+          COLLECTIONID={user.id}
           SelectedBaseValueObject={
             user.attributes?.associations?.data[0]?.attributes
           }
-          SelectLabel={"Select an Association"}
-          SelectPlaceholder={"Select a Association"}
-          user={user}
+          setAssociationID={setAssociationID}
           setHasUpdated={setHasUpdated}
-          COLLECTIONID={user.id}
         />
       </ShadowWrapper>
       <Space h="lg" />
@@ -165,10 +167,29 @@ export const SetupInputs = ({ user, setHasUpdated }) => {
         false
       ) : (
         <>
-          {" "}
           <LabelMe label="Select Your Club" />
           <ShadowWrapper>
-            <SelectFixturaSetting
+            {AssociationID === false ? (
+              "Awaiting Assoication Selection"
+            ) : (
+              <AutoCompleteSelectClub
+                COLLECTIONID={user.id}
+                SelectedBaseValueObject={
+                  user.attributes?.clubs?.data[0]?.attributes
+                }
+                user={user}
+                AssociationID={AssociationID}
+                setHasUpdated={setHasUpdated}
+              />
+            )}
+          </ShadowWrapper>
+        </>
+      )}
+    </>
+  );
+};
+/*
+ <SelectFixturaSetting
               CollectionFrom={"clubs"}
               CollectionSaveTo={"accounts"}
               RelationProperty={"clubs"}
@@ -181,14 +202,20 @@ export const SetupInputs = ({ user, setHasUpdated }) => {
               setHasUpdated={setHasUpdated}
               COLLECTIONID={user.id}
             />
-          </ShadowWrapper>
-        </>
-      )}
-    </>
-  );
-};
-/*
-
+<SelectFixturaSetting  
+          CollectionFrom={"associations"}
+          CollectionSaveTo={"accounts"}
+          RelationProperty={"associations"}
+          SelectedBaseValueObject={
+            user.attributes?.associations?.data[0]?.attributes
+          }
+          SelectLabel={"Select an Association"}
+          SelectPlaceholder={"Select a Association"}
+          user={user}
+          setHasUpdated={setHasUpdated}
+          COLLECTIONID={user.id}
+      
+        />
 */
 
 const LabelMe = ({ label }) => {

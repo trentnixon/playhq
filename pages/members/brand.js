@@ -15,6 +15,7 @@ import { IconColorPicker } from "@tabler/icons";
 import { AccountLogo } from "../../components/Members/Design/AddLogo";
 import { SelectATheme } from "../../components/Members/Common/Customiser/Design/SelectATheme";
 import { LoadingStateWrapper } from "../../components/Members/Account/HOC/LoadingStateWrapper";
+import { IconBadgeTm } from "@tabler/icons-react";
 const qs = require("qs");
 
 const query = qs.stringify(
@@ -52,7 +53,7 @@ const OurBrand = () => {
   return (
     <LoadingStateWrapper conditions={[user, userAccount]}>
       <MembersWrapper>
-        <PageTitle Copy={"Your Brand"} ICON={<IconColorPicker size={40} />} />
+        <PageTitle Copy={"Your Brand"} ICON={<IconBadgeTm size={40} />} />
         <SubHeaders Copy={"Brand Settings"} />
 
         <PageCopyWrapper>

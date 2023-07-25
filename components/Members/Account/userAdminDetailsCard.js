@@ -12,19 +12,21 @@ import {
 export function UserDetailsCard({ user }) {
   const ORDER = user.attributes.order?.data;
 
+  console.log(user.attributes.hasCompletedStartSequence);
+
   const UserTheme = useMemo(
-    () => user.attributes.theme.data.attributes.Theme,
+    () => user.attributes.theme?.data?.attributes?.Theme,
     [user]
   );
   const AccountType = useMemo(
-    () => user.attributes.account_type.data.attributes.Name,
+    () => user.attributes?.account_type?.data?.attributes.Name,
     [user]
   );
   const AccountTypeDetails = useMemo(() => {
     if (AccountType === "Club") {
       return user.attributes?.clubs?.data[0]?.attributes;
     }
-    return user.attributes.associations.data[0].attributes;
+    return user.attributes?.associations.data[0]?.attributes;
   }, [AccountType, user]);
 
   const [subscriptionTier, setSubscriptionTier] = useState(
@@ -73,8 +75,8 @@ export function UserDetailsCard({ user }) {
         sx={{
           background: theme.fn.linearGradient(
             45,
-            UserTheme.primary,
-            UserTheme.secondary
+            UserTheme?.primary,
+            UserTheme?.secondary
           ),
           height: 70,
           "@media (max-width: 768px)": {
@@ -91,46 +93,127 @@ export function UserDetailsCard({ user }) {
         mt={-30}
       />
       <Text ta="center" fz="lg" fw={500} mt="sm">
-        {AccountTypeDetails.Name}
+        {AccountTypeDetails?.Name}
       </Text>
       <Text ta="center" fz="sm" c="dimmed">
         {AccountType}
       </Text>
-
-      <Box
-        sx={(theme) => ({
-          "@media (max-width: 768px)": {
-            display: "none",
-          },
-        })}
-      >
-        <FixturaDivider />
-
-        <Group position="apart">
-          <Text ta="center" fz="sm" c={statusColor} fw={500}>
-            {` ${
-              subscriptionTier?.Name === undefined
-                ? "Awaiting Selection"
-                : subscriptionTier?.Name
-            }`}
-          </Text>
-          <Text ta="center" fz="sm" c="dimmed">
-            Plan
-          </Text>
-        </Group>
-
-        <Group position="apart">
-          <Group position="left" spacing="xs" align="center">
-            <StatusIcon size={`1.1em`} color={statusColor} />
-            <Text ta="center" fz="sm" c={statusColor} fw={500}>
-              {statusMessage}
-            </Text>
-          </Group>
-          <Text ta="center" fz="sm" c="dimmed">
-            Subscription
-          </Text>
-        </Group>
-      </Box>
+      {user.attributes.hasCompletedStartSequence ? (
+        <IsUserSubscriptionDetails
+          subscriptionTier={subscriptionTier}
+          statusMessage={statusMessage}
+          statusColor={statusColor}
+          StatusIcon={StatusIcon}
+        />
+      ) : (
+        <IsSetupDetails />
+      )}
     </Card>
   );
 }
+
+const IsUserSubscriptionDetails = ({
+  subscriptionTier,
+  statusColor,
+  StatusIcon,
+  statusMessage,
+}) => {
+  return (
+    <Box
+      sx={(theme) => ({
+        "@media (max-width: 768px)": {
+          display: "none",
+        },
+      })}
+    >
+      <FixturaDivider />
+
+      <Group position="apart">
+        <Text ta="center" fz="sm" c={statusColor} fw={500}>
+          {` ${
+            subscriptionTier?.Name === undefined
+              ? "Awaiting Selection"
+              : subscriptionTier?.Name
+          }`}
+        </Text>
+        <Text ta="center" fz="sm" c="dimmed">
+          Plan
+        </Text>
+      </Group>
+
+      <Group position="apart">
+        <Group position="left" spacing="xs" align="center">
+          <StatusIcon size={`1.1em`} color={statusColor} />
+          <Text ta="center" fz="sm" c={statusColor} fw={500}>
+            {statusMessage}
+          </Text>
+        </Group>
+        <Text ta="center" fz="sm" c="dimmed">
+          Subscription
+        </Text>
+      </Group>
+    </Box>
+  );
+};
+
+const IsSetupDetails = () => {
+  const theme = useMantineTheme();
+  return (
+    <Box
+      sx={(theme) => ({
+        "@media (max-width: 768px)": {
+          display: "none",
+        },
+      })}
+    >
+      <FixturaDivider />
+      <Group position="apart">
+        <IconCheck size={`1.1em`} color={theme.colors.green[6]} />
+        <Text ta="center" fz="sm" c="dimmed">
+          Delivery Day
+        </Text>
+        <Text ta="center" fz="sm" c={theme.colors.green[6]} fw={500}>
+          After Setup
+        </Text>
+      </Group>
+      <Group position="apart">
+        <IconCheck size={`1.1em`} color={theme.colors.green[6]} />
+        <Text ta="center" fz="sm" c="dimmed">
+          Upload Logo
+        </Text>
+        <Text ta="center" fz="sm" c={theme.colors.green[6]} fw={500}>
+          After Setup
+        </Text>
+      </Group>
+
+      <Group position="apart">
+        <IconCheck size={`1.1em`} color={theme.colors.green[6]} />
+        <Text ta="center" fz="sm" c="dimmed">
+          Subscription
+        </Text>
+        <Text ta="center" fz="sm" c={theme.colors.green[6]} fw={500}>
+          After Setup
+        </Text>
+      </Group>
+
+      <Group position="apart">
+        <IconCheck size={`1.1em`} color={theme.colors.green[6]} />
+        <Text ta="center" fz="sm" c="dimmed">
+          Theme
+        </Text>
+        <Text ta="center" fz="sm" c={theme.colors.green[6]} fw={500}>
+          After Setup
+        </Text>
+      </Group>
+      <Group position="apart">
+        <IconCheck size={`1.1em`} color={theme.colors.green[6]} />
+        <Text ta="center" fz="sm" c="dimmed">
+          Audio
+        </Text>
+        <Text ta="center" fz="sm" c={theme.colors.green[6]} fw={500}>
+          After Setup
+        </Text>
+      </Group>
+    </Box>
+  );
+};

@@ -1,5 +1,3 @@
-import { useEffect } from "react";
-
 import withAuth from "./withAuth";
 
  function UserLoggedIn  () {

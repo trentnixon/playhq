@@ -12,6 +12,7 @@ import {
 import { Box, Container, Grid } from "@mantine/core";
 import { FixturaHeaderMeta } from "../Members/Account/userFixturaSettings";
 import { UserDetailsCard } from "../Members/Account/userAdminDetailsCard";
+import HasCompletedStartSequence from "../Members/Account/HOC/hasCompletedStartSequence";
 
 const Layout = ({ children }) => {
   const { user, loading } = useFetchUser();
@@ -28,7 +29,7 @@ const Layout = ({ children }) => {
   return (
     <UserProvider value={{ user, loading }}>
       <AccountDetailsProvider>
-        <Meta /> 
+        <Meta />
         <div className="Container Main">
           {SelectedNavbar}
           {SelectedLayout}
@@ -48,8 +49,8 @@ const StaticLayout = ({ children }) => {
 
 const MembersLayout = ({ children }) => {
   return (
-    <>
-      <AdminHero />
+    <HasCompletedStartSequence>
+      <AdminHero /> 
       <Container size={"xl"}>
         <Grid>
           <Grid.Col span={12} sm={4} md={3}>
@@ -57,10 +58,10 @@ const MembersLayout = ({ children }) => {
           </Grid.Col>
           <Grid.Col span={12} sm={8} md={9}>
             <main>{children}</main>
-          </Grid.Col> 
+          </Grid.Col>
         </Grid>
       </Container>
-    </>
+    </HasCompletedStartSequence>
   );
 };
 
@@ -77,7 +78,7 @@ const AdminSideBar = () => {
 
 const AdminHero = () => {
   const { account } = useAccountDetails();
-  if (!account) return null;
+  //if (!account) return null;
   return (
     <Container fluid mx={0} p={0}>
       <Box

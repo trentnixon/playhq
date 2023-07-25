@@ -13,7 +13,7 @@ function withAuth(WrappedComponent) {
       Router.push("/members/setup"); 
       return;
     }
-
+ 
     const FindisSet = async(check)=>{
       const res = await fetcher(
         `${process.env.NEXT_PUBLIC_STRAPI_URL}/accounts/${check}`,

@@ -83,7 +83,7 @@ export const useSetAccountTrue = (ctx) => {
           },
           body: JSON.stringify({
             data: {
-              isSetup: true,
+              hasCompletedStartSequence: true,
             },
           }),
         }

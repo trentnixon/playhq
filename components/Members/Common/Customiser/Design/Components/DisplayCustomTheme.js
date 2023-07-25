@@ -31,7 +31,7 @@ export const DisplayCustomTheme = (props) => {
   const theme = useMantineTheme();
   const swatches = (ARR) => {
     return ARR.map((color) => (
-      <ColorSwatch key={color} color={color} size={15} radius="sm" />
+      <ColorSwatch key={color} color={color} size={30} radius="sm" />
     ));
   };
   if (CTHEME.length === 0)

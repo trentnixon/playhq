@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { getIdFromLocalCookie } from "../../../lib/auth";
 import { fetcher } from "../../../lib/api";
 import Cookies from "js-cookie";
@@ -6,38 +6,52 @@ import Cookies from "js-cookie";
 import { useCreateScheduler } from "../../../Hooks/useScheduler";
 import { BTN_ONCLICK } from "../Common/utils/Buttons";
 import { Box } from "@mantine/core";
+import { FixturaLoading } from "../Common/Loading";
+
 export const CreateAccountInit = ({ setAccountsetup }) => {
   const [ACCOUNTID, setACCOUNTID] = useState(false);
   const [data, CreateData] = useCreateScheduler();
-  const CreateAccount = (ID) => {
+  const [loading, setLoading] = useState(false);
+
+  const createAccount = async (ID) => {
     if (!ACCOUNTID) {
-      fetcher(`${process.env.NEXT_PUBLIC_STRAPI_URL}/accounts`, {
-        method: "POST",
-        body: JSON.stringify({
-          data: {
-            user: [ID],
-          },
-        }),
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${Cookies.get("jwt")}`,
-        },
-      })
-        .then((data) => {
-          console.log(data.data.id);
-          setAccountsetup(data);
-          setACCOUNTID(true);
-          CreateData(data.data.id);
-        })
-        .catch((error) => console.error(error));
+      try {
+        const data = await postAccountData(ID);
+        setAccountsetup(data);
+        setACCOUNTID(true);
+        CreateData(data.data.id);
+      } catch (error) {
+        console.error(error);
+      } finally {
+        setLoading(false);
+      }
     }
   };
 
-  async function fetchData() {
+  const postAccountData = (ID) => {
+    return fetcher(`${process.env.NEXT_PUBLIC_STRAPI_URL}/accounts`, {
+      method: "POST",
+      body: JSON.stringify({
+        data: {
+          user: [ID],
+          theme: [8],
+          template: [1],
+          audio_option: [1],
+        },
+      }),
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${Cookies.get("jwt")}`,
+      },
+    });
+  };
+
+  const fetchData = async () => {
+    setLoading(true);
     const ID = await getIdFromLocalCookie();
-    CreateAccount(ID);
-  }
+    createAccount(ID);
+  };
 
   return (
     <Box
@@ -46,10 +60,18 @@ export const CreateAccountInit = ({ setAccountsetup }) => {
         border: `1px solid ${theme.colors.members[1]}`,
         backgroundColor: theme.colors.members[1],
         borderRadius: "5px",
-        textAlign:'right'
+        textAlign: "center",
       })}
     >
-      <BTN_ONCLICK LABEL={"Next"} HANDLE={fetchData} THEME="success" />
+      {loading ? (
+        <FixturaLoading />
+      ) : (
+        <BTN_ONCLICK
+          LABEL={"Let's Get Started"}
+          HANDLE={fetchData}
+          THEME="success"
+        />
+      )}
     </Box>
   );
 };

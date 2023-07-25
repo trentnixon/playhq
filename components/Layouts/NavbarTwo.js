@@ -3,8 +3,17 @@ import { getAccountFromLocalCookie, unsetToken } from "../../lib/auth";
 import { useUser } from "../../lib/authContext";
 import Link from "../../utils/ActiveLink";
 import { useRouter } from "next/router";
-
-
+import {
+  IconBadgeTm,
+  IconBrandStripe,
+  IconCheck,
+  IconColorPicker,
+  IconDownload,
+  IconLogout2,
+  IconTrack,
+} from "@tabler/icons-react";
+import { Group, useMantineTheme } from "@mantine/core";
+import { useAccountDetails } from "../../lib/userContext";
 
 const NavbarTwo = () => {
   const [menu, setMenu] = React.useState(true);
@@ -35,7 +44,7 @@ const NavbarTwo = () => {
 
   return (
     <>
-       <div id="navbarTwo" className={`navbar-area navbar-style-2`}>
+      <div id="navbarTwo" className={`navbar-area navbar-style-2`}>
         <nav className="navbar navbar-expand-md navbar-light">
           <div className="container-fluid">
             <Link href="/">
@@ -112,42 +121,82 @@ const NavbarTwo = () => {
 
 export default NavbarTwo;
 
+const NavItem = ({ href, title, IconComponent }) => {
+  const theme = useMantineTheme();
+  return (
+    <li className="nav-item members-item">
+      <Link href={href} activeClassName="active">
+        <Group
+          position="apart"
+          sx={(theme) => ({
+            padding: "12px 15px ",
+            cursor: "pointer",
+            "&:hover": {
+              backgroundColor: theme.colors.dark[0],
+              color: theme.colors.dark[0],
+            },
+          })}
+        >
+          <a className="nav-link">{title}</a>
+
+          <IconComponent
+            size={"1.5em"}
+            stroke={1}
+            color={theme.colors.blue[5]}
+          />
+        </Group>
+      </Link>
+    </li>
+  );
+};
+
 const MembersNavItem = ({ user }) => {
   const router = useRouter();
   const PATH = "/members";
-  const hasSetup =getAccountFromLocalCookie() 
+  const theme = useMantineTheme();
+  const hasSetup = getAccountFromLocalCookie();
+  const { account } = useAccountDetails();
 
+  console.log(account?.attributes?.hasCompletedStartSequence);
   const handleLogout = () => {
-    
     unsetToken();
     router.push(`/`);
-  }; 
+  };
 
-  
-  if(hasSetup === 'undefined')
-  return(
-    <li className="nav-item">
-    <Link href="#">
-      <a className="nav-link" onClick={(e) => e.preventDefault()}>
-        {user} <i className="fa-solid fa-angle-down"></i>
-      </a>
-    </Link>
+  const navItems = [
+    {
+      href: `${PATH}/orderHistory`,
+      title: "Downloads",
+      IconComponent: IconDownload,
+    },
+    { href: `${PATH}/tracking`, title: "Tracking", IconComponent: IconTrack },
+    { href: `${PATH}/brand`, title: "Your Brand", IconComponent: IconBadgeTm },
+    {
+      href: `${PATH}/design`,
+      title: "Asset Design",
+      IconComponent: IconColorPicker,
+    },
+    { href: `${PATH}/sponsors`, title: "Sponsors", IconComponent: IconCheck },
+    {
+      href: `${PATH}/account`,
+      title: "Account",
+      IconComponent: IconBrandStripe,
+    },
+  ];
 
-    <ul className="dropdown-menu">
-   
-      <li className="nav-item">
-        <Link href={`${PATH}/setup`} activeClassName="active">
-          <a className="nav-link">Setup Account</a>
-        </Link>
-      </li>
-      <li className="nav-item">
-        <a className="nav-link" onClick={handleLogout}>
-          Log Out
-        </a>
-      </li>
-    </ul>
-  </li>
-  )
+  const navItemsNoSetup = [
+    {
+      href: `${PATH}/setup`,
+      title: "Setup Account",
+      IconComponent: IconBrandStripe,
+    }
+  ];
+
+  const navItemsToRender =
+    account?.attributes?.hasCompletedStartSequence === undefined ||
+    account?.attributes?.hasCompletedStartSequence == false
+      ? navItemsNoSetup
+      : navItems;
   return (
     <li className="nav-item">
       <Link href="#">
@@ -157,55 +206,23 @@ const MembersNavItem = ({ user }) => {
       </Link>
 
       <ul className="dropdown-menu">
-     
-        
-        <li className="nav-item">
-          <Link href={`${PATH}/orderHistory`} activeClassName="active">
-            <a className="nav-link">Downloads</a>
-          </Link>
-        </li>
-       
-        <li className="nav-item">
-          <Link href={`${PATH}/tracking`} activeClassName="active">
-            <a className="nav-link">Tracking</a>
-          </Link>
-        </li>
-        <li className="nav-item">
-          <Link href={`${PATH}/brand`} activeClassName="active">
-            <a className="nav-link">Your Brand</a>
-          </Link>
-        </li>
-        <li className="nav-item">
-          <Link href={`${PATH}/design`} activeClassName="active">
-            <a className="nav-link">Asset Design</a>
-          </Link>
-        </li>
-     
-        <li className="nav-item">
-          <Link href={`${PATH}/sponsors`} activeClassName="active">
-            <a className="nav-link">Sponsors</a>
-          </Link>
-        </li>
-        <li className="nav-item">
-          <Link href={`${PATH}/HowToUse`} activeClassName="active">
-            <a className="nav-link">How to Use</a>
-          </Link>
-        </li>
-        
-        <li>
-          <hr />
-        </li>
-       
-        <li className="nav-item">
-          <Link href={`${PATH}/account`} activeClassName="active">
-            <a className="nav-link">Account</a>
-          </Link>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" onClick={handleLogout}>
-            Log Out
-          </a>
-        </li>
+        {navItemsToRender.map((item, index) => (
+          <NavItem key={index} {...item} />
+        ))}
+        {hasSetup !== "undefined" && (
+          <li className="nav-item">
+            <Group position="apart">
+              <a className="nav-link" onClick={handleLogout}>
+                Log Out
+              </a>
+              <IconLogout2
+                size={"1.5em"}
+                stroke={1}
+                color={theme.colors.red[5]}
+              />
+            </Group>
+          </li>
+        )}
       </ul>
     </li>
   );

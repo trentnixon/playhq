@@ -14,14 +14,23 @@ export const Input_FixturaSetting = ({ Input, user, setHasUpdated }) => {
   const [value, setValue] = useState(user?.attributes[Input.Field]);
   const [disabled, setDisabled] = useState(true);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   const handleValueChange = (event) => {
-    setValue(event.target.value);
-    if (event.target.value.trim()) {
-      setDisabled(false);
-    } else {
-      setDisabled(true);
+    const newValue = event.target.value;
+    setValue(newValue);
+
+    for (const validator of Input.Validators) {
+      const result = validator(newValue);
+      if (result !== true) {
+        setError(result);
+        setDisabled(true);
+        return;
+      }
     }
+
+    setError(null);
+    setDisabled(false);
   };
 
   const handleSubmit = async (event) => {
@@ -56,7 +65,6 @@ export const Input_FixturaSetting = ({ Input, user, setHasUpdated }) => {
     }
   };
 
-  console.log(user?.attributes[Input.Field]);
   return (
     <>
       <LabelMe label={Input.Label} />
@@ -65,26 +73,21 @@ export const Input_FixturaSetting = ({ Input, user, setHasUpdated }) => {
           <Box>
             {!editing ? (
               <Group position="apart">
-                
                 <Box
                   sx={(theme) => ({
                     padding: theme.spacing.md,
                     border: `1px solid ${theme.colors.members[1]}`,
-                    /* backgroundColor:
-                      theme.colors.members[ 
-                        user?.attributes[Input.Field] === null ? 1 : 3
-                      ], */
-                      background: theme.fn.linearGradient(
-                        45,
-                        theme.colors.blue[5],
-                        theme.colors.cyan[5]
-                      ),
+                    background: theme.fn.linearGradient(
+                      45,
+                      theme.colors.blue[5],
+                      theme.colors.cyan[5]
+                    ),
                     borderRadius: "5px",
                     textAlign: "right",
                   })}
                 >
                   {user?.attributes[Input.Field] === null ? (
-                    <P Copy={"Required"} color={8} marginBottom={0} />
+                    <P Copy={"Required"} color={0} marginBottom={0} />
                   ) : (
                     <P
                       Copy={user?.attributes[Input.Field]}
@@ -94,28 +97,34 @@ export const Input_FixturaSetting = ({ Input, user, setHasUpdated }) => {
                   )}
                 </Box>
                 {user?.attributes[Input.Field] === null ? (
-                    false
-                  ) : (
-                    <ActionIcon variant="filled"
+                  false
+                ) : (
+                  <ActionIcon
+                    variant="filled"
                     sx={(theme) => ({
-                     backgroundColor: theme.colors.members[6]
-                   })}
-                   > <IconCheck size={18} /></ActionIcon>
-                  )}
-              
+                      backgroundColor: theme.colors.members[6],
+                    })}
+                  >
+                    {" "}
+                    <IconCheck size={18} />
+                  </ActionIcon>
+                )}
               </Group>
             ) : (
               <div className="form-group">
                 {loading ? (
                   <FixturaLoading />
                 ) : (
-                  <input
-                    type="text"
-                    className="form-control"
-                    value={value}
-                    placeholder={value}
-                    onChange={handleValueChange}
-                  />
+                  <>
+                    <input
+                      type="text"
+                      className="form-control"
+                      value={value}
+                      placeholder={value}
+                      onChange={handleValueChange}
+                    />
+                    {error && <P color={8} size={'xs'} lineHeight={`2em`} marginBottom={0} textAlign='center' Copy={error} />}
+                  </>
                 )}
               </div>
             )}

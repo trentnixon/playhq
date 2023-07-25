@@ -127,10 +127,10 @@ const GamesCalendar = ({ gamesData }) => {
           (!sortedGamesData[index - 1] ||
             sortedGamesData[index - 1].date < today)
         ) {
-          bgColor = theme.colors.blue[5];
+          bgColor = theme.colors.blue[7];
           opacity = 1;
         } else {
-          bgColor = theme.colors.green[3];
+          bgColor = theme.colors.gray[4];
           opacity = 1;
         }
 

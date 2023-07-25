@@ -101,7 +101,7 @@ export const SelectATheme = () => {
 
 const Swatches = ({ colors }) => {
   return colors.map((color) => (
-    <ColorSwatch key={color} color={color} size={15} radius="sm" />
+    <ColorSwatch key={color} color={color} size={30} radius="sm" />
   ));
 };
 
