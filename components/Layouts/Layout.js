@@ -62,7 +62,7 @@ const MembersLayout = ({ children }) => {
         </Grid>
       </Container>
     </HasCompletedStartSequence>
-  );
+  ); 
 };
 
 // Members additional Components

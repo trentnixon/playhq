@@ -47,7 +47,7 @@ const OrderHistory = (props) => {
     );
 
   return (
-    <MembersWrapper> 
+    <MembersWrapper>  
       <SetupCheck>
         <LoadingStateWrapper conditions={[user, Renders]}>
            <PageTitle Copy={`Downloads`} ICON={<IconDownload size={40} />} />

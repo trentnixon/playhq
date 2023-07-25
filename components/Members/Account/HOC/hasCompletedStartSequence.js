@@ -11,11 +11,19 @@ const HasCompletedStartSequence = ({ children }) => {
 
   useEffect(() => {
     if (!loading) {
-      
-      if (!user ||  account === null || !account?.attributes.hasCompletedStartSequence) {
-        Router.push("/members/setup/");
-      }else{
-        Router.push("/members/account/");
+      // Check if setup check has already been performed in this session
+      const checkPerformed = sessionStorage.getItem('setupCheckPerformed');
+
+      if (!checkPerformed) {
+        if (!user ||  account === null || !account?.attributes.hasCompletedStartSequence) {
+          // Setup check has not been performed, redirect to setup page and mark check as performed
+          sessionStorage.setItem('setupCheckPerformed', 'true');
+          Router.push("/members/setup/");
+        } else {
+          // Setup check has been performed and setup is complete, redirect to account page and mark check as performed
+          sessionStorage.setItem('setupCheckPerformed', 'true');
+          Router.push("/members/account/");
+        }
       }
     }
   }, [user, loading, account]);

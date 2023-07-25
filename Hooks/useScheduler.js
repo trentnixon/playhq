@@ -30,7 +30,8 @@ export const useCreateScheduler=()=>{
                 body: JSON.stringify({
                     data: {
                         account: [ID],
-                        Name:createRandomString()
+                        Name:createRandomString(),
+                        days_of_the_week:[3]
                     },
                   }),
                 headers: {

@@ -272,7 +272,7 @@ const NextGameDate = ({ gamesData }) => {
   return (
     <Group position="apart">
       <P Copy={`Upcoming Fixture: ${nextGame?.date}`} />
-      <P Copy={`Games Listed ${nextGame?.obj.length}`} />
+      <P Copy={`Games Listed ${nextGame?.obj?.length}`} />
     </Group>
   );
 };

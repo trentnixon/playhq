@@ -53,6 +53,7 @@ export const ReviewSetupData = ({ DATA }) => {
 
   const CompleteRegistration = async () => {
     setLoading(true);
+    console.log('CompleteRegistration')
     try {
       await CreateSetAccountTrue(DATA.id);
     } catch (error) {
@@ -64,7 +65,6 @@ export const ReviewSetupData = ({ DATA }) => {
 
   useEffect(() => {
     if (AccountTrue) {
-      ReRender();
       setAccountFromLocalCookie(DATA.id);
       router.push("/members/account/");
     }
