@@ -94,12 +94,13 @@ export const SetupStages = ({ setReview }) => {
             },
           })}
         >
+           <Stepper.Step color="blue" label="All About the Assets">
+            <StepAboutUser user={DATA} setHasUpdated={ReRender} />
+          </Stepper.Step>
           <Stepper.Step label="About the Cricket">
             <StepAboutTheCricket user={DATA} setHasUpdated={ReRender} />
           </Stepper.Step>
-          <Stepper.Step color="blue" label="All About the Assets">
-            <StepAboutUser user={DATA} setHasUpdated={ReRender} />
-          </Stepper.Step>
+         
           
 
           <Stepper.Completed>
