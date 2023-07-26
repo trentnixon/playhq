@@ -17,7 +17,7 @@
 .freelancer-portfolio-banner-content .profile-img {
   border-radius: 100%;
   width: 120px;
-  border: 2px solid #f9004d;
+  border: 2px solid #339AF0;
   margin-bottom: 20px;
 }
 
@@ -33,7 +33,7 @@
 }
 
 .freelancer-portfolio-banner-content h1 span {
-  color: #f9004d;
+  color: #339AF0;
   display: block;
 }
 
@@ -60,7 +60,7 @@
 
 .freelancer-portfolio-banner-content .socials-link li a i:hover {
   color: #fff;
-  background-color: #f9004d;
+  background-color: #339AF0;
 }
 
 /* Projects */
@@ -97,7 +97,7 @@
   position: absolute;
   right: 0;
   top: 10px;
-  background-color: #f9004d;
+  background-color: #339AF0;
   width: 35px;
   height: 35px;
   line-height: 35px;
@@ -120,7 +120,7 @@
 }
 
 .fp-project-item .content span {
-  color: #f9004d;
+  color: #339AF0;
   font-weight: 600;
 }
 

@@ -10,7 +10,6 @@ const Contact = () => {
         BGImage="/images/BG-Images/0D5A3671.jpg"
         position={`top center`}
       />
-
       <SignInForm />
     </>
   );

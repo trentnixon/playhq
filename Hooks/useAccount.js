@@ -84,6 +84,7 @@ export const useSetAccountTrue = (ctx) => {
           body: JSON.stringify({
             data: {
               hasCompletedStartSequence: true,
+              isActive:true
             },
           }),
         }

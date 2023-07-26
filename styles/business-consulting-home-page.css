@@ -70,7 +70,7 @@
   line-height: 1;
   top: 0;
   font-size: 45px;
-  color: #f9004d;
+  color: #339AF0;
 }
 
 .bc-features-item h3 {
@@ -98,7 +98,7 @@
 .bc-who-we-are-content .sub-title {
   display: block;
   margin-bottom: 10px;
-  color: #f9004d;
+  color: #339AF0;
   font-weight: 600;
   font-size: 14px;
 }
@@ -153,7 +153,7 @@
   bottom: 0;
   left: 0;
   border-radius: 50%;
-  border: 1.5px solid #f9004d;
+  border: 1.5px solid #339AF0;
 }
 
 .bc-who-we-are-image .video-btn::before {
@@ -191,7 +191,7 @@
   z-index: 1;
   -webkit-transition: all 0.6s ease;
   transition: all 0.6s ease;
-  background-color: #f9004d;
+  background-color: #339AF0;
 }
 
 .bc-services-item h3 {
@@ -320,12 +320,12 @@
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
-  color: #f9004d;
+  color: #339AF0;
   font-size: 45px;
 }
 
 .bc-funfacts-box h3 {
-  color: #f9004d;
+  color: #339AF0;
   margin-bottom: 4px;
   font-size: 40px;
 }
@@ -389,7 +389,7 @@
   line-height: 1;
   font-size: 45px;
   margin-bottom: 25px;
-  color: #f9004d;
+  color: #339AF0;
 }
 
 .bc-what-we-do-box h3 {
@@ -443,7 +443,7 @@
 }
 
 .bc-team-box .image .social li a:hover {
-  background-color: #f9004d;
+  background-color: #339AF0;
   color: #fff;
 }
 
@@ -467,7 +467,7 @@
 }
 
 .bc-team-box:hover .image .social li a:hover {
-  background-color: #f9004d;
+  background-color: #339AF0;
 }
 
 /* Pricing */
@@ -498,7 +498,7 @@
 }
 
 .bc-pricing-item .pricing-header .price {
-  color: #f9004d;
+  color: #339AF0;
   margin-bottom: 12px;
   line-height: 1;
   font-weight: 700;
@@ -635,7 +635,7 @@
   position: relative;
   padding-left: 24px;
   font-weight: 600;
-  color: #f9004d;
+  color: #339AF0;
 }
 
 .bc-post-item .post-content .tag i {
@@ -662,7 +662,7 @@
   position: absolute;
   left: 0;
   top: 4px;
-  color: #f9004d;
+  color: #339AF0;
 }
 
 .bc-post-item .post-content .meta li a {
@@ -670,7 +670,7 @@
 }
 
 .bc-post-item .post-content .meta li a:hover {
-  color: #f9004d;
+  color: #339AF0;
 }
 
 .bc-post-item .post-content h3 {
@@ -706,14 +706,14 @@
   bottom: 0;
   width: 0%;
   height: 1px;
-  background-color: #f9004d;
+  background-color: #339AF0;
   -webkit-transition: all 0.6s ease;
   transition: all 0.6s ease;
 }
 
 .bc-post-item .post-content .link-btn:hover {
   padding-right: 15px;
-  color: #f9004d;
+  color: #339AF0;
 }
 
 .bc-post-item .post-content .link-btn:hover::before {

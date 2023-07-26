@@ -62,7 +62,7 @@ const ForgotPasswordForm = () => {
                 <div className="col-lg-12 col-sm-12">
                   <button
                     type="submit"
-                    className="btn btn-primary"
+                    className="btn btn-secondary"
                     disabled={loading}
                   >
                     Send password reset email

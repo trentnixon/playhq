@@ -83,7 +83,7 @@ export const ProductCard = ({
           <Box
             key={category.category}
             sx={(theme) => ({
-              backgroundColor: theme.colors.gray[0],
+              backgroundColor: 'white',
               padding: theme.spacing.xs,
               borderBottom: `1px solid ${theme.colors.gray[2]}`,
               cursor: "pointer",

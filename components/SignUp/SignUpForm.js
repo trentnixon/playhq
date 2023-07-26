@@ -6,6 +6,8 @@ const MySwal = withReactContent(Swal);
 
 import baseUrl from "../../utils/baseUrl";
 import { fetcher } from "../../lib/api";
+import { Container } from "@mantine/core";
+import { P } from "../Members/Common/Type";
 
 const alertContent = () => {
   MySwal.fire({
@@ -88,114 +90,122 @@ const SignUpForm = () => {
   }, [contact, terms]);
 
   if (Registered) return <SuccessfulRegistration />;
-  if (error) return <ErrorRegistration error={msg} setError={setError} setContact={setContact}/>;
+  if (error)
+    return (
+      <ErrorRegistration
+        error={msg}
+        setError={setError}
+        setContact={setContact}
+      />
+    );
   return (
     <>
       <div className="contact-form ptb-100">
         <div className="contact-title">
-          <h2>Sign Up</h2>
-          <p>
-            Sign up for a free Fixtura account now. Set up a Club or associations
-            profile and preview video options now.
-          </p>
+       
+          <P textAlign='center' size={'1.6em'} Weight={900} Copy={`Unlock the Power of Effortless Content Creation.`}/>
+          <P textAlign='center' Copy={`Sign up now to
+            customize your club's profile, access premium video options, and
+            receive weekly personalized assets delivered to your inbox.`}/>
+         
         </div>
+        <Container size={"sm"}>
+          <form onSubmit={handleSubmit}>
+            <div className="container">
+              <div className="row">
+                <div className="col-lg-12">
+                  <div className="form-group">
+                    <input
+                      type="text"
+                      name="name"
+                      placeholder="Name"
+                      className="form-control"
+                      value={contact.name}
+                      onChange={handleChange}
+                      required
+                    />
+                  </div>
+                </div>
+                <div className="col-lg-12">
+                  <div className="form-group">
+                    <input
+                      type="text"
+                      name="email"
+                      placeholder="Email"
+                      className="form-control"
+                      value={contact.email}
+                      onChange={handleChange}
+                      required
+                    />
+                  </div>
+                </div>
+                <div className="col-lg-12">
+                  <div className="form-group">
+                    <input
+                      type="password"
+                      name="password"
+                      placeholder="Password"
+                      className="form-control"
+                      value={contact.password}
+                      onChange={handleChange}
+                      required
+                    />
+                  </div>
+                </div>
+                <div className="col-lg-12">
+                  <div className="form-group">
+                    <input
+                      type="password"
+                      name="confirmPassword"
+                      placeholder="Confirm Password"
+                      className="form-control"
+                      value={contact.confirmPassword}
+                      onChange={handleChange}
+                      required
+                    />
+                  </div>
+                </div>
 
-        <form onSubmit={handleSubmit}>
-          <div className="container">
-            <div className="row">
-              <div className="col-lg-12">
-                <div className="form-group">
-                  <input
-                    type="text"
-                    name="name"
-                    placeholder="Name"
-                    className="form-control"
-                    value={contact.name}
-                    onChange={handleChange}
-                    required
-                  />
+                <div className="col-lg-12 col-sm-12">
+                  <div className="form-check">
+                    <input
+                      type="checkbox"
+                      className="form-check-input"
+                      name="termsAccepted"
+                      id="termsCheck"
+                      onChange={handleTermsChange}
+                    />
+                    <label className="form-check-label" htmlFor="termsCheck">
+                      I agree to the terms and conditions
+                    </label>
+                  </div>
+                  {!terms && (
+                    <p className="error-message">
+                      Please agree to the terms and conditions to continue
+                    </p>
+                  )}
                 </div>
-              </div>
-              <div className="col-lg-12">
-                <div className="form-group">
-                  <input
-                    type="text"
-                    name="email"
-                    placeholder="Email"
-                    className="form-control"
-                    value={contact.email}
-                    onChange={handleChange}
-                    required
-                  />
+                <div className="col-lg-12 col-sm-12">
+                  <button
+                    type="submit"
+                    className={`btn ${
+                      contact.password !== contact.confirmPassword ||
+                      !contact.termsAccepted
+                        ? ""
+                        : "btn-primary"
+                    }`}
+                    disabled={
+                      contact.password !== contact.confirmPassword ||
+                      !contact.termsAccepted
+                    }
+                  >
+                    Sign up
+                  </button>
                 </div>
-              </div>
-              <div className="col-lg-12">
-                <div className="form-group">
-                  <input
-                    type="password"
-                    name="password"
-                    placeholder="Password"
-                    className="form-control"
-                    value={contact.password}
-                    onChange={handleChange}
-                    required
-                  />
-                </div>
-              </div>
-              <div className="col-lg-12">
-                <div className="form-group">
-                  <input
-                    type="password"
-                    name="confirmPassword"
-                    placeholder="Confirm Password"
-                    className="form-control"
-                    value={contact.confirmPassword}
-                    onChange={handleChange}
-                    required
-                  />
-                </div>
-              </div>
-
-
-              <div className="col-lg-12 col-sm-12">
-                <div className="form-check">
-                  <input
-                    type="checkbox"
-                    className="form-check-input"
-                    name="termsAccepted"
-                    id="termsCheck"
-                    onChange={handleTermsChange}
-                  />
-                 <label className="form-check-label" htmlFor="termsCheck">
-                    I agree to the terms and conditions
-                  </label>
-                </div>
-                {!terms && (
-                  <p className="error-message">
-                    Please agree to the terms and conditions to continue
-                  </p>
-                )}
-              </div>
-              <div className="col-lg-12 col-sm-12">
-                <button
-                  type="submit"
-                  className={`btn ${
-                    contact.password !== contact.confirmPassword ||
-                    !contact.termsAccepted
-                      ? ""
-                      : "btn-primary"
-                  }`}
-                  disabled={
-                    contact.password !== contact.confirmPassword ||
-                    !contact.termsAccepted
-                  }
-                >
-                  Sign up
-                </button>
               </div>
             </div>
-          </div>
-        </form>
+          </form>
+        </Container>
       </div>
     </>
   );
@@ -211,8 +221,8 @@ const SuccessfulRegistration = () => {
           <h2> Successful Registration</h2>
           <p>
             Congratulations, you have successfully registered for a Fixtura
-            account! You are now one step closer to enhancing your club&lsquo;s social
-            media presence with our personalized digital assets.
+            account! You are now one step closer to enhancing your club&lsquo;s
+            social media presence with our personalized digital assets.
           </p>
           <p>
             An email has been sent to the address you provided, containing
@@ -234,7 +244,7 @@ const SuccessfulRegistration = () => {
   );
 };
 
-const ErrorRegistration = ({ error,setError, setContact }) => {
+const ErrorRegistration = ({ error, setError, setContact }) => {
   return (
     <>
       <div className="contact-form ptb-100">
@@ -242,7 +252,14 @@ const ErrorRegistration = ({ error,setError, setContact }) => {
           <h2>ERROR</h2>
           <p>{error}</p>
           <div className="col-lg-12 col-sm-12">
-            <button type="submit" className={"btn btn-primary"} onClick={()=>{setError(false); setContact(INITIAL_STATE)}} >
+            <button
+              type="submit"
+              className={"btn btn-primary"}
+              onClick={() => {
+                setError(false);
+                setContact(INITIAL_STATE);
+              }}
+            >
               Reset
             </button>
           </div>

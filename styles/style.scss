@@ -319,8 +319,8 @@ a {
 }
 
 .default-btn-two {
-    border: 2px solid #f9004d;
-    background: #f9004d;
+    border: 2px solid #339AF0;
+    background: #339AF0;
     color: #fff;
     border-radius: 6px;
     text-align: center;
@@ -1184,7 +1184,7 @@ Main Banner CSS
             opacity: 1;
             &.swiper-pagination-bullet-active {
                 background: $gradient-color;
-                border: 1px solid #ff2c9c;
+                border: 1px solid #339AF0;
             }
         }
     }
@@ -1840,7 +1840,7 @@ About CSS
         transform: translateY(-50%);
         width: 90px;
         height: 90px;
-        background-color: #f9004d;
+        background-color: #339AF0;
         border-radius: 50%;
         color: #fff;
         font-size: 40px;
@@ -1859,7 +1859,7 @@ About CSS
             bottom: 0;
             left: 0;
             border-radius: 50%;
-            border: 1px solid #f9004d;
+            border: 1px solid #339AF0;
             transition: 0.5s;
         }
 
@@ -2238,7 +2238,7 @@ Case Studies CSS
             opacity: 1;
             &.swiper-pagination-bullet-active {
                 background: $gradient-color;
-                border: 1px solid #ff2c9c;
+                border: 1px solid #339AF0;
             }
         }
     }
@@ -2868,7 +2868,7 @@ Feedback CSS
             opacity: 1;
             &.swiper-pagination-bullet-active {
                 background: $gradient-color;
-                border: 1px solid #ff2c9c;
+                border: 1px solid #339AF0;
             }
         }
     }
@@ -4424,7 +4424,7 @@ Blog CSS
             opacity: 1;
             &.swiper-pagination-bullet-active {
                 background: $gradient-color;
-                border: 1px solid #ff2c9c;
+                border: 1px solid #339AF0;
             }
         }
     }
@@ -5774,12 +5774,12 @@ Portfolio Details CSS
     }
     .video-box {
         .video-btn {
-            background-color: #f9004d;
+            background-color: #339AF0;
             color: #fff;
             width: 90px;
             height: 90px;
             &:before, &:after {
-                border: 1px solid #f9004d;
+                border: 1px solid #339AF0;
             }
         }
     }
@@ -6136,7 +6136,7 @@ Go Top CSS
 }
 span.new {
     position: absolute;
-    background: #f9004d;
+    background: #339AF0;
     color: #fff;
     font-weight: 400;
     padding: 1px 5px;
@@ -6253,7 +6253,7 @@ span.new {
             opacity: 1;
             &.swiper-pagination-bullet-active {
                 background: $gradient-color;
-                border: 1px solid #ff2c9c;
+                border: 1px solid #339AF0;
             }
         }
     }

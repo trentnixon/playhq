@@ -1,5 +1,5 @@
 // Global Variable
-$main-color: #f9004d;
+$main-color: #339AF0;
 $gradient-color: linear-gradient(to left top, #2cff48, #ff287b, #ff395a, #ff5137, #ff6a00);
 $main-font-family: 'Open Sans', sans-serif;
 $heading-font-family: 'Saira', sans-serif;
@@ -841,7 +841,7 @@ $transition: all 0.6s ease;
             opacity: 1;
             &.swiper-pagination-bullet-active {
                 background: $gradient-color;
-                border: 1px solid #ff2c9c;
+                border: 1px solid #339AF0;
             }
         }
     }

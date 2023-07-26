@@ -57,7 +57,7 @@
   position: absolute;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
-  background-color: #ff2c9c;
+  background-color: #339AF0;
 }
 
 .personal-portfolio-banner-content h1 {
@@ -446,7 +446,7 @@
 }
 
 .pp-testimonials-slides .swiper-button-prev:hover, .pp-testimonials-slides .swiper-button-next:hover {
-  background-color: #ff2c9c;
+  background-color: #339AF0;
 }
 
 .pp-testimonials-slides .swiper-button-prev:hover::after, .pp-testimonials-slides .swiper-button-next:hover::after {
@@ -527,7 +527,7 @@
 }
 
 .pp-post-item .post-content h3 a:hover {
-  color: #ff2c9c;
+  color: #339AF0;
 }
 
 .pp-post-item .post-content .link-btn {
@@ -588,7 +588,7 @@
 }
 
 .pp-contact-area .contact-title p a:hover {
-  color: #ff2c9c;
+  color: #339AF0;
 }
 
 /* Responsive CSS 

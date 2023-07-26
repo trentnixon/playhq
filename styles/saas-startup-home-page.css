@@ -56,7 +56,7 @@
 .saas-about-content .sub-title {
   display: block;
   margin-bottom: 12px;
-  color: #ff2c9c;
+  color: #339AF0;
   font-weight: 600;
   font-size: 14px;
 }
@@ -84,7 +84,7 @@
   position: absolute;
   left: 0;
   top: 2px;
-  color: #ff2c9c;
+  color: #339AF0;
 }
 
 .saas-about-content .features-list li:last-child {
@@ -136,8 +136,8 @@
 .saas-services-box .icon {
   font-size: 60px;
   line-height: 1;
-  background: -webkit-gradient(linear, right bottom, left top, from(#ff2c9c), color-stop(#ff287b), color-stop(#ff395a), color-stop(#ff5137), to(#ff6a00));
-  background: linear-gradient(to left top, #ff2c9c, #ff287b, #ff395a, #ff5137, #ff6a00);
+  background: -webkit-gradient(linear, right bottom, left top, from(#339AF0), color-stop(#ff287b), color-stop(#ff395a), color-stop(#ff5137), to(#ff6a00));
+  background: linear-gradient(to left top, #339AF0, #ff287b, #ff395a, #ff5137, #ff6a00);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -151,7 +151,7 @@
 }
 
 .saas-services-box h3 a:hover {
-  color: #ff2c9c;
+  color: #339AF0;
 }
 
 .saas-services-box.color-white {
@@ -173,7 +173,7 @@
 }
 
 .saas-services-box:hover {
-  border-color: #ff2c9c !important;
+  border-color: #339AF0 !important;
 }
 
 /* How It Works Area CSS */
@@ -198,8 +198,8 @@
   left: 0;
   top: 0;
   font-size: 45px;
-  background: -webkit-gradient(linear, right bottom, left top, from(#ff2c9c), color-stop(#ff287b), color-stop(#ff395a), color-stop(#ff5137), to(#ff6a00));
-  background: linear-gradient(to left top, #ff2c9c, #ff287b, #ff395a, #ff5137, #ff6a00);
+  background: -webkit-gradient(linear, right bottom, left top, from(#339AF0), color-stop(#ff287b), color-stop(#ff395a), color-stop(#ff5137), to(#ff6a00));
+  background: linear-gradient(to left top, #339AF0, #ff287b, #ff395a, #ff5137, #ff6a00);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -269,8 +269,8 @@
   top: 0;
   bottom: 0;
   z-index: -1;
-  background: -webkit-gradient(linear, right bottom, left top, from(#ff2c9c), color-stop(#ff287b), color-stop(#ff395a), color-stop(#ff5137), to(#ff6a00));
-  background: linear-gradient(to left top, #ff2c9c, #ff287b, #ff395a, #ff5137, #ff6a00);
+  background: -webkit-gradient(linear, right bottom, left top, from(#339AF0), color-stop(#ff287b), color-stop(#ff395a), color-stop(#ff5137), to(#ff6a00));
+  background: linear-gradient(to left top, #339AF0, #ff287b, #ff395a, #ff5137, #ff6a00);
   -webkit-transition: all 0.6s ease;
   transition: all 0.6s ease;
   opacity: 0;
@@ -312,7 +312,7 @@
 }
 
 .saas-pricing-box .pricing-header {
-  background: #ff2c9c;
+  background: #339AF0;
   margin: -30px -30px 30px;
   padding: 30px;
   position: relative;
@@ -380,7 +380,7 @@
 .saas-pricing-box .default-btn {
   background: transparent;
   color: var(--blackColor);
-  border: 1px solid #ff2c9c;
+  border: 1px solid #339AF0;
   -webkit-box-shadow: unset;
           box-shadow: unset;
 }
@@ -390,8 +390,8 @@
 }
 
 .saas-pricing-box .default-btn:hover {
-  background: #ff2c9c;
-  border-color: #ff2c9c;
+  background: #339AF0;
+  border-color: #339AF0;
   color: #fff;
 }
 
@@ -400,12 +400,12 @@
 }
 
 .saas-pricing-box.saas-color .pricing-header {
-  background: -webkit-gradient(linear, right bottom, left top, from(#ff2c9c), color-stop(#ff287b), color-stop(#ff395a), color-stop(#ff5137), to(#ff6a00));
-  background: linear-gradient(to left top, #ff2c9c, #ff287b, #ff395a, #ff5137, #ff6a00);
+  background: -webkit-gradient(linear, right bottom, left top, from(#339AF0), color-stop(#ff287b), color-stop(#ff395a), color-stop(#ff5137), to(#ff6a00));
+  background: linear-gradient(to left top, #339AF0, #ff287b, #ff395a, #ff5137, #ff6a00);
 }
 
 .saas-pricing-box.saas-color .pricing-header::before {
-  background-color: #ff2c9c;
+  background-color: #339AF0;
 }
 
 .saas-pricing-box.saas-color .default-btn {
@@ -413,8 +413,8 @@
 }
 
 .saas-pricing-box.saas-color .default-btn:hover {
-  background: #ff2c9c;
-  border-color: #ff2c9c;
+  background: #339AF0;
+  border-color: #339AF0;
 }
 
 .saas-pricing-box.bg-black {
@@ -468,7 +468,7 @@
 .saas-pricing-box.active .default-btn {
   -webkit-box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.05), 0 1.5rem 2.2rem rgba(0, 0, 0, 0.1);
           box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.05), 0 1.5rem 2.2rem rgba(0, 0, 0, 0.1);
-  background: #ff2c9c;
+  background: #339AF0;
   color: #fff;
   border: none;
 }
@@ -478,8 +478,8 @@
 }
 
 .saas-pricing-box.active .default-btn.saas-color {
-  background: -webkit-gradient(linear, right bottom, left top, from(#ff2c9c), color-stop(#ff287b), color-stop(#ff395a), color-stop(#ff5137), to(#ff6a00));
-  background: linear-gradient(to left top, #ff2c9c, #ff287b, #ff395a, #ff5137, #ff6a00);
+  background: -webkit-gradient(linear, right bottom, left top, from(#339AF0), color-stop(#ff287b), color-stop(#ff395a), color-stop(#ff5137), to(#ff6a00));
+  background: linear-gradient(to left top, #339AF0, #ff287b, #ff395a, #ff5137, #ff6a00);
 }
 
 /* Video Area CSS */
@@ -527,7 +527,7 @@
   bottom: 0;
   left: 0;
   border-radius: 50%;
-  border: 2px solid #ff2c9c;
+  border: 2px solid #339AF0;
 }
 
 .saas-video-box .video-btn::before {
@@ -572,7 +572,7 @@
 .saas-testimonials-item .info .title span {
   display: block;
   font-weight: 600;
-  color: #ff2c9c;
+  color: #339AF0;
 }
 
 .saas-testimonials-item p {
@@ -652,14 +652,14 @@
   bottom: 0;
   width: 0%;
   height: 1px;
-  background-color: #ff2c9c;
+  background-color: #339AF0;
   -webkit-transition: all 0.6s ease;
   transition: all 0.6s ease;
 }
 
 .saas-post-item .post-content .link-btn:hover {
   padding-right: 15px;
-  color: #ff2c9c;
+  color: #339AF0;
 }
 
 .saas-post-item .post-content .link-btn:hover::before {
@@ -678,7 +678,7 @@
 }
 
 .saas-post-item.bg-black .post-content .tag {
-  color: #ff2c9c;
+  color: #339AF0;
 }
 
 .saas-post-item.bg-black .post-content .meta {
@@ -690,7 +690,7 @@
 }
 
 .saas-post-item.bg-black .post-content .meta li i {
-  color: #ff2c9c;
+  color: #339AF0;
 }
 
 .saas-post-item.bg-black .post-content .meta li a {
@@ -698,7 +698,7 @@
 }
 
 .saas-post-item.bg-black .post-content .meta li a:hover {
-  color: #ff2c9c;
+  color: #339AF0;
 }
 
 .saas-post-item.bg-black .post-content h3 {
@@ -710,7 +710,7 @@
 }
 
 .saas-post-item.bg-black .post-content h3 a:hover {
-  color: #ff2c9c;
+  color: #339AF0;
 }
 
 .saas-post-item.bg-black .post-content p {
@@ -723,8 +723,8 @@
 }
 
 .saas-post-item.bg-black .post-content .link-btn::before {
-  background: -webkit-gradient(linear, right bottom, left top, from(#ff2c9c), color-stop(#ff287b), color-stop(#ff395a), color-stop(#ff5137), to(#ff6a00));
-  background: linear-gradient(to left top, #ff2c9c, #ff287b, #ff395a, #ff5137, #ff6a00);
+  background: -webkit-gradient(linear, right bottom, left top, from(#339AF0), color-stop(#ff287b), color-stop(#ff395a), color-stop(#ff5137), to(#ff6a00));
+  background: linear-gradient(to left top, #339AF0, #ff287b, #ff395a, #ff5137, #ff6a00);
 }
 
 .saas-post-item.bg-black .post-content .link-btn:hover {
@@ -748,7 +748,7 @@
 }
 
 .saas-testimonials-slides .swiper-button-prev:after {
-  color: #ff2c9c;
+  color: #339AF0;
   font-size: 26px;
 }
 
@@ -758,7 +758,7 @@
 }
 
 .saas-testimonials-slides .swiper-button-next:after {
-  color: #ff2c9c;
+  color: #339AF0;
   font-size: 26px;
 }
 

@@ -1,8 +1,6 @@
-//
-import Cookies from "js-cookie";
 import { useState } from "react";
 import { fetcher } from "../lib/api";
-import { getUserFromLocalCookie, getAccountFromLocalCookie, setToken } from "../lib/auth";
+import {  setToken } from "../lib/auth";
 
 export const useLogUser = () => {
   const [LogUser, setLogUser] = useState(null);
@@ -23,13 +21,20 @@ export const useLogUser = () => {
         }
       );
       console.log(response);
-      setToken(response)
-      setLogUser(response);
-     
+      if (!response || !response.user) {
+        setLogUser(null);
+        return { error: "Invalid login details" };
+      } else {
+        setToken(response)
+        setLogUser(response);
+        return response;
+      }
     } catch (err) {
       setLogUser(null);
+      return { error: err.message };
     }
   };
+  
 
   return [LogUser, CreateLogUser];
 };

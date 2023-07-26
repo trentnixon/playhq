@@ -3,19 +3,17 @@ import PageBanner from "../components/Common/PageBanner";
 import WorksStyleTwo from "../components/Portfolio/WorksStyleTwo";
 import CtaAreaTwo from "../components/Common/CtaAreaTwo";
 import { fetcher } from "../lib/api";
-import { CardsCarousel } from "../components/Portfolio/Carousel";
 
 const qs = require("qs");
 const Portfolio = ({ associations, CaseStudies }) => {
   return (
     <>
       <PageBanner
-        pageTitle="ASSET EXAMPLES"
+        pageTitle="What do we create?"
         BGImage="/images/BG-Images/0D5A3099.jpg"
       />
-
       <WorksStyleTwo CaseStudies={CaseStudies} />
-      <CardsCarousel />
+      
       <CtaAreaTwo />
     </>
   );
@@ -26,7 +24,7 @@ export default Portfolio;
 export const getServerSideProps = async (context) => {
   const query = qs.stringify(
     {
-      populate: ["Cover", "asset_category"],
+      populate: ["Cover", "asset_category","VideoExample"],
     },
     {
       encodeValuesOnly: true,

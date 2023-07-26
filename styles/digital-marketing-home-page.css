@@ -28,7 +28,7 @@
 .marketing-banner-content .sub-title {
   display: block;
   margin-bottom: 10px;
-  color: #ff2c9c;
+  color: #339AF0;
   font-weight: 600;
   font-size: 14px;
 }
@@ -97,7 +97,7 @@
 .marketing-about-content .sub-title {
   display: block;
   margin-bottom: 12px;
-  color: #ff2c9c;
+  color: #339AF0;
   font-weight: 600;
   font-size: 14px;
 }
@@ -122,7 +122,7 @@
   position: absolute;
   left: 0;
   top: 2px;
-  color: #ff2c9c;
+  color: #339AF0;
 }
 
 .marketing-about-content .box h3 {
@@ -154,7 +154,7 @@
 }
 
 .dm-services-item .content h3 a:hover {
-  color: #ff2c9c;
+  color: #339AF0;
 }
 
 /* Funfacts */
@@ -178,7 +178,7 @@
   top: 50%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
-  color: #ff2c9c;
+  color: #339AF0;
   font-size: 45px;
 }
 
@@ -225,7 +225,7 @@
   content: '';
   position: absolute;
   border-radius: 50%;
-  background-color: #ff2c9c;
+  background-color: #339AF0;
 }
 
 .marketing-testimonials-image::after {
@@ -253,7 +253,7 @@
 .marketing-testimonials-content .icon {
   line-height: 1;
   margin-bottom: 20px;
-  color: #ff2c9c;
+  color: #339AF0;
   display: block;
   font-size: 45px;
 }
@@ -340,7 +340,7 @@
   position: absolute;
   left: 0;
   top: 3px;
-  color: #ff2c9c;
+  color: #339AF0;
 }
 
 .dm-pricing-box .features-list li i.close {
@@ -385,7 +385,7 @@
 
 .dm-team-member .content span {
   display: block;
-  color: #ff2c9c;
+  color: #339AF0;
   -webkit-transition: all 0.6s ease;
   transition: all 0.6s ease;
 }
@@ -417,7 +417,7 @@
 }
 
 .dm-team-member .content .social li a:hover {
-  color: #ff2c9c;
+  color: #339AF0;
 }
 
 .dm-team-member .content::before {
@@ -462,11 +462,11 @@
 }
 
 .marketing-testimonials-slides .swiper-button-prev:after {
-  color: #ff2c9c;
+  color: #339AF0;
 }
 
 .marketing-testimonials-slides .swiper-button-next:after {
-  color: #ff2c9c;
+  color: #339AF0;
 }
 
 /* Responsive CSS 

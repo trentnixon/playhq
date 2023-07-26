@@ -39,7 +39,7 @@ const MainBanner = () => {
                       Effortless Content Creation
                     </Text>
                     <Text align="right">
-                      <Link href="/contact">
+                      <Link href="/SignUp">
                         <a className="btn btn-secondary">Get Started</a>
                       </Link>
                     </Text>

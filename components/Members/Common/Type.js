@@ -27,7 +27,7 @@ export const PageTitle = (props) => {
   );
 };
 
-export const SubHeaders = (props) => {
+export const SubHeaders = (props) => { 
   const { Copy } = props;
   return (
     <Container fluid px={0} >
@@ -53,7 +53,7 @@ export const P = (props) => {
     size = "md",
     marginBottom = "14px",
     textAlign = "left",
-    lineHeight = "1.2em",
+    lineHeight = "1.3em",
     textTransform = "normal", 
     fontStyle='normal'
   } = props;
