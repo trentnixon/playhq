@@ -9,6 +9,7 @@ export const StepHeaderandDescription = ({ Header, Description }) => {
       <Wrapper>
         <P
           color={2}
+          size={'xl'}
           Weight={900}
           marginBottom={10}
           textTransform={"uppercase"}

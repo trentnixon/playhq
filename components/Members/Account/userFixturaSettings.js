@@ -144,7 +144,8 @@ export const SetupInputs = ({ user, setHasUpdated }) => {
           }
           SelectLabel={"Select Account Type"}
           SelectPlaceholder={"Select Account Type"}
-          COLLECTIONID={user.id}
+          COLLECTIONID={user.id} 
+          showSelectInit={true}
         />
       </ShadowWrapper>
       <Space h="lg" />

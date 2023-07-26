@@ -9,28 +9,47 @@ import { IconCheck } from "@tabler/icons-react";
 import { useAccountDetails } from "../../../../lib/userContext";
 import { FixturaLoading } from "../Loading";
 
-const ConfirmButtons = ({ handleConfirmClick, handleChangeClick }) => (
-  <Group position="right">
-    <BTN_ONCLICK LABEL={"Change"} HANDLE={handleChangeClick} THEME={"error"} />
-    <BTN_ONCLICK LABEL={"Save"} HANDLE={handleConfirmClick} THEME={"success"} />
-    
-  </Group>
-);
+const ConfirmButtons = ({ handleConfirmClick, handleChangeClick, name }) => {
+  const [showFinalConfirm, setShowFinalConfirm] = useState(false);
+  return (
+    <Group position="right">
+      <BTN_ONCLICK
+        LABEL={"Change"}
+        HANDLE={handleChangeClick}
+        THEME={"error"}
+      />
+
+      {showFinalConfirm ? (
+        <BTN_ONCLICK
+          LABEL={`Confirm ${name} (this cannot be undone)`}
+          HANDLE={handleConfirmClick}
+          THEME={"success"}
+        />
+      ) : (
+        <BTN_ONCLICK
+          LABEL={"Save"}
+          HANDLE={setShowFinalConfirm}
+          THEME={"success"}
+        />
+      )}
+    </Group>
+  );
+};
 
 const SuccessMessage = ({ name }) => {
-    
-    return(
-        <Group position="apart">
-          <P textTransform={`uppercase`} size={`sm`} marginBottom={0} Copy={name} />
-          <ActionIcon
-            variant="filled"
-            sx={(theme) => ({
-              backgroundColor: theme.colors.members[6],
-            })}
-          >
-            <IconCheck size={18} />
-          </ActionIcon>
-        </Group>);
+  return (
+    <Group position="apart">
+      <P textTransform={`uppercase`} size={`sm`} marginBottom={0} Copy={name} />
+      <ActionIcon
+        variant="filled"
+        sx={(theme) => ({
+          backgroundColor: theme.colors.members[6],
+        })}
+      >
+        <IconCheck size={18} />
+      </ActionIcon>
+    </Group>
+  );
 };
 
 const ClubsList = ({ clubs, handleClubClick }) => (
@@ -39,6 +58,7 @@ const ClubsList = ({ clubs, handleClubClick }) => (
       <li
         key={club.id}
         className="list-group-item"
+        style={{ cursor: "pointer" }}
         onClick={() => handleClubClick(club)}
       >
         {club.attributes.Name}
@@ -52,7 +72,7 @@ export const AutoCompleteSelectClub = ({
   SelectedBaseValueObject,
   AssociationID,
 }) => {
-  const {  ReRender } = useAccountDetails();
+  const { ReRender } = useAccountDetails();
   const [clubs, fetchClubs] = useClubs();
   const [inputValue, setInputValue] = useState("");
   const [selectedClubId, setSelectedClubId] = useState(null);
@@ -71,7 +91,6 @@ export const AutoCompleteSelectClub = ({
     setInputValue(newInputValue);
 
     if (newInputValue.length >= 3) {
-  
       fetchClubs(newInputValue, AssociationID).catch((error) => {
         console.error("An error occurred while fetching clubs:", error);
       });
@@ -110,19 +129,16 @@ export const AutoCompleteSelectClub = ({
         console.error("An error occurred:", response.errors);
         return;
       }
-      
-      
+
       if (response) {
         setUpdateSuccessful(true);
         setIsLoading(false);
-       
       }
-      
     } catch (error) {
       console.error("An error occurred:", error);
+    } finally {
     }
-    finally{}
-    ReRender()
+    ReRender();
   };
 
   const handleChangeClick = () => {
@@ -131,14 +147,11 @@ export const AutoCompleteSelectClub = ({
     setIsSelectionMade(false);
   };
 
-
-
   if (isLoading) {
     return <FixturaLoading />;
   }
   return (
     <div className="mb-3">
-
       <Group position="apart">
         {!isSelectionMade ? (
           <input
@@ -168,6 +181,7 @@ export const AutoCompleteSelectClub = ({
           <ConfirmButtons
             handleConfirmClick={handleConfirmClick}
             handleChangeClick={handleChangeClick}
+            name={selectedClubName}
           />
         )}
       </Group>

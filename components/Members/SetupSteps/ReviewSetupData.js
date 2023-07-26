@@ -59,7 +59,7 @@ export const ReviewSetupData = ({ DATA }) => {
     } catch (error) {
       console.error("An error occurred while registering:", error);
     } finally {
-      setLoading(false);
+      //setLoading(false);
     }
   };
 

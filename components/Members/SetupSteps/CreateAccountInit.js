@@ -23,7 +23,7 @@ export const CreateAccountInit = ({ setAccountsetup }) => {
       } catch (error) {
         console.error(error);
       } finally {
-        setLoading(false);
+        //setLoading(false);
       }
     }
   };

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Loader, Group, ActionIcon } from "@mantine/core";
+import { Loader, Group, ActionIcon, Tooltip } from "@mantine/core";
 import { useAssociations } from "../../../../Hooks/useExpressionOfInterest";
 import { BTN_ONCLICK } from "../utils/Buttons";
 import { fetcher } from "../../../../lib/api";
@@ -9,16 +9,32 @@ import { IconCheck } from "@tabler/icons-react";
 import { FixturaLoading } from "../Loading";
 import { useAccountDetails } from "../../../../lib/userContext";
 
-const ConfirmButtons = ({ handleConfirmClick, handleChangeClick }) => (
-  <Group position="right">
-    <BTN_ONCLICK LABEL={"Change"} HANDLE={handleChangeClick} THEME={"error"} />
-    <BTN_ONCLICK
-      LABEL={"Save"}
-      HANDLE={handleConfirmClick}
-      THEME={"success"}
-    />
-  </Group>
-);
+const ConfirmButtons = ({ handleConfirmClick, handleChangeClick,name }) => {
+  const [showFinalConfirm, setShowFinalConfirm] = useState(false);
+  return (
+    <Group position="right">
+      <BTN_ONCLICK
+        LABEL={"Change"}
+        HANDLE={handleChangeClick}
+        THEME={"error"}
+      />
+
+      {showFinalConfirm ? (
+        <BTN_ONCLICK
+          LABEL={`Confirm ${name} (this cannot be undone)`}
+          HANDLE={handleConfirmClick}
+          THEME={"success"}
+        />
+      ) : (
+        <BTN_ONCLICK
+          LABEL={"Save"}
+          HANDLE={setShowFinalConfirm}
+          THEME={"success"}
+        />
+      )}
+    </Group>
+  );
+};
 
 const SuccessMessage = ({ name }) => (
   <Group position="apart">
@@ -40,6 +56,7 @@ const AssociationsList = ({ associations, handleAssociationClick }) => (
       <li
         key={association.id}
         className="list-group-item"
+        style={{ cursor: "pointer" }}
         onClick={() => handleAssociationClick(association)}
       >
         {association.attributes.Name}
@@ -53,7 +70,7 @@ export const AutoCompleteSelectAssociation = ({
   SelectedBaseValueObject,
   setAssociationID,
 }) => {
-  const {  ReRender } = useAccountDetails();
+  const { ReRender } = useAccountDetails();
   const [associations, fetchAssociations] = useAssociations();
   const [inputValue, setInputValue] = useState("");
   const [selectedAssociationId, setSelectedAssociationId] = useState(null);
@@ -117,7 +134,7 @@ export const AutoCompleteSelectAssociation = ({
         setAssociationID(selectedAssociationId);
         setUpdateSuccessful(true);
         setIsLoading(false);
-        ReRender()
+        ReRender();
       }
     } catch (error) {
       // Handle any other errors that may occur during the fetch
@@ -169,6 +186,7 @@ export const AutoCompleteSelectAssociation = ({
           <ConfirmButtons
             handleConfirmClick={handleConfirmClick}
             handleChangeClick={handleChangeClick}
+            name={selectedAssociationName}
           />
         )}
       </Group>

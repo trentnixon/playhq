@@ -18,11 +18,12 @@ export function SelectFixturaSetting({
   SelectPlaceholder,
   COLLECTIONID,
   WithIcon = false,
+  showSelectInit=false
 }) {
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
   const [selected, setSelected] = useState(SelectedBaseValueObject);
-  const [showSelect, setShowSelect] = useState(false);
+  const [showSelect, setShowSelect] = useState(showSelectInit);
   const [error, setError] = useState(null);
 
   useEffect(() => {

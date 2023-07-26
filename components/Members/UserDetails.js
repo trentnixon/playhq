@@ -105,7 +105,7 @@ export const UserDetailsForSetup = ({
   const INPUTS = [
     {
       Name: "Name",
-      Label: "Who would you like the emails addressed to?",
+      Label: "Who would you like the Content email addressed to?",
       Field: "FirstName",
       Validators: [
         value => value.length > 0 || 'Name is required',
@@ -126,11 +126,13 @@ export const UserDetailsForSetup = ({
     <>
       {INPUTS.map((Input, i) => {
         return (
-          <Input_FixturaSetting
+          <Input_FixturaSetting 
             key={i}
             Input={Input}
             user={user}
             setHasUpdated={setHasUpdated}
+            editingState={true} 
+            canCancel={false}
           />
         );
       })}

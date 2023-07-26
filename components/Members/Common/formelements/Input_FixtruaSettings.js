@@ -9,8 +9,8 @@ import { FixturaLoading } from "../Loading";
 import { P } from "../Type";
 import { BTN_ONCLICK } from "../utils/Buttons";
 
-export const Input_FixturaSetting = ({ Input, user, setHasUpdated }) => {
-  const [editing, setEditing] = useState(false);
+export const Input_FixturaSetting = ({ Input, user, setHasUpdated, editingState=false, canCancel=true }) => {
+  const [editing, setEditing] = useState(editingState);
   const [value, setValue] = useState(user?.attributes[Input.Field]);
   const [disabled, setDisabled] = useState(true);
   const [loading, setLoading] = useState(false);
@@ -140,11 +140,14 @@ export const Input_FixturaSetting = ({ Input, user, setHasUpdated }) => {
                 />
               ) : (
                 <>
-                  <BTN_ONCLICK
-                    LABEL="Cancel"
-                    HANDLE={() => setEditing(false)}
-                    THEME="error"
-                  />
+                {
+                  canCancel ?<BTN_ONCLICK
+                  LABEL="Cancel"
+                  HANDLE={() => setEditing(false)}
+                  THEME="error"
+                />:false
+                }
+                  
                   <BTN_ONCLICK
                     LABEL="Save"
                     HANDLE={handleSubmit}

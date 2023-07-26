@@ -1,4 +1,4 @@
-import { Button } from "@mantine/core";
+import { Button, Tooltip } from "@mantine/core";
 import Link from "next/link";
 import { createStyles } from "@mantine/core";
 
@@ -9,7 +9,7 @@ const useStyles = createStyles((theme, _params, getRef) => ({
     "&:hover": {
       backgroundColor: theme.colors.members[3],
       color: theme.colors.members[0],
-      transition: 'background-color 0.5s, color 0.5s'
+      transition: "background-color 0.5s, color 0.5s",
     },
   },
   error: {
@@ -18,25 +18,25 @@ const useStyles = createStyles((theme, _params, getRef) => ({
     "&:hover": {
       backgroundColor: theme.colors.members[8],
       color: theme.colors.members[0],
-      transition: 'background-color 0.5s, color 0.5s'
+      transition: "background-color 0.5s, color 0.5s",
     },
   },
-  success:{
+  success: {
     borderColor: theme.colors.members[6],
     color: theme.colors.members[6],
     "&:hover": {
       backgroundColor: theme.colors.members[6],
       color: theme.colors.members[0],
-      transition: 'background-color 0.5s, color 0.5s'
+      transition: "background-color 0.5s, color 0.5s",
     },
   },
-  cta:{
+  cta: {
     borderColor: theme.colors.members[3],
     color: theme.colors.members[3],
     "&:hover": {
       backgroundColor: theme.colors.members[3],
       color: theme.colors.members[0],
-      transition: 'background-color 0.5s, color 0.5s'
+      transition: "background-color 0.5s, color 0.5s",
     },
   },
 }));
@@ -67,7 +67,7 @@ export const BTN_TOINTERALLINK = ({
   idDisabled = false,
   THEME = "standard",
 }) => {
-    const { classes } = useStyles();
+  const { classes } = useStyles();
   return (
     <Link href={URL}>
       <Button
@@ -87,7 +87,7 @@ export const BTN_TOEXTLINK = ({
   idDisabled = false,
   THEME = "standard",
 }) => {
-    const { classes } = useStyles();
+  const { classes } = useStyles();
   return (
     <Button
       component="a"

@@ -8,12 +8,12 @@ export const StepAboutTheCricket = ({ user, setHasUpdated }) => {
       <StepHeaderandDescription
         Header={"About your association/club"}
         Description={
-          "Please select the appropriate organization type from the options below. Next, enter the names of your club and association in the provided boxes to ensure accurate setup of your account. Please double-check your selections, as these options cannot be changed later. "
+          "Select the appropriate organization type from the options below. Next, enter the names of your association then club in the provided boxes to ensure accurate setup of your account. Please double-check your selections, as these options cannot be changed later. "
         }
       />
 
       <SetupInputs user={user} setHasUpdated={setHasUpdated} />
-      <P
+      <P 
         color={8}
         size={'xs'}
         textAlign="right"
