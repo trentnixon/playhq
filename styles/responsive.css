@@ -2182,8 +2182,8 @@
     padding: 0 20px;
   }
   .page-title-area {
-    padding-top: 270px;
-    padding-bottom: 200px;
+    top: 120px;
+    bottom: 120px;
   }
 }
 /*# sourceMappingURL=responsive.css.map */

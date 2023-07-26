@@ -131,7 +131,7 @@ export const SetupInputs = ({ user, setHasUpdated }) => {
 
   return (
     <>
-      <LabelMe label="Account Type" />
+      <LabelMe label="We are a ..." />
 
       <ShadowWrapper> 
         <SelectFixturaSetting

@@ -3217,8 +3217,11 @@ $transition: .5s;
     }
 
     .page-title-area {
-        padding-top: 270px;
-        padding-bottom: 200px;
+        height: 300px;
+        padding: {
+            top: 120px;
+            bottom: 120px;
+        }
     }
 }
 
