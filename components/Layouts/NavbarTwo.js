@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { getAccountFromLocalCookie, unsetToken } from "../../lib/auth";
 import { useUser } from "../../lib/authContext";
 import Link from "../../utils/ActiveLink";
@@ -16,7 +16,7 @@ import { Group, useMantineTheme } from "@mantine/core";
 import { useAccountDetails } from "../../lib/userContext";
 
 const NavbarTwo = () => {
-  const [menu, setMenu] = React.useState(true);
+  const [menu, setMenu] = useState(true);
   const toggleNavbar = () => {
     setMenu(!menu);
   };
@@ -24,7 +24,7 @@ const NavbarTwo = () => {
   // user Context
   const { user, loading } = useUser();
 
-  React.useEffect(() => {
+  useEffect(() => {
     let elementId = document.getElementById("navbarTwo");
     document.addEventListener("scroll", () => {
       if (window.scrollY > 170) {
@@ -80,34 +80,44 @@ const NavbarTwo = () => {
 
             <div className={classOne} id="navbarSupportedContent">
               <ul className="navbar-nav">
-                {user && <MembersNavItem user={user} />}
+                {user && <MembersNavItem user={user} setMenu={setMenu} />}
                 <li className="nav-item">
                   <Link href="/">
-                    <a className="nav-link">Home</a>
+                    <a className="nav-link" onClick={() => setMenu(true)}>
+                      Home
+                    </a>
                   </Link>
                 </li>
 
                 <li className="nav-item">
                   <Link href="/portfolio" activeClassName="active">
-                    <a className="nav-link">Examples</a>
+                    <a className="nav-link" onClick={() => setMenu(true)}>
+                      Examples
+                    </a>
                   </Link>
                 </li>
 
                 <li className="nav-item">
                   <Link href="/about" activeClassName="active">
-                    <a className="nav-link">About us</a>
+                    <a className="nav-link" onClick={() => setMenu(true)}>
+                      About us
+                    </a>
                   </Link>
                 </li>
 
                 <li className="nav-item">
                   <Link href="/faq" activeClassName="active">
-                    <a className="nav-link">FAQ</a>
+                    <a className="nav-link" onClick={() => setMenu(true)}>
+                      FAQ
+                    </a>
                   </Link>
                 </li>
 
                 <li className="nav-item">
                   <Link href="/contact" activeClassName="active">
-                    <a className="nav-link">Contact Us</a>
+                    <a className="nav-link" onClick={() => setMenu(true)}>
+                      Contact Us
+                    </a>
                   </Link>
                 </li>
               </ul>
@@ -121,7 +131,7 @@ const NavbarTwo = () => {
 
 export default NavbarTwo;
 
-const NavItem = ({ href, title, IconComponent }) => {
+const NavItem = ({ href, title, IconComponent, setMenu }) => {
   const theme = useMantineTheme();
   return (
     <li className="nav-item members-item">
@@ -135,7 +145,11 @@ const NavItem = ({ href, title, IconComponent }) => {
               backgroundColor: theme.colors.dark[0],
               color: theme.colors.dark[0],
             },
+            "@media (max-width: 48em)": {
+              paddingLeft: 0,
+            },
           })}
+          onClick={() => setMenu(true)}
         >
           <a className="nav-link">{title}</a>
 
@@ -150,7 +164,7 @@ const NavItem = ({ href, title, IconComponent }) => {
   );
 };
 
-const MembersNavItem = ({ user }) => {
+const MembersNavItem = ({ user, setMenu }) => {
   const router = useRouter();
   const PATH = "/members";
   const theme = useMantineTheme();
@@ -189,7 +203,7 @@ const MembersNavItem = ({ user }) => {
       href: `${PATH}/setup`,
       title: "Setup Account",
       IconComponent: IconBrandStripe,
-    }
+    },
   ];
 
   const navItemsToRender =
@@ -207,11 +221,11 @@ const MembersNavItem = ({ user }) => {
 
       <ul className="dropdown-menu">
         {navItemsToRender.map((item, index) => (
-          <NavItem key={index} {...item} />
+          <NavItem key={index} {...item} setMenu={setMenu} />
         ))}
         {hasSetup !== "undefined" && (
           <li className="nav-item">
-            <Group position="apart">
+            <Group position="apart" px={0}>
               <a className="nav-link" onClick={handleLogout}>
                 Log Out
               </a>

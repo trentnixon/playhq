@@ -6,8 +6,6 @@ import { useState } from "react";
 
 const useStyles = createStyles((theme) => ({
   card: {
-    height: "500px",
-    width: "400px",
     display: "flex",
     flexDirection: "column",
     justifyContent: "space-between",
@@ -45,9 +43,19 @@ function Card({ image, title, category, video, setToggler, setVideoUrl }) {
   return (
     <Paper
       shadow="md"
+      w={'100%'}
       p="xl"
       radius="md"
-      sx={{ backgroundImage: `url(${image})` }}
+      sx={{
+        backgroundImage: `url(${image})`,
+   
+        height: "500px",
+        width: "400px",
+        "@media (max-width: 48em)": {
+          height: "400px",
+          width: "320px",
+        },
+      }}
       className={classes.card}
     >
       <div>
@@ -86,11 +94,10 @@ export function CardsCarousel({ data }) {
         sources={[videoUrl]}
         onClose={() => setToggler(false)}
       />
-      <div style={{ height: 500, display: "flex" }}>
-        <Carousel
+      <Carousel
           slideSize="33.33333%"
           breakpoints={[
-            { maxWidth: "sm", slideSize: "100%", slideGap: "10px" },
+            { maxWidth: "xs", slideSize: "100%", slideGap: 0 },
           ]}
           slideGap="xl"
           align="start"
@@ -101,7 +108,6 @@ export function CardsCarousel({ data }) {
         >
           {slides}
         </Carousel>
-      </div>
     </>
   );
 }

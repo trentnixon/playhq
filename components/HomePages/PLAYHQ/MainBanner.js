@@ -1,8 +1,8 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect } from "react";
 
 import Link from "next/link";
 import { Gradient } from "../../../utils/Gradient";
-import { Text, Title } from "@mantine/core";
+import { Image, Text, Title } from "@mantine/core";
 
 const MainBanner = () => {
   return (
@@ -16,29 +16,60 @@ const MainBanner = () => {
               <div className="row align-items-center">
                 <div className="col-lg-8">
                   <div className="main-banner-content">
-                    <img
+                    <Image
                       src="/images/FixturaLogoLarge.png"
-                      className="white-logo"
-                      alt="logo"
+                      sx={{
+                        "@media (max-width: 48em)": {
+                          innerWidth: "90%",
+                          marginTop: "40px",
+                          marginBottom: "20px",
+                        },
+                      }}
                     />
                   </div>
                 </div>
 
                 <div className="col-lg-4">
                   <div className="main-banner-content">
-                    <Title
-                      style={{ fontSize: "2.5em", lineHeight: "1em" }}
+                    <Text
                       align="right"
                       color="blue.9"
+                      sx={{
+                        fontSize: "2.5em",
+                        lineHeight: ".9em",
+                        fontWeight:600,
+                        marginBottom:'10px',
+                        "@media (max-width: 48em)": {
+                          fontSize: "2em",
+                          textAlign: "center",
+                          marginBottom:'20px',
+                        },
+                      }}
                     >
                       From Scintillating Scorecards to Captivating Chronicles
-                    </Title>
+                    </Text>
 
-                    <Text fz="xl" align="right">
+                    <Text
+                      fz="xl"
+                      align="right"
+                      sx={{
+                        "@media (max-width: 48em)": {
+                          textAlign: "center",
+                          lineHeight: "1em",
+                        },
+                      }}
+                    >
                       Elevate Your Organization's Story with Fixtura's
                       Effortless Content Creation
                     </Text>
-                    <Text align="right">
+                    <Text
+                      align="right"
+                      sx={{
+                        "@media (max-width: 48em)": {
+                          textAlign: "center",
+                        },
+                      }}
+                    >
                       <Link href="/SignUp">
                         <a className="btn btn-secondary">Get Started</a>
                       </Link>
