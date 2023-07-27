@@ -38,7 +38,7 @@ const SignUpForm = () => {
 
   const handleTermsChange = (e) => {
     const { name, value } = e.target;
-    console.log(terms);
+    //console.log(terms);
 
     setTerms(!terms); // update the value of "terms" when the checkbox is clicked
     setContact((prevState) => ({ ...prevState, [name]: !terms }));
@@ -53,7 +53,7 @@ const SignUpForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const { name, email, password } = contact;
-    console.log(name, email);
+    //console.log(name, email);
     try {
       const response = await fetcher(
         `${process.env.NEXT_PUBLIC_STRAPI_URL}/auth/local/register`,
@@ -69,7 +69,7 @@ const SignUpForm = () => {
           }),
         }
       );
-      console.log(response);
+      //console.log(response);
 
       if (response.user) {
         setRegistered(true);
@@ -85,9 +85,7 @@ const SignUpForm = () => {
     }
   };
 
-  useEffect(() => {
-    console.log(contact);
-  }, [contact, terms]);
+  useEffect(() => {}, [contact, terms]);
 
   if (Registered) return <SuccessfulRegistration />;
   if (error)

@@ -12,7 +12,15 @@ import {
 import { useAccountDetails } from "../../../lib/userContext";
 import { useSetAccountTrue } from "../../../Hooks/useAccount";
 import { setAccountFromLocalCookie } from "../../../lib/auth";
-import { IconCheck, IconHome2, IconMailbox, IconSettings2, IconShield, IconUser, IconUsersGroup } from "@tabler/icons-react";
+import {
+  IconCheck,
+  IconHome2,
+  IconMailbox,
+  IconSettings2,
+  IconShield,
+  IconUser,
+  IconUsersGroup,
+} from "@tabler/icons-react";
 import { BTN_ONCLICK } from "../../../components/Members/Common/utils/Buttons";
 import { P, PageTitle } from "../Common/Type";
 import { FixturaLoading } from "../../../components/Members/Common/Loading";
@@ -29,16 +37,30 @@ const ReviewContainer = ({ OBJ, Title }) => {
         textTransform={`uppercase`}
       />
       <Paper shadow="sm" p="md" withBorder>
-        {OBJ.map((item, i) => (
-          <Group key={i} position="apart" mb={20} grow>
-            <Group>
-              {item.icon}
-              <P Copy={item.key} size={"md"} Weight={600} color={3} marginBottom={0} />
-            </Group>
-            <P Copy={item.value} size={"md"} textAlign="left" marginBottom={0} />
-            <IconCheck size="2em" color={theme.colors.green[5]} />
-          </Group>
-        ))}
+        {OBJ.map((item, i) => {
+          if (item.value)
+            return (
+              <Group key={i} position="apart" mb={20} grow>
+                <Group>
+                  {item.icon}
+                  <P
+                    Copy={item.key}
+                    size={"md"}
+                    Weight={600}
+                    color={3}
+                    marginBottom={0}
+                  />
+                </Group>
+                <P
+                  Copy={item.value}
+                  size={"md"}
+                  textAlign="left"
+                  marginBottom={0}
+                />
+                <IconCheck size="2em" color={theme.colors.green[5]} />
+              </Group>
+            );
+        })}
       </Paper>
     </>
   );
@@ -53,7 +75,7 @@ export const ReviewSetupData = ({ DATA }) => {
 
   const CompleteRegistration = async () => {
     setLoading(true);
-    console.log('CompleteRegistration')
+    console.log("CompleteRegistration");
     try {
       await CreateSetAccountTrue(DATA.id);
     } catch (error) {
@@ -92,8 +114,16 @@ export const ReviewSetupData = ({ DATA }) => {
         <ReviewContainer
           Title="Recipient"
           OBJ={[
-            { key: "Name", value: DATA.attributes.FirstName, icon: <IconUser size="2em" color={theme.colors.blue[5]} /> },
-            { key: "Email", value: DATA.attributes.DeliveryAddress, icon: <IconMailbox size="2em" color={theme.colors.blue[5]} /> },
+            {
+              key: "Name",
+              value: DATA.attributes.FirstName,
+              icon: <IconUser size="2em" color={theme.colors.blue[5]} />,
+            },
+            {
+              key: "Email",
+              value: DATA.attributes.DeliveryAddress,
+              icon: <IconMailbox size="2em" color={theme.colors.blue[5]} />,
+            },
           ]}
         />
         <ReviewContainer
@@ -111,7 +141,7 @@ export const ReviewSetupData = ({ DATA }) => {
             },
             {
               key: "Club",
-              value: DATA.attributes.clubs.data[0].attributes.Name,
+              value: DATA.attributes?.clubs?.data[0]?.attributes?.Name,
               icon: <IconHome2 size="2em" color={theme.colors.blue[5]} />,
             },
           ]}

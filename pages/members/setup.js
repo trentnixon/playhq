@@ -47,7 +47,7 @@ const SETUP = () => {
       <P Copy={`The setup process should only take a few minutes.`} />
       <CreateAccountInit setAccountsetup={setAccountSetup} />
     </>
-  );
+  ); 
 
   if (review) return <ReviewSetupData DATA={UserAccount} />;
 
