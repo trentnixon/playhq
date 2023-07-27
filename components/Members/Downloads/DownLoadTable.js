@@ -51,7 +51,7 @@ const useStyles = createStyles((theme) => ({
 
 export function DownloadTable({ data, Token }) {
   const theme = useMantineTheme();
-  const { account } = useAccountDetails();
+ 
   const { classes, cx } = useStyles();
   const [scrolled, setScrolled] = useState(false);
 
@@ -135,6 +135,8 @@ export function DownloadTable({ data, Token }) {
 }
 
 const TableRow = ({ row, Token }) => {
+  const { account } = useAccountDetails();
+
   return (
    
     <tr key={row.name}>
