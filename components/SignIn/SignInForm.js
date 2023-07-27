@@ -5,8 +5,6 @@ import { setToken } from "../../lib/auth";
 import { useUser } from "../../lib/authContext";
 import UserLoggedIn from "./LoginSuccess";
 import { useLogUser } from "../../Hooks/useAuthLocal";
-import { P } from "../Members/Common/Type";
-import { FixturaLoading } from "../Members/Common/Loading";
 
 // Form initial state
 const INITIAL_STATE = {
@@ -46,7 +44,7 @@ const SignInForm = () => {
     } catch (error) {
       setError("An error occurred during login.");
     } finally {
-      //setLoading(false);
+      setLoading(false);
     }
   };
 
@@ -56,12 +54,9 @@ const SignInForm = () => {
 
   if (loading) {
     return (
-      <div>
-        <div className="contact-form ptb-100">
-          <div className="contact-title">
-            <P Copy={`Loading`} color={2} textAlign={"center"} />
-            <FixturaLoading />
-          </div>
+      <div className="contact-form ptb-100">
+        <div className="contact-title">
+          <div>Loading...</div>
         </div>
       </div>
     );
@@ -73,19 +68,13 @@ const SignInForm = () => {
 
   if (error) {
     return (
-      <div>
-        <div className="contact-form ptb-100">
-          <div className="contact-title">
-            <h2>Error Signing In</h2>
-
-            <P Copy={error} color={8} textAlign={"center"} />
-            <button
-              className="btn btn-secondary"
-              onClick={() => setError(null)}
-            >
-              Try again
-            </button>
-          </div>
+      <div className="contact-form ptb-100">
+        <div className="contact-title">
+          <h2>Error</h2>
+          <p>{error}</p>
+          <button onClick={() => setError(null)} className="btn btn-primary">
+            Try again
+          </button>
         </div>
       </div>
     );
@@ -129,7 +118,7 @@ const SignInForm = () => {
                 </div>
               </div>
 
-              <div className="col-lg-12 col-sm-12 mt-2 mb-2">
+              <div className="col-lg-12 col-sm-12">
                 <button type="submit" className="btn btn-primary">
                   Login
                 </button>
