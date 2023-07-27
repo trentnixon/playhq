@@ -21,6 +21,7 @@ import {
   FormattDateFormDownloadTable,
   orderedArray,
 } from "../../Downloads/helpers";
+import { useAccountDetails } from "../../../lib/userContext";
 const useStyles = createStyles((theme) => ({
   header: {
     position: "sticky",
@@ -50,8 +51,11 @@ const useStyles = createStyles((theme) => ({
 
 export function DownloadTable({ data, Token }) {
   const theme = useMantineTheme();
+  const { account } = useAccountDetails();
   const { classes, cx } = useStyles();
   const [scrolled, setScrolled] = useState(false);
+
+  console.log("account ", account.id)
   const rows = orderedArray(data).map((row, i) => (
     <TableRow key={i} row={row} Token={Token} />
   ));
@@ -142,7 +146,7 @@ const TableRow = ({ row, Token }) => {
       <td>
         <BTN_TOEXTLINK
           LABEL="Visit"
-          URL={`https://content.fixtura.com.au/${Cookies.get("id")}/${
+          URL={`https://content.fixtura.com.au/${account.id}/${
             row.id
           }?token=${Token}`}
           THEME="cta"

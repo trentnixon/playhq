@@ -67,7 +67,7 @@ export const SelectATemplate = () => {
       <FixturaDivider />
       <SubHeaders Copy={`Choose Your Theme`} />
       <P
-        Copy={`Tailor Your Assets with Custom Templates. Our themed layout templates bring out the best in your content, giving it a cohesive and professional look. Explore our selection of design options, and see how each template complements your brand in the preview video.`}
+        Copy={`Customize Your Assets with Themed Layout Templates for a cohesive and professional look that complements your brand in the preview video.`}
       />
       <Paper
         radius="md"

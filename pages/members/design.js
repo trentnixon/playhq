@@ -7,13 +7,11 @@ import { fetcher } from "../../lib/api";
 import { P, PageTitle, SubHeaders } from "../../components/Members/Common/Type";
 import {
   MembersWrapper,
-  PageCopyWrapper,
-  Wrapper,
+  PageCopyWrapper
 } from "../../components/Members/Common/Containers";
-import { Box, Container, Group, Space } from "@mantine/core";
+import {  Space } from "@mantine/core";
 import { IconColorPicker } from "@tabler/icons";
 import { DesignTabs } from "../../components/Members/Design/DesignTabs";
-import { AccountLogo } from "../../components/Members/Design/AddLogo";
 import { LoadingStateWrapper } from "../../components/Members/Account/HOC/LoadingStateWrapper";
 const qs = require("qs");
 
@@ -59,7 +57,7 @@ const Design = () => {
 
       <PageCopyWrapper>
         <P
-          Copy={`Elevate Your Content with Personalized Templates and Audio. The design aspect of Fixtura allows you to choose a template that best suits your club or association's style, and select the perfect audio that aligns with your brand identity. With customizable logos and colors available through the 'Your Brand' page, your visual assets will be tailored to represent your team's unique spirit.`}
+          Copy={`Elevate Your Content with Personalized Templates and Audio for a unique representation of your club or association's style and brand identity.`}
         />
       </PageCopyWrapper>
       <Space h={20} />

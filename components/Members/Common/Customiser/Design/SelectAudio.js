@@ -99,7 +99,7 @@ export const SelectAudio = ({ isPlaying }) => {
   return (
     <>
       <SubHeaders Copy={`Set the Tone`} />
-      <P Copy={`Pick the Perfect Audio for Your Assets. Sound is an essential part of creating engaging content. Preview and choose from our collection of audio tracks that resonate with your club's personality and add that extra touch of excitement to your videos and images.`} />
+      <P Copy={`Choose the Perfect Audio to Add Extra Excitement to Your Videos and Images. Preview and select from our collection of audio tracks that resonate with your club's personality and complement your content.`} />
       <Paper
         radius="md"
         shadow="md"
