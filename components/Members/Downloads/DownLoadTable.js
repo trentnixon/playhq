@@ -54,8 +54,6 @@ export function DownloadTable({ data, Token }) {
  
   const { classes, cx } = useStyles();
   const [scrolled, setScrolled] = useState(false);
-
-  console.log("account ", account.id)
   const rows = orderedArray(data).map((row, i) => (
     <TableRow key={i} row={row} Token={Token} />
   ));
