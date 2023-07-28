@@ -44,7 +44,7 @@ const SignInForm = () => {
     } catch (error) {
       setError("An error occurred during login.");
     } finally {
-      setLoading(false);
+      //setLoading(false);
     }
   };
 

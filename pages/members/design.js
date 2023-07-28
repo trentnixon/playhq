@@ -7,9 +7,9 @@ import { fetcher } from "../../lib/api";
 import { P, PageTitle, SubHeaders } from "../../components/Members/Common/Type";
 import {
   MembersWrapper,
-  PageCopyWrapper
+  PageCopyWrapper,
 } from "../../components/Members/Common/Containers";
-import {  Space } from "@mantine/core";
+import { Space } from "@mantine/core";
 import { IconColorPicker } from "@tabler/icons";
 import { DesignTabs } from "../../components/Members/Design/DesignTabs";
 import { LoadingStateWrapper } from "../../components/Members/Account/HOC/LoadingStateWrapper";
@@ -49,24 +49,23 @@ const Design = () => {
     console.log("userAccount ", userAccount);
   }, [userAccount]);
 
-  return ( 
+  return (
     <LoadingStateWrapper conditions={[user, userAccount]}>
-    <MembersWrapper>
-      <PageTitle Copy={"Asset Design"} ICON={<IconColorPicker size={40} />} />
-      <SubHeaders Copy={"Design Your Vision"} />
-
-      <PageCopyWrapper>
-        <P
-          Copy={`Elevate Your Content with Personalized Templates and Audio for a unique representation of your club or association's style and brand identity.`}
-        />
-      </PageCopyWrapper>
-      <Space h={20} />
-      <DesignTabs
+      <MembersWrapper>
+        <PageTitle Copy={"Asset Design"} ICON={<IconColorPicker size={40} />} />
+        <SubHeaders Copy={"Design Your Vision"} />
+        <PageCopyWrapper>
+          <P 
+            Copy={`Elevate Your Content with Personalized Templates and Audio for a unique representation of your club or association's style and brand identity.`}
+          />
+        </PageCopyWrapper>
+        <Space h={20} />
+        <DesignTabs
           isPlaying={isPlaying}
           userAccount={userAccount}
           setIsPlaying={setIsPlaying}
         />
-    </MembersWrapper>
+      </MembersWrapper>
     </LoadingStateWrapper>
   );
 };

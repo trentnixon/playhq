@@ -46,14 +46,14 @@ const OrderHistory = (props) => {
       </MembersWrapper>
     );
 
-  return (
+  return ( 
     <MembersWrapper>  
       <SetupCheck>
         <LoadingStateWrapper conditions={[user, Renders]}>
            <PageTitle Copy={`Downloads`} ICON={<IconDownload size={40} />} />
           <DownloadCopy />
           <Space h={20} />
-          <DownloadsSelectDays days_of_the_week={Renders.days_of_the_week} renders={Renders.renders} />
+          <DownloadsSelectDays renders={Renders.renders} />
           <Space h={20} />
           <SubHeaders
             Copy={`Renders (${Renders.renders.length})`}

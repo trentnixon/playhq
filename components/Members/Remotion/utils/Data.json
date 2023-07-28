@@ -1,39 +1,65 @@
- {
-  "RunScorers": [
-    
+{
+  "TIMINGS": {
+    "FPS_INTRO": 90,
+    "FPS_OUTRO": 120,
+    "FPS_MAIN": 360
+  },
+  "VIDEOMETA": {
+    "Video": {
+      "Title": "Top 5",
+			"TitleSplit": ["Weekend", "Run-Scorers"],
+			"CompositionID": "Top5BattingList",
+      "VideoTitle": "Runaway Bay Cricket Club Inc Top 5",
+      "PlayHQLogo": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Play_HQ_Logo_942f7f18cf.png?updated_at=2023-02-06T06:18:05.861Z",
+      "Theme": false,
+      "Template": false,
+      "audio_option": false
+    },
+    "Club": {
+      "Name": "Runaway Bay Cricket Club Inc",
+      "Logo": "https://res.cloudinary.com/playhq/image/upload/h_128,w_128/v1/production/ca/5e70931e-19e8-4a58-86a2-d431c122e8f1/1656732720632/logo.png"
+    }
+  },
+  "DATA": [
     {
-      "name": "Lakeside Lions",
-      "player": "Matthew Hayden",
-      "score": "150 (120)",
-      "state": "Queensland",
-      "strike rate": 125
-    },{
-      "name": "Valley View Vultures",
-      "player": "Michael Clarke",
-      "score": "120* (80)",
-      "state": "New South Wales",
-      "strike rate": 150
+      "name": "Sachin Tendulkar",
+      "key": 52,
+      "param1": 62,
+      "param2": 83.87,
+      "playedAgainst": "Australia",
+      "playedFor": "India"
     },
     {
-      "name": "Mountain Ridge Mavericks",
-      "player": "Adam Gilchrist",
-      "score": "110 (70)",
-      "state": "Western Australia",
-      "strike rate": 157
+      "name": "Ricky Ponting",
+      "key": 41,
+      "param1": 72,
+      "param2": 56.94,
+      "playedAgainst": "England",
+      "playedFor": "Australia"
     },
     {
-      "name": "Sunnyvale Snipers",
-      "player": "Steve Waugh",
-      "score": "100* (60)",
-      "state": "New South Wales",
-      "strike rate": 167
+      "name": "Brian Lara",
+      "key": 36,
+      "param1": 40,
+      "param2": 90,
+      "playedAgainst": "South Africa",
+      "playedFor": "West Indies"
     },
     {
-      "name": "Riverbank Rhinos",
-      "player": "Shane Warne",
-      "score": "50 (40)",
-      "state": "Victoria",
-      "strike rate": 125
+      "name": "Jacques Kallis",
+      "key": 36,
+      "param1": 54,
+      "param2": 66.66,
+      "playedAgainst": "New Zealand",
+      "playedFor": "South Africa"
+    },
+    {
+      "name": "Wasim Akram",
+      "key": 34,
+      "param1": 40,
+      "param2": 85,
+      "playedAgainst": "India",
+      "playedFor": "Pakistan"
     }
   ]
 }

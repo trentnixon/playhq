@@ -14,13 +14,12 @@ export const SelectDeliveryDay = () => {
   );
 
   const setHasUpdated = () => {
-    console.log("setHasUpdated setHasUpdated setHasUpdated")
+    console.log("A DAY HAD CHANGED")
     ReRender();
   };
   useEffect(() => {
-    //console.log(userAccount.attributes.scheduler.data.attributes.days_of_the_week.data.attributes.Name)
-    console.log("Account data changed: ", userAccount);
-  }, [userAccount]);
+    console.log("Account data changed: ", account.attributes.scheduler.data.attributes.days_of_the_week.data.attributes.Name);
+  }, [userAccount,account]);
 
   if (userAccount === null) {
     return <FixturaLoading />;
@@ -44,7 +43,7 @@ export const SelectDeliveryDay = () => {
               CollectionSaveTo={"schedulers"}
               RelationProperty={"days_of_the_week"}
               SelectedBaseValueObject={{ ID: null, Name: null }}
-              SelectLabel={`Delivered on : ${userAccount.attributes.scheduler.data.attributes.days_of_the_week.data.attributes.Name}`}
+              SelectLabel={`Delivered on : ${account.attributes.scheduler.data.attributes.days_of_the_week.data.attributes.Name}`}
               SelectPlaceholder={"Select a day of the week"}
               user={userAccount}
               setHasUpdated={setHasUpdated}

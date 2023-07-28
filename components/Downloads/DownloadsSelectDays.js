@@ -4,7 +4,12 @@ import { P } from "../Members/Common/Type";
 import { SelectDeliveryDay } from "../Members/Downloads/SelectDeliveryDay";
 // Utils
 import { daysUntil, checkDeliveryDate } from "./helpers";
-export const DownloadsSelectDays = ({ days_of_the_week, renders }) => {
+import { useAccountDetails } from "../../lib/userContext";
+export const DownloadsSelectDays = ({ renders }) => {
+  const { account, ReRender } = useAccountDetails();
+  const days_of_the_week =
+    account.attributes.scheduler.data.attributes.days_of_the_week.data
+      .attributes.Name;
   return (
     <>
       <Group position="apart">
@@ -43,7 +48,7 @@ const DaysTill = ({ days_of_the_week, renders }) => {
             color={1}
             marginBottom={0}
             Copy={`Next Order will be delivered in ${daysUntil(
-              days_of_the_week.Name
+              days_of_the_week
             )} days`}
           />
         ) : (

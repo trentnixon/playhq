@@ -1,121 +1,213 @@
-import { Sequence, AbsoluteFill, Series, Video } from "remotion";
-import styled from "styled-components";
+import {Sequence, Series, Img} from 'remotion';
 
-import { useCurrentFrame } from "remotion";
+import styled from 'styled-components';
 
-import { SpringToFrom } from "../../../../Animation/RemotionSpring";
-import { interpolateOpacityByFrame } from "../../../../Animation/interpolate";
+import {useCurrentFrame} from 'remotion';
+
+import {SpringToFrom} from '../../../../Animation/RemotionSpring';
+import {interpolateOpacityByFrame} from '../../../../Animation/interpolate';
 import {
-  EraseToMiddleFromTop,
-  FromMiddle,
-  FromTopToBottom,
-} from "../../../../Animation/ClipWipe";
-import {
-  getContrastColor,
-  lightenColor,
-  darkenColor,
-} from "../../../../utils/colors";
-import { calculateLetterSpacing } from "../../../../utils/copy";
+	EraseToMiddleFromTop,
+	EraseFromMiddle,
+	FromTopToBottom,
+	FromLeftToRight,
+} from '../../../../Animation/ClipWipe';
+import {getContrastColor, lightenColor} from '../../../../utils/colors';
 
-const VIDEO = {
-  mixBlendMode: "luminosity",
-  opacity: 0.1,
+export const TitleSequenceFrame = ({theme, FPS, fontFamily, DATA}) => {
+	const frame = useCurrentFrame();
+
+	const getPrimarySponsor = (sponsorList) => {
+		return sponsorList?.find((sponsor) => sponsor.isPrimary === true);
+	};
+
+	const getGradient = (color, lightColor) => {
+		return `linear-gradient(to bottom, ${color}, ${lightColor})`;
+	};
+
+	return (
+		<>
+			<Sequence>
+				<Series>
+					<Series.Sequence durationInFrames={FPS} layout="none">
+						<LogoContainer
+							style={{
+								fontFamily,
+								transform: `scale(${SpringToFrom(
+									7,
+									0,
+									1,
+									'Wobbly'
+								)}) scale(${SpringToFrom(FPS - 30, 1, 0, 'Slow')})`,
+							}}
+						>
+							<Img
+								src={DATA.VIDEOMETA.Club.Logo}
+								style={{
+									width: 'auto',
+									maxHeight: '450px',
+									minHeight: '450px',
+									objectFit: 'contain',
+									borderRadius:'100%'
+								}}
+							/>
+						</LogoContainer>
+						<ClubNameContainer>
+							<ClubName
+								style={{
+									fontFamily,
+									clipPath: FromTopToBottom(15, 'Wobbly'),
+									color: getContrastColor(theme.primary), 
+									opacity: interpolateOpacityByFrame(
+										frame,
+										FPS - 25,
+										FPS - 15,
+										1,
+										0
+									),
+								}}
+							>
+								{DATA.VIDEOMETA.Club.Name}
+							</ClubName>
+						</ClubNameContainer>
+						<VideoTitle
+							style={{
+								fontFamily,
+								clipPath: FromLeftToRight(25, 'Wobbly'),
+								color: getContrastColor(theme.primary),
+								opacity: interpolateOpacityByFrame(
+									frame,
+									FPS - 25,
+									FPS - 15,
+									1,
+									0
+								),
+							}}
+						>
+							{DATA.VIDEOMETA.Video.Title}
+						</VideoTitle>
+
+						<SqareBG
+							style={{
+								background: getGradient(
+									theme.secondary,
+									lightenColor(theme.secondary)
+								),
+								opacity: 0.2,
+								height: `${SpringToFrom(0, 0, 1950, 'Wobbly')}px`,
+								transform: `translateY(${SpringToFrom(
+									0,
+									-190,
+									0,
+									'Wobbly'
+								)}px)`,
+								borderLeft: `5px solid ${lightenColor(theme.secondary)}`,
+								borderRight: `5px solid ${lightenColor(theme.secondary)}`,
+								clipPath: EraseFromMiddle(FPS - 20, 'Slow'),
+							}}
+						/>
+
+						{/* 	<PrincipalLogo
+							style={{
+								transform: `translateY(${SpringToFrom(0, 300, 0, 'Wobbly')}px)`,
+								clipPath: EraseToMiddleFromTop(FPS - 20, 'Slow'),
+							}}
+						>
+							<Img
+								src={getPrimarySponsor(DATA.VIDEOMETA.Club.Sponsors).Logo}
+								width="100%"
+							/>
+						</PrincipalLogo>
+						<PlayHQLOGO
+							style={{
+								transform: `translateY(${SpringToFrom(0, 300, 0, 'Wobbly')}px)`,
+								clipPath: EraseToMiddleFromTop(FPS - 20, 'Slow'),
+							}}
+						>
+							<Img src={DATA.VIDEOMETA.Video.PlayHQLogo} width="100%" />
+						</PlayHQLOGO> */}
+					</Series.Sequence>
+				</Series>
+			</Sequence>
+		</>
+	);
 };
 
-export const TitleSequenceFrame = ({ theme, fontFamily }) => {
-  const frame = useCurrentFrame();
-  return (
-    <>
-      <LogoContainer
-        style={{
-          fontFamily,
-          backgroundColor: getContrastColor(theme.secondary),
-          transform: `scale(${SpringToFrom(
-            7,
-            0,
-            1,
-            "Wobbly"
-          )}) scale(${SpringToFrom(65, 1, 0, "Slow")})`,
-        }}
-      />
-
-      <ClubNameContainer>
-        <ClubName
-          style={{
-            fontFamily,
-            clipPath: FromTopToBottom(15, "Wobbly"),
-            color: getContrastColor(theme.secondary),
-            opacity: interpolateOpacityByFrame(frame, 55, 70, 1, 0),
-          }}
-        >
-          TITLES
-        </ClubName>
-      </ClubNameContainer>
-      <SqareBG
-        style={{
-          backgroundColor: lightenColor(theme.secondary),
-          height: `${SpringToFrom(0, 0, 1661, "Wobbly")}px`,
-          transform: `translateY(${SpringToFrom(0, 1920, 0, "Wobbly")}px)`,
-          borderLeft: `5px solid ${lightenColor(theme.secondary)}`,
-          borderRight: `5px solid ${lightenColor(theme.secondary)}`,
-          clipPath: EraseToMiddleFromTop(65, "Slow"),
-        }}
-      />
-
-      <AbsoluteFill>
-        <Video
-          startFrom={0}
-          src="https://fixturaassets.s3.ap-southeast-2.amazonaws.com/introBGsequence.mp4"
-          style={VIDEO}
-        />
-      </AbsoluteFill>
-    </>
-  );
-};
-
-export default TitleSequenceFrame;
 const SqareBG = styled.div`
-  position: absolute;
-  width: 1246px;
-  height: 1661px;
-  left: 97px;
-  top: 130px;
-  z-index: 1000;
-  background: #00aeef;
+	position: absolute;
+	width: 1440px;
+	height: 1197px;
+	left: 0;
+	top: 0;
+	z-index: 1000;
 `;
 
 const LogoContainer = styled.div`
-  position: absolute;
-  width: 829px;
-  height: 829px;
-  left: 317px;
-  top: 546px;
-  z-index: 2000;
-  background: #d9d9d9;
-  border-radius: 1000px;
+	position: absolute;
+	width: 600px;
+	height: 600px;
+	left: 400px;
+	top: 700px;
+	z-index: 2000;
+	border-radius: 1000px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 `;
 
 const ClubNameContainer = styled.div`
-  position: relative;
-  width: 1246px;
-  height: 132px;
-  left: 97px;
-  top: 1410px;
-  z-index: 2000;
-  display: flex;
+	position: relative;
+	width: 1246px;
+	height: 132px;
+	left: 97px;
+	top: 400px;
+	z-index: 2000;
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
 `;
 
 const ClubName = styled.h1`
-  position: absolute;
-  width: 1246px;
-  font-weight: 400;
-  font-size: 100px;
-  margin: 0;
-  padding: 0;
-  line-height: 1em;
-  text-align: center;
-  letter-spacing: -0.015em;
-  text-transform: uppercase;
+	position: absolute;
+	width: 1246px;
+	font-weight: 900;
+	font-size: 7.5em;
+	margin: 0;
+	padding: 0;
+	line-height: 0.8em;
+	text-align: center;
+	letter-spacing: -0.02em;
+	text-transform: uppercase;
+	color: #ffffff;
+`;
 
-  color: #ffffff;
+const VideoTitle = styled.h1`
+	position: absolute;
+	width: 100%;
+	font-weight: 900;
+	font-size: 12em;
+	margin: 0;
+	padding: 0;
+	line-height: 0.8em;
+	text-align: center;
+	letter-spacing: -0.02em;
+	text-transform: uppercase;
+	bottom: 350px;
+	z-index: 2000;
+`;
+const PlayHQLOGO = styled.div`
+	position: absolute;
+	width: 300px;
+	height: 200px;
+	left: 75px;
+	bottom: 75px;
+`;
+
+const PrincipalLogo = styled.div`
+	position: absolute;
+	width: 200px;
+	height: 200px;
+	right: 75px;
+	bottom: 75px;
+	background-color: red;
 `;
