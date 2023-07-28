@@ -5,12 +5,32 @@ import { useRouter } from "next/router";
 const ResetPasswordForm = () => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+  const [success, setSuccess] = useState(null);
 
   const router = useRouter();
-  const { token } = router.query;
+  const { code } = router.query;
+
   const handleSubmit = async (event) => {
     event.preventDefault();
-
+  
+    // Clear previous error and success messages
+    setError(null);
+    setSuccess(null);
+  
+    // Check if passwords are valid
+    if (password.length < 8) {
+      setError("Password must be at least 8 characters long");
+      return;
+    }
+    if (password !== confirmPassword) {
+      setError("Passwords do not match");
+      return;
+    }
+  
+    setLoading(true);
+  
     // Make a request to the Strapi API to reset the password
     const response = await fetch(
       "https://fixtura-backend.herokuapp.com/api/auth/reset-password",
@@ -20,22 +40,31 @@ const ResetPasswordForm = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          code: token,
+          code: code,
           password: password,
           passwordConfirmation: confirmPassword,
         }),
       }
     );
-
+  
+    const data = await response.json();
+  
+    setLoading(false);
+  
     // Handle the response from the Strapi API
     if (response.ok) {
       // Password reset was successful, redirect the user to the login page
-      router.push("/login");
+      setSuccess("Password reset was successful. Redirecting to login page...");
+      setTimeout(() => router.push("/SignIn"), 2000);
+    } else if (data.error) {
+      // The API returned a validation error
+      setError(data.error.message);
     } else {
-      // Password reset was not successful, show an error message
-      // or take other appropriate action
+      // Password reset was not successful, show a generic error message
+      setError("An unknown error occurred. Please try again.");
     }
   };
+  
 
   return (
     <>
@@ -54,49 +83,50 @@ const ResetPasswordForm = () => {
           </p>
         </div>
      
-      <form onSubmit={handleSubmit}>
-        <input
-          type="hidden"
-          value={token}
-          onChange={(event) => setToken(event.target.value)}
-        />
-        <div className="container">
-          <div className="row justify-content-center">
-            <div className="col-lg-4">
-              <div className="form-group">
-                <input
-                  type="password"
-                  placeholder="Enter new password"
-                  value={password}
-                  className="form-control"
-                  onChange={(event) => setPassword(event.target.value)}
-                />
+        {error && <p>Error: {error}</p>}
+        {success && <p>Success: {success}</p>}
+        {loading && <p>Loading...</p>}
+  
+        {!error && (
+          <form onSubmit={handleSubmit}>
+            <div className="container">
+              <div className="row justify-content-center">
+                <div className="col-lg-4">
+                  <div className="form-group">
+                    <input
+                      type="password"
+                      placeholder="Enter new password"
+                      value={password}
+                      className="form-control"
+                      onChange={(event) => setPassword(event.target.value)}
+                    />
+                  </div>
+                </div>
+  
+                <div className="col-lg-4">
+                  <div className="form-group">
+                    <input
+                      type="password"
+                      placeholder="Confirm new password"
+                      className="form-control"
+                      value={confirmPassword}
+                      onChange={(event) => setConfirmPassword(event.target.value)}
+                    />
+                  </div>
+                </div>
+  
+                <div className="col-lg-12 col-sm-12">
+                  <button type="submit" className="btn btn-primary">
+                    Reset password
+                  </button>
+                </div>
               </div>
             </div>
-
-            <div className="col-lg-4">
-              <div className="form-group">
-                <input
-                  type="password"
-                  placeholder="Confirm new password"
-                  className="form-control"
-                  value={confirmPassword}
-                  onChange={(event) => setConfirmPassword(event.target.value)}
-                />
-              </div>
-            </div>
-
-            <div className="col-lg-12 col-sm-12">
-              <button type="submit" className="btn btn-primary">
-                Reset password
-              </button>
-            </div>
-          </div>
-        </div>
-      </form>
+          </form>
+        )}
       </div>
     </>
-  );
+  );  
 };
 
 export default ResetPasswordForm;
