@@ -34,7 +34,7 @@ const Layout = ({ children }) => {
           {SelectedNavbar}
           {SelectedLayout}
           <Footer />
-        </div>
+        </div> 
       </AccountDetailsProvider>
     </UserProvider>
   );
