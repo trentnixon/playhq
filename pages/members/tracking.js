@@ -17,7 +17,7 @@ import {
   Stack,
   Tooltip,
   useMantineTheme,
-} from "@mantine/core"; 
+} from "@mantine/core";
 import {
   IconCalendarDue,
   IconCalendarStats,
@@ -29,6 +29,7 @@ import {
 import {
   MembersWrapper,
   PageCopyWrapper,
+  ShadowWrapper,
   Wrapper,
 } from "../../components/Members/Common/Containers";
 import { showNotification } from "@mantine/notifications";
@@ -65,7 +66,7 @@ const Tracking = ({ DATA }) => {
     }
   }, [account]);
   // then in the component
-
+  console.log(DATA);
   return (
     <MembersWrapper>
       <SetupCheck>
@@ -76,10 +77,28 @@ const Tracking = ({ DATA }) => {
               Copy={`Get an overview of the fixtures Fixtura is tracking for your club or association. Simply hover over the icons to see the games scheduled for each date. Rest assured that Fixtura regularly checks and updates your fixtures, so you don't need to worry about any changes to your playing schedule. Stay organized and informed with Fixtura's reliable tracking feature.`}
             />
           </PageCopyWrapper>
-          <NextGameDate gamesData={DATA} />
+          {Object.keys(DATA).length === 0 ? (
+            <>
+              <ShadowWrapper>
+                <P textAlign = "center" Weight ={900} color = {8} Copy={`No fixtures registered at the moment. `} />
+                <P textAlign = "center"  color = {8}
+                  Copy={`Fixtura is currently tracking 0 fixtures. If you believe this is incorrect, please contact us here.`}
+                />
+              </ShadowWrapper>
+            </>
+          ) : (
+            <NextGameDate gamesData={DATA} />
+          )}
 
-          <P Copy={`Full Calendar`} />
-          <GamesCalendar gamesData={DATA} />
+          {Object.keys(DATA).length === 0 ? (
+            false
+          ) : (
+            <>
+              <P Copy={`Full Calendar`} />
+              <GamesCalendar gamesData={DATA} />
+            </>
+          )}
+
           <FixturaDivider />
         </LoadingStateWrapper>
       </SetupCheck>
@@ -96,7 +115,7 @@ Tracking.getInitialProps = async (ctx) => {
     return { DATA: false };
   }
 
-  const res = await Adminfetcher(`/account/createTracking/${ID}`); 
+  const res = await Adminfetcher(`/account/createTracking/${ID}`);
   let DATA = res;
 
   return { DATA };
