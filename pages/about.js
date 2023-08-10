@@ -12,7 +12,7 @@ const About = () => {
   return (
     <>
       <PageBanner
-        pageTitle="What is Fixtura?"
+        pageTitle="Meet Fixtura: Your Digital Game-Changer"
         BGImage="/images/BG-Images/0D5A0607.jpg"
         position={`top center`}
       />

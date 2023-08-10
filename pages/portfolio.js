@@ -10,11 +10,11 @@ const Portfolio = ({ associations, CaseStudies }) => {
   return (
     <>
       <PageBanner
-        pageTitle="What do we create?"
+        pageTitle="Explore Fixtura's Creations"
         BGImage="/images/BG-Images/0D5A3099.jpg"
       />
       <WorksStyleTwo CaseStudies={CaseStudies} />
-      
+       
       <CtaAreaTwo />
     </>
   );

@@ -20,7 +20,7 @@ const FooterDark = () => {
                 </div>
 
                 <p>
-                Fixtura provides personalized digital assets to help cricket clubs and associations connect with fans, showcase achievements, and gain a competitive edge. We create innovative content using sports media, AI, and technology, and offer customization and personalized service to meet clients&apos; specific needs and goals. We aim to be a trusted partner for cricket clubs and associations looking to promote their teams and events 
+                Step into the Digital Cricket Arena with Fixtura! We're your go-to partner for personalized digital assets, designed exclusively for cricket clubs and associations. With a blend of sports media expertise, AI innovation, and a sprinkle of creativity, we create content that helps you connect with fans and shine a spotlight on your achievements. Whether you're aiming for a competitive edge or just want to show off your team's brilliance, Fixtura's here to make it a smashing success!
                 </p>
 
                {/*  <ul className="social-links">

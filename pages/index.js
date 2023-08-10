@@ -1,10 +1,6 @@
-import React from "react";
-//import Navbar from "../components/Layouts/NavbarTwo";
-
 // Components
 import MainBanner from "../components/HomePages/PLAYHQ/MainBanner";
 import PricingStyleOne from "../components/Pricing/PricingStyleOne";
-import OurWorks from "../components/HomePages/PortfolioAgency/OurWorks";
 import Services from "../components/HomePages/DefaultHome/Services";
 import FunFacts from "../components/Common/FunFacts";
 import CtaArea from "../components/Common/CtaAreaTwo";

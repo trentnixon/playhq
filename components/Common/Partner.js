@@ -61,11 +61,9 @@ const Partner = () => {
       <div className="partner-area pt-100 pb-60">
         <div className="container">
           <div className="section-title">
-            <h2>Is my Club or Association eligible?</h2>
+            <h2>Eligibility Check:</h2>
             <p>
-              Curious if your club or association is eligible to benefit from
-              Fixtura's services? Simply enter your club's name or association
-              below, and we'll let you know if you're covered!
+            Wondering if Fixtura is the right fit for your club or association? It’s easy to find out! Simply enter your name below, and let's discover how we can be teammates in success.
             </p>
           </div>
           <div className="row align-items-center justify-content-center">

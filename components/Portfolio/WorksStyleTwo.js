@@ -26,11 +26,7 @@ const WorksStyleTwo = ({ CaseStudies }) => {
             <h2>What does Fixtura Create?</h2>
 
             <P
-              Copy={` Our collection of personalized digital assets includes options
-              such as videos, images, and AI-generated content, all designed to
-              enhance your club&lsquo;s social media presence. Explore our
-              examples and see how we can help bring your club&lsquo;s online
-              presence to new heights.`}
+              Copy={`What can Fixtura craft for you? Delve into our digital playground filled with personalized videos, images, and AI-powered write-ups, all tailored to boost your club's online buzz. Take a tour and envision how Fixtura can elevate your club's digital presence!`}
             />
           </div>
         </div>
@@ -46,7 +42,7 @@ const WorksStyleTwo = ({ CaseStudies }) => {
                 title: study.attributes.Name,
                 category: key,
                 video: study.attributes.VideoExample.data?.attributes?.url,
-                MainDescription:study.attributes.MainDescription
+                MainDescription: study.attributes.MainDescription,
               }));
 
               console.log(
