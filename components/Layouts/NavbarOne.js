@@ -116,7 +116,7 @@ const SignUp = () => {
   return (
     <div className="others-options">
       <Link href="/SignUp">
-        <a className="btn btn-primary">Get Started</a>
+        <a className="btn btn-primary">Sign Up</a>
       </Link>
     </div>
   );

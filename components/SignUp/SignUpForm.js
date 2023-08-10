@@ -1,24 +1,8 @@
 import React, { useEffect, useState } from "react";
 
-import Swal from "sweetalert2";
-import withReactContent from "sweetalert2-react-content";
-const MySwal = withReactContent(Swal);
-
-import baseUrl from "../../utils/baseUrl";
 import { fetcher } from "../../lib/api";
 import { Container } from "@mantine/core";
 import { P } from "../Members/Common/Type";
-
-const alertContent = () => {
-  MySwal.fire({
-    title: "Congratulations!",
-    text: "Your message was successfully send and will back to you soon",
-    icon: "success",
-    timer: 2000,
-    timerProgressBar: true,
-    showConfirmButton: false,
-  });
-};
 
 // Form initial state
 const INITIAL_STATE = {
@@ -100,12 +84,18 @@ const SignUpForm = () => {
     <>
       <div className="contact-form ptb-100">
         <div className="contact-title">
-       
-          <P textAlign='center' size={'1.6em'} Weight={900} Copy={`Unlock the Power of Effortless Content Creation.`}/>
-          <P textAlign='center' Copy={`Sign up now to
+          <P
+            textAlign="center"
+            size={"1.6em"}
+            Weight={900}
+            Copy={`Unlock the Power of Effortless Content Creation.`}
+          />
+          <P
+            textAlign="center"
+            Copy={`Sign up now to
             customize your club's profile, access premium video options, and
-            receive weekly personalized assets delivered to your inbox.`}/>
-         
+            receive weekly personalized assets delivered to your inbox.`}
+          />
         </div>
         <Container size={"sm"}>
           <form onSubmit={handleSubmit}>
@@ -216,26 +206,32 @@ const SuccessfulRegistration = () => {
     <>
       <div className="contact-form ptb-100">
         <div className="contact-title">
-          <h2> Successful Registration</h2>
-          <p>
-            Congratulations, you have successfully registered for a Fixtura
-            account! You are now one step closer to enhancing your club&lsquo;s
-            social media presence with our personalized digital assets.
-          </p>
-          <p>
-            An email has been sent to the address you provided, containing
-            instructions on how to verify your account and set up your account
-            preferences. Please follow these steps to complete the registration
-            process and start using Fixtura.
-          </p>
-          <p>
-            With Fixtura, you can customize your look and feel, select the
-            assets you want to receive, and set your delivery schedule and
-            frequency - all with just a few clicks. We&lsquo;ll handle the rest,
-            creating and delivering high-quality content that is tailored to
-            your specific needs and goals. Thank you for choosing Fixtura, and
-            we look forward to helping you succeed on social media.
-          </p>
+          <P
+            color={2}
+            Weight={900}
+            size={30}
+            textAlign={"center"}
+            Copy={"Please Verify Your Email to Get Started"}
+          />
+          <P
+            Copy={`Congratulations on joining Fixtura! You're just a click away from unlocking personalized digital assets that will amplify your club's social media presence.`}
+          />
+
+          <P
+            Weight={900}
+            Copy={`An email has been sent to the address you provided, containing a verification link. Clicking this link is essential to activate your account and start using Fixtura's services.`}
+          />
+          <P
+            Weight={400}
+            Copy={`If you don't see the email in your inbox, please check your spam or junk folder.`}
+          />
+
+          <P
+            Copy={`Once verified, you can dive into customization, selecting assets, and setting your delivery preferences. We'll take care of the rest, tailoring content to your specific needs.`}
+          />
+          <P
+            Copy={`Thank you for choosing Fixtura, and we can't wait to see your cricketing story shine online.`}
+          />
         </div>
       </div>
     </>

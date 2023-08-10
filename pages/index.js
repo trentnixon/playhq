@@ -25,7 +25,6 @@ const Index = ({ associations, CaseStudies }) => {
       <Services />
       <FunFacts />
       <Partner associations={associations} />
-     {/*  <OurWorks CaseStudies={CaseStudies} /> */}
       <PricingStyleOne />
       <CtaArea />
     </>

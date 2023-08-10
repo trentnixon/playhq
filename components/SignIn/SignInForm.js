@@ -131,6 +131,13 @@ const SignInForm = () => {
             <a>Forgot Password?</a>
           </Link>
         </small>
+        <br />
+        <small>
+        Don’t have a login? {' '}
+          <Link href="/SignUp">
+            <a> Sign up here</a>
+          </Link>
+        </small>
       </div>
     </>
   );
