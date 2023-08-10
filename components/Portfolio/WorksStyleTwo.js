@@ -46,6 +46,7 @@ const WorksStyleTwo = ({ CaseStudies }) => {
                 title: study.attributes.Name,
                 category: key,
                 video: study.attributes.VideoExample.data?.attributes?.url,
+                MainDescription:study.attributes.MainDescription
               }));
 
               console.log(

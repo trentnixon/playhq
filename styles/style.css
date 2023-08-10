@@ -679,7 +679,7 @@ Navbar CSS
   width: 100%;
   padding-bottom: 2px;
   padding-top: 2px;
-  z-index: 999;
+  z-index: 99;
   -webkit-box-shadow: 0 2px 28px 0 rgba(0, 0, 0, 0.06);
           box-shadow: 0 2px 28px 0 rgba(0, 0, 0, 0.06);
   background-color: #ffffff !important;

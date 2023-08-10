@@ -6,7 +6,7 @@ const nextConfig = {
       {
         source: '/',
         destination: '/expressionofinterest',
-        permanent: true,
+        permanent: false,
       },
     ]
   },

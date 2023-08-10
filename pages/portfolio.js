@@ -6,6 +6,7 @@ import { fetcher } from "../lib/api";
 
 const qs = require("qs");
 const Portfolio = ({ associations, CaseStudies }) => {
+ 
   return (
     <>
       <PageBanner
@@ -24,7 +25,7 @@ export default Portfolio;
 export const getServerSideProps = async (context) => {
   const query = qs.stringify(
     {
-      populate: ["Cover", "asset_category","VideoExample"],
+      populate: ["Cover", "asset_category","VideoExample","MainDescription"],
     },
     {
       encodeValuesOnly: true,

@@ -69,7 +69,7 @@ export function DownloadTable({ data, Token }) {
             className={cx(classes.header, { [classes.scrolled]: scrolled })}
           >
             <tr>
-              <th>
+              <th> 
                 <Tooltip
                   label="Render ID"
                   color={theme.colors.cyan[3]}

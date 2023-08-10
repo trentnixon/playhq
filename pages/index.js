@@ -13,7 +13,7 @@ import Partner from "../components/Common/Partner";
 import { fetcher } from "../lib/api";
 //import Footer from "../components/Layouts/Footer";
 const qs = require("qs");
-
+ 
 const CS_query = qs.stringify(
   {
     populate: ["Cover"],
