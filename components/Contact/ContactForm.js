@@ -1,51 +1,102 @@
 import React, { useState } from "react";
-import axios from "axios";
-import Swal from "sweetalert2";
-import withReactContent from "sweetalert2-react-content";
-const MySwal = withReactContent(Swal);
-import baseUrl from "../../utils/baseUrl";
+import * as Yup from "yup";
+import { useContactForm } from "../../Hooks/useSendContact";
 
-const alertContent = () => {
-  MySwal.fire({
-    title: "Congratulations!",
-    text: "Your message was successfully send and will back to you soon",
-    icon: "success",
-    timer: 2000,
-    timerProgressBar: true,
-    showConfirmButton: false,
-  });
-};
+// Validation Schema using Yup
+const validationSchema = Yup.object({
+  name: Yup.string().required("Name is required"),
+  email: Yup.string()
+    .email("Invalid email format")
+    .required("Email is required"),
+  subject: Yup.string().required("Subject is required"),
+  text: Yup.string().required("Message is required"),
+});
 
-// Form initial state
 const INITIAL_STATE = {
   name: "",
   email: "",
-  number: "",
   subject: "",
   text: "",
+  Timestamp: null,
+  IP: null,
+  UserAgent: null,
+  Status: "New",
 };
 
 const ContactForm = () => {
   const [contact, setContact] = useState(INITIAL_STATE);
+  const [contactStatus, handleContactForm] = useContactForm();
+  const [loading, setLoading] = useState(false);
+  const [confirmed, setConfirmed] = useState(false);
+  const [formError, setFormError] = useState(null);
+  const [errors, setErrors] = useState({});
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setContact((prevState) => ({ ...prevState, [name]: value }));
-    // console.log(contact)
+    setErrors((prevState) => ({ ...prevState, [name]: "" }));
   };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const url = `${baseUrl}/api/contact`;
-      const { name, email, number, subject, text } = contact;
-      const payload = { name, email, number, subject, text };
-      const response = await axios.post(url, payload);
-      console.log(response);
-      setContact(INITIAL_STATE);
-      alertContent();
-    } catch (error) {
-      console.log(error);
+      // Validate contact using Yup
+      await validationSchema.validate(contact, { abortEarly: false });
+      setLoading(true);
+      const result = await handleContactForm(contact);
+      setLoading(false);
+
+      if (result.success) {
+        setConfirmed(true);
+      } else if (result.error) {
+        setFormError(
+          "An error occurred while sending your message. Please try again."
+        );
+      }
+    } catch (err) {
+      if (err instanceof Yup.ValidationError) {
+        const errorMessages = {};
+        err.inner.forEach((error) => {
+          errorMessages[error.path] = error.message;
+        });
+        setErrors(errorMessages);
+      }
     }
   };
+
+  if (loading) {
+    return (
+      <div className="contact-form ptb-100">
+        <div className="contact-title">Loading...</div>
+      </div>
+    );
+  }
+
+  if (confirmed) {
+    return (
+      <div className="contact-form ptb-100">
+        <div className="contact-title">
+          Your message was successfully sent. We will get back to you soon!
+        </div>
+      </div>
+    );
+  }
+
+  if (formError) {
+    return (
+      <div className="contact-form ptb-100">
+        <div className="contact-title">
+          <p>{formError}</p>
+          <button
+            onClick={() => setFormError(null)}
+            className="btn btn-primary"
+          >
+            Try again
+          </button>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <>
@@ -55,9 +106,8 @@ const ContactForm = () => {
           <p>
             If you have any questions or need assistance with your account, our
             team is here to help. Please fill out the form below and we will get
-            back to you as soon as possible.  We look
-            forward to hearing from you and helping you get the most out of your
-            Fixtura experience.
+            back to you as soon as possible. We look forward to hearing from you
+            and helping you get the most out of your Fixtura experience.
           </p>
         </div>
 
@@ -80,7 +130,7 @@ const ContactForm = () => {
               <div className="col-lg-6">
                 <div className="form-group">
                   <input
-                    type="text"
+                    type="email"
                     name="email"
                     placeholder="Email"
                     className="form-control"
@@ -90,7 +140,7 @@ const ContactForm = () => {
                   />
                 </div>
               </div>
-             
+
               <div className="col-lg-12">
                 <div className="form-group">
                   <input
