@@ -17,11 +17,9 @@ const AwaitingFirstDownload = ({scheduler}) => {
               width: "60%",
             })}
           >
-            <P Copy={`Awaiting first download.`} />
+            <P>Awaiting first download.</P>
             <DownloadsSelectDays scheduler={scheduler} />
-            <P
-              Copy={`To ensure you receive weekly deliveries check the following items`}
-            />
+            <P>To ensure you receive weekly deliveries check the following items</P>
             <ul>
               <li>Active Subscription with Fixtura</li>
               <li>Selection of assets (match reports, videos, images)</li>

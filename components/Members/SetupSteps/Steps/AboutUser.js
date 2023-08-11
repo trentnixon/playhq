@@ -12,7 +12,7 @@ export const StepAboutUser = ({ user, setHasUpdated }) => {
         Your weekly email will contain a personalized link to access all the latest content.`}
       />
       <UserDetailsForSetup user={user} setHasUpdated={setHasUpdated} />
-      <P Copy={` *These settings can be changes in your admin panel`} />
+      <P>*These settings can be changes in your admin panel</P>
     </>
   );
 }; 

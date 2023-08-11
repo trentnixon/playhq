@@ -52,13 +52,11 @@ const WorksStyleTwo = ({ CaseStudies }) => {
               return (
                 <div key={i} className="pb-100 container">
                   <div className="section-title">
-                    <P size={26} Weight={900} Copy={`${key}S`} />
-                    <P
-                      Copy={
+                    <P size={26} Weight={900}>{`${key}S`} </P>
+                    <P>{
                         groupByIdentifier(CaseStudies.data, VAR)[key][0]
                           .attributes.asset_category.data.attributes.description
-                      }
-                    />
+                      }</P>
                   </div>
 
                   <CardsCarousel data={carouselData} />

@@ -23,9 +23,9 @@ export const useLogUser = () => {
       console.log(response);
       if (!response || !response.user) {
         setLogUser(null);
-        return { error: "Invalid login details" };
+        return { error: response.error }; // Return the error object
       } else {
-        setToken(response)
+        setToken(response);
         setLogUser(response);
         return response;
       }

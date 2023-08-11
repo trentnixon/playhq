@@ -117,9 +117,12 @@ export const CreateNewTheme = (props) => {
   return (
     <>
       <SubHeaders Copy={`Create your own Theme`} />
-      <P
-        Copy={`To create a new theme, simply select your primary and secondary brand colors from the color selector and click the "Create" button. This theme will automatically be assigned as your current theme, and can be updated at any time by clicking the "Update" option.`}
-      />
+      <P>
+        To create a new theme, simply select your primary and secondary brand
+        colors from the color selector and click the "Create" button. This theme
+        will automatically be assigned as your current theme, and can be updated
+        at any time by clicking the "Update" option.
+      </P>
       <Paper
         radius="md"
         shadow="md"
@@ -145,8 +148,7 @@ export const CreateNewTheme = (props) => {
                     marginBottom={0}
                     Weight={900}
                     textTransform={"uppercase"}
-                    Copy={`Primary Color`}
-                  />
+                   >{`Primary Color`}</P>
                 </Group>
               </td>
               <td>
@@ -171,8 +173,7 @@ export const CreateNewTheme = (props) => {
                     marginBottom={0}
                     Weight={900}
                     textTransform={"uppercase"}
-                    Copy={`Secondary Color`}
-                  />
+                   >{`Secondary Color`}</P>
                 </Group>
               </td>
               <td>

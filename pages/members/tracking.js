@@ -80,10 +80,8 @@ const Tracking = ({ DATA }) => {
           {Object.keys(DATA).length === 0 ? (
             <>
               <ShadowWrapper>
-                <P textAlign = "center" Weight ={900} color = {8} Copy={`No fixtures registered at the moment. `} />
-                <P textAlign = "center"  color = {8}
-                  Copy={`Fixtura is currently tracking 0 fixtures. If you believe this is incorrect, please contact us here.`}
-                />
+                <P textAlign = "center" Weight ={900} color = {8} >No fixtures registered at the moment. </P>
+                <P textAlign = "center"  color = {8}>Fixtura is currently tracking 0 fixtures. If you believe this is incorrect, please contact us here.</P>
               </ShadowWrapper>
             </>
           ) : (
@@ -94,7 +92,7 @@ const Tracking = ({ DATA }) => {
             false
           ) : (
             <>
-              <P Copy={`Full Calendar`} />
+              <P>Full Calendar</P>
               <GamesCalendar gamesData={DATA} />
             </>
           )}
@@ -290,8 +288,8 @@ const NextGameDate = ({ gamesData }) => {
   console.log(nextGame);
   return (
     <Group position="apart">
-      <P Copy={`Upcoming Fixture: ${nextGame?.date}`} />
-      <P Copy={`Games Listed ${nextGame?.obj?.length}`} />
+      <P>{`Upcoming Fixture: ${nextGame?.date}`}</P>
+      <P>{`Games Listed ${nextGame?.obj?.length}`}</P>
     </Group>
   );
 };

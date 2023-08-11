@@ -66,9 +66,7 @@ export const SelectATemplate = () => {
     <>
       <FixturaDivider />
       <SubHeaders Copy={`Choose Your Theme`} />
-      <P
-        Copy={`Customize Your Assets with Themed Layout Templates for a cohesive and professional look that complements your brand in the preview video.`}
-      />
+      <P>Customize Your Assets with Themed Layout Templates for a cohesive and professional look that complements your brand in the preview video.</P>
       <Paper
         radius="md"
         shadow="md"
@@ -89,8 +87,7 @@ export const SelectATemplate = () => {
                           ? 6
                           : 2
                       }
-                      Copy={item.attributes.Name}
-                    />
+                     >{item.attributes.Name}</P>
                   </td>
 
                   <td style={{ textAlign: "right" }}>

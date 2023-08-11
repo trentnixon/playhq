@@ -42,13 +42,9 @@ const StripeSuccess = () => {
         <Wrapper>
           <Group position="apart">
             <Box>
-              <P Copy={`Thank you for subscribing to Fixtura!`} />
-              <P
-                Copy={`Your subscription is now active, and you will begin receiving personalized digital assets according to your preferences. Thank you for choosing Fixtura, and we look forward to helping you enhance your club's social media presence.`}
-              />
-              <P
-                Copy={`Thank you for choosing Fixtura, and we look forward to helping you enhance your club's social media presence.`}
-              />
+              <P>Thank you for subscribing to Fixtura!</P>
+              <P>Your subscription is now active, and you will begin receiving personalized digital assets according to your preferences. Thank you for choosing Fixtura, and we look forward to helping you enhance your club's social media presence.</P>
+              <P>Thank you for choosing Fixtura, and we look forward to helping you enhance your club's social media presence.</P>
             </Box>
           </Group>
         </Wrapper>

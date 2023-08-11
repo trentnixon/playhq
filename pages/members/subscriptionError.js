@@ -40,7 +40,7 @@ const StripeError = () => {
       <MembersWrapper>
         <Stack align="center">
           <FixturaLoading />
-          <P Copy="Processing..." />
+          <P >"Processing..."</P>
         </Stack>
       </MembersWrapper>
     ); // replace with your actual loading component
@@ -50,8 +50,8 @@ const StripeError = () => {
     return (
       <MembersWrapper>
         <Stack align="center">
-          <P color={8} Weight={900} Copy="Error" />
-          <P Copy={error} />
+          <P color={8} Weight={900}>Error</P>
+          <P>{error}</P>
         </Stack>
       </MembersWrapper>
     );
@@ -65,13 +65,9 @@ const StripeError = () => {
       />
       <Container>
         <Wrapper>
-          <P
-            Copy={`We noticed you've cancelled the subscription process. No worries - whenever you're ready, we'll be here to assist you in setting up your subscription.`}
-          />
-          <P
-            Copy={`If you encountered any issues during the process or need help, please don't hesitate to contact our support team.`}
-          />
-          <P Copy={`The Fixtura Team.`} />
+          <P>We noticed you've cancelled the subscription process. No worries - whenever you're ready, we'll be here to assist you in setting up your subscription.</P>
+          <P>If you encountered any issues during the process or need help, please don't hesitate to contact our support team.</P>
+          <P>The Fixtura Team.</P>
         </Wrapper>
         <ShadowWrapper>
           <Center>

@@ -36,15 +36,15 @@ const SignInForm = () => {
         password: password,
       };
       const result = await CreateLogUser(loginInfo);
-      if (result.error) {
-        setError(result.error);
+      if (result && result.error) {
+        setError(result.error.message); // Extract the error message
       } else {
         setError(null);
       }
     } catch (error) {
       setError("An error occurred during login.");
     } finally {
-      //setLoading(false);
+      setLoading(false); // Set loading to false after handling login
     }
   };
 
@@ -94,7 +94,7 @@ const SignInForm = () => {
               <div className="col-lg-4">
                 <div className="form-group">
                   <input
-                    type="text"
+                    type="email"
                     name="email"
                     placeholder="Email"
                     className="form-control"
@@ -133,7 +133,7 @@ const SignInForm = () => {
         </small>
         <br />
         <small>
-        Don’t have a login? {' '}
+          Don’t have a login?{" "}
           <Link href="/SignUp">
             <a> Sign up here</a>
           </Link>

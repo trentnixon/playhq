@@ -63,19 +63,21 @@ export const SelectATheme = () => {
     GetElement === null ||
     userAccount === false
   ) {
-    return  <>
-    <SubHeaders Copy={`Storing New Theme`} />
-    <Paper
-      radius="md"
-      shadow="md"
-      withBorder
-      mb={20}
-      p="lg"
-      sx={(theme) => ({ backgroundColor: theme.white })}
-    >
-      <FixturaLoading />
-    </Paper>
-    </>;
+    return (
+      <>
+        <SubHeaders Copy={`Storing New Theme`} />
+        <Paper
+          radius="md"
+          shadow="md"
+          withBorder
+          mb={20}
+          p="lg"
+          sx={(theme) => ({ backgroundColor: theme.white })}
+        >
+          <FixturaLoading />
+        </Paper>
+      </>
+    );
   }
 
   return (
@@ -106,7 +108,7 @@ const Swatches = ({ colors }) => {
 };
 
 const SelectButton = ({ isSelected, onClick, label }) => {
-  const theme = useMantineTheme()
+  const theme = useMantineTheme();
   if (isSelected) {
     return <IconCircleCheck color={theme.colors.green[5]} />;
   }
@@ -115,7 +117,7 @@ const SelectButton = ({ isSelected, onClick, label }) => {
 };
 
 const TableRow = ({ item, userAccount, StoreUSerChange }) => {
-  const theme = useMantineTheme()
+  const theme = useMantineTheme();
   if (!item.attributes.isPublic) return false;
   const isSelected = userAccount.attributes.theme.data.id === item.id;
 
@@ -123,18 +125,25 @@ const TableRow = ({ item, userAccount, StoreUSerChange }) => {
     <tr>
       <td>
         <Group position="center" spacing="xs">
-          <Swatches colors={[item.attributes.Theme.primary, item.attributes.Theme.secondary]} />
+          <Swatches
+            colors={[
+              item.attributes.Theme.primary,
+              item.attributes.Theme.secondary,
+            ]}
+          />
         </Group>
       </td>
       <td>
-        <P
-          marginBottom={0}
-          color={isSelected ? 2 : 2}
-          Copy={item.attributes.Name}
-        />
+        <P marginBottom={0} color={isSelected ? 2 : 2}>
+          {item.attributes.Name}
+        </P>
       </td>
       <td style={{ textAlign: "right" }}>
-        <SelectButton isSelected={isSelected} onClick={() => StoreUSerChange(item)} label="Select" />
+        <SelectButton
+          isSelected={isSelected}
+          onClick={() => StoreUSerChange(item)}
+          label="Select"
+        />
       </td>
     </tr>
   );
@@ -146,9 +155,13 @@ const ColorTable = (props) => {
   return (
     <>
       <SubHeaders Copy={`Color themes`} />
-      <P
-          Copy={`Select Your Brand Colors: Customize Your Assets with Your Brand Colors. Choose from a variety of predefined themes or create a custom theme that reflects your club's unique personality. By selecting your brand colors, you'll create visually appealing videos and images that showcase your team's achievements in a style that's true to your brand`}
-        />
+      <P>
+        Select Your Brand Colors: Customize Your Assets with Your Brand Colors.
+        Choose from a variety of predefined themes or create a custom theme that
+        reflects your club's unique personality. By selecting your brand colors,
+        you'll create visually appealing videos and images that showcase your
+        team's achievements in a style that's true to your brand
+      </P>
       <Paper
         radius="md"
         shadow="md"
@@ -165,7 +178,12 @@ const ColorTable = (props) => {
         <Table>
           <tbody>
             {GetElement.map((item, i) => (
-              <TableRow key={i} item={item} userAccount={userAccount} StoreUSerChange={StoreUSerChange} />
+              <TableRow
+                key={i}
+                item={item}
+                userAccount={userAccount}
+                StoreUSerChange={StoreUSerChange}
+              />
             ))}
           </tbody>
         </Table>

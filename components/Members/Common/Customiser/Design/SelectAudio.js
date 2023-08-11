@@ -99,7 +99,11 @@ export const SelectAudio = ({ isPlaying }) => {
   return (
     <>
       <SubHeaders Copy={`Set the Tone`} />
-      <P Copy={`Choose the Perfect Audio to Add Extra Excitement to Your Videos and Images. Preview and select from our collection of audio tracks that resonate with your club's personality and complement your content.`} />
+      <P>
+        Choose the Perfect Audio to Add Extra Excitement to Your Videos and
+        Images. Preview and select from our collection of audio tracks that
+        resonate with your club's personality and complement your content.
+      </P>
       <Paper
         radius="md"
         shadow="md"
@@ -143,8 +147,7 @@ export const SelectAudio = ({ isPlaying }) => {
                             ? 2
                             : 2
                         }
-                        Copy={item.attributes.Name}
-                      />
+                       >{item.attributes.Name}</P>
                     </Group>
                   </td>
 
@@ -201,10 +204,10 @@ const Player = ({ currentSong, DeSelectAudio }) => {
           marginBottom={0}
           size="lg"
           textTransform="uppercase"
-          Copy={`Now Playing: ${currentSong.attributes.Name}`}
+          
           color={0}
           fontStyle="italic"
-        />
+        >{`Now Playing: ${currentSong.attributes.Name}`}</P>
 
         <ActionIcon
           onClick={() => {

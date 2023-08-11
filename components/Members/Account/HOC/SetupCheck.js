@@ -37,9 +37,7 @@ const SetupCheck = ({ children }) => {
                 width: "80%",
               })}
             >
-              <P
-                Copy={`Fixtura is currently setting up your account details. This process should take between 3-5 minutes. There is no need to reload this page as your account will display when it is ready.`}
-              />
+              <P>Fixtura is currently setting up your account details. This process should take between 3-5 minutes. There is no need to reload this page as your account will display when it is ready.</P>
             </Box>
           </Group>
         </Wrapper>

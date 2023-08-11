@@ -2,13 +2,7 @@
 import { useAccountDetails } from "../../../lib/userContext";
 import { UserDetails } from "../UserDetails";
 // packages
-import {
-  Box,
-  Container,
-  Group,
-  Paper,
-  useMantineTheme,
-} from "@mantine/core";
+import { Box, Container, Group, Paper, useMantineTheme } from "@mantine/core";
 import { IconBrandStripe } from "@tabler/icons";
 //components
 import { P, PageTitle } from "../Common/Type";
@@ -64,16 +58,12 @@ export const UserSubscription = () => {
           subscriptionTier={subscriptionTier}
           Value={`Your subscription is cancelling...`}
         />
-        <P
-          color={3}
-          size="sm"
-          Weight={400}
-          textAlign="center"
-          Copy={`By cancelling your plan, you will no longer receive automated assets
+        <P color={3} size="sm" Weight={400} textAlign="center">
+          By cancelling your plan, you will no longer receive automated assets
           from Fixtura. This change will take effect from the date of
           cancellation. To continue enjoying our services, please consider
-          renewing or changing your plan.`}
-        />
+          renewing or changing your plan.
+        </P>
         <SubscriptionActiveFrom ORDER={ORDER} />
       </>
     );
@@ -91,9 +81,8 @@ export const UserSubscription = () => {
           size="sm"
           Weight={400}
           textAlign="center"
-          Copy={`Your subscription is on hold and billing will resume one week prior to next season's first fixture. 
-          ${getReadableDate(ORDER.Fixture_start)}.`}
-        />
+         >{`Your subscription is on hold and billing will resume one week prior to next season's first fixture. 
+         ${getReadableDate(ORDER.Fixture_start)}.`}</P>
         <SubscriptionActiveFrom ORDER={ORDER} />
       </>
     );
@@ -138,8 +127,7 @@ export const UserSubscription = () => {
             Weight={400}
             marginBottom={0}
             textTransform={"uppercase"}
-            Copy={` Your subscription has been cancelled.`}
-          />
+           >Your subscription has been cancelled.</P>
         </Box>
         <SelectAPlan />
       </>
@@ -169,7 +157,6 @@ export const UserSubscription = () => {
     </>
   );
 };
-
 
 const ManageSubscriptionCTA = ({ ORDER, setChangePlan, changePlan }) => {
   const isActive =
@@ -211,10 +198,12 @@ const SubscriptionActiveFrom = ({ ORDER }) => {
   let PColor = 8;
   let StatusIcon = IconCheck; // default icon
   const isPaused = ORDER?.isPaused;
-  const isCancelling = ORDER?.cancel_at_period_end && ORDER?.isActive && ORDER?.Status;
-  const isActive = ORDER?.isActive && ORDER?.Status && !ORDER?.cancel_at_period_end;
+  const isCancelling =
+    ORDER?.cancel_at_period_end && ORDER?.isActive && ORDER?.Status;
+  const isActive =
+    ORDER?.isActive && ORDER?.Status && !ORDER?.cancel_at_period_end;
   const isCancelled = !ORDER?.isActive || !ORDER?.Status;
-  
+
   if (ORDER?.strapi_created) {
     try {
       const date = new Date(ORDER.strapi_created * 1000);
@@ -257,7 +246,7 @@ const SubscriptionActiveFrom = ({ ORDER }) => {
     PColor = 8;
     StatusIcon = IconX;
   }
-  
+
   return (
     <Group position="apart">
       <Group position="left" spacing="xs" align="center">
@@ -276,8 +265,7 @@ const SubscriptionActiveFrom = ({ ORDER }) => {
           size={`xs`}
           color={4}
           marginBottom={0}
-          Copy={`Active since: ${formattedDate}`}
-        />
+         >{`Active since: ${formattedDate}`}</P>
         <IconAccessible size={`1.4em`} color={theme.colors.blue[5]} />
       </Group>
     </Group>

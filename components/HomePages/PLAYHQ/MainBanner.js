@@ -46,7 +46,7 @@ const MainBanner = () => {
                         },
                       }}
                     >
-                      Amplify Your Game: Welcome to Fixtura's Digital Cricket Arena
+                      Your Cricket Club's Digital Partner!
                     </Text>
 
                     <Text
@@ -59,7 +59,7 @@ const MainBanner = () => {
                         },
                       }}
                     >
-                      From Dynamic Videos to Deepdive write ups, we're Crafting Cricket's Digital Chronicles
+                      From Engaging Videos to Deep-Dive Write-ups: Crafting Content for the Modern Cricket Club
                     </Text>
                     <Text
                       align="right"

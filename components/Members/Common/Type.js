@@ -71,7 +71,7 @@ export const P = (props) => {
         fontStyle:fontStyle
       })}
     >
-      {Copy}
+      {props.children || Copy}
     </Text>
   );
 };

@@ -105,8 +105,8 @@ export const FixturaSettings = ({ user, setHasUpdated }) => {
           <stat.icon size={25} stroke={1} />
         </Avatar>
       </Group>
-      <P Copy={stat.title} color={4} size={20} marginBottom={0} />
-      <P Copy={stat.stats} color={3} Weight={900} size={20} marginBottom={0} />
+      <P  color={4} size={20} marginBottom={0} >{stat.title}</P>
+      <P  color={3} Weight={900} size={20} marginBottom={0} >{stat.stats}</P>
     </Paper>
   ));
 
@@ -227,8 +227,7 @@ const LabelMe = ({ label }) => {
         Weight={900}
         marginBottom={0}
         textTransform={"uppercase"}
-        Copy={label}
-      />
+       >{label}</P>
     </Wrapper>
   );
 };

@@ -38,15 +38,16 @@ const FunFacts = () => {
               size={50}
               marginBottom="14px"
               textAlign={"center"}
-              Copy={"Tailoring Your Cricket Narrative"}
-            />
-            <P
-              color={0}
-              textAlign={"center"}
-              Copy={
-                "Whether it's painting a vivid picture of a thrilling match or capturing a glorious victory, Fixtura’s personalized content breathes life into your cricket journey. Choose from our array of AI-generated write-ups, tailored videos, and high-quality images to craft a compelling narrative that resonates with your audience."
-              }
-            />
+            >
+              Tailoring Your Cricket Narrative
+            </P>
+            <P color={0} textAlign={"center"}>
+              Whether it's painting a vivid picture of a thrilling match or
+              capturing a glorious victory, Fixtura’s personalized content
+              breathes life into your cricket journey. Choose from our array of
+              AI-generated write-ups, tailored videos, and high-quality images
+              to craft a compelling narrative that resonates with your audience.
+            </P>
           </div>
           <div className="row justify-content-center">
             {funFactsData.map((fact, index) => (
@@ -70,17 +71,17 @@ const FunFacts = () => {
                   >
                     {fact.title}
                   </Title>
-                  <P color={0} textAlign={"center"} Copy={fact.description} />
+                  <P color={0} textAlign={"center"}>
+                    {fact.description}
+                  </P>
                 </div>
               </div>
             ))}
           </div>
           <Space h={50} />
-          <P
-            color={0}
-            textAlign={"center"}
-            Copy={"Fixtura: Crafting Your Unique Story with Precision and Flair"}
-          />
+          <P color={0} textAlign={"center"}>
+            Fixtura: Crafting Your Unique Story with Precision and Flair
+          </P>
         </div>
       </div>
     </>

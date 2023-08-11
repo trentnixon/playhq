@@ -93,7 +93,7 @@ const MyPlan = () => {
           ICON={<IconAddressBook size={40} />}
         />
 
-        <P Copy={subscriptionTier?.description}></P>
+        <P>{subscriptionTier?.description}</P>
         <Container fluid>
           <Paper
             withBorder

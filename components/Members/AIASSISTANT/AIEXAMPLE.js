@@ -38,7 +38,7 @@ export const AIEXAMPLE = ({ AISETTINGS }) => {
   return (
     <>
       <Box>
-      <P fontStyle="italic" Copy={`Example`} />
+      <P fontStyle="italic" >Example</P>
         <Paper
           radius="sm"
           shadow="md"
@@ -56,10 +56,9 @@ export const AIEXAMPLE = ({ AISETTINGS }) => {
             textTransform={"uppercase"}
             lineHeight={"1em"}
             marginBottom={0}
-            Copy={CreateSentence(AISETTINGS)}
-          />
+           >{CreateSentence(AISETTINGS)}</P>
         </Paper>
-        <P fontStyle="italic" Copy={`Response`} />
+        <P fontStyle="italic">Response</P>
         <Paper
           radius="sm"
           shadow="md"
@@ -72,7 +71,7 @@ export const AIEXAMPLE = ({ AISETTINGS }) => {
           {typeof AIExample !== "string" ? (
             <FixturaLoading />
           ) : (
-            <P color={0} lineHeight={"1.4em"} Copy={AIExample} marginBottom={0} />
+            <P color={0} lineHeight={"1.4em"}  marginBottom={0} >{AIExample}</P>
           )}
         </Paper>
       </Box>

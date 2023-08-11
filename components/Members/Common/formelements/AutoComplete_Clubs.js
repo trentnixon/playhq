@@ -39,7 +39,7 @@ const ConfirmButtons = ({ handleConfirmClick, handleChangeClick, name }) => {
 const SuccessMessage = ({ name }) => {
   return (
     <Group position="apart">
-      <P textTransform={`uppercase`} size={`sm`} marginBottom={0} Copy={name} />
+      <P textTransform={`uppercase`} size={`sm`} marginBottom={0}>{name}</P>
       <ActionIcon
         variant="filled"
         sx={(theme) => ({

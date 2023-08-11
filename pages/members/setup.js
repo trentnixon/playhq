@@ -44,7 +44,7 @@ const SETUP = () => {
   ) : (
     <>
       <SubHeaders Copy={`Let's set up your account!`} />
-      <P Copy={`The setup process should only take a few minutes.`} />
+      <P>The setup process should only take a few minutes.</P>
       <CreateAccountInit setAccountsetup={setAccountSetup} />
     </>
   ); 

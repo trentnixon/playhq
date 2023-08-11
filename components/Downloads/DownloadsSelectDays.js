@@ -47,12 +47,11 @@ const DaysTill = ({ days_of_the_week, renders }) => {
           <P
             color={1}
             marginBottom={0}
-            Copy={`Next Order will be delivered in ${daysUntil(
-              days_of_the_week
-            )} days`}
-          />
+           >{`Next Order will be delivered in ${daysUntil(
+            days_of_the_week
+          )} days`}</P>
         ) : (
-          <P color={1} marginBottom={0} Copy={checkDeliveryDate(renders)} />
+          <P color={1} marginBottom={0}>{checkDeliveryDate(renders)}</P>
         )}
       </Box>
     </Paper>

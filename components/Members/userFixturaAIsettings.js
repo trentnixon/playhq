@@ -109,8 +109,7 @@ const LabelMe = ({ label }) => {
         Weight={900}
         marginBottom={0}
         textTransform={"uppercase"}
-        Copy={label}
-      />
+       >{label}</P>
     </Wrapper>
   );
 };

@@ -138,7 +138,7 @@ export const SwitchAssets = ({
         return (
           <div key={key}>
             <SubHeaders Copy={key} />
-            <P Copy={AssetCategories[key]} />
+            <P >{AssetCategories[key]}</P>
             <ShadowWrapper BGColor={1} p={20}>
               
               <SimpleGrid cols={1} breakpoints={[{ minWidth: "lg", cols: 2 }]}>

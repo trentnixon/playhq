@@ -32,18 +32,20 @@ const Services = () => {
         <div className="container">
           <div className="section-title">
             <h2>Your Premier Destination for Customized Cricket Content</h2>
-            <P
-              textAlign={"center"}
-              Copy={
-                "Fixtura is the premier provider of AI-generated social media content for cricket clubs and associations. We cover everything from tailored videos to personalized match reports, delivering a complete digital experience. Share captivating content with ease and keep your fans engaged across social media and email platforms. Our AI-powered platform ensures your members are always in the loop with the latest club activities."
-              }
-            />
-            <P
-              textAlign={"center"}
-              Copy={`Our AI-powered platform allows you to effortlessly publish match
-                reports and weekend summaries, keeping your members informed and
-                engaged with your club&apos;s activity.`}
-            />
+            <P textAlign={"center"}>
+              Fixtura is the premier provider of AI-generated social media
+              content for cricket clubs and associations. We cover everything
+              from tailored videos to personalized match reports, delivering a
+              complete digital experience. Share captivating content with ease
+              and keep your fans engaged across social media and email
+              platforms. Our AI-powered platform ensures your members are always
+              in the loop with the latest club activities.
+            </P>
+            <P textAlign={"center"}>
+              Our AI-powered platform allows you to effortlessly publish match
+              reports and weekend summaries, keeping your members informed and
+              engaged with your club&apos;s activity.
+            </P>
           </div>
           <div className="row justify-content-center">
             {servicesData.map((service, index) => (
@@ -61,9 +63,10 @@ const Services = () => {
                     size={24}
                     marginBottom="14px"
                     textAlign={"center"}
-                    Copy={service.title}
-                  />
-                  <P textAlign={"center"} Copy={service.description} />
+                  >
+                    {service.title}
+                  </P>
+                  <P textAlign={"center"}>{service.description}</P>
                 </div>
               </div>
             ))}

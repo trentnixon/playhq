@@ -40,8 +40,7 @@ export const UserDetails = ({
             Weight={900}
             marginBottom={0}
             textTransform={"uppercase"}
-            Copy={`Plan`}
-          />
+           >Plan</P>
           <BTN_TOINTERALLINK
             LABEL={"View Plan"}
             URL={`/members/myplan`}
@@ -69,8 +68,7 @@ export const UserDetails = ({
               Weight={400}
               marginBottom={0}
               textTransform={"uppercase"}
-              Copy={subscriptionTier?.Name}
-            />
+             >{subscriptionTier?.Name}</P>
           </Box>
 
           <P
@@ -78,8 +76,7 @@ export const UserDetails = ({
             Weight={400}
             marginBottom={0}
             textTransform={"uppercase"}
-            Copy={Value}
-          />
+           >{Value}</P>
         </Group>
       </ShadowWrapper>
 

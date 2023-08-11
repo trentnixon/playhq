@@ -22,24 +22,16 @@ const AboutContent = () => {
               <div className="about-content about-content-two">
                 <div className="section-title">
                   <h2>What is Fixtura?</h2>
-                  <P
-                    Copy={`Fixtura is more than just a web application; it's a
+                  <P>Fixtura is more than just a web application; it's a
                     revolutionary platform transforming cricket clubs and
                     associations with personalized digital brilliance. We're all
                     about amplifying your cricketing journey, showcasing
                     achievements, engaging fans, and above all, making you stand
-                    out in the digital crowd.`}
-                  />
+                    out in the digital crowd.</P>
 
-                  <P
-                    Copy={`Our special blend of cutting-edge technology and creativity serves up a unique range of services. Dive into our customizable videos that capture the thrill of match reviews, upcoming fixtures, game results, and player spotlights. Discover our striking screenshots, graphical reflections of those videos that encapsulate unforgettable moments. Or explore AI-generated content that serves as your match day analyst.`}
-                  />
-                  <P
-                    Copy={`With Fixtura, it's not just about content; it's about empowering your cricket passion. We are your committed partner, working hand in hand to ensure your digital assets resonate with your spirit, goals, and aspirations.`}
-                  />
-                  <P
-                    Copy={`Whether you're a club wanting to celebrate victories or an association desiring to connect with fans, Fixtura is here to elevate your game. Our dedication to customer excellence ensures that your digital presence shines bright, just like your cricketing stars.`}
-                  />
+                  <P>Our special blend of cutting-edge technology and creativity serves up a unique range of services. Dive into our customizable videos that capture the thrill of match reviews, upcoming fixtures, game results, and player spotlights. Discover our striking screenshots, graphical reflections of those videos that encapsulate unforgettable moments. Or explore AI-generated content that serves as your match day analyst.</P>
+                  <P>With Fixtura, it's not just about content; it's about empowering your cricket passion. We are your committed partner, working hand in hand to ensure your digital assets resonate with your spirit, goals, and aspirations.</P>
+                  <P>Whether you're a club wanting to celebrate victories or an association desiring to connect with fans, Fixtura is here to elevate your game. Our dedication to customer excellence ensures that your digital presence shines bright, just like your cricketing stars.</P>
                 </div>
 
                 <div className="about-text"></div>

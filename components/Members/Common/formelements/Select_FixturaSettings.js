@@ -134,7 +134,7 @@ const UI_WithSelectedAndButton = ({
     <Group position="apart">
       <Box>
         {error ? (
-          <P Copy={error} />
+          <P>{error}</P>
         ) : showSelect ? (
           <Select
             onChange={handleChange}
@@ -147,8 +147,7 @@ const UI_WithSelectedAndButton = ({
               textTransform={`uppercase`}
               size={`sm`}
               marginBottom={0}
-              Copy={`${selected ? selected.Name : "Select Option"}`}
-            />
+             >{`${selected ? selected.Name : "Select Option"}`}</P>
             {selected ? (
               <ActionIcon
                 variant="filled"
@@ -186,7 +185,7 @@ const UI_WithButton = ({
 }) => {
   return (
     <Group position="apart">
-      {showSelect ? false : <P Copy={SelectLabel} color={1} marginBottom={0} />}
+      {showSelect ? false : <P color={1} marginBottom={0}>{SelectLabel}</P>}
 
       <Box>
         {error ? (

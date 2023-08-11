@@ -72,8 +72,8 @@ const Subscriptions = () => {
                     ICON={<IconAddressBook size={40} />}
                   />
 
-                  <P size={'lg'} Weight={900} Copy={`$${product.attributes.price}/Weekly`}></P>
-                  <P Copy={product.attributes.description}></P>
+                  <P size={'lg'} Weight={900}>{`$${product.attributes.price}/Weekly`}</P>
+                  <P>{product.attributes.description}</P>
                   <Box
                     key={i}
                     sx={(theme) => ({

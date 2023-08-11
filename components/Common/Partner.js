@@ -84,7 +84,7 @@ const Partner = () => {
                     htmlFor="inputClubOrAssociation"
                     className="form-label"
                   >
-                    <P color={0} Copy={`Name of Club or Association`} />
+                    <P color={0}>Name of Club or Association</P>
                     
                   </label>
                   <input
@@ -127,14 +127,12 @@ const PositiveResult = ({ storedName }) => {
       color={0}
         textAlign={`center`}
         Weight={`bold`}
-        Copy={`Great news! ${storedName} is eligible to join Fixtura's exclusive network of cricket clubs and associations.`}
-      />
+       >{`Great news! ${storedName} is eligible to join Fixtura's exclusive network of cricket clubs and associations.`}</P>
       <P
       color={0}
         textAlign={`center`}
         Weight={400}
-        Copy={`Join now to experience the ease and efficiency of Fixtura's content creation services and take your club's online presence to the next level!`}
-      />
+       >Join now to experience the ease and efficiency of Fixtura's content creation services and take your club's online presence to the next level!</P>
       <Link href="/SignUp/">
         <a className="btn btn-primary">Sign up</a>
       </Link>

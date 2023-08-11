@@ -9,7 +9,13 @@ import { FixturaLoading } from "../Loading";
 import { P } from "../Type";
 import { BTN_ONCLICK } from "../utils/Buttons";
 
-export const Input_FixturaSetting = ({ Input, user, setHasUpdated, editingState=false, canCancel=true }) => {
+export const Input_FixturaSetting = ({
+  Input,
+  user,
+  setHasUpdated,
+  editingState = false,
+  canCancel = true,
+}) => {
   const [editing, setEditing] = useState(editingState);
   const [value, setValue] = useState(user?.attributes[Input.Field]);
   const [disabled, setDisabled] = useState(true);
@@ -87,13 +93,13 @@ export const Input_FixturaSetting = ({ Input, user, setHasUpdated, editingState=
                   })}
                 >
                   {user?.attributes[Input.Field] === null ? (
-                    <P Copy={"Required"} color={0} marginBottom={0} />
+                    <P color={0} marginBottom={0}>
+                      Required
+                    </P>
                   ) : (
-                    <P
-                      Copy={user?.attributes[Input.Field]}
-                      color={0}
-                      marginBottom={0}
-                    />
+                    <P color={0} marginBottom={0}>
+                      {user?.attributes[Input.Field]}
+                    </P>
                   )}
                 </Box>
                 {user?.attributes[Input.Field] === null ? (
@@ -123,7 +129,16 @@ export const Input_FixturaSetting = ({ Input, user, setHasUpdated, editingState=
                       placeholder={value}
                       onChange={handleValueChange}
                     />
-                    {error && <P color={8} size={'xs'} lineHeight={`2em`} marginBottom={0} textAlign='center' Copy={error} />}
+                    {error && (
+                      <P
+                        color={8}
+                        size={"xs"}
+                        lineHeight={`2em`}
+                        marginBottom={0}
+                        textAlign="center"
+                        
+                      >{error}</P>
+                    )}
                   </>
                 )}
               </div>
@@ -140,14 +155,16 @@ export const Input_FixturaSetting = ({ Input, user, setHasUpdated, editingState=
                 />
               ) : (
                 <>
-                {
-                  canCancel ?<BTN_ONCLICK
-                  LABEL="Cancel"
-                  HANDLE={() => setEditing(false)}
-                  THEME="error"
-                />:false
-                }
-                  
+                  {canCancel ? (
+                    <BTN_ONCLICK
+                      LABEL="Cancel"
+                      HANDLE={() => setEditing(false)}
+                      THEME="error"
+                    />
+                  ) : (
+                    false
+                  )}
+
                   <BTN_ONCLICK
                     LABEL="Save"
                     HANDLE={handleSubmit}
@@ -173,8 +190,7 @@ const LabelMe = ({ label }) => {
         Weight={900}
         marginBottom={0}
         textTransform={"uppercase"}
-        Copy={label}
-      />
+       >{label}</P>
     </Wrapper>
   );
 };

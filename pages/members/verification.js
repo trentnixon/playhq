@@ -24,7 +24,7 @@ const UserVerification = () => {
     <MembersWrapper>
       <PageTitle Copy={"Verifying User"} />
       <Wrapper>
-        <P Copy={`Please Wait here for 2 seconds.`} />
+        <P>{`Please Wait here for 2 seconds.`}</P>
       </Wrapper>
     </MembersWrapper>
   );

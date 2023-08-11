@@ -13,12 +13,9 @@ export const StepAboutTheCricket = ({ user, setHasUpdated }) => {
       />
 
       <SetupInputs user={user} setHasUpdated={setHasUpdated} />
-      <P 
-        color={8}
-        size={'xs'}
-        textAlign="right"
-        Copy={`These settings CANNOT be changes in your admin panel.`}
-      />
+      <P color={8} size={"xs"} textAlign="right">
+        These settings CANNOT be changes in your admin panel.
+      </P>
     </>
   );
 };
