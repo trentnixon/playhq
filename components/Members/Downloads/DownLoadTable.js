@@ -22,6 +22,7 @@ import {
   orderedArray,
 } from "../../Downloads/helpers";
 import { useAccountDetails } from "../../../lib/userContext";
+import { FixturaLoading } from "../Common/Loading";
 const useStyles = createStyles((theme) => ({
   header: {
     position: "sticky",
@@ -51,7 +52,7 @@ const useStyles = createStyles((theme) => ({
 
 export function DownloadTable({ data, Token }) {
   const theme = useMantineTheme();
- 
+
   const { classes, cx } = useStyles();
   const [scrolled, setScrolled] = useState(false);
   const rows = orderedArray(data).map((row, i) => (
@@ -69,7 +70,7 @@ export function DownloadTable({ data, Token }) {
             className={cx(classes.header, { [classes.scrolled]: scrolled })}
           >
             <tr>
-              <th> 
+              <th>
                 <Tooltip
                   label="Render ID"
                   color={theme.colors.cyan[3]}
@@ -134,23 +135,24 @@ export function DownloadTable({ data, Token }) {
 
 const TableRow = ({ row, Token }) => {
   const { account } = useAccountDetails();
-
+  console.log(row);
   return (
-   
     <tr key={row.name}>
-      <td>{row.Name}</td>
+      <td>{row.Processing ? <FixturaLoading /> : row.Name}</td>
       <td>{FormattDateFormDownloadTable(row.createdAt)}</td>
-      <td>{row.downloads}</td>
-      <td>{row.game_results_in_renders}</td>
-      <td>{row.upcoming_games_in_renders}</td>
+      <td>{row.Processing ? "0" : row.downloads}</td>
+      <td>{row.Processing ? "0" : row.game_results_in_renders}</td>
+      <td>{row.Processing ? "0" : row.upcoming_games_in_renders}</td>
       <td>
-        <BTN_TOEXTLINK
-          LABEL="Visit"
-          URL={`https://content.fixtura.com.au/${account.id}/${
-            row.id
-          }?token=${Token}`}
-          THEME="cta"
-        />
+        {row.Complete ? (
+          <BTN_TOEXTLINK
+            LABEL="Visit"
+            URL={`https://content.fixtura.com.au/${account.id}/${row.id}?token=${Token}`}
+            THEME="cta"
+          />
+        ) : (
+          false
+        )}
       </td>
     </tr>
   );
