@@ -133,7 +133,7 @@ const SignInForm = () => {
         </small>
         <br />
         <small>
-          Don’t have a login?{" "}
+          Don’t have an account yet?{" "}
           <Link href="/SignUp">
             <a> Sign up here</a>
           </Link>

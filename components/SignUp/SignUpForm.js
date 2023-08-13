@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { fetcher } from "../../lib/api";
 import { Container } from "@mantine/core";
 import { P } from "../Members/Common/Type";
+import Link from "next/link";
 
 // Form initial state
 const INITIAL_STATE = {
@@ -164,12 +165,12 @@ const SignUpForm = () => {
                       onChange={handleTermsChange}
                     />
                     <label className="form-check-label" htmlFor="termsCheck">
-                      I agree to the terms and conditions
+                      I agree to the <Link href={'terms-conditions/'}>terms and conditions </Link>
                     </label>
                   </div>
                   {!terms && (
                     <p className="error-message">
-                      Please agree to the terms and conditions to continue
+                      Please agree to the <Link href={'terms-conditions/'}>terms and conditions </Link> to continue
                     </p>
                   )}
                 </div>
@@ -213,9 +214,9 @@ const SuccessfulRegistration = () => {
             textAlign={"center"}
             Copy={"Please Verify Your Email to Get Started"}
           />
-          <P
+         {/*  <P
             Copy={`Congratulations on joining Fixtura! You're just a click away from unlocking personalized digital assets that will amplify your club's social media presence.`}
-          />
+          /> */}
 
           <P
             Weight={900}
@@ -226,12 +227,12 @@ const SuccessfulRegistration = () => {
             Copy={`If you don't see the email in your inbox, please check your spam or junk folder.`}
           />
 
-          <P
+          {/* <P
             Copy={`Once verified, you can dive into customization, selecting assets, and setting your delivery preferences. We'll take care of the rest, tailoring content to your specific needs.`}
-          />
-          <P
+          /> */}
+          {/* <P
             Copy={`Thank you for choosing Fixtura, and we can't wait to see your cricketing story shine online.`}
-          />
+          /> */}
         </div>
       </div>
     </>
