@@ -7,7 +7,7 @@ const Error = () => {
   return (
     <>
       <PageBanner pageTitle="404 Error" BGImage="/images/page-banner3.jpg" />
-      <ErrorContent />
+      <ErrorContent /> 
       <Footer />
     </>
   );

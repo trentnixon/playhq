@@ -8,9 +8,14 @@ import {
   Container,
   Box,
   useMantineTheme,
+  createStyles,
+  Avatar,
+  Text,
+  Stack,
+  Center,
 } from "@mantine/core";
 import { useAccountDetails } from "../../../lib/userContext";
-import { useSetAccountTrue } from "../../../Hooks/useAccount";
+import { useDeleteAccount, useSetAccountTrue } from "../../../Hooks/useAccount";
 import { setAccountFromLocalCookie } from "../../../lib/auth";
 import {
   IconCheck,
@@ -21,9 +26,11 @@ import {
   IconUser,
   IconUsersGroup,
 } from "@tabler/icons-react";
+import { IconPhoneCall, IconAt } from "@tabler/icons-react";
 import { BTN_ONCLICK } from "../../../components/Members/Common/utils/Buttons";
 import { P, PageTitle } from "../Common/Type";
 import { FixturaLoading } from "../../../components/Members/Common/Loading";
+import { FindAccountLogo } from "../../../lib/actions";
 
 const ReviewContainer = ({ OBJ, Title }) => {
   const theme = useMantineTheme();
@@ -66,12 +73,26 @@ const ReviewContainer = ({ OBJ, Title }) => {
   );
 };
 
+const useStyles = createStyles((theme) => ({
+  icon: {
+    color:
+      theme.colorScheme === "dark"
+        ? theme.colors.dark[3]
+        : theme.colors.gray[5],
+  },
+
+  name: {
+    fontFamily: `Greycliff CF, ${theme.fontFamily}`,
+  },
+}));
+
 export const ReviewSetupData = ({ DATA }) => {
-  const theme = useMantineTheme();
   const { account, ReRender } = useAccountDetails();
   const [AccountTrue, CreateSetAccountTrue] = useSetAccountTrue();
+  const [deleting, deleteAccount] = useDeleteAccount();
   const router = useRouter();
   const [loading, setLoading] = useState(false);
+  const [ConfirmReset, setConfirmReset] = useState(false);
 
   const CompleteRegistration = async () => {
     setLoading(true);
@@ -85,13 +106,31 @@ export const ReviewSetupData = ({ DATA }) => {
     }
   };
 
+ 
+  const handleProceed = () => {
+    deleteAccount(account.id); // Pass the account ID to delete
+  };
+
   useEffect(() => {
     if (AccountTrue) {
       setAccountFromLocalCookie(DATA.id);
-      router.push("/members/brand/");
+      router.push("/members/account/");
     }
   }, [AccountTrue, ReRender, router, setAccountFromLocalCookie]);
 
+  useEffect(() => {
+    if (deleting) {
+      window.location.reload(); // Refresh the page or navigate to a different route as needed
+    }
+  }, [deleting]);
+
+  if (deleting) {
+    return (
+      <Container size="lg" pt={200} pb={70}>
+        <FixturaLoading />
+      </Container>
+    );
+  }
   if (loading) {
     return (
       <Container size="lg" pt={200} pb={70}>
@@ -102,52 +141,25 @@ export const ReviewSetupData = ({ DATA }) => {
 
   return (
     <Container size="lg" pt={50} pb={70}>
-      <PageTitle Copy="Review Setup" ICON={<IconSettings2 size={40} />} />
-      <SimpleGrid
-        cols={1}
-        breakpoints={[
-          { minWidth: "sm", cols: 1 },
-          { minWidth: "md", cols: 1 },
-          { minWidth: 1200, cols: 1 },
-        ]}
-      >
-        <ReviewContainer
-          Title="Recipient"
-          OBJ={[
-            {
-              key: "Name",
-              value: DATA.attributes.FirstName,
-              icon: <IconUser size="2em" color={theme.colors.blue[5]} />,
-            },
-            {
-              key: "Email",
-              value: DATA.attributes.DeliveryAddress,
-              icon: <IconMailbox size="2em" color={theme.colors.blue[5]} />,
-            },
-          ]}
-        />
-        <ReviewContainer
-          Title="Organisation"
-          OBJ={[
-            {
-              key: "Account Type",
-              value: DATA.attributes.account_type.data.attributes.Name,
-              icon: <IconShield size="2em" color={theme.colors.blue[5]} />,
-            },
-            {
-              key: "Association",
-              value: DATA.attributes.associations.data[0].attributes.Name,
-              icon: <IconUsersGroup size="2em" color={theme.colors.blue[5]} />,
-            },
-            {
-              key: "Club",
-              value: DATA.attributes?.clubs?.data[0]?.attributes?.Name,
-              icon: <IconHome2 size="2em" color={theme.colors.blue[5]} />,
-            },
-          ]}
-        />
-      </SimpleGrid>
-      <Space h={30} />
+      <PageTitle
+        Copy="You're Just Moments Away"
+        ICON={<IconSettings2 size={40} />}
+      />
+
+      <P>
+        Almost there! We're excited to learn about your upcoming season, but
+        first, we need to make sure everything is spot on. Take a moment to
+        review the details below. It's vital we get this right, as it will help
+        us tailor your Fixtura experience to your unique needs.
+      </P>
+      <P Weight={600}>Let's Make Sure Everything's Perfect!</P>
+      {ConfirmReset ? (
+        <ConfirmResetCopy onProceed={handleProceed} />
+      ) : (
+        <ReviewAccontDetails DATA={DATA} />
+      )}
+
+      <Space h={20} />
       <Box
         sx={(theme) => ({
           padding: theme.spacing.md,
@@ -157,8 +169,111 @@ export const ReviewSetupData = ({ DATA }) => {
           textAlign: "right",
         })}
       >
-        <BTN_ONCLICK LABEL="Complete Setup" HANDLE={CompleteRegistration} />
+        <P>
+          If everything above is accurate, it's time to link up with PlayHQ and
+          embark on an exciting journey with Fixtura. Your custom-made content
+          and insights are just a click away. Ready to transform your season?
+          Let's sync and get started!
+        </P>
+        <Group position="center">
+          <BTN_ONCLICK
+            LABEL={ConfirmReset ? "Back" : "Reset"}
+            THEME={ConfirmReset ? "success" : "error"}
+            HANDLE={() => {
+              setConfirmReset(!ConfirmReset);
+            }}
+          />
+          {ConfirmReset ? (
+            false
+          ) : (
+            <BTN_ONCLICK
+              LABEL="Sync with PlayHQ"
+              HANDLE={CompleteRegistration}
+            />
+          )}
+        </Group>
       </Box>
     </Container>
+  );
+};
+
+const ConfirmResetCopy = ({ onProceed }) => {
+  return (
+    <Paper shadow="sm" p="md" withBorder>
+      <P Weight={600}>Reset Setup</P>
+      <P>
+        Please note that items such as name, email, logo, and colors can be
+        amended after setup. Only the organization type, club, and association
+        cannot be amended.
+      </P>
+      <P>Do you wish to proceed? Any data entered will be lost.</P>
+      <Group position="center">
+        <BTN_ONCLICK LABEL="Proceed" HANDLE={onProceed} THEME={"error"} />
+      </Group>
+    </Paper>
+  );
+};
+
+const ReviewAccontDetails = ({ DATA }) => {
+  const { classes } = useStyles();
+  return (
+    <Paper shadow="sm" p="md" withBorder>
+      <Group noWrap position="apart">
+        <div>
+          <Group noWrap spacing={10} my={5}>
+            <IconUser
+              size="1.5rem"
+              color={"#6699CC"}
+              className={classes.icon}
+            />
+            <P size={"md"} marginBottom={0}>
+              {DATA.attributes.FirstName}
+            </P>
+          </Group>
+          <Group noWrap spacing={10} my={5}>
+            <IconMailbox
+              size="1.5rem"
+              color={"#6699CC"}
+              className={classes.icon}
+            />
+            <P size={"md"} marginBottom={0}>
+              Email Address: {DATA.attributes.DeliveryAddress}
+            </P>
+          </Group>
+          <Group noWrap spacing={10} my={5}>
+            <IconShield
+              size="1.5rem"
+              color={"#6699CC"}
+              className={classes.icon}
+            />
+            <P size={"md"} marginBottom={0}>
+              {DATA.attributes.account_type.data.attributes.Name}
+            </P>
+          </Group>
+
+          <Group noWrap spacing={10} my={5}>
+            <IconUsersGroup
+              size="1.5rem"
+              color={"#6699CC"}
+              className={classes.icon}
+            />
+            <P size={"md"} marginBottom={0}>
+              {DATA.attributes.associations.data[0].attributes.Name}
+            </P>
+          </Group>
+          <Group noWrap spacing={10} my={5}>
+            <IconHome2
+              size="1.5rem"
+              color={"#6699CC"}
+              className={classes.icon}
+            />
+            <P size={"md"} marginBottom={0}>
+              {DATA.attributes?.clubs?.data[0]?.attributes?.Name}
+            </P>
+          </Group>
+        </div>
+        <Avatar src={FindAccountLogo(DATA)} size={120} radius="md" />
+      </Group>
+    </Paper>
   );
 };

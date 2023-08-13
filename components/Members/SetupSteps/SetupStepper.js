@@ -10,9 +10,11 @@ import {
 import { useAccountDetails } from "../../../lib/userContext";
 import { StepAboutUser } from "./Steps/AboutUser";
 import { StepAboutTheCricket } from "./Steps/AboutTheCricket";
+import { StepAboutBranding } from "./Steps/AboutBranding";
 import { BTN_ONCLICK } from "../Common/utils/Buttons";
 import { P } from "../Common/Type";
 import { LoadingStateWrapper } from "../Account/HOC/LoadingStateWrapper";
+import StepAboutLogo from "./Steps/AboutLogo";
 
 export const SetupStages = ({ setReview }) => {
   const theme = useMantineTheme();
@@ -22,6 +24,8 @@ export const SetupStages = ({ setReview }) => {
   const [progress, setProgress] = useState({
     step1: {},
     step2: {},
+    step3: {},
+    step4: {},
   });
   const [active, setActive] = useState(0);
 
@@ -31,13 +35,15 @@ export const SetupStages = ({ setReview }) => {
 
   useEffect(updateData, [account]);
 
-  const nextStep = useCallback(() =>
-    setActive((current) => (current < 3 ? current + 1 : current))
-  , []);
+  const nextStep = useCallback(
+    () => setActive((current) => (current < 3 ? current + 1 : current)),
+    []
+  );
 
-  const prevStep = useCallback(() =>
-    setActive((current) => (current > 0 ? current - 1 : current))
-  , []);
+  const prevStep = useCallback(
+    () => setActive((current) => (current > 0 ? current - 1 : current)),
+    []
+  );
 
   const finished = useCallback(() => setReview(true), []);
 
@@ -59,6 +65,12 @@ export const SetupStages = ({ setReview }) => {
             "Association"
               ? false
               : DATA.attributes?.clubs?.data[0]?.attributes,
+        },
+        step3: {
+          // attributes related to About your Brand step
+        },
+        step4: {
+          // attributes related to About your Brand step
         },
       });
     }
@@ -87,21 +99,26 @@ export const SetupStages = ({ setReview }) => {
           color={theme.colors.members[3]}
           sx={(theme) => ({
             ".mantine-Stepper-steps": {
-              background: 'transparent',
+              background: "transparent",
               padding: "10px 20px",
               borderRadius: "10px 10px 0 0 ",
               borderBottom: `1px solid ${theme.colors.members[3]}`,
             },
           })}
         >
-           <Stepper.Step color="blue" label="All About the Assets">
+          <Stepper.Step color="blue" label="All About the Assets">
             <StepAboutUser user={DATA} setHasUpdated={ReRender} />
           </Stepper.Step>
+
           <Stepper.Step label="About the Cricket">
             <StepAboutTheCricket user={DATA} setHasUpdated={ReRender} />
           </Stepper.Step>
-         
-          
+          <Stepper.Step label="Upload your Logo">
+            <StepAboutLogo user={DATA} setHasUpdated={ReRender} />
+          </Stepper.Step>
+          <Stepper.Step label="About your Brand">
+            <StepAboutBranding user={DATA} setHasUpdated={ReRender} />
+          </Stepper.Step>
 
           <Stepper.Completed>
             <P
@@ -115,7 +132,7 @@ export const SetupStages = ({ setReview }) => {
       </Container>
       <Space h={10} />
 
-      {active === 1 ? (
+      {active === 3 ? (
         <Box
           sx={(theme) => ({
             padding: theme.spacing.md,

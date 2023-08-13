@@ -30,7 +30,7 @@ export const PageTitle = (props) => {
 export const SubHeaders = (props) => { 
   const { Copy } = props;
   return (
-    <Container fluid px={0} >
+    <Container fluid px={0} > 
       <Title
         order={3}
         transform="uppercase"

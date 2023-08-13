@@ -170,13 +170,13 @@ export const AutoCompleteSelectClub = ({
         {Array.isArray(clubs) && showAutocomplete && (
           <ClubsList clubs={clubs} handleClubClick={handleClubClick} />
         )}
-        {updateSuccessful ? (
+       {/*  {updateSuccessful ? (
           <SuccessMessage />
         ) : (
           <P color={8} size="sm">
             An error occurred. Please try again.
           </P>
-        )}
+        )} */}
         {isSelectionMade && !updateSuccessful && (
           <ConfirmButtons
             handleConfirmClick={handleConfirmClick}

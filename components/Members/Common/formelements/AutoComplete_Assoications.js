@@ -175,13 +175,13 @@ export const AutoCompleteSelectAssociation = ({
             handleAssociationClick={handleAssociationClick}
           />
         )}
-        {updateSuccessful ? (
+        {/* {updateSuccessful ? (
           <SuccessMessage />
         ) : (
           <P color={8} size="sm">
             An error occurred. Please try again.
           </P>
-        )}
+        )} */}
         {isSelectionMade && !updateSuccessful && (
           <ConfirmButtons
             handleConfirmClick={handleConfirmClick}

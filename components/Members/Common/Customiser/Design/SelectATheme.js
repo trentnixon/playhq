@@ -83,7 +83,7 @@ export const SelectATheme = () => {
   return (
     <>
       {createNew ? (
-        <CreateNewTheme
+        <CreateNewTheme 
           userAccount={userAccount}
           setCreateNew={setCreateNew}
           ReRender={ReRender}

@@ -7,7 +7,7 @@ const ErrorContent = () => {
       <div className="error-area ptb-100">
         <div className="container">
           <div className="error-content">
-            <img src="/images/404.png" alt="Error" />
+         
             <h3>Error 404 : page not found</h3>
             <p>
               The page you are looking for might have been removed had its name

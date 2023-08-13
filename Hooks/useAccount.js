@@ -96,3 +96,35 @@ export const useSetAccountTrue = (ctx) => {
 
   return [AccountTrue, CreateSetAccountTrue];
 };
+
+
+export const useDeleteAccount = () => {
+  const [deleting, setDeleting] = useState(false);
+
+  const deleteAccount = async (accountId) => {
+    setDeleting(true);
+    try {
+      const res = await fetcher(
+        `${process.env.NEXT_PUBLIC_STRAPI_URL}/accounts/${accountId}`,
+        {
+          method: "DELETE",
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${Cookies.get("jwt")}`,
+          },
+        }
+      );
+      if (res.data && res.data.attributes && res.data.attributes.isActive === false) {
+        setDeleting(true); // Set it to true to trigger the refresh
+      } else {
+        setDeleting(false); // Handle deletion failure
+      }
+    } catch (error) {
+      console.error("An error occurred while deleting the account:", error);
+      setDeleting(false);
+    }
+  };
+
+  return [deleting, deleteAccount];
+};

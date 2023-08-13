@@ -6,9 +6,9 @@ export const StepAboutTheCricket = ({ user, setHasUpdated }) => {
   return (
     <>
       <StepHeaderandDescription
-        Header={"About your association/club"}
+        Header={"Tell Us About Your Organization – We Want to Get It Right!"}
         Description={
-          "Select the appropriate organization type from the options below. Next, enter the names of your association then club in the provided boxes to ensure accurate setup of your account. Please double-check your selections, as these options cannot be changed later. "
+          "Are you part of an association or a club? Your selection helps us tailor the experience to your specific needs. Choose the appropriate organization type and fill in the names below. Remember, take a moment to double-check your choices; they'll be set in stone once you proceed!"
         }
       />
 
@@ -16,6 +16,7 @@ export const StepAboutTheCricket = ({ user, setHasUpdated }) => {
       <P color={8} size={"xs"} textAlign="right">
         These settings CANNOT be changes in your admin panel.
       </P>
+      
     </>
   );
 };

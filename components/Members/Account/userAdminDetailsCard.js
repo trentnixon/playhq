@@ -170,6 +170,15 @@ const IsSetupDetails = () => {
       <Group position="apart">
         <IconCheck size={`1.1em`} color={theme.colors.green[6]} />
         <Text ta="center" fz="sm" c="dimmed">
+          Subscription
+        </Text>
+        <Text ta="center" fz="sm" c={theme.colors.green[6]} fw={500}>
+          After Setup
+        </Text>
+      </Group>
+      <Group position="apart">
+        <IconCheck size={`1.1em`} color={theme.colors.green[6]} />
+        <Text ta="center" fz="sm" c="dimmed">
           Delivery Day
         </Text>
         <Text ta="center" fz="sm" c={theme.colors.green[6]} fw={500}>
@@ -179,27 +188,7 @@ const IsSetupDetails = () => {
       <Group position="apart">
         <IconCheck size={`1.1em`} color={theme.colors.green[6]} />
         <Text ta="center" fz="sm" c="dimmed">
-          Upload Logo
-        </Text>
-        <Text ta="center" fz="sm" c={theme.colors.green[6]} fw={500}>
-          After Setup
-        </Text>
-      </Group>
-
-      <Group position="apart">
-        <IconCheck size={`1.1em`} color={theme.colors.green[6]} />
-        <Text ta="center" fz="sm" c="dimmed">
-          Subscription
-        </Text>
-        <Text ta="center" fz="sm" c={theme.colors.green[6]} fw={500}>
-          After Setup
-        </Text>
-      </Group>
-
-      <Group position="apart">
-        <IconCheck size={`1.1em`} color={theme.colors.green[6]} />
-        <Text ta="center" fz="sm" c="dimmed">
-          Theme
+          Video settings
         </Text>
         <Text ta="center" fz="sm" c={theme.colors.green[6]} fw={500}>
           After Setup
@@ -208,7 +197,16 @@ const IsSetupDetails = () => {
       <Group position="apart">
         <IconCheck size={`1.1em`} color={theme.colors.green[6]} />
         <Text ta="center" fz="sm" c="dimmed">
-          Audio
+          Image settings
+        </Text>
+        <Text ta="center" fz="sm" c={theme.colors.green[6]} fw={500}>
+          After Setup
+        </Text>
+      </Group>
+      <Group position="apart">
+        <IconCheck size={`1.1em`} color={theme.colors.green[6]} />
+        <Text ta="center" fz="sm" c="dimmed">
+          Audio settings
         </Text>
         <Text ta="center" fz="sm" c={theme.colors.green[6]} fw={500}>
           After Setup
