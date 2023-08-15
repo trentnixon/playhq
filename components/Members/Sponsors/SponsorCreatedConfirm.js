@@ -1,10 +1,12 @@
 import { Avatar, Center, Group } from "@mantine/core";
 import { IconCheck } from "@tabler/icons";
 import { P } from "../Common/Type";
+import { BTN_ONCLICK } from "../Common/utils/Buttons";
 
-export const SponsorCreatedConfirm = ({ Sponsor }) => {
-    return (
-        <Center>
+export const SponsorCreatedConfirm = ({ Sponsor,setIsCreate }) => {
+  return (
+    <>
+      <Center>
         <Group mt={50}>
           <Avatar color={"green"} size={80} radius={80}>
             <IconCheck size={40} />
@@ -17,5 +19,15 @@ export const SponsorCreatedConfirm = ({ Sponsor }) => {
           />
         </Group>
       </Center>
-    );
-  };
+      <Center>
+        <BTN_ONCLICK
+          HANDLE={() => {
+            setIsCreate(false);
+          }}
+          LABEL="Back"
+          THEME="error"
+        />
+      </Center>
+    </>
+  );
+};

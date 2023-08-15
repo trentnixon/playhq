@@ -8,10 +8,12 @@ import {
   IconClock,
   IconClockPause,
 } from "@tabler/icons";
+import { IconCheckbox } from "@tabler/icons-react";
 
 export function UserDetailsCard({ user }) {
   const ORDER = user.attributes.order?.data;
-
+  const includesSponsors =
+    user.attributes.subscription_tier.data.attributes.includeSponsors;
   console.log(user.attributes.hasCompletedStartSequence);
 
   const UserTheme = useMemo(
@@ -98,12 +100,14 @@ export function UserDetailsCard({ user }) {
       <Text ta="center" fz="sm" c="dimmed">
         {AccountType}
       </Text>
+
       {user.attributes.hasCompletedStartSequence ? (
         <IsUserSubscriptionDetails
           subscriptionTier={subscriptionTier}
           statusMessage={statusMessage}
           statusColor={statusColor}
           StatusIcon={StatusIcon}
+          includesSponsors={includesSponsors}
         />
       ) : (
         <IsSetupDetails />
@@ -117,7 +121,9 @@ const IsUserSubscriptionDetails = ({
   statusColor,
   StatusIcon,
   statusMessage,
+  includesSponsors,
 }) => {
+  const theme = useMantineTheme();
   return (
     <Box
       sx={(theme) => ({
@@ -127,7 +133,17 @@ const IsUserSubscriptionDetails = ({
       })}
     >
       <FixturaDivider />
-
+      <Group position="apart">
+        <Group position="left" spacing="xs" align="center">
+          <StatusIcon size={`1.1em`} color={statusColor} />
+          <Text ta="center" fz="sm" c={statusColor} fw={500}>
+            {statusMessage}
+          </Text>
+        </Group>
+        <Text ta="center" fz="sm" c="dimmed">
+          Subscription
+        </Text>
+      </Group>
       <Group position="apart">
         <Text ta="center" fz="sm" c={statusColor} fw={500}>
           {` ${
@@ -140,16 +156,17 @@ const IsUserSubscriptionDetails = ({
           Plan
         </Text>
       </Group>
-
       <Group position="apart">
-        <Group position="left" spacing="xs" align="center">
-          <StatusIcon size={`1.1em`} color={statusColor} />
-          <Text ta="center" fz="sm" c={statusColor} fw={500}>
-            {statusMessage}
-          </Text>
-        </Group>
+        <Text ta="center" fz="sm" c={statusColor} fw={500}>
+          {includesSponsors ? (
+              <IconCheck size={`1.1em`} color={theme.colors.green[8]} />
+            ) : (
+              <IconAlertTriangle size={`1.1em`} color={theme.colors.red[8]} />
+            )
+          }
+        </Text>
         <Text ta="center" fz="sm" c="dimmed">
-          Subscription
+          Sponsors enabled
         </Text>
       </Group>
     </Box>

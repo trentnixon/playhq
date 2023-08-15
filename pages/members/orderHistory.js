@@ -2,7 +2,7 @@ import React from "react";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 import { useUser } from "../../lib/authContext";
-import Cookies from "js-cookie";
+//import Cookies from "js-cookie";
 
 // COmponents
 import { getIdFromLocalCookie } from "../../lib/auth";
@@ -12,14 +12,14 @@ import { MembersWrapper } from "../../components/Members/Common/Containers";
 import { PageTitle, SubHeaders } from "../../components/Members/Common/Type";
 import { IconDownload } from "@tabler/icons";
 
-import AwaitingFirstDownload from "../../components/Downloads/AwaitingFirstDownload";
+//import AwaitingFirstDownload from "../../components/Downloads/AwaitingFirstDownload";
 import Adminfetcher from "../../lib/Adminfetcher";
 import { DownloadCopy } from "../../components/Downloads/DownloadCopy";
 import { DownloadsSelectDays } from "../../components/Downloads/DownloadsSelectDays";
 import SetupCheck from "../../components/Members/Account/HOC/SetupCheck";
 import { LoadingStateWrapper } from "../../components/Members/Account/HOC/LoadingStateWrapper";
 
-const qs = require("qs");
+//const qs = require("qs");
 
 const OrderHistory = (props) => {
   const { Renders } = props;
@@ -47,7 +47,7 @@ const OrderHistory = (props) => {
     );
 
   return ( 
-    <MembersWrapper>  
+    <MembersWrapper>   
       <SetupCheck>
         <LoadingStateWrapper conditions={[user, Renders]}>
            <PageTitle Copy={`Downloads`} ICON={<IconDownload size={40} />} />

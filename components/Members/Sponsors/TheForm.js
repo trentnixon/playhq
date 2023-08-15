@@ -13,7 +13,6 @@ import { useAccountDetails } from "../../../lib/userContext";
 import { SponsorCreatedConfirm } from "./SponsorCreatedConfirm";
 import { DisplaySponsorsLogo } from "./DisplaySponsorsLogo";
 import { InputFormContainer } from "./InputFormContainer";
-const PRIMARY_COL_HEIGHT = 300;
 
 export const CreateaSponsorForm = ({ OBJ }) => {
   // VARS
@@ -131,6 +130,7 @@ export const CreateaSponsorForm = ({ OBJ }) => {
   if (Sponsor?.data || UpdatedSponsor?.data) {
     return (
       <SponsorCreatedConfirm
+      setIsCreate={OBJ.setIsCreate}
         Sponsor={
           Sponsor?.data === undefined ? UpdatedSponsor?.data : Sponsor?.data
         }
@@ -187,7 +187,12 @@ export const CreateaSponsorForm = ({ OBJ }) => {
                 />
               </Grid.Col>
               <Grid.Col span={6}>
-                <button type="submit" className="btn btn-primary">
+                
+                <button
+                  type="submit"
+                  className={!LogoPath?"btn btn-secondary":"btn btn-primary"}
+                  disabled={!LogoPath} // this disables the button if LogoPath is falsy
+                >
                   {OBJ.Create ? "Create" : "Update"}
                 </button>
               </Grid.Col>
@@ -195,6 +200,7 @@ export const CreateaSponsorForm = ({ OBJ }) => {
           </SimpleGrid>
         </div>
       </form>
+      
     </Container>
   );
 };
