@@ -13,8 +13,8 @@ import { IconCheckbox } from "@tabler/icons-react";
 export function UserDetailsCard({ user }) {
   const ORDER = user.attributes.order?.data;
   const includesSponsors =
-    user.attributes.subscription_tier.data.attributes.includeSponsors;
-  console.log(user.attributes.hasCompletedStartSequence);
+    user.attributes.subscription_tier.data?.attributes?.includeSponsors;
+  console.log(user?.attributes?.hasCompletedStartSequence);
 
   const UserTheme = useMemo(
     () => user.attributes.theme?.data?.attributes?.Theme,
