@@ -41,7 +41,7 @@ const PromotionalBanner = () => {
                         color: "black",
                       }}
                     >
-                      The new era of
+                      A new
                       <br />
                       <span
                         style={{
@@ -62,10 +62,9 @@ const PromotionalBanner = () => {
                         >
                           <AnimateTerm term={term} />
                         </span>
-                      </span>{" "}
+                      </span>{" "} 
                       <br />
-                      Social Media Content for Cricket Clubs and Associations
-                      starts here.
+                      Content TOOl FOR <strong>SOCIAL MEDIA MANAGERS</strong> AND CLUB SECRETARIES
                     </h1>
                   </div>
                 </div>
