@@ -37,12 +37,12 @@ const MainBanner = () => {
                       sx={{
                         fontSize: "2.5em",
                         lineHeight: ".9em",
-                        fontWeight:600,
-                        marginBottom:'10px',
+                        fontWeight: 600,
+                        marginBottom: "10px",
                         "@media (max-width: 48em)": {
                           fontSize: "2em",
                           textAlign: "center",
-                          marginBottom:'20px',
+                          marginBottom: "20px",
                         },
                       }}
                     >
@@ -51,6 +51,7 @@ const MainBanner = () => {
 
                     <Text
                       fz="xl"
+                      lh={"1"}
                       align="right"
                       sx={{
                         "@media (max-width: 48em)": {
@@ -59,7 +60,9 @@ const MainBanner = () => {
                         },
                       }}
                     >
-                      From Engaging Videos to Deep-Dive Write-ups: Crafting Content for the Modern Cricket Club
+                      A NEW AI CONTENT CREATION TOOL FOR{" "}
+                      <strong>SOCIAL MEDIA MANAGERS</strong> AND{" "}
+                      <strong>CLUB SECRETARIES</strong>
                     </Text>
                     <Text
                       align="right"
