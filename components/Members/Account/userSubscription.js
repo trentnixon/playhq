@@ -102,7 +102,7 @@ export const UserSubscription = () => {
           </>
         )}
 
-        <SubscriptionActiveFrom ORDER={ORDER} />
+        <SubscriptionActiveFrom ORDER={ORDER} /> 
       </>
     );
   } else if (isCancelled) {

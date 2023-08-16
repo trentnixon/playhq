@@ -30,7 +30,7 @@ const Account = ({fixtureDateRange}) => {
   const { account } = useAccountDetails();
   const [userAccount, setUserAccount] = useState(account);
   /* is User Auth */
-  const { user, loading } = useUser();
+  const { user, loading } = useUser(); 
   const router = useRouter();
   const currentRoute = router.pathname;
 

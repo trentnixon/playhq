@@ -12,6 +12,7 @@ import {
 import { useAccountDetails } from "../../../lib/userContext";
 import { P } from "../Common/Type";
 import { Group } from "@mantine/core";
+import { FindAccountLabel, FindAccountType } from "../../../lib/actions";
 
 // Custom hook to handle fetching of subscription tiers
 const useFetchSubscriptionTiers = () => {
@@ -33,7 +34,14 @@ const useFetchSubscriptionTiers = () => {
 };
 
 // Shared component for creating cards
-const CreateCards = ({ product, signUp, BTN, selected, timing = 1,isActive=false }) => {
+const CreateCards = ({
+  product,
+  signUp,
+  BTN,
+  selected,
+  timing = 1,
+  isActive = false,
+}) => {
   return (
     <ProductCard
       product={product}
@@ -41,7 +49,7 @@ const CreateCards = ({ product, signUp, BTN, selected, timing = 1,isActive=false
       BTN={BTN}
       className={selected ? "" : "opacity-5"}
       timing={timing}
-      isActive={isActive} 
+      isActive={isActive}
       withTool={false}
     />
   );
@@ -50,49 +58,63 @@ const CreateCards = ({ product, signUp, BTN, selected, timing = 1,isActive=false
 export const SelectAPlan = () => {
   const { products, loading } = useFetchSubscriptionTiers();
   const [selectedProductId, setSelectedProductId] = useState(null);
+  const { account } = useAccountDetails();
 
   if (loading) return <>Loading Subscriptions Options...</>;
   if (!products) return <>Error loading Subscriptions Options</>;
 
+  const accountType = FindAccountType(account);
+  const isClub = accountType === "Club"; // This will be true if the account type is Club
+
   const onConfirm = (productId) => {
     setSelectedProductId(productId);
   };
+
   return (
     <>
       <div className="row justify-content-center">
-        {products.map((product, i) =>
-          selectedProductId === null || product.id === selectedProductId
-            ? product.attributes.isActive && (
-                <CreateCards
-                  key={i}
-                  product={product.attributes}
-                  signUp={false}
-                  timing={i}
-                  
-                  BTN={
-                    <Group position="center" px={10}>
+        {products.map((product, i) => {
+          const { isActive, isClub: productIsClub } = product.attributes;
+          if (
+            (selectedProductId === null || product.id === selectedProductId) &&
+            isActive &&
+            productIsClub === isClub
+          ) {
+            return (
+              <CreateCards
+                key={i}
+                product={product.attributes}
+                signUp={false}
+                timing={i}
+                BTN={
+                  <Group position="center" px={10}>
                     <NewSubscriber
                       productId={product.id}
                       selected={product.id === selectedProductId}
                       onConfirm={onConfirm}
-                    /></Group>
-                  }
-                  selected={product.id === selectedProductId}
-                />
-              )
-            : null
-        )}
+                    />
+                  </Group>
+                }
+                selected={product.id === selectedProductId}
+              />
+            );
+          }
+          return null; // Return null for items that shouldn't be rendered
+        })}
       </div>
     </>
   );
 };
 
-export const UpdateYourPlan = ({user,setHasUpdated}) => {
+export const UpdateYourPlan = ({ user, setHasUpdated }) => {
   const { products, loading } = useFetchSubscriptionTiers();
   const [selectedProductId, setSelectedProductId] = useState(null);
   const [planState, setPlanState] = useState(null);
-  // 
- 
+
+  const accountType = FindAccountType(user); // Assuming user contains account details
+  const isClub = accountType === "Club";
+  //
+
   if (loading)
     return (
       <>
@@ -103,7 +125,7 @@ export const UpdateYourPlan = ({user,setHasUpdated}) => {
           Weight={600}
           Copy={`Loading Subscriptions Options...`}
         />
-         <P
+        <P
           Copy={`Please wait while we load your subscription options. We are retrieving the available plans and features for you to choose from. Thank you for your patience. If you have any questions or need help selecting the right subscription for you, our support team is here to assist you.`}
         />
       </>
@@ -153,28 +175,37 @@ export const UpdateYourPlan = ({user,setHasUpdated}) => {
     <>
       <>
         <div className="row justify-content-center">
-          {products.map((product, i) =>
-            selectedProductId === null || product.id === selectedProductId
-              ? product.attributes.isActive && (
-                  <CreateCards
-                    key={i} 
-                    product={product.attributes}
-                    signUp={false}
-                    timing={i}
-                    isActive={product.id === user.attributes.subscription_tier.data.id}
-                    BTN={
-                      <ChangePlanBtn
-                        productId={product.id}
-                        selected={product.id === selectedProductId}
-                        onConfirm={onConfirm}
-                        setPlanState={setPlanState}
-                      />
-                    }
-                    selected={product.id === selectedProductId}
-                  />
-                )
-              : null
-          )}
+          {products.map((product, i) => {
+            const { isActive, isClub: productIsClub } = product.attributes;
+            if (
+              (selectedProductId === null ||
+                product.id === selectedProductId) &&
+              isActive &&
+              productIsClub === isClub
+            ) {
+              return (
+                <CreateCards
+                  key={i}
+                  product={product.attributes}
+                  signUp={false}
+                  timing={i}
+                  isActive={
+                    product.id === user.attributes.subscription_tier.data.id
+                  }
+                  BTN={
+                    <ChangePlanBtn
+                      productId={product.id}
+                      selected={product.id === selectedProductId}
+                      onConfirm={onConfirm}
+                      setPlanState={setPlanState}
+                    />
+                  }
+                  selected={product.id === selectedProductId}
+                />
+              );
+            }
+            return null;
+          })}
         </div>
       </>
     </>
@@ -233,11 +264,7 @@ const NewSubscriber = ({ productId, selected, onConfirm }) => {
     <Group position="apart">
       <BTN_ONCLICK
         LABEL={
-          loading
-            ? "Processing..."
-            : confirmState
-            ? "Confirm"
-            : "Purchase"
+          loading ? "Processing..." : confirmState ? "Confirm" : "Purchase"
         }
         HANDLE={handleClick}
         THEME="success"
