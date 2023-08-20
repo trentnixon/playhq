@@ -11,7 +11,7 @@ const EarlyAccess = () => {
   return (
     <>
       <PromotionalBanner />
-
+      
       <Benefits />
 
       <SectionContainers BG={`bg-f9f9f9`}>
@@ -57,6 +57,37 @@ const SectionContainers = (props) => {
   );
 };
 
+
+const videoContainerStyles = {
+  position: 'relative',
+  paddingBottom: '56.25%',  // Aspect ratio for 16:9
+  height: '0',
+  overflow: 'hidden'
+};
+
+const iframeStyles = {
+  position: 'absolute',
+  top: '0',
+  left: '0',
+  width: '100%',
+  height: '100%'
+};
+const YouTubeVideo = ({ videoId }) => (
+
+<div className="container mt-5 col-lg-8 offset-lg-2">
+<div style={videoContainerStyles}>
+    <iframe
+      style={iframeStyles}
+      src={`https://www.youtube.com/embed/${videoId}`}
+  
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowFullScreen
+      title="YouTube video player"
+    ></iframe>
+  </div>
+  </div>
+);
+
 const Benefits = () => {
   return (
     <div className="">
@@ -76,6 +107,7 @@ const Benefits = () => {
             first-hand.
           </p>
         </div>
+        <YouTubeVideo videoId="k7ps0D5Pma8" />
         <div className="row align-items-center">
           <div className="col-lg-6 col-md-12">
             <div className="saas-how-it-works-content white-color">
