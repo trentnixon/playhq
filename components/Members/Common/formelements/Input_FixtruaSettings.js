@@ -1,4 +1,4 @@
-import { Button, Group, Box, Space, Loader, ActionIcon } from "@mantine/core";
+import { Button, Group, Box, Space, Loader, ActionIcon, useMantineTheme } from "@mantine/core";
 import { IconCheck } from "@tabler/icons";
 import Cookies from "js-cookie";
 
@@ -8,6 +8,7 @@ import { ShadowWrapper, Wrapper } from "../Containers";
 import { FixturaLoading } from "../Loading";
 import { P } from "../Type";
 import { BTN_ONCLICK } from "../utils/Buttons";
+import { useMediaQuery } from "@mantine/hooks";
 
 export const Input_FixturaSetting = ({
   Input,
@@ -183,12 +184,15 @@ export const Input_FixturaSetting = ({
 };
 
 const LabelMe = ({ label }) => {
+  const theme = useMantineTheme();
+  const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
   return (
-    <Wrapper>
+    <Wrapper px={mobile ? 0 : "sm"}>
       <P
         color={4}
         Weight={900}
         marginBottom={0}
+        size={mobile ? "sm":'md'}
         textTransform={"uppercase"}
        >{label}</P>
     </Wrapper>

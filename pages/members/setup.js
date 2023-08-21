@@ -13,9 +13,6 @@ import {
   IconMail,
   IconUser,
   IconBuilding,
-  IconOrganization,
-  IconSportSoccer,
-  IconBrand,
   IconPalette,
   IconSettings,
   IconBrandStripe,
@@ -56,7 +53,7 @@ const SETUP = () => {
       <Space h={20} />
       <SetupStages DATA={UserAccount} setReview={setReview} />
     </>
-  ) : (
+  ) : ( 
     <>
       <SubHeaders Copy={`Let's set up your account!`} />
 

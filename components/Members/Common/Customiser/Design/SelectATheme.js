@@ -18,6 +18,7 @@ import { P, SubHeaders } from "../../Type";
 import { DisplayCustomTheme } from "./Components/DisplayCustomTheme";
 import { CreateNewTheme } from "./Components/CreateNewTheme";
 import { FixturaDivider } from "../../Divider";
+import { useMediaQuery } from "@mantine/hooks";
 
 export const SelectATheme = () => {
   const { account, ReRender } = useAccountDetails();
@@ -102,8 +103,10 @@ export const SelectATheme = () => {
 };
 
 const Swatches = ({ colors }) => {
+  const theme = useMantineTheme();
+  const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
   return colors.map((color) => (
-    <ColorSwatch key={color} color={color} size={30} radius="sm" />
+    <ColorSwatch key={color} color={color} size={mobile?14:30} radius="sm" />
   ));
 };
 
@@ -151,22 +154,19 @@ const TableRow = ({ item, userAccount, StoreUSerChange }) => {
 
 const ColorTable = (props) => {
   const { GetElement, userAccount, StoreUSerChange } = props;
-
+  const theme = useMantineTheme();
+  const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
   return (
     <>
       <SubHeaders Copy={`Color themes`} />
       <P>
-        Select Your Brand Colors: Customize Your Assets with Your Brand Colors.
-        Choose from a variety of predefined themes or create a custom theme that
-        reflects your club's unique personality. By selecting your brand colors,
-        you'll create visually appealing videos and images that showcase your
-        team's achievements in a style that's true to your brand
+      Choose your brand colors to personalize your assets. Select from predefined themes or create a custom theme that reflects your club's unique personality. This will create visually appealing videos and images that highlight your team's achievements in your brand's style.
       </P>
       <Paper
         radius="md"
-        shadow="md"
-        withBorder
-        p="lg"
+        shadow={mobile ? false :"md"}
+        withBorder={mobile ? false :true}
+        p={mobile ? 0 :"lg"}
         sx={(theme) => ({
           backgroundColor: theme.white,
         })}

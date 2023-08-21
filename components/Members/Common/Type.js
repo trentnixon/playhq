@@ -7,7 +7,7 @@ export const PageTitle = (props) => {
   const matches = useMediaQuery('(min-width: 48em)');
   return ( 
     <>
-      <Group position={"apart"}>
+      <Group noWrap position={"apart"}>
         <Title
           order={matches ? 1 : 3}
           transform="uppercase"

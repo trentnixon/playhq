@@ -31,6 +31,7 @@ import { BTN_ONCLICK } from "../../../components/Members/Common/utils/Buttons";
 import { P, PageTitle } from "../Common/Type";
 import { FixturaLoading } from "../../../components/Members/Common/Loading";
 import { FindAccountLogo } from "../../../lib/actions";
+import { useMediaQuery } from "@mantine/hooks";
 
 const ReviewContainer = ({ OBJ, Title }) => {
   const theme = useMantineTheme();
@@ -106,7 +107,6 @@ export const ReviewSetupData = ({ DATA }) => {
     }
   };
 
- 
   const handleProceed = () => {
     deleteAccount(account.id); // Pass the account ID to delete
   };
@@ -140,17 +140,14 @@ export const ReviewSetupData = ({ DATA }) => {
   }
 
   return (
-    <Container size="lg" pt={50} pb={70}>
-      <PageTitle
-        Copy="You're Just Moments Away"
-        ICON={<IconSettings2 size={40} />}
-      />
+    <Container size="lg" px={0} pt={50} pb={70}>
+      <PageTitle Copy="Almost Done" ICON={<IconSettings2 size={40} />} />
 
       <P>
-        Almost there! We're excited to learn about your upcoming season, but
-        first, we need to make sure everything is spot on. Take a moment to
-        review the details below. It's vital we get this right, as it will help
-        us tailor your Fixtura experience to your unique needs.
+        We're excited to learn about your upcoming season, but first, we need to
+        make sure everything is spot on. Take a moment to review the details
+        below. It's vital we get this right, as it will help us tailor your
+        Fixtura experience to your unique needs.
       </P>
       <P Weight={600}>Let's Make Sure Everything's Perfect!</P>
       {ConfirmReset ? (
@@ -216,8 +213,17 @@ const ConfirmResetCopy = ({ onProceed }) => {
 
 const ReviewAccontDetails = ({ DATA }) => {
   const { classes } = useStyles();
+  const theme = useMantineTheme();
+  const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
   return (
     <Paper shadow="sm" p="md" withBorder>
+      {mobile ? (
+        <Center>
+          <Avatar src={FindAccountLogo(DATA)} size={120} radius="md" />
+        </Center>
+      ) : (
+        false
+      )}
       <Group noWrap position="apart">
         <div>
           <Group noWrap spacing={10} my={5}>
@@ -272,7 +278,11 @@ const ReviewAccontDetails = ({ DATA }) => {
             </P>
           </Group>
         </div>
-        <Avatar src={FindAccountLogo(DATA)} size={120} radius="md" />
+        {mobile ? (
+          false
+        ) : (
+          <Avatar src={FindAccountLogo(DATA)} size={120} radius="md" />
+        )}
       </Group>
     </Paper>
   );

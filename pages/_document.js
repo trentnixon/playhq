@@ -1,4 +1,5 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
+
 /* import { createGetInitialProps } from "@mantine/next";
 const getInitialProps = createGetInitialProps(); */
 
@@ -32,7 +33,9 @@ class MyDocument extends Document {
             rel="stylesheet"
           />
           <link rel="icon" type="image/png" href="/favicon.ico"></link>
+          
         </Head>
+      
         <body>
           <Main />
           <NextScript />

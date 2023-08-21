@@ -9,7 +9,8 @@ export const MembersWrapper = (props) => {
 };
 
 export const Wrapper = (props) => {
-  return <Container size={"lg"}>{props.children}</Container>;
+  const{px='sm', py='xs'} = props
+  return <Container size={"lg"} px={px} py={py}>{props.children}</Container>;
 };
 
 export const PageCopyWrapper = (props) => {

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useAccountDetails } from "../../../../lib/userContext";
 import { P, PageTitle } from "../../Common/Type";
 import { Wrapper } from "../../Common/Containers";
-import { Box, Group, List, Paper } from "@mantine/core";
+import { Box, Group, List, Paper, useMantineTheme } from "@mantine/core";
 import { FixturaLoading } from "../../Common/Loading";
 import {
   IconTools,
@@ -11,11 +11,13 @@ import {
   IconCreditCard,
 } from "@tabler/icons";
 import { FindAccountLabel } from "../../../../lib/actions";
+import { useMediaQuery } from "@mantine/hooks";
 
 const SetupCheck = ({ children }) => {
   const { account, ReRender } = useAccountDetails();
   const [isSetup, setIsSetup] = useState(account?.attributes?.isSetup);
-
+  const theme = useMantineTheme();
+  const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
  
   useEffect(() => {
     if (!isSetup) {
@@ -42,7 +44,7 @@ const SetupCheck = ({ children }) => {
           <Group position="apart">
             <Box
               sx={(theme) => ({
-                width: "80%",
+                width: "100%",
               })}
             >
               <P

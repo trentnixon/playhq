@@ -1,3 +1,4 @@
+
 // Components
 import MainBanner from "../components/HomePages/PLAYHQ/MainBanner";
 import PricingStyleOne from "../components/Pricing/PricingStyleOne";
@@ -21,6 +22,7 @@ const CS_query = qs.stringify(
 const Index = ({ associations, CaseStudies }) => {
   return (
     <>
+    
       <MainBanner />
       <Services />
       <FunFacts />

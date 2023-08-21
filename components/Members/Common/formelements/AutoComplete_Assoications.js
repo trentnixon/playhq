@@ -9,36 +9,54 @@ import { IconCheck } from "@tabler/icons-react";
 import { FixturaLoading } from "../Loading";
 import { useAccountDetails } from "../../../../lib/userContext";
 
-const ConfirmButtons = ({ handleConfirmClick, handleChangeClick,name }) => {
+const ConfirmButtons = ({ handleConfirmClick, handleChangeClick, name }) => {
   const [showFinalConfirm, setShowFinalConfirm] = useState(false);
   return (
-    <Group position="right">
-      <BTN_ONCLICK
-        LABEL={"Change"}
-        HANDLE={handleChangeClick}
-        THEME={"error"}
-      />
-
-      {showFinalConfirm ? (
-        <BTN_ONCLICK
-          LABEL={`Confirm ${name} (this cannot be undone)`}
-          HANDLE={handleConfirmClick}
-          THEME={"success"}
-        />
+    <>
+     
+      <Group position="right" noWrap={true}>
+        {showFinalConfirm ? (
+        <>
+          <P size="xs" marginBottom={0} color={8}>
+            *This action cannot be reversed
+          </P>
+        </>
       ) : (
-        <BTN_ONCLICK
-          LABEL={"Save"}
-          HANDLE={setShowFinalConfirm}
-          THEME={"success"}
-        />
+        false
       )}
-    </Group>
+        <BTN_ONCLICK
+          LABEL={"Change"}
+          HANDLE={handleChangeClick}
+          THEME={"error"}
+        />
+
+        {showFinalConfirm ? (
+          <>
+            <BTN_ONCLICK
+              LABEL={`Confirm`}
+              HANDLE={handleConfirmClick}
+              THEME={"success"}
+            />
+          </>
+        ) : (
+          <BTN_ONCLICK
+            LABEL={"Save"}
+            HANDLE={setShowFinalConfirm}
+            THEME={"success"}
+          />
+        )}
+      </Group>
+
+     
+    </>
   );
 };
 
 const SuccessMessage = ({ name }) => (
   <Group position="apart">
-    <P textTransform={`uppercase`} size={`sm`} marginBottom={0}>{name}</P>
+    <P textTransform={`uppercase`} size={`sm`} marginBottom={0}>
+      {name}
+    </P>
     <ActionIcon
       variant="filled"
       sx={(theme) => ({

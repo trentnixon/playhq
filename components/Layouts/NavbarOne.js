@@ -79,7 +79,13 @@ const NavbarOne = () => {
                     <a onClick={closeMenu} className="nav-link">About us</a>
                   </Link>
                 </li>
-
+                <li className="nav-item">
+                  <Link href="/resources" activeClassName="active">
+                    <a className="nav-link" onClick={() => setMenu(true)}>
+                      Resources
+                    </a>
+                  </Link>
+                </li>
                 <li className="nav-item">
                   <Link href="/pricing" activeClassName="active">
                     <a onClick={closeMenu} className="nav-link">Pricing</a>

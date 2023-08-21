@@ -2,7 +2,7 @@ import { Box, Group } from "@mantine/core";
 import { ShadowWrapper, Wrapper } from "./Common/Containers";
 import { P } from "./Common/Type";
 import { Input_FixturaSetting } from "./Common/formelements/Input_FixtruaSettings";
-import { BTN_ONCLICK, BTN_TOINTERALLINK } from "./Common/utils/Buttons";
+import {  BTN_TOINTERALLINK } from "./Common/utils/Buttons";
 
 export const UserDetails = ({
   user,

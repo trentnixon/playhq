@@ -119,9 +119,7 @@ export const CreateNewTheme = (props) => {
       <SubHeaders Copy={`Create your own Theme`} />
       <P>
         To create a new theme, simply select your primary and secondary brand
-        colors from the color selector and click the "Create" button. This theme
-        will automatically be assigned as your current theme, and can be updated
-        at any time by clicking the "Update" option.
+        colors from the color selector and click the "Create" button.
       </P>
       <Paper
         radius="md"
@@ -131,6 +129,9 @@ export const CreateNewTheme = (props) => {
         p="lg"
         sx={(theme) => ({ backgroundColor: theme.white })}
       >
+         <P size={"xs"}>
+        Tip: To make your assets stand out, set the darker color as the primary.
+      </P>
         <Table>
           <tbody>
             <tr>
@@ -148,7 +149,7 @@ export const CreateNewTheme = (props) => {
                     marginBottom={0}
                     Weight={900}
                     textTransform={"uppercase"}
-                   >{`Primary Color`}</P>
+                  >{`Primary Color`}</P>
                 </Group>
               </td>
               <td>
@@ -173,7 +174,7 @@ export const CreateNewTheme = (props) => {
                     marginBottom={0}
                     Weight={900}
                     textTransform={"uppercase"}
-                   >{`Secondary Color`}</P>
+                  >{`Secondary Color`}</P>
                 </Group>
               </td>
               <td>
@@ -200,6 +201,7 @@ export const CreateNewTheme = (props) => {
           />
         </Group>
       </Paper>
+     
     </>
   );
 };

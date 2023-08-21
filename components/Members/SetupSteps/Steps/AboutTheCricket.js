@@ -8,13 +8,13 @@ export const StepAboutTheCricket = ({ user, setHasUpdated }) => {
       <StepHeaderandDescription
         Header={"Tell Us About Your Organization – We Want to Get It Right!"}
         Description={
-          "Are you part of an association or a club? Your selection helps us tailor the experience to your specific needs. Choose the appropriate organization type and fill in the names below. Remember, take a moment to double-check your choices; they'll be set in stone once you proceed!"
+          "Tell us about your organization so we can ensure accuracy and tailor your experience accordingly."
         }
       />
 
       <SetupInputs user={user} setHasUpdated={setHasUpdated} />
       <P color={8} size={"xs"} textAlign="right">
-        These settings CANNOT be changes in your admin panel.
+        These settings CANNOT be changed in your admin panel.
       </P>
       
     </>

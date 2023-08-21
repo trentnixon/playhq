@@ -9,6 +9,7 @@ import {
   IconClockPause,
 } from "@tabler/icons";
 import { IconCheckbox } from "@tabler/icons-react";
+import { useMediaQuery } from "@mantine/hooks";
 
 export function UserDetailsCard({ user }) {
   const ORDER = user.attributes.order?.data;
@@ -36,7 +37,7 @@ export function UserDetailsCard({ user }) {
   );
 
   const theme = useMantineTheme();
-
+  const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
   const { isActive, Status, cancel_at_period_end, cancel_at, isPaused } =
     ORDER?.attributes ?? {};
 
@@ -71,6 +72,8 @@ export function UserDetailsCard({ user }) {
     StatusIcon = IconX;
   }
 
+  if(mobile)
+    return false
   return (
     <Card withBorder padding="xl" radius="md" mt={60}>
       <Card.Section

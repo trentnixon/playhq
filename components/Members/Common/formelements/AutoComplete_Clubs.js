@@ -12,7 +12,16 @@ import { FixturaLoading } from "../Loading";
 const ConfirmButtons = ({ handleConfirmClick, handleChangeClick, name }) => {
   const [showFinalConfirm, setShowFinalConfirm] = useState(false);
   return (
-    <Group position="right">
+    <Group position="right" noWrap={true}>
+      {showFinalConfirm ? (
+        <>
+          <P size="xs" marginBottom={0} color={8}>
+            *This action cannot be reversed
+          </P>
+        </>
+      ) : (
+        false
+      )}
       <BTN_ONCLICK
         LABEL={"Change"}
         HANDLE={handleChangeClick}
@@ -21,7 +30,7 @@ const ConfirmButtons = ({ handleConfirmClick, handleChangeClick, name }) => {
 
       {showFinalConfirm ? (
         <BTN_ONCLICK
-          LABEL={`Confirm ${name} (this cannot be undone)`}
+          LABEL={`Confirm`}
           HANDLE={handleConfirmClick}
           THEME={"success"}
         />

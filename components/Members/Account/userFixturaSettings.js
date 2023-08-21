@@ -171,7 +171,7 @@ export const SetupInputs = ({ user, setHasUpdated }) => {
           <LabelMe label="Select Your Club" />
           <ShadowWrapper>
             {AssociationID === false ? (
-              "Awaiting Assoication Selection"
+              "Awaiting Association Selection"
             ) : (
               <AutoCompleteSelectClub
                 COLLECTIONID={user.id}

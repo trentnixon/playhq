@@ -20,6 +20,7 @@ import UploadSponsorsLogos from "../Sponsors/ImageUploader";
 import { BTN_ONCLICK } from "../Common/utils/Buttons";
 import { useSetLogo } from "../../../Hooks/useOrganisationLogo";
 import { IconUpload } from "@tabler/icons";
+import { useMediaQuery } from "@mantine/hooks";
 
 export const AccountLogo = () => {
   const theme = useMantineTheme();
@@ -56,7 +57,8 @@ export const AccountLogo = () => {
     <>
       <SubHeaders Copy={`${FindAccountType(userAccount)} Logo`} />
       <P
-        Copy={`A high-resolution logo is a key element in establishing your brand's identity across all content. By providing a crisp and clear logo, you'll create a memorable visual representation that resonates with your members and fans.`}
+        Copy={`
+        Upload a high-resolution image of your logo to ensure the best quality representation for your organization.`}
       />
       <Paper
         radius="md"
@@ -167,6 +169,7 @@ const NewLogoImageAndStore = ({ image, saveLogoToAccount, setLogoPath }) => {
 
 const NewLogoCopy = ({ org }) => {
   const theme = useMantineTheme();
+  const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
   return (
     <Group position="center">
       <IconUpload size={"4em"} color={theme.colors.blue[5]} />
@@ -188,10 +191,10 @@ const NewLogoCopy = ({ org }) => {
           textAlign={`center`}
           Copy={`Let's get started by uploading a logo for ${org}.`}
         />
-        <P
+        {mobile ? false : <P
           textAlign={`center`}
           Copy={`This logo will be used in the digital assets we create for you, making them unique and personalized. Click the 'upload a logo' button to select a logo from your device.`}
-        />
+        />}
       </Box>
     </Group>
   );

@@ -20,7 +20,6 @@ import { FindAccountLabel } from "../../../../../../lib/actions";
 export const DisplayCustomTheme = (props) => {
   const { GetElement, userAccount, StoreUSerChange, setCreateNew } = props;
 
-  
   //useEffect(()=>{},[userAccount])
 
   const CTHEME = GetElement.filter(
@@ -82,7 +81,7 @@ export const DisplayCustomTheme = (props) => {
                       color={
                         userAccount.attributes.theme.data.id === item.id ? 2 : 2
                       }
-                     >{`${FindAccountLabel(userAccount)} `}</P>
+                    >{`${FindAccountLabel(userAccount)} `}</P>
                     {userAccount.attributes.theme.data.id === item.id ? (
                       <Center>
                         <IconCircleCheck color={theme.colors.green[5]} />
@@ -92,7 +91,7 @@ export const DisplayCustomTheme = (props) => {
                     )}
                   </Group>
                 </td>
-                <td style={{textAlign:'right'}}>
+                <td style={{ textAlign: "right" }}>
                   {userAccount.attributes.theme.data.id === item.id ? (
                     <BTN_ONCLICK
                       HANDLE={() => {
@@ -101,14 +100,12 @@ export const DisplayCustomTheme = (props) => {
                       LABEL={`Edit`}
                     />
                   ) : (
-                  
-                      <BTN_ONCLICK
-                        HANDLE={() => {
-                          StoreUSerChange(item);
-                        }}
-                        LABEL={`Select Theme`}
-                      />
-                   
+                    <BTN_ONCLICK
+                      HANDLE={() => {
+                        StoreUSerChange(item);
+                      }}
+                      LABEL={`Select Theme`}
+                    />
                   )}
                 </td>
               </tr>

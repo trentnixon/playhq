@@ -15,15 +15,18 @@ import { BTN_ONCLICK } from "../Common/utils/Buttons";
 import { P } from "../Common/Type";
 import { LoadingStateWrapper } from "../Account/HOC/LoadingStateWrapper";
 import StepAboutLogo from "./Steps/AboutLogo";
+import { useMediaQuery } from "@mantine/hooks";
+
 
 export const SetupStages = ({ setReview }) => {
   const theme = useMantineTheme();
+  const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
   const { account, ReRender } = useAccountDetails();
   const [DATA, setDATA] = useState(account);
   const [disabled, setDisabled] = useState(true);
   const [progress, setProgress] = useState({
     step1: {},
-    step2: {},
+    step2: {}, 
     step3: {},
     step4: {},
   });
@@ -36,16 +39,30 @@ export const SetupStages = ({ setReview }) => {
   useEffect(updateData, [account]);
 
   const nextStep = useCallback(
-    () => setActive((current) => (current < 3 ? current + 1 : current)),
+    () => {
+      setActive((current) => (current < 3 ? current + 1 : current));
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    },
     []
   );
 
   const prevStep = useCallback(
-    () => setActive((current) => (current > 0 ? current - 1 : current)),
+    () => {
+      setActive((current) => (current > 0 ? current - 1 : current));
+      // Scroll to the top of the page
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    },
     []
   );
-
-  const finished = useCallback(() => setReview(true), []);
+  
+  const finished = useCallback(
+    () => {
+      setReview(true);
+      // Scroll to the top of the page
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    },
+    []
+  );
 
   const checkProgress = useCallback(() => {
     if (DATA) {
@@ -92,31 +109,34 @@ export const SetupStages = ({ setReview }) => {
 
   return (
     <LoadingStateWrapper conditions={[DATA]}>
-      <Container size={"md"}>
+      <Container size={"xl"} px={0}>
         <Stepper
           active={active}
-          breakpoint="sm"
+          breakpoint="0"
           color={theme.colors.members[3]}
+          size="sm"
+          iconSize={32}
+          orientation="horizontal"
           sx={(theme) => ({
             ".mantine-Stepper-steps": {
               background: "transparent",
-              padding: "10px 20px",
+              padding: "5px 0px",
               borderRadius: "10px 10px 0 0 ",
               borderBottom: `1px solid ${theme.colors.members[3]}`,
             },
           })}
         >
-          <Stepper.Step color="blue" label="All About the Assets">
+          <Stepper.Step color="blue" label={mobile ? false : "All About the Assets"}>
             <StepAboutUser user={DATA} setHasUpdated={ReRender} />
           </Stepper.Step>
 
-          <Stepper.Step label="About the Cricket">
+          <Stepper.Step label={mobile ? false : "About the Cricket"}>
             <StepAboutTheCricket user={DATA} setHasUpdated={ReRender} />
           </Stepper.Step>
-          <Stepper.Step label="Upload your Logo">
+          <Stepper.Step  label={mobile ? false : "Upload your Logo"}>
             <StepAboutLogo user={DATA} setHasUpdated={ReRender} />
           </Stepper.Step>
-          <Stepper.Step label="About your Brand">
+          <Stepper.Step label={mobile ? false : "About your Brand"}>
             <StepAboutBranding user={DATA} setHasUpdated={ReRender} />
           </Stepper.Step>
 
