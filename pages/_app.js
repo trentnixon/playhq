@@ -20,7 +20,14 @@ import "../styles/responsive.scss";
 //import Head from "next/head";
 import GoTop from "../components/Layouts/GoTop";
 import { MantineProviderWrapper } from "../utils/MantineTheme";
+import { initGA, trackWebVitals } from "../lib/GA";
+
 function MyApp({ Component, pageProps }) {
+  useEffect(() => {
+    initGA();
+    trackWebVitals();
+  }, []);
+
   useEffect(() => {
     AOS.init();
   }, []);

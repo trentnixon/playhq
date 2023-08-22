@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useAssociations, useClubs } from "../../Hooks/useExpressionOfInterest";
 import { P } from "../Members/Common/Type";
 import Link from "next/link";
+import { trackButtonClick, trackCustomEvent } from "../../lib/GA";
 
 const Partner = () => {
   const [clubs, fetchClubs] = useClubs();
@@ -13,6 +14,10 @@ const Partner = () => {
 
   const handleInputClubOrAssociationChange = (event) => {
     const inputValue = event.target.value;
+
+    if (inputValue.length === 1) {
+        trackCustomEvent('Input Interaction', 'Eligibility Check Started', inputValue);
+    }
 
     if (inputValue.length >= 3) {
       setShowAutocomplete(true);
@@ -54,6 +59,7 @@ const Partner = () => {
   const handleAutocompleteClick = (name) => {
     setStoredName(name);
     setShowAutocomplete(false);
+    trackCustomEvent('Autocomplete Selection', 'Eligibility Check Selection', name);
   };
 
   return (
@@ -121,6 +127,15 @@ const Partner = () => {
 export default Partner;
 
 const PositiveResult = ({ storedName }) => {
+
+  useEffect(() => {
+    trackCustomEvent('Positive Result Displayed', 'Eligibility Check Success', storedName);
+  }, []);
+
+  const handleButtonClick = () => {
+    trackButtonClick('Sign Up from Eligibility Check');
+  };
+
   return (
     <Box>
       <P
@@ -134,8 +149,9 @@ const PositiveResult = ({ storedName }) => {
         Weight={400}
        >Join now to experience the ease and efficiency of Fixtura's content creation services and take your club's online presence to the next level!</P>
       <Link href="/SignUp/">
-        <a className="btn btn-primary">Sign up</a>
+        <a className="btn btn-primary" onClick={handleButtonClick}>Sign up</a>
       </Link>
     </Box>
   );
 };
+

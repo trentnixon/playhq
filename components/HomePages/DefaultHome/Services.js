@@ -1,5 +1,7 @@
 import React from "react";
 import { P } from "../../Members/Common/Type";
+import { trackCustomEvent } from "../../../lib/GA";
+// Import GA functions
 
 const servicesData = [
   {
@@ -26,6 +28,13 @@ const servicesData = [
 ];
 
 const Services = () => {
+
+
+  // Track when a service is hovered
+  const handleServiceHover = (serviceTitle) => {
+    trackCustomEvent("Services", "Service Hovered", serviceTitle);
+  };
+
   return (
     <>
       <div className="bg-eaf6ff pt-100 pb-70">
@@ -55,6 +64,7 @@ const Services = () => {
                 data-aos="fade-up"
                 data-aos-duration="1200"
                 data-aos-delay={`${200 + 100 * index}`}
+                onMouseEnter={() => handleServiceHover(service.title)}
               >
                 <div className="service-card-one">
                   <i className={`${service.icon} ${service.bgColor}`}></i>

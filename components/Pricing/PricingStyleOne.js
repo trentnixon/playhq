@@ -4,6 +4,7 @@ import { useGetSubscriptionTiers } from "../../Hooks/useSubscriptionTiers";
 import { P } from "../Members/Common/Type";
 import { Tabs } from "@mantine/core";
 import { IconPhoto, IconMessageCircle, IconUsers, IconUsersGroup, IconShield } from "@tabler/icons-react";
+import { trackButtonClick } from "../../lib/GA";
 
 const PricingStyleOne = () => {
   const [products, GetsetSubscriptionTiers] = useGetSubscriptionTiers();
@@ -12,6 +13,10 @@ const PricingStyleOne = () => {
     if (products === null) GetsetSubscriptionTiers();
   }, [GetsetSubscriptionTiers]);
 
+  const handleTabChange = (tabValue) => {
+    console.log("trackButtonClick")
+    trackButtonClick(`Pricing Tab - ${tabValue}`);
+  };
   const renderProducts = (isClub) => (
     <div className="row justify-content-center">
       {products.map((product, i) => {
@@ -47,8 +52,8 @@ const PricingStyleOne = () => {
             club. Here, your focus stays where it belongs, on the game.
           </P>
         </div>
-        <Tabs variant="pills" radius="lg" defaultValue="Club" color="blue.1">
-          <Tabs.List position="center">
+        <Tabs variant="pills" radius="lg" defaultValue="Club" color="blue.1" onTabChange={handleTabChange}>
+          <Tabs.List position="center" >
             <Tabs.Tab value="Club" icon={<IconShield size="1.2rem" color="black" />}>
               <P
                 Weight={600}

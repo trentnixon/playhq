@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { P } from "../Members/Common/Type";
+
 import {
   ActionIcon,
   Box,
@@ -23,6 +23,7 @@ import {
   IconUserCheck,
 } from "@tabler/icons-react";
 import React from "react";
+import { trackButtonClick } from "../../lib/GA";
 
 export const ProductCard = ({
   product,
@@ -79,11 +80,11 @@ export const ProductCard = ({
           </Center>
         </Stack>
 
-        {product.subscription_items.items.map((category,i) => (
+        {product.subscription_items.items.map((category, i) => (
           <Box
             key={category.category}
             sx={(theme) => ({
-              backgroundColor: 'white',
+              backgroundColor: "white",
               padding: theme.spacing.xs,
               borderBottom: `1px solid ${theme.colors.gray[2]}`,
               cursor: "pointer",
@@ -171,10 +172,29 @@ export const ProductCard = ({
               {signUp ? (
                 <Group position="apart">
                   <Link href="/subscriptions/">
-                    <a className="btn btn-secondary"> learn more</a>
+                    <a
+                      className="btn btn-secondary"
+                      onClick={() =>
+                        trackButtonClick(
+                          `Product Card - Learn More - ${product.Name}`
+                        )
+                      }
+                    >
+                      {" "}
+                      learn more
+                    </a>
                   </Link>
                   <Link href="/SignUp/">
-                    <a className="btn btn-primary">Sign up</a>
+                    <a
+                      className="btn btn-primary"
+                      onClick={() =>
+                        trackButtonClick(
+                          `Product Card - Sign up - ${product.Name}`
+                        )
+                      }
+                    >
+                      Sign up
+                    </a>
                   </Link>
                 </Group>
               ) : (

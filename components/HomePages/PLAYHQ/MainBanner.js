@@ -1,8 +1,10 @@
 import React, { useEffect } from "react";
+// Import GA functions
 
 import Link from "next/link";
 import { Gradient } from "../../../utils/Gradient";
-import { Image, Text, Title } from "@mantine/core";
+import { Image, Text } from "@mantine/core";
+import { trackPageView, trackButtonClick, trackCustomEvent } from "../../../lib/GA";
 
 const MainBanner = () => {
   return (
@@ -73,7 +75,12 @@ const MainBanner = () => {
                       }}
                     >
                       <Link href="/SignUp">
-                        <a className="btn btn-secondary">Get Started</a>
+                        <a
+                          className="btn btn-secondary"
+                          onClick={() => trackButtonClick("Get Started")} // Track button click
+                        >
+                          Get Started
+                        </a>
                       </Link>
                     </Text>
                   </div>

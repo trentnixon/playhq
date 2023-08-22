@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import { trackButtonClick } from "../../lib/GA";
 
 const CtaAreaTwo = () => {
   return (
@@ -8,7 +9,10 @@ const CtaAreaTwo = () => {
         <div className="container">
           <div className="cta-content">
             <h3>Effortless fixture and results content creation.</h3>
-            <span>Save time and hassle by letting Fixtura handle the creation of fixture and results content for you</span>
+            <span>
+              Save time and hassle by letting Fixtura handle the creation of
+              fixture and results content for you
+            </span>
           </div>
           <div
             className="cta-btn-box"
@@ -16,7 +20,12 @@ const CtaAreaTwo = () => {
             data-aos-duration="1200"
           >
             <Link href="/SignUp/">
-              <a className="custom-btn">Get Started</a>
+              <a
+                className="custom-btn"
+                onClick={() => trackButtonClick("CTA Area - Get Started")}
+              >
+                Get Started
+              </a>
             </Link>
           </div>
         </div>

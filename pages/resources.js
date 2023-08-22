@@ -66,6 +66,30 @@ const Resources = () => {
     },
   ];
 
+  const overviewOptions = [
+    {
+      title: "Slide Presentation",
+      description:
+        "Step-by-step slides on how to use Fixtura for your cricket club. No jargon, just simple steps.",
+      icon: <IconPresentation size="3rem" color={theme.colors.white} />,
+      downloadLink: "https://www.canva.com/design/DAFsPf2A5jo/YuWtz2Orm1Tm_zYZjMe8bA/view?utm_content=DAFsPf2A5jo&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink",
+    },
+    {
+      title: "Website Presentation",
+      description:
+        "Quickly understand Fixtura's key features through this interactive online guide. Made for easy onboarding.",
+      icon: <IconBrowser size="3rem" color={theme.colors.white} />, // Update IconWeb based on your actual imports
+      downloadLink: "https://www.canva.com/design/DAFsPf2A5jo/YuWtz2Orm1Tm_zYZjMe8bA/view?website#2",
+    },
+    {
+      title: "Video",
+      description:
+        "A brief video tutorial that visually takes you through Fixtura's basic functionalities. Easy to understand, quick to learn.",
+      icon: <IconVideo size="3rem" color={theme.colors.white} />, // Update IconVideo based on your actual imports
+      downloadLink: "https://www.youtube.com/...",
+    },
+  ];
+
   const renderOptions = (options) => {
     return options.map((option, index) => (
       <Grid.Col span={4} key={index}>
@@ -107,6 +131,8 @@ const Resources = () => {
         BGImage="/images/BG-Images/0D5A3099.jpg"
         position={`bottom center`}
       />
+      
+
       <div className="pricing-area ptb-100 bg-eaf6ff">
         <div className="container">
           <div className="section-title">
@@ -117,6 +143,21 @@ const Resources = () => {
               you're looking to enhance your social media presence, engage with
               your fans, or simply learn more, this is the place for you.
             </P>
+          </div>
+        </div>
+      </div>
+
+      <div className="pt-100 pb-70 bg-eaf6ff">
+        <div className="container">
+          <div className="section-title">
+            <h2>Overview/Brief: Get to Know Fixtura</h2>
+            <P textAlign={`center`} Weight={600} size="xl">
+              A quick overview of what Fixtura is all about.
+            </P>
+            <P textAlign={`center`}>
+              Learn the basics of Fixtura's features and how it can enhance your cricket club's content creation.
+            </P>
+            <Grid>{renderOptions(overviewOptions)}</Grid>
           </div>
         </div>
       </div>

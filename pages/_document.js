@@ -14,6 +14,10 @@ class MyDocument extends Document {
     return (
       <Html lang="zxx">
         <Head>
+          <script
+            async
+            src="https://www.googletagmanager.com/gtag/js?id=G-2D02N6G8LH"
+          ></script>
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link
             rel="preconnect"
@@ -33,9 +37,8 @@ class MyDocument extends Document {
             rel="stylesheet"
           />
           <link rel="icon" type="image/png" href="/favicon.ico"></link>
-          
         </Head>
-      
+
         <body>
           <Main />
           <NextScript />

@@ -2,6 +2,7 @@ import React from "react";
 import { useMantineTheme, Title, Space } from "@mantine/core";
 import { IconPhotoAi, IconVideo, IconNews } from "@tabler/icons-react";
 import { P } from "../Members/Common/Type";
+import { trackButtonClick, trackCustomEvent } from "../../lib/GA";
 
 const funFactsData = [
   {
@@ -26,7 +27,13 @@ const funFactsData = [
 
 const FunFacts = () => {
   const theme = useMantineTheme();
+  const handleCardClick = (title) => {
+    trackButtonClick(`Clicked on ${title}`);
+  };
 
+  const handleCardHover = (title) => {
+    trackCustomEvent("Hover", `Hovered over ${title}`, "Fun Facts Section");
+  };
   return (
     <>
       <div className="pt-100 pb-70 bg-2C2E33">
@@ -57,6 +64,8 @@ const FunFacts = () => {
                 data-aos="fade-up"
                 data-aos-duration="1200"
                 data-aos-delay={`${100 + 200 * index}`}
+                onClick={() => handleCardClick(fact.title)}
+                onMouseEnter={() => handleCardHover(fact.title)}
               >
                 <div className="funfact-card">
                   <fact.icon
