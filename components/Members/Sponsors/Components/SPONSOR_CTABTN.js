@@ -1,4 +1,4 @@
-import { BTN_ONCLICK } from "../Common/utils/Buttons";
+import { BTN_ONCLICK } from "../../Common/utils/Buttons";
 
 
 export const SPONSOR_CTABTN = ({ setIsCreate, isCreate }) => {

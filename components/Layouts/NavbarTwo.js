@@ -100,7 +100,7 @@ const NavbarTwo = () => {
                 <li className="nav-item">
                   <Link href="/about" activeClassName="active">
                     <a className="nav-link" onClick={() => setMenu(true)}>
-                      About us
+                      About
                     </a>
                   </Link>
                 </li>
@@ -122,7 +122,7 @@ const NavbarTwo = () => {
                 <li className="nav-item">
                   <Link href="/contact" activeClassName="active">
                     <a className="nav-link" onClick={() => setMenu(true)}>
-                      Contact Us
+                      Contact
                     </a>
                   </Link>
                 </li>

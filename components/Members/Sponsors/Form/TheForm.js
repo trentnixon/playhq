@@ -1,20 +1,21 @@
-import { Box, Switch } from "@mantine/core";
+import { Box, Group, Switch } from "@mantine/core";
 import { Container, Grid, SimpleGrid, useMantineTheme } from "@mantine/core";
 
 import { useEffect, useState } from "react";
-import { FixturaLoading } from "../Common/Loading";
+import { FixturaLoading } from "../../Common/Loading";
 import {
   useCreateSponsor,
   useUpdateSponsor,
-} from "../../../Hooks/useSponsorships";
+} from "../../../../Hooks/useSponsorships";
 import { UploadSponsorsLogos } from "./ImageUploader";
 
-import { useAccountDetails } from "../../../lib/userContext";
-import { SponsorCreatedConfirm } from "./SponsorCreatedConfirm";
+import { useAccountDetails } from "../../../../lib/userContext";
+import { SponsorCreatedConfirm } from "../Components/SponsorCreatedConfirm";
 import { DisplaySponsorsLogo } from "./DisplaySponsorsLogo";
 import { InputFormContainer } from "./InputFormContainer";
 
 export const CreateaSponsorForm = ({ OBJ }) => {
+  console.log("OBJ", OBJ);
   // VARS
   const theme = useMantineTheme();
   // useState
@@ -112,25 +113,40 @@ export const CreateaSponsorForm = ({ OBJ }) => {
       value: FORMMETA.Name,
       placeholder: "Sponsors Name",
       error: formErrors.Name,
+      title: "Sponsor Name",
+      info: "Enter the official name of the sponsor.",
     },
     {
       Property: "URL",
       value: FORMMETA.URL,
       placeholder: "Sponsors URL",
       error: formErrors.URL,
+      title: "Sponsor URL",
+      info: "Enter the official website or landing page of the sponsor.",
     },
     {
       Property: "Tagline",
       value: FORMMETA.Tagline,
       placeholder: "Sponsors Tagline",
       error: formErrors.Tagline,
+      title: "Sponsor Tagline",
+      info: "A brief catchy phrase associated with the sponsor.",
+    },
+    {
+      Property: "Description",
+      value: FORMMETA.Description,
+      placeholder: "Sponsor description",
+      error: formErrors.Description,
+      title: "Sponsor Description",
+      info: "Provide a short description about the sponsor. Max 120 characters.",
+      limit: 120,
     },
   ];
 
   if (Sponsor?.data || UpdatedSponsor?.data) {
     return (
       <SponsorCreatedConfirm
-      setIsCreate={OBJ.setIsCreate}
+        setIsCreate={OBJ.setIsCreate}
         Sponsor={
           Sponsor?.data === undefined ? UpdatedSponsor?.data : Sponsor?.data
         }
@@ -179,28 +195,30 @@ export const CreateaSponsorForm = ({ OBJ }) => {
                   );
                 })}
               </Grid.Col>
-              <Grid.Col span={6}>
-                <Switch
-                  label="Active"
-                  checked={isActive}
-                  onChange={(event) => setisActive(event.currentTarget.checked)}
-                />
-              </Grid.Col>
-              <Grid.Col span={6}>
-                
-                <button
-                  type="submit"
-                  className={!LogoPath?"btn btn-secondary":"btn btn-primary"}
-                  disabled={!LogoPath} // this disables the button if LogoPath is falsy
-                >
-                  {OBJ.Create ? "Create" : "Update"}
-                </button>
+              <Grid.Col span={12}>
+                <Group position="apart">
+                  <Switch
+                    label="Active"
+                    checked={isActive}
+                    onChange={(event) =>
+                      setisActive(event.currentTarget.checked)
+                    }
+                  />
+                  <button
+                    type="submit"
+                    className={
+                      !LogoPath ? "btn btn-secondary" : "btn btn-primary"
+                    }
+                    disabled={!LogoPath} // this disables the button if LogoPath is falsy
+                  >
+                    {OBJ.Create ? "Create" : "Update"}
+                  </button>
+                </Group>
               </Grid.Col>
             </Grid>
           </SimpleGrid>
         </div>
       </form>
-      
     </Container>
   );
 };

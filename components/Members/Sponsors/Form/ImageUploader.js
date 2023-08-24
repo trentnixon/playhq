@@ -13,10 +13,10 @@ import {
   DropzoneStatus,
   MIME_TYPES,
 } from "@mantine/dropzone";
-import { useUploadImageViaDropzone } from "../../../Hooks/useUploadViaDropzone";
+import { useUploadImageViaDropzone } from "../../../../Hooks/useUploadViaDropzone";
 import { useEffect, useState } from "react";
-import { BTN_ONCLICK } from "../Common/utils/Buttons";
-import { P, SubHeaders } from "../Common/Type";
+import { BTN_ONCLICK } from "../../Common/utils/Buttons";
+import { P, SubHeaders } from "../../Common/Type";
 
 export function UploadSponsorsLogos({ setLogo, setLogoPath, SAVEDLOGO }) {
   const theme = useMantineTheme();

@@ -19,7 +19,7 @@ const Layout = ({ children }) => {
   const router = useRouter();
   const isMemberPage = router.pathname.includes("members");
   const SelectedNavbar = user ? <NavbarTwo /> : <NavbarOne />;
-  const SelectedLayout = isMemberPage ? ( 
+  const SelectedLayout = isMemberPage ? (  
     <MembersLayout>{children}</MembersLayout>
   ) : (
     <StaticLayout>{children}</StaticLayout>

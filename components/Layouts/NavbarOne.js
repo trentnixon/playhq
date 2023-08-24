@@ -76,7 +76,7 @@ const NavbarOne = () => {
 
                 <li className="nav-item">
                   <Link href="/about" activeClassName="active">
-                    <a onClick={closeMenu} className="nav-link">About us</a>
+                    <a onClick={closeMenu} className="nav-link">About</a>
                   </Link>
                 </li>
                 <li className="nav-item">
@@ -100,7 +100,7 @@ const NavbarOne = () => {
 
                 <li className="nav-item">
                   <Link href="/contact" activeClassName="active">
-                    <a onClick={closeMenu} className="nav-link">Contact Us</a>
+                    <a onClick={closeMenu} className="nav-link">Contact</a>
                   </Link>
                 </li>
 

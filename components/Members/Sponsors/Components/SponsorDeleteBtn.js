@@ -1,12 +1,11 @@
 import { Group } from "@mantine/core";
 import { useState } from "react";
-import { FixturaLoading } from "../Common/Loading";
-import { BTN_ONCLICK } from "../Common/utils/Buttons";
+import { FixturaLoading } from "../../Common/Loading";
+import { BTN_ONCLICK } from "../../Common/utils/Buttons";
 
 export const SponsorDeleteBtn = ({ itemId, onDelete }) => {
     const [isConfirming, setIsConfirming] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
-    
   
     const handleDelete = async () => {
       if (isConfirming) {

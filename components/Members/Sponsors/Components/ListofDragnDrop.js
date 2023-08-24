@@ -1,18 +1,26 @@
-import { createStyles, Table, Image, Avatar, Group, Box, Container } from "@mantine/core";
-import { useListState } from "@mantine/hooks";
+import {
+  createStyles,
+  Table,
+  Image,
+  Avatar,
+  Group,
+  Box,
+  Container,
+} from "@mantine/core";
+import { useListState, useMediaQuery } from "@mantine/hooks";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import { IconCheck, IconGripVertical } from "@tabler/icons";
-import { BTN_ONCLICK } from "../../../components/Members/Common/utils/Buttons";
+import { BTN_ONCLICK } from "../../Common/utils/Buttons";
 import { useEffect, useState } from "react";
-import { useAccountDetails } from "../../../lib/userContext";
-import { CreateaSponsorForm } from "./TheForm";
-import { FixturaLoading } from "../../../components/Members/Common/Loading";
+import { useAccountDetails } from "../../../../lib/userContext";
+
 import {
   useUpdateSponsor,
   useDeleteSponsor,
-} from "../../../Hooks/useSponsorships";
+} from "../../../../Hooks/useSponsorships";
 import { EditSponsor } from "./EditSponsor";
 import { SponsorDeleteBtn } from "./SponsorDeleteBtn";
+import { P } from "../../Common/Type";
 
 const useStyles = createStyles((theme) => ({
   item: {
@@ -40,7 +48,7 @@ export function DragnDropSponsorList({ SPONSORS, SPONSORLIMIT }) {
   // HOOKS
   const [UpdatedSponsor, UpdateSponsor] = useUpdateSponsor();
   const [DeleteSponsor, ConfirmDeleteSponsor] = useDeleteSponsor();
-
+  const matches = useMediaQuery("(min-width: 48em)");
   const { ReRender } = useAccountDetails();
   const [state, handlers] = useListState(
     SPONSORS.sort((a, b) => a.attributes.Order - b.attributes.Order)
@@ -123,18 +131,22 @@ export function DragnDropSponsorList({ SPONSORS, SPONSORLIMIT }) {
             />
           </td>
 
-          <td>{item.attributes.Name}</td>
-          <td>{item.attributes.Tagline}</td>
-          <td>
-            {item.attributes.isActive ? (
-              <Avatar color={"green"} size={20} radius={20}>
-                <IconCheck size={40} />
-              </Avatar>
-            ) : (
-              <SponsorDeleteBtn itemId={item.id} onDelete={onDelete} />
-            )}
-          </td>
-          <td>
+          <td><P marginBottom={0} size={matches ?'sm':'sm'}>{item.attributes.Name}</P></td>
+          {matches ? <td>{item.attributes.Tagline}</td> : false}
+          {matches ? (
+            <td>
+              {item.attributes.isActive ? (
+                <Avatar color={"green"} size={20} radius={20}>
+                  <IconCheck size={40} />
+                </Avatar>
+              ) : (
+                <SponsorDeleteBtn itemId={item.id} onDelete={onDelete} />
+              )}
+            </td>
+          ) : (
+            false
+          )}
+{matches ?<td>
             {item.attributes.isPrimary ? (
               <Avatar color={"green"} size={20} radius={20}>
                 <IconCheck size={40} />
@@ -142,7 +154,8 @@ export function DragnDropSponsorList({ SPONSORS, SPONSORLIMIT }) {
             ) : (
               false
             )}
-          </td>
+          </td>:false}
+          
           <td>
             <BTN_ONCLICK
               LABEL={`Edit`}
@@ -164,48 +177,61 @@ export function DragnDropSponsorList({ SPONSORS, SPONSORLIMIT }) {
     );
 
   return (
-    <Container size={'md'}>
-    <Box
-      mt={50}
-      sx={(theme) => ({
-        padding: "10px 20px",
-      })}
-    >
-      <DragDropContext
-        onDragEnd={({ destination, source }) => {
-          handlers.reorder({ from: source.index, to: destination?.index || 0 });
-          setrerendering(false);
-        }}
+    <Container fluid px={0}>
+      <Box
+        mt={50}
+        sx={(theme) => ({
+          padding: "10px 0px",
+        })}
       >
-        <Table
-          sx={{
-            textAlign: "center",
-            minWidth: 420,
-            "& tbody tr td": { borderBottom: 0 },
+        <DragDropContext
+          onDragEnd={({ destination, source }) => {
+            handlers.reorder({
+              from: source.index,
+              to: destination?.index || 0,
+            });
+            setrerendering(false);
           }}
         >
-          <thead>
-            <tr>
-              <th></th>
-              <th></th>
-              <th style={{ textAlign: "center" }}>Name</th>
-              <th style={{ textAlign: "center" }}>Tagline</th>
-              <th style={{ textAlign: "center" }}>Active</th>
-              <th style={{ textAlign: "center" }}>Primary</th>
-              <th style={{ textAlign: "center" }}>Edit</th>
-            </tr>
-          </thead>
-          <Droppable droppableId="dnd-list" direction="vertical">
-            {(provided) => (
-              <tbody {...provided.droppableProps} ref={provided.innerRef}>
-                {items}
-                {provided.placeholder}
-              </tbody>
-            )}
-          </Droppable>
-        </Table>
-      </DragDropContext>
-    </Box>
+          <Table
+            sx={{
+              textAlign: "center",
+              minWidth: 'auto',
+              "& tbody tr td": { borderBottom: 0 },
+            }}
+          >
+            <thead>
+              <tr>
+                <th></th>
+                <th></th>
+
+                <th style={{ textAlign: "center" }}>{matches ? <td>Name</td> : <td></td>} </th>
+                {matches ? (
+                  <th style={{ textAlign: "center" }}>Tagline</th>
+                ) : (
+                  false
+                )}
+                {matches ? (
+                  <th style={{ textAlign: "center" }}>Active</th>
+                ) : (
+                  false
+                )}
+
+                <th style={{ textAlign: "center" }}>{matches ? <td>Primary</td> : <td></td>} </th>
+                <th style={{ textAlign: "center" }}>{matches ? <td>Edit</td> : <td></td>} </th>
+              </tr>
+            </thead>
+            <Droppable droppableId="dnd-list" direction="vertical">
+              {(provided) => (
+                <tbody {...provided.droppableProps} ref={provided.innerRef}>
+                  {items}
+                  {provided.placeholder}
+                </tbody>
+              )}
+            </Droppable>
+          </Table>
+        </DragDropContext>
+      </Box>
     </Container>
   );
 }

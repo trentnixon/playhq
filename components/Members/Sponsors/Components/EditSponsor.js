@@ -1,11 +1,11 @@
-import { CreateaSponsorForm } from "./TheForm";
-import { BTN_ONCLICK } from "../Common/utils/Buttons";
-import { useAccountDetails } from "../../../lib/userContext";
+import { CreateaSponsorForm } from "../Form/TheForm";
+import { BTN_ONCLICK } from "../../Common/utils/Buttons";
+import { useAccountDetails } from "../../../../lib/userContext";
 import { useState } from "react";
 
 export const EditSponsor = ({ Sponsor, setHasEdit, Order }) => {
   // HOOKS
-  const { account, ReRender } = useAccountDetails();
+  const { account } = useAccountDetails();
   const [userAccount, setUserAccount] = useState(account);
   
   return (
@@ -19,6 +19,7 @@ export const EditSponsor = ({ Sponsor, setHasEdit, Order }) => {
           LogoPath: Sponsor.attributes.Logo.data,
           account: [userAccount.id],
           Create: false,
+          Description:Sponsor.attributes.Description,
           UpdateSponsor: Sponsor.id,
           isActive: Sponsor.attributes.isActive,
           Order: Order,
