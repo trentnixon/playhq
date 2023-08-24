@@ -19,7 +19,7 @@ export const SponsorCreatedConfirm = ({ Sponsor,setIsCreate }) => {
           />
         </Group>
       </Center>
-      <Center>
+      {/* <Center>
         <BTN_ONCLICK
           HANDLE={() => {
             setIsCreate(false);
@@ -27,7 +27,7 @@ export const SponsorCreatedConfirm = ({ Sponsor,setIsCreate }) => {
           LABEL="Back"
           THEME="error"
         />
-      </Center>
+      </Center> */}
     </>
   );
 };

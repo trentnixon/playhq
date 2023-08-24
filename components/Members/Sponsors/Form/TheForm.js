@@ -147,6 +147,7 @@ export const CreateaSponsorForm = ({ OBJ }) => {
     return (
       <SponsorCreatedConfirm
         setIsCreate={OBJ.setIsCreate}
+        
         Sponsor={
           Sponsor?.data === undefined ? UpdatedSponsor?.data : Sponsor?.data
         }
