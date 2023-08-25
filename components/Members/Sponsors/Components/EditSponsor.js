@@ -7,7 +7,7 @@ export const EditSponsor = ({ Sponsor, setHasEdit, Order }) => {
   // HOOKS
   const { account } = useAccountDetails();
   const [userAccount, setUserAccount] = useState(account);
-  
+
   return (
     <>
       <CreateaSponsorForm
@@ -19,9 +19,11 @@ export const EditSponsor = ({ Sponsor, setHasEdit, Order }) => {
           LogoPath: Sponsor.attributes.Logo.data,
           account: [userAccount.id],
           Create: false,
-          Description:Sponsor.attributes.Description,
+          Description: Sponsor.attributes.Description,
           UpdateSponsor: Sponsor.id,
           isActive: Sponsor.attributes.isActive,
+          isVideo: Sponsor.attributes.isVideo,
+          isArticle: Sponsor.attributes.isArticle,
           Order: Order,
         }}
       />

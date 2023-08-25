@@ -1,4 +1,4 @@
-import { Box, Group, Switch } from "@mantine/core";
+import { Box, Group, Stack, Switch } from "@mantine/core";
 import { Container, Grid, SimpleGrid, useMantineTheme } from "@mantine/core";
 
 import { useEffect, useState } from "react";
@@ -30,6 +30,9 @@ export const CreateaSponsorForm = ({ OBJ }) => {
   // STATE
   const [FORMMETA, setFORMMETA] = useState(OBJ);
   const [isActive, setisActive] = useState(OBJ.isActive);
+  const [isActiveVideo, setisActiveVideo] = useState(OBJ.isVideo);
+  const [isActiveArticle, setisActiveArticle] = useState(OBJ.isArticle);
+
   const [formErrors, setFormErrors] = useState({
     Name: "",
     URL: "",
@@ -103,9 +106,22 @@ export const CreateaSponsorForm = ({ OBJ }) => {
   }, [isActive]);
 
   useEffect(() => {
-    console.log("FORMMETA");
-    console.log(FORMMETA);
-  }, [FORMMETA]);
+    console.log("isActiveArticle", isActiveArticle);
+    setFORMMETA((prevState) => ({
+      ...prevState,
+      isArticle: isActiveArticle,
+    }));
+  }, [isActiveArticle]);
+
+  useEffect(() => {
+    console.log("isActiveVideo", isActiveVideo);
+    setFORMMETA((prevState) => ({
+      ...prevState,
+      isVideo: isActiveVideo,
+    }));
+  }, [isActiveVideo]);
+
+  useEffect(() => {}, [FORMMETA]);
 
   const FORMOBJ = [
     {
@@ -147,14 +163,13 @@ export const CreateaSponsorForm = ({ OBJ }) => {
     return (
       <SponsorCreatedConfirm
         setIsCreate={OBJ.setIsCreate}
-        
         Sponsor={
           Sponsor?.data === undefined ? UpdatedSponsor?.data : Sponsor?.data
         }
       />
     );
   }
-  if (Sponsor === true || UpdatedSponsor === true) {
+  if ( Sponsor === true || UpdatedSponsor === true) {
     return <FixturaLoading />;
   }
   return (
@@ -166,23 +181,25 @@ export const CreateaSponsorForm = ({ OBJ }) => {
             spacing="md"
             breakpoints={[{ maxWidth: "sm", cols: 1 }]}
           >
-            {LogoPath ? (
-              <>
-                <Box>
-                  <DisplaySponsorsLogo
-                    LOGO={FORMMETA.LogoPath ? FORMMETA.LogoPath : LogoPath}
-                    setLogoPath={setLogoPath}
-                    setLogo={setLogo}
-                  />
-                </Box>
-              </>
-            ) : (
-              <UploadSponsorsLogos
-                setLogo={setLogo}
-                setLogoPath={setLogoPath}
-                SAVEDLOGO={FORMMETA.LogoPath}
-              />
-            )}
+            <div>
+              {LogoPath ? (
+                <>
+                  <Box>
+                    <DisplaySponsorsLogo
+                      LOGO={FORMMETA.LogoPath ? FORMMETA.LogoPath : LogoPath}
+                      setLogoPath={setLogoPath}
+                      setLogo={setLogo}
+                    />
+                  </Box>
+                </>
+              ) : (
+                <UploadSponsorsLogos
+                  setLogo={setLogo}
+                  setLogoPath={setLogoPath}
+                  SAVEDLOGO={FORMMETA.LogoPath}
+                />
+              )}
+            </div>
             <Grid gutter="md">
               <Grid.Col>
                 {FORMOBJ.map((Input, i) => {
@@ -195,16 +212,32 @@ export const CreateaSponsorForm = ({ OBJ }) => {
                     />
                   );
                 })}
-              </Grid.Col>
-              <Grid.Col span={12}>
-                <Group position="apart">
+                <Stack mt="xs" mx={10}>
                   <Switch
-                    label="Active"
+                    label="Include this sponsor in the videos?"
+                    checked={isActiveVideo}
+                    onChange={(event) =>
+                      setisActiveVideo(event.currentTarget.checked)
+                    }
+                  />
+                  <Switch
+                    label="Include this sponsor in the Articles?"
+                    checked={isActiveArticle}
+                    onChange={(event) =>
+                      setisActiveArticle(event.currentTarget.checked)
+                    }
+                  />
+                  <Switch
+                    label="Is this Sponsor Active?"
                     checked={isActive}
                     onChange={(event) =>
                       setisActive(event.currentTarget.checked)
                     }
                   />
+                </Stack>
+              </Grid.Col>
+              <Grid.Col span={12}>
+                <Group position="right">
                   <button
                     type="submit"
                     className={

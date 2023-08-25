@@ -9,7 +9,7 @@ import {
 } from "@mantine/core";
 import { useListState, useMediaQuery } from "@mantine/hooks";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
-import { IconCheck, IconGripVertical } from "@tabler/icons";
+import { IconCheck, IconCross, IconGripVertical } from "@tabler/icons";
 import { BTN_ONCLICK } from "../../Common/utils/Buttons";
 import { useEffect, useState } from "react";
 import { useAccountDetails } from "../../../../lib/userContext";
@@ -21,6 +21,7 @@ import {
 import { EditSponsor } from "./EditSponsor";
 import { SponsorDeleteBtn } from "./SponsorDeleteBtn";
 import { P } from "../../Common/Type";
+import { IconX } from "@tabler/icons-react";
 
 const useStyles = createStyles((theme) => ({
   item: {
@@ -131,10 +132,58 @@ export function DragnDropSponsorList({ SPONSORS, SPONSORLIMIT }) {
             />
           </td>
 
-          <td><P marginBottom={0} size={matches ?'sm':'sm'}>{item.attributes.Name}</P></td>
+          <td>
+            <P marginBottom={0} size={matches ? "sm" : "sm"}>
+              {item.attributes.Name}
+            </P>
+          </td>
           {matches ? <td>{item.attributes.Tagline}</td> : false}
+
           {matches ? (
-            <td>
+            <td align="center">
+              {item.attributes.isPrimary ? (
+                <Avatar color={"green"} size={20} radius={20}>
+                  <IconCheck size={40} />
+                </Avatar>
+              ) : (
+                false
+              )}
+            </td>
+          ) : (
+            false
+          )}
+          {matches ? (
+            <td align="center">
+              {item.attributes.isVideo ? (
+                <Avatar color={"green"} size={20} radius={20}>
+                  <IconCheck size={40} />
+                </Avatar>
+              ) : (
+                <Avatar color={"red"} size={20} radius={20}>
+                  <IconX size={40} />
+                </Avatar>
+              )}
+            </td>
+          ) : (
+            false
+          )}
+          {matches ? (
+            <td align="center">
+              {item.attributes.isArticle ? (
+                <Avatar color={"green"} size={20} radius={20}>
+                  <IconCheck size={40} />
+                </Avatar>
+              ) : (
+                <Avatar color={"red"} size={20} radius={20}>
+                  <IconX size={40} />
+                </Avatar>
+              )}
+            </td>
+          ) : (
+            false
+          )}
+          {matches ? (
+            <td align="center">
               {item.attributes.isActive ? (
                 <Avatar color={"green"} size={20} radius={20}>
                   <IconCheck size={40} />
@@ -146,16 +195,6 @@ export function DragnDropSponsorList({ SPONSORS, SPONSORLIMIT }) {
           ) : (
             false
           )}
-{matches ?<td>
-            {item.attributes.isPrimary ? (
-              <Avatar color={"green"} size={20} radius={20}>
-                <IconCheck size={40} />
-              </Avatar>
-            ) : (
-              false
-            )}
-          </td>:false}
-          
           <td>
             <BTN_ONCLICK
               LABEL={`Edit`}
@@ -196,7 +235,7 @@ export function DragnDropSponsorList({ SPONSORS, SPONSORLIMIT }) {
           <Table
             sx={{
               textAlign: "center",
-              minWidth: 'auto',
+              minWidth: "auto",
               "& tbody tr td": { borderBottom: 0 },
             }}
           >
@@ -205,9 +244,25 @@ export function DragnDropSponsorList({ SPONSORS, SPONSORLIMIT }) {
                 <th></th>
                 <th></th>
 
-                <th style={{ textAlign: "center" }}>{matches ? <td>Name</td> : <td></td>} </th>
+                <th style={{ textAlign: "center" }}>
+                  {matches ? <td>Name</td> : <td></td>}{" "}
+                </th>
                 {matches ? (
                   <th style={{ textAlign: "center" }}>Tagline</th>
+                ) : (
+                  false
+                )}
+
+                <th style={{ textAlign: "center" }}>
+                  {matches ? <td>Primary</td> : <td></td>}{" "}
+                </th>
+                {matches ? (
+                  <th style={{ textAlign: "center" }}>Videos</th>
+                ) : (
+                  false
+                )}
+                {matches ? (
+                  <th style={{ textAlign: "center" }}>Articles</th>
                 ) : (
                   false
                 )}
@@ -216,9 +271,9 @@ export function DragnDropSponsorList({ SPONSORS, SPONSORLIMIT }) {
                 ) : (
                   false
                 )}
-
-                <th style={{ textAlign: "center" }}>{matches ? <td>Primary</td> : <td></td>} </th>
-                <th style={{ textAlign: "center" }}>{matches ? <td>Edit</td> : <td></td>} </th>
+                <th style={{ textAlign: "center" }}>
+                  {matches ? <td></td> : <td></td>}{" "}
+                </th>
               </tr>
             </thead>
             <Droppable droppableId="dnd-list" direction="vertical">

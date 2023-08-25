@@ -23,6 +23,8 @@ export const ContentSection = ({
             Create: true,
             UpdateSponsor: false,
             isActive: true,
+            isVideo:true,
+            isArticle:true,
             Order: 100,
             setIsCreate:setIsCreate
           }}
