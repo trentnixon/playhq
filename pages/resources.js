@@ -38,7 +38,7 @@ const Resources = () => {
       description:
         "An in-depth video offering a complete view of how Fixtura can bring a digital transformation to your cricket club's media strategy.",
       icon: <IconVideo size="3rem" color={theme.colors.white} />, // Update IconVideo based on your actual imports
-      downloadLink: "https://www.youtube.com/...",
+      downloadLink: "https://youtu.be/k7ps0D5Pma8",
     },
   ];
 
@@ -62,9 +62,9 @@ const Resources = () => {
       description:
         "A brief video tutorial that visually takes you through Fixtura's basic functionalities. Easy to understand, quick to learn.",
       icon: <IconVideo size="3rem" color={theme.colors.white} />, // Update IconVideo based on your actual imports
-      downloadLink: "https://www.youtube.com/...",
+      downloadLink: "https://youtu.be/k7ps0D5Pma8",
     },
-  ];
+  ]; 
 
   const overviewOptions = [
     {
@@ -86,7 +86,7 @@ const Resources = () => {
       description:
         "A brief video tutorial that visually takes you through Fixtura's basic functionalities. Easy to understand, quick to learn.",
       icon: <IconVideo size="3rem" color={theme.colors.white} />, // Update IconVideo based on your actual imports
-      downloadLink: "https://www.youtube.com/...",
+      downloadLink: "https://youtu.be/JAr9Vog0Z5I",
     },
   ];
 
@@ -111,8 +111,8 @@ const Resources = () => {
             </P>
 
             <button className="btn btn-secondary">
-              <Link target="_blank" href={option.downloadLink}>
-                <a>Download</a>
+              <Link  href={option.downloadLink}>
+                <a target="_blank">Download</a>
               </Link>
             </button>
           </Card>

@@ -28,8 +28,6 @@ const servicesData = [
 ];
 
 const Services = () => {
-
-
   // Track when a service is hovered
   const handleServiceHover = (serviceTitle) => {
     trackCustomEvent("Services", "Service Hovered", serviceTitle);
@@ -56,6 +54,7 @@ const Services = () => {
               engaged with your club&apos;s activity.
             </P>
           </div>
+
           <div className="row justify-content-center">
             {servicesData.map((service, index) => (
               <div
@@ -80,6 +79,31 @@ const Services = () => {
                 </div>
               </div>
             ))}
+          </div>
+          <div className="row justify-content-center">
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                height: "auto", // This sets the container height to be the full viewport height
+              }}
+            >
+              <video
+              poster="https://fixtura.s3.ap-southeast-2.amazonaws.com/titlescreen_2_6_1_24fb7299f3.jpg"
+                style={{
+                  maxWidth: "100%", // This makes the video responsive
+                  maxHeight: "100%",
+                }}
+                controls
+              >
+                <source
+                  src="https://fixtura.s3.ap-southeast-2.amazonaws.com/Fixtura_Introduction_Version_1_86590be452.mp4"
+                  type="video/mp4"
+                />
+                Your browser does not support the video tag.
+              </video>
+            </div>
           </div>
         </div>
       </div>
