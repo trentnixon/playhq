@@ -41,7 +41,7 @@ function withAuth(WrappedComponent) {
       }
 
       return true;
-    };
+    }; 
 
     useEffect(() => {
       setLoading(true);

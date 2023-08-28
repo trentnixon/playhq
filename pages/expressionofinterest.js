@@ -11,7 +11,7 @@ const EarlyAccess = () => {
   return (
     <>
       <PromotionalBanner />
-      
+
       <Benefits />
 
       <SectionContainers BG={`bg-f9f9f9`}>
@@ -25,7 +25,7 @@ const EarlyAccess = () => {
           {hasSent ? (
             false
           ) : (
-            <p >
+            <p>
               Fill out the form below to express your interest in early access
               to Fixtura. We will be in touch with you soon with more
               information on how to become part of our exclusive group of 50
@@ -57,34 +57,31 @@ const SectionContainers = (props) => {
   );
 };
 
-
 const videoContainerStyles = {
-  position: 'relative',
-  paddingBottom: '56.25%',  // Aspect ratio for 16:9
-  height: '0',
-  overflow: 'hidden'
+  position: "relative",
+  paddingBottom: "56.25%", // Aspect ratio for 16:9
+  height: "0",
+  overflow: "hidden",
 };
 
 const iframeStyles = {
-  position: 'absolute',
-  top: '0',
-  left: '0',
-  width: '100%',
-  height: '100%'
+  position: "absolute",
+  top: "0",
+  left: "0",
+  width: "100%",
+  height: "100%",
 };
 const YouTubeVideo = ({ videoId }) => (
-
-<div className="container mt-5 col-lg-8 offset-lg-2">
-<div style={videoContainerStyles}>
-    <iframe
-      style={iframeStyles}
-      src={`https://www.youtube.com/embed/${videoId}`}
-  
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowFullScreen
-      title="YouTube video player"
-    ></iframe>
-  </div>
+  <div className="container mt-5 col-lg-8 offset-lg-2">
+    <div style={videoContainerStyles}>
+      <iframe
+        style={iframeStyles}
+        src={`https://www.youtube.com/embed/${videoId}`}
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+        title="YouTube video player"
+      ></iframe>
+    </div>
   </div>
 );
 
