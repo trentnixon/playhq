@@ -4,28 +4,15 @@ import NavbarOne from "./NavbarOne";
 import NavbarTwo from "./NavbarTwo";
 import Footer from "./FooterDark";
 import { useRouter } from "next/router";
-import { useFetchUser, UserProvider, useUser } from "../../lib/authContext";
-import {
-  AccountDetailsProvider,
-  useAccountDetails,
-} from "../../lib/userContext";
+import { useUser } from "../../lib/authContext";
+import { useAccountDetails } from "../../lib/userContext";
 import { Box, Container, Grid } from "@mantine/core";
 import { FixturaHeaderMeta } from "../Members/Account/userFixturaSettings";
 import { UserDetailsCard } from "../Members/Account/userAdminDetailsCard";
 import HasCompletedStartSequence from "../Members/Account/HOC/hasCompletedStartSequence";
-import { useEffect } from "react";
-
 const Layout = ({ children }) => {
-  const { user, loading } = useUser();
+  const { user } = useUser();
   const router = useRouter();
-
-/*   console.log("User updated in Layout:", user);
-  console.log("Is loading:", loading);
-
-  useEffect(() => {
-    console.log("User updated in Layout:", user);
-    console.log("Is loading:", loading);
-  }, [user, loading]); */
 
   const isMemberPage = router.pathname.includes("members");
   const SelectedNavbar = user ? <NavbarTwo /> : <NavbarOne />;

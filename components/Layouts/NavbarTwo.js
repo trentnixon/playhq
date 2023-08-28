@@ -9,7 +9,7 @@ import {
   IconCheck,
   IconColorPicker,
   IconDownload,
-  IconLogout2,
+  IconLogout2, 
   IconTrack,
 } from "@tabler/icons-react";
 import { Group, useMantineTheme } from "@mantine/core";
@@ -231,10 +231,9 @@ const MembersNavItem = ({ user, setMenu }) => {
 
 
   const navItemsToRender =
-    account?.attributes?.hasCompletedStartSequence === undefined ||
     account?.attributes?.hasCompletedStartSequence == false
       ? navItemsNoSetup
-      : navItems;
+      : account?.attributes?.hasCompletedStartSequence === undefined ? [] : navItems;
   return (
     <li className="nav-item">
       <Link href="#">

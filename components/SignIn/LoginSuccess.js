@@ -19,7 +19,7 @@ function UserLoggedIn() {
     <div className="contact-form ptb-100">
       <div className="contact-title">
         <h2>Sign In successful</h2>
-        <P textAlign={'center'}>Redirecting in 1 secound</P>
+        <P textAlign={'center'}>Redirecting in 1 second</P>
       </div>
     </div>
   ); 
