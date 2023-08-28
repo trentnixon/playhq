@@ -1,7 +1,7 @@
 // Components
 import Meta from "./Meta";
 import Footer from "./FooterDark";
-import { UserProvider } from "../lib/authContext";
+import {  UserProvider } from "../../lib/authContext";
 import { AccountDetailsProvider } from "../../lib/userContext";
 
 const LayoutNoNavbar = ({ children }) => {
