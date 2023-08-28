@@ -1,85 +1,56 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import { fetcher } from "../../lib/api";
-import { setToken } from "../../lib/auth";
 import { useUser } from "../../lib/authContext";
 import UserLoggedIn from "./LoginSuccess";
 import { useLogUser } from "../../Hooks/useAuthLocal";
-
-// Form initial state
-const INITIAL_STATE = {
-  email: "",
-  password: "",
-};
+import { SignInError } from "./SignInError";
+import { SignInLoading } from "./SignInLoading";
 
 const SignInForm = () => {
-  const [contact, setContact] = useState(INITIAL_STATE);
-  const [LogUser, CreateLogUser] = useLogUser();
-  const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(false);
-
-  // user Context
-  const { user } = useUser();
+  const [contact, setContact] = useState({ email: "", password: "" });
+  const [LogUser, CreateLogUser, loading, hookError] = useLogUser(); // Rename error to hookError to avoid conflict
+  const [userInfo, setUserInfo] = useState(null);
+  const [error, setError] = useState(null); // Declare error and setError here
+  const { user,ReRender } = useUser();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setContact((prevState) => ({ ...prevState, [name]: value }));
   };
-
+ 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setLoading(true);
     try {
       const { email, password } = contact;
       const loginInfo = {
         identifier: email,
-        password: password,
+        password: password, 
       };
-      const result = await CreateLogUser(loginInfo);
-      if (result && result.error) {
-        setError(result.error.message); // Extract the error message
-      } else {
-        setError(null);
-      }
+      CreateLogUser(loginInfo).then(() => {
+        ReRender();
+      });
     } catch (error) {
       setError("An error occurred during login.");
-    } finally {
-      setLoading(false); // Set loading to false after handling login
     }
   };
 
   useEffect(() => {
-    console.log(LogUser);
-  }, [LogUser]);
+    if (hookError) {
+      setError(hookError.message || "An error occurred during login.");
+    } else if (LogUser) {
+      setUserInfo(LogUser);
+    }
+  }, [LogUser, hookError]);
 
   if (loading) {
-    return (
-      <div className="contact-form ptb-100">
-        <div className="contact-title">
-          <div>Loading...</div>
-        </div>
-      </div>
-    );
+    return <SignInLoading />;
   }
-
-  if (user) {
-    return <UserLoggedIn user={user} />;
-  }
-
   if (error) {
-    return (
-      <div className="contact-form ptb-100">
-        <div className="contact-title">
-          <h2>Error</h2>
-          <p>{error}</p>
-          <button onClick={() => setError(null)} className="btn btn-primary">
-            Try again
-          </button>
-        </div>
-      </div>
-    );
+    return <SignInError setError={setError} error={error} />;
   }
-
+  if (user || LogUser && !hookError) {
+    return <UserLoggedIn user={LogUser} />;
+  }
   return (
     <>
       <div className="contact-form ptb-100">
@@ -88,44 +59,11 @@ const SignInForm = () => {
           <p>Sign in to your FIXTURA account.</p>
         </div>
 
-        <form onSubmit={handleSubmit}>
-          <div className="container">
-            <div className="row justify-content-center">
-              <div className="col-lg-4">
-                <div className="form-group">
-                  <input
-                    type="email"
-                    name="email"
-                    placeholder="Email"
-                    className="form-control"
-                    value={contact.email}
-                    onChange={handleChange}
-                    required
-                  />
-                </div>
-              </div>
-              <div className="col-lg-4">
-                <div className="form-group">
-                  <input
-                    type="password"
-                    name="password"
-                    placeholder="Password"
-                    className="form-control"
-                    value={contact.password}
-                    onChange={handleChange}
-                    required
-                  />
-                </div>
-              </div>
-
-              <div className="col-lg-12 col-sm-12">
-                <button type="submit" className="btn btn-primary">
-                  Login
-                </button>
-              </div>
-            </div>
-          </div>
-        </form>
+        <TheForm
+          handleSubmit={handleSubmit}
+          handleChange={handleChange}
+          contact={contact}
+        />
         <small>
           <Link href="/password-request">
             <a>Forgot Password?</a>
@@ -142,5 +80,47 @@ const SignInForm = () => {
     </>
   );
 };
-
 export default SignInForm;
+
+const TheForm = ({ handleSubmit, handleChange, contact }) => {
+  return (
+    <form onSubmit={handleSubmit}>
+      <div className="container">
+        <div className="row justify-content-center">
+          <div className="col-lg-4">
+            <div className="form-group">
+              <input
+                type="email"
+                name="email"
+                placeholder="Email"
+                className="form-control"
+                value={contact.email}
+                onChange={handleChange}
+                required
+              />
+            </div>
+          </div>
+          <div className="col-lg-4">
+            <div className="form-group">
+              <input
+                type="password"
+                name="password"
+                placeholder="Password"
+                className="form-control"
+                value={contact.password}
+                onChange={handleChange}
+                required
+              />
+            </div>
+          </div>
+
+          <div className="col-lg-12 col-sm-12">
+            <button type="submit" className="btn btn-primary">
+              Login
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  );
+};

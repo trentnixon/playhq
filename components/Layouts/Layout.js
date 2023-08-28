@@ -4,7 +4,7 @@ import NavbarOne from "./NavbarOne";
 import NavbarTwo from "./NavbarTwo";
 import Footer from "./FooterDark";
 import { useRouter } from "next/router";
-import { useFetchUser, UserProvider } from "../../lib/authContext";
+import { useFetchUser, UserProvider, useUser } from "../../lib/authContext";
 import {
   AccountDetailsProvider,
   useAccountDetails,
@@ -13,30 +13,38 @@ import { Box, Container, Grid } from "@mantine/core";
 import { FixturaHeaderMeta } from "../Members/Account/userFixturaSettings";
 import { UserDetailsCard } from "../Members/Account/userAdminDetailsCard";
 import HasCompletedStartSequence from "../Members/Account/HOC/hasCompletedStartSequence";
+import { useEffect } from "react";
 
 const Layout = ({ children }) => {
-  const { user, loading } = useFetchUser();
+  const { user, loading } = useUser();
   const router = useRouter();
+
+/*   console.log("User updated in Layout:", user);
+  console.log("Is loading:", loading);
+
+  useEffect(() => {
+    console.log("User updated in Layout:", user);
+    console.log("Is loading:", loading);
+  }, [user, loading]); */
+
   const isMemberPage = router.pathname.includes("members");
   const SelectedNavbar = user ? <NavbarTwo /> : <NavbarOne />;
-  const SelectedLayout = isMemberPage ? (  
+  const SelectedLayout = isMemberPage ? (
     <MembersLayout>{children}</MembersLayout>
   ) : (
     <StaticLayout>{children}</StaticLayout>
   );
 
-  console.log("isMemberPage", isMemberPage);
+  //console.log("isMemberPage", isMemberPage);
   return (
-    <UserProvider value={{ user, loading }}>
-      <AccountDetailsProvider>
-        <Meta />
-        <div className="Container Main">
-          {SelectedNavbar}
-          {SelectedLayout}
-          <Footer />
-        </div> 
-      </AccountDetailsProvider>
-    </UserProvider>
+    <>
+      <Meta />
+      <div className="Container Main">
+        {SelectedNavbar}
+        {SelectedLayout}
+        <Footer />
+      </div>
+    </>
   );
 };
 
@@ -50,7 +58,7 @@ const StaticLayout = ({ children }) => {
 const MembersLayout = ({ children }) => {
   return (
     <HasCompletedStartSequence>
-      <AdminHero /> 
+      <AdminHero />
       <Container size={"xl"}>
         <Grid>
           <Grid.Col span={12} sm={4} md={3}>
@@ -62,7 +70,7 @@ const MembersLayout = ({ children }) => {
         </Grid>
       </Container>
     </HasCompletedStartSequence>
-  ); 
+  );
 };
 
 // Members additional Components

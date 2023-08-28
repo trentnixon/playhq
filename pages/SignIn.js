@@ -2,7 +2,7 @@ import React from "react";
 import PageBanner from "../components/Common/PageBanner";
 import SignInForm from "../components/SignIn/SignInForm";
 
-const Contact = () => {
+const SignIn = () => {
   return (
     <>
       <PageBanner
@@ -10,9 +10,9 @@ const Contact = () => {
         BGImage="/images/BG-Images/0D5A3671.jpg"
         position={`top center`}
       />
-      <SignInForm /> 
+      <SignInForm />  
     </>
   );
 };
 
-export default Contact;
+export default SignIn;

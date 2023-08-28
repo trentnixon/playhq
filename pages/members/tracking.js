@@ -49,9 +49,9 @@ const Tracking = ({ DATA }) => {
   const router = useRouter();
   const currentRoute = router.pathname;
 
-  console.log("DATA", DATA);
+  //console.log("DATA", DATA);
   const nextDateData = getNextDate(DATA);
-  console.log(nextDateData);
+  //console.log(nextDateData);
   useEffect(() => {
     if (!user) router.push(`/members/verification/?prev=${currentRoute}`);
   }, [user]);
@@ -66,7 +66,7 @@ const Tracking = ({ DATA }) => {
     }
   }, [account]);
   // then in the component
-  console.log(DATA);
+  //console.log(DATA);
   return (
     <MembersWrapper>
       <SetupCheck>
@@ -80,8 +80,13 @@ const Tracking = ({ DATA }) => {
           {Object.keys(DATA).length === 0 ? (
             <>
               <ShadowWrapper>
-                <P textAlign = "center" Weight ={900} color = {8} >No fixtures registered at the moment. </P>
-                <P textAlign = "center"  color = {8}>Fixtura is currently tracking 0 fixtures. If you believe this is incorrect, please contact us here.</P>
+                <P textAlign="center" Weight={900} color={8}>
+                  No fixtures registered at the moment.{" "}
+                </P>
+                <P textAlign="center" color={8}>
+                  Fixtura is currently tracking 0 fixtures. If you believe this
+                  is incorrect, please contact us here.
+                </P>
               </ShadowWrapper>
             </>
           ) : (

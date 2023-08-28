@@ -21,6 +21,8 @@ import "../styles/responsive.scss";
 import GoTop from "../components/Layouts/GoTop";
 import { MantineProviderWrapper } from "../utils/MantineTheme";
 import { initGA, trackWebVitals } from "../lib/GA";
+import { UserProvider } from "../lib/authContext";
+import { AccountDetailsProvider } from "../lib/userContext";
 
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
@@ -36,11 +38,15 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <>
-      <MantineProviderWrapper>
-        {getLayout(<Component {...pageProps} />)}
-        <GoTop />
-      </MantineProviderWrapper>
-      <Analytics />
+      <UserProvider>
+        <AccountDetailsProvider>
+          <MantineProviderWrapper>
+            {getLayout(<Component {...pageProps} />)}
+            <GoTop />
+          </MantineProviderWrapper>
+          <Analytics />
+        </AccountDetailsProvider>
+      </UserProvider>
     </>
   );
 }

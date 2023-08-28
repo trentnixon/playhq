@@ -42,25 +42,31 @@ export const useAccount = (ctx) => {
   );
 
   const fetchData = async () => {
-    const ID = await getAccountIDFromServer();
-    const JWT = getTokenFromLocalCookie();
-    //console.log("fetchData accounts on id ", ID);
-    if (ID !== undefined) {
-      const res = await fetcher(
-        `${process.env.NEXT_PUBLIC_STRAPI_URL}/accounts/${ID.account?.id}?${query}`,
-        {
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${JWT}`,
-          },
-        }
-      );
-
-      //console.log(res.data);
-
-      setData(res.data);
+    try {
+      const ID = await getAccountIDFromServer();
+      const JWT = getTokenFromLocalCookie();
+      console.log("fetchData accounts on id ", ID); 
+      
+      // Check if ID and its nested properties exist
+      if (ID && ID.account && ID.account.id) {
+        const res = await fetcher(
+          `${process.env.NEXT_PUBLIC_STRAPI_URL}/accounts/${ID.account.id}?${query}`,
+          {
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${JWT}`,
+            },
+          }
+        );
+        setData(res.data);
+      } else {
+        console.log("ID, or its nested properties, are undefined");
+      }
+    } catch (error) {
+      console.error("An error occurred during fetchData:", error);
     }
   };
+  
 
   return [data, fetchData];
 };

@@ -35,6 +35,12 @@ const NavbarTwo = () => {
     });
   });
 
+
+useEffect(()=>{
+  console.log("NavbarTwo User:", user);
+  console.log("NavbarTwo Loading:", loading);
+},[])
+
   const classOne = menu
     ? "collapse navbar-collapse mean-menu"
     : "collapse navbar-collapse show";
@@ -81,7 +87,24 @@ const NavbarTwo = () => {
             <div className={classOne} id="navbarSupportedContent">
               <ul className="navbar-nav">
                 {user && <MembersNavItem user={user} setMenu={setMenu} />}
-                <li className="nav-item">
+                {!user && <VisitorMenu user={user} setMenu={setMenu}/>}
+                
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </>
+  );
+};
+
+export default NavbarTwo;
+
+
+const VisitorMenu = ({setMenu})=>{
+    return(
+      <>
+      <li className="nav-item">
                   <Link href="/">
                     <a className="nav-link" onClick={() => setMenu(true)}>
                       Home
@@ -126,16 +149,10 @@ const NavbarTwo = () => {
                     </a>
                   </Link>
                 </li>
-              </ul>
-            </div>
-          </div>
-        </nav>
-      </div>
-    </>
-  );
-};
+      </>
+    )
+}
 
-export default NavbarTwo;
 
 const NavItem = ({ href, title, IconComponent, setMenu }) => {
   const theme = useMantineTheme();
@@ -209,8 +226,9 @@ const MembersNavItem = ({ user, setMenu }) => {
       href: `${PATH}/setup`,
       title: "Setup Account",
       IconComponent: IconBrandStripe,
-    },
+    }
   ];
+
 
   const navItemsToRender =
     account?.attributes?.hasCompletedStartSequence === undefined ||
@@ -229,12 +247,12 @@ const MembersNavItem = ({ user, setMenu }) => {
         {navItemsToRender.map((item, index) => (
           <NavItem key={index} {...item} setMenu={setMenu} />
         ))}
-        {hasSetup !== "undefined" && (
-          <li className="nav-item">
+        {hasSetup  && (
+          <li className="nav-item" style={{ cursor: 'pointer'}}>
             <Group position="apart" px={0}>
-              <a className="nav-link" onClick={handleLogout}>
+              <a className="nav-link"  onClick={handleLogout}>
                 Log Out
-              </a>
+              </a> 
               <IconLogout2
                 size={"1.5em"}
                 stroke={1}
