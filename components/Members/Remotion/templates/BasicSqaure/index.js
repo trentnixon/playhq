@@ -77,8 +77,6 @@ export const Template_Basic_Sqaure = (props) => {
     ),
   };
 
-  console.log("USE THIS CompositionID", TEMPLATES[TEMPLATE]);
-  
   const HasSponsors = () => {
     DATA.VIDEOMETA.Video.includeSponsors;
     if (DATA.VIDEOMETA.Club.Sponsors.length === 0) return 0;
@@ -104,9 +102,9 @@ export const Template_Basic_Sqaure = (props) => {
               DATA={DATA}
             />
           </Series.Sequence>
-          <Series.Sequence durationInFrames={TIMINGS.FPS_MAIN}>
+        {/*   <Series.Sequence durationInFrames={TIMINGS.FPS_MAIN}>
             {TEMPLATES[TEMPLATE]}
-          </Series.Sequence>
+          </Series.Sequence> */}
           <Series.Sequence durationInFrames={TIMINGS.FPS_OUTRO}>
             <OutroSequenceFrame
               theme={THEME}
