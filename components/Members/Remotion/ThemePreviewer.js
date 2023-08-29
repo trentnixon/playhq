@@ -9,13 +9,12 @@ import { Template_Basic_Rounded } from "./templates/BasicRounded/index";
 import { P } from "../Common/Type";
 
 const RemotionPreview = ({ setIsPlaying, DATA }) => {
-
   const OBJ = {
     "Basic Sqaure": Template_Basic_Sqaure,
     "Basic Rounded": Template_Basic_Rounded,
   };
 
-console.log("RemotionPreview DATA CHECK", DATA)
+  console.log("RemotionPreview DATA CHECK", DATA.DATA.VIDEOMETA);
   const playerRef = useRef(null);
 
   useEffect(() => {
@@ -45,7 +44,7 @@ console.log("RemotionPreview DATA CHECK", DATA)
   const PlayerOnly = ({ playerRef }) => {
     return (
       <Player
-        ref={playerRef} 
+        ref={playerRef}
         id={DATA.DATA.VIDEOMETA.Video.CompositionID}
         component={OBJ[DATA.DATA.VIDEOMETA.Video.Template]}
         durationInFrames={550}
@@ -73,7 +72,6 @@ console.log("RemotionPreview DATA CHECK", DATA)
         Copy={`Preview`}
       />
       <Center>
-      
         <PlayerOnly playerRef={playerRef} />
       </Center>
     </>
