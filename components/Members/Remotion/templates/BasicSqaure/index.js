@@ -94,7 +94,7 @@ export const Template_Basic_Sqaure = (props) => {
     <ThemeProvider theme={THEME}>
       <AbsoluteFill style={{ backgroundColor: THEME.primary }}>
         <Series>
-		<Series.Sequence durationInFrames={270 }>
+		<Series.Sequence durationInFrames={180}>
             <h1>HELLO</h1>
           </Series.Sequence>
           {/* <Series.Sequence durationInFrames={TIMINGS.FPS_INTRO}>
