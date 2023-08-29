@@ -14,7 +14,7 @@ const RemotionPreview = ({ setIsPlaying, DATA }) => {
     "Basic Rounded": Template_Basic_Rounded,
   };
 
-  console.log("RemotionPreview DATA CHECK", DATA.DATA.VIDEOMETA);
+  //console.log("RemotionPreview DATA CHECK", DATA.DATA.VIDEOMETA);
   const playerRef = useRef(null);
 
   useEffect(() => {

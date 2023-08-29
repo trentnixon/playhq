@@ -6,14 +6,9 @@
 			"TitleSplit": ["Weekend", "Run-Scorers"],
 			"CompositionID": "Top5BattingList",
 			"includeSponsors": true,
-			"VideoTitle": "Gold Coast Veterans Cricket Top 5",
+			"VideoTitle": "",
 			"PlayHQLogo": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Play_HQ_Logo_942f7f18cf.png",
-			"Theme": {
-				"primary": "#2b2f3b",
-				"secondary": "#faca2b",
-				"dark": "#111",
-				"white": "#FFF"
-			},
+			"Theme": {},
 			"Template": "Basic Rounded",
 			"audio_option": "https://lmssocialmediamanager.s3.ap-southeast-2.amazonaws.com/assets/Saltine_1.mp3",
 			"TIMINGS": {"FPS_INTRO": 90, "FPS_OUTRO": 120, "FPS_MAIN": 360},
