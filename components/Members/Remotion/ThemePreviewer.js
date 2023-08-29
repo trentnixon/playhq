@@ -56,7 +56,7 @@ const RemotionPreview = ({ setIsPlaying, DATA }) => {
         controls
         style={{
           width: parseInt(1440) * 0.25,
-          height: parseInt(1920) * 0.25,
+          height: parseInt(1920) * 0.25, 
         }}
       />
     );
