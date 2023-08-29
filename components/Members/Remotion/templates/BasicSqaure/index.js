@@ -1,4 +1,3 @@
-/* eslint-disable camelcase */
 import { ThemeProvider } from "styled-components";
 import { Series, AbsoluteFill, Audio, interpolate } from "remotion";
 // Import {RemotionThemes} from '../../theme/themes'
@@ -102,9 +101,9 @@ export const Template_Basic_Sqaure = (props) => {
               DATA={DATA}
             />
           </Series.Sequence>
-        {/*   <Series.Sequence durationInFrames={TIMINGS.FPS_MAIN}>
+          {/* <Series.Sequence durationInFrames={TIMINGS.FPS_MAIN}>
             {TEMPLATES[TEMPLATE]}
-          </Series.Sequence> */}
+          </Series.Sequence>
           <Series.Sequence durationInFrames={TIMINGS.FPS_OUTRO}>
             <OutroSequenceFrame
               theme={THEME}
@@ -112,7 +111,7 @@ export const Template_Basic_Sqaure = (props) => {
               FPS={TIMINGS.FPS_OUTRO}
               DATA={DATA}
             />
-          </Series.Sequence>
+          </Series.Sequence> */}
         </Series>
         <NoiseComp speed={0.01} circleRadius={50} maxOffset={60} />
         <Audio
@@ -130,5 +129,3 @@ export const Template_Basic_Sqaure = (props) => {
     </ThemeProvider>
   );
 };
-
-// {TEMPLATES[RENDER.THEME.VideoTemplate]}
