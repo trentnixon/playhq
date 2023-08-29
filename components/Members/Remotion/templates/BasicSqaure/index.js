@@ -27,7 +27,7 @@ export const Template_Basic_Sqaure = (props) => {
   const TEMPLATE = DATA.VIDEOMETA.Video.CompositionID;
   const THEME = DATA.VIDEOMETA.Video.Theme;
   
-  console.log("USE THIS CompositionID", TEMPLATE);
+  
 
   const TEMPLATES = {
     Top5BattingList: (
@@ -77,6 +77,8 @@ export const Template_Basic_Sqaure = (props) => {
     ),
   };
 
+  console.log("USE THIS CompositionID", TEMPLATES[TEMPLATE]);
+  
   const HasSponsors = () => {
     DATA.VIDEOMETA.Video.includeSponsors;
     if (DATA.VIDEOMETA.Club.Sponsors.length === 0) return 0;
