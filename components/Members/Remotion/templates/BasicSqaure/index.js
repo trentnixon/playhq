@@ -89,6 +89,7 @@ export const Template_Basic_Sqaure = (props) => {
     ].reduce((a, b) => a + b, 0);
   };
 
+  console.log("TIMINGS", TIMINGS)
   return (
     <ThemeProvider theme={THEME}>
       <AbsoluteFill style={{ backgroundColor: THEME.primary }}>
