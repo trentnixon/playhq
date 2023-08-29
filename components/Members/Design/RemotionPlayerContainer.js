@@ -54,6 +54,7 @@ export const RemotionPlayerContainer = (props) => {
       updateVideoMeta(userAccount);
       updateClubMeta(userAccount);
       updateSponsors(userAccount);
+      console.log("DATA JSON", DATA)
     }
   }, [account]);
 

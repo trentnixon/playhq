@@ -15,7 +15,7 @@ const RemotionPreview = ({ setIsPlaying, DATA }) => {
     "Basic Rounded": Template_Basic_Rounded,
   };
 
-
+console.log("RemotionPreview DATA CHECK", DATA)
   const playerRef = useRef(null);
 
   useEffect(() => {
