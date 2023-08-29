@@ -14,8 +14,6 @@ const RemotionPreview = ({ setIsPlaying, DATA }) => {
     "Basic Rounded": Template_Basic_Rounded,
   };
 
-  console.log("SELECT A TEMPLATE", DATA.DATA.VIDEOMETA.Video.Template)
-
   //console.log("RemotionPreview DATA CHECK", DATA.DATA.VIDEOMETA);
   const playerRef = useRef(null);
 

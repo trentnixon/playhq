@@ -27,7 +27,7 @@ export const Template_Basic_Sqaure = (props) => {
   const TEMPLATE = DATA.VIDEOMETA.Video.CompositionID;
   const THEME = DATA.VIDEOMETA.Video.Theme;
   
-  console.log("USE THIS TEMPLATE", TEMPLATE);
+  console.log("USE THIS CompositionID", TEMPLATE);
 
   const TEMPLATES = {
     Top5BattingList: (

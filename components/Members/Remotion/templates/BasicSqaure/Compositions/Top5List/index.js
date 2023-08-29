@@ -6,7 +6,7 @@ import {LogoClubTitleHeader} from './Title';
 import {Top5PlayersMap} from './Top5Map';
 
 export const Top5List = ({DATA, theme, fontFamily, FPS_MAIN, TYPE}) => {
-
+console.log("Top5List Top5List Top5List Top5List", DATA)
 	return (
 		<Series>
 			<Series.Sequence durationInFrames={FPS_MAIN} layout="none">
