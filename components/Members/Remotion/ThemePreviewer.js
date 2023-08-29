@@ -45,7 +45,7 @@ const RemotionPreview = ({ setIsPlaying, DATA }) => {
   const PlayerOnly = ({ playerRef }) => {
     return (
       <Player
-        ref={playerRef}
+        ref={playerRef} 
         id={DATA.DATA.VIDEOMETA.Video.CompositionID}
         component={OBJ[DATA.DATA.VIDEOMETA.Video.Template]}
         durationInFrames={550}

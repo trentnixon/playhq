@@ -6,7 +6,7 @@ import {Match} from './Sections';
 import {MatchContainer} from './Sections/MatchContainer';
 
 export const FixturesMain = ({DATA, THEME, fontFamily, FPS_SCORECARD}) => {
-
+	console.log(DATA);
 	const groupsOfTwo = splitIntoGroupsOfTwo(DATA);
 	return (
 		<FixtureContainer>

@@ -1,57 +1,81 @@
 {
-  "TIMINGS": {
-    "FPS_INTRO": 90,
-    "FPS_OUTRO": 120,
-    "FPS_MAIN": 360
-  },
-  "VIDEOMETA": {
-    "Video": {
-      "Title": "Top 5",
+	"TIMINGS": {"FPS_INTRO": 90, "FPS_OUTRO": 120, "FPS_MAIN": 360},
+	"VIDEOMETA": {
+		"Video": {
+			"Title": "Top 5",
 			"TitleSplit": ["Weekend", "Run-Scorers"],
 			"CompositionID": "Top5BattingList",
-      "VideoTitle": "Runaway Bay Cricket Club Inc Top 5",
-      "PlayHQLogo": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Play_HQ_Logo_942f7f18cf.png?updated_at=2023-02-06T06:18:05.861Z",
-      "Theme": false,
-      "Template": false,
-      "audio_option": false
-    },
-    "Club": {
-      "Name": "Runaway Bay Cricket Club Inc",
-      "Logo": "https://res.cloudinary.com/playhq/image/upload/h_128,w_128/v1/production/ca/5e70931e-19e8-4a58-86a2-d431c122e8f1/1656732720632/logo.png"
-    }
-  },
-  "DATA": [
+			"includeSponsors": true,
+			"VideoTitle": "Gold Coast Veterans Cricket Top 5",
+			"PlayHQLogo": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Play_HQ_Logo_942f7f18cf.png",
+			"Theme": {
+				"primary": "#2b2f3b",
+				"secondary": "#faca2b",
+				"dark": "#111",
+				"white": "#FFF"
+			},
+			"Template": "Basic Rounded",
+			"audio_option": "https://lmssocialmediamanager.s3.ap-southeast-2.amazonaws.com/assets/Saltine_1.mp3",
+			"TIMINGS": {"FPS_INTRO": 90, "FPS_OUTRO": 120, "FPS_MAIN": 360},
+			"FRAMES": []
+		},
+		"Club": {
+			"Name": "Gold Coast Veterans Cricket",
+			"Logo": "https://fixtura.s3.ap-southeast-2.amazonaws.com/logo_4_223c3c18c4.png",
+			"Sponsors": [
+				{
+					"Name": "Thirds Spconsor",
+					"URL": "thisrd.com",
+					"Logo": "https://fixtura.s3.ap-southeast-2.amazonaws.com/ab6765630000ba8a0c290f05cdda08e516941b7b_9430b7a552.jpg",
+					"isPrimary": true
+				},
+				{
+					"Name": "shirt sponsor",
+					"URL": "ss.com",
+					"Logo": "https://fixtura.s3.ap-southeast-2.amazonaws.com/AJTRUSTLOGO_ae887461f6.png",
+					"isPrimary": false
+				},
+				{
+					"Name": "Vinay Kumar",
+					"URL": "VK.com",
+					"Logo": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Whats_App_Image_2023_01_29_at_12_06_59_PM_b9087a2003.jpeg",
+					"isPrimary": false
+				}
+			]
+		}
+	},
+	"DATA": [
     {
       "name": "Sachin Tendulkar",
       "key": 52,
       "param1": 62,
       "param2": 83.87,
       "playedAgainst": "Australia",
-      "playedFor": "India"
-    },
-    {
-      "name": "Ricky Ponting",
-      "key": 41,
-      "param1": 72,
-      "param2": 56.94,
-      "playedAgainst": "England",
-      "playedFor": "Australia"
+      "playedFor": "Indian"
     },
     {
       "name": "Brian Lara",
-      "key": 36,
-      "param1": 40,
-      "param2": 90,
-      "playedAgainst": "South Africa",
+      "key": 41,
+      "param1": 72,
+      "param2": 56.94,
+      "playedAgainst": "Pakistan",
       "playedFor": "West Indies"
     },
     {
       "name": "Jacques Kallis",
       "key": 36,
+      "param1": 40,
+      "param2": 90,
+      "playedAgainst": "England",
+      "playedFor": "South Africa"
+    },
+    {
+      "name": "Ricky Ponting (c)",
+      "key": 36,
       "param1": 54,
       "param2": 66.66,
       "playedAgainst": "New Zealand",
-      "playedFor": "South Africa"
+      "playedFor": "Australia"
     },
     {
       "name": "Wasim Akram",

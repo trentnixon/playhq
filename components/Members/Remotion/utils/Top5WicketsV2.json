@@ -5,6 +5,7 @@
 			"Title": "Top 5",
 			"TitleSplit": ["Weekend", "Bowlers"],
 			"CompositionID": "Top5BowlingList",
+			"includeSponsors": true,
 			"VideoTitle": "Gold Coast Veterans Cricket Top 5",
 			"PlayHQLogo": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Play_HQ_Logo_942f7f18cf.png",
 			"Theme": {

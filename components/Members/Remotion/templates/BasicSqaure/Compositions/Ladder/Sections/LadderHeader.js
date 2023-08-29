@@ -44,7 +44,7 @@ const Performance = styled.span`
 export const LadderHeader = ({THEME, fontFamily, NumTeams, FPS_LADDER}) => {
 	
   const frame = useCurrentFrame();
-	//console.log(NumTeams);
+	console.log(NumTeams);
   const ContainerHeight=1200
 	return (
 		<LadderPositionContainer 

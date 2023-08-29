@@ -68,7 +68,7 @@ const Design = () => {
           setIsPlaying={setIsPlaying}
         />
       </MembersWrapper>
-    </LoadingStateWrapper>
+    </LoadingStateWrapper> 
   );
 };
 

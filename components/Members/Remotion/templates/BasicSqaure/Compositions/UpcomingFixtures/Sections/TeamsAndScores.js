@@ -1,8 +1,8 @@
 import styled from 'styled-components';
+
 import {
 	getContrastColor,
 	darkenColor,
-	lightenColor,
 } from '../../../../../utils/colors';
 import {useCurrentFrame} from 'remotion';
 import {interpolateOpacityByFrame} from '../../../../../Animation/interpolate';
@@ -52,7 +52,7 @@ const TeamScore = styled.h3`
 
 export const TeamsAndScores = (props) => {
 	const {homeTeam, awayTeam, fontFamily, FPS_SCORECARD, time, THEME, ground} = props;
-
+	console.log(homeTeam);
 	const frame = useCurrentFrame();
 	return (
 		<TeamsAndScoresContainer>

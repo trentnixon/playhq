@@ -8,11 +8,12 @@ import {getContrastColor, darkenColor} from '../../../../utils/colors';
 import {restrictString} from '../../../../utils/copy';
 
 export const Top5PlayersMap = ({DATA, THEME, fontFamily, FPS_MAIN, TYPE}) => {
-
+	console.log(TYPE)
 	const frame = useCurrentFrame();
 	return (
 		<PlayerContainer>
 			{DATA.map((player, i) => {
+				console.log(player);
 				return (
 					<PlayerROW
 						key={i}
@@ -110,7 +111,7 @@ export const Top5PlayersMap = ({DATA, THEME, fontFamily, FPS_MAIN, TYPE}) => {
 };
 
 const BattingScores = ({COLOR, player, fontFamily}) => {
-	
+	console.log("player", player)
 	return (
 		<PlayerScore
 			style={{

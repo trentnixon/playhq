@@ -48,7 +48,7 @@ export const LadderPosition = ({
 	const {TIE, L, W, P, position, PTS, teamName} = LadderItem; 
 	const frame = useCurrentFrame();
 
-	//console.log(LadderItem);
+	console.log(LadderItem);
 	const useTHEMECOLOR = isTeam ? 'secondary' : 'primary';
 
 	const ContainerHeight = 1200;

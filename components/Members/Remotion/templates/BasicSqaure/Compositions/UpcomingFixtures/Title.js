@@ -18,6 +18,7 @@ import {calculateLetterSpacing} from '../../../../utils/copy';
 
 export const LogoClubTitleHeader = ({THEME, fontFamily, DATA, FPS_MAIN}) => {
 	const frame = useCurrentFrame();
+	console.log(DATA.Video.TitleSplit);
 	return (
 		<Container>
 			<Logo

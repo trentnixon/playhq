@@ -5,6 +5,7 @@
 			"Title": "Top 5",
 			"TitleSplit": ["Weekend", "Run-Scorers"],
 			"CompositionID": "Top5BattingList",
+			"includeSponsors": true,
 			"VideoTitle": "Gold Coast Veterans Cricket Top 5",
 			"PlayHQLogo": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Play_HQ_Logo_942f7f18cf.png",
 			"Theme": {
@@ -23,7 +24,7 @@
 			"Logo": "https://fixtura.s3.ap-southeast-2.amazonaws.com/logo_4_223c3c18c4.png",
 			"Sponsors": [
 				{
-					"Name": "Thirds Spconsor", 
+					"Name": "Thirds Spconsor",
 					"URL": "thisrd.com",
 					"Logo": "https://fixtura.s3.ap-southeast-2.amazonaws.com/ab6765630000ba8a0c290f05cdda08e516941b7b_9430b7a552.jpg",
 					"isPrimary": true

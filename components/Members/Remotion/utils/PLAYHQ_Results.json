@@ -10,6 +10,7 @@
 			"Title": "Weekend",
 			"TitleSplit": ["Weekend","Results"],
 			"CompositionID": "WeekendResults",
+			"includeSponsors": true,
 			"VideoTitle": "Runaway Bay Cricket Club Inc Weekend Results",
 			"PlayHQLogo": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Play_HQ_Logo_942f7f18cf.png",
 			"Theme": {

@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import {
+
 	useCurrentFrame,
 	Img
 } from 'remotion';
@@ -10,12 +11,14 @@ import {interpolateOpacityByFrame} from '../../../../Animation/interpolate';
 import {EraseToMiddleFromTop, FromMiddle, FromTopToBottom} from '../../../../Animation/ClipWipe';
 import {
 	getContrastColor,
+	lightenColor,
+	darkenColor,
 } from '../../../../utils/colors';
 import {calculateLetterSpacing} from '../../../../utils/copy';
 
 export const LogoClubTitleHeader = ({THEME, fontFamily, DATA, FPS_MAIN}) => {
 	const frame = useCurrentFrame();
-	//console.log(DATA.Video.TitleSplit)
+	console.log(DATA.Video.TitleSplit)
 	return (
 		<Container>
 			<Logo

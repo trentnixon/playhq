@@ -20,8 +20,9 @@
           "white": "#FFF"
         },
         "Template":"Basic Sqaure",
-        "audio_option":"https://lmssocialmediamanager.s3.ap-southeast-2.amazonaws.com/assets/Fifteen%20on%20Me.mp3"
-     },
+        "audio_option":"https://lmssocialmediamanager.s3.ap-southeast-2.amazonaws.com/assets/Fifteen%20on%20Me.mp3",
+        "includeSponsors": true
+      },
      "Club":{
         "Name":"Runaway Bay Cricket Club Inc",
         "Logo":"https://res.cloudinary.com/playhq/image/upload/h_128,w_128/v1/production/ca/5e70931e-19e8-4a58-86a2-d431c122e8f1/1656732720632/logo.png"
