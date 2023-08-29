@@ -49,6 +49,7 @@ export const RemotionPlayerContainer = (props) => {
 
   useEffect(() => {
     setUserAccount(account);
+    console.log("DATA JSON", DATA)
     if (userAccount) {
       updateVideoMeta(userAccount);
       updateClubMeta(userAccount);
