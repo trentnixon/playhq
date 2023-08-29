@@ -21,7 +21,7 @@ import { NoiseComp } from "./Sequences/Common/niose3D";
 export const Template_Basic_Sqaure = (props) => {
   const { DATA } = props;
 
-  console.log("DATA Template_Basic_Sqaure", DATA)
+  console.log("DATA Template_Basic_Sqaure", DATA.DATA)
   const { fontFamily } = loadFont();
   const { TIMINGS } = DATA;
   const TEMPLATE = DATA.VIDEOMETA.Video.CompositionID;

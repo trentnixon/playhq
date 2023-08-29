@@ -21,7 +21,7 @@ import { NoiseComp } from "./Sequences/Common/niose3D";
 export const Template_Basic_Rounded = (props) => {
   const { DATA } = props;
   const { fontFamily } = loadFont();
-  console.log("DATA Template_Basic_Rounded", DATA);
+  console.log("DATA Template_Basic_Rounded", DATA.DATA);
   const { TIMINGS } = DATA;
   const TEMPLATE = DATA.VIDEOMETA.Video.CompositionID;
   const THEME = DATA.VIDEOMETA.Video.Theme;
