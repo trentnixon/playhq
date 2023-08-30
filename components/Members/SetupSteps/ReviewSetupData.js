@@ -94,7 +94,8 @@ export const ReviewSetupData = ({ DATA }) => {
   const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [ConfirmReset, setConfirmReset] = useState(false);
-
+  const theme = useMantineTheme();
+  const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
   const CompleteRegistration = async () => {
     setLoading(true);
     console.log("CompleteRegistration");
@@ -143,12 +144,17 @@ export const ReviewSetupData = ({ DATA }) => {
     <Container size="lg" px={0} pt={50} pb={70}>
       <PageTitle Copy="Almost Done" ICON={<IconSettings2 size={40} />} />
 
-      <P>
-        We're excited to learn about your upcoming season, but first, we need to
-        make sure everything is spot on. Take a moment to review the details
-        below. It's vital we get this right, as it will help us tailor your
-        Fixtura experience to your unique needs.
-      </P>
+      {mobile ? (
+        false
+      ) : (
+        <P>
+          We're excited to learn about your upcoming season, but first, we need
+          to make sure everything is spot on. Take a moment to review the
+          details below. It's vital we get this right, as it will help us tailor
+          your Fixtura experience to your unique needs.
+        </P>
+      )}
+
       <P Weight={600}>Let's Make Sure Everything's Perfect!</P>
       {ConfirmReset ? (
         <ConfirmResetCopy onProceed={handleProceed} />
@@ -167,11 +173,20 @@ export const ReviewSetupData = ({ DATA }) => {
         })}
       >
         <P>
-          If everything above is accurate, it's time to link up with PlayHQ and
-          embark on an exciting journey with Fixtura. Your custom-made content
-          and insights are just a click away. Ready to transform your season?
-          Let's sync and get started!
+          It's time to link up with PlayHQ and
+          embark on an exciting journey with Fixtura.
         </P>
+        {mobile ? (
+          false
+        ) : (
+          <P>Your custom-made content and insights are just a click away.</P>
+        )}
+        {mobile ? (
+          false
+        ) : (
+          <P> Ready to transform your season? Let's sync and get started!</P>
+        )}
+
         <Group position="center">
           <BTN_ONCLICK
             LABEL={ConfirmReset ? "Back" : "Reset"}
@@ -183,10 +198,7 @@ export const ReviewSetupData = ({ DATA }) => {
           {ConfirmReset ? (
             false
           ) : (
-            <BTN_ONCLICK
-              LABEL="Sync with PlayHQ"
-              HANDLE={CompleteRegistration}
-            />
+            <BTN_ONCLICK LABEL="Finish" HANDLE={CompleteRegistration} />
           )}
         </Group>
       </Box>
@@ -267,16 +279,21 @@ const ReviewAccontDetails = ({ DATA }) => {
               {DATA.attributes.associations.data[0].attributes.Name}
             </P>
           </Group>
-          <Group noWrap spacing={10} my={5}>
-            <IconHome2
-              size="1.5rem"
-              color={"#6699CC"}
-              className={classes.icon}
-            />
-            <P size={"md"} marginBottom={0}>
-              {DATA.attributes?.clubs?.data[0]?.attributes?.Name}
-            </P>
-          </Group>
+          {DATA.attributes.account_type.data.attributes.Name ===
+          "Association" ? (
+            false
+          ) : (
+            <Group noWrap spacing={10} my={5}>
+              <IconHome2
+                size="1.5rem"
+                color={"#6699CC"}
+                className={classes.icon}
+              />
+              <P size={"md"} marginBottom={0}>
+                {DATA.attributes?.clubs?.data[0]?.attributes?.Name}
+              </P>
+            </Group>
+          )}
         </div>
         {mobile ? (
           false

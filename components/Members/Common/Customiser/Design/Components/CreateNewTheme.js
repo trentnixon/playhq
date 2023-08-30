@@ -19,6 +19,7 @@ import SketchExample from "./ColorPicker";
 import { IconCircleCheck } from "@tabler/icons";
 import { FixturaLoading } from "../../../../Common/Loading";
 import hexRgb from "hex-rgb";
+import { useMediaQuery } from "@mantine/hooks";
 /* CreateNewTheme * ***************************** */
 
 export const CreateNewTheme = (props) => {
@@ -32,7 +33,7 @@ export const CreateNewTheme = (props) => {
   const [UPDATE, UpdateTHEME] = UserUpdateTheme();
   const [IsLoading, setIsLoading] = useState(false);
   const theme = useMantineTheme();
-
+  const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
   const CTHEME = GetElement.filter(
     (item) => item.attributes.CreatedBy === userAccount.id
   );
@@ -129,60 +130,58 @@ export const CreateNewTheme = (props) => {
         p="lg"
         sx={(theme) => ({ backgroundColor: theme.white })}
       >
-         <P size={"xs"}>
-        Tip: To make your assets stand out, set the darker color as the primary.
-      </P>
+        <P size={"xs"}>
+          Tip: To make your assets stand out, set the darker color as the
+          primary.
+        </P>
         <Table>
           <tbody>
             <tr>
-              <td>
-                <Group>
-                  <Center>
-                    <IconCircleCheck
-                      color={
-                        Primary ? theme.colors.green[6] : theme.colors.gray[1]
-                      }
-                    />
-                  </Center>
+              {mobile ? (
+                false
+              ) : (
+                <td>
+                  <SelectLabel Selector={Primary} LABEL={`Primary Color`} />
+                </td>
+              )}
 
-                  <P
-                    marginBottom={0}
-                    Weight={900}
-                    textTransform={"uppercase"}
-                  >{`Primary Color`}</P>
-                </Group>
-              </td>
               <td>
                 <SketchExample
                   SetColor={SetPrimary}
                   UsersTheme={UseBaseColor("primary")}
                 />
               </td>
+
+              {mobile ? (
+                <td>
+                  <SelectLabel Selector={Primary} LABEL={`Primary Color`} />
+                </td>
+              ) : (
+                false
+              )}
             </tr>
             <tr>
-              <td>
-                <Group>
-                  <Center>
-                    <IconCircleCheck
-                      color={
-                        Secondary ? theme.colors.green[6] : theme.colors.gray[1]
-                      }
-                    />
-                  </Center>
+              {mobile ? (
+                false
+              ) : (
+                <td>
+                  <SelectLabel Selector={Primary} LABEL={`Secondary Color`} />
+                </td>
+              )}
 
-                  <P
-                    marginBottom={0}
-                    Weight={900}
-                    textTransform={"uppercase"}
-                  >{`Secondary Color`}</P>
-                </Group>
-              </td>
               <td>
                 <SketchExample
                   SetColor={SetSecondary}
                   UsersTheme={UseBaseColor("secondary")}
                 />
               </td>
+              {mobile ? (
+                <td>
+                  <SelectLabel Selector={Primary} LABEL={`Secondary Color`} />
+                </td>
+              ) : (
+                false
+              )}
             </tr>
           </tbody>
         </Table>
@@ -201,7 +200,22 @@ export const CreateNewTheme = (props) => {
           />
         </Group>
       </Paper>
-     
     </>
+  );
+};
+
+const SelectLabel = ({ Selector, LABEL }) => {
+  const theme = useMantineTheme();
+  return (
+    <Group>
+      <Center>
+        <IconCircleCheck
+          color={Selector ? theme.colors.green[6] : theme.colors.gray[1]}
+        />
+      </Center>
+      <P marginBottom={0} Weight={900} textTransform={"uppercase"}>
+        {LABEL}
+      </P>
+    </Group>
   );
 };

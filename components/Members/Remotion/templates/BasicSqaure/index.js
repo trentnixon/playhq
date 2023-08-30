@@ -25,8 +25,6 @@ export const Template_Basic_Sqaure = (props) => {
   const { TIMINGS } = DATA;
   const TEMPLATE = DATA.VIDEOMETA.Video.CompositionID;
   const THEME = DATA.VIDEOMETA.Video.Theme;
-  
-  
 
   const TEMPLATES = {
     Top5BattingList: (
@@ -89,12 +87,12 @@ export const Template_Basic_Sqaure = (props) => {
     ].reduce((a, b) => a + b, 0);
   };
 
-  console.log("TIMINGS", TIMINGS, TIMINGS.FPS_INTRO)
+  console.log("TIMINGS", TIMINGS, TIMINGS.FPS_INTRO);
   return (
     <ThemeProvider theme={THEME}>
       <AbsoluteFill style={{ backgroundColor: THEME.primary }}>
         <Series>
-		<Series.Sequence durationInFrames={180}>
+          <Series.Sequence durationInFrames={180}>
             <h1>HELLO</h1>
           </Series.Sequence>
           {/* <Series.Sequence durationInFrames={TIMINGS.FPS_INTRO}>

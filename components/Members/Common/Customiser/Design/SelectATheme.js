@@ -106,7 +106,7 @@ const Swatches = ({ colors }) => {
   const theme = useMantineTheme();
   const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
   return colors.map((color) => (
-    <ColorSwatch key={color} color={color} size={mobile?14:30} radius="sm" />
+    <ColorSwatch key={color} color={color} size={mobile?14:25}  radius='xl' />
   ));
 };
 

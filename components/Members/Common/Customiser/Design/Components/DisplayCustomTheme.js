@@ -16,21 +16,23 @@ import { IconCircleCheck, IconEditCircle } from "@tabler/icons";
 import { P } from "../../../Type";
 import { IconEdit } from "@tabler/icons-react";
 import { FindAccountLabel } from "../../../../../../lib/actions";
+import { useMediaQuery } from "@mantine/hooks";
 
 export const DisplayCustomTheme = (props) => {
   const { GetElement, userAccount, StoreUSerChange, setCreateNew } = props;
 
   //useEffect(()=>{},[userAccount])
-
+ 
   const CTHEME = GetElement.filter(
     (item) => item.attributes.CreatedBy === userAccount.id
   );
 
   console.log(CTHEME);
   const theme = useMantineTheme();
+  const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
   const swatches = (ARR) => {
     return ARR.map((color) => (
-      <ColorSwatch key={color} color={color} size={30} radius="sm" />
+      <ColorSwatch key={color} color={color} size={mobile?14:25} radius='xl' />
     ));
   };
   if (CTHEME.length === 0)
