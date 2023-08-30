@@ -18,7 +18,7 @@ import {
   IconX,
   IconClockPause,
 } from "@tabler/icons-react";
-import { getReadableDate } from "../../../lib/actions";
+//import { getReadableDate } from "../../../lib/actions";
 import { useMediaQuery } from "@mantine/hooks";
 
 export const UserSubscription = () => {
@@ -76,15 +76,14 @@ export const UserSubscription = () => {
           user={userAccount}
           setHasUpdated={ReRender}
           subscriptionTier={subscriptionTier}
-          Value={`Paused until two weeks before the next fixture. `}
+          Value={`Paused until one weeks before the next fixture. `}
         />
         <P
           color={3}
           size="sm"
           Weight={400}
           textAlign="center"
-         >{`Your subscription is on hold and billing will resume one week prior to next season's first fixture. 
-         ${getReadableDate(ORDER.Fixture_start)}.`}</P>
+         >{`Your subscription is on hold and billing will resume one week prior to next season's first fixture.`}</P>
         <SubscriptionActiveFrom ORDER={ORDER} />
       </>
     );

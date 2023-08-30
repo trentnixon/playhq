@@ -92,7 +92,7 @@ const Resources = () => {
 
   const renderOptions = (options) => {
     return options.map((option, index) => (
-      <Grid.Col span={4} key={index}>
+      <Grid.Col md={4} key={index}>
         <Stack>
           <Card shadow="md" radius="md" padding="xl">
             <Center>
