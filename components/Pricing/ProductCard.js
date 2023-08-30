@@ -210,7 +210,6 @@ const SelectedPlan = () => {
   );
 };
 
-//<CardCTA signUp={signUp} trackButtonClick={trackButtonClick} Name={product.Name} BTN={BTN}/>
 const CardCTA = ({ signUp, trackButtonClick, Name, BTN }) => {
   return (
     <div className="pricing-footer ">
@@ -222,7 +221,7 @@ const CardCTA = ({ signUp, trackButtonClick, Name, BTN }) => {
                 className="btn btn-secondary"
                 onClick={() =>
                   trackButtonClick(
-                    `Product Card - Learn More - ${product.Name}`
+                    `Product Card - Learn More - ${Name}`
                   )
                 }
               >
@@ -234,7 +233,7 @@ const CardCTA = ({ signUp, trackButtonClick, Name, BTN }) => {
               <a
                 className="btn btn-primary"
                 onClick={() =>
-                  trackButtonClick(`Product Card - Sign up - ${product.Name}`)
+                  trackButtonClick(`Product Card - Sign up - ${Name}`)
                 }
               >
                 Sign up

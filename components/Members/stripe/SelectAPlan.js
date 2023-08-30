@@ -248,6 +248,7 @@ const NewSubscriber = ({ productId, selected, onConfirm }) => {
   }, [Subscription]);
 
   const handleClick = () => {
+    window.scrollTo(0, 0);
     if (confirmState) {
       handleBuy(productId);
     } else {
@@ -295,6 +296,7 @@ const ChangePlanBtn = ({ productId, selected, onConfirm, setPlanState }) => {
   };
 
   const handleClick = () => {
+    window.scrollTo(0, 0);
     if (confirmState) {
       changeSubscriptionPlan(productId);
     } else {
