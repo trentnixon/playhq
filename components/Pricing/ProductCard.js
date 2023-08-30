@@ -24,6 +24,7 @@ import {
 } from "@tabler/icons-react";
 import React from "react";
 import { trackButtonClick } from "../../lib/GA";
+import { useMediaQuery } from "@mantine/hooks";
 
 export const ProductCard = ({
   product,
@@ -35,6 +36,7 @@ export const ProductCard = ({
   withTool = true,
 }) => {
   const theme = useMantineTheme();
+  const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
 
   const ICONS = {
     IconPhotoAi: (
@@ -78,6 +80,21 @@ export const ProductCard = ({
               </span>
             </div>
           </Center>
+
+          {mobile ? (
+            isActive ? (
+              <SelectedPlan />
+            ) : (
+              <CardCTA
+                signUp={signUp}
+                trackButtonClick={trackButtonClick}
+                Name={product.Name}
+                BTN={BTN}
+              />
+            )
+          ) : (
+            false
+          )}
         </Stack>
 
         {product.subscription_items.items.map((category, i) => (
@@ -110,64 +127,129 @@ export const ProductCard = ({
             <List listStyleType="none">
               <Box px={20}>
                 <List>
-                  {category.details.map((detail) => (
-                    <List.Item
-                      key={detail.type}
-                      style={{ width: "100%", marginBottom: "10px" }}
-                      icon={
-                        detail.hasOption ? (
-                          <IconCircleCheck
-                            size="1.3rem"
-                            color={theme.colors.green[5]}
-                          />
-                        ) : (
-                          <IconCircleX
-                            size="1.3rem"
-                            color={theme.colors.red[5]}
-                          />
-                        )
-                      }
-                    >
-                      <Group>
-                        <Text
-                          align="left"
-                          c={detail.hasOption ? "black" : "dimmed"}
-                          fz={"sm"}
-                        >
-                          {detail.type}
-                        </Text>
-                        {withTool ? (
-                          <Tooltip
-                            label={detail.description}
-                            width={200}
-                            withArrow={true}
-                            multiline={true}
+                  {category.details.map((detail) =>
+                    //mobile
+                    !detail.hasOption && mobile ? (
+                      false
+                    ) : (
+                      <List.Item
+                        key={detail.type}
+                        style={{ width: "100%", marginBottom: "10px" }}
+                        icon={
+                          detail.hasOption ? (
+                            <IconCircleCheck
+                              size="1.3rem"
+                              color={theme.colors.green[5]}
+                            />
+                          ) : (
+                            <IconCircleX
+                              size="1.3rem"
+                              color={theme.colors.red[5]}
+                            />
+                          )
+                        }
+                      >
+                        <Group>
+                          <Text
+                            align="left"
+                            c={detail.hasOption ? "black" : "dimmed"}
+                            fz={"sm"}
                           >
-                            <ActionIcon>
-                              <IconHelpHexagon
-                                size="1.125rem"
-                                color={theme.colors.blue[5]}
-                              />
-                            </ActionIcon>
-                          </Tooltip>
-                        ) : (
-                          false
-                        )}
-                      </Group>
-                    </List.Item>
-                  ))}
+                            {detail.type}
+                          </Text>
+                          {withTool ? (
+                            <Tooltip
+                              label={detail.description}
+                              width={200}
+                              withArrow={true}
+                              multiline={true}
+                            >
+                              <ActionIcon>
+                                <IconHelpHexagon
+                                  size="1.125rem"
+                                  color={theme.colors.blue[5]}
+                                />
+                              </ActionIcon>
+                            </Tooltip>
+                          ) : (
+                            false
+                          )}
+                        </Group>
+                      </List.Item>
+                    )
+                  )}
                 </List>
               </Box>
             </List>
           </Box>
         ))}
 
-        {isActive ? (
-          <Center mt={20}>
-            <IconCircleCheck size="2rem" color={theme.colors.green[5]} />
-          </Center>
+        {mobile ? (
+          false
+        ) : isActive ? (
+          <SelectedPlan />
         ) : (
-          <div className="pricing-footer ">
+          <CardCTA
+            signUp={signUp}
+            trackButtonClick={trackButtonClick}
+            Name={product.Name}
+            BTN={BTN}
+          />
+        )}
+      </div>
+    </div>
+  );
+};
+
+const SelectedPlan = () => {
+  const theme = useMantineTheme();
+  return (
+    <Center mt={20}>
+      <IconCircleCheck size="2rem" color={theme.colors.green[5]} />
+    </Center>
+  );
+};
+
+//<CardCTA signUp={signUp} trackButtonClick={trackButtonClick} Name={product.Name} BTN={BTN}/>
+const CardCTA = ({ signUp, trackButtonClick, Name, BTN }) => {
+  return (
+    <div className="pricing-footer ">
+      <Center mt={20}>
+        {signUp ? (
+          <Group position="apart">
+            <Link href="/subscriptions/">
+              <a
+                className="btn btn-secondary"
+                onClick={() =>
+                  trackButtonClick(
+                    `Product Card - Learn More - ${product.Name}`
+                  )
+                }
+              >
+                {" "}
+                learn more
+              </a>
+            </Link>
+            <Link href="/SignUp/">
+              <a
+                className="btn btn-primary"
+                onClick={() =>
+                  trackButtonClick(`Product Card - Sign up - ${product.Name}`)
+                }
+              >
+                Sign up
+              </a>
+            </Link>
+          </Group>
+        ) : (
+          BTN
+        )}
+      </Center>
+    </div>
+  );
+};
+
+/* <div className="pricing-footer ">
             <Center mt={20}>
               {signUp ? (
                 <Group position="apart">
@@ -201,9 +283,4 @@ export const ProductCard = ({
                 BTN
               )}
             </Center>
-          </div>
-        )}
-      </div>
-    </div>
-  );
-};
+          </div> */

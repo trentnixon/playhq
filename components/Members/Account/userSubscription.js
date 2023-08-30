@@ -19,6 +19,7 @@ import {
   IconClockPause,
 } from "@tabler/icons-react";
 import { getReadableDate } from "../../../lib/actions";
+import { useMediaQuery } from "@mantine/hooks";
 
 export const UserSubscription = () => {
   const { account, ReRender } = useAccountDetails();
@@ -138,7 +139,7 @@ export const UserSubscription = () => {
     <>
       <PageTitle Copy={"Subscription"} ICON={<IconBrandStripe size={40} />} />
 
-      <Container size={"lg"}>
+      <Container size={"lg"} px={0}>
         <ManageSubscriptionCTA
           ORDER={ORDER}
           setChangePlan={setChangePlan}
@@ -165,8 +166,10 @@ const ManageSubscriptionCTA = ({ ORDER, setChangePlan, changePlan }) => {
     ORDER?.cancel_at_period_end && ORDER?.isActive && ORDER?.Status;
   const isCancelled = !ORDER?.isActive || !ORDER?.Status;
   const isPaused = ORDER?.isPaused;
+  const theme = useMantineTheme();
+  const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
   return (
-    <Group position="right" my={10}>
+    <Group position={mobile ?"center":"right"} my={10}>
       {isActive && (
         <>
           <BTN_ChangePlan
@@ -174,15 +177,15 @@ const ManageSubscriptionCTA = ({ ORDER, setChangePlan, changePlan }) => {
             changePlan={changePlan}
           />
           {!isPaused ? (
-            <BTN_ManageSubscription Label="Manage Subscription" />
+            <BTN_ManageSubscription Label="Manage" />
           ) : (
             false
           )}
-          <BTN_ManageSubscription Label="Cancel Subscription" theme="error" />
+          <BTN_ManageSubscription Label="Cancel" theme="error" />
         </>
       )}
       {isCancelling && (
-        <BTN_ManageSubscription Label="Renew Subscription" theme="cta" />
+        <BTN_ManageSubscription Label="Renew" theme="cta" />
       )}
 
       {isCancelled && <></>}
