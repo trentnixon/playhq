@@ -57,9 +57,6 @@ const OurBrand = () => {
         <SubHeaders Copy={"Brand Settings"} />
 
         <PageCopyWrapper>
-          {/* <P
-          Copy={`Personalize Your Content with a Distinct Identity. Showcasing your brand is essential to building a strong online presence. By uploading your logo and selecting brand colors, you'll ensure that all visual assets created by Fixtura represent your club or association in a consistent and professional manner.`}
-        /> */}
           <P
             Copy={`Take control of your club's visual identity and create a compelling brand presence with Fixtura's Your Brand section. Upload your logo and select brand colors to elevate your online presence and connect with your audience on a deeper level. Show your team's spirit and build a lasting connection with your members and fans through personalized content that embodies the essence of your club or association.`}
           />

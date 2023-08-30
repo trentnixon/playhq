@@ -51,9 +51,9 @@ export const SelectATemplate = () => {
         <Paper
           radius="md"
           shadow="md"
-          withBorder
+         
           mb={20}
-          p="lg"
+          p="xs"
           sx={(theme) => ({ backgroundColor: theme.white })}
         >
           <FixturaLoading />
@@ -70,8 +70,8 @@ export const SelectATemplate = () => {
       <Paper
         radius="md"
         shadow="md"
-        withBorder
-        p="lg"
+       
+        p="xs"
         sx={(theme) => ({ backgroundColor: theme.white })}
       >
         <Table>

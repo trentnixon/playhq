@@ -65,8 +65,8 @@ export const AccountLogo = () => {
         radius="md"
         shadow="md"
         mb={30}
-        withBorder
-        p="lg"
+    
+        p="xs"
         sx={(theme) => ({ backgroundColor: theme.white })}
       >
         <Group position="right" mb={20}>

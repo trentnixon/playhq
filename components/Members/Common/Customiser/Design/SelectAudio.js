@@ -107,8 +107,7 @@ export const SelectAudio = ({ isPlaying }) => {
       <Paper
         radius="md"
         shadow="md"
-        withBorder
-        p="lg"
+        p="xs"
         sx={(theme) => ({
           backgroundColor: theme.white,
         })}
@@ -147,7 +146,9 @@ export const SelectAudio = ({ isPlaying }) => {
                             ? 2
                             : 2
                         }
-                       >{item.attributes.Name}</P>
+                      >
+                        {item.attributes.Name}
+                      </P>
                     </Group>
                   </td>
 
@@ -204,7 +205,6 @@ const Player = ({ currentSong, DeSelectAudio }) => {
           marginBottom={0}
           size="lg"
           textTransform="uppercase"
-          
           color={0}
           fontStyle="italic"
         >{`Now Playing: ${currentSong.attributes.Name}`}</P>

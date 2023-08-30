@@ -70,9 +70,8 @@ export const SelectATheme = () => {
         <Paper
           radius="md"
           shadow="md"
-          withBorder
           mb={20}
-          p="lg"
+          p="xs"
           sx={(theme) => ({ backgroundColor: theme.white })}
         >
           <FixturaLoading />
@@ -165,8 +164,8 @@ const ColorTable = (props) => {
       <Paper
         radius="md"
         shadow={mobile ? false :"md"}
-        withBorder={mobile ? false :true}
-        p={mobile ? 0 :"lg"}
+        //withBorder={mobile ? false :true}
+        p={mobile ? 0 :"xs"}
         sx={(theme) => ({
           backgroundColor: theme.white,
         })}
