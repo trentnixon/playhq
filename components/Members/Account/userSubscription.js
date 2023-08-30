@@ -48,6 +48,7 @@ export const UserSubscription = () => {
 
   // Decide what to display based on the status
   let statusDisplay;
+  //${getReadableDate(ORDER.Fixture_start)}
   if (ORDER === undefined) {
     statusDisplay = <SelectAPlan />;
   } else if (isCancelling) {
@@ -75,7 +76,7 @@ export const UserSubscription = () => {
           user={userAccount}
           setHasUpdated={ReRender}
           subscriptionTier={subscriptionTier}
-          Value={`Paused until  ${getReadableDate(ORDER.Fixture_start)}`}
+          Value={`Paused until two weeks before the next fixture. `}
         />
         <P
           color={3}
@@ -146,8 +147,8 @@ export const UserSubscription = () => {
           changePlan={changePlan}
         />
         <Paper
-          withBorder
-          p="lg"
+          
+          p="xs"
           sx={(theme) => ({
             backgroundColor: theme.white,
           })}
@@ -193,8 +194,10 @@ const ManageSubscriptionCTA = ({ ORDER, setChangePlan, changePlan }) => {
   );
 };
 
+
 const SubscriptionActiveFrom = ({ ORDER }) => {
   const theme = useMantineTheme();
+  const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
   let formattedDate = "Waiting Subscription";
   let statusMessage = "Unknown status";
   let statusColor = theme.colors.blue[4]; // default color
@@ -250,8 +253,8 @@ const SubscriptionActiveFrom = ({ ORDER }) => {
     StatusIcon = IconX;
   }
 
-  return (
-    <Group position="apart">
+  return ( 
+    <Group  position={mobile ? "center" : "apart"} >
       <Group position="left" spacing="xs" align="center">
         <StatusIcon size={`1.4em`} color={statusColor} />
         <P

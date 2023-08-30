@@ -16,7 +16,7 @@ import { LoadingStateWrapper } from "../../components/Members/Account/HOC/Loadin
 import SetupCheck from "../../components/Members/Account/HOC/SetupCheck";
 
 import {
-  Invoicing,
+  Invoicing, 
   UpcomingInvoicing,
 } from "../../components/Members/stripe/Invoicing";
 import { useAccountDetails } from "../../lib/userContext";

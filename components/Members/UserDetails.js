@@ -2,7 +2,7 @@ import { Box, Group } from "@mantine/core";
 import { ShadowWrapper, Wrapper } from "./Common/Containers";
 import { P } from "./Common/Type";
 import { Input_FixturaSetting } from "./Common/formelements/Input_FixtruaSettings";
-import {  BTN_TOINTERALLINK } from "./Common/utils/Buttons";
+import { BTN_TOINTERALLINK } from "./Common/utils/Buttons";
 
 export const UserDetails = ({
   user,
@@ -16,17 +16,15 @@ export const UserDetails = ({
       Name: "Name",
       Label: "Who would you like the emails addressed to?",
       Field: "FirstName",
-      Validators: [
-        value => value.length > 0 || 'Name is required',
-      ],
+      Validators: [(value) => value.length > 0 || "Name is required"],
     },
     {
       Name: "Email",
       Label: "Email address for delivery",
       Field: "DeliveryAddress",
       Validators: [
-        value => value.length > 0 || 'Email is required',
-        value => value.includes('@') || 'Email must contain @',
+        (value) => value.length > 0 || "Email is required",
+        (value) => value.includes("@") || "Email must contain @",
       ],
     },
   ];
@@ -40,12 +38,17 @@ export const UserDetails = ({
             Weight={900}
             marginBottom={0}
             textTransform={"uppercase"}
-           >Plan</P>
-          <BTN_TOINTERALLINK
-            LABEL={"View Plan"}
-            URL={`/members/myplan`}
-            THEME="info"
-          />
+          >
+            Plan
+          </P>
+          <P
+            color={3}
+            Weight={900}
+            marginBottom={0}
+            textTransform={"uppercase"}
+          >
+            {Value}
+          </P>
         </Group>
       </Wrapper>
       <ShadowWrapper>
@@ -68,15 +71,15 @@ export const UserDetails = ({
               Weight={400}
               marginBottom={0}
               textTransform={"uppercase"}
-             >{subscriptionTier?.Name}</P>
+            >
+              {subscriptionTier?.Name}
+            </P>
           </Box>
-
-          <P
-            color={2}
-            Weight={400}
-            marginBottom={0}
-            textTransform={"uppercase"}
-           >{Value}</P>
+          <BTN_TOINTERALLINK
+            LABEL={"View Plan"}
+            URL={`/members/myplan`}
+            THEME="info"
+          />
         </Group>
       </ShadowWrapper>
 
@@ -94,27 +97,21 @@ export const UserDetails = ({
   );
 };
 
-export const UserDetailsForSetup = ({
-  user,
-  setHasUpdated,
-}) => {
- 
+export const UserDetailsForSetup = ({ user, setHasUpdated }) => {
   const INPUTS = [
     {
       Name: "Name",
       Label: "Who would you like the Content email addressed to?",
       Field: "FirstName",
-      Validators: [
-        value => value.length > 0 || 'Name is required',
-      ],
+      Validators: [(value) => value.length > 0 || "Name is required"],
     },
     {
       Name: "Email",
       Label: "Email address for delivery",
       Field: "DeliveryAddress",
       Validators: [
-        value => value.length > 0 || 'Email is required',
-        value => value.includes('@') || 'Email must contain @',
+        (value) => value.length > 0 || "Email is required",
+        (value) => value.includes("@") || "Email must contain @",
       ],
     },
   ];
@@ -123,12 +120,12 @@ export const UserDetailsForSetup = ({
     <>
       {INPUTS.map((Input, i) => {
         return (
-          <Input_FixturaSetting 
+          <Input_FixturaSetting
             key={i}
             Input={Input}
             user={user}
             setHasUpdated={setHasUpdated}
-            editingState={true} 
+            editingState={true}
             canCancel={false}
           />
         );
