@@ -199,7 +199,10 @@ export const SetupInputs = ({ user, setHasUpdated }) => {
               />
             )}
           </ShadowWrapper>
-          <Space h="lg" />
+         
+        </>
+      )}
+       <Space h="lg" />
           <LabelMe label="Permissions" />
           <ShadowWrapper>
             <DBCheckbox
@@ -208,7 +211,7 @@ export const SetupInputs = ({ user, setHasUpdated }) => {
               collectionId={user.id}
               CollectionSaveTo={"accounts"}
               setHasUpdated={setHasUpdated}
-            />
+            /> 
 
             <DBCheckbox
               label="You, being the rights holder, grant Fixtura the authority to use PlayHQ data to produce assets for your organization on a weekly basis."
@@ -218,8 +221,6 @@ export const SetupInputs = ({ user, setHasUpdated }) => {
               setHasUpdated={setHasUpdated}
             />
           </ShadowWrapper>
-        </>
-      )}
     </>
   );
 };
