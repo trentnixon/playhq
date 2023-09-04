@@ -177,25 +177,6 @@ export const SetupInputs = ({ user, setHasUpdated }) => {
         />
       </ShadowWrapper>
 
-      <LabelMe label="Terms" />
-      <ShadowWrapper>
-        <DBCheckbox
-          label="You hold the rights or have permission from the rights holder for the specified organization."
-          name="isRightsHolder"
-          collectionId={user.id}
-          CollectionSaveTo={"accounts"}
-          setHasUpdated={setHasUpdated}
-        />
-
-        <DBCheckbox
-          label="You, being the rights holder, grant Fixtura the authority to use PlayHQ data to produce assets for your organization on a weekly basis."
-          name="isPermissionGiven"
-          collectionId={user.id}
-          CollectionSaveTo={"accounts"}
-          setHasUpdated={setHasUpdated}
-        />
-      </ShadowWrapper>
-
       <Space h="lg" />
       {user.attributes?.account_type?.data?.attributes.Name ===
       "Association" ? (
@@ -217,6 +198,25 @@ export const SetupInputs = ({ user, setHasUpdated }) => {
                 setHasUpdated={setHasUpdated}
               />
             )}
+          </ShadowWrapper>
+          <Space h="lg" />
+          <LabelMe label="Permissions" />
+          <ShadowWrapper>
+            <DBCheckbox
+              label="You hold the rights or have permission from the rights holder for the specified organization."
+              name="isRightsHolder"
+              collectionId={user.id}
+              CollectionSaveTo={"accounts"}
+              setHasUpdated={setHasUpdated}
+            />
+
+            <DBCheckbox
+              label="You, being the rights holder, grant Fixtura the authority to use PlayHQ data to produce assets for your organization on a weekly basis."
+              name="isPermissionGiven"
+              collectionId={user.id}
+              CollectionSaveTo={"accounts"}
+              setHasUpdated={setHasUpdated}
+            />
           </ShadowWrapper>
         </>
       )}
