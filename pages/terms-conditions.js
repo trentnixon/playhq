@@ -14,7 +14,7 @@ const TermsConditions = () => {
       <div className="text-container ptb-100">
         <div className="container">
           <h1>Introduction</h1>
-          <P>
+          <P> 
             These Website Standard Terms and Conditions written on this webpage
             shall manage your use of our website, Fixtura, accessible at
             Fixtura.com. By using our Website, you accept these terms and

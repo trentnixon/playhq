@@ -2,7 +2,7 @@ import { SetupInputs } from "../../Account/userFixturaSettings";
 import { P } from "../../Common/Type";
 import { StepHeaderandDescription } from "./StepHeaderandDescription";
 
-export const StepAboutTheCricket = ({ user, setHasUpdated }) => {
+export const StepAboutTheCricket = ({ user, setHasUpdated  }) => {
   return (
     <>
       <StepHeaderandDescription
@@ -12,7 +12,7 @@ export const StepAboutTheCricket = ({ user, setHasUpdated }) => {
         }
       />
 
-      <SetupInputs user={user} setHasUpdated={setHasUpdated} />
+      <SetupInputs user={user} setHasUpdated={setHasUpdated}/> 
       <P color={8} size={"xs"} textAlign="right">
         These settings CANNOT be changed in your admin panel.
       </P>

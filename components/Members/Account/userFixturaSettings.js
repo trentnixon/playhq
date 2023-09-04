@@ -1,4 +1,12 @@
-import { Avatar, Container, Group, Paper, Space, Stack } from "@mantine/core";
+import {
+  Avatar,
+  Checkbox,
+  Container,
+  Group,
+  Paper,
+  Space,
+  Stack,
+} from "@mantine/core";
 import { ShadowWrapper, Wrapper } from "../Common/Containers";
 import { SelectFixturaSetting } from "../Common/formelements/Select_FixturaSettings";
 import { P } from "../Common/Type";
@@ -8,6 +16,7 @@ import { FixturaDivider } from "../Common/Divider";
 import { AutoCompleteSelectAssociation } from "../Common/formelements/AutoComplete_Assoications";
 import { AutoCompleteSelectClub } from "../Common/formelements/AutoComplete_Clubs";
 import { useEffect, useState } from "react";
+import DBCheckbox from "../Common/formelements/CheckBox_FixturaSettings";
 
 const useStyles = createStyles((theme) => ({
   root: {
@@ -105,8 +114,12 @@ export const FixturaSettings = ({ user, setHasUpdated }) => {
           <stat.icon size={25} stroke={1} />
         </Avatar>
       </Group>
-      <P  color={4} size={20} marginBottom={0} >{stat.title}</P>
-      <P  color={3} Weight={900} size={20} marginBottom={0} >{stat.stats}</P>
+      <P color={4} size={20} marginBottom={0}>
+        {stat.title}
+      </P>
+      <P color={3} Weight={900} size={20} marginBottom={0}>
+        {stat.stats}
+      </P>
     </Paper>
   ));
 
@@ -127,13 +140,16 @@ export const SetupInputs = ({ user, setHasUpdated }) => {
   const [AssociationID, setAssociationID] = useState(
     user.attributes?.associations?.data[0]?.id || false
   );
+  const [isRightsHolderChecked, setIsRightsHolderChecked] = useState(false);
+  const [isPermissionGivenChecked, setIsPermissionGivenChecked] =
+    useState(false);
+
   useEffect(() => {}, [AssociationID]);
 
   return (
     <>
       <LabelMe label="We are a ..." />
-
-      <ShadowWrapper> 
+      <ShadowWrapper>
         <SelectFixturaSetting
           RelationProperty={"account_type"}
           setHasUpdated={setHasUpdated}
@@ -144,12 +160,11 @@ export const SetupInputs = ({ user, setHasUpdated }) => {
           }
           SelectLabel={"Select Account Type"}
           SelectPlaceholder={"Select Account Type"}
-          COLLECTIONID={user.id} 
+          COLLECTIONID={user.id}
           showSelectInit={true}
         />
       </ShadowWrapper>
       <Space h="lg" />
-
       <LabelMe label="Select Your Association" />
       <ShadowWrapper>
         <AutoCompleteSelectAssociation
@@ -161,8 +176,27 @@ export const SetupInputs = ({ user, setHasUpdated }) => {
           setHasUpdated={setHasUpdated}
         />
       </ShadowWrapper>
-      <Space h="lg" />
 
+      <LabelMe label="Terms" />
+      <ShadowWrapper>
+        <DBCheckbox
+          label="You are the rights holder or work with the rights holder of the selected organization"
+          name="isRightsHolder"
+          collectionId={user.id}
+          CollectionSaveTo={"accounts"}
+          setHasUpdated={setHasUpdated}
+        />
+
+        <DBCheckbox
+          label="As the rights holder, you give Fixctura permission to access data from PlayHQ for this organization in order to carry out the tasks required to create the assets for you on a weekly basis?"
+          name="isPermissionGiven"
+          collectionId={user.id}
+          CollectionSaveTo={"accounts"}
+          setHasUpdated={setHasUpdated}
+        />
+      </ShadowWrapper>
+
+      <Space h="lg" />
       {user.attributes?.account_type?.data?.attributes.Name ===
       "Association" ? (
         false
@@ -222,12 +256,9 @@ export const SetupInputs = ({ user, setHasUpdated }) => {
 const LabelMe = ({ label }) => {
   return (
     <Wrapper>
-      <P
-        color={4}
-        Weight={900}
-        marginBottom={0}
-        textTransform={"uppercase"}
-       >{label}</P>
+      <P color={4} Weight={900} marginBottom={0} textTransform={"uppercase"}>
+        {label}
+      </P>
     </Wrapper>
   );
 };

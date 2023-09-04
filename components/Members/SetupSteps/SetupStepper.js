@@ -17,7 +17,6 @@ import { LoadingStateWrapper } from "../Account/HOC/LoadingStateWrapper";
 import StepAboutLogo from "./Steps/AboutLogo";
 import { useMediaQuery } from "@mantine/hooks";
 
-
 export const SetupStages = ({ setReview }) => {
   const theme = useMantineTheme();
   const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
@@ -26,7 +25,7 @@ export const SetupStages = ({ setReview }) => {
   const [disabled, setDisabled] = useState(true);
   const [progress, setProgress] = useState({
     step1: {},
-    step2: {}, 
+    step2: {},
     step3: {},
     step4: {},
   });
@@ -38,33 +37,26 @@ export const SetupStages = ({ setReview }) => {
 
   useEffect(updateData, [account]);
 
-  const nextStep = useCallback(
-    () => {
-      setActive((current) => (current < 3 ? current + 1 : current));
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    },
-    []
-  );
+  const nextStep = useCallback(() => {
+    setActive((current) => (current < 3 ? current + 1 : current));
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
 
-  const prevStep = useCallback(
-    () => {
-      setActive((current) => (current > 0 ? current - 1 : current));
-      // Scroll to the top of the page
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    },
-    []
-  );
-  
-  const finished = useCallback(
-    () => {
-      setReview(true);
-      // Scroll to the top of the page
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    },
-    []
-  );
+  const prevStep = useCallback(() => {
+    setActive((current) => (current > 0 ? current - 1 : current));
+    // Scroll to the top of the page
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
+
+  const finished = useCallback(() => {
+    setReview(true);
+    // Scroll to the top of the page
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
 
   const checkProgress = useCallback(() => {
+    console.log("DATA.attributes.isRightsHolder", DATA.attributes.isRightsHolder)
+    console.log("DATA.attributes.isPermissionGiven", DATA.attributes.isPermissionGiven)
     if (DATA) {
       setProgress({
         ...progress,
@@ -82,6 +74,8 @@ export const SetupStages = ({ setReview }) => {
             "Association"
               ? false
               : DATA.attributes?.clubs?.data[0]?.attributes,
+          isRightsHolder: DATA.attributes.isRightsHolder, // add checkbox state here
+          isPermissionGiven: DATA.attributes.isPermissionGiven, // add checkbox state here
         },
         step3: {
           // attributes related to About your Brand step
@@ -100,7 +94,7 @@ export const SetupStages = ({ setReview }) => {
     const hasNullValue = Object.keys(progress[KEYS[active]]).some(
       (key) =>
         progress[KEYS[active]][key] === null ||
-        progress[KEYS[active]][key] === undefined
+        progress[KEYS[active]][key] === undefined 
     );
     setDisabled(hasNullValue);
   }, [progress, active]);
@@ -126,14 +120,17 @@ export const SetupStages = ({ setReview }) => {
             },
           })}
         >
-          <Stepper.Step color="blue" label={mobile ? false : "All About the Assets"}>
+          <Stepper.Step
+            color="blue"
+            label={mobile ? false : "All About the Assets"}
+          >
             <StepAboutUser user={DATA} setHasUpdated={ReRender} />
           </Stepper.Step>
 
           <Stepper.Step label={mobile ? false : "About the Cricket"}>
             <StepAboutTheCricket user={DATA} setHasUpdated={ReRender} />
           </Stepper.Step>
-          <Stepper.Step  label={mobile ? false : "Upload your Logo"}>
+          <Stepper.Step label={mobile ? false : "Upload your Logo"}>
             <StepAboutLogo user={DATA} setHasUpdated={ReRender} />
           </Stepper.Step>
           <Stepper.Step label={mobile ? false : "About your Brand"}>
