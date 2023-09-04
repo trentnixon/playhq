@@ -180,7 +180,7 @@ export const SetupInputs = ({ user, setHasUpdated }) => {
       <LabelMe label="Terms" />
       <ShadowWrapper>
         <DBCheckbox
-          label="You are the rights holder or work with the rights holder of the selected organization"
+          label="You hold the rights or have permission from the rights holder for the specified organization."
           name="isRightsHolder"
           collectionId={user.id}
           CollectionSaveTo={"accounts"}
@@ -188,7 +188,7 @@ export const SetupInputs = ({ user, setHasUpdated }) => {
         />
 
         <DBCheckbox
-          label="As the rights holder, you give Fixctura permission to access data from PlayHQ for this organization in order to carry out the tasks required to create the assets for you on a weekly basis?"
+          label="You, being the rights holder, grant Fixtura the authority to use PlayHQ data to produce assets for your organization on a weekly basis."
           name="isPermissionGiven"
           collectionId={user.id}
           CollectionSaveTo={"accounts"}

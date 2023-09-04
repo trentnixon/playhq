@@ -52,7 +52,7 @@ const SETUP = () => {
       <P Weight={600}>Items needed to complete the setup:</P>
       <SetUpItemsRequired />
       <CreateAccountInit setAccountsetup={ReRender} /> {/* Assuming ReRender fetches and updates account state */}
-    </>
+    </> 
   );
 
   if (review) return <ReviewSetupData DATA={UserAccount} />;
