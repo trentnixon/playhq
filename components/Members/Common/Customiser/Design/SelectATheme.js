@@ -29,6 +29,8 @@ export const SelectATheme = () => {
   const [DesignElement, CreateDesignElement] = useAssignDesignElement();
   const [GetElement, FetchElement] = useGETDesignElement();
 
+  // BUG THAT NEEDS FIXING
+  // SELECT ONLY PUBLIC THEMES AND THE CUSTOM ONE!!
   useEffect(() => {
     FetchElement({ COLLECTIONID: "themes" });
   }, []);
@@ -74,7 +76,7 @@ export const SelectATheme = () => {
           p="xs"
           sx={(theme) => ({ backgroundColor: theme.white })}
         >
-          <FixturaLoading />
+          <FixturaLoading /> 
         </Paper>
       </>
     );
@@ -91,7 +93,7 @@ export const SelectATheme = () => {
         />
       ) : (
         <ColorTable
-          GetElement={GetElement}
+          GetElement={GetElement} 
           userAccount={userAccount}
           StoreUSerChange={StoreUSerChange}
           setCreateNew={setCreateNew}

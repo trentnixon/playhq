@@ -31,7 +31,7 @@ const query = qs.stringify(
   },
   {
     encodeValuesOnly: true,
-  }
+  } 
 );
 
 const OurBrand = () => {

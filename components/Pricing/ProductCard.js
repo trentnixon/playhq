@@ -62,7 +62,7 @@ export const ProductCard = ({
         className="pricing-table active-plan"
         data-aos="fade-up"
         data-aos-duration="1500"
-        data-aos-delay={timing * 200}
+        data-aos-delay={timing?timing:0 * 200}
       >
         <div className="pricing-header">
           <Center>

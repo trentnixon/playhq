@@ -112,7 +112,7 @@ const Benefits = () => {
                 <li
                   data-aos="fade-in"
                   data-aos-duration="1200"
-                  data-aos-delay="100"
+                  data-aos-delay={100}
                   className="aos-init aos-animate"
                 >
                   <i className="fa-solid fa-clock"></i>
@@ -125,7 +125,7 @@ const Benefits = () => {
                 <li
                   data-aos="fade-in"
                   data-aos-duration="1200"
-                  data-aos-delay="200"
+                  data-aos-delay={200}
                   className="aos-init aos-animate"
                 >
                   <i className="icon fa-solid fa-pencil-alt"></i>
@@ -139,7 +139,7 @@ const Benefits = () => {
                 <li
                   data-aos="fade-in"
                   data-aos-duration="1200"
-                  data-aos-delay="300"
+                  data-aos-delay={300}
                   className="aos-init aos-animate"
                 >
                   <i className="icon fa-solid fa-users"></i>

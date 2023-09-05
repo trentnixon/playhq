@@ -3,21 +3,29 @@ import Cookies from "js-cookie";
 import { useState } from "react";
 import { fetcher } from "../lib/api";
 import { getAccountFromLocalCookie } from "../lib/auth";
+const qs = require("qs");
+
 
 // GET
 // Fetch all of the options
 export const useGETDesignElement = () => {
   const [DesignElement, setDesignElement] = useState(null);
-
+  const query = qs.stringify(
+    {
+      pagination: {
+        pageSize: 1000,
+      },
+    }
+  );
   const CreateDesignElement = async (OBJ) => {
     /*
           OBJ={COLLECTIONID:COLLECTIONID,}
           */
     setDesignElement(true);
     try {
-      console.log("CreateDesignElement");
+      //console.log("CreateDesignElement");
       const response = await fetcher(
-        `${process.env.NEXT_PUBLIC_STRAPI_URL}/${OBJ.COLLECTIONID}`,
+        `${process.env.NEXT_PUBLIC_STRAPI_URL}/${OBJ.COLLECTIONID}?${query}`,
         {
           headers: {
             Accept: "application/json",
@@ -91,11 +99,11 @@ export const UserCreateTheme = () => {
   const CreateTHEME = async (OBJ) => {
     const user = await getAccountFromLocalCookie();
 
-    console.log(user);
+    //console.log(user);
 
     if (user) {
       try {
-        console.log("AI IS RUNNING");
+        //console.log("AI IS RUNNING");
         const response = await fetcher(
           `${process.env.NEXT_PUBLIC_STRAPI_URL}/themes`,
           {
@@ -108,7 +116,7 @@ export const UserCreateTheme = () => {
             body: JSON.stringify({ data: OBJ }),
           }
         );
-        console.log(response);
+        //console.log(response);
         setTHEME(response);
       } catch (err) {
         setTHEME(null);
@@ -125,11 +133,11 @@ export const UserUpdateTheme = () => {
   const UpdateTHEME = async (OBJ, ID) => {
     const user = await getAccountFromLocalCookie();
 
-    console.log(user);
+    //console.log(user);
 
     if (user) {
       try {
-        console.log("AI IS RUNNING");
+        //console.log("AI IS RUNNING");
         const response = await fetcher(
           `${process.env.NEXT_PUBLIC_STRAPI_URL}/themes/${ID}`,
           {
@@ -142,7 +150,7 @@ export const UserUpdateTheme = () => {
             body: JSON.stringify({ data: OBJ }),
           }
         );
-        console.log(response);
+        //console.log(response);
         setUPDATE(response);
       } catch (err) {
         setUPDATE(null);
