@@ -5,22 +5,15 @@ import { P } from "../components/Members/Common/Type";
 const TermsConditions = () => {
   return (
     <>
-      <PageBanner
-        pageTitle="Terms and Conditions"
-   
-        position={`center center`}
-      />
+      <PageBanner pageTitle="Terms and Conditions" position={`center center`} />
 
       <div className="text-container ptb-100">
         <div className="container">
           <h1>Introduction</h1>
-          <P> 
-            These Website Standard Terms and Conditions written on this webpage
-            shall manage your use of our website, Fixtura, accessible at
-            Fixtura.com. By using our Website, you accept these terms and
-            conditions in full. If you disagree with these terms and conditions
-            or any part of these terms and conditions, you must not use our
-            Website.
+          <P>
+            By using the Fixtura website, accessible at Fixtura.com, you accept
+            these terms and conditions in full. If you disagree with these terms
+            and conditions or any part of them, you must not use our website.
           </P>
           <P>
             By using our Website, you accepted these terms and conditions in
@@ -29,28 +22,24 @@ const TermsConditions = () => {
           </P>
           <h1>Intellectual property rights</h1>
           <P>
-            Unless otherwise stated, we or our licensors own the intellectual
-            property rights in the website and material on the website. Content
-            created for the user by Fixtura, such as custom graphics, designs,
-            or other personalized services, is owned by the user and may be used
-            as they see fit. Third-party applications for royalty-free music,
-            for which Fixtura has licenses, are made available to customers
-            according to the terms of those licenses. Subject to the license
-            below, all these intellectual property rights are reserved.
+            Fixtura or its licensors own the intellectual property rights in the
+            website and material on the website. Users have an unrestricted,
+            royalty-free license to use any assets created by Fixtura. Fixtura
+            reserves the right to use any assets for marketing and promotional
+            materials.
           </P>
           <h1>Subscription Terms</h1>
           <P>
-            Users can subscribe to Fixtura's services, which are renewable
-            programmatically. Users can cancel their subscription at any time,
-            but no refunds will be given once an asset render has been sent out.
-            At the end of the current playing season (a season being a period of
-            time that a club/association has scheduled games in PLAYHQ),
-            subscriptions are paused and will only resume at the start of the
-            following playing season. There are no trial periods available at
-            the moment.
+            Subscriptions to Fixtura's services are renewable automatically. At
+            the end of each playing season, subscriptions are paused
+            automatically and resume at the start of the next playing season. An
+            email will be sent notifying you of this change, and you may choose
+            to cancel your subscription if you wish. No refunds will be given
+            once an asset render has been sent out.
           </P>
           <h1>User Content</h1>
           <P>
+          
             In these terms and conditions, "your user content" means material
             (including without limitation text, images, audio material, video
             material, and audio-visual material) that you submit to our website,
@@ -65,14 +54,13 @@ const TermsConditions = () => {
           </P>
           <h1>Geographic Restrictions</h1>
           <P>
-            Fixtura is restricted to Australia and New Zealand. Any access
-            outside of these jurisdictions is prohibited.
+            Fixtura services are restricted to Australia and New Zealand. Access
+            from outside these jurisdictions is prohibited.
           </P>
           <h1>Dispute Resolution</h1>
           <P>
-            In the event of a dispute, the user may request up to 3 rewrites for
-            any article. No refunds can or will be given once an asset render
-            has been sent out.
+            In the event of a dispute, users may request up to 3 rewrites for
+            any article. No other dispute resolution mechanisms are offered.
           </P>
           <h1>Warranties and Disclaimers</h1>
           <P>
@@ -134,11 +122,25 @@ const TermsConditions = () => {
             restricted areas of the website, you are responsible for keeping
             these login details confidential at all times.
           </P>
+          <h1>Data Sources and AI Ethics</h1>
+          <P>
+            Fixtura uses GPT-3 and PlayHQ data for generating digital assets.
+            While we strive for accuracy, we are not liable for misleading or
+            false narratives created by AI. By using Fixtura's services, you
+            give Fixtura rights to contact Cricket Australia and PlayHQ on your
+            behalf to obtain data for digital asset creation.
+          </P>
           <h1>Data Usages</h1>
           <P>
             No user data will be shared with any third parties. Users' personal
             information will be handled in accordance with applicable privacy
             laws and regulations.
+          </P>
+          <h1>Data Handling</h1>
+          <P>
+            No user data will be shared with third parties. For more details,
+            please refer to our <a href="privacy-policy-link">Privacy Policy</a>
+            .
           </P>
           <h1>Accessibility</h1>
           <P>
