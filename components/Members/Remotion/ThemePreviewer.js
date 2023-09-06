@@ -62,13 +62,14 @@ const RemotionPreview = ({ setIsPlaying, DATA }) => {
       />
     );
   }; */
+  console.log("PLAYER DATA", DATA)
 
   return (
     <Center>
       <Player
         id={DATA.DATA.VIDEOMETA.Video.CompositionID}
         component={OBJ[DATA.DATA.VIDEOMETA.Video.Template]}
-        durationInFrames={550}
+        durationInFrames={900}
         compositionWidth={1440}
         compositionHeight={1920}
         fps={30}
