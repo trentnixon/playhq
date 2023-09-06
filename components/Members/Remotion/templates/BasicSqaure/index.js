@@ -93,12 +93,13 @@ export const Template_Basic_Sqaure = (props) => {
       <AbsoluteFill style={{ backgroundColor: THEME.primary }}>
         <Series>
           <Series.Sequence durationInFrames={TIMINGS.FPS_INTRO}>
-            <TitleSequenceFrame
+            <h1>HELLO UIM HERE</h1>
+            {/* <TitleSequenceFrame
               theme={THEME}
               fontFamily={fontFamily}
               FPS={TIMINGS.FPS_INTRO}
               DATA={DATA}
-            />
+            /> */}
           </Series.Sequence>
           <Series.Sequence durationInFrames={TIMINGS.FPS_MAIN}>
             {TEMPLATES[TEMPLATE]}
