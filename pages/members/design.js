@@ -19,7 +19,7 @@ const query = qs.stringify(
   {
     populate: [
       "template",
-      "theme",
+      "theme", 
       "audio_option",
       "ai_publication",
       "ai_writting_tone",

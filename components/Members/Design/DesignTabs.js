@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 
 // PACK
-import { Grid } from "@mantine/core";
+import { Grid, Tabs } from "@mantine/core";
 import { RemotionPlayerContainer } from "./RemotionPlayerContainer";
 import { SelectATemplate } from "../Common/Customiser/Design/SelectATemplate";
-import { SelectATheme } from "../Common/Customiser/Design/SelectATheme";
+//import { SelectATheme } from "../Common/Customiser/Design/SelectATheme";
 import { SelectAudio } from "../Common/Customiser/Design/SelectAudio";
+import { IconColumns3, IconVolume } from "@tabler/icons-react";
 
 // Components
 
@@ -22,12 +23,30 @@ export function DesignTabs(props) {
       <Grid>
         <Grid.Col sm={12} md={5}>
           <RemotionPlayerContainer {...props} />
-        </Grid.Col> 
+        </Grid.Col>
         <Grid.Col sm={12} md={7}>
-          <SelectATemplate />
-          <SelectAudio isPlaying={props.isPlaying} />
+          <Tabs defaultValue="theme" variant="pills" color="cyan.5">
+            <Tabs.List grow position="center">
+              <Tabs.Tab value="theme" icon={<IconColumns3 size="1.3rem" />}>
+                Theme
+              </Tabs.Tab>
+              <Tabs.Tab value="audio" icon={<IconVolume size="1.3rem" />}>
+                Audio
+              </Tabs.Tab>
+            </Tabs.List>
+
+            <Tabs.Panel value="theme" pt="xs">
+              <SelectATemplate />
+            </Tabs.Panel>
+
+            <Tabs.Panel value="audio" pt="xs">
+              <SelectAudio isPlaying={props.isPlaying} />
+            </Tabs.Panel>
+          </Tabs>
         </Grid.Col>
       </Grid>
     </>
   );
 }
+/*  <SelectATemplate />
+          <SelectAudio isPlaying={props.isPlaying} /> */

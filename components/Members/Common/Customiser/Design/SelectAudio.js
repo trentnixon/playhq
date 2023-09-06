@@ -1,13 +1,14 @@
 import { useEffect, useRef, useState } from "react";
 import { FixturaLoading } from "../../Loading";
-import dynamic from "next/dynamic";
 
 import {
   ActionIcon,
   Center,
   Group,
   Paper,
+  Space,
   Table,
+  Tooltip,
   useMantineTheme,
 } from "@mantine/core";
 import {
@@ -25,6 +26,7 @@ import {
 import { useAccountDetails } from "../../../../../lib/userContext";
 import { P, SubHeaders } from "../../Type";
 import { FixturaDivider } from "../../Divider";
+import { PreviewAudioPlayer } from "./PreviewAudioPlayer";
 
 export const SelectAudio = ({ isPlaying }) => {
   const { account, ReRender } = useAccountDetails();
@@ -98,16 +100,26 @@ export const SelectAudio = ({ isPlaying }) => {
 
   return (
     <>
+      <Space h={10} />
       <SubHeaders Copy={`Set the Tone`} />
       <P>
         Choose the Perfect Audio to Add Extra Excitement to Your Videos and
         Images. Preview and select from our collection of audio tracks that
         resonate with your club's personality and complement your content.
       </P>
+      {isPlayer ? (
+        <PreviewAudioPlayer
+          currentSong={currentSong}
+          DeSelectAudio={DeSelectAudio}
+        />
+      ) : (
+        false
+      )}
       <Paper
         radius="md"
         shadow="md"
         p="xs"
+        mt={30}
         sx={(theme) => ({
           backgroundColor: theme.white,
         })}
@@ -126,6 +138,7 @@ export const SelectAudio = ({ isPlaying }) => {
                           {item.id === currentSong?.id ? (
                             <IconVolume color={theme.colors.blue[9]} />
                           ) : (
+                            <Tooltip label="Click to Preview" color="cyan.5" withArrow>
                             <ActionIcon
                               color="gray.5"
                               size="lg"
@@ -135,6 +148,7 @@ export const SelectAudio = ({ isPlaying }) => {
                             >
                               <IconEar />
                             </ActionIcon>
+                            </Tooltip>
                           )}
                         </Center>
                       )}
@@ -169,12 +183,8 @@ export const SelectAudio = ({ isPlaying }) => {
             })}
           </tbody>
         </Table>
-        {isPlayer ? (
-          <Player currentSong={currentSong} DeSelectAudio={DeSelectAudio} />
-        ) : (
-          false
-        )}
       </Paper>
+
       <FixturaDivider />
     </>
   );
@@ -197,7 +207,7 @@ const Player = ({ currentSong, DeSelectAudio }) => {
       my={20}
       p="lg"
       sx={(theme) => ({
-        backgroundColor: theme.colors.dark[4],
+        backgroundColor: theme.colors.dark[5],
       })}
     >
       <Group position="apart" my={10} sx={(theme) => ({})}>
@@ -207,7 +217,7 @@ const Player = ({ currentSong, DeSelectAudio }) => {
           textTransform="uppercase"
           color={0}
           fontStyle="italic"
-        >{`Now Playing: ${currentSong.attributes.Name}`}</P>
+        >{`Preview  : ${currentSong.attributes.Name}`}</P>
 
         <ActionIcon
           onClick={() => {

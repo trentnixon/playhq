@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { FixturaLoading } from "../../Loading";
-import { Paper, Table, useMantineTheme } from "@mantine/core";
+import { Paper, Space, Table, useMantineTheme } from "@mantine/core";
 import {
   useAssignDesignElement,
   useGETDesignElement,
@@ -64,13 +64,13 @@ export const SelectATemplate = () => {
 
   return (
     <>
-      <FixturaDivider />
+      <Space h={10}/>
       <SubHeaders Copy={`Choose Your Theme`} />
       <P>Customize Your Assets with Themed Layout Templates for a cohesive and professional look that complements your brand in the preview video.</P>
       <Paper
         radius="md"
         shadow="md"
-       
+        mt={30}
         p="xs"
         sx={(theme) => ({ backgroundColor: theme.white })}
       >
