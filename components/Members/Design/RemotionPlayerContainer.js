@@ -57,12 +57,13 @@ export const RemotionPlayerContainer = (props) => {
       console.log("DATA JSON", DATA);
     }
   }, [account]);
-
+ 
   return (
     <LoadingStateWrapper conditions={[account, DATA.VIDEOMETA.Video.Theme]}>
-      <Paper mb={20}>
+      <Paper mb={10}>
         <RemotionPreview setIsPlaying={setIsPlaying} DATA={{ DATA }} />
       </Paper>
+      <Paper mx={15}>
       <P
         textAlign={"left"}
         size={"xs"}
@@ -79,6 +80,7 @@ export const RemotionPlayerContainer = (props) => {
         Copy={`
         Want to make changes? Head to the Branding page for theme and audio adjustments, or visit the Sponsors page to manage sponsors.`}
       />
+      </Paper>
     </LoadingStateWrapper>
   );
 };

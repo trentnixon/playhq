@@ -56,25 +56,16 @@ const RemotionPreview = ({ setIsPlaying, DATA }) => {
         controls
         style={{
           width: parseInt(1440) * 0.25,
-          height: parseInt(1920) * 0.25, 
+          height: parseInt(1920) * 0.25,
         }}
       />
     );
   };
 
   return (
-    <>
-      <P
-        Weight={900}
-        size={"xl"}
-        textAlign={"left"}
-        marginBottom={0}
-        Copy={`Preview`}
-      />
-      <Center>
-        <PlayerOnly playerRef={playerRef} />
-      </Center>
-    </>
+    <Center>
+      <PlayerOnly playerRef={playerRef} />
+    </Center>
   );
 };
 
