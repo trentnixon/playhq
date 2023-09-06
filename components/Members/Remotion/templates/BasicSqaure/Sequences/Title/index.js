@@ -13,7 +13,7 @@ import {getContrastColor} from '../../../../utils/colors';
 export const TitleSequenceFrame = ({theme, FPS, fontFamily, DATA}) => {
 	return (
 		<>
-			<Sequence>
+			<Sequence durationInFrames={FPS}>
 				<Series>
 					<Series.Sequence durationInFrames={FPS} layout="none">
 						<IntroContainer>

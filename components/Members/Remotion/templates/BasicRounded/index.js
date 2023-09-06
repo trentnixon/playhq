@@ -114,7 +114,7 @@ export const Template_Basic_Rounded = (props) => {
             />
           </Series.Sequence>
         </Series>
-        {/* <NoiseComp speed={0.01} circleRadius={50} maxOffset={60} /> */}
+        <NoiseComp speed={0.01} circleRadius={50} maxOffset={60} />
         <Audio
           volume={(f) =>
             interpolate(
