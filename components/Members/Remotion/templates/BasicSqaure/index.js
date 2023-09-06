@@ -94,12 +94,12 @@ export const Template_Basic_Sqaure = (props) => {
         <Series>
           <Series.Sequence durationInFrames={TIMINGS.FPS_INTRO}>
             <h1>Series.Sequence 1 90 Frames</h1>
-            {/* <TitleSequenceFrame
-              theme={THEME}
+            <TitleSequenceFrame
+              theme={THEME} 
               fontFamily={fontFamily}
               FPS={TIMINGS.FPS_INTRO}
               DATA={DATA}
-            /> */}
+            />
           </Series.Sequence>
           <Series.Sequence durationInFrames={TIMINGS.FPS_MAIN}>
           <h1>Series.Sequence 2 ** Frames</h1>
