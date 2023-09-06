@@ -91,18 +91,12 @@ export const Template_Basic_Sqaure = (props) => {
   return (
     <ThemeProvider theme={THEME}>
       <AbsoluteFill style={{ backgroundColor: THEME.primary }}>
-        <Series>
-        <Series.Sequence durationInFrames={TIMINGS.FPS_INTRO}>
-            <h1>Series.Sequence 1 90 Frames</h1>
-            <TitleSequenceFrame
+      <TitleSequenceFrame
               theme={THEME}
               fontFamily={fontFamily}
               FPS={TIMINGS.FPS_INTRO}
               DATA={DATA}
             />
-          </Series.Sequence>
-         
-        </Series>
         <NoiseComp speed={0.01} circleRadius={50} maxOffset={60} />
         <Audio
           volume={(f) =>
