@@ -101,13 +101,7 @@ export const Template_Basic_Sqaure = (props) => {
             />
           </Series.Sequence>
           <Series.Sequence durationInFrames={TIMINGS.FPS_MAIN}>
-          <Top5List
-        DATA={DATA}
-        theme={THEME}
-        TYPE="BATTING"
-        fontFamily={fontFamily}
-        FPS_MAIN={TIMINGS.FPS_MAIN}
-      />
+            {TEMPLATES[TEMPLATE]}
           </Series.Sequence>
           <Series.Sequence durationInFrames={TIMINGS.FPS_OUTRO}>
             <OutroSequenceFrame

@@ -46,41 +46,50 @@ export const RemotionPlayerContainer = (props) => {
   const { setIsPlaying } = props;
   const { account } = useAccountDetails();
   const [userAccount, setUserAccount] = useState(account);
+  const [dataReady, setDataReady] = useState(false);
 
-  useEffect(() => {
+
+ useEffect(() => {
+    setDataReady(false); // Reset the data ready state when the account changes
     setUserAccount(account);
-    //console.log("DATA JSON", DATA);
+
     if (userAccount) {
       updateVideoMeta(userAccount);
       updateClubMeta(userAccount);
       updateSponsors(userAccount);
       console.log("DATA JSON", DATA);
+
+      setDataReady(true); // Set the data ready state when updates are done
     }
   }, [account]);
  
   return (
     <LoadingStateWrapper conditions={[account, DATA.VIDEOMETA.Video.Theme]}>
-      <Paper mb={10}>
-        <RemotionPreview setIsPlaying={setIsPlaying} DATA={{ DATA }} />
-      </Paper>
-      <Paper mx={15}>
-      <P
-        textAlign={"left"}
-        size={"xs"}
-        lineHeight={"1.2em"}
-        color={3}
-        Copy={`This preview lets you see your weekly assets in action—check colors, audio, and sponsor placements. 
-        `}
-      />
-      <P
-        textAlign={"left"}
-        size={"xs"}
-        lineHeight={"1.2em"}
-        color={3}
-        Copy={`
-        Want to make changes? Head to the Branding page for theme and audio adjustments, or visit the Sponsors page to manage sponsors.`}
-      />
-      </Paper>
-    </LoadingStateWrapper>
+    {dataReady ? ( // Check if the data is ready
+      <>
+        <Paper mb={10}>
+          <RemotionPreview setIsPlaying={setIsPlaying} DATA={{ DATA }} />
+        </Paper>
+        <Paper mx={15}>
+          <P
+            textAlign={"left"}
+            size={"xs"}
+            lineHeight={"1.2em"}
+            color={3}
+            Copy={`This preview lets you see your weekly assets in action—check colors, audio, and sponsor placements.`}
+          />
+          <P
+            textAlign={"left"}
+            size={"xs"}
+            lineHeight={"1.2em"}
+            color={3}
+            Copy={`Want to make changes? Head to the Branding page for theme and audio adjustments, or visit the Sponsors page to manage sponsors.`}
+          />
+        </Paper>
+      </>
+    ) : (
+      "Loading..." // Loading message when data is not ready
+    )}
+  </LoadingStateWrapper>
   );
 };
