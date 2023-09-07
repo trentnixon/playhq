@@ -14,7 +14,6 @@ import { WeekendResults } from "./Compositions/WeekendResults/index";
 import { Fixtures } from "./Compositions/UpcomingFixtures/index";
 import { Ladder } from "./Compositions/Ladder/index";
 import { NoiseComp } from "./Sequences/Common/niose3D";
-import { useRef } from "react";
 
 // END
 
@@ -128,27 +127,18 @@ const Template_Basic_Sqaure = (props) => {
       </AbsoluteFill>
     </ThemeProvider>
   ); */
-  const first = useRef(null);
-  const second = useRef(null);
+
   return (
     <ThemeProvider theme={THEME}>
       <AbsoluteFill style={{ backgroundColor: THEME.primary }}>
-        <Series>
-          <Series.Sequence durationInFrames={TIMINGS.FPS_INTRO} ref={first}>
-            <TitleSequenceFrame
-              theme={THEME}
-              fontFamily={fontFamily}
-              FPS={TIMINGS.FPS_INTRO}
-              DATA={DATA}
-            />
-          </Series.Sequence>
-          <Series.Sequence durationInFrames={90} ref={second}>
-            <h1>SERIES 2</h1>
-          </Series.Sequence>
-          <Series.Sequence durationInFrames={90}>
-            <h1>SERIES 3</h1>
-          </Series.Sequence>
-        </Series>
+        <Sequence durationInFrames={TIMINGS.FPS_INTRO}>
+          <TitleSequenceFrame
+            theme={THEME}
+            fontFamily={fontFamily}
+            FPS={TIMINGS.FPS_INTRO}
+            DATA={DATA}
+          />
+        </Sequence>
       </AbsoluteFill>
     </ThemeProvider>
   );
