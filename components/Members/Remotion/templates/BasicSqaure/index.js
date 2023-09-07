@@ -91,6 +91,12 @@ const Template_Basic_Sqaure = (props) => {
    return (
     <ThemeProvider theme={THEME}>
       <AbsoluteFill style={{ backgroundColor: THEME.primary }}>
+      <TitleSequenceFrame
+              theme={THEME}
+              fontFamily={fontFamily}
+              FPS={TIMINGS.FPS_INTRO}
+              DATA={DATA}
+            />
         <Series>
           <Series.Sequence durationInFrames={TIMINGS.FPS_INTRO}>
             <TitleSequenceFrame
@@ -112,7 +118,7 @@ const Template_Basic_Sqaure = (props) => {
             />
           </Series.Sequence>
         </Series>
-        {/* <NoiseComp speed={0.01} circleRadius={50} maxOffset={60} />
+        <NoiseComp speed={0.01} circleRadius={50} maxOffset={60} />
         <Audio
           volume={(f) =>
             interpolate(
@@ -123,7 +129,7 @@ const Template_Basic_Sqaure = (props) => {
             )
           }
           src={`${DATA.VIDEOMETA.Video.audio_option}`}
-        /> */}
+        />
       </AbsoluteFill>
     </ThemeProvider>
   );
