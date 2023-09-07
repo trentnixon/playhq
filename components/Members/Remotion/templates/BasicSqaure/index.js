@@ -89,7 +89,7 @@ const Template_Basic_Sqaure = (props) => {
 
   //console.log("TIMINGS", TIMINGS, TIMINGS.FPS_INTRO);
    return (
-   
+    <ThemeProvider theme={THEME}>
       <AbsoluteFill style={{ backgroundColor: THEME.primary }}>
         <Series>
           <Series.Sequence durationInFrames={TIMINGS.FPS_INTRO}>
@@ -112,7 +112,7 @@ const Template_Basic_Sqaure = (props) => {
             />
           </Series.Sequence>
         </Series>
-        <NoiseComp speed={0.01} circleRadius={50} maxOffset={60} />
+        {/* <NoiseComp speed={0.01} circleRadius={50} maxOffset={60} />
         <Audio
           volume={(f) =>
             interpolate(
@@ -123,9 +123,9 @@ const Template_Basic_Sqaure = (props) => {
             )
           }
           src={`${DATA.VIDEOMETA.Video.audio_option}`}
-        />
+        /> */}
       </AbsoluteFill>
-   
+    </ThemeProvider>
   );
 
 
