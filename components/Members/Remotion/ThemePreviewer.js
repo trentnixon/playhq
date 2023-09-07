@@ -15,9 +15,7 @@ const RemotionPreview = ({ setIsPlaying, DATA }) => {
     "Basic Sqaure": Template_Basic_Sqaure,
     "Basic Rounded": Template_Basic_Rounded,
   };
-  const lazyComponent = useCallback(() => {
-    return import("./templates/BasicSqaure/index");
-  }, []);
+
 
   const ASSETDATA = DATA.DATA;
 
@@ -49,9 +47,8 @@ const RemotionPreview = ({ setIsPlaying, DATA }) => {
   return (
     <Center>
       <Player
-        lazyComponent={lazyComponent}
         id={Create.CompositionID}
-        //component={Create.Template}
+        component={Create.Template}
         durationInFrames={Create.durationInFrames}
         compositionWidth={Create.ratio.width}
         compositionHeight={Create.ratio.height}
