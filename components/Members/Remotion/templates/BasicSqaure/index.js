@@ -131,7 +131,11 @@ const Template_Basic_Sqaure = (props) => {
   return (
     <ThemeProvider theme={THEME}>
       <AbsoluteFill style={{ backgroundColor: THEME.primary }}>
-        
+      <Series>
+          <Series.Sequence durationInFrames={TIMINGS.FPS_INTRO}>
+            <h1>This should be 3 Seconds and start from 0</h1>
+            </Series.Sequence>
+            </Series>
       </AbsoluteFill>
     </ThemeProvider>
   );
