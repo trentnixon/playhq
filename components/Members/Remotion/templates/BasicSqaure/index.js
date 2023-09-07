@@ -17,7 +17,7 @@ import { NoiseComp } from "./Sequences/Common/niose3D";
 
 // END
 
- const Template_Basic_Sqaure = (props) => {
+const Template_Basic_Sqaure = (props) => {
   const { DATA } = props;
 
   //console.log("DATA Template_Basic_Sqaure", DATA.DATA)
@@ -88,7 +88,7 @@ import { NoiseComp } from "./Sequences/Common/niose3D";
   };
 
   //console.log("TIMINGS", TIMINGS, TIMINGS.FPS_INTRO);
-  return (
+  /*  return (
     <ThemeProvider theme={THEME}>
       <AbsoluteFill style={{ backgroundColor: THEME.primary }}>
         <Series>
@@ -126,7 +126,15 @@ import { NoiseComp } from "./Sequences/Common/niose3D";
         />
       </AbsoluteFill>
     </ThemeProvider>
+  ); */
+
+  return (
+    <ThemeProvider theme={THEME}>
+      <AbsoluteFill style={{ backgroundColor: THEME.primary }}>
+        
+      </AbsoluteFill>
+    </ThemeProvider>
   );
 };
 
-export default Template_Basic_Sqaure
+export default Template_Basic_Sqaure;
