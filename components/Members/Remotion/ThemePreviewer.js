@@ -4,8 +4,9 @@
 import { Center } from "@mantine/core";
 import { Player } from "@remotion/player";
 //COMPONENTS
-import { Template_Basic_Sqaure } from "./templates/BasicSqaure/index";
+import Template_Basic_Sqaure from "./templates/BasicSqaure/index";
 import { Template_Basic_Rounded } from "./templates/BasicRounded/index";
+import { useCallback } from "react";
 //import { P } from "../Common/Type";
 //import { AbsoluteFill, delayRender } from "remotion";
 
@@ -14,6 +15,10 @@ const RemotionPreview = ({ setIsPlaying, DATA }) => {
     "Basic Sqaure": Template_Basic_Sqaure,
     "Basic Rounded": Template_Basic_Rounded,
   };
+  const lazyComponent = useCallback(() => {
+    return import("./templates/BasicSqaure/index");
+  }, []);
+
   const ASSETDATA = DATA.DATA;
 
   if (typeof OBJ[ASSETDATA.VIDEOMETA.Video.Template] === "undefined") {
@@ -40,12 +45,13 @@ const RemotionPreview = ({ setIsPlaying, DATA }) => {
   };
 
   console.log("ASSETDATA", ASSETDATA);
-
+ 
   return (
     <Center>
       <Player
+        lazyComponent={lazyComponent}
         id={Create.CompositionID}
-        component={Create.Template}
+        //component={Create.Template}
         durationInFrames={Create.durationInFrames}
         compositionWidth={Create.ratio.width}
         compositionHeight={Create.ratio.height}
