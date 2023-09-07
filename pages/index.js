@@ -21,7 +21,7 @@ const CS_query = qs.stringify(
 const Index = ({ associations }) => {
   return (
     <>
-      <MainBanner />
+      <MainBanner /> 
       <Services />
       <FunFacts />
       <Partner associations={associations} />

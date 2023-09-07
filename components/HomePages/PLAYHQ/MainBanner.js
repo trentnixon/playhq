@@ -62,9 +62,9 @@ const MainBanner = () => {
                         },
                       }}
                     >
-                      A NEW AI CONTENT CREATION TOOL FOR{" "}
-                      <strong>SOCIAL MEDIA MANAGERS</strong> AND{" "}
-                      <strong>CLUB SECRETARIES</strong>
+                      THE ONLY AI CONTENT CREATION TOOL FOR{" "}
+                      <strong>CRICKET CLUBS</strong> AND{" "}
+                      <strong>ASSOICATIONS</strong>
                     </Text>
                     <Text
                       align="right"
