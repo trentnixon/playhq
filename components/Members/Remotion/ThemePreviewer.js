@@ -1,12 +1,12 @@
 // CORE
-import { useCallback, useEffect, useRef } from "react";
+//import { useCallback, useEffect, useRef } from "react";
 // PACK
 import { Center } from "@mantine/core";
 import { Player } from "@remotion/player";
 //COMPONENTS
 import { Template_Basic_Sqaure } from "./templates/BasicSqaure/index";
 import { Template_Basic_Rounded } from "./templates/BasicRounded/index";
-import { P } from "../Common/Type";
+//import { P } from "../Common/Type";
 //import { AbsoluteFill, delayRender } from "remotion";
 
 const RemotionPreview = ({ setIsPlaying, DATA }) => {
@@ -39,7 +39,7 @@ const RemotionPreview = ({ setIsPlaying, DATA }) => {
     ].reduce((a, b) => a + b, 0),
   };
 
-  console.log("ASSET Create", Create);
+  console.log("ASSETDATA", ASSETDATA);
 
   return (
     <Center>

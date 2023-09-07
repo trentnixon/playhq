@@ -87,7 +87,7 @@ export const Template_Basic_Sqaure = (props) => {
     ].reduce((a, b) => a + b, 0);
   };
 
-  console.log("TIMINGS", TIMINGS, TIMINGS.FPS_INTRO);
+  //console.log("TIMINGS", TIMINGS, TIMINGS.FPS_INTRO);
   return (
     <ThemeProvider theme={THEME}>
       <AbsoluteFill style={{ backgroundColor: THEME.primary }}>
@@ -101,7 +101,13 @@ export const Template_Basic_Sqaure = (props) => {
             />
           </Series.Sequence>
           <Series.Sequence durationInFrames={TIMINGS.FPS_MAIN}>
-            {TEMPLATES[TEMPLATE]}
+          <Top5List
+        DATA={DATA}
+        theme={THEME}
+        TYPE="BATTING"
+        fontFamily={fontFamily}
+        FPS_MAIN={TIMINGS.FPS_MAIN}
+      />
           </Series.Sequence>
           <Series.Sequence durationInFrames={TIMINGS.FPS_OUTRO}>
             <OutroSequenceFrame
