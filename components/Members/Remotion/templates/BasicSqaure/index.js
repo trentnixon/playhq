@@ -133,18 +133,22 @@ const Template_Basic_Sqaure = (props) => {
   return (
     <ThemeProvider theme={THEME}>
       <AbsoluteFill style={{ backgroundColor: THEME.primary }}>
-      <Series>
-      <Series.Sequence durationInFrames={90} ref={first}>
-        <h1>SERIES 1</h1>
-      </Series.Sequence>
-      <Series.Sequence durationInFrames={90} ref={second}>
-      <h1>SERIES 2</h1>
-      </Series.Sequence>
-      <Series.Sequence durationInFrames={90}>
-      <h1>SERIES 3</h1>
-      </Series.Sequence>
-    </Series>
-  
+        <Series>
+          <Series.Sequence durationInFrames={TIMINGS.FPS_INTRO} ref={first}>
+            <TitleSequenceFrame
+              theme={THEME}
+              fontFamily={fontFamily}
+              FPS={TIMINGS.FPS_INTRO}
+              DATA={DATA}
+            />
+          </Series.Sequence>
+          <Series.Sequence durationInFrames={90} ref={second}>
+            <h1>SERIES 2</h1>
+          </Series.Sequence>
+          <Series.Sequence durationInFrames={90}>
+            <h1>SERIES 3</h1>
+          </Series.Sequence>
+        </Series>
       </AbsoluteFill>
     </ThemeProvider>
   );
