@@ -42,7 +42,7 @@ const RemotionPreview = ({ setIsPlaying, DATA }) => {
     };
   }, []); */
 
-/*   const PlayerOnly = ({ playerRef }) => {
+  /*   const PlayerOnly = ({ playerRef }) => {
     return (
       <Player
         ref={playerRef}
@@ -62,14 +62,34 @@ const RemotionPreview = ({ setIsPlaying, DATA }) => {
       />
     );
   }; */
-  console.log("PLAYER DATA", DATA)
+  console.log("PLAYER DATA", DATA.DATA.VIDEOMETA.Video.TIMINGS);
+  const HasSponsors = () => {
+    DATA.DATA.VIDEOMETA.Video.includeSponsors;
+    if (DATA.DATA.VIDEOMETA.Club.Sponsors.length === 0) return 0;
+    return DATA.DATA.VIDEOMETA.Video.includeSponsors
+      ? DATA.DATA.VIDEOMETA.Video.TIMINGS.FPS_OUTRO
+      : 0;
+  };
+
+  console.log(
+    [
+      DATA.DATA.VIDEOMETA.Video.TIMINGS.FPS_INTRO,
+      HasSponsors(),
+      DATA.DATA.VIDEOMETA.Video.TIMINGS.FPS_MAIN,
+    ].reduce((a, b) => a + b, 0)
+  );
 
   return (
     <Center>
       <Player
         id={DATA.DATA.VIDEOMETA.Video.CompositionID}
         component={OBJ[DATA.DATA.VIDEOMETA.Video.Template]}
-        durationInFrames={900}
+    
+        durationInFrames={[
+          DATA.DATA.VIDEOMETA.Video.TIMINGS.FPS_INTRO,
+          HasSponsors(),
+          DATA.DATA.VIDEOMETA.Video.TIMINGS.FPS_MAIN,
+        ].reduce((a, b) => a + b, 0)}
         compositionWidth={1440}
         compositionHeight={1920}
         fps={30}

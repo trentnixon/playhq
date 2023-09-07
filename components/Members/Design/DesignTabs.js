@@ -17,7 +17,7 @@ elements and other functional components that are being passed the props from th
 It also uses some props such as variant, color and position, these are used to style the tab and
  other elements as per the requirements.
 */
-export function DesignTabs(props) {
+export function DesignTabs(props) { 
   return (
     <>
       <Grid>

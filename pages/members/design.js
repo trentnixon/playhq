@@ -60,7 +60,7 @@ const Design = () => {
             unique representation of your club or association's style and brand
             identity.
           </P>
-        </PageCopyWrapper>
+        </PageCopyWrapper> 
         <Space h={20} />
         <DesignTabs
           isPlaying={isPlaying}
