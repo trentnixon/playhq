@@ -91,12 +91,7 @@ const Template_Basic_Sqaure = (props) => {
    return (
     <ThemeProvider theme={THEME}>
       <AbsoluteFill style={{ backgroundColor: THEME.primary }}>
-      <TitleSequenceFrame
-              theme={THEME}
-              fontFamily={fontFamily}
-              FPS={TIMINGS.FPS_INTRO}
-              DATA={DATA}
-            />
+      {TEMPLATES[TEMPLATE]}
         <Series>
           <Series.Sequence durationInFrames={TIMINGS.FPS_INTRO}>
             <TitleSequenceFrame
