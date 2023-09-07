@@ -1,5 +1,5 @@
 import { ThemeProvider } from "styled-components";
-import { Series, AbsoluteFill, Audio, interpolate } from "remotion";
+import { Series, AbsoluteFill, Audio, interpolate, Sequence } from "remotion";
 // Import {RemotionThemes} from '../../theme/themes'
 import { loadFont } from "@remotion/google-fonts/Heebo";
 
@@ -131,11 +131,10 @@ const Template_Basic_Sqaure = (props) => {
   return (
     <ThemeProvider theme={THEME}>
       <AbsoluteFill style={{ backgroundColor: THEME.primary }}>
-      <Series>
-          <Series.Sequence durationInFrames={TIMINGS.FPS_INTRO}>
-            <h1>This should be 3 Seconds and start from 0</h1>
-            </Series.Sequence>
-            </Series>
+      <Sequence durationInFrames={TIMINGS.FPS_INTRO}>
+      <h1>This should be 3 Seconds and start from 0</h1>
+      </Sequence>
+  
       </AbsoluteFill>
     </ThemeProvider>
   );
