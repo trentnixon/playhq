@@ -88,7 +88,7 @@ const Template_Basic_Sqaure = (props) => {
   };
 
   //console.log("TIMINGS", TIMINGS, TIMINGS.FPS_INTRO);
-  /*  return (
+   return (
     <ThemeProvider theme={THEME}>
       <AbsoluteFill style={{ backgroundColor: THEME.primary }}>
         <Series>
@@ -126,22 +126,9 @@ const Template_Basic_Sqaure = (props) => {
         />
       </AbsoluteFill>
     </ThemeProvider>
-  ); */
-
-  return (
-    <ThemeProvider theme={THEME}>
-      <AbsoluteFill style={{ backgroundColor: THEME.primary }}>
-        <Sequence durationInFrames={TIMINGS.FPS_INTRO}>
-          <TitleSequenceFrame
-            theme={THEME}
-            fontFamily={fontFamily}
-            FPS={TIMINGS.FPS_INTRO}
-            DATA={DATA}
-          />
-        </Sequence>
-      </AbsoluteFill>
-    </ThemeProvider>
   );
+
+
 };
 
 export default Template_Basic_Sqaure;
