@@ -50,7 +50,7 @@ const RemotionPreview = ({ setIsPlaying, DATA }) => {
         component={Create.Template}
         compositionWidth={Create.ratio.width}
         compositionHeight={Create.ratio.height}
-        frameToDisplay={500}
+        frameToDisplay={600}
         durationInFrames={Create.durationInFrames}
         fps={30}
         inputProps={DATA}
