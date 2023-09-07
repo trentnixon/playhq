@@ -2,7 +2,7 @@
 //import { useCallback, useEffect, useRef } from "react";
 // PACK
 import { Center } from "@mantine/core";
-import { Player } from "@remotion/player";
+import { Player, Thumbnail } from "@remotion/player";
 //COMPONENTS
 import Template_Basic_Sqaure from "./templates/BasicSqaure/index";
 import { Template_Basic_Rounded } from "./templates/BasicRounded/index";
@@ -15,7 +15,6 @@ const RemotionPreview = ({ setIsPlaying, DATA }) => {
     "Basic Sqaure": Template_Basic_Sqaure,
     "Basic Rounded": Template_Basic_Rounded,
   };
-
 
   const ASSETDATA = DATA.DATA;
 
@@ -43,10 +42,24 @@ const RemotionPreview = ({ setIsPlaying, DATA }) => {
   };
 
   console.log("ASSETDATA", ASSETDATA);
- 
+
   return (
     <Center>
-      <Player
+      <Thumbnail
+        id={Create.CompositionID}
+        component={Create.Template}
+        compositionWidth={Create.ratio.width}
+        compositionHeight={Create.ratio.height}
+        frameToDisplay={330}
+        durationInFrames={Create.durationInFrames}
+        fps={30}
+        inputProps={DATA}
+        style={{
+          width: parseInt(Create.ratio.width) * 0.25,
+          height: parseInt(Create.ratio.height) * 0.25,
+        }}
+      />
+      {/* <Player
         id={Create.CompositionID}
         component={Create.Template}
         durationInFrames={Create.durationInFrames}
@@ -60,7 +73,7 @@ const RemotionPreview = ({ setIsPlaying, DATA }) => {
           width: parseInt(Create.ratio.width) * 0.25,
           height: parseInt(Create.ratio.height) * 0.25,
         }}
-      />
+      /> */}
     </Center>
   );
 };

@@ -48,7 +48,6 @@
     "hex-rgb": "^5.0.0",
     "js-cookie": "^3.0.1",
     "next": "^12.3.1",
-    "nodemailer": "^6.7.5",
     "nodemailer-sendgrid-transport": "^0.2.0",
     "qs": "^6.11.0",
     "react": "^18.2.0",
