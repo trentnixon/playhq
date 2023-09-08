@@ -124,12 +124,20 @@ export function DragnDropSponsorList({ SPONSORS, SPONSORLIMIT }) {
             </div>
           </td>
           <td>
-            <Image
-              src={item.attributes.Logo.data.attributes.formats.thumbnail.url}
-              width={50}
-              height={50}
-              radius={50}
-            />
+            {item?.attributes?.Logo?.data?.attributes?.formats?.thumbnail
+              ?.url === undefined ? (
+              "Error"
+            ) : (
+              <Image
+                src={
+                  item?.attributes?.Logo?.data?.attributes?.formats?.thumbnail
+                    ?.url
+                }
+                width={50}
+                height={50}
+                radius={50}
+              />
+            )}
           </td>
 
           <td>

@@ -14,7 +14,7 @@ import { ContentSection } from "../../components/Members/Sponsors/Sections/Conte
 import { SponsorLimitMessage } from "../../components/Members/Sponsors/Sections/SponsorLimitMessage";
 
 const SPONSORS = () => {
-  const SPONSORLIMIT = 5;
+  const SPONSORLIMIT = 5; 
   const { account } = useAccountDetails();
   const [userAccount, setUserAccount] = useState(account);
   const [isCreate, setIsCreate] = useState(false);
