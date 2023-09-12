@@ -28,8 +28,8 @@ import {
 import { IconColorPicker } from "@tabler/icons";
 import { useGetAIExample } from "../../Hooks/useAI";
 import { FixturaLoading } from "../../components/Members/Common/Loading";
-import RemotionPreview from "../../components/Members/Remotion/ThemePreviewer";
 import { useAccountDetails } from "../../lib/userContext";
+import RemotionPreview from "../../components/Members/Design/ThemePreviewer";
 const qs = require("qs");
 
 const query = qs.stringify(

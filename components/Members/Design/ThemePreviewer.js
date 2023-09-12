@@ -6,7 +6,7 @@ import { Player, Thumbnail } from "@remotion/player";
 //COMPONENTS
 import { Template_Basic_Sqaure } from "../VideoFiles/templates/BasicSqaure/index";
 import { Template_Basic_Rounded } from "../VideoFiles/templates/BasicRounded/index";
-import { useCallback } from "react";
+//import { useCallback } from "react";
 //import { P } from "../Common/Type";
 //import { AbsoluteFill, delayRender } from "remotion";
 
