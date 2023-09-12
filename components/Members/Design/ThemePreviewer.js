@@ -4,8 +4,8 @@
 import { Center } from "@mantine/core";
 import { Player, Thumbnail } from "@remotion/player";
 //COMPONENTS
-import Template_Basic_Sqaure from "./templates/BasicSqaure/index";
-import { Template_Basic_Rounded } from "./templates/BasicRounded/index";
+import { Template_Basic_Sqaure } from "../VideoFiles/templates/BasicSqaure/index";
+import { Template_Basic_Rounded } from "../VideoFiles/templates/BasicRounded/index";
 import { useCallback } from "react";
 //import { P } from "../Common/Type";
 //import { AbsoluteFill, delayRender } from "remotion";
@@ -30,7 +30,7 @@ const RemotionPreview = ({ setIsPlaying, DATA }) => {
   };
 
   const Create = {
-    ratio: { width: 1440, height: 1920 },
+    ratio: { width: 1080, height: 1350 },
     fps: 30,
     CompositionID: ASSETDATA.VIDEOMETA.Video.CompositionID,
     Template: OBJ[ASSETDATA.VIDEOMETA.Video.Template],
@@ -45,7 +45,7 @@ const RemotionPreview = ({ setIsPlaying, DATA }) => {
 
   return (
     <Center>
-      <Thumbnail
+      {/* <Thumbnail
         id={Create.CompositionID}
         component={Create.Template}
         compositionWidth={Create.ratio.width}
@@ -58,8 +58,8 @@ const RemotionPreview = ({ setIsPlaying, DATA }) => {
           width: parseInt(Create.ratio.width) * 0.25,
           height: parseInt(Create.ratio.height) * 0.25,
         }}
-      />
-      {/* <Player
+      /> */}
+      <Player
         id={Create.CompositionID}
         component={Create.Template}
         durationInFrames={Create.durationInFrames}
@@ -73,7 +73,7 @@ const RemotionPreview = ({ setIsPlaying, DATA }) => {
           width: parseInt(Create.ratio.width) * 0.25,
           height: parseInt(Create.ratio.height) * 0.25,
         }}
-      /> */}
+      />
     </Center>
   );
 };

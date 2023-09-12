@@ -1,6 +1,6 @@
 import { Paper } from "@mantine/core";
 import DATA from "../Remotion/utils/Data.json";
-import RemotionPreview from "../Remotion/ThemePreviewer";
+import RemotionPreview from "./ThemePreviewer";
 import { useAccountDetails } from "../../../lib/userContext";
 import { useState, useEffect } from "react";
 import { LoadingStateWrapper } from "../Account/HOC/LoadingStateWrapper";
@@ -63,6 +63,8 @@ export const RemotionPlayerContainer = (props) => {
     }
   }, [account]);
  
+  console.log('DATA',DATA)
+
   return (
     <LoadingStateWrapper conditions={[account, DATA.VIDEOMETA.Video.Theme]}>
     {dataReady ? ( // Check if the data is ready

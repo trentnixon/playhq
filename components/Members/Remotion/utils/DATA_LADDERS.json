@@ -8,7 +8,6 @@
   "VIDEOMETA":{
      "Video":{
       "CompositionID":"Ladder",
-      "includeSponsors": false,
       "Template":"Basic Sqaure",
         "Title":"Ladder",
         "TitleSplit":[

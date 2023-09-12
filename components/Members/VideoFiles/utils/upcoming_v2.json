@@ -1,0 +1,447 @@
+{
+	"TIMINGS": {
+	  "FPS_INTRO": 90,
+	  "FPS_SCORECARD": 210,
+	  "FPS_OUTRO": 180,
+	  "FPS_MAIN": 1680
+	},
+	"VIDEOMETA": {
+	  "Video": {
+		"ASSETID": 1,
+		"ASSETTYPEID": 1,
+		"Title": "Fixtures",
+		"TitleSplit": [
+		  "Fixtures",
+		  ""
+		],
+		"CompositionID": "UpComingFixtures",
+		"VideoTitle": "Queensland Premier Cricket Fixtures",
+		"PlayHQLogo": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Play_HQ_Logo_942f7f18cf.png",
+		"Theme": {
+            "primary": "#184925",
+            "secondary": "#ecac25",
+            "dark": "#111",
+            "white": "#FFF"
+          },
+		"Template": "Sutherland",
+		"audio_option": "https://lmssocialmediamanager.s3.ap-southeast-2.amazonaws.com/assets/Saltine_1.mp3",
+		"TIMINGS": {
+		  "FPS_INTRO": 90,
+		  "FPS_SCORECARD": 210,
+		  "FPS_OUTRO": 180,
+		  "FPS_MAIN": 1680
+		},
+		"FRAMES": [
+		  265,
+		  475,
+		  685,
+		  895,
+		  1105,
+		  1315,
+		  1525,
+		  1735
+		],
+		"includeSponsors": true
+	  },
+	  "Club": {
+		"Name": "Queensland Premier Cricket",
+		"Logo": "https://fixtura.s3.ap-southeast-2.amazonaws.com/logo_11_5fce1aeacb.jpg",
+		"Sponsors": [
+		  {
+			"Name": "Fixtura",
+			"URL": "fixtura.com.au",
+			"Logo": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Fixtura_FB_Profile_Image_e178afbeeb.png",
+			"isPrimary": true
+		  }
+		]
+	  },
+	  "DATA": [
+		{
+		  "gameID": 14556,
+		  "round": "Round 2",
+		  "teamHome": "Sandgate-Redcliffe Mens 1st Grade",
+		  "teamAway": "Northern Suburbs Mens 1st Grade",
+		  "date": "Saturday, 02 September 2023",
+		  "ground": "Deagon Sportsground / Trevor Hohns Field",
+		  "type": "T20",
+		  "gender": "Men",
+		  "ageGroup": "Senior",
+		  "gradeName": "Men's First Grade"
+		},
+		{
+		  "gameID": 14572,
+		  "round": "Round 2",
+		  "teamHome": "South Brisbane Mens 1st Grade",
+		  "teamAway": "Ipswich Mens 1st Grade",
+		  "date": "Saturday, 02 September 2023",
+		  "ground": "Fehlberg Park / Norman Gray Oval",
+		  "type": "T20",
+		  "gender": "Men",
+		  "ageGroup": "Senior",
+		  "gradeName": "Men's First Grade"
+		},
+		{
+		  "gameID": 14587,
+		  "round": "Round 2",
+		  "teamHome": "Gold Coast Mens 1st Grade",
+		  "teamAway": "Toombul Mens 1st Grade",
+		  "date": "Saturday, 02 September 2023",
+		  "ground": "Graceville Memorial Park / Jack McLaughlin Oval",
+		  "type": "T20",
+		  "gender": "Men",
+		  "ageGroup": "Senior",
+		  "gradeName": "Men's First Grade"
+		},
+		{
+		  "gameID": 14600,
+		  "round": "Round 2",
+		  "teamHome": "Redlands Mens 1st Grade",
+		  "teamAway": "University of Queensland Mens 1st Grade",
+		  "date": "Friday, 01 September 2023",
+		  "ground": "Allan Border Field / Allan Border Field",
+		  "type": "T20",
+		  "gender": "Men",
+		  "ageGroup": "Senior",
+		  "gradeName": "Men's First Grade"
+		},
+		{
+		  "gameID": 14642,
+		  "round": "Round 2",
+		  "teamHome": "Sunshine Coast Mens 1st Grade",
+		  "teamAway": "Western Suburbs Mens 1st Grade",
+		  "date": "Saturday, 02 September 2023",
+		  "ground": "Carmichael Park (Brisbane) / Bill Albury Oval",
+		  "type": "T20",
+		  "gender": "Men",
+		  "ageGroup": "Senior",
+		  "gradeName": "Men's First Grade"
+		},
+		{
+		  "gameID": 14651,
+		  "round": "Round 2",
+		  "teamHome": "Valley Mens 1st Grade",
+		  "teamAway": "Wynnum-Manly Mens 1st Grade",
+		  "date": "Saturday, 02 September 2023",
+		  "ground": "Ashgrove Sportsground / Peter Easton Oval",
+		  "type": "T20",
+		  "gender": "Men",
+		  "ageGroup": "Senior",
+		  "gradeName": "Men's First Grade"
+		},
+		{
+		  "gameID": 14655,
+		  "round": "Round 2",
+		  "teamHome": "Northern Suburbs Mens 2nd Grade",
+		  "teamAway": "Toombul Mens 2nd Grade",
+		  "date": "Saturday, 02 September 2023",
+		  "ground": "Shaw Park / Alan Pettigrew Oval",
+		  "type": "T20",
+		  "gender": "Men",
+		  "ageGroup": "Senior",
+		  "gradeName": "2. Men's Second Grade"
+		},
+		{
+		  "gameID": 14684,
+		  "round": "Round 2",
+		  "teamHome": "Gold Coast Mens 2nd Grade",
+		  "teamAway": "University of Queensland Mens 2nd Grade",
+		  "date": "Saturday, 02 September 2023",
+		  "ground": "Shaw Park / Geoff Dymock Oval",
+		  "type": "T20",
+		  "gender": "Men",
+		  "ageGroup": "Senior",
+		  "gradeName": "2. Men's Second Grade"
+		},
+		{
+		  "gameID": 14698,
+		  "round": "Round 2",
+		  "teamHome": "South Brisbane Mens 2nd Grade",
+		  "teamAway": "Western Suburbs Mens 2nd Grade",
+		  "date": "Saturday, 02 September 2023",
+		  "ground": "Fehlberg Park / Bob Young Oval",
+		  "type": "T20",
+		  "gender": "Men",
+		  "ageGroup": "Senior",
+		  "gradeName": "2. Men's Second Grade"
+		},
+		{
+		  "gameID": 14710,
+		  "round": "Round 2",
+		  "teamHome": "Valley Mens 2nd Grade",
+		  "teamAway": "University of Queensland Mens 2nd Grade",
+		  "date": "Saturday, 02 September 2023",
+		  "ground": "Shaw Park / Geoff Dymock Oval",
+		  "type": "T20",
+		  "gender": "Men",
+		  "ageGroup": "Senior",
+		  "gradeName": "2. Men's Second Grade"
+		},
+		{
+		  "gameID": 14719,
+		  "round": "Round 2",
+		  "teamHome": "South Brisbane Mens 2nd Grade",
+		  "teamAway": "Ipswich Mens 2nd Grade",
+		  "date": "Saturday, 02 September 2023",
+		  "ground": "Fehlberg Park / Bob Young Oval",
+		  "type": "T20",
+		  "gender": "Men",
+		  "ageGroup": "Senior",
+		  "gradeName": "2. Men's Second Grade"
+		},
+		{
+		  "gameID": 14728,
+		  "round": "Round 2",
+		  "teamHome": "Redlands Mens 2nd Grade",
+		  "teamAway": "Wynnum-Manly Mens 2nd Grade",
+		  "date": "Saturday, 02 September 2023",
+		  "ground": "EGW Wood Reserve / Peter Burge Oval",
+		  "type": "T20",
+		  "gender": "Men",
+		  "ageGroup": "Senior",
+		  "gradeName": "2. Men's Second Grade"
+		},
+		{
+		  "gameID": 14742,
+		  "round": "Round 2",
+		  "teamHome": "Redlands Mens 2nd Grade",
+		  "teamAway": "Sandgate-Redcliffe Mens 2nd Grade",
+		  "date": "Saturday, 02 September 2023",
+		  "ground": "EGW Wood Reserve / Peter Burge Oval",
+		  "type": "T20",
+		  "gender": "Men",
+		  "ageGroup": "Senior",
+		  "gradeName": "2. Men's Second Grade"
+		},
+		{
+		  "gameID": 14747,
+		  "round": "Round 2",
+		  "teamHome": "Northern Suburbs Mens 2nd Grade",
+		  "teamAway": "Sunshine Coast Mens 2nd Grade",
+		  "date": "Saturday, 02 September 2023",
+		  "ground": "Shaw Park / Alan Pettigrew Oval",
+		  "type": "T20",
+		  "gender": "Men",
+		  "ageGroup": "Senior",
+		  "gradeName": "2. Men's Second Grade"
+		},
+		{
+		  "gameID": 15320,
+		  "round": "Round 2",
+		  "teamHome": "Sunshine Coast Women's T20 Max",
+		  "teamAway": "Valley Women's T20 Max",
+		  "date": "Friday, 01 September 2023",
+		  "ground": "Shaw Park / Alan Pettigrew Oval",
+		  "type": "T20",
+		  "gender": "Women",
+		  "ageGroup": "Senior",
+		  "gradeName": "9. Women's T20 Max"
+		},
+		{
+		  "gameID": 15325,
+		  "round": "Round 2",
+		  "teamHome": "Ipswich Womens T20 Max",
+		  "teamAway": "Gold Coast Womens T20 Max",
+		  "date": "Friday, 01 September 2023",
+		  "ground": "Shaw Park / Ian Healy Oval",
+		  "type": "T20",
+		  "gender": "Women",
+		  "ageGroup": "Senior",
+		  "gradeName": "9. Women's T20 Max"
+		}
+	  ]
+	},
+	"DATA": [
+	  {
+		"gameID": 14556,
+		"round": "Round 2",
+		"teamHome": "Sandgate-Redcliffe Mens 1st Grade",
+		"teamAway": "Northern Suburbs Mens 1st Grade",
+		"date": "Saturday, 02 September 2023",
+		"ground": "Deagon Sportsground / Trevor Hohns Field",
+		"type": "T20",
+		"gender": "Men",
+		"ageGroup": "Senior",
+		"gradeName": "Men's First Grade"
+	  },
+	  {
+		"gameID": 14572,
+		"round": "Round 2",
+		"teamHome": "South Brisbane Mens 1st Grade",
+		"teamAway": "Ipswich Mens 1st Grade",
+		"date": "Saturday, 02 September 2023",
+		"ground": "Fehlberg Park / Norman Gray Oval",
+		"type": "T20",
+		"gender": "Men",
+		"ageGroup": "Senior",
+		"gradeName": "Men's First Grade"
+	  },
+	  {
+		"gameID": 14587,
+		"round": "Round 2",
+		"teamHome": "Gold Coast Mens 1st Grade",
+		"teamAway": "Toombul Mens 1st Grade",
+		"date": "Saturday, 02 September 2023",
+		"ground": "Graceville Memorial Park / Jack McLaughlin Oval",
+		"type": "T20",
+		"gender": "Men",
+		"ageGroup": "Senior",
+		"gradeName": "Men's First Grade"
+	  },
+	  {
+		"gameID": 14600,
+		"round": "Round 2",
+		"teamHome": "Redlands Mens 1st Grade",
+		"teamAway": "University of Queensland Mens 1st Grade",
+		"date": "Friday, 01 September 2023",
+		"ground": "Allan Border Field / Allan Border Field",
+		"type": "T20",
+		"gender": "Men",
+		"ageGroup": "Senior",
+		"gradeName": "Men's First Grade"
+	  },
+	  {
+		"gameID": 14642,
+		"round": "Round 2",
+		"teamHome": "Sunshine Coast Mens 1st Grade",
+		"teamAway": "Western Suburbs Mens 1st Grade",
+		"date": "Saturday, 02 September 2023",
+		"ground": "Carmichael Park (Brisbane) / Bill Albury Oval",
+		"type": "T20",
+		"gender": "Men",
+		"ageGroup": "Senior",
+		"gradeName": "Men's First Grade"
+	  },
+	  {
+		"gameID": 14651,
+		"round": "Round 2",
+		"teamHome": "Valley Mens 1st Grade",
+		"teamAway": "Wynnum-Manly Mens 1st Grade",
+		"date": "Saturday, 02 September 2023",
+		"ground": "Ashgrove Sportsground / Peter Easton Oval",
+		"type": "T20",
+		"gender": "Men",
+		"ageGroup": "Senior",
+		"gradeName": "Men's First Grade"
+	  },
+	  {
+		"gameID": 14655,
+		"round": "Round 2",
+		"teamHome": "Northern Suburbs Mens 2nd Grade",
+		"teamAway": "Toombul Mens 2nd Grade",
+		"date": "Saturday, 02 September 2023",
+		"ground": "Shaw Park / Alan Pettigrew Oval",
+		"type": "T20",
+		"gender": "Men",
+		"ageGroup": "Senior",
+		"gradeName": "2. Men's Second Grade"
+	  },
+	  {
+		"gameID": 14684,
+		"round": "Round 2",
+		"teamHome": "Gold Coast Mens 2nd Grade",
+		"teamAway": "University of Queensland Mens 2nd Grade",
+		"date": "Saturday, 02 September 2023",
+		"ground": "Shaw Park / Geoff Dymock Oval",
+		"type": "T20",
+		"gender": "Men",
+		"ageGroup": "Senior",
+		"gradeName": "2. Men's Second Grade"
+	  },
+	  {
+		"gameID": 14698,
+		"round": "Round 2",
+		"teamHome": "South Brisbane Mens 2nd Grade",
+		"teamAway": "Western Suburbs Mens 2nd Grade",
+		"date": "Saturday, 02 September 2023",
+		"ground": "Fehlberg Park / Bob Young Oval",
+		"type": "T20",
+		"gender": "Men",
+		"ageGroup": "Senior",
+		"gradeName": "2. Men's Second Grade"
+	  },
+	  {
+		"gameID": 14710,
+		"round": "Round 2",
+		"teamHome": "Valley Mens 2nd Grade",
+		"teamAway": "University of Queensland Mens 2nd Grade",
+		"date": "Saturday, 02 September 2023",
+		"ground": "Shaw Park / Geoff Dymock Oval",
+		"type": "T20",
+		"gender": "Men",
+		"ageGroup": "Senior",
+		"gradeName": "2. Men's Second Grade"
+	  },
+	  {
+		"gameID": 14719,
+		"round": "Round 2",
+		"teamHome": "South Brisbane Mens 2nd Grade",
+		"teamAway": "Ipswich Mens 2nd Grade",
+		"date": "Saturday, 02 September 2023",
+		"ground": "Fehlberg Park / Bob Young Oval",
+		"type": "T20",
+		"gender": "Men",
+		"ageGroup": "Senior",
+		"gradeName": "2. Men's Second Grade"
+	  },
+	  {
+		"gameID": 14728,
+		"round": "Round 2",
+		"teamHome": "Redlands Mens 2nd Grade",
+		"teamAway": "Wynnum-Manly Mens 2nd Grade",
+		"date": "Saturday, 02 September 2023",
+		"ground": "EGW Wood Reserve / Peter Burge Oval",
+		"type": "T20",
+		"gender": "Men",
+		"ageGroup": "Senior",
+		"gradeName": "2. Men's Second Grade"
+	  },
+	  {
+		"gameID": 14742,
+		"round": "Round 2",
+		"teamHome": "Redlands Mens 2nd Grade",
+		"teamAway": "Sandgate-Redcliffe Mens 2nd Grade",
+		"date": "Saturday, 02 September 2023",
+		"ground": "EGW Wood Reserve / Peter Burge Oval",
+		"type": "T20",
+		"gender": "Men",
+		"ageGroup": "Senior",
+		"gradeName": "2. Men's Second Grade"
+	  },
+	  {
+		"gameID": 14747,
+		"round": "Round 2",
+		"teamHome": "Northern Suburbs Mens 2nd Grade",
+		"teamAway": "Sunshine Coast Mens 2nd Grade",
+		"date": "Saturday, 02 September 2023",
+		"ground": "Shaw Park / Alan Pettigrew Oval",
+		"type": "T20",
+		"gender": "Men",
+		"ageGroup": "Senior",
+		"gradeName": "2. Men's Second Grade"
+	  },
+	  {
+		"gameID": 15320,
+		"round": "Round 2",
+		"teamHome": "Sunshine Coast Women's T20 Max",
+		"teamAway": "Valley Women's T20 Max",
+		"date": "Friday, 01 September 2023",
+		"ground": "Shaw Park / Alan Pettigrew Oval",
+		"type": "T20",
+		"gender": "Women",
+		"ageGroup": "Senior",
+		"gradeName": "9. Women's T20 Max"
+	  },
+	  {
+		"gameID": 15325,
+		"round": "Round 2",
+		"teamHome": "Ipswich Womens T20 Max",
+		"teamAway": "Gold Coast Womens T20 Max",
+		"date": "Friday, 01 September 2023",
+		"ground": "Shaw Park / Ian Healy Oval",
+		"type": "T20",
+		"gender": "Women",
+		"ageGroup": "Senior",
+		"gradeName": "9. Women's T20 Max"
+	  }
+	]
+  }

@@ -2,7 +2,7 @@
 	"TIMINGS": {
 		"FPS_INTRO": 90,
 		"FPS_LADDER": 300,
-		"FPS_OUTRO": 180,
+		"FPS_OUTRO": 120,
 		"FPS_MAIN": 8700
 	},
 	"VIDEOMETA": {
@@ -10,7 +10,6 @@
 			"Title": "Ladder",
 			"TitleSplit": ["Ladder", ""],
 			"CompositionID": "Ladder",
-			"includeSponsors": true,
 			"VideoTitle": "Gold Coast Veterans Cricket Ladder",
 			"PlayHQLogo": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Play_HQ_Logo_942f7f18cf.png",
 			"Theme": {
@@ -19,12 +18,12 @@
 				"dark": "#111",
 				"white": "#FFF"
 			},
-			"Template": "Basic Rounded",
+			"Template": "Basic Sqaure",
 			"audio_option": "https://lmssocialmediamanager.s3.ap-southeast-2.amazonaws.com/assets/Saltine_1.mp3",
 			"TIMINGS": {
 				"FPS_INTRO": 90,
 				"FPS_LADDER": 300,
-				"FPS_OUTRO": 180,
+				"FPS_OUTRO": 120,
 				"FPS_MAIN": 8700
 			},
 			"FRAMES": [
@@ -38,43 +37,21 @@
 			"Logo": "https://fixtura.s3.ap-southeast-2.amazonaws.com/logo_4_223c3c18c4.png",
 			"Sponsors": [
 				{
-					"Name": "Fixtura",
-					"URL": "Fixtura.com.au",
-					"Logo": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Instagram_Logo_d41f48de23.png",
-					"Tagline": "Fixtura",
-					"Description": "Fixtura Fixtura Fixtura Fixtura Fixtura Fixtura",
+					"Name": "Thirds Spconsor",
+					"URL": "thisrd.com",
+					"Logo": "https://fixtura.s3.ap-southeast-2.amazonaws.com/ab6765630000ba8a0c290f05cdda08e516941b7b_9430b7a552.jpg",
 					"isPrimary": true
 				},
 				{
-					"Name": "Fixtura",
-					"URL": "Fixtura.com.au",
-					"Logo": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Instagram_Logo_d41f48de23.png",
-					"Tagline": "Fixtura",
-					"Description": "Fixtura Fixtura Fixtura Fixtura Fixtura Fixtura",
+					"Name": "shirt sponsor",
+					"URL": "ss.com",
+					"Logo": "https://fixtura.s3.ap-southeast-2.amazonaws.com/AJTRUSTLOGO_ae887461f6.png",
 					"isPrimary": false
 				},
 				{
-					"Name": "Fixtura",
-					"URL": "Fixtura.com.au",
-					"Logo": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Instagram_Logo_d41f48de23.png",
-					"Tagline": "Fixtura",
-					"Description": "Fixtura Fixtura Fixtura Fixtura Fixtura Fixtura",
-					"isPrimary": false
-				},
-				{
-					"Name": "Fixtura",
-					"URL": "Fixtura.com.au",
-					"Logo": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Instagram_Logo_d41f48de23.png",
-					"Tagline": "Fixtura",
-					"Description": "Fixtura Fixtura Fixtura Fixtura Fixtura Fixtura",
-					"isPrimary": false
-				},
-				{
-					"Name": "Fixtura",
-					"URL": "Fixtura.com.au",
-					"Logo": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Instagram_Logo_d41f48de23.png",
-					"Tagline": "Fixtura",
-					"Description": "Fixtura Fixtura Fixtura Fixtura Fixtura Fixtura",
+					"Name": "Vinay Kumar",
+					"URL": "VK.com",
+					"Logo": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Whats_App_Image_2023_01_29_at_12_06_59_PM_b9087a2003.jpeg",
 					"isPrimary": false
 				}
 			]

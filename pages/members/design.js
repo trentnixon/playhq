@@ -20,7 +20,7 @@ const query = qs.stringify(
     populate: [
       "template",
       "theme", 
-      "audio_option",
+      "audio_option", 
       "ai_publication",
       "ai_writting_tone",
       "ai_writting_style",
@@ -30,7 +30,7 @@ const query = qs.stringify(
     encodeValuesOnly: true,
   }
 );
-
+ 
 const Design = () => {
   const { account } = useAccountDetails();
   const [userAccount, setUserAccount] = useState(account);

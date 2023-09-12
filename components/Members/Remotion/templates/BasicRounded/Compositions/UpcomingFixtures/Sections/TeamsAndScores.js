@@ -1,10 +1,11 @@
 import styled from 'styled-components';
+import {getContrastColor} from '../../../../../utils/colors';
+
 import {
 	getContrastColor,
 	darkenColor,
 	lightenColor,
 } from '../../../../../utils/colors';
-
 import {useCurrentFrame} from 'remotion';
 import {interpolateOpacityByFrame} from '../../../../../Animation/interpolate';
 import {
