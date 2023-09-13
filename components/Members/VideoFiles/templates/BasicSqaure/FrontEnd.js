@@ -1,6 +1,6 @@
 /* eslint-disable camelcase */
 import { ThemeProvider } from "styled-components";
-import { AbsoluteFill, useCurrentFrame } from "remotion";
+import { AbsoluteFill, Sequence } from "remotion";
 // Import {RemotionThemes} from '../../theme/themes'
 import { loadFont } from "@remotion/google-fonts/Heebo";
 
@@ -9,14 +9,12 @@ import { loadFont } from "@remotion/google-fonts/Heebo";
 // Componnets
 
 // Assets
-import { Top5List } from "./Compositions/Top5List/index";
+import { Top5List } from "./Compositions/Top5List/frontend";
 import { WeekendResults } from "./Compositions/WeekendResults/index";
 import { Fixtures } from "./Compositions/UpcomingFixtures/index";
 import { Ladder } from "./Compositions/Ladder/index";
 import { NoiseComp } from "./Components/Common/niose3D";
 import { WeekendSingleGameResult } from "./Compositions/WeekendSingleGameResult";
-import { TitleSequenceFrame } from "./Components/Intro";
-import { OutroSequenceFrame } from "./Components/Outro";
 
 // END
 
@@ -27,7 +25,7 @@ export const Template_Basic_Sqaure = (props) => {
   const TEMPLATE = DATA.VIDEOMETA.Video.CompositionID;
   const THEME = DATA.VIDEOMETA.Video.Theme;
   const FEDuration = 400;
-  const frame = useCurrentFrame();
+
   const TEMPLATES = {
     Top5BattingList: (
       <Top5List
@@ -85,33 +83,14 @@ export const Template_Basic_Sqaure = (props) => {
     ),
   };
 
-
   return (
     <ThemeProvider theme={THEME}>
       <AbsoluteFill style={{ backgroundColor: THEME.primary }}>
-       {TEMPLATES[TEMPLATE]}
-       <h1 style={{ zIndex:'2000', color:'black', fontSize:'7em'}}>{frame}-{FEDuration}-{DATA.VIDEOMETA.Video.frameToDisplay}</h1>
-      
+        <Sequence durationInFrames={FEDuration} from={0}>
+          {TEMPLATES[TEMPLATE]}
+        </Sequence>
         <NoiseComp speed={0.01} circleRadius={50} maxOffset={60} />
-      </AbsoluteFill> 
+      </AbsoluteFill>
     </ThemeProvider>
   );
 };
-
-// {TEMPLATES[RENDER.THEME.VideoTemplate]}
-/* <Series.Sequence durationInFrames={TIMINGS.FPS_INTRO}>
-						<TitleSequenceFrame
-							theme={THEME}
-							fontFamily={fontFamily}
-							FPS={TIMINGS.FPS_INTRO}
-							DATA={DATA}
-						/>
-					</Series.Sequence> */
-/* <Series.Sequence durationInFrames={TIMINGS.FPS_OUTRO}>
-						<OutroSequenceFrame
-							theme={THEME}
-							fontFamily={fontFamily}
-							FPS={TIMINGS.FPS_OUTRO}
-							DATA={DATA}
-						/>
-					</Series.Sequence> */

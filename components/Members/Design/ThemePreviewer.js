@@ -19,7 +19,12 @@ import DATA_WeekendSingleGameResult from "../Remotion/utils/WeekendResultsV2.jso
 import { Template_Basic_Sqaure } from "../VideoFiles/templates/BasicSqaure/index";
 import { Template_Basic_Rounded } from "../VideoFiles/templates/BasicRounded/index";
 
-// Function to generate the JSON data structure for the thumbnail
+const AvailableTemplates = {
+  "Basic Sqaure": Template_Basic_Sqaure,
+  "Basic Rounded": Template_Basic_Rounded,
+};
+
+
 // Function to generate the JSON data structure for the thumbnail
 const generateJsonForThumbnail = (userAccount, assetType, metadata) => {
   // Initialize the JSON structure with default values
@@ -81,7 +86,7 @@ const generateJsonForThumbnail = (userAccount, assetType, metadata) => {
       break;
     case "Ladder":
       jsonData.DATA = DATA_Ladder;
-      jsonData.VIDEOMETA.Video.frameToDisplay = 60;
+      jsonData.VIDEOMETA.Video.frameToDisplay = 90;
       break;
     case "WeekendSingleGameResult":
       jsonData.DATA = DATA_WeekendSingleGameResult;
@@ -95,10 +100,7 @@ const generateJsonForThumbnail = (userAccount, assetType, metadata) => {
   return jsonData;
 };
 
-const AvailableTemplates = {
-  "Basic Sqaure": Template_Basic_Sqaure,
-  "Basic Rounded": Template_Basic_Rounded,
-};
+
 const RemotionPreview = ({ setIsPlaying, userAccount, Assets }) => {
   const theme = useMantineTheme();
   const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
