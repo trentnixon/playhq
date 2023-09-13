@@ -7,7 +7,7 @@ import { Top5PlayersMap } from "./Top5Map";
 
 export const Top5List = ({ DATA, theme, fontFamily, FPS_MAIN, TYPE }) => {
   return (
-    <Sequence durationInFrames={FPS_MAIN} from={0}>
+    <>
       <LogoClubTitleHeader
         THEME={theme}
         fontFamily={fontFamily}
@@ -21,6 +21,6 @@ export const Top5List = ({ DATA, theme, fontFamily, FPS_MAIN, TYPE }) => {
         FPS_MAIN={FPS_MAIN}
         TYPE={TYPE}
       />
-    </Sequence>
+    </>
   );
 };

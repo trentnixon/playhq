@@ -49,14 +49,14 @@ export const DisplayVideoTitleBottom = ({THEME, frame, FPS_MAIN, VALUE}) => {
 const VideoTitle = styled.h1`
 	height: auto;
 	margin: 0;
-	font-size: 8em;
+	font-size: 7.5em;
 	line-height: 0.9em;
 	font-weight: 900;
 	text-align: center;
 	text-transform: uppercase;
 `;
 const VideoCategory = styled.h1`
-	font-size: 5em;
+	font-size: 4.8em;
 	line-height: 1em;
 	margin: 0;
 	font-weight: 900;

@@ -8,7 +8,7 @@ import {
   FindAccountLogo,
   getUniqueCompositionIDsAndFilterByIdentifier,
 } from "../../../lib/actions";
-
+ 
 import DATA_Ladder from "../Remotion/utils/DATA_LADDERS.json";
 import DATA_UpComingFixtures from "../Remotion/utils/upcoming_v2.json";
 import DATA_WeekendResults from "../Remotion/utils/WeekendResultsV2.json";
@@ -16,8 +16,9 @@ import DATA_Top5BattingList from "../Remotion/utils/Top5RunsV2.json";
 import DATA_Top5BowlingList from "../Remotion/utils/Top5WicketsV2.json";
 import DATA_WeekendSingleGameResult from "../Remotion/utils/WeekendResultsV2.json";
 
-import { Template_Basic_Sqaure } from "../VideoFiles/templates/BasicSqaure/index";
-import { Template_Basic_Rounded } from "../VideoFiles/templates/BasicRounded/index";
+import { Template_Basic_Sqaure } from "../VideoFiles/templates/BasicSqaure/FrontEnd";
+import { Template_Basic_Rounded } from "../VideoFiles/templates/BasicRounded/frontend";
+ 
 
 const AvailableTemplates = {
   "Basic Sqaure": Template_Basic_Sqaure,
@@ -107,7 +108,7 @@ const RemotionPreview = ({ setIsPlaying, userAccount, Assets }) => {
   const [dataReady, setDataReady] = useState(false);
   const [jsonData, setJsonData] = useState(null);
 
-  useEffect(() => {
+  useEffect(() => { 
     // Fetch unique asset objects filtered by "IMAGE"
     const uniqueAssets = getUniqueCompositionIDsAndFilterByIdentifier(
       Assets,

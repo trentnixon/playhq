@@ -6,7 +6,7 @@ import { LadderMain } from "./LadderMain";
 
 export const Ladder = ({ DATA, theme, fontFamily, FPS_MAIN, FPS_LADDER }) => {
   return (
-    <Sequence durationInFrames={FPS_MAIN} from={0}>
+    <>
       <LogoClubTitleHeader
         THEME={theme}
         fontFamily={fontFamily}
@@ -20,6 +20,6 @@ export const Ladder = ({ DATA, theme, fontFamily, FPS_MAIN, FPS_LADDER }) => {
         FPS_MAIN={FPS_MAIN}
         FPS_LADDER={FPS_LADDER}
       />
-    </Sequence>
+    </>
   );
 };

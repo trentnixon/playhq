@@ -19,4 +19,5 @@ const Logo = styled.div`
 	width: 150px;
 	height: 150px;
 	border-radius: 100%;
+	margin:10px 0;
 `;

@@ -30,9 +30,11 @@ const HeaderCopy = styled.p`
 	letter-spacing: 0.05em;
 	text-transform: uppercase;
 	width: auto;
-	font-size: 25px;
+	font-size: 1.45em;
+	line-height:2em;
 	width: 100%;
 	font-weight: 400;
+	margin:0;
 `;
 
 

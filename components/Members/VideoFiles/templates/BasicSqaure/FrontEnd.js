@@ -84,13 +84,11 @@ export const Template_Basic_Sqaure = (props) => {
   };
 
   return (
-    <ThemeProvider theme={THEME}>
-      <AbsoluteFill style={{ backgroundColor: THEME.primary }}>
-        <Sequence durationInFrames={FEDuration} from={0}>
-          {TEMPLATES[TEMPLATE]}
-        </Sequence>
-        <NoiseComp speed={0.01} circleRadius={50} maxOffset={60} />
-      </AbsoluteFill>
-    </ThemeProvider>
+    <AbsoluteFill style={{ backgroundColor: THEME.primary }}>
+      <Sequence durationInFrames={FEDuration} from={0}>
+        {TEMPLATES[TEMPLATE]}
+      </Sequence>
+      {/* <NoiseComp speed={0.01} circleRadius={50} maxOffset={60} /> */}
+    </AbsoluteFill>
   );
 };

@@ -13,7 +13,7 @@ export const Fixtures = ({
   FPS_SCORECARD,
 }) => {
   return (
-    <Sequence durationInFrames={FPS_MAIN} layout="none">
+    <>
       <LogoClubTitleHeader
         THEME={theme}
         fontFamily={fontFamily}
@@ -27,6 +27,6 @@ export const Fixtures = ({
         FPS_MAIN={FPS_MAIN}
         FPS_SCORECARD={FPS_SCORECARD}
       />
-    </Sequence>
+    </>
   );
 };
