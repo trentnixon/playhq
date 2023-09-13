@@ -5,7 +5,6 @@ import { Player, Thumbnail } from "@remotion/player";
 import { useMediaQuery } from "@mantine/hooks";
 import { FindAccountLabel, FindAccountLogo, getUniqueCompositionIDsAndFilterByIdentifier } from '../../../lib/actions';
 
-import initialDATA from "../Remotion/utils/Data.json";
 import DATA_Ladder from "../Remotion/utils/DATA_LADDERS.json";
 import DATA_UpComingFixtures from "../Remotion/utils/upcoming_v2.json";
 import DATA_WeekendResults from "../Remotion/utils/WeekendResultsV2.json";
@@ -19,7 +18,7 @@ import { Template_Basic_Rounded } from "../VideoFiles/templates/BasicRounded/ind
 
 // Function to generate the JSON data structure for the thumbnail
 // Function to generate the JSON data structure for the thumbnail
-const generateJsonForThumbnail = (userAccount, assetType, initialData, metadata) => {
+const generateJsonForThumbnail = (userAccount, assetType, metadata) => {
     // Initialize the JSON structure with default values
     let jsonData = {
       "TIMINGS": metadata.TIMINGS,
@@ -109,7 +108,7 @@ const RemotionPreview = ({ setIsPlaying, userAccount, Assets }) => {
   
     if (userAccount && uniqueAssets.length > 0) {
       const newJsonData = uniqueAssets.map(({ CompositionID, Metadata }) => 
-        generateJsonForThumbnail(userAccount, CompositionID, initialDATA, Metadata)
+        generateJsonForThumbnail(userAccount, CompositionID, Metadata)
       );
       setJsonData(newJsonData);
       setDataReady(true);
