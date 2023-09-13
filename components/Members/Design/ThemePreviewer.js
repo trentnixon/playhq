@@ -78,11 +78,11 @@ const generateJsonForThumbnail = (userAccount, assetType, metadata) => {
       break;
     case "Top5BattingList":
       jsonData.DATA = DATA_Top5BattingList;
-      jsonData.VIDEOMETA.Video.frameToDisplay = 60;
+      jsonData.VIDEOMETA.Video.frameToDisplay = 250;
       break;
     case "Top5BowlingList":
       jsonData.DATA = DATA_Top5BowlingList;
-      jsonData.VIDEOMETA.Video.frameToDisplay = 60; 
+      jsonData.VIDEOMETA.Video.frameToDisplay = 250; 
       break;
     case "Ladder":
       jsonData.DATA = DATA_Ladder;

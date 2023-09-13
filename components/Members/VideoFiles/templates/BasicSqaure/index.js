@@ -27,7 +27,7 @@ export const Template_Basic_Sqaure = (props) => {
   const TEMPLATE = DATA.VIDEOMETA.Video.CompositionID;
   const THEME = DATA.VIDEOMETA.Video.Theme;
   const FEDuration = 400;
-  const frame = useCurrentFrame();
+
   const TEMPLATES = {
     Top5BattingList: (
       <Top5List
@@ -85,16 +85,11 @@ export const Template_Basic_Sqaure = (props) => {
     ),
   };
 
-
   return (
-    <ThemeProvider theme={THEME}>
-      <AbsoluteFill style={{ backgroundColor: THEME.primary }}>
-       {TEMPLATES[TEMPLATE]}
-       <h1 style={{ zIndex:'2000', color:'black', fontSize:'7em'}}>{frame}-{FEDuration}-{DATA.VIDEOMETA.Video.frameToDisplay}</h1>
-      
-        <NoiseComp speed={0.01} circleRadius={50} maxOffset={60} />
-      </AbsoluteFill> 
-    </ThemeProvider>
+    <AbsoluteFill style={{ backgroundColor: THEME.primary }}>
+      {TEMPLATES[TEMPLATE]}
+      <NoiseComp speed={0.01} circleRadius={50} maxOffset={60} />
+    </AbsoluteFill>
   );
 };
 
