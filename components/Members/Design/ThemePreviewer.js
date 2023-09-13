@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Center, useMantineTheme } from "@mantine/core";
 import { Carousel } from "@mantine/carousel";
-import { Player, Thumbnail } from "@remotion/player";
+import {  Thumbnail } from "@remotion/player";
 import { useMediaQuery } from "@mantine/hooks";
 import { FindAccountLabel, FindAccountLogo, getUniqueCompositionIDsAndFilterByIdentifier } from '../../../lib/actions';
 
@@ -77,11 +77,11 @@ const generateJsonForThumbnail = (userAccount, assetType, metadata) => {
         break;
       case "Ladder":
         jsonData.DATA = DATA_Ladder;
-        jsonData.VIDEOMETA.Video.frameToDisplay=360;
+        jsonData.VIDEOMETA.Video.frameToDisplay=380;
         break;
       case "WeekendSingleGameResult":
         jsonData.DATA = DATA_WeekendSingleGameResult;
-        jsonData.VIDEOMETA.Video.frameToDisplay=360;
+        jsonData.VIDEOMETA.Video.frameToDisplay=390;
         break;
       default:
         console.warn(`Unknown asset type: ${assetType}`);
