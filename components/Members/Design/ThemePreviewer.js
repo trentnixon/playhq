@@ -62,7 +62,7 @@ const generateJsonForThumbnail = (userAccount, assetType, initialData, metadata)
     switch (assetType) {
       case "UpComingFixtures":
         jsonData.DATA = DATA_UpComingFixtures;
-        jsonData.VIDEOMETA.Video.frameToDisplay=360;
+        jsonData.VIDEOMETA.Video.frameToDisplay=300;
         break;
       case "WeekendResults":
         jsonData.DATA = DATA_WeekendResults;
@@ -78,7 +78,7 @@ const generateJsonForThumbnail = (userAccount, assetType, initialData, metadata)
         break;
       case "Ladder":
         jsonData.DATA = DATA_Ladder;
-        jsonData.VIDEOMETA.Video.frameToDisplay=360;
+        jsonData.VIDEOMETA.Video.frameToDisplay=390;
         break;
       case "WeekendSingleGameResult":
         jsonData.DATA = DATA_WeekendSingleGameResult;
