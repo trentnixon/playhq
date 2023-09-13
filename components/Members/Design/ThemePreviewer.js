@@ -62,11 +62,11 @@ const generateJsonForThumbnail = (userAccount, assetType, initialData, metadata)
     switch (assetType) {
       case "UpComingFixtures":
         jsonData.DATA = DATA_UpComingFixtures;
-        jsonData.VIDEOMETA.Video.frameToDisplay=160;
+        jsonData.VIDEOMETA.Video.frameToDisplay=360;
         break;
       case "WeekendResults":
         jsonData.DATA = DATA_WeekendResults;
-        jsonData.VIDEOMETA.Video.frameToDisplay=180;
+        jsonData.VIDEOMETA.Video.frameToDisplay=360;
         break;
       case "Top5BattingList":
         jsonData.DATA = DATA_Top5BattingList;
@@ -78,11 +78,11 @@ const generateJsonForThumbnail = (userAccount, assetType, initialData, metadata)
         break;
       case "Ladder":
         jsonData.DATA = DATA_Ladder;
-        jsonData.VIDEOMETA.Video.frameToDisplay=300;
+        jsonData.VIDEOMETA.Video.frameToDisplay=360;
         break;
       case "WeekendSingleGameResult":
         jsonData.DATA = DATA_WeekendSingleGameResult;
-        jsonData.VIDEOMETA.Video.frameToDisplay=100;
+        jsonData.VIDEOMETA.Video.frameToDisplay=360;
         break;
       default:
         console.warn(`Unknown asset type: ${assetType}`);
