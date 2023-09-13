@@ -1,5 +1,5 @@
 import React from 'react';
-import {Series} from 'remotion';
+import {Sequence, Series} from 'remotion';
 
 // Components
 import {LogoClubTitleHeaderLimited} from '../../Components/Header/LogoClubTitleHeader';
@@ -13,8 +13,7 @@ export const WeekendSingleGameResult = ({
 	FPS_SCORECARD,
 }) => {
 	return (
-		<Series>
-			<Series.Sequence durationInFrames={FPS_MAIN} layout="none">
+		<Sequence durationInFrames={FPS_MAIN} layout="none">
 				<LogoClubTitleHeaderLimited
 					THEME={theme}
 					fontFamily={fontFamily}
@@ -28,7 +27,6 @@ export const WeekendSingleGameResult = ({
 					FPS_MAIN={FPS_MAIN}
 					FPS_SCORECARD={FPS_SCORECARD}
 				/>
-			</Series.Sequence>
-		</Series>
+			</Sequence>
 	);
 };
