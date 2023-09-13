@@ -1,21 +1,38 @@
 [
-    {
+  {
       "round": "Round 2",
-      "teamHome": "Brisbane",
-      "teamAway": "GC Thunder Blue",
+      "teamHome": "Australia",
+      "teamAway": "West Indies",
       "date": "Saturday, 06 May 2023",
       "time": "10:00 AM, Sat, 06 May 23",
-      "ground": "Everton District Cricket Club / Peter Gallagher Oval",
-      "type": "One Day"
-    },
-    {
+      "ground": "Melbourne Cricket Ground",
+      "type": "Test Match"
+  },
+  {
       "round": "Round 2",
-      "teamHome": "GC Thunder Green",
-      "teamAway": "Ipswich",
+      "teamHome": "India",
+      "teamAway": "England",
       "date": "Saturday, 06 May 2023",
       "time": "10:00 AM, Sat, 06 May 23",
-      "ground": "Runaway Bay Cricket Club / Sam Loxton Oval 1",
+      "ground": "Eden Gardens, Kolkata",
+      "type": "Test Match"
+  },
+  {
+      "round": "Round 2",
+      "teamHome": "Pakistan",
+      "teamAway": "New Zealand",
+      "date": "Saturday, 06 May 2023",
+      "time": "10:00 AM, Sat, 06 May 23",
+      "ground": "Lords, London",
       "type": "One Day"
-    }
-  ]
-
+  },
+  {
+      "round": "Round 2",
+      "teamHome": "Sri Lanka",
+      "teamAway": "South Africa",
+      "date": "Saturday, 06 May 2023",
+      "time": "10:00 AM, Sat, 06 May 23",
+      "ground": "Galle International Stadium",
+      "type": "Test Match"
+  }
+]

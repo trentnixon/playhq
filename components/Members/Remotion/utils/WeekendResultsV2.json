@@ -1,132 +1,134 @@
-[{
-  "homeTeam": {
-    "name": "U12 Badgers",
-    "score": "5/158 (20)",
-    "battingPerformances": [
-      {
-        "player": "Oscar Rouse",
-        "runs": 62,
-        "balls": "34",
-        "fours": 12,
-        "sixes": 0,
-        "SR": 182.35,
-        "team": "U12 Badgers"
-      },
-      {
-        "player": "Otto Yim",
-        "runs": 23,
-        "balls": "20",
-        "fours": 4,
-        "sixes": 0,
-        "SR": 115,
-        "team": "U12 Badgers"
-      },
-      {
-        "player": "Jack Rankine",
-        "runs": 22,
-        "balls": "20",
-        "fours": 4,
-        "sixes": 0,
-        "SR": 110,
-        "team": "U12 Badgers"
-      }
-    ],
-    "bowlingPerformances": [
-      {
-        "player": "Aiden Maher",
-        "overs": 3,
-        "maidens": 0,
-        "runs": 30,
-        "wickets": 2,
-        "economy": "10.00",
-        "team": "Easts Sixers U12"
-      },
-      {
-        "player": "vivaan saraff",
-        "overs": 3,
-        "maidens": 0,
-        "runs": 13,
-        "wickets": 2,
-        "economy": "4.33",
-        "team": "Easts Sixers U12"
-      },
-      {
-        "player": "Alistair Tudehope",
-        "overs": 3,
-        "maidens": 0,
-        "runs": 25,
-        "wickets": 0,
-        "economy": "8.33",
-        "team": "Easts Sixers U12"
-      }
-    ]
-  },
-  "awayTeam": {
-    "name": "Easts Sixers U12",
-    "score": "7/127 (20)",
-    "battingPerformances": [
-      {
-        "player": "George Andreatta",
-        "runs": 24,
-        "balls": "16",
-        "fours": 4,
-        "sixes": 0,
-        "SR": 150,
-        "team": "Easts Sixers U12"
-      },
-      {
-        "player": "Will Watson",
-        "runs": 23,
-        "balls": "20",
-        "fours": 3,
-        "sixes": 0,
-        "SR": 115,
-        "team": "Easts Sixers U12"
-      },
-      {
-        "player": "Aiden Maher",
-        "runs": 20,
-        "balls": "20",
-        "fours": 3,
-        "sixes": 0,
-        "SR": 100,
-        "team": "Easts Sixers U12"
-      }
-    ],
-    "bowlingPerformances": [
-      {
-        "player": "Otto Yim",
-        "overs": 3,
-        "maidens": 0,
-        "runs": 16,
-        "wickets": 2,
-        "economy": "5.33",
-        "team": "U12 Badgers"
-      },
-      {
-        "player": "Monty Wiles",
-        "overs": 3,
-        "maidens": 0,
-        "runs": 23,
-        "wickets": 2,
-        "economy": "7.67",
-        "team": "U12 Badgers"
-      },
-      {
-        "player": "Thomas Andrews",
-        "overs": 2,
-        "maidens": 0,
-        "runs": 10,
-        "wickets": 1,
-        "economy": "5.00",
-        "team": "U12 Badgers"
-      }
-    ]
-  },
-  "date": "Sunday, 28 May 2023",
-  "time": "08:00 AM, Sun, 28 May 23",
-  "type": "T20",
-  "ground": "Moore Park (MOORE PARK) / Moore Park 8",
-  "round": "Round 5",
-  "result": "5/158 - 7/127"
-}]
+[
+  {
+    "homeTeam": {
+      "name": "Australia Legends",
+      "score": "5/320 (50)",
+      "battingPerformances": [
+        {
+          "player": "Don Bradman",
+          "runs": 120,
+          "balls": "100",
+          "fours": 12,
+          "sixes": 2,
+          "SR": 120.00,
+          "team": "Australia Legends"
+        },
+        {
+          "player": "Steve Waugh",
+          "runs": 90,
+          "balls": "75",
+          "fours": 8,
+          "sixes": 1,
+          "SR": 120.00,
+          "team": "Australia Legends"
+        },
+        {
+          "player": "Mark Waugh",
+          "runs": 45,
+          "balls": "20",
+          "fours": 4,
+          "sixes": 3,
+          "SR": 225.00,
+          "team": "Australia Legends"
+        }
+      ],
+      "bowlingPerformances": [
+        {
+          "player": "Dennis Lillee",
+          "overs": 10,
+          "maidens": 2,
+          "runs": 35,
+          "wickets": 3,
+          "economy": "3.50",
+          "team": "Australia Legends"
+        },
+        {
+          "player": "Ray Lindwall",
+          "overs": 10,
+          "maidens": 1,
+          "runs": 50,
+          "wickets": 2,
+          "economy": "5.00",
+          "team": "Australia Legends"
+        },
+        {
+          "player": "Shane Warne",
+          "overs": 10,
+          "maidens": 0,
+          "runs": 60,
+          "wickets": 1,
+          "economy": "6.00",
+          "team": "Australia Legends"
+        }
+      ]
+    },
+    "awayTeam": {
+      "name": "West Indies Legends",
+      "score": "7/280 (50)",
+      "battingPerformances": [
+        {
+          "player": "Brian Lara",
+          "runs": 80,
+          "balls": "70",
+          "fours": 6,
+          "sixes": 2,
+          "SR": 114.28,
+          "team": "West Indies Legends"
+        },
+        {
+          "player": "Sir Garfield Sobers",
+          "runs": 75,
+          "balls": "80",
+          "fours": 5,
+          "sixes": 1,
+          "SR": 93.75,
+          "team": "West Indies Legends"
+        },
+        {
+          "player": "Sir Vivian Richards",
+          "runs": 60,
+          "balls": "50",
+          "fours": 4,
+          "sixes": 2,
+          "SR": 120.00,
+          "team": "West Indies Legends"
+        }
+      ],
+      "bowlingPerformances": [
+        {
+          "player": "Malcolm Marshall",
+          "overs": 10,
+          "maidens": 2,
+          "runs": 45,
+          "wickets": 2,
+          "economy": "4.50",
+          "team": "West Indies Legends"
+        },
+        {
+          "player": "Curtly Ambrose",
+          "overs": 10,
+          "maidens": 0,
+          "runs": 60,
+          "wickets": 1,
+          "economy": "6.00",
+          "team": "West Indies Legends"
+        },
+        {
+          "player": "Joel Garner",
+          "overs": 10,
+          "maidens": 1,
+          "runs": 55,
+          "wickets": 2,
+          "economy": "5.50",
+          "team": "West Indies Legends"
+        }
+      ]
+    },
+    "date": "Sunday, 28 May 2023",
+    "time": "08:00 AM, Sun, 28 May 23",
+    "type": "ODI",
+    "ground": "Lords, London",
+    "round": "Finals",
+    "result": "5/320 - 7/280"
+  }
+]
