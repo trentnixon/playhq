@@ -20,7 +20,7 @@ import { OutroSequenceFrame } from "./Components/Outro";
 
 // END
 
-export const Template_Basic_Sqaure = (props) => {
+export const Template_Basic_Sqaure = (props) => { 
   const { DATA } = props;
   const { fontFamily } = loadFont();
   const { TIMINGS } = DATA;
