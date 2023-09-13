@@ -1,22 +1,19 @@
 import { useEffect, useState } from "react";
 import { FixturaLoading } from "../../Loading";
-import { Paper, Space, Table, useMantineTheme } from "@mantine/core";
+import { Paper, SimpleGrid, Space, useMantineTheme } from "@mantine/core";
 import {
   useAssignDesignElement,
   useGETDesignElement,
 } from "../../../../../Hooks/useCustomizer";
-import { BTN_ONCLICK } from "../../utils/Buttons";
-import { IconCircleCheck } from "@tabler/icons";
 import { useAccountDetails } from "../../../../../lib/userContext";
 import { P, SubHeaders } from "../../Type";
 import { FixturaDivider } from "../../Divider";
+import { TemplateCard } from "./Components/TemplateCard";
 
 export const SelectATemplate = () => {
   const { account, ReRender } = useAccountDetails();
   const [userAccount, setuserAccount] = useState(account);
   const [loading, setLoading] = useState(true);
-  const theme = useMantineTheme();
- 
   const [DesignElement, CreateDesignElement] = useAssignDesignElement();
   const [GetElement, FetchElement] = useGETDesignElement();
 
@@ -51,7 +48,6 @@ export const SelectATemplate = () => {
         <Paper
           radius="md"
           shadow="md"
-         
           mb={20}
           p="xs"
           sx={(theme) => ({ backgroundColor: theme.white })}
@@ -64,9 +60,12 @@ export const SelectATemplate = () => {
 
   return (
     <>
-      <Space h={10}/>
+      <Space h={10} />
       <SubHeaders Copy={`Choose Your Theme`} />
-      <P>Customize Your Assets with Themed Layout Templates for a cohesive and professional look that complements your brand in the preview video.</P>
+      <P>
+        Customize Your Assets with Themed Layout Templates for a cohesive and
+        professional look that complements your brand in the preview video.
+      </P>
       <Paper
         radius="md"
         shadow="md"
@@ -74,7 +73,31 @@ export const SelectATemplate = () => {
         p="xs"
         sx={(theme) => ({ backgroundColor: theme.white })}
       >
-        <Table>
+        <SimpleGrid
+          breakpoints={[
+            { minWidth: "sm", cols: 2 },
+            { minWidth: "md", cols: 3 },
+          ]}
+        >
+          {Array.isArray(GetElement) &&
+            GetElement.map((item, i) => (
+              <TemplateCard
+                key={i}
+                template={item}
+                isSelected={userAccount.attributes.template.data.id === item.id}
+                onSelect={(selectedTemplate) =>
+                  StoreUSerChange(selectedTemplate)
+                }
+              />
+            ))}
+        </SimpleGrid>
+      </Paper>
+      <FixturaDivider />
+    </>
+  );
+};
+
+/* <Table>
           <tbody>
             {Array.isArray(GetElement) &&
               GetElement.map((item, i) => (
@@ -87,7 +110,9 @@ export const SelectATemplate = () => {
                           ? 6
                           : 2
                       }
-                     >{item.attributes.Name}</P>
+                    >
+                      {item.attributes.Name}
+                    </P>
                   </td>
 
                   <td style={{ textAlign: "right" }}>
@@ -105,9 +130,4 @@ export const SelectATemplate = () => {
                 </tr>
               ))}
           </tbody>
-        </Table>
-      </Paper>
-      <FixturaDivider />
-    </>
-  );
-};
+        </Table> */

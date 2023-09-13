@@ -21,10 +21,10 @@ export function DesignTabs(props) {
   return (
     <>
       <Grid>
-        <Grid.Col sm={12} md={5}>
+        <Grid.Col sm={12} md={12}>
           <RemotionPlayerContainer {...props} />
         </Grid.Col>
-        <Grid.Col sm={12} md={7}>
+        <Grid.Col sm={12} md={12}>
           <Tabs defaultValue="theme" variant="pills" color="cyan.5">
             <Tabs.List grow position="center">
               <Tabs.Tab value="theme" icon={<IconColumns3 size="1.3rem" />}>

@@ -15,6 +15,7 @@ export const useGETDesignElement = () => {
       pagination: {
         pageSize: 1000,
       },
+      populate:['Poster']
     }
   );
   const CreateDesignElement = async (OBJ) => {

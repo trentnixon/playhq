@@ -6,7 +6,7 @@ import {getContrastColor} from '../../../../utils/colors';
 
 export const PrincipalSponsor = ({fontFamily, FPS, DATA, theme}) => {
 	const getPrimarySponsor = (sponsorList) => {
-		console.log(sponsorList);
+		//console.log(sponsorList);
 		return sponsorList?.find((sponsor) => sponsor.isPrimary === true);
 	};
 	const PrincipalSponsorIs = getPrimarySponsor(DATA.VIDEOMETA.Club.Sponsors);
