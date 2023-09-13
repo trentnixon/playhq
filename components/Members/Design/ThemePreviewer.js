@@ -78,7 +78,7 @@ const generateJsonForThumbnail = (userAccount, assetType, initialData, metadata)
         break;
       case "Ladder":
         jsonData.DATA = DATA_Ladder;
-        jsonData.VIDEOMETA.Video.frameToDisplay=180;
+        jsonData.VIDEOMETA.Video.frameToDisplay=300;
         break;
       case "WeekendSingleGameResult":
         jsonData.DATA = DATA_WeekendSingleGameResult;

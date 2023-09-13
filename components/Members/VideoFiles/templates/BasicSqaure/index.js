@@ -26,7 +26,7 @@ export const Template_Basic_Sqaure = (props) => {
   const { TIMINGS } = DATA;
   const TEMPLATE = DATA.VIDEOMETA.Video.CompositionID;
   const THEME = DATA.VIDEOMETA.Video.Theme;
-
+  const FEDuration=400
   console.log("Template_Basic_Sqaure DATA", DATA);
 
   const TEMPLATES = {
@@ -36,7 +36,7 @@ export const Template_Basic_Sqaure = (props) => {
         theme={THEME}
         TYPE="BATTING"
         fontFamily={fontFamily}
-        FPS_MAIN={300}
+        FPS_MAIN={FEDuration}
       />
     ),
     Top5BowlingList: (
@@ -45,7 +45,7 @@ export const Template_Basic_Sqaure = (props) => {
         TYPE="BOWLING"
         theme={THEME}
         fontFamily={fontFamily}
-        FPS_MAIN={300}
+        FPS_MAIN={FEDuration}
       />
     ),
     WeekendResults: (
@@ -53,7 +53,7 @@ export const Template_Basic_Sqaure = (props) => {
         DATA={DATA}
         theme={THEME}
         fontFamily={fontFamily}
-        FPS_MAIN={300}
+        FPS_MAIN={FEDuration}
         FPS_SCORECARD={TIMINGS.FPS_SCORECARD}
       />
     ),
@@ -62,7 +62,7 @@ export const Template_Basic_Sqaure = (props) => {
         DATA={DATA}
         theme={THEME}
         fontFamily={fontFamily}
-        FPS_MAIN={300}
+        FPS_MAIN={FEDuration}
         FPS_SCORECARD={TIMINGS.FPS_SCORECARD}
       />
     ),
@@ -71,7 +71,7 @@ export const Template_Basic_Sqaure = (props) => {
         DATA={DATA}
         theme={THEME}
         fontFamily={fontFamily}
-        FPS_MAIN={300}
+        FPS_MAIN={FEDuration}
         FPS_SCORECARD={TIMINGS.FPS_SCORECARD}
       />
     ),
@@ -80,7 +80,7 @@ export const Template_Basic_Sqaure = (props) => {
         DATA={DATA}
         theme={THEME}
         fontFamily={fontFamily}
-        FPS_MAIN={300}
+        FPS_MAIN={FEDuration}
         FPS_LADDER={TIMINGS.FPS_LADDER}
       />
     ),
