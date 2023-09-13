@@ -22,7 +22,7 @@ import { WeekendSingleGameResult } from "./Compositions/WeekendSingleGameResult"
 export const Template_Basic_Rounded = (props) => {
   const { DATA } = props;
   const { fontFamily } = loadFont();
-  console.log("Template_Basic_Rounded DATA", props);
+  const FEDuration=400
   const { TIMINGS } = DATA;
   const TEMPLATE = DATA.VIDEOMETA.Video.CompositionID;
   const THEME = DATA.VIDEOMETA.Video.Theme;
@@ -34,7 +34,7 @@ export const Template_Basic_Rounded = (props) => {
         theme={THEME}
         TYPE="BATTING"
         fontFamily={fontFamily}
-        FPS_MAIN={300}
+        FPS_MAIN={FEDuration}
       />
     ),
     Top5BowlingList: (
@@ -43,7 +43,7 @@ export const Template_Basic_Rounded = (props) => {
         TYPE="BOWLING"
         theme={THEME}
         fontFamily={fontFamily}
-        FPS_MAIN={300}
+        FPS_MAIN={FEDuration}
       />
     ),
     WeekendResults: (
@@ -51,7 +51,7 @@ export const Template_Basic_Rounded = (props) => {
         DATA={DATA}
         theme={THEME}
         fontFamily={fontFamily}
-        FPS_MAIN={300}
+        FPS_MAIN={FEDuration}
         FPS_SCORECARD={TIMINGS.FPS_SCORECARD}
       />
     ),
@@ -60,7 +60,7 @@ export const Template_Basic_Rounded = (props) => {
         DATA={DATA}
         theme={THEME}
         fontFamily={fontFamily}
-        FPS_MAIN={300}
+        FPS_MAIN={FEDuration}
         FPS_SCORECARD={TIMINGS.FPS_SCORECARD}
       />
     ),
@@ -69,7 +69,7 @@ export const Template_Basic_Rounded = (props) => {
         DATA={DATA}
         theme={THEME}
         fontFamily={fontFamily}
-        FPS_MAIN={300}
+        FPS_MAIN={FEDuration}
         FPS_LADDER={TIMINGS.FPS_LADDER}
       />
     ),
@@ -78,7 +78,7 @@ export const Template_Basic_Rounded = (props) => {
         DATA={DATA}
         theme={THEME}
         fontFamily={fontFamily}
-        FPS_MAIN={300}
+        FPS_MAIN={FEDuration}
         FPS_SCORECARD={TIMINGS.FPS_SCORECARD}
       />
     ),
