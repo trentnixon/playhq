@@ -81,7 +81,7 @@ const generateJsonForThumbnail = (userAccount, assetType, metadata) => {
         break;
       case "WeekendSingleGameResult":
         jsonData.DATA = DATA_WeekendSingleGameResult;
-        jsonData.VIDEOMETA.Video.frameToDisplay=390;
+        jsonData.VIDEOMETA.Video.frameToDisplay=300;
         break;
       default:
         console.warn(`Unknown asset type: ${assetType}`);
