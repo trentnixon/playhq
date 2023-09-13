@@ -62,7 +62,7 @@ const generateJsonForThumbnail = (userAccount, assetType, initialData, metadata)
     switch (assetType) {
       case "UpComingFixtures":
         jsonData.DATA = DATA_UpComingFixtures;
-        jsonData.VIDEOMETA.Video.frameToDisplay=50;
+        jsonData.VIDEOMETA.Video.frameToDisplay=100;
         break;
       case "WeekendResults":
         jsonData.DATA = DATA_WeekendResults;
