@@ -58,7 +58,7 @@ const Design = () => {
           <P>
             Elevate Your Content with Personalized Templates and Audio for a
             unique representation of your club or association's style and brand
-            identity.
+            identity. 
           </P> 
         </PageCopyWrapper> 
         <Space h={20} />

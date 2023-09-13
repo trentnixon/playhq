@@ -22,7 +22,7 @@ export function DesignTabs(props) {
     <>
       <Grid>
         <Grid.Col sm={12} md={12}>
-          <RemotionPlayerContainer {...props} />
+          <RemotionPlayerContainer {...props} /> 
         </Grid.Col>
         <Grid.Col sm={12} md={12}>
           <Tabs defaultValue="theme" variant="pills" color="cyan.5">

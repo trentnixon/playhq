@@ -89,7 +89,7 @@ const generateJsonForThumbnail = (userAccount, assetType, initialData, metadata)
         break;
     }
   
-    return jsonData;
+    return jsonData; 
   };
   
   const AvailableTemplates = {
@@ -126,13 +126,13 @@ const RemotionPreview = ({ setIsPlaying, userAccount, Assets }) => {
 
   return (
     <div>
-          {/*   <button onClick={() => handleSelectAsset("UpComingFixtures")}>Select UpComingFixtures</button>
+            <button onClick={() => handleSelectAsset("UpComingFixtures")}>Select UpComingFixtures</button>
 <button onClick={() => handleSelectAsset("WeekendResults")}>Select WeekendResults</button>
 <button onClick={() => handleSelectAsset("Top5BattingList")}>Select Top5BattingList</button>
 <button onClick={() => handleSelectAsset("Top5BowlingList")}>Select Top5BowlingList</button>
 <button onClick={() => handleSelectAsset("Ladder")}>Select Ladder</button>
 <button onClick={() => handleSelectAsset("WeekendSingleGameResult")}>Select WeekendSingleGameResult</button>
- */}
+
       <Center>
         <Carousel
           maw={"100%"}
