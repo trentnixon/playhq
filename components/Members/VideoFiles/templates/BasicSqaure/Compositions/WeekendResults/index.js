@@ -13,7 +13,7 @@ export const WeekendResults = ({
   FPS_SCORECARD,
 }) => {
   return (
-    <Sequence durationInFrames={FPS_MAIN} layout="none">
+    <Sequence durationInFrames={FPS_MAIN} from={0}>
       <LogoClubTitleHeader
         THEME={theme}
         fontFamily={fontFamily}

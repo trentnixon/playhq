@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Center, useMantineTheme } from "@mantine/core";
+import { Center, Paper, useMantineTheme } from "@mantine/core";
 import { Carousel } from "@mantine/carousel";
 import { Thumbnail } from "@remotion/player";
 import { useMediaQuery } from "@mantine/hooks";
@@ -77,7 +77,7 @@ const generateJsonForThumbnail = (userAccount, assetType, metadata) => {
       break;
     case "Top5BowlingList":
       jsonData.DATA = DATA_Top5BowlingList;
-      jsonData.VIDEOMETA.Video.frameToDisplay = 360;
+      jsonData.VIDEOMETA.Video.frameToDisplay = 360; 
       break;
     case "Ladder":
       jsonData.DATA = DATA_Ladder;
@@ -104,7 +104,6 @@ const RemotionPreview = ({ setIsPlaying, userAccount, Assets }) => {
   const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
   const [dataReady, setDataReady] = useState(false);
   const [jsonData, setJsonData] = useState(null);
-  const [selectedAsset, setSelectedAsset] = useState(null); // New state to hold selected asset
 
   useEffect(() => {
     // Fetch unique asset objects filtered by "IMAGE"
@@ -121,34 +120,13 @@ const RemotionPreview = ({ setIsPlaying, userAccount, Assets }) => {
       setDataReady(true);
     }
   }, [userAccount, Assets]);
-  // Function to set the selected asset (to be used in some kind of UI)
-  /* const handleSelectAsset = (compositionID) => {
-    setSelectedAsset(compositionID);
-  }; */
 
   if (!dataReady) {
     return "Loading...";
   }
 
   return (
-    <div>
-     {/*  <button onClick={() => handleSelectAsset("UpComingFixtures")}>
-        Select UpComingFixtures
-      </button>
-      <button onClick={() => handleSelectAsset("WeekendResults")}>
-        Select WeekendResults
-      </button>
-      <button onClick={() => handleSelectAsset("Top5BattingList")}>
-        Select Top5BattingList
-      </button>
-      <button onClick={() => handleSelectAsset("Top5BowlingList")}>
-        Select Top5BowlingList
-      </button>
-      <button onClick={() => handleSelectAsset("Ladder")}>Select Ladder</button>
-      <button onClick={() => handleSelectAsset("WeekendSingleGameResult")}>
-        Select WeekendSingleGameResult
-      </button> */}
-
+    <Paper>
       <Center>
         <Carousel
           maw={"100%"}
@@ -161,13 +139,7 @@ const RemotionPreview = ({ setIsPlaying, userAccount, Assets }) => {
           slidesToScroll={mobile ? 1 : 2}
           withIndicators
         >
-          {jsonData
-            .filter(
-              (DATA) =>
-                !selectedAsset ||
-                DATA.VIDEOMETA.Video.CompositionID === selectedAsset
-            )
-            .map((DATA, i) => {
+          {jsonData.map((DATA, i) => {
               const assetType = DATA.VIDEOMETA.Video.CompositionID;
               const templateType = DATA.VIDEOMETA.Video.Template;
               return (
@@ -191,7 +163,7 @@ const RemotionPreview = ({ setIsPlaying, userAccount, Assets }) => {
             })}
         </Carousel>
       </Center>
-    </div>
+    </Paper>
   );
 };
 

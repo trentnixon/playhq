@@ -13,14 +13,14 @@ export const Fixtures = ({
   FPS_SCORECARD,
 }) => {
   return (
-    <Sequence durationInFrames={FPS_MAIN}>
+    <Sequence durationInFrames={FPS_MAIN} from={0}>
       <LogoClubTitleHeader
         THEME={theme}
         fontFamily={fontFamily}
         DATA={DATA.VIDEOMETA}
         FPS_MAIN={FPS_MAIN}
       />
-      <FixturesMain
+      <FixturesMain 
         THEME={theme}
         DATA={DATA.DATA}
         fontFamily={fontFamily}
