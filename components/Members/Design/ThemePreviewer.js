@@ -8,7 +8,7 @@ import {
   FindAccountLogo,
   getUniqueCompositionIDsAndFilterByIdentifier,
 } from "../../../lib/actions";
- 
+
 import DATA_Ladder from "../Remotion/utils/DATA_LADDERS.json";
 import DATA_UpComingFixtures from "../Remotion/utils/upcoming_v2.json";
 import DATA_WeekendResults from "../Remotion/utils/WeekendResultsV2.json";
@@ -18,19 +18,18 @@ import DATA_WeekendSingleGameResult from "../Remotion/utils/WeekendResultsV2.jso
 
 import { Template_Basic_Sqaure } from "../VideoFiles/templates/BasicSqaure/FrontEnd";
 import { Template_Basic_Rounded } from "../VideoFiles/templates/BasicRounded/frontend";
- 
+import { P } from "../Common/Type";
 
 const AvailableTemplates = {
   "Basic Sqaure": Template_Basic_Sqaure,
   "Basic Rounded": Template_Basic_Rounded,
 };
 
-
 // Function to generate the JSON data structure for the thumbnail
 const generateJsonForThumbnail = (userAccount, assetType, metadata) => {
   // Initialize the JSON structure with default values
   let jsonData = {
-    TIMINGS: metadata.TIMINGS, 
+    TIMINGS: metadata.TIMINGS,
     VIDEOMETA: {
       Video: {},
       Club: {},
@@ -83,7 +82,7 @@ const generateJsonForThumbnail = (userAccount, assetType, metadata) => {
       break;
     case "Top5BowlingList":
       jsonData.DATA = DATA_Top5BowlingList;
-      jsonData.VIDEOMETA.Video.frameToDisplay = 250; 
+      jsonData.VIDEOMETA.Video.frameToDisplay = 250;
       break;
     case "Ladder":
       jsonData.DATA = DATA_Ladder;
@@ -101,14 +100,13 @@ const generateJsonForThumbnail = (userAccount, assetType, metadata) => {
   return jsonData;
 };
 
-
 const RemotionPreview = ({ setIsPlaying, userAccount, Assets }) => {
   const theme = useMantineTheme();
   const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
   const [dataReady, setDataReady] = useState(false);
   const [jsonData, setJsonData] = useState(null);
 
-  useEffect(() => { 
+  useEffect(() => {
     // Fetch unique asset objects filtered by "IMAGE"
     const uniqueAssets = getUniqueCompositionIDsAndFilterByIdentifier(
       Assets,
@@ -130,21 +128,29 @@ const RemotionPreview = ({ setIsPlaying, userAccount, Assets }) => {
 
   return (
     <>
-
-    <Paper shadow="md" p="sm" withBorder>
-      <Center>
-        <Carousel
-          maw={"100%"}
-          slideSize="33.33333%"
-          breakpoints={[{ maxWidth: "xs", slideSize: "100%", slideGap: 0 }]}
-          slideGap="xs"
-          align="start"
-          loop
-          sx={{ flex: 1 }}
-          slidesToScroll={mobile ? 1 : 2}
-          withIndicators
-        >
-          {jsonData.map((DATA, i) => {
+      <P
+        Weight={900}
+        size="xs"
+        marginBottom={0}
+        textAlign={"right"}
+        fontStyle="normal"
+      >
+       Branded Preview
+      </P>
+      <Paper shadow="md" p="sm" withBorder>
+        <Center>
+          <Carousel
+            maw={"100%"}
+            slideSize="33.33333%"
+            breakpoints={[{ maxWidth: "xs", slideSize: "100%", slideGap: 0 }]}
+            slideGap="xs"
+            align="start"
+            loop
+            sx={{ flex: 1 }}
+            slidesToScroll={mobile ? 1 : 2}
+            withIndicators
+          >
+            {jsonData.map((DATA, i) => {
               const assetType = DATA.VIDEOMETA.Video.CompositionID;
               const templateType = DATA.VIDEOMETA.Video.Template;
               return (
@@ -166,12 +172,11 @@ const RemotionPreview = ({ setIsPlaying, userAccount, Assets }) => {
                 </Carousel.Slide>
               );
             })}
-        </Carousel>
-      </Center>
-    </Paper>
+          </Carousel>
+        </Center>
+      </Paper>
     </>
   );
 };
 
 export default RemotionPreview;
-

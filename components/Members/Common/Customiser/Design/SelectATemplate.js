@@ -96,38 +96,3 @@ export const SelectATemplate = () => {
     </>
   );
 };
-
-/* <Table>
-          <tbody>
-            {Array.isArray(GetElement) &&
-              GetElement.map((item, i) => (
-                <tr key={i} style={{ borderRadius: "10px", padding: "10px" }}>
-                  <td>
-                    <P
-                      marginBottom={0}
-                      color={
-                        userAccount.attributes.template.data.id === item.id
-                          ? 6
-                          : 2
-                      }
-                    >
-                      {item.attributes.Name}
-                    </P>
-                  </td>
-
-                  <td style={{ textAlign: "right" }}>
-                    {userAccount.attributes.template.data.id === item.id ? (
-                      <IconCircleCheck color={theme.colors.green[5]} />
-                    ) : (
-                      <BTN_ONCLICK
-                        HANDLE={() => {
-                          StoreUSerChange(item);
-                        }}
-                        LABEL={`Select`}
-                      />
-                    )}
-                  </td>
-                </tr>
-              ))}
-          </tbody>
-        </Table> */
