@@ -30,7 +30,7 @@ const AvailableTemplates = {
 const generateJsonForThumbnail = (userAccount, assetType, metadata) => {
   // Initialize the JSON structure with default values
   let jsonData = {
-    TIMINGS: metadata.TIMINGS,
+    TIMINGS: metadata.TIMINGS, 
     VIDEOMETA: {
       Video: {},
       Club: {},
@@ -129,7 +129,9 @@ const RemotionPreview = ({ setIsPlaying, userAccount, Assets }) => {
   }
 
   return (
-    <Paper>
+    <>
+
+    <Paper shadow="md" p="sm" withBorder>
       <Center>
         <Carousel
           maw={"100%"}
@@ -167,7 +169,9 @@ const RemotionPreview = ({ setIsPlaying, userAccount, Assets }) => {
         </Carousel>
       </Center>
     </Paper>
+    </>
   );
 };
 
 export default RemotionPreview;
+

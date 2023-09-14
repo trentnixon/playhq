@@ -12,7 +12,6 @@ const HeaderContainerStyles = styled.div`
 	padding: 0 10px;
 	background-color: ${(props) => setOpacity(darkenColor(props.THEME.secondary),0.7) };
 `;
-
 const HeaderCopy = styled.p`
 	font-family: ${(props) => props.fontFamily};
 	font-style: normal;
@@ -21,22 +20,24 @@ const HeaderCopy = styled.p`
 	letter-spacing: -0.015em;
 	text-transform: uppercase;
 	width: 100%;
+	font-size: 1.3em;
+	line-height: 1.2em;
+	margin: 0;
 `;
-
 const GameType = styled(HeaderCopy)`
-	font-size: 1.4em;
+
 	width: 15%;
 	font-weight: 900;
 `;
 
 const Ground = styled(HeaderCopy)`
-	font-size: 1.4em;
+
 	text-align: center;
 	width: 60%;
 `;
 
 const Round = styled(HeaderCopy)`
-	font-size: 1.4em;
+	
 	width: 20%;
 	text-align: right;
 	
