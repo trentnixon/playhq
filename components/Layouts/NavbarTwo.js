@@ -9,7 +9,8 @@ import {
   IconCheck,
   IconColorPicker,
   IconDownload,
-  IconLogout2, 
+  IconLogout2,
+  IconPhotoPlus,
   IconTrack,
 } from "@tabler/icons-react";
 import { Group, useMantineTheme } from "@mantine/core";
@@ -35,11 +36,10 @@ const NavbarTwo = () => {
     });
   });
 
-
-useEffect(()=>{
-  console.log("NavbarTwo User:", user);
-  console.log("NavbarTwo Loading:", loading);
-},[])
+  useEffect(() => {
+    console.log("NavbarTwo User:", user);
+    console.log("NavbarTwo Loading:", loading);
+  }, []);
 
   const classOne = menu
     ? "collapse navbar-collapse mean-menu"
@@ -87,8 +87,7 @@ useEffect(()=>{
             <div className={classOne} id="navbarSupportedContent">
               <ul className="navbar-nav">
                 {user && <MembersNavItem user={user} setMenu={setMenu} />}
-                {!user && <VisitorMenu user={user} setMenu={setMenu}/>}
-                
+                {!user && <VisitorMenu user={user} setMenu={setMenu} />}
               </ul>
             </div>
           </div>
@@ -100,59 +99,57 @@ useEffect(()=>{
 
 export default NavbarTwo;
 
-
-const VisitorMenu = ({setMenu})=>{
-    return(
-      <>
+const VisitorMenu = ({ setMenu }) => {
+  return (
+    <>
       <li className="nav-item">
-                  <Link href="/">
-                    <a className="nav-link" onClick={() => setMenu(true)}>
-                      Home
-                    </a>
-                  </Link>
-                </li>
+        <Link href="/">
+          <a className="nav-link" onClick={() => setMenu(true)}>
+            Home
+          </a>
+        </Link>
+      </li>
 
-                <li className="nav-item">
-                  <Link href="/portfolio" activeClassName="active">
-                    <a className="nav-link" onClick={() => setMenu(true)}>
-                      Examples
-                    </a>
-                  </Link>
-                </li>
+      <li className="nav-item">
+        <Link href="/portfolio" activeClassName="active">
+          <a className="nav-link" onClick={() => setMenu(true)}>
+            Examples
+          </a>
+        </Link>
+      </li>
 
-                <li className="nav-item">
-                  <Link href="/about" activeClassName="active">
-                    <a className="nav-link" onClick={() => setMenu(true)}>
-                      About
-                    </a>
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link href="/resources" activeClassName="active">
-                    <a className="nav-link" onClick={() => setMenu(true)}>
-                      Resources
-                    </a>
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link href="/faq" activeClassName="active">
-                    <a className="nav-link" onClick={() => setMenu(true)}>
-                      FAQ
-                    </a>
-                  </Link>
-                </li>
+      <li className="nav-item">
+        <Link href="/about" activeClassName="active">
+          <a className="nav-link" onClick={() => setMenu(true)}>
+            About
+          </a>
+        </Link>
+      </li>
+      <li className="nav-item">
+        <Link href="/resources" activeClassName="active">
+          <a className="nav-link" onClick={() => setMenu(true)}>
+            Resources
+          </a>
+        </Link>
+      </li>
+      <li className="nav-item">
+        <Link href="/faq" activeClassName="active">
+          <a className="nav-link" onClick={() => setMenu(true)}>
+            FAQ
+          </a>
+        </Link>
+      </li>
 
-                <li className="nav-item">
-                  <Link href="/contact" activeClassName="active">
-                    <a className="nav-link" onClick={() => setMenu(true)}>
-                      Contact
-                    </a>
-                  </Link>
-                </li>
-      </>
-    )
-}
-
+      <li className="nav-item">
+        <Link href="/contact" activeClassName="active">
+          <a className="nav-link" onClick={() => setMenu(true)}>
+            Contact
+          </a>
+        </Link>
+      </li>
+    </>
+  );
+};
 
 const NavItem = ({ href, title, IconComponent, setMenu }) => {
   const theme = useMantineTheme();
@@ -206,14 +203,16 @@ const MembersNavItem = ({ user, setMenu }) => {
       title: "Downloads",
       IconComponent: IconDownload,
     },
-    { href: `${PATH}/tracking`, title: "Tracking", IconComponent: IconTrack },
-    { href: `${PATH}/brand`, title: "Your Brand", IconComponent: IconBadgeTm },
     {
       href: `${PATH}/design`,
-      title: "Asset Design",
+      title: "Templates",
       IconComponent: IconColorPicker,
     },
+    { href: `${PATH}/brand`, title: "Brand", IconComponent: IconBadgeTm },
+    { href: `${PATH}/gallery`, title: "Media Gallery", IconComponent: IconPhotoPlus },
     { href: `${PATH}/sponsors`, title: "Sponsors", IconComponent: IconCheck },
+
+    { href: `${PATH}/tracking`, title: "Tracking", IconComponent: IconTrack },
     {
       href: `${PATH}/account`,
       title: "Account",
@@ -226,14 +225,15 @@ const MembersNavItem = ({ user, setMenu }) => {
       href: `${PATH}/setup`,
       title: "Setup Account",
       IconComponent: IconBrandStripe,
-    }
+    },
   ];
-
 
   const navItemsToRender =
     account?.attributes?.hasCompletedStartSequence == false
       ? navItemsNoSetup
-      : account?.attributes?.hasCompletedStartSequence === undefined ? [] : navItems;
+      : account?.attributes?.hasCompletedStartSequence === undefined
+      ? []
+      : navItems;
   return (
     <li className="nav-item">
       <Link href="#">
@@ -246,12 +246,12 @@ const MembersNavItem = ({ user, setMenu }) => {
         {navItemsToRender.map((item, index) => (
           <NavItem key={index} {...item} setMenu={setMenu} />
         ))}
-        {hasSetup  && (
-          <li className="nav-item" style={{ cursor: 'pointer'}}>
+        {hasSetup && (
+          <li className="nav-item" style={{ cursor: "pointer" }}>
             <Group position="apart" px={0}>
-              <a className="nav-link"  onClick={handleLogout}>
+              <a className="nav-link" onClick={handleLogout}>
                 Log Out
-              </a> 
+              </a>
               <IconLogout2
                 size={"1.5em"}
                 stroke={1}

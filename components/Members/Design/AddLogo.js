@@ -21,7 +21,7 @@ import { BTN_ONCLICK } from "../Common/utils/Buttons";
 import { useSetLogo } from "../../../Hooks/useOrganisationLogo";
 import { IconUpload } from "@tabler/icons";
 import { useMediaQuery } from "@mantine/hooks";
-import UploadSponsorsLogos from "../Sponsors/Form/ImageUploader";
+import StrapiImageUploader from "../Sponsors/Form/ImageUploader";
 
 export const AccountLogo = () => {
   const theme = useMantineTheme();
@@ -80,7 +80,7 @@ export const AccountLogo = () => {
         </Group>
 
         {uploadLogo && (
-          <UploadSponsorsLogos
+          <StrapiImageUploader
             setLogo={setLogo}
             setLogoPath={setLogoPath}
             SAVEDLOGO={false}

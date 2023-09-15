@@ -18,7 +18,7 @@ import { useEffect, useState } from "react";
 import { BTN_ONCLICK } from "../../Common/utils/Buttons";
 import { P, SubHeaders } from "../../Common/Type";
 
-export function UploadSponsorsLogos({ setLogo, setLogoPath, SAVEDLOGO }) {
+export function StrapiImageUploader({ setLogo, setLogoPath, SAVEDLOGO }) {
   const theme = useMantineTheme();
   // useSTate
   const [ProcessingImage, setProcessingImage] = useState(false);
@@ -50,7 +50,7 @@ export function UploadSponsorsLogos({ setLogo, setLogoPath, SAVEDLOGO }) {
         textAlign: "center",
       })}
     >
-      <Dropzone
+      <Dropzone 
         onDrop={(files) => handleFileUpload(files)}
         onReject={(files) => {
           setRejected(files);
@@ -72,7 +72,7 @@ export function UploadSponsorsLogos({ setLogo, setLogoPath, SAVEDLOGO }) {
 
           <div>
             <Text size="xl" inline>
-              Click to select files
+              Select a file
             </Text>
           </div>
         </Group>
@@ -91,7 +91,7 @@ export function UploadSponsorsLogos({ setLogo, setLogoPath, SAVEDLOGO }) {
     </Box>
   );
 }
-export default UploadSponsorsLogos;
+export default StrapiImageUploader;
 const RejectedFiles = ({ rejected, setRejected }) => {
   console.log(rejected[0].errors);
   return (
