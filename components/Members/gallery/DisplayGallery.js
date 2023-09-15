@@ -1,29 +1,53 @@
-import { Group, SimpleGrid } from "@mantine/core";
+import { Group, Paper, SimpleGrid } from "@mantine/core";
 import { GalleryItemCard } from "./GalleryCard";
 import { P } from "../Common/Type";
 
 export const DisplayGallery = ({ DATA }) => {
   return (
-    <div>
-        <Group position="apart">
+    <>
+      <Group position="apart">
         <P Weight={900}>Gallery</P>
         <P Weight={200}>Images: {DATA.length}</P>
-        </Group>
-     
-      <SimpleGrid
-        breakpoints={[
-          { minWidth: "sm", cols: 2 },
-          { minWidth: "md", cols: 3 },
-          { minWidth: "xl", cols: 4 },
-        ]}
-      >
-        {DATA.map((item, index) => (
-          <GalleryItemCard key={index} item={item} />
-        ))}
-      </SimpleGrid>
-    </div>
+      </Group>
+
+      {DATA.length === 0 ? (
+        <Paper shadow="xs" py="md" px={'15%'} withBorder>
+          <P textAlign="center" size={"xl"} Weight={900}>
+            Upload your Media Items!
+          </P>
+          <P textAlign="center">
+            Fixtura's Media Gallery, where you can upload and manage images that
+            represent your club or association. Whether it's photos of players,
+            teams, grounds, or clubhouses, your uploads serve as the visual
+            backbone for your digital assets.
+          </P>
+          <P textAlign="center">
+            When Fixtura creates an asset for you, the system intelligently
+            selects an image from this gallery—either at random or based on tags
+            you assign. This is your opportunity to infuse your club's unique
+            personality into every asset
+          </P>
+          <P textAlign="center">
+            Click "Upload Item" to begin.
+          </P>
+        </Paper>
+      ) : (
+        <SimpleGrid
+          breakpoints={[
+            { minWidth: "sm", cols: 2 },
+            { minWidth: "md", cols: 3 },
+            { minWidth: "xl", cols: 4 },
+          ]}
+        >
+          {DATA.map((item, index) => (
+            <GalleryItemCard key={index} item={item} />
+          ))}
+        </SimpleGrid>
+      )}
+    </>
   );
 };
+
 /* {
     "id": 39,
     "attributes": {

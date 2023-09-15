@@ -65,6 +65,7 @@ export function MediaGalleryFileUpload({ ITEMCOUNT }) {
   const saveDetails = (title, isActive, tags) => {
     if (!title || !tags || tags.length === 0 || !GalleryItemID) {
       // Handle this error. Maybe set an error state and display it
+      router.replace(router.asPath);
       return;
     }
     const updateData = {
