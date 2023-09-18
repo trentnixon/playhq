@@ -67,7 +67,7 @@ const AdminSideBar = () => {
   return (
     <Container fluid mx={0} p={0}>
       <UserDetailsCard user={account} />
-    </Container>
+    </Container> 
   );
 };
 

@@ -13,7 +13,7 @@ import { IconSettings } from "@tabler/icons-react";
 import { SetUpItemsRequired } from "../../components/setup/SetUpItemsRequired";
  
 const SETUP = () => {
-  const router = useRouter(); 
+  const router = useRouter();  
   const { user } = useUser();
   const { account, ReRender } = useAccountDetails();
 

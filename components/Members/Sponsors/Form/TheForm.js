@@ -7,7 +7,7 @@ import {
   useCreateSponsor,
   useUpdateSponsor,
 } from "../../../../Hooks/useSponsorships";
-import { UploadSponsorsLogos } from "./ImageUploader";
+import { StrapiImageUploader } from "./ImageUploader";
 
 import { useAccountDetails } from "../../../../lib/userContext";
 import { SponsorCreatedConfirm } from "../Components/SponsorCreatedConfirm";
@@ -15,7 +15,7 @@ import { DisplaySponsorsLogo } from "./DisplaySponsorsLogo";
 import { InputFormContainer } from "./InputFormContainer";
 
 export const CreateaSponsorForm = ({ OBJ }) => {
-  console.log("OBJ", OBJ);
+  //console.log("OBJ", OBJ);
   // VARS
   const theme = useMantineTheme();
   // useState
@@ -191,9 +191,9 @@ export const CreateaSponsorForm = ({ OBJ }) => {
                       setLogo={setLogo}
                     />
                   </Box>
-                </>
+                </> 
               ) : (
-                <UploadSponsorsLogos
+                <StrapiImageUploader
                   setLogo={setLogo}
                   setLogoPath={setLogoPath}
                   SAVEDLOGO={FORMMETA.LogoPath}

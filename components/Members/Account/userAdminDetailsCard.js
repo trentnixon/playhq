@@ -8,7 +8,7 @@ import {
   IconClock,
   IconClockPause,
 } from "@tabler/icons";
-import { IconCheckbox } from "@tabler/icons-react";
+
 import { useMediaQuery } from "@mantine/hooks";
 
 export function UserDetailsCard({ user }) {

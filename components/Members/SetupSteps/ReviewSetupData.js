@@ -115,7 +115,7 @@ export const ReviewSetupData = ({ DATA }) => {
   useEffect(() => {
     if (AccountTrue) {
       setAccountFromLocalCookie(DATA.id);
-      router.push("/members/account/");
+      router.push("/members/");
     }
   }, [AccountTrue, ReRender, router, setAccountFromLocalCookie]);
 

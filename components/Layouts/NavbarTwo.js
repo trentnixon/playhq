@@ -9,6 +9,7 @@ import {
   IconCheck,
   IconColorPicker,
   IconDownload,
+  IconLayoutDashboard,
   IconLogout2,
   IconPhotoPlus,
   IconTrack,
@@ -199,6 +200,10 @@ const MembersNavItem = ({ user, setMenu }) => {
 
   const navItems = [
     {
+      href: `${PATH}/`,
+      title: "Dashboard",
+      IconComponent: IconLayoutDashboard,
+    },{
       href: `${PATH}/orderHistory`,
       title: "Downloads",
       IconComponent: IconDownload,
