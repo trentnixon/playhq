@@ -39,7 +39,17 @@ export const DashBoardTheme = ({ IconComponent, schedulerID }) => {
   }
 
   if (!stats.totalRenders) {
-    return <div>No data available</div>;
+    return <Paper
+    radius="md"
+    withBorder
+    shadow="md"
+    className={classes.card}
+    mt={`calc(${ICON_SIZE} / 3)`}
+  >
+    <Text c="dimmed" ta="center" fz="sm">
+      No data available
+    </Text>
+  </Paper>;
   }
   return (
     <Paper

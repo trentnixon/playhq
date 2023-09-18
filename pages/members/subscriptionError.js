@@ -73,7 +73,7 @@ const StripeError = () => {
           <Center>
             <BTN_TOINTERALLINK
               LABEL="Go To Account"
-              URL="/members/account/"
+              URL="/members/"
               THEME="cta"
             />
           </Center>

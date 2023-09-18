@@ -40,7 +40,19 @@ export const DashBoardRenders = ({ IconComponent, schedulerID, Theme }) => {
   }
 
   if (!stats.totalRenders) {
-    return <div>No data available</div>;
+    return (
+      <Paper
+        radius="md"
+        withBorder
+        shadow="md"
+        className={classes.card}
+        mt={`calc(${ICON_SIZE} / 3)`}
+      >
+        <Text c="dimmed" ta="center" fz="sm">
+          No data available
+        </Text>
+      </Paper>
+    );
   }
   return (
     <Paper
@@ -111,7 +123,7 @@ const calculateStats = (schedulerData) => {
     (render) => render.attributes.sendEmail
   ).length;
 
-/*   const latestRender = schedulerData.renders.data.reduce((latest, current) => {
+  /*   const latestRender = schedulerData.renders.data.reduce((latest, current) => {
     return new Date(latest.attributes.createdAt) >
       new Date(current.attributes.createdAt)
       ? latest
@@ -130,7 +142,7 @@ const calculateStats = (schedulerData) => {
     completedRenders,
     processingRenders,
     emailSent,
-   /*  latestRender: latestRender?.attributes.Name,
+    /*  latestRender: latestRender?.attributes.Name,
     oldestRender: oldestRender?.attributes.Name, */
     DeliveryDay: schedulerData.days_of_the_week.data.attributes.Name,
   };
