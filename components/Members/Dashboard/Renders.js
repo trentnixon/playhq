@@ -111,7 +111,7 @@ const calculateStats = (schedulerData) => {
     (render) => render.attributes.sendEmail
   ).length;
 
-  const latestRender = schedulerData.renders.data.reduce((latest, current) => {
+/*   const latestRender = schedulerData.renders.data.reduce((latest, current) => {
     return new Date(latest.attributes.createdAt) >
       new Date(current.attributes.createdAt)
       ? latest
@@ -123,15 +123,15 @@ const calculateStats = (schedulerData) => {
       new Date(current.attributes.createdAt)
       ? oldest
       : current;
-  }, schedulerData.renders.data[0]);
+  }, schedulerData.renders.data[0]); */
 
   return {
     totalRenders,
     completedRenders,
     processingRenders,
     emailSent,
-    latestRender: latestRender.attributes.Name,
-    oldestRender: oldestRender.attributes.Name,
+   /*  latestRender: latestRender?.attributes.Name,
+    oldestRender: oldestRender?.attributes.Name, */
     DeliveryDay: schedulerData.days_of_the_week.data.attributes.Name,
   };
 };
