@@ -75,7 +75,7 @@ export const DashBoardRenders = ({ IconComponent, schedulerID, Theme }) => {
         {stats.totalRenders}
       </Text>
       <Text c="dimmed" ta="center" fz="sm">
-        Downloads
+        Bundles
       </Text>
 
       <Group position="apart" mt="xs">
@@ -99,7 +99,7 @@ export const DashBoardRenders = ({ IconComponent, schedulerID, Theme }) => {
         </Text>
       </Group>
       <Group position="right" mt="md">
-        <BTN_TOINTERALLINK LABEL={"View"} URL={"members/orderHistory/"} />
+        <BTN_TOINTERALLINK LABEL={"View Bundles"} URL={"members/orderHistory/"} />
       </Group>
     </Paper>
   );

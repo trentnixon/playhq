@@ -36,7 +36,7 @@ const ZeroItemsState = ({ classes, Theme }) => (
       Upload items to add your club's unique personality to every asset.
     </Text>
     <Group position="center" mt="md">
-      <BTN_TOINTERALLINK LABEL={"Upload Now"} URL={"members/gallery/"} />
+      <BTN_TOINTERALLINK LABEL={"Upload"} URL={"members/gallery/"} />
     </Group>
   </Paper>
 );

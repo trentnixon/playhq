@@ -205,7 +205,7 @@ const MembersNavItem = ({ user, setMenu }) => {
       IconComponent: IconLayoutDashboard,
     },{
       href: `${PATH}/orderHistory`,
-      title: "Downloads",
+      title: "Bundles",
       IconComponent: IconDownload,
     },
     {

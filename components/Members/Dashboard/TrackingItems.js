@@ -128,7 +128,7 @@ export const DashBoardTrackingItems = ({ IconComponent, AccountID, Theme }) => {
       </Text>
 
       <Group position="center" mt="md">
-        <BTN_TOINTERALLINK LABEL={"View More"} URL={"members/tracking/"} />
+        <BTN_TOINTERALLINK LABEL={"View Games"} URL={"members/tracking/"} />
       </Group>
     </Paper>
   );

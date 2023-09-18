@@ -84,7 +84,7 @@ const ZeroItemsState = ({ classes, Theme }) => (
       Add sponsors to boost your club's visibility and funding.
     </Text>
     <Group position="center" mt="md">
-      <BTN_TOINTERALLINK LABEL={"Add Now"} URL={"members/sponsors/"} />
+      <BTN_TOINTERALLINK LABEL={"Manage"} URL={"members/sponsors/"} />
     </Group>
   </Paper>
 );
