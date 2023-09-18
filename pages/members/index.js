@@ -22,9 +22,12 @@ import { DashBoardGalleryItems } from "../../components/Members/Dashboard/Galler
 import { DashBoardSponsoredItems } from "../../components/Members/Dashboard/SponsorItems";
 import { DashBoardTrackingItems } from "../../components/Members/Dashboard/TrackingItems";
 import { DashBoardSubscriptionItems } from "../../components/Members/Dashboard/SubscriptionItems";
+import SetupCheck from "../../components/Members/Account/HOC/SetupCheck";
+import { useUser } from "../../lib/authContext";
 
 const DashBoard = () => {
   const { account } = useAccountDetails();
+  const { user, loading } = useUser(); 
   const [progress, setProgress] = useState(0); // New state variable
 
   if (!account || !account.attributes) {
@@ -43,7 +46,7 @@ const DashBoard = () => {
       title: "Subscriptions",
       component: DashBoardSubscriptionItems,
       icon: IconCurrencyDollar,
-      extraProps: { user: account }, 
+      extraProps: { user: account },
     },
     {
       title: "Downloads",
@@ -82,43 +85,48 @@ const DashBoard = () => {
   ];
 
   return (
-    <LoadingStateWrapper conditions={[]}>
-      <MembersWrapper>
-        <PageTitle Copy="DashBoard" ICON={<IconLayoutDashboard size={40} />} />
-        <SubHeaders Copy={`Hi ${account.attributes.FirstName}`} />
-        <PageCopyWrapper>
-          <P>
-            Manage subscriptions, downloads, sponsors, tracking, gallery, and
-            themes—all from one place. Click "View" on each card to explore
-            more.
-          </P>
-        </PageCopyWrapper>
-        <Space h={20} />
+    <MembersWrapper>
+      <SetupCheck>
+      <LoadingStateWrapper conditions={[user, account]}>
+          <PageTitle
+            Copy="DashBoard"
+            ICON={<IconLayoutDashboard size={40} />}
+          />
+          <SubHeaders Copy={`Hi ${account.attributes.FirstName}`} />
+          <PageCopyWrapper>
+            <P>
+              Manage subscriptions, downloads, sponsors, tracking, gallery, and
+              themes—all from one place. Click "View" on each card to explore
+              more.
+            </P>
+          </PageCopyWrapper>
+          <Space h={20} />
 
-        <SimpleGrid
-          cols={3}
-          spacing="lg"
-          breakpoints={[
-            { maxWidth: "62rem", cols: 3, spacing: "md" },
-            { maxWidth: "48rem", cols: 2, spacing: "sm" },
-            { maxWidth: "36rem", cols: 1, spacing: "sm" },
-          ]}
-        >
-          {dashboardConfig.map((item, index) => {
-            const Component = item.component;
-            return (
-              <div key={index}>
-                <Component
-                  IconComponent={item.icon}
-                  {...commonProps}
-                  {...item.extraProps}
-                />
-              </div>
-            );
-          })}
-        </SimpleGrid>
-      </MembersWrapper>
-    </LoadingStateWrapper>
+          <SimpleGrid
+            cols={3}
+            spacing="lg"
+            breakpoints={[
+              { maxWidth: "62rem", cols: 3, spacing: "md" },
+              { maxWidth: "48rem", cols: 2, spacing: "sm" },
+              { maxWidth: "36rem", cols: 1, spacing: "sm" },
+            ]}
+          >
+            {dashboardConfig.map((item, index) => {
+              const Component = item.component;
+              return (
+                <div key={index}>
+                  <Component
+                    IconComponent={item.icon}
+                    {...commonProps}
+                    {...item.extraProps}
+                  />
+                </div>
+              );
+            })}
+          </SimpleGrid>
+        </LoadingStateWrapper>
+      </SetupCheck>
+    </MembersWrapper>
   );
 };
 

@@ -52,7 +52,7 @@ const Account = ({fixtureDateRange}) => {
   }, [account]);
 
   return ( 
-    <MembersWrapper>
+    <MembersWrapper> 
       <SetupCheck>
         <LoadingStateWrapper conditions={[user, userAccount]}>
           <UserSubscription />
