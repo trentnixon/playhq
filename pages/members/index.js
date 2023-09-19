@@ -30,7 +30,17 @@ const DashBoard = () => {
   const [progress, setProgress] = useState(0); // New state variable
 
   if (!account || !account.attributes) {
-    return <div>Error: Account details not available</div>;
+    return (
+      <MembersWrapper>
+        <PageTitle
+          Copy="Fetching Details"
+          ICON={<IconLayoutDashboard size={40} />}
+        />
+        <PageCopyWrapper>
+          <P>Please wait whilst we build your dashboard</P>
+        </PageCopyWrapper>
+      </MembersWrapper>
+    );
   }
 
   const commonProps = {
