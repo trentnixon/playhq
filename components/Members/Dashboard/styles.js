@@ -5,6 +5,7 @@ export const useStyles = createStyles((theme) => ({
     position: 'relative',
     overflow: 'visible',
     padding: theme.spacing.xl,
+    height: '100%',
     paddingTop: `calc(${theme.spacing.xl} * 1.5 + ${rem(60)} / 3)`,
   },
 

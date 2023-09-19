@@ -23,6 +23,7 @@ import { DashBoardTrackingItems } from "../../components/Members/Dashboard/Track
 import { DashBoardSubscriptionItems } from "../../components/Members/Dashboard/SubscriptionItems";
 import SetupCheck from "../../components/Members/Account/HOC/SetupCheck";
 import { useUser } from "../../lib/authContext";
+import { DashBoardAssets } from "../../components/Members/Dashboard/Assets";
 
 const DashBoard = () => {
   const { account } = useAccountDetails();
@@ -80,13 +81,16 @@ const DashBoard = () => {
       component: DashBoardSponsoredItems,
       icon: IconCurrencyDollar,
       extraProps: { sponsors: account.attributes.sponsors.data },
-    },
-    {
+    },{
       title: "Tracking",
       component: DashBoardTrackingItems,
       icon: IconCurrencyDollar,
       extraProps: {},
     },
+  ];
+
+  const brandingConfig = [
+    
     {
       title: "Gallery",
       component: DashBoardGalleryItems,
@@ -103,6 +107,18 @@ const DashBoard = () => {
         theme: account.attributes.theme.data.attributes.Theme,
       },
     },
+    {
+      title: "Assets",
+      component: DashBoardAssets,
+      icon: IconBrush,
+      extraProps: {
+        template: account.attributes.template.data.attributes,
+        audio_option: account.attributes.audio_option.data.attributes,
+        theme: account.attributes.theme.data.attributes.Theme,
+      },
+    },
+
+    
   ];
 
   return (
@@ -110,10 +126,10 @@ const DashBoard = () => {
       <SetupCheck>
         <LoadingStateWrapper conditions={[user, account]}>
           <PageTitle
-            Copy="DashBoard"
+            Copy={`Hi ${account.attributes.FirstName}`}
             ICON={<IconLayoutDashboard size={40} />}
           />
-          <SubHeaders Copy={`Hi ${account.attributes.FirstName}`} />
+          <SubHeaders Copy="DashBoard" />
           <PageCopyWrapper>
             <P>
               Manage subscriptions, downloads, sponsors, tracking, gallery, and
@@ -122,7 +138,31 @@ const DashBoard = () => {
             </P>
           </PageCopyWrapper>
           <Space h={20} />
-
+          <SubHeaders Copy="Account" />
+          <SimpleGrid
+            cols={4}
+            spacing="xs"
+            breakpoints={[
+              { maxWidth: "62rem", cols: 3, spacing: "md" },
+              { maxWidth: "48rem", cols: 2, spacing: "sm" },
+              { maxWidth: "36rem", cols: 1, spacing: "sm" },
+            ]}
+          >
+            {dashboardConfig.map((item, index) => {
+              const Component = item.component;
+              return (
+                <div key={index}>
+                  <Component
+                    IconComponent={item.icon}
+                    {...commonProps}
+                    {...item.extraProps}
+                  />
+                </div>
+              );
+            })}
+          </SimpleGrid>
+          <Space h={50} />
+          <SubHeaders Copy="Branding" />
           <SimpleGrid
             cols={3}
             spacing="lg"
@@ -132,7 +172,7 @@ const DashBoard = () => {
               { maxWidth: "36rem", cols: 1, spacing: "sm" },
             ]}
           >
-            {dashboardConfig.map((item, index) => {
+            {brandingConfig.map((item, index) => {
               const Component = item.component;
               return (
                 <div key={index}>

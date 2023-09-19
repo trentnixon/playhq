@@ -18,7 +18,7 @@ import { IconInfoOctagon } from "@tabler/icons-react";
 
 const ICON_SIZE = rem(60);
 
-export const DashBoardTheme = ({
+export const DashBoardAssets = ({
   IconComponent,
   template = {},
   theme = {},
@@ -53,48 +53,46 @@ export const DashBoardTheme = ({
         &nbsp;
       </Text>
       <Text c="dimmed" ta="center" fz="sm">
-        Theming
+        Assets
       </Text>
 
       <Group position="apart" mt="xs">
+        <Text fz="sm">Template</Text>
         <Text fz="sm" color="dimmed">
-          Theme
+          {templateName}
         </Text>
+        {isDefaultTemplate && (
+          <Tooltip
+            withArrow
+            color="cyan.5"
+            label="This is a default setting. Click 'Change' to customize it."
+          >
+            <ActionIcon color="yellow.9">
+              <IconInfoOctagon size={"1.1rem"} />
+            </ActionIcon>
+          </Tooltip>
+        )}
       </Group>
-      <Box
-        sx={(theme) => ({
-          backgroundColor: theme.colors.gray[2],
 
-          padding: theme.spacing.xs,
-          borderRadius: theme.radius.md,
-          cursor: "pointer",
-
-          "&:hover": {
-            backgroundColor:
-              theme.colorScheme === "dark"
-                ? theme.colors.dark[5]
-                : theme.colors.gray[1],
-          },
-        })}
-      >
-        <Progress
-          size="xl"
-          sections={[
-            {
-              value: 50,
-              label: theme.primary,
-              color: theme.primary,
-            },
-            {
-              value: 50,
-              label: theme.secondary,
-              color: theme.secondary,
-            },
-          ]}
-        />
-      </Box>
+      <Group position="apart" mt="xs">
+        <Text fz="sm">Audio Option</Text>
+        <Text fz="sm" color="dimmed">
+          {audioOptionName}
+        </Text>
+        {isDefaultAudioOption && (
+          <Tooltip
+            withArrow
+            color="cyan.5"
+            label="This is a default setting. Click 'Change' to customize it."
+          >
+            <ActionIcon color="yellow.9">
+              <IconInfoOctagon size={"1.1rem"} />
+            </ActionIcon>
+          </Tooltip>
+        )}
+      </Group>
       <Group position="right" mt="md">
-        <BTN_TOINTERALLINK LABEL={"Change"} URL={"members/brand/"} />
+        <BTN_TOINTERALLINK LABEL={"Change"} URL={"members/design/"} />
       </Group>
     </Paper>
   );

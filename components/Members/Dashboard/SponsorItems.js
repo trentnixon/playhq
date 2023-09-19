@@ -51,7 +51,7 @@ export const DashBoardSponsoredItems = ({ IconComponent, sponsors, Theme }) => {
       <Group position="apart" mt="md">
         <Text fz="sm">{`${activeSponsors} / 5`}</Text>
       </Group>
-      <Group position="right" mt="md">
+      <Group position="center" mt="md">
         <BTN_TOINTERALLINK LABEL={"View"} URL={"members/sponsors/"} />
       </Group>
     </Paper>

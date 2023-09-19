@@ -3,7 +3,6 @@ import { ThemeIcon, Progress, Text, Group, Paper, rem } from "@mantine/core";
 import { useGetGalleryItems } from "../../../Hooks/useDashBoard";
 import { FixturaLoading } from "../Common/Loading";
 import { BTN_TOINTERALLINK } from "../Common/utils/Buttons";
-import { getContrastColor, lightenColor } from "../../../utils/actions";
 import { useStyles } from "./styles";
 import { IconUpload } from "@tabler/icons-react";
 
@@ -11,7 +10,7 @@ const ICON_SIZE = rem(60);
 
 // Extracted the zero-item state into its own component for readability
 const ZeroItemsState = ({ classes, Theme }) => (
-  <Paper
+  <Paper 
     radius="md"
     withBorder
     shadow="md"
@@ -78,6 +77,7 @@ export const DashBoardGalleryItems = ({ IconComponent, AccountID, Theme }) => {
     <Paper
       radius="md"
       withBorder
+      shadow="md"
       className={classes.card}
       mt={`calc(${ICON_SIZE} / 3)`}
     >

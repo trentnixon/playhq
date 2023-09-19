@@ -6,9 +6,9 @@ export const DisplayGallery = ({ DATA }) => {
   console.log(DATA)
   return (
     <>
-      <Group position="apart">
+      <Group position="apart" mt={20}>
         <P Weight={900}>Gallery</P>
-        <P Weight={200}>Images: {DATA.length}</P>
+        <P Weight={400}>Images: {DATA.length}</P>
       </Group>
 
       {DATA.length === 0 ? (
