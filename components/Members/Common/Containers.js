@@ -1,4 +1,4 @@
-import { Box, Container, Grid } from "@mantine/core";
+import { Box, Container } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
 export const MembersWrapper = (props) => {
   return (
@@ -9,8 +9,12 @@ export const MembersWrapper = (props) => {
 };
 
 export const Wrapper = (props) => {
-  const{px='sm', py='xs'} = props
-  return <Container size={"lg"} px={px} py={py}>{props.children}</Container>;
+  const { px = "sm", py = "xs" } = props;
+  return (
+    <Container size={"lg"} px={px} py={py}>
+      {props.children}
+    </Container>
+  );
 };
 
 export const PageCopyWrapper = (props) => {

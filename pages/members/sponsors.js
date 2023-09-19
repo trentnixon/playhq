@@ -22,12 +22,12 @@ const SPONSORS = () => {
     userAccount?.attributes?.sponsors?.data
   );
   const { user, loading } = useUser();
-  const router = useRouter();
+/*   const router = useRouter();
   const currentRoute = router.pathname;
 
   useEffect(() => {
     if (!user) router.push(`/members/verification/?prev=${currentRoute}`);
-  }, []);
+  }, []); */
 
   useEffect(() => {
     setUserAccount(account);

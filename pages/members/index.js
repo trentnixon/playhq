@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { P, PageTitle, SubHeaders } from "../../components/Members/Common/Type";
 import {
   IconLayoutDashboard,
-  IconSwimming,
   IconDownload,
   IconBrush,
   IconPhotoPlus,
@@ -27,7 +26,7 @@ import { useUser } from "../../lib/authContext";
 
 const DashBoard = () => {
   const { account } = useAccountDetails();
-  const { user, loading } = useUser(); 
+  const { user, loading } = useUser();
   const [progress, setProgress] = useState(0); // New state variable
 
   if (!account || !account.attributes) {
@@ -87,7 +86,7 @@ const DashBoard = () => {
   return (
     <MembersWrapper>
       <SetupCheck>
-      <LoadingStateWrapper conditions={[user, account]}>
+        <LoadingStateWrapper conditions={[user, account]}>
           <PageTitle
             Copy="DashBoard"
             ICON={<IconLayoutDashboard size={40} />}

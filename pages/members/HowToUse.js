@@ -93,11 +93,11 @@ const HowToUse = (props) => {
   const { classes } = useStyles();
   /* is User Auth */
   const { user, loading } = useUser();
-  const router = useRouter();
+/*   const router = useRouter();
   const currentRoute = router.pathname;
   useEffect(() => {
     if (!user) router.push(`/members/verification/?prev=${currentRoute}`);
-  }, []);
+  }, []); */
   /* End User Check*/
 
   const cards = OBJ.sections.map((article) => (

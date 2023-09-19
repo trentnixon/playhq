@@ -1,6 +1,6 @@
 // react
 import { useEffect, useState } from "react";
-import { useRouter } from "next/router";
+/* import { useRouter } from "next/router"; */
 import { useUser } from "../../lib/authContext";
 import { getIdFromLocalCookie } from "../../lib/auth";
 // UTILS
@@ -28,12 +28,12 @@ const Tracking = ({ DATA }) => {
   const [userAccount, setUserAccount] = useState(account);
   /* is User Auth */
   const { user, loading } = useUser();
-  const router = useRouter();
+/*   const router = useRouter();
   const currentRoute = router.pathname;
 
   useEffect(() => {
     if (!user) router.push(`/members/verification/?prev=${currentRoute}`);
-  }, [user]);
+  }, [user]); */
 
   useEffect(() => {
     if (account) {

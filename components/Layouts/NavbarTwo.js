@@ -186,16 +186,26 @@ const NavItem = ({ href, title, IconComponent, setMenu }) => {
 };
 
 const MembersNavItem = ({ user, setMenu }) => {
-  const router = useRouter();
+  //const router = useRouter();
   const PATH = "/members";
   const theme = useMantineTheme();
   const hasSetup = getAccountFromLocalCookie();
   const { account } = useAccountDetails();
 
-  console.log(account?.attributes?.hasCompletedStartSequence);
-  const handleLogout = () => {
-    unsetToken();
-    router.push(`/`);
+  //console.log(account?.attributes?.hasCompletedStartSequence);
+
+  const handleLogout = async () => {
+    try {
+      
+      await unsetToken(); // Assuming unsetToken is an async operation
+      console.log("unsetToken COMPLETED")
+      if (typeof window !== 'undefined') {
+        window.location.href = '/';
+      }
+    } catch (error) {
+      console.error("Log out failed", error);
+      // Show an error message to the user
+    }
   };
 
   const navItems = [
@@ -203,7 +213,8 @@ const MembersNavItem = ({ user, setMenu }) => {
       href: `${PATH}/`,
       title: "Dashboard",
       IconComponent: IconLayoutDashboard,
-    },{
+    },
+    {
       href: `${PATH}/orderHistory`,
       title: "Bundles",
       IconComponent: IconDownload,
@@ -214,7 +225,11 @@ const MembersNavItem = ({ user, setMenu }) => {
       IconComponent: IconColorPicker,
     },
     { href: `${PATH}/brand`, title: "Brand", IconComponent: IconBadgeTm },
-    { href: `${PATH}/gallery`, title: "Media Gallery", IconComponent: IconPhotoPlus },
+    {
+      href: `${PATH}/gallery`,
+      title: "Media Gallery",
+      IconComponent: IconPhotoPlus,
+    },
     { href: `${PATH}/sponsors`, title: "Sponsors", IconComponent: IconCheck },
 
     { href: `${PATH}/tracking`, title: "Tracking", IconComponent: IconTrack },

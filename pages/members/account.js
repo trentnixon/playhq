@@ -1,11 +1,11 @@
 // react
 import { useEffect, useState } from "react";
-import { useRouter } from "next/router";
+/* import { useRouter } from "next/router"; */
 import { useUser } from "../../lib/authContext";
 import Link from "next/link";
 // UTILS
-import { fetcher } from "../../lib/api";
-import Cookies from "js-cookie";
+/* import { fetcher } from "../../lib/api";
+import Cookies from "js-cookie"; */
 // PACK
 import { Container, Paper, Space } from "@mantine/core";
 // Components
@@ -16,7 +16,7 @@ import { LoadingStateWrapper } from "../../components/Members/Account/HOC/Loadin
 import SetupCheck from "../../components/Members/Account/HOC/SetupCheck";
 
 import {
-  Invoicing, 
+  Invoicing,
   UpcomingInvoicing,
 } from "../../components/Members/stripe/Invoicing";
 import { useAccountDetails } from "../../lib/userContext";
@@ -26,20 +26,10 @@ import { UserSubscription } from "../../components/Members/Account/userSubscript
 import { getIdFromLocalCookie } from "../../lib/auth";
 import Adminfetcher from "../../lib/Adminfetcher";
 
-const Account = ({fixtureDateRange}) => {
+const Account = () => {
   const { account } = useAccountDetails();
   const [userAccount, setUserAccount] = useState(account);
-  /* is User Auth */
-  const { user, loading } = useUser(); 
-  const router = useRouter();
-  const currentRoute = router.pathname;
-
-
-  console.log("fixtureDateRange", fixtureDateRange)
-
-  useEffect(() => {
-    if (!user) router.push(`/members/verification/?prev=${currentRoute}`);
-  }, [user]);
+  const { user, loading } = useUser();
 
   useEffect(() => {
     if (account) {
@@ -51,14 +41,14 @@ const Account = ({fixtureDateRange}) => {
     }
   }, [account]);
 
-  return ( 
-    <MembersWrapper> 
+  return (
+    <MembersWrapper>
       <SetupCheck>
         <LoadingStateWrapper conditions={[user, userAccount]}>
           <UserSubscription />
           <FixturaDivider />
           <UpcomingInvoicing />
-          <Invoicing /> 
+          <Invoicing />
           <Space h="lg" />
 
           <Container size={"lg"}>

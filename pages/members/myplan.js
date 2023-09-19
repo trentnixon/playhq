@@ -46,15 +46,16 @@ const MyPlan = () => {
   const [subscriptionTier, setsubscriptionTier] = useState(
     userAccount?.attributes.subscription_tier.data.attributes
   );
+  const theme = useMantineTheme();
   /* is User Auth */
   const { user, loading } = useUser();
-  const router = useRouter();
+/*   const router = useRouter();
   const currentRoute = router.pathname;
-  const theme = useMantineTheme();
+  
 
   useEffect(() => {
     if (!user) router.push(`/members/verification/?prev=${currentRoute}`);
-  }, [user]);
+  }, [user]); */
 
   useEffect(() => {
     if (account) {

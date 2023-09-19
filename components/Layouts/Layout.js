@@ -10,14 +10,16 @@ import { Box, Container, Grid } from "@mantine/core";
 import { FixturaHeaderMeta } from "../Members/Account/userFixturaSettings";
 import { UserDetailsCard } from "../Members/Account/userAdminDetailsCard";
 import HasCompletedStartSequence from "../Members/Account/HOC/hasCompletedStartSequence";
+import withUserAuth from "../Members/Account/HOC/withUserAuth";
 const Layout = ({ children }) => {
   const { user } = useUser();
   const router = useRouter();
 
+  const AuthenticatedMembersLayout = withUserAuth(MembersLayout); // Wrap the MembersLayout with the HOC
   const isMemberPage = router.pathname.includes("members");
   const SelectedNavbar = user ? <NavbarTwo /> : <NavbarOne />;
   const SelectedLayout = isMemberPage ? (
-    <MembersLayout>{children}</MembersLayout>
+    <AuthenticatedMembersLayout>{children}</AuthenticatedMembersLayout>
   ) : (
     <StaticLayout>{children}</StaticLayout>
   );

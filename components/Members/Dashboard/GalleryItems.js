@@ -82,7 +82,7 @@ export const DashBoardGalleryItems = ({ IconComponent, AccountID, Theme }) => {
       mt={`calc(${ICON_SIZE} / 3)`}
     >
       <ThemeIcon
-        color={lightenColor(Theme.secondary)}
+        color={"green.5"}
         className={classes.icon}
         size={ICON_SIZE}
         radius={ICON_SIZE}
@@ -90,7 +90,7 @@ export const DashBoardGalleryItems = ({ IconComponent, AccountID, Theme }) => {
         <IconComponent
           size="2rem"
           stroke={1.5}
-          color={getContrastColor(lightenColor(Theme.secondary))}
+          color={"white"} // Add your contrast color function
         />
       </ThemeIcon>
 

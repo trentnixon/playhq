@@ -43,13 +43,13 @@ const Support = () => {
   const [userAccount, setUserAccount] = useState(account);
   /* is User Auth */
   const { user, loading } = useUser();
-  const router = useRouter();
+/*   const router = useRouter();
   const currentRoute = router.pathname;
 
   useEffect(() => {
     if (!user) router.push(`/members/verification/?prev=${currentRoute}`);
   }, [user]);
-
+ */
   useEffect(() => {
     if (account) {
       setUserAccount(account);

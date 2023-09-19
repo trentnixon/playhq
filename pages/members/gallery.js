@@ -15,6 +15,7 @@ import { LoadingStateWrapper } from "../../components/Members/Account/HOC/Loadin
 import { IconBadgeTm, IconPhotoPlus } from "@tabler/icons-react";
 import { MediaGalleryFileUpload } from "../../components/Members/gallery/FileUpload";
 import { DisplayGallery } from "../../components/Members/gallery/DisplayGallery";
+import SetupCheck from "../../components/Members/Account/HOC/SetupCheck";
 const qs = require("qs");
 
 const query = qs.stringify(
@@ -29,38 +30,35 @@ const query = qs.stringify(
 export default function MediaGallery({ Response }) {
   const { account } = useAccountDetails();
   const [userAccount, setUserAccount] = useState(account);
-
-  /* is User Auth */
   const { user } = useUser();
-  const router = useRouter();
-  const currentRoute = router.pathname;
-  useEffect(() => {
-    if (!user) router.push(`/members/verification/?prev=${currentRoute}`);
-  }, []);
-  /* End User Check*/
 
-  useEffect(() => {}, [userAccount]);
-
+  useEffect(() => {}, [userAccount, Response]);
+  if (Response?.attributes === undefined) return "Loading";
   return (
-    <LoadingStateWrapper conditions={[user, userAccount]}>
-      <MembersWrapper>
-        <PageTitle Copy={"Media Gallery"} ICON={<IconPhotoPlus size={40} />} />
-        <SubHeaders Copy={"Manage Your Club's Media Assets"} />
-
-        <PageCopyWrapper>
-          <P
-            Copy={`Upload and manage images for your club or association in the Fixtura Media Gallery. These images become the visual elements in your digital assets. Fixtura automatically selects an image from this gallery, based on your tags or at random, to fit into your chosen asset templates.`}
+    <MembersWrapper>
+      <SetupCheck>
+        <LoadingStateWrapper conditions={[user, userAccount]}>
+          <PageTitle
+            Copy={"Media Gallery"}
+            ICON={<IconPhotoPlus size={40} />}
           />
-        </PageCopyWrapper>
-        <Space h={20} />
-        <MediaGalleryFileUpload
-          ITEMCOUNT={Response.attributes.account_media_libraries.data.length}
-        />
-        <DisplayGallery
-          DATA={Response.attributes.account_media_libraries.data}
-        />
-      </MembersWrapper>
-    </LoadingStateWrapper>
+          <SubHeaders Copy={"Manage Your Club's Media Assets"} />
+
+          <PageCopyWrapper>
+            <P
+              Copy={`Upload and manage images for your club or association in the Fixtura Media Gallery. These images become the visual elements in your digital assets. Fixtura automatically selects an image from this gallery, based on your tags or at random, to fit into your chosen asset templates.`}
+            />
+          </PageCopyWrapper>
+          <Space h={20} />
+          <MediaGalleryFileUpload
+            ITEMCOUNT={Response?.attributes.account_media_libraries.data.length}
+          />
+          <DisplayGallery
+            DATA={Response.attributes.account_media_libraries.data}
+          />
+        </LoadingStateWrapper>
+      </SetupCheck>
+    </MembersWrapper>
   );
 }
 

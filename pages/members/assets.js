@@ -46,11 +46,11 @@ const Overview = () => {
 
   /* is User Auth */
   const { user, loading } = useUser();
-  const router = useRouter();
+/*   const router = useRouter();
   const currentRoute = router.pathname;
   useEffect(() => {
     if (!user) router.push(`/members/verification/?prev=${currentRoute}`);
-  }, []);
+  }, []); */
   /* End User Check*/
 
   useEffect(() => {
