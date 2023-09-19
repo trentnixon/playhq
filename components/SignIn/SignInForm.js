@@ -51,7 +51,7 @@ const SignInForm = () => {
   if (user || LogUser && !hookError) {
     return <UserLoggedIn user={LogUser} />;
   }
-  return (
+  return ( 
     <>
       <div className="contact-form ptb-100">
         <div className="contact-title">

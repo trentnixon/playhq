@@ -7,7 +7,7 @@ function UserLoggedIn() {
   useEffect(() => {
     // Automatically redirect after 5 seconds
     const timer = setTimeout(() => {
-      Router.push("/members/account"); // Replace with your actual account page URL
+      Router.push("/members/"); // Replace with your actual account page URL
     }, 1000);
 
     return () => {
@@ -24,4 +24,4 @@ function UserLoggedIn() {
     </div>
   ); 
 }
-export default withAuth(UserLoggedIn);
+export default withAuth(UserLoggedIn); 

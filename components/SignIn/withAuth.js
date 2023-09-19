@@ -15,6 +15,7 @@ function withAuth(WrappedComponent) {
     const { user: userFromHook } = useUser();
     const actualUser = userFromProps || userFromHook;
     console.log("userFromHook", userFromHook)
+    
     const Redirect = () => {
       Router.push("/members/setup");
     }; 

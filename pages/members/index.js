@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { P, PageTitle, SubHeaders } from "../../components/Members/Common/Type";
 import {
   IconLayoutDashboard,
@@ -29,16 +29,28 @@ const DashBoard = () => {
   const { user, loading } = useUser();
   const [progress, setProgress] = useState(0); // New state variable
 
+  useEffect(() => {
+    console.log("Account details:", account);
+  }, [account]);
+
+  useEffect(() => {
+    console.log(account);
+  }, [account, user]);
+
   if (!account || !account.attributes) {
     return (
       <MembersWrapper>
-        <PageTitle
-          Copy="Fetching Details"
-          ICON={<IconLayoutDashboard size={40} />}
-        />
-        <PageCopyWrapper>
-          <P>Please wait whilst we build your dashboard</P>
-        </PageCopyWrapper>
+        <SetupCheck>
+          <LoadingStateWrapper conditions={[user, account]}>
+            <PageTitle
+              Copy="Fetching Details"
+              ICON={<IconLayoutDashboard size={40} />}
+            />
+            <PageCopyWrapper>
+              <P>Please wait whilst we build your dashboard</P>
+            </PageCopyWrapper>
+          </LoadingStateWrapper>
+        </SetupCheck>
       </MembersWrapper>
     );
   }

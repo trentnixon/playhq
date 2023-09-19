@@ -34,10 +34,6 @@ const Account = () => {
   useEffect(() => {
     if (account) {
       setUserAccount(account);
-      showNotification({
-        title: "Action Completed",
-        message: "Your account details have been successfully saved",
-      });
     }
   }, [account]);
 
