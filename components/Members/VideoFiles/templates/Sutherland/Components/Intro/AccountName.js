@@ -10,7 +10,7 @@ export const AccountName = ({ theme, DATA, FPS}) => {
 		<ClubNameContainer>
 			<ClubName
 				style={{
-					fontFamily:'Anton',
+					fontFamily:'Oswald',
 					clipPath: FromTopToBottom(7, 'Wobbly'),
 					color: getContrastColor(theme.primary),
 					opacity: interpolateOpacityByFrame(frame, FPS - 30, FPS - 15, 1, 0),
@@ -35,7 +35,7 @@ const ClubName = styled.h1`
 	padding: 0;
 	line-height: 1.1em;
 	text-align: left;
-	letter-spacing: 0.05em;
+	letter-spacing: 0.005em;
 	text-transform: uppercase;
 
 `;

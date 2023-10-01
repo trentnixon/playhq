@@ -24,20 +24,20 @@ export const LadderMain = ({DATA, THEME, fontFamily, FPS_LADDER}) => {
 							</LadderContainer>
 						</Series.Sequence>
 					);
-				})}
+				})} 
 			</Series>
 		</FixtureContainer>
 	);
 };
 
 const FixtureContainer = styled.div`
-	display: flex;
+	display: flex; 
 	flex-direction: column;
 	align-items: flex-start;
 	justify-content: flex-start;
 	width: 96%;
 	margin: 0 2%;
-	height: 1580px;
+	height: 1300px;
 	position: relative;
-	top: 320px;
+	top: 310px;
 `;

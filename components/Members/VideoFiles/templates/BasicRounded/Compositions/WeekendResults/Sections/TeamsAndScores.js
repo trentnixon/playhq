@@ -23,7 +23,7 @@ const TeamName = styled.h2`
 	font-style: normal;
 	font-weight: 400;
 	font-size: 2.1em;
-	line-height: 1.3em;
+	line-height: 1.15em;
 	letter-spacing: -0.05em;
 	text-transform: uppercase;
 	margin: 0;

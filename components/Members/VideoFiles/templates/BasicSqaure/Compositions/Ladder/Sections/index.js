@@ -15,7 +15,7 @@ export const LadderPositions = ({Ladder, THEME, fontFamily, FPS_LADDER}) => {
 				FPS_LADDER={FPS_LADDER}
 				THEME={THEME}
 				fontFamily={fontFamily}
-			/>
+			/> 
 			<LadderContainer THEME={THEME} fontFamily={fontFamily}>
 				<LadderHeader
 					THEME={THEME}

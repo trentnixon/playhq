@@ -12,7 +12,7 @@ export const FixturesMain = ({DATA, THEME, fontFamily, FPS_SCORECARD}) => {
 			<Series>
 				{groupsOfTwo.map((item, index) => {
 					return (
-						<Series.Sequence durationInFrames={FPS_SCORECARD}>
+						<Series.Sequence key={index} durationInFrames={FPS_SCORECARD}>
 							<MatchContainer>
 								{item.map((game, i) => (
 									<Match

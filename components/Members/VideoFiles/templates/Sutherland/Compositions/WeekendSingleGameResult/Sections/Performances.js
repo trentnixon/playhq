@@ -7,13 +7,13 @@ import {
 } from '../../../../../utils/colors';
 
 import {useCurrentFrame} from 'remotion';
-import {restrictString} from '../../../../../utils/copy';
+import {restrictName, restrictString} from '../../../../../utils/copy';
 const VideoContainer = styled.div`
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
 	width: 100%;
-	padding: 0 10px;
+	padding: 20px 10px;
 `;
 
 const PerformancesContainer = styled.div`
@@ -23,10 +23,14 @@ const PerformancesContainer = styled.div`
 	&:first-child {
 		margin-right: 5px;
 	}
+	border-radius: 5px;
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	background: rgba(255, 255, 255, 0.1);
+	backdrop-filter: blur(20px);
 `;
 
 const PerformanceList = styled.ul`
-	font-family: 'Anton';
+	font-family: 'Oswald';
 	margin: 0px 0 0 0;
 	padding: 0;
 	list-style: none;
@@ -36,38 +40,35 @@ const PerformanceList = styled.ul`
 const PerformanceItem = styled.li`
 	display: flex;
 	align-items: center;
-	background-color: ${(props) => props.bgColor};
-	padding: 4px 35px;
+	//background-color: ${(props) => props.bgColor};
+	padding: 4px 15px;
 	margin-bottom: 0px;
 	width: auto;
 `;
 
 const Name = styled.span`
-	font-size: 2.2em;
+	font-size: 2.1em;
 	font-weight: 400;
 	color: ${(props) => props.color};
-	background-color: ${(props) => props.bgColor};
 	width: 70%;
 	margin-right: 2px;
 `;
 
 const Performance = styled.span`
 	font-size: 2em;
-
 	font-weight: 400;
 	color: ${(props) => props.color};
-	text-align: center;
+	text-align: right;
 	width: 30%;
 	margin-left: 10px;
-	background-color: ${(props) => props.bgColor};
 `;
 const LabelWrapper = styled.div`
 	font-size: 1.6em;
 	font-weight: 900;
-	text-align: center;
+	text-align: left;
 	color: ${(props) => props.color};
-	margin-bottom: 5px;
-	margin-top: 5px;
+	margin: 15px 10px 5px;
+	
 `;
 
 export const PlayerPerformances = ({
@@ -82,23 +83,23 @@ export const PlayerPerformances = ({
 		<VideoContainer>
 			<PerformancesContainer>
 				<PerformanceList fontFamily={fontFamily}>
-					<LabelWrapper color={getContrastColor(darkenColor(THEME.primary))}>
+					<LabelWrapper color={darkenColor(THEME.secondary)}>
 						Batting
 					</LabelWrapper>
 					{homeTeam.battingPerformances.map((performance, index) => (
 						<PerformanceItem key={`home-batting-${index}`}>
 							<Name color={getContrastColor(THEME.primary)}>
-								{performance.player}
+								{restrictName(performance.player, 20)}
 							</Name>
 							<Performance
 								bgColor={setOpacity(THEME.secondary, 0.7)}
-								color={getContrastColor(setOpacity(THEME.secondary, 0.7))}
+								color={getContrastColor(setOpacity(THEME.primary, 0.7))}
 							>
 								{`${performance.runs} (${performance.balls})`}
 							</Performance>
 						</PerformanceItem>
 					))}
-					<LabelWrapper color={getContrastColor(darkenColor(THEME.primary))}>
+					<LabelWrapper color={darkenColor(THEME.primary)}>
 						Bowling
 					</LabelWrapper>
 
@@ -108,7 +109,7 @@ export const PlayerPerformances = ({
 							bgColor={setOpacity(THEME.primary, 0.7)}
 						>
 							<Name color={getContrastColor(THEME.primary)}>
-								{performance.player}
+								{restrictName(performance.player, 20)}
 							</Name>
 							<Performance
 								color={getContrastColor(THEME.primary)}
@@ -123,29 +124,29 @@ export const PlayerPerformances = ({
 
 			<PerformancesContainer>
 				<PerformanceList fontFamily={fontFamily}>
-					<LabelWrapper color={getContrastColor(darkenColor(THEME.primary))}>
+					<LabelWrapper color={darkenColor(THEME.secondary)}>
 						Batting
 					</LabelWrapper>
 					{awayTeam.battingPerformances.map((performance, index) => (
 						<PerformanceItem key={`away-batting-${index}`}>
 							<Name color={getContrastColor(darkenColor(THEME.primary))}>
-								{restrictString(performance.player, 20)}
+								{restrictName(performance.player, 20)}
 							</Name>
 							<Performance
-								color={getContrastColor(THEME.secondary)}
+								color={getContrastColor(THEME.primary)}
 								bgColor={setOpacity(THEME.secondary, 0.8)}
 							>
 								{`${performance.runs} (${performance.balls})`}
 							</Performance>
 						</PerformanceItem>
 					))}
-					<LabelWrapper color={getContrastColor(darkenColor(THEME.primary))}>
+					<LabelWrapper color={darkenColor(THEME.primary)}>
 						Bowling
 					</LabelWrapper>
 					{homeTeam.bowlingPerformances.map((performance, index) => (
 						<PerformanceItem key={`home-bowling-${index}`}>
 							<Name color={getContrastColor(darkenColor(THEME.primary))}>
-								{restrictString(performance.player, 20)}
+								{restrictName(performance.player, 20)}
 							</Name>
 							<Performance
 								color={getContrastColor(darkenColor(THEME.primary))}

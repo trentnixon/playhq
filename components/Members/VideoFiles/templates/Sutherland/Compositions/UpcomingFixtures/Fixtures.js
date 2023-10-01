@@ -35,7 +35,7 @@ export const FixturesMain = ({DATA, THEME, FPS_SCORECARD}) => {
 
 function splitIntoGroupsOfTwo(arr) {
 	return arr.reduce((acc, curr, i) => {
-		if (i % 4 === 0) {
+		if (i % 2 === 0) {
 			acc.push([curr]);
 		} else {
 			acc[acc.length - 1].push(curr);

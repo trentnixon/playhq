@@ -9,19 +9,23 @@ import { useGetAssets } from "../../../Hooks/useGetAssets";
 export const RemotionPlayerContainer = (props) => {
   const { setIsPlaying } = props;
   const { account } = useAccountDetails();
-  const [Assets, GetAssets] = useGetAssets()
+  const [Assets, GetAssets] = useGetAssets();
   const [userAccount, setUserAccount] = useState(account);
 
   useEffect(() => {
     setUserAccount(account);
-    GetAssets()
+    GetAssets();
   }, [account]);
 
   return (
-    <LoadingStateWrapper conditions={[account,Assets]}>
+    <LoadingStateWrapper conditions={[account, Assets]}>
       <>
         <Paper mb={10}>
-          <RemotionPreview setIsPlaying={setIsPlaying} userAccount={userAccount} Assets={Assets} />
+          <RemotionPreview
+            setIsPlaying={setIsPlaying}
+            userAccount={userAccount}
+            Assets={Assets}
+          />
         </Paper>
         <Paper mx={15}>
           <P

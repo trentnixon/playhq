@@ -5,7 +5,7 @@ import {Series} from 'remotion';
 import {LadderMain} from './LadderMain';
 import { LogoClubTitleHeader } from '../../Components/SectionHeader';
 
-export const Ladder = ({DATA, theme, fontFamily, FPS_MAIN, FPS_LADDER}) => {
+export const Ladder = ({DATA, theme, FPS_MAIN, FPS_LADDER}) => {
 	return (
 		<Series>
 			<Series.Sequence durationInFrames={FPS_MAIN} layout="none">
@@ -14,10 +14,10 @@ export const Ladder = ({DATA, theme, fontFamily, FPS_MAIN, FPS_LADDER}) => {
 					DATA={DATA.VIDEOMETA}
 					FPS_MAIN={FPS_MAIN}
 				/>
-				<LadderMain 
+				<LadderMain  
 					THEME={theme}
 					DATA={DATA.DATA}
-					fontFamily={fontFamily}
+					fontFamily={'Oswald'}
 					FPS_MAIN={FPS_MAIN}
 					FPS_LADDER={FPS_LADDER}
 				/>

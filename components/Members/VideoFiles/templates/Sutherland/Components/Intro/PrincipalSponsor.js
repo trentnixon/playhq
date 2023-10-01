@@ -1,8 +1,9 @@
-import { Img } from "remotion";
-import { EraseToMiddleFromTop } from "../../../../Animation/ClipWipe";
-import { SpringToFrom } from "../../../../Animation/RemotionSpring";
-import { getContrastColor } from "../../../../utils/colors";
-import styled from "styled-components";
+import styled from 'styled-components';
+import {Img} from 'remotion';
+import {SpringToFrom} from '../../../../Animation/RemotionSpring';
+import {EraseToMiddleFromTop} from '../../../../Animation/ClipWipe';
+import {getContrastColor} from '../../../../utils/colors';
+import useImageDimensions from '../../../../hooks/useImageDimensions';
 
 export const PrincipalSponsor = ({fontFamily, FPS, DATA, theme}) => {
 	const getPrimarySponsor = (sponsorList) => {
@@ -12,6 +13,13 @@ export const PrincipalSponsor = ({fontFamily, FPS, DATA, theme}) => {
 	const PrincipalSponsorIs = getPrimarySponsor(DATA.VIDEOMETA.Club.Sponsors);
 
 	if (!PrincipalSponsorIs) return false;
+
+	const IMGSIZING = [140, 180, 140];
+	const PrimarySponsorStyles = useImageDimensions(
+		getPrimarySponsor(DATA.VIDEOMETA.Club.Sponsors).Logo,
+		IMGSIZING
+	);
+
 	return (
 		<PrincipalLogo
 			style={{
@@ -22,14 +30,13 @@ export const PrincipalSponsor = ({fontFamily, FPS, DATA, theme}) => {
 			<PrincipalLogoInner>
 				<h1
 					style={{
-						fontFamily,
+						fontFamily:'Heebo',
 						textAlign: 'right',
-						fontSize: '3em',
+						fontSize: '2.5em',
 						lineHeight: '1em',
 						fontWeight: '400',
 						width: '100%',
 						margin: '0 30px 0 0',
-						fontFamily: 'Anton',
 						padding: 0,
 						color: getContrastColor(theme.primary),
 					}}
@@ -38,10 +45,9 @@ export const PrincipalSponsor = ({fontFamily, FPS, DATA, theme}) => {
 				</h1>
 				<h1
 					style={{
-						fontFamily,
+						fontFamily:'Heebo',
 						textAlign: 'right',
-						fontFamily: 'Anton',
-						fontSize: '2.2em',
+						fontSize: '2em',
 						lineHeight: '1em',
 						fontWeight: '400',
 						width: '100%',
@@ -56,7 +62,7 @@ export const PrincipalSponsor = ({fontFamily, FPS, DATA, theme}) => {
 			<PrincipalLogoImg>
 				<Img
 					src={getPrimarySponsor(DATA.VIDEOMETA.Club.Sponsors).Logo}
-					height="140px"
+					style={PrimarySponsorStyles}
 				/>
 			</PrincipalLogoImg>
 		</PrincipalLogo>
@@ -83,42 +89,6 @@ const PrincipalLogoImg = styled.div`
 	display: flex;
 	align-items: start;
 	width: auto;
-`;const HeaderContainerStyles = styled.div`
-display: flex;
-justify-content: space-between;
-align-items: center;
-height: 60px;
-padding: 0 10px;
-margin-top: 50px;
-background-color: ${(props) => darkenColor(props.THEME.secondary)};
-`;
-
-const HeaderCopy = styled.p`
-font-family: ${(props) => props.fontFamily};
-font-style: normal;
-font-weight: 400;
-display: block;
-letter-spacing: -0.015em;
-text-transform: uppercase;
-width: 100%;
-`;
-
-const GameType = styled(HeaderCopy)`
-font-size: 1.4em;
-width: 15%;
-font-weight: 900;
-`;
-
-const Ground = styled(HeaderCopy)`
-font-size: 1.4em;
-text-align: center;
-width: 70%;
-`;
-
-const Round = styled(HeaderCopy)`
-font-size: 1.4em;
-width: 15%;
-text-align: right;
 `;
 
 const PrincipalLogoInner = styled.div`
@@ -129,14 +99,24 @@ const PrincipalLogoInner = styled.div`
 	width: auto;
 `;
 
+
 export const PrincipalSponsorAlwaysShow = ({fontFamily, FPS, DATA, theme}) => {
 	const getPrimarySponsor = (sponsorList) => {
 		console.log(sponsorList);
 		return sponsorList?.find((sponsor) => sponsor.isPrimary === true);
 	};
 	const PrincipalSponsorIs = getPrimarySponsor(DATA.VIDEOMETA.Club.Sponsors);
-
+	
 	if (!PrincipalSponsorIs) return false;
+
+
+	const IMGSIZING = [120, 160, 120];
+	const PrimarySponsorStyles = useImageDimensions(
+		getPrimarySponsor(DATA.VIDEOMETA.Club.Sponsors).Logo,
+		IMGSIZING
+	);
+
+	
 	return (
 		<PrincipalLogo>
 			<PrincipalLogoInner>
@@ -174,7 +154,7 @@ export const PrincipalSponsorAlwaysShow = ({fontFamily, FPS, DATA, theme}) => {
 			<PrincipalLogoImg>
 				<Img
 					src={getPrimarySponsor(DATA.VIDEOMETA.Club.Sponsors).Logo}
-					height="120px"
+					style={PrimarySponsorStyles}
 				/>
 			</PrincipalLogoImg>
 		</PrincipalLogo>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Center, Paper, useMantineTheme } from "@mantine/core";
-import { Carousel } from "@mantine/carousel";
+import { Carousel } from "@mantine/carousel"; 
 import { Thumbnail } from "@remotion/player";
 import { useMediaQuery } from "@mantine/hooks";
 import {
@@ -18,11 +18,13 @@ import DATA_WeekendSingleGameResult from "../Remotion/utils/WeekendResultsV2.jso
 
 import { Template_Basic_Sqaure } from "../VideoFiles/templates/BasicSqaure/FrontEnd";
 import { Template_Basic_Rounded } from "../VideoFiles/templates/BasicRounded/frontend";
+import { Template_Sutherland } from "../VideoFiles/templates/Sutherland/frontend";
 import { P } from "../Common/Type";
 
 const AvailableTemplates = {
   "Basic Sqaure": Template_Basic_Sqaure,
   "Basic Rounded": Template_Basic_Rounded,
+  "Sutherland": Template_Sutherland,
 };
 
 // Function to generate the JSON data structure for the thumbnail
@@ -110,7 +112,7 @@ const RemotionPreview = ({ setIsPlaying, userAccount, Assets }) => {
     // Fetch unique asset objects filtered by "IMAGE"
     const uniqueAssets = getUniqueCompositionIDsAndFilterByIdentifier(
       Assets,
-      "IMAGE"
+      "IMAGE" 
     );
 
     if (userAccount && uniqueAssets.length > 0) {

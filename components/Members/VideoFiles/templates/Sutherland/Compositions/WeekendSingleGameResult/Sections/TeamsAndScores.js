@@ -37,7 +37,7 @@ const TeamName = styled.h2`
 	text-transform: uppercase;
 	margin: 0;
 	text-align: left;
-	font-family: 'Anton';
+	font-family: 'Oswald';
 `;
 
 const TeamOvers = styled.span`
@@ -54,7 +54,7 @@ const GradeName = styled.h2`
 	text-transform: uppercase;
 	margin: 10px 0;
 	text-align: right;
-	font-family:'Anton';
+	font-family:'Oswald';
 `;
 export const TeamsAndScores = (props) => {
 	const {homeTeam, awayTeam, fontFamily, gradeName} = props;

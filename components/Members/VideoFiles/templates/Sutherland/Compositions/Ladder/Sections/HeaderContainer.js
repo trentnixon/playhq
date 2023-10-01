@@ -6,16 +6,20 @@ import {
 } from '../../../../../utils/colors';
 import {useCurrentFrame} from 'remotion';
 import {interpolateOpacityByFrame} from '../../../../../Animation/interpolate';
-import {FromMiddle, FromTopToBottom} from '../../../../../Animation/ClipWipe';
+import {
+	FromMiddle,
+	FromTopToBottom,
+} from '../../../../../Animation/ClipWipe';
 
 const HeaderContainerStyles = styled.div`
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	height: 95px;
+	height: 60px;
 	padding: 0 10px;
-	margin-bottom: 5px;
-	background-color: ${(props) => darkenColor(props.THEME.secondary)};
+	margin-bottom: 15px;
+	border-bottom: 3px solid ${(props) => lightenColor(props.THEME.secondary)};
+	background-color: ${(props) => darkenColor(props.THEME.primary)};
 `;
 
 const HeaderCopy = styled.p`
@@ -26,19 +30,21 @@ const HeaderCopy = styled.p`
 	letter-spacing: 0.05em;
 	text-transform: uppercase;
 	width: auto;
-	font-size: 40px;
+	font-size: 1.45em;
+	line-height:2em;
 	width: 100%;
 	font-weight: 400;
+	margin:0;
 `;
 
+
 export const HeaderContainer = (props) => {
-	const {Title, competition, FPS_LADDER, THEME, fontFamily} = props;
+	const {Title,competition, FPS_LADDER, THEME, fontFamily} = props;
 	const frame = useCurrentFrame();
 	return (
 		<HeaderContainerStyles
 			THEME={THEME}
 			style={{
-				fontFamily: 'Anton',
 				clipPath: FromMiddle(7, 'Wobbly'),
 				opacity: interpolateOpacityByFrame(
 					frame,
@@ -53,8 +59,8 @@ export const HeaderContainer = (props) => {
 				THEME={THEME}
 				fontFamily={fontFamily}
 				style={{
-					color: getContrastColor(darkenColor(props.THEME.secondary)),
-					clipPath: FromMiddle(30, 'Slow'),
+					color: getContrastColor(darkenColor(props.THEME.primary)),
+					clipPath: FromTopToBottom(30, 'Slow'),
 					opacity: interpolateOpacityByFrame(
 						frame,
 						FPS_LADDER - 30,
@@ -70,9 +76,8 @@ export const HeaderContainer = (props) => {
 				THEME={THEME}
 				fontFamily={fontFamily}
 				style={{
-					textAlign: 'right',
-					fontSize: '35px',
-					color: getContrastColor(darkenColor(props.THEME.secondary)),
+					textAlign:'right',
+					color: getContrastColor(darkenColor(props.THEME.primary)),
 					clipPath: FromTopToBottom(30, 'Slow'),
 					opacity: interpolateOpacityByFrame(
 						frame,
@@ -85,6 +90,7 @@ export const HeaderContainer = (props) => {
 			>
 				{competition}
 			</HeaderCopy>
+			
 		</HeaderContainerStyles>
 	);
 };

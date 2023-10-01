@@ -11,7 +11,7 @@ import {getContrastColor, darkenColor} from '../../../../utils/colors';
 import {restrictString} from '../../../../utils/copy'; */
 
 export const Match = ({matchData, THEME, fontFamily, FPS_SCORECARD, DATA}) => {
-	const {homeTeam, awayTeam, type, ground, round, gradeName} = matchData;
+	const {homeTeam, awayTeam, type, ground, round, gradeName,teamHomeLogo, teamAwayLogo} = matchData;
 	return (
 		<MatchContainer THEME={THEME} fontFamily={fontFamily}>
 			<TeamsAndScores
@@ -21,6 +21,8 @@ export const Match = ({matchData, THEME, fontFamily, FPS_SCORECARD, DATA}) => {
 				fontFamily={fontFamily} 
 				FPS_SCORECARD={FPS_SCORECARD}
 				gradeName={gradeName}
+				teamHomeLogo={teamHomeLogo}
+				teamAwayLogo={teamAwayLogo}
 			/>
 
 			<PlayerPerformances
@@ -28,7 +30,7 @@ export const Match = ({matchData, THEME, fontFamily, FPS_SCORECARD, DATA}) => {
 				homeTeam={homeTeam}
 				awayTeam={awayTeam}
 				fontFamily={fontFamily}
-				FPS_SCORECARD={FPS_SCORECARD}
+				FPS_SCORECARD={FPS_SCORECARD} 
 			/>
 			<HeaderContainer
 				type={type}

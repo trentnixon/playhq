@@ -77,7 +77,6 @@ export const HeaderContainer = (props) => {
 				fontFamily={fontFamily}
 				style={{
 					textAlign:'right',
-					fontSize:'25px',
 					color: getContrastColor(darkenColor(props.THEME.primary)),
 					clipPath: FromTopToBottom(30, 'Slow'),
 					opacity: interpolateOpacityByFrame(

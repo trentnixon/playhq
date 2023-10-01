@@ -20,7 +20,7 @@ const HeaderContainerStyles = styled.div`
 `;
 
 const HeaderCopy = styled.p`
-	font-family: 'Anton';
+	font-family: 'Oswald';
 	font-style: normal;
 	font-weight: 400;
 	display: block;

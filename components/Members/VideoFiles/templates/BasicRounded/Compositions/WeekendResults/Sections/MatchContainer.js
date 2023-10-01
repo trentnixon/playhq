@@ -7,7 +7,7 @@ width: 100%;
 height: auto;
 max-width: 100%;
 margin: 0 auto;
-margin-bottom:20px;
+margin-bottom:30px;
 `;
 
 export const MatchContainer = (props)=>{

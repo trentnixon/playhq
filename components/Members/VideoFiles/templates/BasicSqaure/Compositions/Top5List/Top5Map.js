@@ -1,20 +1,24 @@
 import React from 'react';
 import styled from 'styled-components';
-import {useCurrentFrame} from 'remotion';
+import {Img, useCurrentFrame} from 'remotion';
 
 import {SpringToFrom} from '../../../../Animation/RemotionSpring';
 import {interpolateOpacityByFrame} from '../../../../Animation/interpolate';
-import {getContrastColor, darkenColor} from '../../../../utils/colors';
+import {getContrastColor, darkenColor, setOpacity} from '../../../../utils/colors';
 import {restrictString} from '../../../../utils/copy';
+import useImageDimensions from '../../../../hooks/useImageDimensions';
 
 export const Top5PlayersMap = ({DATA, THEME, fontFamily, FPS_MAIN, TYPE}) => {
-	console.log(TYPE)
+	console.log(TYPE);
 	const frame = useCurrentFrame();
+	const IMGSIZING = [90, 90, 90]; 
+
 	return (
 		<PlayerContainer>
-			{DATA.map((player, i) => { 
+			{DATA.map((player, i) => {
 				console.log(player);
-				return ( 
+				const TemLogoStyles = useImageDimensions(player.teamLogo, IMGSIZING);
+				return (
 					<PlayerROW
 						key={i}
 						style={{
@@ -41,11 +45,12 @@ export const Top5PlayersMap = ({DATA, THEME, fontFamily, FPS_MAIN, TYPE}) => {
 					>
 						<SmallBoxLeftSide
 							style={{
-								background: i === 0 ? THEME.primary : THEME.secondary,
+								background: i === 0 ? setOpacity(THEME.primary,1)  : setOpacity(darkenColor(THEME.primary),0.5) ,
 								borderColor: i === 0 ? THEME.secondary : THEME.primary,
 							}}
-						/>
-
+						>
+							<Img src={player.teamLogo} style={{...TemLogoStyles, borderRadius: '100%'}} />
+						</SmallBoxLeftSide>
 						<PlayerMetaContainer>
 							<PlayerName
 								style={{
@@ -55,7 +60,7 @@ export const Top5PlayersMap = ({DATA, THEME, fontFamily, FPS_MAIN, TYPE}) => {
 									fontFamily,
 								}}
 							>
-								{restrictString(player.name, 50) }
+								{restrictString(player.name, 50)}
 							</PlayerName>
 							<PlayerGradeTeam
 								style={{
@@ -67,7 +72,7 @@ export const Top5PlayersMap = ({DATA, THEME, fontFamily, FPS_MAIN, TYPE}) => {
 									fontFamily,
 								}}
 							>
-								{restrictString(player.playedFor, 50)}
+								{restrictString(player.playedFor, 25)}
 							</PlayerGradeTeam>
 							<PlayerGradeTeam
 								style={{
@@ -80,6 +85,7 @@ export const Top5PlayersMap = ({DATA, THEME, fontFamily, FPS_MAIN, TYPE}) => {
 								vs: {restrictString(player.playedAgainst, 30)}
 							</PlayerGradeTeam>
 						</PlayerMetaContainer>
+
 						<PlayerScoreContianer
 							style={{
 								background: darkenColor(
@@ -88,20 +94,24 @@ export const Top5PlayersMap = ({DATA, THEME, fontFamily, FPS_MAIN, TYPE}) => {
 								borderColor: i === 0 ? THEME.secondary : THEME.primary,
 							}}
 						>
-							{TYPE === 'BATTING' ? <BattingScores
+							{TYPE === 'BATTING' ? (
+								<BattingScores
 									player={player}
 									fontFamily={fontFamily}
 									COLOR={getContrastColor(
 										darkenColor(i === 0 ? THEME.secondary : THEME.primary)
 									)}
-								/>: <BowlingScores
-								player={player}
-								fontFamily={fontFamily}
-								COLOR={getContrastColor(
-									darkenColor(i === 0 ? THEME.secondary : THEME.primary)
-								)}
-							/>}
-						
+								/>
+							) : (
+								<BowlingScores
+									player={player}
+									fontFamily={fontFamily}
+									COLOR={getContrastColor(
+										darkenColor(i === 0 ? THEME.secondary : THEME.primary)
+									)}
+								/>
+							)}
+							
 						</PlayerScoreContianer>
 					</PlayerROW>
 				);
@@ -111,7 +121,7 @@ export const Top5PlayersMap = ({DATA, THEME, fontFamily, FPS_MAIN, TYPE}) => {
 };
 
 const BattingScores = ({COLOR, player, fontFamily}) => {
-	console.log("player", player)
+
 	return (
 		<PlayerScore
 			style={{
@@ -122,11 +132,12 @@ const BattingScores = ({COLOR, player, fontFamily}) => {
 			{player.key}{' '}
 			<span
 				style={{
-					fontSize: '50px',
+					fontSize: '.6em',
 				}}
 			>
 				{player.param1 === 0 ? '' : `(${player.param1})`}
 			</span>
+			
 		</PlayerScore>
 	);
 };
@@ -139,11 +150,13 @@ const BowlingScores = ({COLOR, player, fontFamily}) => {
 				fontFamily,
 			}}
 		>
-			{player.key}{'/'}{player.param2}
+			{player.key}
+			{'/'}
+			{player.param2}
 			<span
 				style={{
-					fontSize: '55px',
-					fontWeight:400
+					fontSize: '.6em',
+					fontWeight: 400,
 				}}
 			>
 				{' '}
@@ -152,7 +165,6 @@ const BowlingScores = ({COLOR, player, fontFamily}) => {
 		</PlayerScore>
 	);
 };
-
 
 // PlayedFor
 const PlayerContainer = styled.div`
@@ -200,8 +212,11 @@ const SmallBoxLeftSide = styled.div`
 	left: 0%;
 	top: 0%;
 	height: 175px;
-	width: 35px;
+	width: 100px;
 	border: 1px solid;
+	display: flex;
+    justify-content: center;
+    align-items: center;
 `;
 
 const PlayerMetaContainer = styled.div`
@@ -212,7 +227,7 @@ const PlayerMetaContainer = styled.div`
 `;
 
 const PlayerName = styled.h1`
-	margin: 0 0 0 60px;
+	margin: 0 0 0 110px;
 
 	font-style: normal;
 	font-weight: 400;
@@ -225,7 +240,7 @@ const PlayerName = styled.h1`
 `;
 
 const PlayerGradeTeam = styled.h1`
-	margin: 0 0 0 60px;
+	margin: 0 0 0 110px;
 	font-style: normal;
 	font-weight: 400;
 	font-size: 1.4em;

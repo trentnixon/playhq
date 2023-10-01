@@ -7,7 +7,7 @@ export const MadePossibleBy = ({frame, FPS, theme}) => (
 	<SponsorIntroContainer>
 		<SponsorsIntroCopy
 			style={{
-				fontFamily: 'Anton',
+				fontFamily: 'Oswald',
 				clipPath: FromTopToBottom(15, 'Wobbly'),
 				color: getContrastColor(darkenColor(theme.primary)),
 				opacity: interpolateOpacityByFrame(frame, FPS - 15, FPS, 1, 0),

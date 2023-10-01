@@ -1,13 +1,15 @@
 import styled from 'styled-components';
 import {getContrastColor} from '../../../../../utils/colors';
 import {splitSocreByRunsAndOvers} from '../../../../../utils/copy';
+import useImageDimensions from '../../../../../hooks/useImageDimensions';
+import {Img} from 'remotion';
 
 const TeamsAndScoresContainer = styled.div`
 	display: flex;
 	justify-content: space-between;
 	align-items: flex-start;
 	padding: 0 10px;
-	margin: 30px 0 60px;
+	margin:20px 0 0px;
 `;
 
 const TeamScoreContainer = styled.div`
@@ -17,34 +19,51 @@ const TeamScoreContainer = styled.div`
 	padding: 10px 0 0;
 `;
 
-const TeamScore = styled.h3`
-	font-size: 6em;
+const TeamScoreDiv = styled.div`
 	font-weight: 900;
 	margin: 0;
-	text-align: left;
 	letter-spacing: -0.1em;
 	margin: 0;
 	line-height: 1em;
 	text-transform: uppercase;
 	font-family: ${(props) => props.fontFamily};
 `;
-const TeamName = styled.h2`
-	font-style: normal;
-	font-weight: 400;
-	font-size: 2.8em;
-	line-height: 0.95em;
-	letter-spacing: -0.085em;
-	text-transform: uppercase;
+
+const TeamScore = styled.h3`
+	font-weight: 900;
 	margin: 0;
-	text-align: left;
+	letter-spacing: -0.1em;
+	margin: 0;
+	line-height: 1em;
+	text-transform: uppercase;
 	font-family: ${(props) => props.fontFamily};
 `;
 
-const TeamOvers = styled.span`
-	font-size: 0.5em;
-	letter-spacing: -0.095em;
+const Runs = styled(TeamScore)`
+	font-size: 5em;
+`;
+const Overs = styled(TeamScore)`
+	font-size: 2em;
 	font-weight: 600;
 `;
+const TeamName = styled.h2`
+	font-style: normal;
+	font-weight: 400;
+	font-size: 1.8em;
+	line-height: 0.95em;
+	letter-spacing: -0.085em;
+	text-transform: uppercase;
+	margin: 10px 0 0 0;
+	text-align: center;
+	font-family: ${(props) => props.fontFamily};
+`;
+const ScoresAndLogoContainer = styled.div`
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	align-items: center;
+`;
+
 const GradeName = styled.h2`
 	font-style: normal;
 	font-weight: 400;
@@ -56,66 +75,90 @@ const GradeName = styled.h2`
 	text-align: center;
 	font-family: ${(props) => props.fontFamily};
 `;
+const LogoHolder = styled.div`
+	margin: 0 2em;
+`;
+
 export const TeamsAndScores = (props) => {
-	const {homeTeam, awayTeam, fontFamily, gradeName} = props;
+	const {homeTeam, awayTeam, fontFamily, gradeName, THEME,teamHomeLogo, teamAwayLogo} = props;
 
 	const [HomeScore, HomeOvers] = splitSocreByRunsAndOvers(homeTeam.score);
 	const [AwayScore, AwayOvers] = splitSocreByRunsAndOvers(awayTeam.score);
+
+	const IMGSIZING = [190, 240, 180];
+	const teamHomeLogoStyles = useImageDimensions(
+		teamHomeLogo,
+		IMGSIZING
+	);
+	const teamAwayLogoStyles = useImageDimensions(
+		teamAwayLogo,
+		IMGSIZING
+	);
+
 	return (
 		<>
 			<GradeName
 				fontFamily={fontFamily}
-				style={{
-					color: getContrastColor(props.THEME.primary),
-				}}
+				style={{color: getContrastColor(THEME.primary)}}
 			>
 				{gradeName}
 			</GradeName>
-
 			<TeamsAndScoresContainer>
 				<TeamScoreContainer>
-					<TeamScore
+					<TeamDetails
+						team={{name: homeTeam.name, logo: teamHomeLogo}}
+						score={HomeScore}
+						overs={HomeOvers}
 						fontFamily={fontFamily}
-						style={{
-							color: getContrastColor(props.THEME.primary),
-							textAlign: 'left',
-						}}
-					>
-						{HomeScore}
-						{HomeOvers && <TeamOvers>{` (${HomeOvers}`}</TeamOvers>}
-					</TeamScore>
-					<TeamName
-						fontFamily={fontFamily}
-						style={{
-							color: getContrastColor(props.THEME.primary),
-							textAlign: 'left',
-						}}
-					>
-						{homeTeam.name}
-					</TeamName>
+						themeColor={THEME.primary}
+						imgStyles={teamHomeLogoStyles}
+						textAlign="right"
+						flexDirection="row"
+						// <-- Add this line
+					/>
 				</TeamScoreContainer>
 				<TeamScoreContainer>
-					<TeamScore
+					<TeamDetails
+						team={{name: awayTeam.name, logo: teamAwayLogo}}
+						score={AwayScore}
+						overs={AwayOvers}
 						fontFamily={fontFamily}
-						style={{
-							textAlign: 'right',
-							color: getContrastColor(props.THEME.primary),
-						}}
-					>
-						{AwayScore}
-						{AwayOvers && <TeamOvers>{` (${AwayOvers}`}</TeamOvers>}
-					</TeamScore>
-					<TeamName
-						fontFamily={fontFamily}
-						style={{
-							textAlign: 'right',
-							color: getContrastColor(props.THEME.primary),
-						}}
-					>
-						{awayTeam.name}
-					</TeamName>
+						themeColor={THEME.primary}
+						imgStyles={teamAwayLogoStyles}
+						textAlign="left"
+						flexDirection="row-reverse" // <-- Add this line
+					/>
 				</TeamScoreContainer>
 			</TeamsAndScoresContainer>
 		</>
+	);
+};
+
+const TeamDetails = ({
+	team,
+	score,
+	overs,
+	fontFamily,
+	themeColor,
+	imgStyles,
+	textAlign,
+	flexDirection,
+}) => {
+	return (
+		<ScoresAndLogoContainer style={{flexDirection: flexDirection}}>
+			<TeamScoreDiv
+				fontFamily={fontFamily}
+				style={{
+					color: getContrastColor(themeColor),
+					textAlign: textAlign,
+				}}
+			>
+				<Runs>{score}</Runs>
+				{overs && <Overs>{` (${overs}`}</Overs>}
+			</TeamScoreDiv>
+			<LogoHolder>
+				<Img src={team.logo} style={{...imgStyles,borderRadius:'100%'}} />
+			</LogoHolder>
+		</ScoresAndLogoContainer>
 	);
 };

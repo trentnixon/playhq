@@ -132,7 +132,7 @@ export const SelectAudio = ({ isPlaying }) => {
                   <td>
                     <Group>
                       {isPlaying ? (
-                        <IconEarOff color={theme.colors.green[5]} />
+                        <IconEarOff color={theme.colors.green[5]} /> 
                       ) : (
                         <Center>
                           {item.id === currentSong?.id ? (

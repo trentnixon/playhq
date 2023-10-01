@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { useRouter } from "next/router";
 import { useAccountDetails } from "../../lib/userContext";
 import { useUser } from "../../lib/authContext";
 import Cookies from "js-cookie";
+import cookie from "cookie"; // Make sure to import the cookie library
+
 import { fetcher } from "../../lib/api";
 import { P, PageTitle, SubHeaders } from "../../components/Members/Common/Type";
 import {
@@ -19,32 +20,31 @@ const query = qs.stringify(
   {
     populate: [
       "template",
-      "theme", 
-      "audio_option", 
+      "theme",
+      "audio_option",
       "ai_publication",
       "ai_writting_tone",
       "ai_writting_style",
+      "account_media_libraries",
+      "account_media_libraries.imageId",
     ],
   },
   {
     encodeValuesOnly: true,
   }
 );
- 
-const Design = () => {
+
+const Design = ({ Response }) => {
   const { account } = useAccountDetails();
   const [userAccount, setUserAccount] = useState(account);
-  const [isPlaying, setIsPlaying] = useState(false);
-
-  /* is User Auth */
+  //const [isPlaying, setIsPlaying] = useState(false);
   const { user } = useUser();
-/*   const router = useRouter();
-  const currentRoute = router.pathname;
-  useEffect(() => {
-    if (!user) router.push(`/members/verification/?prev=${currentRoute}`);
-  }, []); */
-  /* End User Check*/
 
+  console.log(
+    "Response",
+    Response?.attributes.account_media_libraries.data,
+    Response?.attributes.account_media_libraries.data.length
+  );
   useEffect(() => {
     console.log("userAccount ", userAccount);
   }, [userAccount]);
@@ -52,43 +52,49 @@ const Design = () => {
   return (
     <LoadingStateWrapper conditions={[user, userAccount]}>
       <MembersWrapper>
-        <PageTitle Copy={"Asset Design"} ICON={<IconColorPicker size={40} />} />
-        <SubHeaders Copy={"Design Your Vision"} />
+        <PageTitle
+          Copy={"Graphics Package"}
+          ICON={<IconColorPicker size={40} />}
+        />
+  
         <PageCopyWrapper>
           <P>
-            Elevate Your Content with Personalized Templates and Audio for a
-            unique representation of your club or association's style and brand
-            identity. 
-          </P> 
-        </PageCopyWrapper> 
+            Elevate Your Content with Personalized Graphics Packages and Audio
+            Bundles for a unique representation of your club or association's
+            style and brand identity.
+          </P>
+        </PageCopyWrapper>
         <Space h={20} />
         <DesignTabs
-          isPlaying={isPlaying}
           userAccount={userAccount}
-          setIsPlaying={setIsPlaying}
+          hasMediaItems={
+            Response?.attributes.account_media_libraries.data.length
+          }
         />
       </MembersWrapper>
-    </LoadingStateWrapper> 
+    </LoadingStateWrapper>
   );
 };
 
-Design.getInitialProps = async (ctx) => {
-  console.log(`${Cookies.get("id")}`);
+export async function getServerSideProps(ctx) {
+  // Parse cookies from the incoming headers
+  const parsedCookies = cookie.parse(ctx.req.headers.cookie || "");
+  const jwt = parsedCookies["jwt"]; // Use the actual key you set the JWT cookie with
+  const linkedAccount = parsedCookies["LinkedAccount"]; // Use the actual key
 
+  // Now you can use these in your fetcher
   const response = await fetcher(
-    `${process.env.NEXT_PUBLIC_STRAPI_URL}/accounts/${Cookies.get(
-      "LinkedAccount"
-    )}?${query}`,
+    `${process.env.NEXT_PUBLIC_STRAPI_URL}/accounts/${linkedAccount}?${query}`,
     {
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${Cookies.get("jwt")}`,
+        Authorization: `Bearer ${jwt}`,
       },
     }
   );
-  let Response = response.data;
-  return {
-    Response,
-  };
-};
+
+  const Response = response.data;
+  return { props: { Response } }; // Return the response data as props
+}
+
 export default Design;

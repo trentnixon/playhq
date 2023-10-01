@@ -11,7 +11,7 @@ function UserLoggedIn() {
     }, 1000);
 
     return () => {
-      clearTimeout(timer);
+      clearTimeout(timer); 
     };
   }, []);
 

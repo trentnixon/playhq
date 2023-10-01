@@ -6,50 +6,58 @@ import { fetcher } from "../../lib/api";
 import { useUser } from "../../lib/authContext";
 import { SignInLoading } from "./SignInLoading";
 //import { useAccountDetails } from "../../lib/userContext";
-function withAuth(WrappedComponent) { 
-
+function withAuth(WrappedComponent) {
   return function (props) {
-    console.log("withAuth PROPS", props)
+    console.log("withAuth PROPS", props);
     const [loading, setLoading] = useState(true);
     const { user: userFromProps } = props;
     const { user: userFromHook } = useUser();
     const actualUser = userFromProps || userFromHook;
-    console.log("userFromHook", userFromHook)
-    
+    console.log("userFromHook", userFromHook);
+
     const Redirect = () => {
       Router.push("/members/setup");
-    }; 
+    };
 
     const FindisSet = async (check) => {
-      const res = await fetcher(
-        `${process.env.NEXT_PUBLIC_STRAPI_URL}/accounts/${check}`,
-        {
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${Cookies.get("jwt")}`,
-          },
+      try {
+        const res = await fetcher(
+          `${process.env.NEXT_PUBLIC_STRAPI_URL}/accounts/${check}`,
+          {
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${Cookies.get("jwt")}`,
+            },
+          }
+        );
+
+        if (!res.data || res.error?.status === 404) {
+          console.log("Account not found or other error:", res.error);
+          Redirect();
+          return;
         }
-      );
 
-      if (!res.data || res.error?.status === 404) {
-        Redirect();
-        return;
+        if (res.data?.attributes.isSetup === false) {
+          console.log("isSetup is explicitly false");
+          Redirect();
+          return;
+        }
+        if (typeof res.data?.attributes.isSetup === "undefined") {
+          console.log("isSetup is undefined");
+        }
+        return true;
+      } catch (error) {
+        console.error("Network or other error:", error);
+        // Decide whether to redirect or not based on the nature of the error
       }
-
-      if (res.data?.attributes.isSetup === false) {
-        Redirect();
-        return;
-      }
-
-      return true;
-    }; 
+    };
 
     useEffect(() => {
       setLoading(true);
       const check = getAccountFromLocalCookie();
-      console.log("HOC", check)
+      console.log("HOC", check);
       if (check === "undefined") {
-        Redirect(); 
+        Redirect();
       } else {
         FindisSet(check).finally(() => {
           setLoading(false);

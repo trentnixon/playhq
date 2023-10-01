@@ -1,51 +1,48 @@
 import styled from 'styled-components';
-import {
-	getContrastColor,
-	lightenColor,
-	setOpacity,
-} from '../../../../../utils/colors';
-import {useCurrentFrame} from 'remotion';
+import {getContrastColor, lightenColor, setOpacity} from '../../../../../utils/colors';
+import {Img, useCurrentFrame} from 'remotion';
 import {interpolateOpacityByFrame} from '../../../../../Animation/interpolate';
 import {FromLeftToRight} from '../../../../../Animation/ClipWipe';
+import useImageDimensions from '../../../../../hooks/useImageDimensions';
 
 const LadderPositionContainer = styled.div`
 	display: flex;
 	flex-direction: row;
-	justify-content: space-between;
+	justify-content: space-evenly;
 	align-content: center;
 	align-items: center;
 	margin: 2px auto;
-	padding: 0 0px 0 10px;
+	padding: 5px 10px;
 	width: 100%;
 	height: ${(props) => props.Height}px;
-	background-color: white;
+	
 	font-family: ${(props) => props.fontFamily};
 	background-color: ${(props) => props.bgColor};
+	border-radius: 5px;
+	border: 2px solid rgba(255, 255, 255, 0.1);
+	background: ${(props) => setOpacity(props.bgColor,0.4) };
+	background-blend-mode: soft-light;
+	backdrop-filter: blur(20px);
 `;
+
+const ImgContainer = styled.div``;
 
 const Name = styled.span`
-	font-size: 45px;
-	font-weight: 100;
+	font-size: 1.8em;
+	font-weight: 400;
 	color: ${(props) => props.color};
-	width: 60%;
-	letter-spacing: 0.05em;
-`;
-
-const PerformanceContainer = styled.span`
-	width: 30%;
-	display: flex;
-	justify-content: space-evenly;
-	align-items: center;
-	padding: 0 10px;
-	height: ${(props) => props.Height}px;
+	width: 50%;
+	letter-spacing: 1px;
 `;
 
 const Performance = styled.span`
-	font-size: 45px;
-	font-weight: 100;
+	font-size: 1.6em;
+	font-weight: 400;
 	color: ${(props) => props.color};
-	text-align: center;
-	width: 20%;
+	text-align: right;
+	max-width: 7%;
+	min-width: 5%;
+	margin-left: 10px;
 `;
 
 export const LadderPosition = ({
@@ -57,18 +54,23 @@ export const LadderPosition = ({
 	isTeam,
 	FPS_LADDER,
 }) => {
-	const {TIE, L, W, P, position, PTS, teamName} = LadderItem;
+	const {TIE, L, W, P, position, PTS, teamName, teamLogo} = LadderItem;
 	const frame = useCurrentFrame();
 
-	console.log(LadderItem);
+	//console.log(LadderItem);
 	const useTHEMECOLOR = isTeam ? 'secondary' : 'primary';
-	const semiTransparent = setOpacity(THEME[useTHEMECOLOR], 0.5);
-	const semiDataTransparent = setOpacity(THEME[useTHEMECOLOR], 0.75);
-	const ContainerHeight = 1500;
+
+	const ContainerHeight = 950;
+	const IMGSIZING = [
+		ContainerHeight / NumTeams / 1.5,
+		ContainerHeight / NumTeams / 1.5,
+		ContainerHeight / NumTeams / 1.5,
+	];
+	const TemLogoStyles = useImageDimensions(teamLogo, IMGSIZING);
+
 	return (
 		<LadderPositionContainer
 			style={{
-				fontFamily: 'Anton',
 				clipPath: FromLeftToRight(30 + INT * 3, 'Slow'),
 				opacity: interpolateOpacityByFrame(
 					frame,
@@ -79,44 +81,35 @@ export const LadderPosition = ({
 				),
 			}}
 			fontFamily={fontFamily}
-			bgColor={semiTransparent}
+			bgColor={THEME[useTHEMECOLOR]}
 			Height={ContainerHeight / NumTeams - 4}
 		>
-			<Name color={getContrastColor(lightenColor(THEME[useTHEMECOLOR]))}>
-				{position}. {teamName}
-			</Name>
-			<PerformanceContainer
-				Height={ContainerHeight / NumTeams - 4}
+			<ImgContainer
 				style={{
-					backgroundColor: semiDataTransparent,
+					width: `${ContainerHeight / NumTeams / 1.5}px`,
+					textAlign: 'center',
 				}}
 			>
-				<Performance
-					color={getContrastColor(lightenColor(THEME[useTHEMECOLOR]))}
-				>
-					{P}
-				</Performance>
-				<Performance
-					color={getContrastColor(lightenColor(THEME[useTHEMECOLOR]))}
-				>
-					{W}
-				</Performance>
-				<Performance
-					color={getContrastColor(lightenColor(THEME[useTHEMECOLOR]))}
-				>
-					{L}
-				</Performance>
-				<Performance
-					color={getContrastColor(lightenColor(THEME[useTHEMECOLOR]))}
-				>
-					{TIE}
-				</Performance>
-				<Performance
-					color={getContrastColor(lightenColor(THEME[useTHEMECOLOR]))}
-				>
-					{PTS}
-				</Performance>
-			</PerformanceContainer>
+				<Img src={teamLogo} style={{...TemLogoStyles, borderRadius: '100%'}} />
+			</ImgContainer>
+			<Name color={getContrastColor(THEME[useTHEMECOLOR])}>
+				{position}. {teamName}
+			</Name>
+			<Performance color={getContrastColor(THEME[useTHEMECOLOR])}>
+				{P}
+			</Performance>
+			<Performance color={getContrastColor(THEME[useTHEMECOLOR])}>
+				{W}
+			</Performance>
+			<Performance color={getContrastColor(THEME[useTHEMECOLOR])}>
+				{L}
+			</Performance>
+			<Performance color={getContrastColor(THEME[useTHEMECOLOR])}>
+				{TIE}
+			</Performance>
+			<Performance color={getContrastColor(THEME[useTHEMECOLOR])}>
+				{PTS}
+			</Performance>
 		</LadderPositionContainer>
 	);
 };

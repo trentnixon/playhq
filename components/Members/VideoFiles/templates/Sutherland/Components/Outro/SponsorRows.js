@@ -152,7 +152,7 @@ const SponsorTitle = ({name, fontFamily, frame, FPS, theme}) => {
 				fontFamily,
 				fontSize: '2em',
 				lineHeight: '1em',
-				fontFamily: 'Anton',
+				fontFamily: 'Oswald',
 				margin: 0,
 				padding: 0,
 				clipPath: FromTopToBottom(25, 'Wobbly'),

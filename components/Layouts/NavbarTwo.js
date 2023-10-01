@@ -216,23 +216,23 @@ const MembersNavItem = ({ user, setMenu }) => {
     },
     {
       href: `${PATH}/orderHistory`,
-      title: "Bundles",
+      title: "Downloads",
       IconComponent: IconDownload,
     },
     {
       href: `${PATH}/design`,
-      title: "Templates",
+      title: "Graphics Package",
       IconComponent: IconColorPicker,
     },
-    { href: `${PATH}/brand`, title: "Brand", IconComponent: IconBadgeTm },
+    { href: `${PATH}/brand`, title: "Branding", IconComponent: IconBadgeTm },
     {
       href: `${PATH}/gallery`,
       title: "Media Gallery",
       IconComponent: IconPhotoPlus,
     },
-    { href: `${PATH}/sponsors`, title: "Sponsors", IconComponent: IconCheck },
+    { href: `${PATH}/sponsors`, title: "Add Sponsors", IconComponent: IconCheck },
 
-    { href: `${PATH}/tracking`, title: "Tracking", IconComponent: IconTrack },
+    { href: `${PATH}/tracking`, title: "Games", IconComponent: IconTrack },
     {
       href: `${PATH}/account`,
       title: "Account",

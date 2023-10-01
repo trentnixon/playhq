@@ -1,5 +1,8 @@
 import styled from 'styled-components';
-import {getContrastColor, darkenColor, setOpacity} from '../../../../../utils/colors';
+import {
+	getContrastColor,
+	setOpacity,
+} from '../../../../../utils/colors';
 import {useCurrentFrame} from 'remotion';
 import {interpolateOpacityByFrame} from '../../../../../Animation/interpolate';
 import {FromMiddle, FromTopToBottom} from '../../../../../Animation/ClipWipe';
@@ -9,9 +12,11 @@ const HeaderContainerStyles = styled.div`
 	justify-content: space-between;
 	align-items: center;
 	height: 40px;
-	padding: 0 10px;
-	background-color: ${(props) => setOpacity(darkenColor(props.THEME.secondary),0.7) };
+	padding: 0px 10px;
+	
+	/* 	background-color: ${(props) => setOpacity(props.THEME.secondary, 0.05)}; */
 `;
+
 const HeaderCopy = styled.p`
 	font-family: ${(props) => props.fontFamily};
 	font-style: normal;
@@ -20,103 +25,68 @@ const HeaderCopy = styled.p`
 	letter-spacing: -0.015em;
 	text-transform: uppercase;
 	width: 100%;
-	font-size: 1.3em;
+	font-size: 1.2em;
 	line-height: 1.2em;
 	margin: 0;
 `;
-const GameType = styled(HeaderCopy)`
 
-	width: 15%;
-	font-weight: 900;
-`;
+const HeaderItem = ({ label, width, fontFamily, primaryColor, FPS_SCORECARD, frame,textAlign }) => {
+  const commonStyles = {
+    color: getContrastColor(primaryColor),
+    clipPath: FromTopToBottom(30, 'Slow'),
+    opacity: interpolateOpacityByFrame(frame, FPS_SCORECARD - 30, FPS_SCORECARD, 1, 0),
+	textAlign:textAlign
+  };
 
-const Ground = styled(HeaderCopy)`
+  return (
+    <HeaderCopy
+      style={{ ...commonStyles, width }}
+      fontFamily={fontFamily}
+    >
+      {label}
+    </HeaderCopy>
+  );
+};
 
-	text-align: center;
-	width: 60%;
-`;
+export const HeaderContainer = ({ type, round, THEME, fontFamily, FPS_SCORECARD, gradeName }) => {
+  const frame = useCurrentFrame();
+  const primaryColor = THEME.primary;
 
-const Round = styled(HeaderCopy)`
-	
-	width: 20%;
-	text-align: right;
-	
-`;
-
-export const HeaderContainer = (props) => {
-	const {type, round, THEME, fontFamily, FPS_SCORECARD, gradeName} = props;
-	const frame = useCurrentFrame();
-	return (
-		<HeaderContainerStyles
-			THEME={THEME}
-			style={{
-				clipPath: FromMiddle(7, 'Wobbly'),
-				opacity: interpolateOpacityByFrame(
-					frame,
-					FPS_SCORECARD - 30,
-					FPS_SCORECARD,
-					1,
-					0
-				),
-			}}
-		>
-			<GameType>
-				<HeaderCopy
-					THEME={THEME}
-					fontFamily={fontFamily}
-					style={{
-						color: getContrastColor(darkenColor(props.THEME.secondary)),
-						clipPath: FromTopToBottom(30, 'Slow'),
-						opacity: interpolateOpacityByFrame(
-							frame,
-							FPS_SCORECARD - 30,
-							FPS_SCORECARD,
-							1,
-							0
-						),
-					}}
-				>
-					{type}
-				</HeaderCopy>
-			</GameType>
-			<Ground>
-				<HeaderCopy
-					THEME={THEME}
-					fontFamily={fontFamily}
-					style={{
-						color: getContrastColor(darkenColor(props.THEME.secondary)),
-						clipPath: FromTopToBottom(30, 'Slow'),
-						opacity: interpolateOpacityByFrame(
-							frame,
-							FPS_SCORECARD - 30,
-							FPS_SCORECARD,
-							1,
-							0
-						),
-					}}
-				>
-					{gradeName}
-				</HeaderCopy>
-			</Ground>
-			<Round>
-				<HeaderCopy
-					THEME={THEME}
-					fontFamily={fontFamily}
-					style={{
-						color: getContrastColor(darkenColor(props.THEME.secondary)),
-						clipPath: FromTopToBottom(30, 'Slow'),
-						opacity: interpolateOpacityByFrame(
-							frame,
-							FPS_SCORECARD - 30,
-							FPS_SCORECARD,
-							1,
-							0
-						),
-					}}
-				>
-					{round}
-				</HeaderCopy>
-			</Round>
-		</HeaderContainerStyles>
-	);
+  return (
+    <HeaderContainerStyles
+      THEME={THEME}
+      style={{
+        clipPath: FromMiddle(7, 'Wobbly'),
+        opacity: interpolateOpacityByFrame(frame, FPS_SCORECARD - 30, FPS_SCORECARD, 1, 0),
+      }}
+    >
+      <HeaderItem
+        label={type}
+        width="15%"
+        fontFamily={fontFamily}
+        primaryColor={primaryColor}
+        FPS_SCORECARD={FPS_SCORECARD}
+        frame={frame}
+		textAlign='left'
+      />
+      <HeaderItem
+        label={gradeName}
+        width="60%"
+        fontFamily={fontFamily}
+        primaryColor={primaryColor}
+        FPS_SCORECARD={FPS_SCORECARD}
+        frame={frame}
+		textAlign='center'
+      />
+      <HeaderItem
+        label={round}
+        width="20%"
+        fontFamily={fontFamily}
+        primaryColor={primaryColor}
+        FPS_SCORECARD={FPS_SCORECARD}
+        frame={frame}
+		textAlign='right'
+      />
+    </HeaderContainerStyles>
+  );
 };

@@ -60,5 +60,5 @@ const Container = styled.div`
 	align-items: center;
 	justify-content: flex-start;
 	position: absolute;
-	height: 380px;
+	height: auto;
 `;

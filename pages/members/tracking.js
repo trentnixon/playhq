@@ -22,18 +22,12 @@ import SetupCheck from "../../components/Members/Account/HOC/SetupCheck";
 import { LoadingStateWrapper } from "../../components/Members/Account/HOC/LoadingStateWrapper";
 import { GamesCalendar } from "../../components/Members/Tracking/GamesCalendar";
 import { NextGameDate } from "../../components/Members/Tracking/NextGameDate";
+import { GamesListing } from "../../components/Members/Tracking/GamesListing";
 
 const Tracking = ({ DATA }) => {
   const { account } = useAccountDetails();
   const [userAccount, setUserAccount] = useState(account);
-  /* is User Auth */
   const { user, loading } = useUser();
-/*   const router = useRouter();
-  const currentRoute = router.pathname;
-
-  useEffect(() => {
-    if (!user) router.push(`/members/verification/?prev=${currentRoute}`);
-  }, [user]); */
 
   useEffect(() => {
     if (account) {
@@ -67,15 +61,16 @@ const Tracking = ({ DATA }) => {
               </ShadowWrapper>
             </>
           ) : (
-            <NextGameDate gamesData={DATA} />
+            false
           )}
 
           {Object.keys(DATA).length === 0 ? (
             false
           ) : (
             <>
-              <P>Full Calendar</P>
-              <GamesCalendar gamesData={DATA} />
+              <GamesListing gamesData={DATA} />
+              {/* 
+              <GamesCalendar gamesData={DATA} /> */}
             </>
           )}
 

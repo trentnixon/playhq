@@ -9,8 +9,8 @@ export const LadderPositions = ({Ladder, THEME, fontFamily, FPS_LADDER}) => {
 	console.log(Ladder.competition)
 	return (
 		<>
-			<HeaderContainer
-				Title={Ladder.name}
+			<HeaderContainer 
+				Title={Ladder.name} 
 				competition={Ladder.competition} 
 				FPS_LADDER={FPS_LADDER}
 				THEME={THEME}

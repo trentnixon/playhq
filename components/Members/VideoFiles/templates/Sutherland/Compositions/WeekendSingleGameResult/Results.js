@@ -53,7 +53,7 @@ const ResultsContainer = styled.div`
 	justify-content: flex-start;
 	width: 96%;
 	margin: 0 2%;
-	height: 1160px;
+	height: 1100px;
 	position: relative;
 	top: 260px;
 `;

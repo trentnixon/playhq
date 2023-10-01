@@ -5,11 +5,12 @@ import {
 	AbsoluteFill,
 	Audio,
 	interpolate,
-	staticFile,
+	useCurrentFrame,
 	Img,
 } from 'remotion';
 
-import * as Anton from '@remotion/google-fonts/Anton';
+//import * as Anton from '@remotion/google-fonts/Anton';
+import * as Oswald from '@remotion/google-fonts/Oswald';
 import * as Hurricane from '@remotion/google-fonts/Hurricane';
 // Import Design Templates for MATCHDAYRESULT.
 // Add new deisng patterns below
@@ -23,23 +24,25 @@ import {Ladder} from './Compositions/Ladder/index';
 import {TitleSequenceFrame} from './Components/Intro';
 import {OutroSequenceFrame} from './Components/Outro';
 import {WeekendSingleGameResult} from './Compositions/WeekendSingleGameResult';
+import {interpolateValueByFrame} from '../../Animation/interpolate';
+import { useEffect, useState } from 'react';
+import { BGImageAnimation } from './Components/Common/BGImageAnimation';
 
 // END
 
 export const Template_Sutherland = (props) => {
 	const {DATA} = props;
 	const {HurricaneFamily} = Hurricane.loadFont();
-	const {AntonFamily} = Anton.loadFont();
+	//const {AntonFamily} = Anton.loadFont();
+	const {OswaldFamily} = Oswald.loadFont();
 
 	const {TIMINGS} = DATA;
 	const TEMPLATE = DATA.VIDEOMETA.Video.CompositionID;
 	const THEME = DATA.VIDEOMETA.Video.Theme;
 
-	const img = staticFile('/assets/TeamPlaceholderIMG.jpg');
-
 	const TEMPLATES = {
 		Top5BattingList: (
-			<Top5List
+			<Top5List 
 				DATA={DATA}
 				theme={THEME}
 				TYPE="BATTING"
@@ -103,15 +106,14 @@ export const Template_Sutherland = (props) => {
 
 	return (
 		<ThemeProvider theme={THEME}>
-			<Img
-				src={img}
-				style={{
-					width: '100%',
-					filter:'blur(5px)'
-				}}
+			<BGImageAnimation
+				HeroImage={DATA.VIDEOMETA.Video.HeroImage}
+				TIMINGS={(TIMINGS.FPS_MAIN+210)}
+				THEME={THEME}
 			/>
 			<AbsoluteFill
 				style={{
+					left:'-4px',
 					background: `linear-gradient(90deg, ${THEME.primary} 45%, rgba(157, 203, 236, 0.00) 100%)`,
 				}}
 			>
@@ -152,5 +154,3 @@ export const Template_Sutherland = (props) => {
 		</ThemeProvider>
 	);
 };
-
-// {TEMPLATES[RENDER.THEME.VideoTemplate]}

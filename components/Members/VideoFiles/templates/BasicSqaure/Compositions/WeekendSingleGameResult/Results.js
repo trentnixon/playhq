@@ -26,7 +26,7 @@ export const Results = ({DATA, THEME, fontFamily, FPS_MAIN, FPS_SCORECARD}) => {
 										DATA={DATA}
 									/>
 								))}
-							</MatchContainer> 
+							</MatchContainer>  
 						</Series.Sequence> 
 					);
 				})}

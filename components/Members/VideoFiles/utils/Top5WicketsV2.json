@@ -2,6 +2,7 @@
 	"TIMINGS": {"FPS_INTRO": 90, "FPS_OUTRO": 120, "FPS_MAIN": 360},
 	"VIDEOMETA": {
 		"Video": {
+			"Template": "Sutherland",
 			"Title": "Top 5",
 			"TitleSplit": ["Weekend", "Bowlers"],
 			"CompositionID": "Top5BowlingList",
@@ -14,7 +15,13 @@
 				"dark": "#111",
 				"white": "#FFF"
 			},
-			"Template": "Basic Rounded",
+			"HeroImage": {
+				"url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/0_D5_A3099_7e56deef20.jpg",
+				"width": 2000,
+				"height": 1333,
+				"ratio": "landscape"
+			},
+			
 			"audio_option": "https://lmssocialmediamanager.s3.ap-southeast-2.amazonaws.com/assets/Saltine_1.mp3",
 			"TIMINGS": {"FPS_INTRO": 90, "FPS_OUTRO": 120, "FPS_MAIN": 360},
 			"FRAMES": []
@@ -45,87 +52,97 @@
 		},
 		"DATA": [
 			{
-				"name": "Wayne Leonard",
-				"key": 4,
-				"param1": 8,
-				"param2": 21,
-				"playedAgainst": "Toowoomba Grey Cavaliers",
-				"playedFor": "GC Thunder Green"
+			  "name":"Ryan Walker",
+			  "key":7,
+			  "param1":5,
+			  "param2":15,
+			  "playedFor":"Northern Suburbs Mens 2nd Grade",
+			  "playedAgainst":"Ipswich Mens 2nd Grade",
+			  "teamLogo":"https://fixtura.s3.ap-southeast-2.amazonaws.com/Default_ICON_171b58a21b.png"
 			},
 			{
-				"name": "Michael Ross",
-				"key": 4,
-				"param1": 9,
-				"param2": 22,
-				"playedAgainst": "Redlands Logan Maroon",
-				"playedFor": "GC Thunder White"
+			  "name":"Saxon Jeh",
+			  "key":5,
+			  "param1":10,
+			  "param2":17,
+			  "playedFor":"Valley Mens 2nd Grade",
+			  "playedAgainst":"South Brisbane Mens 2nd Grade",
+			  "teamLogo":"https://fixtura.s3.ap-southeast-2.amazonaws.com/Default_ICON_171b58a21b.png"
 			},
 			{
-				"name": "Robert Laing",
-				"key": 3,
-				"param1": 8,
-				"param2": 43,
-				"playedAgainst": "Sunshine Coast Gold",
-				"playedFor": "GC Thunder Green"
+			  "name":"Damyn Waddups",
+			  "key":5,
+			  "param1":8,
+			  "param2":17,
+			  "playedFor":"Redlands Mens 2nd Grade",
+			  "playedAgainst":"Sunshine Coast Mens 2nd Grade",
+			  "teamLogo":"https://fixtura.s3.ap-southeast-2.amazonaws.com/Default_ICON_171b58a21b.png"
 			},
 			{
-				"name": "Brian Rowe (vc)",
-				"key": 2,
-				"param1": 4,
-				"param2": 8,
-				"playedAgainst": "Lockyer",
-				"playedFor": "GC Thunder Blue"
+			  "name":"Sianna Ginger",
+			  "key":5,
+			  "param1":6,
+			  "param2":29,
+			  "playedFor":"Valley Womens 1st Grade",
+			  "playedAgainst":"Gold Coast Womens 1st Grade",
+			  "teamLogo":"https://fixtura.s3.ap-southeast-2.amazonaws.com/Default_ICON_171b58a21b.png"
 			},
 			{
-				"name": "Craig Field",
-				"key": 2,
-				"param1": 7,
-				"param2": 17,
-				"playedAgainst": "Redlands Logan Maroon",
-				"playedFor": "GC Thunder White"
+			  "name":"Eli Brain",
+			  "key":5,
+			  "param1":10,
+			  "param2":36,
+			  "playedFor":"Northern Suburbs Boys Under 17",
+			  "playedAgainst":"Sandgate-Redcliffe Boys Under 17",
+			  "teamLogo":"https://fixtura.s3.ap-southeast-2.amazonaws.com/Default_ICON_171b58a21b.png"
 			}
-		]
+		  ]
 	},
 	"DATA": [
 		{
-			"name": "Wayne Leonard",
-			"key": 4,
-			"param1": 8,
-			"param2": 21,
-			"playedAgainst": "Toowoomba Grey Cavaliers",
-			"playedFor": "GC Thunder Green"
+		  "name":"Ryan Walker",
+		  "key":7,
+		  "param1":5,
+		  "param2":15,
+		  "playedFor":"Northern Suburbs Mens 2nd Grade",
+		  "playedAgainst":"Ipswich Mens 2nd Grade",
+		  "teamLogo":"https://fixtura.s3.ap-southeast-2.amazonaws.com/Default_ICON_171b58a21b.png"
 		},
 		{
-			"name": "Michael Ross",
-			"key": 4,
-			"param1": 9,
-			"param2": 22,
-			"playedAgainst": "Redlands Logan Maroon",
-			"playedFor": "GC Thunder White"
+		  "name":"Saxon Jeh",
+		  "key":5,
+		  "param1":10,
+		  "param2":17,
+		  "playedFor":"Valley Mens 2nd Grade",
+		  "playedAgainst":"South Brisbane Mens 2nd Grade",
+		  "teamLogo":"https://fixtura.s3.ap-southeast-2.amazonaws.com/Default_ICON_171b58a21b.png"
 		},
 		{
-			"name": "Robert Laing",
-			"key": 3,
-			"param1": 8,
-			"param2": 43,
-			"playedAgainst": "Sunshine Coast Gold",
-			"playedFor": "GC Thunder Green"
+		  "name":"Damyn Waddups",
+		  "key":5,
+		  "param1":8,
+		  "param2":17,
+		  "playedFor":"Redlands Mens 2nd Grade",
+		  "playedAgainst":"Sunshine Coast Mens 2nd Grade",
+		  "teamLogo":"https://fixtura.s3.ap-southeast-2.amazonaws.com/Default_ICON_171b58a21b.png"
 		},
 		{
-			"name": "Brian Rowe (vc)",
-			"key": 2,
-			"param1": 4,
-			"param2": 8,
-			"playedAgainst": "Lockyer",
-			"playedFor": "GC Thunder Blue"
+		  "name":"Sianna Ginger",
+		  "key":5,
+		  "param1":6,
+		  "param2":29,
+		  "playedFor":"Valley Womens 1st Grade",
+		  "playedAgainst":"Gold Coast Womens 1st Grade",
+		  "teamLogo":"https://fixtura.s3.ap-southeast-2.amazonaws.com/Default_ICON_171b58a21b.png"
 		},
 		{
-			"name": "Craig Field",
-			"key": 2,
-			"param1": 7,
-			"param2": 17,
-			"playedAgainst": "Redlands Logan Maroon",
-			"playedFor": "GC Thunder White"
+		  "name":"Eli Brain",
+		  "key":5,
+		  "param1":10,
+		  "param2":36,
+		  "playedFor":"Northern Suburbs Boys Under 17",
+		  "playedAgainst":"Sandgate-Redcliffe Boys Under 17",
+		  "teamLogo":"https://fixtura.s3.ap-southeast-2.amazonaws.com/Default_ICON_171b58a21b.png"
 		}
-	]
+	  ]
 }

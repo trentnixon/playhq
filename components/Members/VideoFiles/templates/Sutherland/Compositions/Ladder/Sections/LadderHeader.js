@@ -14,11 +14,11 @@ import {
 const LadderPositionContainer = styled.div`
 	display: flex;
 	flex-direction: row;
-	justify-content: space-between;
+	justify-content: space-evenly;
 	align-content: center;
 	align-items: center;
-	margin: 0px auto;
-	padding: 50x 0px;
+	margin: 2px auto;
+	padding: 5px 10px;
 	width: 100%;
 	height: ${(props) => props.Height}px;
 	background-color: white;
@@ -27,38 +27,29 @@ const LadderPositionContainer = styled.div`
 `;
 
 const Name = styled.span`
-	font-size: 25px;
+font-size: 1.3em;
 	font-weight: 400;
 	color: ${(props) => props.color};
 	width: 60%;
 `;
 
 const Performance = styled.span`
-font-size: 45px;
-font-weight: 100;
-color: ${(props) => props.color};
-text-align: center;
-width: 20%;
+	font-size: 1.3em;
+	font-weight: 400;
+	color: ${(props) => props.color};
+	text-align: right;
+	max-width: 7%;
+	min-width: 5%;
+	margin-left: 10px;
 `;
-
-const PerformanceContainer = styled.span`
-	width: 30%;
-	display: flex;
-	justify-content: space-evenly;
-	align-items: center;
-	padding: 0 10px;
-	height: ${(props) => props.Height}px;
-`;
-
 
 export const LadderHeader = ({THEME, fontFamily, NumTeams, FPS_LADDER}) => {
 	const frame = useCurrentFrame();
 	console.log(NumTeams);
-	const ContainerHeight = 1500;
+	const ContainerHeight = 1200;
 	return (
 		<LadderPositionContainer
 			style={{
-        fontFamily: 'Anton',
 				clipPath: FromRightToLeft(30, 'Slow'),
 				opacity: interpolateOpacityByFrame(
 					frame,
@@ -73,13 +64,11 @@ export const LadderHeader = ({THEME, fontFamily, NumTeams, FPS_LADDER}) => {
 			Height={ContainerHeight / NumTeams - 4}
 		>
 			<Name color={darkenColor(THEME.secondary)}>{` `}</Name>
-			<PerformanceContainer>
-				<Performance color={darkenColor(THEME.secondary)}>P</Performance>
-				<Performance color={darkenColor(THEME.secondary)}>W</Performance>
-				<Performance color={darkenColor(THEME.secondary)}>L</Performance>
-				<Performance color={darkenColor(THEME.secondary)}>D</Performance>
-				<Performance color={darkenColor(THEME.secondary)}>PTS</Performance>
-			</PerformanceContainer>
+			<Performance color={darkenColor(THEME.secondary)}>P </Performance>
+			<Performance color={darkenColor(THEME.secondary)}>W</Performance>
+			<Performance color={darkenColor(THEME.secondary)}>L</Performance>
+			<Performance color={darkenColor(THEME.secondary)}>D</Performance>
+			<Performance color={darkenColor(THEME.secondary)}>PTS</Performance>
 		</LadderPositionContainer>
 	);
 };

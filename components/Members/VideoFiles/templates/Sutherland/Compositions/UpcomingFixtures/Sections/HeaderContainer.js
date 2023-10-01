@@ -26,11 +26,11 @@ const HeaderContainerStyles = styled.div`
 `;
 
 const HeaderCopy = styled.p`
-	font-family: Anton;
+	font-family: Oswald;
 	font-style: normal;
-	font-weight: 400;
+	font-weight: 600;
 	display: block;
-	letter-spacing: 0.05em;
+	letter-spacing: 0.005em;
 	text-transform: uppercase;
 	width: 100%;
 	font-size: 1.25em;

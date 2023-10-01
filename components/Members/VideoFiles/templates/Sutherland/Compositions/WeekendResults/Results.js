@@ -5,7 +5,7 @@ import {useCurrentFrame, Series} from 'remotion';
 import {Match} from './Sections';
 import {MatchContainer} from './Sections/MatchContainer';
 
-export const Results = ({DATA, THEME, fontFamily, FPS_MAIN, FPS_SCORECARD}) => {
+export const Results = ({DATA, THEME, FPS_MAIN, FPS_SCORECARD}) => {
 	console.log(DATA);
 	const groupsOfTwo = splitIntoGroupsOfTwo(DATA);
 	return (
@@ -21,7 +21,6 @@ export const Results = ({DATA, THEME, fontFamily, FPS_MAIN, FPS_SCORECARD}) => {
 										INT={i}
 										matchData={game}
 										THEME={THEME}
-										fontFamily={fontFamily}
 										FPS_SCORECARD={FPS_SCORECARD}
 									/>
 								))}

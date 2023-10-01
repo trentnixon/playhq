@@ -3,15 +3,23 @@ import {Img} from 'remotion';
 import {SpringToFrom} from '../../../../Animation/RemotionSpring';
 import {EraseToMiddleFromTop} from '../../../../Animation/ClipWipe';
 import {getContrastColor} from '../../../../utils/colors';
+import useImageDimensions from '../../../../hooks/useImageDimensions';
 
 export const PrincipalSponsor = ({fontFamily, FPS, DATA, theme}) => {
 	const getPrimarySponsor = (sponsorList) => {
-		//console.log(sponsorList);
+		console.log(sponsorList);
 		return sponsorList?.find((sponsor) => sponsor.isPrimary === true);
 	};
 	const PrincipalSponsorIs = getPrimarySponsor(DATA.VIDEOMETA.Club.Sponsors);
 
 	if (!PrincipalSponsorIs) return false;
+
+	const IMGSIZING = [140, 180, 140];
+	const PrimarySponsorStyles = useImageDimensions(
+		getPrimarySponsor(DATA.VIDEOMETA.Club.Sponsors).Logo,
+		IMGSIZING
+	);
+
 	return (
 		<PrincipalLogo
 			style={{
@@ -54,7 +62,7 @@ export const PrincipalSponsor = ({fontFamily, FPS, DATA, theme}) => {
 			<PrincipalLogoImg>
 				<Img
 					src={getPrimarySponsor(DATA.VIDEOMETA.Club.Sponsors).Logo}
-					height="140px"
+					style={PrimarySponsorStyles}
 				/>
 			</PrincipalLogoImg>
 		</PrincipalLogo>
@@ -98,8 +106,17 @@ export const PrincipalSponsorAlwaysShow = ({fontFamily, FPS, DATA, theme}) => {
 		return sponsorList?.find((sponsor) => sponsor.isPrimary === true);
 	};
 	const PrincipalSponsorIs = getPrimarySponsor(DATA.VIDEOMETA.Club.Sponsors);
-
+	
 	if (!PrincipalSponsorIs) return false;
+
+
+	const IMGSIZING = [140, 180, 140];
+	const PrimarySponsorStyles = useImageDimensions(
+		getPrimarySponsor(DATA.VIDEOMETA.Club.Sponsors).Logo,
+		IMGSIZING
+	);
+
+	
 	return (
 		<PrincipalLogo>
 			<PrincipalLogoInner>
@@ -137,7 +154,7 @@ export const PrincipalSponsorAlwaysShow = ({fontFamily, FPS, DATA, theme}) => {
 			<PrincipalLogoImg>
 				<Img
 					src={getPrimarySponsor(DATA.VIDEOMETA.Club.Sponsors).Logo}
-					height="120px"
+					style={PrimarySponsorStyles}
 				/>
 			</PrincipalLogoImg>
 		</PrincipalLogo>

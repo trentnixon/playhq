@@ -53,8 +53,8 @@ const Name = styled.span`
 `;
 
 const Performance = styled.span`
-font-size: 1.45em;
-font-weight: 900;
+	font-size: 1.45em;
+	font-weight: 900;
 	color: ${(props) => props.color};
 	text-align: right;
 	width: 30%;
@@ -77,7 +77,6 @@ export const PlayerPerformances = ({
 }) => {
 	const frame = useCurrentFrame();
 
-	
 	return (
 		<VideoContainer>
 			<PerformancesContainer>
@@ -85,7 +84,7 @@ export const PlayerPerformances = ({
 					<LabelWrapper
 						color={getContrastColor(darkenColor(THEME.primary))}
 						style={{
-							opacity: interpolateOpacityByFrame(frame, 30, 45, 0, 1),
+							opacity: interpolateOpacityByFrame(frame, 60, 90, 0, 1),
 							clipPath: EraseFromMiddle(FPS_SCORECARD - 15, 'Slow'),
 						}}
 					>
@@ -96,7 +95,7 @@ export const PlayerPerformances = ({
 							key={`home-batting-${index}`}
 							bgColor={lightenColor(THEME.secondary)}
 							style={{
-								clipPath: FromLeftToRight(30 + index * 3, 'Slow'),
+								clipPath: FromLeftToRight(45 + index * 7, 'Slow'),
 								opacity: interpolateOpacityByFrame(
 									frame,
 									FPS_SCORECARD - 30,
@@ -119,7 +118,7 @@ export const PlayerPerformances = ({
 					<LabelWrapper
 						color={getContrastColor(darkenColor(THEME.primary))}
 						style={{
-							opacity: interpolateOpacityByFrame(frame, 30, 45, 0, 1),
+							opacity: interpolateOpacityByFrame(frame, 60, 90, 0, 1),
 							clipPath: EraseFromMiddle(FPS_SCORECARD - 15, 'Slow'),
 						}}
 					>
@@ -131,7 +130,7 @@ export const PlayerPerformances = ({
 							key={`away-bowling-${index}`}
 							bgColor={darkenColor(THEME.primary)}
 							style={{
-								clipPath: FromLeftToRight(30 + index * 3, 'Slow'),
+								clipPath: FromLeftToRight(45 + index * 7, 'Slow'),
 								opacity: interpolateOpacityByFrame(
 									frame,
 									FPS_SCORECARD - 30,
@@ -157,7 +156,7 @@ export const PlayerPerformances = ({
 					<LabelWrapper
 						color={getContrastColor(darkenColor(THEME.primary))}
 						style={{
-							opacity: interpolateOpacityByFrame(frame, 30, 45, 0, 1),
+							opacity: interpolateOpacityByFrame(frame, 60, 90, 0, 1),
 							clipPath: EraseFromMiddle(FPS_SCORECARD - 15, 'Slow'),
 						}}
 					>
@@ -168,7 +167,7 @@ export const PlayerPerformances = ({
 							key={`away-batting-${index}`}
 							bgColor={lightenColor(THEME.secondary)}
 							style={{
-								clipPath: FromLeftToRight(30 + index * 3, 'Slow'),
+								clipPath: FromLeftToRight(45 + index * 7, 'Slow'),
 								opacity: interpolateOpacityByFrame(
 									frame,
 									FPS_SCORECARD - 30,
@@ -191,7 +190,7 @@ export const PlayerPerformances = ({
 					<LabelWrapper
 						color={getContrastColor(darkenColor(THEME.primary))}
 						style={{
-							opacity: interpolateOpacityByFrame(frame, 30, 45, 0, 1),
+							opacity: interpolateOpacityByFrame(frame, 60, 90, 0, 1),
 							clipPath: EraseFromMiddle(FPS_SCORECARD - 15, 'Slow'),
 						}}
 					>
@@ -202,7 +201,7 @@ export const PlayerPerformances = ({
 							key={`home-bowling-${index}`}
 							bgColor={darkenColor(THEME.primary)}
 							style={{
-								clipPath: FromLeftToRight(30 + index * 3, 'Slow'),
+								clipPath: FromLeftToRight(45 + index * 7, 'Slow'),
 								opacity: interpolateOpacityByFrame(
 									frame,
 									FPS_SCORECARD - 30,

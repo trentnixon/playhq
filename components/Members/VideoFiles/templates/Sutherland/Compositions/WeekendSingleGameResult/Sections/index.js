@@ -43,7 +43,7 @@ export const Match = ({matchData, THEME, fontFamily, FPS_SCORECARD, DATA}) => {
 				fontFamily={fontFamily}
 				DATA={DATA}
 				theme={THEME}
-				FPS={30}
+				FPS={30} 
 			/>
 		</MatchContainer>
 	);

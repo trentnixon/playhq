@@ -1,55 +1,84 @@
 import styled from 'styled-components';
-import {getContrastColor, darkenColor} from '../../../../../utils/colors';
+import {getContrastColor, setOpacity} from '../../../../../utils/colors';
 import {useCurrentFrame} from 'remotion';
-import {SpringToFrom} from '../../../../../Animation/RemotionSpring';
 import {interpolateOpacityByFrame} from '../../../../../Animation/interpolate';
-import {
-	EraseToMiddleFromTop,
-	FromMiddle,
-	FromTopToBottom,
-} from '../../../../../Animation/ClipWipe';
+import {FromMiddle, FromTopToBottom} from '../../../../../Animation/ClipWipe';
 import { restrictString } from '../../../../../utils/copy';
 
 const HeaderContainerStyles = styled.div`
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-evenly;
 	align-items: center;
-	height: 60px;
-	padding: 0 10px;
+	height: 100px;
 
-	background-color: ${(props) => darkenColor(props.THEME.secondary)};
+	padding: 5px;
+	border-radius: 5px;
+	border: 2px solid rgba(255, 255, 255, 0.1);
+	background: rgba(255, 255, 255, 0.1);
+	backdrop-filter: blur(20px);
+
+	position: absolute;
+	transform: rotate(270deg);
+	transform-origin: top left;
+	bottom: -97px;
+	left: 0px;
+	flex-direction: column;
+	width: 485px;
 `;
 
 const HeaderCopy = styled.p`
-	font-family: 'Anton';
+	font-family: ${(props) => props.fontFamily};
 	font-style: normal;
 	font-weight: 400;
 	display: block;
-	letter-spacing: -0.015em;
+	letter-spacing: 0.1em;
 	text-transform: uppercase;
 	width: 100%;
-	font-size: 1.3em;
+	font-size: 1.8em;
+	line-height: 1.2em;
+	margin: 0;
 `;
 
-const GameType = styled(HeaderCopy)`
-	width: 15%;
-	font-weight: 900;
-`;
+const HeaderItem = ({
+	label,
+	width,
+	fontFamily,
+	primaryColor,
+	FPS_SCORECARD,
+	frame,
+	textAlign,
+}) => {
+	const commonStyles = {
+		color: getContrastColor(primaryColor),
+		clipPath: FromTopToBottom(30, 'Slow'),
+		opacity: interpolateOpacityByFrame(
+			frame,
+			FPS_SCORECARD - 30,
+			FPS_SCORECARD,
+			1,
+			0
+		),
+		textAlign: textAlign,
+	};
 
-const Ground = styled(HeaderCopy)`
-	text-align: center;
-	width: 60%;
-`;
+	return (
+		<HeaderCopy style={{...commonStyles, width}} fontFamily={fontFamily}>
+			{label}
+		</HeaderCopy>
+	);
+};
 
-const Round = styled(HeaderCopy)`
-	width: 25%;
-	text-align: right;
-`;
-
-export const HeaderContainer = (props) => {
-	const {type, round, THEME, fontFamily, FPS_SCORECARD, gradeName, ground} =
-		props;
+export const HeaderContainer = ({
+	type,
+	round,
+	THEME,
+	fontFamily,
+	FPS_SCORECARD,
+	gradeName,
+}) => {
 	const frame = useCurrentFrame();
+	const primaryColor = THEME.primary;
+
 	return (
 		<HeaderContainerStyles
 			THEME={THEME}
@@ -64,65 +93,34 @@ export const HeaderContainer = (props) => {
 				),
 			}}
 		>
-			{gradeName}
-			<GameType>
-				<HeaderCopy
-					THEME={THEME}
-					fontFamily={fontFamily}
-					style={{
-						color: getContrastColor(darkenColor(props.THEME.secondary)),
-						clipPath: FromTopToBottom(30, 'Slow'),
-						opacity: interpolateOpacityByFrame(
-							frame,
-							FPS_SCORECARD - 30,
-							FPS_SCORECARD,
-							1,
-							0
-						),
-					}}
-				>
-					{type}
-				</HeaderCopy>
-			</GameType>
-			<Ground>
-				<HeaderCopy
-					THEME={THEME}
-					fontFamily={fontFamily}
-					style={{
-						color: getContrastColor(darkenColor(props.THEME.secondary)),
-						clipPath: FromTopToBottom(30, 'Slow'),
-						opacity: interpolateOpacityByFrame(
-							frame,
-							FPS_SCORECARD - 30,
-							FPS_SCORECARD,
-							1,
-							0
-						),
-					}}
-				>
-					
-					{restrictString(ground,50) }
-				</HeaderCopy>
-			</Ground>
-			<Round>
-				<HeaderCopy
-					THEME={THEME}
-					fontFamily={fontFamily}
-					style={{
-						color: getContrastColor(darkenColor(props.THEME.secondary)),
-						clipPath: FromTopToBottom(30, 'Slow'),
-						opacity: interpolateOpacityByFrame(
-							frame,
-							FPS_SCORECARD - 30,
-							FPS_SCORECARD,
-							1,
-							0
-						),
-					}}
-				>
-					{round}
-				</HeaderCopy>
-			</Round>
+			<HeaderItem
+				label={restrictString(gradeName ? gradeName:'',30) }
+				width="auto"
+				fontFamily={fontFamily}
+				primaryColor={primaryColor}
+				FPS_SCORECARD={FPS_SCORECARD}
+				frame={frame}
+				textAlign="center"
+			/>
+			<HeaderItem
+				label={type}
+				width="auto"
+				fontFamily={fontFamily}
+				primaryColor={primaryColor}
+				FPS_SCORECARD={FPS_SCORECARD}
+				frame={frame}
+				textAlign="left"
+			/>
+
+			{/* <HeaderItem
+				label={round}
+				width="auto"
+				fontFamily={fontFamily}
+				primaryColor={primaryColor}
+				FPS_SCORECARD={FPS_SCORECARD}
+				frame={frame}
+				textAlign="center"
+			/> */}
 		</HeaderContainerStyles>
 	);
 };
