@@ -215,16 +215,16 @@ const MembersNavItem = ({ user, setMenu }) => {
       IconComponent: IconLayoutDashboard,
     },
     {
-      href: `${PATH}/orderHistory`,
-      title: "Downloads",
+      href: `${PATH}/bundles`,
+      title: "Bundles",
       IconComponent: IconDownload,
     },
     {
-      href: `${PATH}/design`,
-      title: "Graphics Package",
+      href: `${PATH}/graphics-packages`,
+      title: "Graphics Packages",
       IconComponent: IconColorPicker,
     },
-    { href: `${PATH}/brand`, title: "Branding", IconComponent: IconBadgeTm },
+    { href: `${PATH}/branding`, title: "Your Branding", IconComponent: IconBadgeTm },
     {
       href: `${PATH}/gallery`,
       title: "Media Gallery",
@@ -232,7 +232,7 @@ const MembersNavItem = ({ user, setMenu }) => {
     },
     { href: `${PATH}/sponsors`, title: "Add Sponsors", IconComponent: IconCheck },
 
-    { href: `${PATH}/tracking`, title: "Games", IconComponent: IconTrack },
+    { href: `${PATH}/tracking`, title: "Season", IconComponent: IconTrack },
     {
       href: `${PATH}/account`,
       title: "Account",
