@@ -86,12 +86,13 @@ export const BTN_TOEXTLINK = ({
   URL,
   idDisabled = false,
   THEME = "standard",
+  target="_blank"
 }) => {
   const { classes } = useStyles();
   return (
     <Button
       component="a"
-      target="_blank"
+      target={target}
       rel="noopener noreferrer"
       href={URL}
       disabled={idDisabled}

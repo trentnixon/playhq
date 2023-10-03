@@ -100,8 +100,6 @@ const DashBoard = () => {
       component: DashBoardTheme,
       icon: IconBrush,
       extraProps: {
-        template: account.attributes.template.data.attributes,
-        audio_option: account.attributes.audio_option.data.attributes,
         theme: account.attributes.theme.data.attributes.Theme,
       },
     },
@@ -110,9 +108,7 @@ const DashBoard = () => {
       component: DashBoardAssets,
       icon: IconBrush,
       extraProps: {
-        template: account.attributes.template.data.attributes,
-        audio_option: account.attributes.audio_option.data.attributes,
-        theme: account.attributes.theme.data.attributes.Theme,
+        template: account.attributes.template.data,
       },
     },
 
@@ -155,7 +151,7 @@ const DashBoard = () => {
                     {...commonProps}
                     {...item.extraProps}
                   />
-                </div>
+                </div> 
               );
             })}
           </SimpleGrid>

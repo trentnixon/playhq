@@ -9,7 +9,7 @@ import {
 import { PageTitle, P } from "../../components/Members/Common/Type";
 import { Box, Center, Container, Group } from "@mantine/core";
 import { IconCheck } from "@tabler/icons";
-import { BTN_TOINTERALLINK } from "../../components/Members/Common/utils/Buttons";
+import { BTN_TOEXTLINK, BTN_TOINTERALLINK } from "../../components/Members/Common/utils/Buttons";
 import { useAccountDetails } from "../../lib/userContext";
 
 const StripeSuccess = () => {
@@ -26,7 +26,7 @@ const StripeSuccess = () => {
   }, [session_id]);
 
   useEffect(() => {
-    if (order !== null) {
+    if (order !== null) { 
       ReRender(); 
     }
   }, [order]);
@@ -51,10 +51,11 @@ const StripeSuccess = () => {
 
         <ShadowWrapper>
           <Center>
-            <BTN_TOINTERALLINK
+            <BTN_TOEXTLINK
               LABEL="Go To Account"
               URL="/members/account/"
               THEME="cta"
+              target="_self"
             />
           </Center>
         </ShadowWrapper>

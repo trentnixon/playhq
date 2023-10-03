@@ -10,14 +10,14 @@ import Cookies from "js-cookie"; */
 import { Container, Paper, Space } from "@mantine/core";
 // Components
 import { MembersWrapper } from "../../components/Members/Common/Containers";
-import { showNotification } from "@mantine/notifications";
+//import { showNotification } from "@mantine/notifications";
 // HOC
 import { LoadingStateWrapper } from "../../components/Members/Account/HOC/LoadingStateWrapper";
 import SetupCheck from "../../components/Members/Account/HOC/SetupCheck";
 
 import {
   Invoicing,
-  UpcomingInvoicing,
+  UpcomingInvoicing, 
 } from "../../components/Members/stripe/Invoicing";
 import { useAccountDetails } from "../../lib/userContext";
 import { FixturaDivider } from "../../components/Members/Common/Divider";
