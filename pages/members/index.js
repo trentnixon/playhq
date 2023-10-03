@@ -61,8 +61,6 @@ const DashBoard = () => {
     AccountID: account.id,
   };
 
-  console.log(account.attributes.FirstName);
-
   const dashboardConfig = [
     {
       title: "Subscriptions",

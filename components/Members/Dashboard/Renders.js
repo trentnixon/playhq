@@ -89,7 +89,7 @@ export const DashBoardRenders = ({ IconComponent, schedulerID, Theme }) => {
       <Group position="right" mt="md">
         <BTN_TOINTERALLINK
           LABEL={"View Bundles"}
-          URL={"members/orderHistory/"}
+          URL={"members/bundles/"}
         />
       </Group>
     </Paper>
@@ -133,7 +133,7 @@ const ZeroItemsState = ({ classes, IconComponent,stats }) => (
         </Text>
       </Group>
     <Group position="center" mt="md">
-      <BTN_TOINTERALLINK LABEL={"View Bundles"} URL={"members/orderHistory/"} />
+      <BTN_TOINTERALLINK LABEL={"View Bundles"} URL={"members/bundles/"} />
     </Group>
   </Paper>
 );

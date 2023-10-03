@@ -96,7 +96,7 @@ export const DashBoardTheme = ({ IconComponent, schedulerID }) => {
         </Text>
       </Group>
       <Group position="right" mt="md">
-        <BTN_TOINTERALLINK LABEL={"View"} URL={"members/orderHistory/"} />
+        <BTN_TOINTERALLINK LABEL={"View"} URL={"members/bundles/"} />
       </Group>
     </Paper>
   );

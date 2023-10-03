@@ -22,7 +22,8 @@ const useStyles = createStyles((theme) => ({
     backgroundColor: theme.colors.green[1],
   },
   imageSection: {
-    padding: 0,
+    padding: '0',
+    textAlign:'center',
     marginTop: 0,
     display: "flex",
     alignItems: "center",
@@ -77,7 +78,7 @@ export function TemplateCard({
         className={isSelected ? `${classes.selectedCard}` : classes.card}
       >
         <Card.Section className={classes.imageSection}>
-          <Image src={posterURL} alt={Name} />
+          <Image src={posterURL} alt={Name}   />
         </Card.Section>
         <Group position="apart" mt="0" p={'xs'}>
           <div>

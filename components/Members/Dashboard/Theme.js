@@ -94,7 +94,7 @@ export const DashBoardTheme = ({
         />
       </Box>
       <Group position="right" mt="md">
-        <BTN_TOINTERALLINK LABEL={"Change"} URL={"members/brand/"} />
+        <BTN_TOINTERALLINK LABEL={"Change"} URL={"members/branding/"} />
       </Group>
     </Paper>
   );

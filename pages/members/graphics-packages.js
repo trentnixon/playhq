@@ -56,7 +56,7 @@ const Design = ({ Response }) => {
           Copy={"Graphics Package"}
           ICON={<IconColorPicker size={40} />}
         />
-  
+   
         <PageCopyWrapper>
           <P>
             Elevate Your Content with Personalized Graphics Packages and Audio
