@@ -8,6 +8,21 @@ const nextConfig = {
         destination: '/expressionofinterest',
         permanent: false,
       },
+      {
+        source: '/SignUp',
+        destination: '/sign-up',
+        permanent: false,
+      },
+      {
+        source: '/SignUp/',
+        destination: '/sign-up',
+        permanent: false,
+      },
+      {
+        source: '/SignIn/',
+        destination: '/login',
+        permanent: false,
+      },
     ]
   },
   reactStrictMode: false,

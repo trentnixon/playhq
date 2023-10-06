@@ -10,6 +10,8 @@ import {
 } from "@tabler/icons";
 
 import { useMediaQuery } from "@mantine/hooks";
+import { SideBarTrialNotification } from "./components/isTrialNotifications.js/sideBarNotification";
+import { getTrialNotificationStatus } from "../../../lib/actions";
 
 export function UserDetailsCard({ user }) {
   const ORDER = user.attributes.order?.data;
@@ -44,7 +46,7 @@ export function UserDetailsCard({ user }) {
   let statusMessage = "Unknown status";
   let statusColor = theme.colors.blue[4]; // default color
   let StatusIcon = IconCheck; // default icon
-
+  const trialNotificationStatus = getTrialNotificationStatus(user);
   if (isActive) {
     if (Status) {
       if (cancel_at_period_end) {
@@ -72,8 +74,7 @@ export function UserDetailsCard({ user }) {
     StatusIcon = IconX;
   }
 
-  if(mobile)
-    return false
+  if (mobile) return false;
   return (
     <Card withBorder padding="xl" radius="md" mt={60}>
       <Card.Section
@@ -103,15 +104,19 @@ export function UserDetailsCard({ user }) {
       <Text ta="center" fz="sm" c="dimmed">
         {AccountType}
       </Text>
-
+      <SideBarTrialNotification user={user} />
       {user.attributes.hasCompletedStartSequence ? (
-        <IsUserSubscriptionDetails
-          subscriptionTier={subscriptionTier}
-          statusMessage={statusMessage}
-          statusColor={statusColor}
-          StatusIcon={StatusIcon}
-          includesSponsors={includesSponsors}
-        />
+        trialNotificationStatus === "subscribed" ? (
+          <IsUserSubscriptionDetails
+            subscriptionTier={subscriptionTier}
+            statusMessage={statusMessage}
+            statusColor={statusColor}
+            StatusIcon={StatusIcon}
+            includesSponsors={includesSponsors}
+          />
+        ) : (
+          false
+        )
       ) : (
         <IsSetupDetails />
       )}
@@ -162,11 +167,10 @@ const IsUserSubscriptionDetails = ({
       <Group position="apart">
         <Text ta="center" fz="sm" c={statusColor} fw={500}>
           {includesSponsors ? (
-              <IconCheck size={`1.1em`} color={theme.colors.green[8]} />
-            ) : (
-              <IconAlertTriangle size={`1.1em`} color={theme.colors.red[8]} />
-            )
-          }
+            <IconCheck size={`1.1em`} color={theme.colors.green[8]} />
+          ) : (
+            <IconAlertTriangle size={`1.1em`} color={theme.colors.red[8]} />
+          )}
         </Text>
         <Text ta="center" fz="sm" c="dimmed">
           Sponsors enabled

@@ -17,7 +17,7 @@ import SetupCheck from "../../components/Members/Account/HOC/SetupCheck";
 
 import {
   Invoicing,
-  UpcomingInvoicing, 
+  UpcomingInvoicing,
 } from "../../components/Members/stripe/Invoicing";
 import { useAccountDetails } from "../../lib/userContext";
 import { FixturaDivider } from "../../components/Members/Common/Divider";
@@ -25,12 +25,19 @@ import { UserSubscription } from "../../components/Members/Account/userSubscript
 
 import { getIdFromLocalCookie } from "../../lib/auth";
 import Adminfetcher from "../../lib/Adminfetcher";
+import { getTrialNotificationStatus } from "../../lib/actions";
+import { IsFreeTrialFeedback } from "../../components/Members/Account/userIsFreeTrial";
+import { FreeTrialActive } from "../../components/Members/Account/userFreeTrialActive";
+import { CreateFreeTrial } from "../../components/Members/Account/userCreateFreeTrial";
 
 const Account = () => {
   const { account } = useAccountDetails();
   const [userAccount, setUserAccount] = useState(account);
   const { user, loading } = useUser();
+  const trialNotificationStatus = getTrialNotificationStatus(account);
 
+  console.log("trialNotificationStatus", trialNotificationStatus);
+  // epping account order 92
   useEffect(() => {
     if (account) {
       setUserAccount(account);
@@ -41,27 +48,29 @@ const Account = () => {
     <MembersWrapper>
       <SetupCheck>
         <LoadingStateWrapper conditions={[user, userAccount]}>
-          <UserSubscription />
-          <FixturaDivider />
-          <UpcomingInvoicing />
-          <Invoicing />
+          {trialNotificationStatus === "available_trial" && (
+            <CreateFreeTrial account={account} />
+          )} 
+
+          {trialNotificationStatus === "active_trial" && (
+            <FreeTrialActive account={account} />
+          )}
+
+          {trialNotificationStatus === "ended_trial" && <UserSubscription />}
+
+          {trialNotificationStatus === "subscribed" && (
+            <>
+              <UserSubscription />
+              <FixturaDivider />
+              <UpcomingInvoicing />
+              <Invoicing />
+              <Space h="lg" />
+            </>
+          )}
           <Space h="lg" />
 
-          <Container size={"lg"}>
-            <Paper
-              withBorder
-              p="lg"
-              sx={(theme) => ({
-                backgroundColor: theme.white,
-              })}
-            >
-              Have any questions about Fixturas Subscriptions please contact our
-              support team{" "}
-              <Link href="/members/support">
-                <a>Customer Support</a>
-              </Link>
-            </Paper>
-          </Container>
+          <IsFreeTrialFeedback />
+
           <FixturaDivider />
         </LoadingStateWrapper>
       </SetupCheck>
@@ -81,3 +90,23 @@ Account.getInitialProps = async (ctx) => {
 };
 
 export default Account;
+
+/*  <UserSubscription />
+          <FixturaDivider />
+          <UpcomingInvoicing />
+          <Invoicing /> */
+/*  <Container size={"lg"}>
+            <Paper
+              withBorder
+              p="lg"
+              sx={(theme) => ({
+                backgroundColor: theme.white,
+              })}
+            >
+              Have any questions about Fixturas Subscriptions please contact our
+              support team{" "}
+              <Link href="/members/support">
+                <a>Customer Support</a>
+              </Link>
+            </Paper>
+          </Container> */

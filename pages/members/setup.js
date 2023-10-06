@@ -23,7 +23,7 @@ const SETUP = () => {
 
   // Check if user is authenticated
   useEffect(() => {
-    if (!user) router.push("/SignIn/");
+    if (!user) router.push("/login/");
   }, [router, user]);
 
   // Initialize ReRender and account data

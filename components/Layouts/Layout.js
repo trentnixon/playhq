@@ -11,6 +11,7 @@ import { FixturaHeaderMeta } from "../Members/Account/userFixturaSettings";
 import { UserDetailsCard } from "../Members/Account/userAdminDetailsCard";
 import HasCompletedStartSequence from "../Members/Account/HOC/hasCompletedStartSequence";
 import withUserAuth from "../Members/Account/HOC/withUserAuth";
+
 const Layout = ({ children }) => {
   const { user } = useUser();
   const router = useRouter();
@@ -43,7 +44,7 @@ export default Layout;
 const StaticLayout = ({ children }) => {
   return <main>{children}</main>;
 };
- 
+
 const MembersLayout = ({ children }) => {
   return (
     <HasCompletedStartSequence>
@@ -51,7 +52,7 @@ const MembersLayout = ({ children }) => {
       <Container size={"xl"}>
         <Grid>
           <Grid.Col span={12} sm={4} md={3}>
-            <AdminSideBar /> 
+            <AdminSideBar />
           </Grid.Col>
           <Grid.Col span={12} sm={8} md={9}>
             <main>{children}</main>
@@ -69,7 +70,7 @@ const AdminSideBar = () => {
   return (
     <Container fluid mx={0} p={0}>
       <UserDetailsCard user={account} />
-    </Container> 
+    </Container>
   );
 };
 

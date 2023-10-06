@@ -121,7 +121,7 @@ export default NavbarOne;
 const SignUp = () => {
   return (
     <div className="others-options">
-      <Link href="/SignUp">
+      <Link href="/sign-up">
         <a className="btn btn-primary">Sign Up</a>
       </Link>
     </div>
@@ -131,7 +131,7 @@ const SignUp = () => {
 const SignIn = ({ closeMenu }) => {
   return (
     <li className="nav-item">
-      <Link href="/SignIn" activeClassName="active">
+      <Link href="/login" activeClassName="active">
         <a onClick={closeMenu} className="nav-link">Sign In</a>
       </Link>
     </li>

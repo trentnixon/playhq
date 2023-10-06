@@ -24,11 +24,14 @@ import { DashBoardSubscriptionItems } from "../../components/Members/Dashboard/S
 import SetupCheck from "../../components/Members/Account/HOC/SetupCheck";
 import { useUser } from "../../lib/authContext";
 import { DashBoardAssets } from "../../components/Members/Dashboard/Assets";
+import {
+  IsFreeTrialFeedback,
+} from "../../components/Members/Account/userIsFreeTrial";
+import { IsFreeTrialWelcome } from "../../components/Members/Account/components/isTrialNotifications.js/FreeTrialMessaging";
 
 const DashBoard = () => {
   const { account } = useAccountDetails();
   const { user, loading } = useUser();
-  const [progress, setProgress] = useState(0); // New state variable
 
   useEffect(() => {
     console.log("Account details:", account);
@@ -79,7 +82,8 @@ const DashBoard = () => {
       component: DashBoardSponsoredItems,
       icon: IconCurrencyDollar,
       extraProps: { sponsors: account.attributes.sponsors.data },
-    },{
+    },
+    {
       title: "Tracking",
       component: DashBoardTrackingItems,
       icon: IconCurrencyDollar,
@@ -88,7 +92,6 @@ const DashBoard = () => {
   ];
 
   const brandingConfig = [
-    
     {
       title: "Gallery",
       component: DashBoardGalleryItems,
@@ -111,8 +114,6 @@ const DashBoard = () => {
         template: account.attributes.template.data,
       },
     },
-
-    
   ];
 
   return (
@@ -124,6 +125,7 @@ const DashBoard = () => {
             ICON={<IconLayoutDashboard size={40} />}
           />
           <SubHeaders Copy="DashBoard" />
+          <IsFreeTrialWelcome user={account} />
           <PageCopyWrapper>
             <P>
               Manage subscriptions, downloads, sponsors, tracking, gallery, and
@@ -151,7 +153,7 @@ const DashBoard = () => {
                     {...commonProps}
                     {...item.extraProps}
                   />
-                </div> 
+                </div>
               );
             })}
           </SimpleGrid>
@@ -179,6 +181,7 @@ const DashBoard = () => {
               );
             })}
           </SimpleGrid>
+          <IsFreeTrialFeedback />
         </LoadingStateWrapper>
       </SetupCheck>
     </MembersWrapper>

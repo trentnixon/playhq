@@ -22,6 +22,7 @@ const Index = ({ associations }) => {
   return (
     <>
       <MainBanner /> 
+      
       <Services />
       <FunFacts />
       <Partner associations={associations} />

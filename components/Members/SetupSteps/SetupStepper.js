@@ -55,18 +55,20 @@ export const SetupStages = ({ setReview }) => {
   }, []);
 
   const checkProgress = useCallback(() => {
-    console.log("DATA.attributes.isRightsHolder", DATA.attributes.isRightsHolder)
-    console.log("DATA.attributes.isPermissionGiven", DATA.attributes.isPermissionGiven)
+    console.log(
+      "DATA.attributes.isRightsHolder",
+      DATA.attributes.isRightsHolder
+    );
+    console.log(
+      "DATA.attributes.isPermissionGiven",
+      DATA.attributes.isPermissionGiven
+    );
     if (DATA) {
       setProgress({
         ...progress,
+
         step1: {
           ...progress.step1,
-          FirstName: DATA.attributes.FirstName,
-          DeliveryAddress: DATA.attributes.DeliveryAddress,
-        },
-        step2: {
-          ...progress.step2,
           account_type: DATA.attributes?.account_type?.data?.attributes,
           associations: DATA.attributes?.associations?.data[0]?.attributes,
           clubs:
@@ -77,11 +79,17 @@ export const SetupStages = ({ setReview }) => {
           isRightsHolder: DATA.attributes.isRightsHolder, // add checkbox state here
           isPermissionGiven: DATA.attributes.isPermissionGiven, // add checkbox state here
         },
+        step2: {
+          // attributes related to About your Brand step
+        },
+        
         step3: {
           // attributes related to About your Brand step
         },
         step4: {
-          // attributes related to About your Brand step
+          ...progress.step4,
+          FirstName: DATA.attributes.FirstName,
+          DeliveryAddress: DATA.attributes.DeliveryAddress,
         },
       });
     }
@@ -94,7 +102,7 @@ export const SetupStages = ({ setReview }) => {
     const hasNullValue = Object.keys(progress[KEYS[active]]).some(
       (key) =>
         progress[KEYS[active]][key] === null ||
-        progress[KEYS[active]][key] === undefined 
+        progress[KEYS[active]][key] === undefined
     );
     setDisabled(hasNullValue);
   }, [progress, active]);
@@ -120,23 +128,22 @@ export const SetupStages = ({ setReview }) => {
             },
           })}
         >
-          <Stepper.Step
-            color="blue"
-            label={mobile ? false : "All About the Assets"}
-          >
-            <StepAboutUser user={DATA} setHasUpdated={ReRender} />
-          </Stepper.Step>
-
           <Stepper.Step label={mobile ? false : "About the Cricket"}>
             <StepAboutTheCricket user={DATA} setHasUpdated={ReRender} />
           </Stepper.Step>
           <Stepper.Step label={mobile ? false : "Upload your Logo"}>
             <StepAboutLogo user={DATA} setHasUpdated={ReRender} />
           </Stepper.Step>
+         
           <Stepper.Step label={mobile ? false : "About your Brand"}>
             <StepAboutBranding user={DATA} setHasUpdated={ReRender} />
           </Stepper.Step>
-
+          <Stepper.Step
+            color="blue"
+            label={mobile ? false : "All About the Assets"}
+          >
+            <StepAboutUser user={DATA} setHasUpdated={ReRender} />
+          </Stepper.Step>
           <Stepper.Completed>
             <P
               textAlign={`center`}

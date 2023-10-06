@@ -25,15 +25,18 @@ export const useAccount = (ctx) => {
         "account_type",
         "associations",
         "associations.Logo",
+        "associations.trial_instance",
         "clubs",
         "clubs.Logo",
+        "clubs.trial_instance",
         "template",
         "theme",
         "audio_option",
         "order",
         "sponsors",
         "sponsors.Logo",
-        "subscription_tier"
+        "subscription_tier",
+       
       ],
     },
     {
