@@ -16,7 +16,7 @@ export const CreateFreeTrial = ({ account }) => {
     const trialInstanceObj = constructTrialInstanceObj(account);
     // lets add the sub teir to teh account and remove on trial end
     //console.log(trialInstanceObj);
-    CreateTrial(trialInstanceObj);
+    CreateTrial(trialInstanceObj); 
   };
 
   // If the trial is successfully created, show the success message and then refresh the page after 2 seconds
