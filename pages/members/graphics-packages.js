@@ -10,10 +10,11 @@ import {
   MembersWrapper,
   PageCopyWrapper,
 } from "../../components/Members/Common/Containers";
-import { Space } from "@mantine/core";
+import { Group, Space } from "@mantine/core";
 import { IconColorPicker } from "@tabler/icons";
 import { DesignTabs } from "../../components/Members/Design/DesignTabs";
 import { LoadingStateWrapper } from "../../components/Members/Account/HOC/LoadingStateWrapper";
+import { BTN_TOEXTLINK } from "../../components/Members/Common/utils/Buttons";
 const qs = require("qs");
 
 const query = qs.stringify(
@@ -56,15 +57,45 @@ const Design = ({ Response }) => {
           Copy={"Graphics Package"}
           ICON={<IconColorPicker size={40} />}
         />
-   
+
         <PageCopyWrapper>
           <P>
-            Elevate Your Content with Personalized Graphics Packages and Audio
-            Bundles for a unique representation of your club or association's
-            style and brand identity.
+            Experience the power and flexibility of Fixtura's Graphics Packages.
+            With a simple selection process, you can choose a visual style that
+            truly represents your club or association. Remember, there are two
+            primary options to consider for your organization's graphics:
           </P>
         </PageCopyWrapper>
         <Space h={20} />
+        <PageCopyWrapper>
+          <SubHeaders Copy={"Bespoken Graphics"} />
+          <P>
+            For a truly unique and tailored feel, collaborate with us to craft
+            bespoke graphics that resonate with your organization's brand and
+            identity. Already have a design theme in mind or in use? Let's work
+            together to adapt and integrate your vision into our system,
+            ensuring a consistent and authentic online presence.
+          </P>
+
+          <Group position="right" mt={20} mb={20}>
+            <P marginBottom={0}>
+              To learn more or start the design journey, DM us on our Facebook
+              page.
+            </P>
+            <BTN_TOEXTLINK
+              URL="https://www.facebook.com/profile.php?id=100095406210560"
+              LABEL={"Start Your Bespoke Journey"}
+            />{" "}
+          </Group>
+        </PageCopyWrapper>
+        <Space h={20} />
+        <SubHeaders Copy={"Free Packages"} />
+        <P>
+          Dive into our collection of ready-to-use graphics, available at no
+          cost. As we continually expand our library, we recommend staying
+          updated with our social channels for the latest graphic package
+          releases.
+        </P>
         <DesignTabs
           userAccount={userAccount}
           hasMediaItems={

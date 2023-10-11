@@ -48,26 +48,34 @@ export const InputFormContainer = ({ Input, FORMMETA, setFORMMETA }) => {
       })}
     >
       <P marginBottom={"5px"} size={"sm"} Weight={900}>
-        {Input.title}
+        {Input.title}{" "}
+        {Input.isRequired && <span style={{ color: "red" }}>*</span>}
       </P>
       <P marginBottom={0} size={"xs"}>
         {Input.info}
       </P>
 
       <input
-        type="text"
-        className="form-control"
-        value={FORMMETA[Input.Property]}
-        placeholder={Input.placeholder}
-        maxLength={Input.limit || undefined} // Set the max length if a limit is provided
-        onChange={handleChange}
+         type={Input.type}
+         pattern={Input.pattern}
+         required={Input.required}
+         maxLength={Input.maxLength}
+         className="form-control"
+         value={FORMMETA[Input.Property]}
+         placeholder={Input.placeholder}
+         onChange={handleChange}
       />
-      {error && <div className="error">{error}</div>}
+      {Input.error && (
+        <P color={8} textAlign={"right"} size={"xs"}>
+          {" "}
+          {Input.error}
+        </P>
+      )}
       {Input.limit && (
         <div
           style={{
-            textAlign:'right',
-            fontSize:'12px',
+            textAlign: "right",
+            fontSize: "12px",
             color:
               FORMMETA[Input.Property] &&
               FORMMETA[Input.Property].length >= Input.limit

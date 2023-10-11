@@ -46,16 +46,16 @@ export const SideBarTrialNotification = ({ user }) => {
   const config = notificationConfig[trialNotificationStatus];
 
   return (
-    <Tooltip label={config.label} position="top">
+    <Tooltip label={config?.label} position="top">
       <Card
         withBorder
         padding="sm"
         radius="md"
         mt={5}
-        style={{ backgroundColor: config.backgroundColor }}
+        style={{ backgroundColor: config?.backgroundColor }}
       >
         <Group position="center">
-          <P marginBottom={0}>{config.text}</P>
+          <P marginBottom={0}>{config?.text}</P>
         </Group>
       </Card>
     </Tooltip>

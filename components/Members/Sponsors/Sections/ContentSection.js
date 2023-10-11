@@ -18,7 +18,7 @@ export const ContentSection = ({
             Tagline: null,
             Logo: null,
             LogoPath: false,
-            account: [userAccount.id],
+            account: [userAccount.id], 
             Description:null,
             Create: true,
             UpdateSponsor: false,

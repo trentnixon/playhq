@@ -52,7 +52,7 @@ const MembersLayout = ({ children }) => {
       <Container size={"xl"}>
         <Grid>
           <Grid.Col span={12} sm={4} md={3}>
-            <AdminSideBar />
+            <AdminSideBar /> 
           </Grid.Col>
           <Grid.Col span={12} sm={8} md={9}>
             <main>{children}</main>

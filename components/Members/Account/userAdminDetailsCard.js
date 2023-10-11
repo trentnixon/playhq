@@ -104,16 +104,19 @@ export function UserDetailsCard({ user }) {
       <Text ta="center" fz="sm" c="dimmed">
         {AccountType}
       </Text>
-      <SideBarTrialNotification user={user} />
+   
       {user.attributes.hasCompletedStartSequence ? (
         trialNotificationStatus === "subscribed" ? (
-          <IsUserSubscriptionDetails
-            subscriptionTier={subscriptionTier}
-            statusMessage={statusMessage}
-            statusColor={statusColor}
-            StatusIcon={StatusIcon}
-            includesSponsors={includesSponsors}
-          />
+          <>
+              <SideBarTrialNotification user={user} />
+            <IsUserSubscriptionDetails
+              subscriptionTier={subscriptionTier}
+              statusMessage={statusMessage}
+              statusColor={statusColor}
+              StatusIcon={StatusIcon}
+              includesSponsors={includesSponsors}
+            />
+          </>
         ) : (
           false
         )

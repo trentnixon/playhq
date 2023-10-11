@@ -21,7 +21,7 @@ const SETUP = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [review, setReview] = useState(false);
 
-  // Check if user is authenticated
+  // Check if user is authenticated 
   useEffect(() => {
     if (!user) router.push("/login/");
   }, [router, user]);

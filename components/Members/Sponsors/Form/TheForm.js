@@ -1,6 +1,6 @@
 import { Box, Group, Stack, Switch } from "@mantine/core";
 import { Container, Grid, SimpleGrid, useMantineTheme } from "@mantine/core";
-
+import { Notification } from "@mantine/core";
 import { useEffect, useState } from "react";
 import { FixturaLoading } from "../../Common/Loading";
 import {
@@ -36,7 +36,6 @@ export const CreateaSponsorForm = ({ OBJ }) => {
   const [formErrors, setFormErrors] = useState({
     Name: "",
     URL: "",
-    Tagline: "",
   });
 
   const validateForm = () => {
@@ -44,7 +43,6 @@ export const CreateaSponsorForm = ({ OBJ }) => {
     let errors = {
       Name: "",
       URL: "",
-      Tagline: "",
     };
 
     if (!FORMMETA.Name) {
@@ -55,11 +53,6 @@ export const CreateaSponsorForm = ({ OBJ }) => {
     if (!FORMMETA.URL) {
       formIsValid = false;
       errors.URL = "URL is required";
-    }
-
-    if (!FORMMETA.Tagline) {
-      formIsValid = false;
-      errors.Tagline = "Tagline is required";
     }
 
     setFormErrors(errors);
@@ -73,6 +66,10 @@ export const CreateaSponsorForm = ({ OBJ }) => {
       OBJ.Create
         ? CreateSponsor(FORMMETA)
         : UpdateSponsor(FORMMETA, FORMMETA.UpdateSponsor);
+    } else {
+      // Display a notification to the user
+      alert("Please fill out all mandatory fields before submitting.");
+      // You can replace this alert with a more user-friendly toast or modal notification if you prefer.
     }
   };
 
@@ -131,23 +128,32 @@ export const CreateaSponsorForm = ({ OBJ }) => {
       error: formErrors.Name,
       title: "Sponsor Name",
       info: "Enter the official name of the sponsor.",
+      isRequired: true,
+      type: "text",
+      pattern: "^[a-zA-Zs]*$", // regex for only letters and spaces
     },
     {
       Property: "URL",
+      type: "text", // Changing this to 'text' since we're using a custom pattern
+      pattern:
+        "^(https?://)?(www.)?[a-z0-9]+([-.]{1}[a-z0-9]+)*.[a-z]{2,5}(:[0-9]{1,5})?(/.*)?$",
+
       value: FORMMETA.URL,
       placeholder: "Sponsors URL",
       error: formErrors.URL,
       title: "Sponsor URL",
       info: "Enter the official website or landing page of the sponsor.",
+      isRequired: true,
     },
     {
       Property: "Tagline",
       value: FORMMETA.Tagline,
       placeholder: "Sponsors Tagline",
-      error: formErrors.Tagline,
+      type: "text",
+      maxLength: 120,
       title: "Sponsor Tagline",
-      info: "A brief catchy phrase associated with the sponsor.",
-    },
+      info: "A brief catchy phrase associated with the sponsor. (optional)",
+    } /* ,
     {
       Property: "Description",
       value: FORMMETA.Description,
@@ -156,7 +162,7 @@ export const CreateaSponsorForm = ({ OBJ }) => {
       title: "Sponsor Description",
       info: "Provide a short description about the sponsor. Max 120 characters.",
       limit: 120,
-    },
+    }, */,
   ];
 
   if (Sponsor?.data || UpdatedSponsor?.data) {
@@ -169,7 +175,7 @@ export const CreateaSponsorForm = ({ OBJ }) => {
       />
     );
   }
-  if ( Sponsor === true || UpdatedSponsor === true) {
+  if (Sponsor === true || UpdatedSponsor === true) {
     return <FixturaLoading />;
   }
   return (
@@ -191,7 +197,7 @@ export const CreateaSponsorForm = ({ OBJ }) => {
                       setLogo={setLogo}
                     />
                   </Box>
-                </> 
+                </>
               ) : (
                 <StrapiImageUploader
                   setLogo={setLogo}
