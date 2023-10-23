@@ -14,7 +14,7 @@ export const useGetUsersSubscriptionOrder = () => {};
  * triggers when "purchase sub" is clicked
  */
 export const useCreateNewInstanceOfSubscription = () => {
-  const [Subscription, setSubscription] = useState(null);
+  const [Subscription, setSubscription] = useState(null); 
 
   const CreateSubscription = async (productId) => {
     const user = await getUserFromLocalCookie();

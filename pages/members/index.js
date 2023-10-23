@@ -11,7 +11,7 @@ import {
   MembersWrapper,
   PageCopyWrapper,
 } from "../../components/Members/Common/Containers";
-import { Progress, SimpleGrid, Space } from "@mantine/core";
+import { Container, Progress, SimpleGrid, Space } from "@mantine/core";
 import { LoadingStateWrapper } from "../../components/Members/Account/HOC/LoadingStateWrapper";
 
 import { useAccountDetails } from "../../lib/userContext";
@@ -24,9 +24,7 @@ import { DashBoardSubscriptionItems } from "../../components/Members/Dashboard/S
 import SetupCheck from "../../components/Members/Account/HOC/SetupCheck";
 import { useUser } from "../../lib/authContext";
 import { DashBoardAssets } from "../../components/Members/Dashboard/Assets";
-import {
-  IsFreeTrialFeedback,
-} from "../../components/Members/Account/userIsFreeTrial";
+import { IsFreeTrialFeedback } from "../../components/Members/Account/userIsFreeTrial";
 import { IsFreeTrialWelcome } from "../../components/Members/Account/components/isTrialNotifications.js/FreeTrialMessaging";
 
 const DashBoard = () => {
@@ -127,12 +125,9 @@ const DashBoard = () => {
           <SubHeaders Copy="DashBoard" />
           <IsFreeTrialWelcome user={account} />
           <PageCopyWrapper>
-            <P>
-              Manage subscriptions, downloads, sponsors, tracking, gallery, and
-              themes—all from one place. Click "View" on each card to explore
-              more.
-            </P>
+            <P> Info About deliuvery day and how to change it</P>
           </PageCopyWrapper>
+
           <Space h={20} />
           <SubHeaders Copy="Account" />
           <SimpleGrid
@@ -181,6 +176,15 @@ const DashBoard = () => {
               );
             })}
           </SimpleGrid>
+          <Space h={50} />
+         {/*  <SubHeaders Copy="Juniors" />
+          <PageCopyWrapper>
+
+            <Container fluid={true} mt={40}>
+              <P>Settings for Juniors. Allow Junior Assets, Slpit Juniors and seniors. Opting out</P>
+            </Container>
+          </PageCopyWrapper> */}
+          <Space h={50} />
           <IsFreeTrialFeedback />
         </LoadingStateWrapper>
       </SetupCheck>

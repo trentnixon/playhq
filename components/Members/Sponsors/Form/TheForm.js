@@ -130,7 +130,7 @@ export const CreateaSponsorForm = ({ OBJ }) => {
       info: "Enter the official name of the sponsor.",
       isRequired: true,
       type: "text",
-      pattern: "^[a-zA-Zs]*$", // regex for only letters and spaces
+      //pattern: "^[a-zA-Zs]*$", // regex for only letters and spaces
     },
     {
       Property: "URL",

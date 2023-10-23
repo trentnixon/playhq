@@ -233,7 +233,7 @@ const NewSubscriber = ({ productId, selected, onConfirm }) => {
   const CreateStripePromise = async (Subscription) => {
     //console.log(Subscription);
     const stripe = await stripePromise;
-    await stripe.redirectToCheckout({ sessionId: Subscription.id });
+    await stripe.redirectToCheckout({ sessionId: Subscription.id }); 
   };
 
   useEffect(() => {
@@ -248,7 +248,7 @@ const NewSubscriber = ({ productId, selected, onConfirm }) => {
   }, [Subscription]);
 
   const handleClick = () => {
-    window.scrollTo(0, 0);
+    //window.scrollTo(0, 0);
     if (confirmState) {
       handleBuy(productId);
     } else {

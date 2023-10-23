@@ -17,7 +17,7 @@ import SetupCheck from "../../components/Members/Account/HOC/SetupCheck";
 
 import {
   Invoicing,
-  UpcomingInvoicing,
+  UpcomingInvoicing, 
 } from "../../components/Members/stripe/Invoicing";
 import { useAccountDetails } from "../../lib/userContext";
 import { FixturaDivider } from "../../components/Members/Common/Divider";
