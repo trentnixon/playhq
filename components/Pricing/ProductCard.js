@@ -57,7 +57,7 @@ export const ProductCard = ({
     ),
   };
   return (
-    <div className={`${className} col-lg-4 col-md-12`}>
+    <div className={`${className} col-lg-6 col-md-12`}>
       <div
         className="pricing-table active-plan"
         data-aos="fade-up"
@@ -81,8 +81,7 @@ export const ProductCard = ({
             </div>
           </Center>
 
-          {mobile ? (
-            isActive ? (
+          {isActive ? (
               <SelectedPlan />
             ) : (
               <CardCTA
@@ -91,10 +90,7 @@ export const ProductCard = ({
                 Name={product.Name}
                 BTN={BTN}
               />
-            )
-          ) : (
-            false
-          )}
+            )}
         </Stack>
 
         {product.subscription_items.items.map((category, i) => (

@@ -3,7 +3,13 @@ import { ProductCard } from "./ProductCard";
 import { useGetSubscriptionTiers } from "../../Hooks/useSubscriptionTiers";
 import { P } from "../Members/Common/Type";
 import { Tabs } from "@mantine/core";
-import { IconPhoto, IconMessageCircle, IconUsers, IconUsersGroup, IconShield } from "@tabler/icons-react";
+import {
+  IconPhoto,
+  IconMessageCircle,
+  IconUsers,
+  IconUsersGroup,
+  IconShield,
+} from "@tabler/icons-react";
 import { trackButtonClick } from "../../lib/GA";
 
 const PricingStyleOne = () => {
@@ -14,7 +20,7 @@ const PricingStyleOne = () => {
   }, [GetsetSubscriptionTiers]);
 
   const handleTabChange = (tabValue) => {
-    console.log("trackButtonClick")
+    console.log("trackButtonClick");
     trackButtonClick(`Pricing Tab - ${tabValue}`);
   };
   const renderProducts = (isClub) => (
@@ -44,24 +50,29 @@ const PricingStyleOne = () => {
     <div className="pricing-area ptb-100 bg-f9f6f6">
       <div className="container">
         <div className="section-title">
-          <h2>Customized Coverage for Every Club</h2>
+          <h2>Unlock the Full Power of Fixtura</h2>
           <P>
-            Our three distinct subscription tiers are designed to cater to your
-            specific goals and budget. With flexibility at your fingertips, you
-            can choose the level of content and analysis that best serves your
-            club. Here, your focus stays where it belongs, on the game.
+            With our single subscription tier, cricket clubs and associations
+            gain access to Fixtura's complete asset suite. Enjoy AI-generated
+            write-ups, fixture and results summaries, top-performances
+            highlights, tailored videos, high-quality images, and sponsor
+            displays – all at an affordable price.
           </P>
+          <P>Elevate your club's digital presence with Fixtura today!</P>
         </div>
-        <Tabs variant="pills" radius="lg" defaultValue="Club" color="blue.1" onTabChange={handleTabChange}>
-          <Tabs.List position="center" >
-            <Tabs.Tab value="Club" icon={<IconShield size="1.2rem" color="black" />}>
-              <P
-                Weight={600}
-                size={14}
-                marginBottom="0"
-                textAlign={"center"}
-               
-              >
+        <Tabs
+          variant="pills"
+          radius="lg"
+          defaultValue="Club"
+          color="blue.1"
+          onTabChange={handleTabChange}
+        >
+          <Tabs.List position="center">
+            <Tabs.Tab
+              value="Club"
+              icon={<IconShield size="1.2rem" color="black" />}
+            >
+              <P Weight={600} size={14} marginBottom="0" textAlign={"center"}>
                 Club
               </P>
             </Tabs.Tab>
@@ -69,13 +80,7 @@ const PricingStyleOne = () => {
               value="Association"
               icon={<IconUsersGroup size="1.2rem" color="black" />}
             >
-              <P
-                Weight={600}
-                size={14}
-                marginBottom="0"
-                textAlign={"center"}
-               
-              >
+              <P Weight={600} size={14} marginBottom="0" textAlign={"center"}>
                 Association
               </P>
             </Tabs.Tab>

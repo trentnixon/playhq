@@ -63,15 +63,15 @@ const Subscriptions = () => {
             
           </div>
           {products.map((product, i) => {
-            console.log(product);
+          
             if (product.attributes.isActive)
               return (
-                <>
+                <div key={i} style={{ marginBottom:'120px'}}>
                   <PageTitle
                     Copy={`${product.attributes.Name}`}
                     ICON={<IconAddressBook size={40} />}
                   />
-
+ 
                   <P size={'lg'} Weight={900}>{`$${product.attributes.price}/Weekly`}</P>
                   <P>{product.attributes.description}</P>
                   <Box
@@ -179,7 +179,7 @@ const Subscriptions = () => {
                       )
                     )}
                   </Box>
-                </>
+                </div>
               );
           })}
         </div>

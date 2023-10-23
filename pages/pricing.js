@@ -7,7 +7,7 @@ const Pricing = () => {
   return (
     <>
       <PageBanner
-        pageTitle="Pricing Options"
+        pageTitle="Pricing"
         BGImage="/images/BG-Images/0D5A3099.jpg"
         position={`bottom center`}
       />
