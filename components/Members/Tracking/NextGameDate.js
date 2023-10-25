@@ -3,7 +3,6 @@ import { P } from "../Common/Type";
 
 export  const NextGameDate = ({ gamesData }) => {
   const nextGame = getNextDate(gamesData);
-  console.log(nextGame);
   return (
     <Group position="apart">
       <P>{`Upcoming Fixture: ${nextGame?.date}`}</P>

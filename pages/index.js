@@ -5,24 +5,12 @@ import Services from "../components/HomePages/DefaultHome/Services";
 import FunFacts from "../components/Common/FunFacts";
 import CtaArea from "../components/Common/CtaAreaTwo";
 import Partner from "../components/Common/Partner";
-
 import { fetcher } from "../lib/api";
-//import Footer from "../components/Layouts/Footer";
-const qs = require("qs");
 
-const CS_query = qs.stringify(
-  {
-    populate: ["Cover"],
-  },
-  {
-    encodeValuesOnly: true,
-  }
-);
 const Index = ({ associations }) => {
   return (
     <>
-      <MainBanner /> 
-      
+      <MainBanner />
       <Services />
       <FunFacts />
       <Partner associations={associations} />
@@ -30,7 +18,7 @@ const Index = ({ associations }) => {
       <CtaArea />
     </>
   );
-};
+}; 
 
 export default Index;
 

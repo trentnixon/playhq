@@ -14,11 +14,11 @@ export const SelectDeliveryDay = () => {
   );
 
   const setHasUpdated = () => {
-    console.log("A DAY HAD CHANGED")
+    //console.log("A DAY HAD CHANGED")
     ReRender();
   };
   useEffect(() => {
-    console.log("Account data changed: ", account.attributes.scheduler.data.attributes.days_of_the_week.data.attributes.Name);
+    //console.log("Account data changed: ", account.attributes.scheduler.data.attributes.days_of_the_week.data.attributes.Name);
   }, [userAccount,account]);
 
   if (userAccount === null) {

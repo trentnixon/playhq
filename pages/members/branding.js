@@ -31,7 +31,7 @@ const query = qs.stringify(
   },
   {
     encodeValuesOnly: true,
-  } 
+  }
 );
 
 const OurBrand = () => {
@@ -41,7 +41,7 @@ const OurBrand = () => {
 
   /* is User Auth */
   const { user } = useUser();
-/*   const router = useRouter();
+  /*   const router = useRouter();
   const currentRoute = router.pathname;
   useEffect(() => {
     if (!user) router.push(`/members/verification/?prev=${currentRoute}`);
@@ -72,8 +72,6 @@ const OurBrand = () => {
 };
 
 OurBrand.getInitialProps = async (ctx) => {
-  console.log(`${Cookies.get("id")}`);
-
   const response = await fetcher(
     `${process.env.NEXT_PUBLIC_STRAPI_URL}/accounts/${Cookies.get(
       "LinkedAccount"

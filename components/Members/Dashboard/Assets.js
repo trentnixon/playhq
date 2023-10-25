@@ -46,7 +46,6 @@ export const DashBoardAssets = ({
 
   useEffect(() => {
     if (Templates) {
-      console.log(Templates.attributes);
       setDisplayTemplate(Templates.attributes);
     }
   }, [Templates]);

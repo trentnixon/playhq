@@ -31,8 +31,6 @@ export const DashBoardTheme = ({
   const isDefaultTemplate = templateName === "Basic Sqaure";
   const isDefaultAudioOption = audioOptionName === "Groover";
 
-  console.log(theme);
-
   return (
     <Paper
       radius="md"

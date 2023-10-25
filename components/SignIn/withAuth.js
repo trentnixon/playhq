@@ -8,12 +8,12 @@ import { SignInLoading } from "./SignInLoading";
 //import { useAccountDetails } from "../../lib/userContext";
 function withAuth(WrappedComponent) {
   return function (props) {
-    console.log("withAuth PROPS", props);
+   
     const [loading, setLoading] = useState(true);
     const { user: userFromProps } = props;
     const { user: userFromHook } = useUser();
     const actualUser = userFromProps || userFromHook;
-    console.log("userFromHook", userFromHook);
+    
 
     const Redirect = () => {
       Router.push("/members/setup");
@@ -55,7 +55,7 @@ function withAuth(WrappedComponent) {
     useEffect(() => {
       setLoading(true);
       const check = getAccountFromLocalCookie();
-      console.log("HOC", check);
+      
       if (check === "undefined") {
         Redirect();
       } else {

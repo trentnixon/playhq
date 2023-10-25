@@ -84,8 +84,6 @@ const MyPlan = () => {
       />
     ),
   };
-
-  console.log(userAccount);
   return (
     <LoadingStateWrapper conditions={[user, userAccount, subscriptionTier]}>
       <MembersWrapper>

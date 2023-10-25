@@ -41,14 +41,7 @@ const Design = ({ Response }) => {
   //const [isPlaying, setIsPlaying] = useState(false);
   const { user } = useUser();
 
-  console.log(
-    "Response",
-    Response?.attributes.account_media_libraries.data,
-    Response?.attributes.account_media_libraries.data.length
-  );
-  useEffect(() => {
-    console.log("userAccount ", userAccount);
-  }, [userAccount]);
+  useEffect(() => {}, [userAccount]);
 
   return (
     <LoadingStateWrapper conditions={[user, userAccount]}>

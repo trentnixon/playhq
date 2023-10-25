@@ -28,14 +28,14 @@ export function StrapiImageUploader({ setLogo, setLogoPath, SAVEDLOGO }) {
 
   // FUNC
   const handleFileUpload = (_FILE) => {
-    console.log(_FILE);
+    //console.log(_FILE);
     UploadDropZoneImage(_FILE);
     setProcessingImage(true);
     //setCloseDisabled(true);
   };
 
   useEffect(() => {
-    console.log("DropZoneImage", DropZoneImage);
+    //console.log("DropZoneImage", DropZoneImage);
     if (DropZoneImage !== null) {
       setProcessingImage(false);
       setLogo(DropZoneImage[0].id);
@@ -54,7 +54,7 @@ export function StrapiImageUploader({ setLogo, setLogoPath, SAVEDLOGO }) {
         onDrop={(files) => handleFileUpload(files)}
         onReject={(files) => {
           setRejected(files);
-          console.log("rejected files", files);
+          //console.log("rejected files", files);
         }}
         maxSize={10 * 1024 ** 2}
         accept={[MIME_TYPES.jpeg, MIME_TYPES.png, MIME_TYPES.gif]}
@@ -93,7 +93,7 @@ export function StrapiImageUploader({ setLogo, setLogoPath, SAVEDLOGO }) {
 }
 export default StrapiImageUploader;
 const RejectedFiles = ({ rejected, setRejected }) => {
-  console.log(rejected[0].errors);
+  //console.log(rejected[0].errors);
   return (
     <>
       <SubHeaders>ERROR!</SubHeaders>

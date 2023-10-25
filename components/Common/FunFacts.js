@@ -3,25 +3,26 @@ import { useMantineTheme, Title, Space } from "@mantine/core";
 import { IconPhotoAi, IconVideo, IconNews } from "@tabler/icons-react";
 import { P } from "../Members/Common/Type";
 import { trackButtonClick, trackCustomEvent } from "../../lib/GA";
+import Section from "../UI/DefaultSection";
 
 const funFactsData = [
   {
     icon: IconNews,
-    title: "AI-Generated Write-ups",
+    title: "AI-Powered Stories",
     description:
-      "At Fixtura, storytelling meets innovation. Our AI write-ups offer unique, engaging content that can be personalized to your club or association's voice. From detailed match reports to lively player profiles, we pen the cricket stories that matter to you.",
+      "Where technology meets passion. Fixtura crafts unique content—from in-depth match analyses to vibrant player spotlights—that truly echoes your club or association's spirit.",
   },
   {
     icon: IconVideo,
-    title: "Tailored Videos",
+    title: "Engaging Videos",
     description:
-      "Fixtura's tailored videos provide dynamic, captivating visuals for your cricket club or association. Keep your members and followers in the loop with content that ranges from upcoming matches to player highlights, all crafted to suit your specific needs.",
+      "Stay ahead of the game with Fixtura's bespoke videos. Highlight upcoming fixtures, showcase match results, and keep your community informed and engaged.",
   },
   {
     icon: IconPhotoAi,
-    title: "High-Quality Images",
+    title: "Stunning Visuals",
     description:
-      "More than just snapshots, Fixtura's images are visual narrations. Crafted to showcase your club or association in a professional and appealing manner, these images capture key moments from the videos, giving your digital content a cohesive look and feel.",
+      "Beyond mere photos—Fixtura captures the essence. Our images, derived from key video moments, ensure your content tells a cohesive and compelling tale.",
   },
 ];
 
@@ -34,67 +35,52 @@ const FunFacts = () => {
   const handleCardHover = (title) => {
     trackCustomEvent("Hover", `Hovered over ${title}`, "Fun Facts Section");
   };
+  const SectionData = {
+    title: "Craft Your Cricket Story with Fixtura",
+    paragraphs: [
+      `From thrilling matches to unforgettable victories, let Fixtura's advanced tools immortalize your cricket journey. Our suite of AI-powered write-ups, dynamic videos, and captivating images ensures your narrative stands out.`,
+    ],
+  };
   return (
     <>
-      <div className="pt-100 pb-70 bg-2C2E33">
-        <div className="container">
-          <div className="section-title">
-            <P
-              Weight={600}
-              color={1}
-              size={50}
-              marginBottom="14px"
-              textAlign={"center"}
+      <Section {...SectionData} color="dark">
+        <div className="row justify-content-center">
+          {funFactsData.map((fact, index) => (
+            <div
+              key={index}
+              className="col-lg-4 col-sm-6"
+              data-aos="fade-up"
+              data-aos-duration="1200"
+              data-aos-delay={`${100 + 200 * index}`}
+              onClick={() => handleCardClick(fact.title)}
+              onMouseEnter={() => handleCardHover(fact.title)}
             >
-              Tailoring Your Cricket Narrative
-            </P>
-            <P color={0} textAlign={"center"}>
-              Whether it's painting a vivid picture of a thrilling match or
-              capturing a glorious victory, Fixtura’s personalized content
-              breathes life into your cricket journey. Choose from our array of
-              AI-generated write-ups, tailored videos, and high-quality images
-              to craft a compelling narrative that resonates with your audience.
-            </P>
-          </div>
-          <div className="row justify-content-center">
-            {funFactsData.map((fact, index) => (
-              <div
-                key={index}
-                className="col-lg-4 col-sm-6"
-                data-aos="fade-up"
-                data-aos-duration="1200"
-                data-aos-delay={`${100 + 200 * index}`}
-                onClick={() => handleCardClick(fact.title)}
-                onMouseEnter={() => handleCardHover(fact.title)}
-              >
-                <div className="funfact-card">
-                  <fact.icon
-                    size="4rem"
-                    stroke={1}
-                    color={theme.colors.blue[6]}
-                  />
-                  <Title
-                    mb={20}
-                    variant="gradient"
-                    gradient={{ from: "#339AF0", to: "#3BC9DB", deg: 45 }}
-                  >
-                    {fact.title}
-                  </Title>
-                  <P color={0} textAlign={"center"}>
-                    {fact.description}
-                  </P>
-                </div>
+              <div className="funfact-card">
+                <fact.icon
+                  size="4rem"
+                  stroke={1}
+                  color={theme.colors.blue[6]}
+                />
+                <Title
+                  mb={20}
+                  variant="gradient"
+                  gradient={{ from: "#339AF0", to: "#3BC9DB", deg: 45 }}
+                >
+                  {fact.title}
+                </Title>
+                <P color={0} textAlign={"center"}>
+                  {fact.description}
+                </P>
               </div>
-            ))}
-          </div>
-          <Space h={50} />
-          <P color={0} textAlign={"center"}>
-            Fixtura: Crafting Your Unique Story with Precision and Flair
-          </P>
+            </div>
+          ))}
         </div>
-      </div>
+        <Space h={50} />
+        <P color={0} textAlign={"center"}>
+        Fixtura: Precision-Crafted Stories that Make an Impact.
+        </P>
+      </Section>
     </>
   );
 };
-
 export default FunFacts;

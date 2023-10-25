@@ -21,9 +21,7 @@ import {
 } from "@tabler/icons-react";
 export function TemplateDetail({ template, onBack, onSelect, isSelected }) {
   // Render the detailed view of the template
-  console.log(
-    template.attributes.bundle_audio.data.attributes.audio_options.data
-  );
+
   const Display = template.attributes;
   return (
     <div>
@@ -116,7 +114,6 @@ function ExampleGallery({ Gallery }) {
           withIndicators
         >
           {Gallery.map((DATA, i) => {
-            console.log(DATA);
             return (
               <Carousel.Slide key={i}>
                 <Image src={DATA.attributes.url} />

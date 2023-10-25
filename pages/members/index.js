@@ -31,13 +31,9 @@ const DashBoard = () => {
   const { account } = useAccountDetails();
   const { user, loading } = useUser();
 
-  useEffect(() => {
-    console.log("Account details:", account);
-  }, [account]);
+  useEffect(() => {}, [account]);
 
-  useEffect(() => {
-    console.log(account);
-  }, [account, user]);
+  useEffect(() => {}, [account, user]);
 
   if (!account || !account.attributes) {
     return (
@@ -177,7 +173,7 @@ const DashBoard = () => {
             })}
           </SimpleGrid>
           <Space h={50} />
-         {/*  <SubHeaders Copy="Juniors" />
+          {/*  <SubHeaders Copy="Juniors" />
           <PageCopyWrapper>
 
             <Container fluid={true} mt={40}>

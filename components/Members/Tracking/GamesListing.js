@@ -56,7 +56,7 @@ export const GamesListing = ({ gamesData }) => {
     .sort((a, b) => a.date - b.date);
 
   const gamesGroupedByMonth = groupByMonth(sortedGamesData);
-  console.log(gamesGroupedByMonth);
+
   return (
     <Grid grow gutter={5}>
       {Object.entries(gamesGroupedByMonth).map(([month, gameDays]) => {

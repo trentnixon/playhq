@@ -6,7 +6,6 @@ export const DisplaySponsorsLogo = ({ LOGO, setLogoPath }) => {
     LOGO?.attributes?.height === undefined ? LOGO[0] : LOGO.attributes;
 
   const calculateImageDimensions = (USELOGO) => {
-    console.log("USELOGO ", USELOGO);
     const aspectRatio = USELOGO.width / USELOGO.height;
     let newHeight, newWidth;
     if (USELOGO.width > USELOGO.height) {

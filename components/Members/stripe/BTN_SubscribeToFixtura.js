@@ -23,7 +23,6 @@ export const BTN_SubscribeToFixtura = () => {
   };
 
   const CreateStripePromise = async (Subscription) => {
-    console.log(Subscription);
     const stripe = await stripePromise;
     await stripe.redirectToCheckout({ sessionId: Subscription.id });
   };
@@ -34,7 +33,6 @@ export const BTN_SubscribeToFixtura = () => {
     }
   }, [Subscription]);
 
-  console.log(ORDER);
   // ADD LOADING WAITING SCREEN AND PROCESS THIS HOOK!!
   if (ORDER === null) {
     return <FixturaLoading />;

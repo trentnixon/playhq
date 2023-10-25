@@ -10,7 +10,6 @@ export const useCreateTrial = () => {
   const [error, setError] = useState(null); // Add this line
   const CreateTrial = async (OBJ) => {
     const user = await getAccountFromLocalCookie();
-    console.log(OBJ);
     setLoading(true);
     setError(null); // Reset error before new request
     if (user) {
@@ -40,7 +39,6 @@ export const useCreateTrial = () => {
             body: JSON.stringify({ data: {subscription_tier:OBJ.subscription_tier} }),
           }
         );
-        console.log(updateAcc);
         setTrial(response.data);
       } catch (err) {
         setError(err.message); // Update this line

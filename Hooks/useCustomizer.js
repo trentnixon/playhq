@@ -35,8 +35,6 @@ export const useGETDesignElement = () => {
           },
         }
       );
-
-      console.log(response.data);
       setDesignElement(response.data);
     } catch (err) {
       setDesignElement(null);

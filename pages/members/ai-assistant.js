@@ -133,8 +133,6 @@ const Account = () => {
 };
 
 Account.getInitialProps = async (ctx) => {
-  console.log(`${Cookies.get("id")}`);
-
   const response = await fetcher(
     `${process.env.NEXT_PUBLIC_STRAPI_URL}/accounts/${Cookies.get(
       "LinkedAccount"

@@ -5,7 +5,7 @@ import { P } from "./Common/Type";
 import { SelectATheme } from "./Common/Customiser/Design/SelectATheme";
 
 export const FixturaCustomiser = ({ user, setHasUpdated }) => {
-  console.log(user);
+  //console.log(user);
   return (
     <>
       <SelectATheme />

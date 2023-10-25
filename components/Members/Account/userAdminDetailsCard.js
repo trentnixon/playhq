@@ -17,8 +17,6 @@ export function UserDetailsCard({ user }) {
   const ORDER = user.attributes.order?.data;
   const includesSponsors =
     user.attributes.subscription_tier.data?.attributes?.includeSponsors;
-  console.log(user?.attributes?.hasCompletedStartSequence);
-
   const UserTheme = useMemo(
     () => user.attributes.theme?.data?.attributes?.Theme,
     [user]
@@ -104,11 +102,11 @@ export function UserDetailsCard({ user }) {
       <Text ta="center" fz="sm" c="dimmed">
         {AccountType}
       </Text>
-   
+
       {user.attributes.hasCompletedStartSequence ? (
         trialNotificationStatus === "subscribed" ? (
           <>
-              <SideBarTrialNotification user={user} />
+            <SideBarTrialNotification user={user} />
             <IsUserSubscriptionDetails
               subscriptionTier={subscriptionTier}
               statusMessage={statusMessage}

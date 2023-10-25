@@ -41,9 +41,9 @@ export const orderedArray = (array) => {
 
 
 export function checkDeliveryDate(Response) {
-  console.log("checkDeliveryDate", Response)
+  //console.log("checkDeliveryDate", Response)
   const Ordered = orderedArray(Response);
-  console.log(Ordered, Ordered.length);
+  //console.log(Ordered, Ordered.length);
   if (Ordered?.length === 0) return false;
 
   const currentDate = new Date();

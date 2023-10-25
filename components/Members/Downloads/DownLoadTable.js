@@ -135,7 +135,7 @@ export function DownloadTable({ data, Token }) {
 
 const TableRow = ({ row, Token }) => {
   const { account } = useAccountDetails();
-  console.log(row);
+
   return (
     <tr key={row.name}>
       <td>{row.Processing ? <FixturaLoading /> : row.Name}</td>

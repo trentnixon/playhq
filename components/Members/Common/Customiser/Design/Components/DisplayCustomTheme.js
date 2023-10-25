@@ -27,7 +27,6 @@ export const DisplayCustomTheme = (props) => {
     (item) => item.attributes.CreatedBy === userAccount.id
   );
 
-  console.log(CTHEME);
   const theme = useMantineTheme();
   const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
   const swatches = (ARR) => {

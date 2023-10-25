@@ -56,7 +56,6 @@ export function GalleryItemCard({ item }) {
   }
 
   const handleDelete = async (id) => {
-    console.log("handleDelete is called with id:", id); // Debugging line
     setConfirmModal(false);
     await deleteMediaItem(id);
     if (!deleteError) {

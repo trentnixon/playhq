@@ -3,18 +3,13 @@ import PageBanner from "../components/Common/PageBanner";
 import WorksStyleTwo from "../components/Portfolio/WorksStyleTwo";
 import CtaAreaTwo from "../components/Common/CtaAreaTwo";
 import { fetcher } from "../lib/api";
-
+ 
 const qs = require("qs");
 const Portfolio = ({ associations, CaseStudies }) => {
- 
   return (
     <>
-      <PageBanner
-        pageTitle="Explore Fixtura's Creations"
-        BGImage="/images/BG-Images/0D5A3099.jpg"
-      />
+      <PageBanner pageTitle="" BGImage="/images/BG-Images/0D5A3099.jpg" />
       <WorksStyleTwo CaseStudies={CaseStudies} />
-       
       <CtaAreaTwo />
     </>
   );
@@ -25,7 +20,7 @@ export default Portfolio;
 export const getServerSideProps = async (context) => {
   const query = qs.stringify(
     {
-      populate: ["Cover", "asset_category","VideoExample","MainDescription"],
+      populate: ["Cover", "asset_category", "VideoExample", "MainDescription"],
     },
     {
       encodeValuesOnly: true,

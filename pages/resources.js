@@ -13,6 +13,7 @@ import {
 } from "@mantine/core";
 import { IconBrowser, IconPresentation, IconVideo } from "@tabler/icons-react";
 import Link from "next/link";
+import Section from "../components/UI/DefaultSection";
 const Resources = () => {
   const theme = useMantineTheme();
 
@@ -48,14 +49,16 @@ const Resources = () => {
       description:
         "Step-by-step slides on how to use Fixtura for your cricket club. No jargon, just simple steps.",
       icon: <IconPresentation size="3rem" color={theme.colors.white} />,
-      downloadLink: "https://www.canva.com/design/DAFsI9LO800/CAmAnwJjW3BU-8Nrk1cxQw/view?utm_content=DAFsI9LO800&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink",
+      downloadLink:
+        "https://www.canva.com/design/DAFsI9LO800/CAmAnwJjW3BU-8Nrk1cxQw/view?utm_content=DAFsI9LO800&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink",
     },
     {
       title: "Website Presentation",
       description:
         "Quickly understand Fixtura's key features through this interactive online guide. Made for easy onboarding.",
       icon: <IconBrowser size="3rem" color={theme.colors.white} />, // Update IconWeb based on your actual imports
-      downloadLink: "https://www.canva.com/design/DAFsI9LO800/CAmAnwJjW3BU-8Nrk1cxQw/view?website#2",
+      downloadLink:
+        "https://www.canva.com/design/DAFsI9LO800/CAmAnwJjW3BU-8Nrk1cxQw/view?website#2",
     },
     {
       title: "Video",
@@ -64,7 +67,7 @@ const Resources = () => {
       icon: <IconVideo size="3rem" color={theme.colors.white} />, // Update IconVideo based on your actual imports
       downloadLink: "https://youtu.be/k7ps0D5Pma8",
     },
-  ]; 
+  ];
 
   const overviewOptions = [
     {
@@ -72,14 +75,16 @@ const Resources = () => {
       description:
         "Step-by-step slides on how to use Fixtura for your cricket club. No jargon, just simple steps.",
       icon: <IconPresentation size="3rem" color={theme.colors.white} />,
-      downloadLink: "https://www.canva.com/design/DAFsPf2A5jo/YuWtz2Orm1Tm_zYZjMe8bA/view?utm_content=DAFsPf2A5jo&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink",
+      downloadLink:
+        "https://www.canva.com/design/DAFsPf2A5jo/YuWtz2Orm1Tm_zYZjMe8bA/view?utm_content=DAFsPf2A5jo&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink",
     },
     {
       title: "Website Presentation",
       description:
         "Quickly understand Fixtura's key features through this interactive online guide. Made for easy onboarding.",
       icon: <IconBrowser size="3rem" color={theme.colors.white} />, // Update IconWeb based on your actual imports
-      downloadLink: "https://www.canva.com/design/DAFsPf2A5jo/YuWtz2Orm1Tm_zYZjMe8bA/view?website#2",
+      downloadLink:
+        "https://www.canva.com/design/DAFsPf2A5jo/YuWtz2Orm1Tm_zYZjMe8bA/view?website#2",
     },
     {
       title: "Video",
@@ -109,12 +114,13 @@ const Resources = () => {
             <P textAlign={`center`} Weight={900} size="lg">
               {option.title}
             </P>
-
-            <button className="btn btn-secondary">
-              <Link  href={option.downloadLink}>
-                <a target="_blank">Download</a>
-              </Link>
-            </button>
+            <Center>
+              <button className="btn btn-secondary">
+                <Link href={option.downloadLink}>
+                  <a target="_blank">Download</a>
+                </Link>
+              </button>
+            </Center>
           </Card>
           <P textAlign={`center`} size="sm">
             {option.description}
@@ -124,85 +130,67 @@ const Resources = () => {
     ));
   };
 
+  const SectionData = {
+    title: "Fixtura Resources Hub",
+    paragraphs: [
+      `Here, you'll find a wealth of downloadable assets, presentations,
+    and videos designed to empower your club or association. Whether
+    you're looking to enhance your social media presence, engage with
+    your fans, or simply learn more, this is the place for you.`,
+    ],
+  };
+
+  const OverviewectionData = {
+    title: "Overview/Brief: Get to Know Fixtura",
+    paragraphs: [
+      `A quick overview of what Fixtura is all about.`,
+      `Learn the basics of Fixtura's features and how it can enhance your cricket club's content creation.`,
+    ],
+  };
+  const ELI5SectionData = {
+    title: "An ELI5 Introduction to Fixtura: Fixtura Simplified",
+    paragraphs: [
+      `Get to the basics with Fixtura.`,
+      `Ideal for volunteers, club members, and anyone new to digital
+      content creation.`,
+      `Learn how Fixtura helps creates videos, graphics, and articles for
+      your cricket club, without any fuss. Perfect for those who want
+      the basics.`,
+    ],
+  };
+
+  const HighLevelSectionData = {
+    title:
+      "A High-Level Introduction to Fixtura: Elevate Your Game with Fixtura",
+    paragraphs: [
+      `A complete guide for club managers and decision-makers looking to
+      fully leverage Fixtura's capabilities.`,
+      `Discover Fixtura's ultimate toolset designed to meet your club's
+      digital content needs. Suited for club managers seeking
+      comprehensive understanding.`,
+    ],
+  };
   return (
     <>
       <PageBanner
-        pageTitle="Resources Hub"
+        pageTitle=""
         BGImage="/images/BG-Images/0D5A3099.jpg"
         position={`bottom center`}
       />
-      
 
-      <div className="pricing-area ptb-100 bg-eaf6ff">
-        <div className="container">
-          <div className="section-title">
-            <h2>Fixtura Resources Hub</h2>
-            <P textAlign={`center`} Weight={400} size="xl">
-              Here, you'll find a wealth of downloadable assets, presentations,
-              and videos designed to empower your club or association. Whether
-              you're looking to enhance your social media presence, engage with
-              your fans, or simply learn more, this is the place for you.
-            </P>
-          </div>
-        </div>
-      </div>
+      <Section {...SectionData} color="light" />
 
-      <div className="pt-100 pb-70 bg-eaf6ff">
-        <div className="container">
-          <div className="section-title">
-            <h2>Overview/Brief: Get to Know Fixtura</h2>
-            <P textAlign={`center`} Weight={600} size="xl">
-              A quick overview of what Fixtura is all about.
-            </P>
-            <P textAlign={`center`}>
-              Learn the basics of Fixtura's features and how it can enhance your cricket club's content creation.
-            </P>
-            <Grid>{renderOptions(overviewOptions)}</Grid>
-          </div>
-        </div>
-      </div>
+      <Section {...OverviewectionData} color="light">
+        <Grid>{renderOptions(overviewOptions)}</Grid>
+      </Section>
 
-      <div className="pt-100 pb-70 bg-f9f6f6">
-        <div className="container ">
-          <div className="section-title">
-            <h2>An ELI5 Introduction to Fixtura: Fixtura Simplified</h2>
-            <P textAlign={`center`} Weight={600} size="xl">
-              Get to the basics with Fixtura.
-            </P>
-            <P textAlign={`center`}>
-              Ideal for volunteers, club members, and anyone new to digital
-              content creation.
-            </P>
-            <P textAlign={`center`}>
-              Learn how Fixtura helps creates videos, graphics, and articles for
-              your cricket club, without any fuss. Perfect for those who want
-              the basics.
-            </P>
-            <Grid>{renderOptions(eli5Options)}</Grid>
-          </div>
-        </div>
-      </div>
+      <Section {...ELI5SectionData} color="light">
+        <Grid>{renderOptions(eli5Options)}</Grid>
+      </Section>
 
-      <div className="pt-100 pb-70 bg-eaf6ff">
-        <div className="container">
-          <div className="section-title">
-            <h2>
-              A High-Level Introduction to Fixtura: Elevate Your Game with
-              Fixtura
-            </h2>
-            <P textAlign={`center`} Weight={600} size="xl">
-              A complete guide for club managers and decision-makers looking to
-              fully leverage Fixtura's capabilities.
-            </P>
-            <P textAlign={`center`}>
-              Discover Fixtura's ultimate toolset designed to meet your club's
-              digital content needs. Suited for club managers seeking
-              comprehensive understanding.
-            </P>
-            <Grid>{renderOptions(highLevelOptions)}</Grid>
-          </div>
-        </div>
-      </div>
+      <Section {...HighLevelSectionData} color="light">
+        <Grid>{renderOptions(highLevelOptions)}</Grid>
+      </Section>
 
       <CtaAreaTwo />
     </>

@@ -10,7 +10,7 @@ export const UserDetails = ({
   subscriptionTier,
   Value,
 }) => {
-  console.log(subscriptionTier);
+  //console.log(subscriptionTier);
   const INPUTS = [
     {
       Name: "Name",

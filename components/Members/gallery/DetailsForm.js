@@ -21,8 +21,6 @@ export const DetailsForm = ({
   const [title, setTitle] = useState(initialData.title || "");
   const [tags, setTags] = useState(initialData.tags || []);
   const [currentTag, setCurrentTag] = useState("");
-
-  console.log("ImagePath", ImagePath[0]?.url);
   const handleSubmit = () => {
     const isActive = true; // Replace with a checkbox or toggle switch if needed
     onSubmit(title, isActive, tags);

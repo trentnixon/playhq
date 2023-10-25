@@ -35,8 +35,6 @@ const Account = () => {
   const [userAccount, setUserAccount] = useState(account);
   const { user, loading } = useUser();
   const trialNotificationStatus = getTrialNotificationStatus(account);
-
-  console.log("trialNotificationStatus", trialNotificationStatus);
   // epping account order 92
   useEffect(() => {
     if (account) {

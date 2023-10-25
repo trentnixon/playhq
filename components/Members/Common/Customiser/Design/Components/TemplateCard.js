@@ -66,7 +66,7 @@ export function TemplateCard({
   const posterURL =
     template.attributes.Poster.data.attributes.formats.small.url;
   const requiresMedia = template.attributes.requiresMedia;
-  console.log(template.attributes.requiresMedia);
+  
   return (
     <Card radius="md" p={0}>
       <Group position="right">

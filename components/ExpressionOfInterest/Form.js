@@ -95,7 +95,7 @@ export const ExpressionOfInterestForm = ({ setHasSent }) => {
         : Array.isArray(associations)
         ? associations
         : [];
-    console.log(options);
+    //console.log(options);
     return options.map((option) => (
       <li
         key={option.id}
@@ -123,7 +123,7 @@ export const ExpressionOfInterestForm = ({ setHasSent }) => {
   };
 
   useEffect(() => {
-    console.log(formData);
+    //console.log(formData);
   }, [formData]);
 
   useEffect(() => {

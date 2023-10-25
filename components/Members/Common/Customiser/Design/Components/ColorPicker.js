@@ -25,7 +25,7 @@ class SketchExample extends React.Component {
   };
 
   render() {
-    console.log(this.props.UsersTheme)
+  
     const styles = reactCSS({
       'default': {
         color: {

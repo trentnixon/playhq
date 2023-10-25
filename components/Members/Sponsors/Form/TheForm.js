@@ -76,7 +76,7 @@ export const CreateaSponsorForm = ({ OBJ }) => {
   // USeEffect
   useEffect(() => {
     if (Sponsor?.data || UpdatedSponsor?.data) {
-      console.log("RUN RENDER NOW");
+      //console.log("RUN RENDER NOW");
       setTimeout(() => {
         ReRender();
       }, 1000);
@@ -84,7 +84,7 @@ export const CreateaSponsorForm = ({ OBJ }) => {
   }, [Sponsor, UpdatedSponsor]);
 
   useEffect(() => {
-    console.log("Logo", Logo);
+    //console.log("Logo", Logo);
     if (Logo) {
       setFORMMETA((prevState) => ({
         ...prevState,
@@ -95,7 +95,7 @@ export const CreateaSponsorForm = ({ OBJ }) => {
   }, [Logo]);
 
   useEffect(() => {
-    console.log("isActive", isActive);
+    //console.log("isActive", isActive);
     setFORMMETA((prevState) => ({
       ...prevState,
       isActive: isActive,
@@ -103,7 +103,7 @@ export const CreateaSponsorForm = ({ OBJ }) => {
   }, [isActive]);
 
   useEffect(() => {
-    console.log("isActiveArticle", isActiveArticle);
+    //console.log("isActiveArticle", isActiveArticle);
     setFORMMETA((prevState) => ({
       ...prevState,
       isArticle: isActiveArticle,
@@ -111,7 +111,7 @@ export const CreateaSponsorForm = ({ OBJ }) => {
   }, [isActiveArticle]);
 
   useEffect(() => {
-    console.log("isActiveVideo", isActiveVideo);
+    //console.log("isActiveVideo", isActiveVideo);
     setFORMMETA((prevState) => ({
       ...prevState,
       isVideo: isActiveVideo,

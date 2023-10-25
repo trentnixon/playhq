@@ -61,8 +61,7 @@ export const SelectATemplate = ({ hasMediaItems }) => {
       return acc;
     }, {});
   }
-  console.log(groupedTemplates);
-
+  
   if (loading || !GetElement || !userAccount) {
     return (
       <>

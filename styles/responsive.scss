@@ -120,8 +120,9 @@ $transition: .5s;
             .navbar-nav {
                 overflow-y: scroll;
                 max-height: 99vh;
-                padding-right: 15px;
-    
+                padding-right: 0px;
+                margin-top: 20px;
+                margin-bottom: 20px;
                 &::-webkit-scrollbar {
                     width: 10px;
                 }
@@ -138,10 +139,11 @@ $transition: .5s;
                 .nav-item {
                     padding-left: 5px;
                     padding-right: 5px;
-                    padding-top: 5px;
-                    padding-bottom: 5px;
+                    padding-top: 10px;
+                    padding-bottom: 10px;
 
                     a {
+                        text-align: center;
                         i {
                             display: none;
                         }
@@ -178,6 +180,10 @@ $transition: .5s;
             }
             .others-options {
                 margin: 10px 0 15px 10px;
+
+                .btn{
+                    width: 80%;
+                }
             }
         }
 

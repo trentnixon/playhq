@@ -12,7 +12,6 @@ export const useGetSubscriptionTiers = () => {
           method: "GET",
         }
       );
-      console.log(response);
       setSubscriptionTiers(response.data);
     } catch (err) {
       setSubscriptionTiers(null);

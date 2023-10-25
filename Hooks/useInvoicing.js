@@ -12,7 +12,6 @@ export const useGetInvoice = () => {
 
   const Getinvoice = async () => {
     const user = await getAccountFromLocalCookie();  
-    console.log(user);
     setLoading(true);
     if (user) {
       try {
@@ -28,7 +27,6 @@ export const useGetInvoice = () => {
             body: JSON.stringify({ user: user }),
           }
         );
-        console.log(response);
         setInvoice(response);
       } catch (err) {
         setInvoice(null);
@@ -46,7 +44,6 @@ export const useGetUpcomingInvoice = () => {
 
   const Getinvoice = async () => {
     const user = await getAccountFromLocalCookie();  
-    console.log(user);
     setLoading(true);
     if (user) {
       try {
@@ -62,7 +59,6 @@ export const useGetUpcomingInvoice = () => {
             body: JSON.stringify({ user: user }),
           }
         );
-        console.log(response);
         setInvoice(response);
       } catch (err) {
         setInvoice(null);

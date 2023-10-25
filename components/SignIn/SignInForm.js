@@ -11,20 +11,20 @@ const SignInForm = () => {
   const [LogUser, CreateLogUser, loading, hookError] = useLogUser(); // Rename error to hookError to avoid conflict
   const [userInfo, setUserInfo] = useState(null);
   const [error, setError] = useState(null); // Declare error and setError here
-  const { user,ReRender } = useUser();
+  const { user, ReRender } = useUser();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setContact((prevState) => ({ ...prevState, [name]: value }));
   };
- 
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const { email, password } = contact;
       const loginInfo = {
         identifier: email,
-        password: password, 
+        password: password,
       };
       CreateLogUser(loginInfo).then(() => {
         ReRender();
@@ -48,34 +48,17 @@ const SignInForm = () => {
   if (error) {
     return <SignInError setError={setError} error={error} />;
   }
-  if (user || LogUser && !hookError) {
+  if (user || (LogUser && !hookError)) {
     return <UserLoggedIn user={LogUser} />;
   }
-  return ( 
+  return (
     <>
-      <div className="contact-form ptb-100">
-        <div className="contact-title">
-          <h2>Sign In</h2>
-          <p>Sign in to your FIXTURA account.</p>
-        </div>
-
+      <div className="contact-form">
         <TheForm
           handleSubmit={handleSubmit}
           handleChange={handleChange}
           contact={contact}
         />
-        <small>
-          <Link href="/password-request">
-            <a>Forgot Password?</a>
-          </Link>
-        </small>
-        <br />
-        <small>
-          Don’t have an account yet?{" "}
-          <Link href="/SignUp">
-            <a> Sign up here</a>
-          </Link>
-        </small>
       </div>
     </>
   );
@@ -93,7 +76,7 @@ const TheForm = ({ handleSubmit, handleChange, contact }) => {
                 type="email"
                 name="email"
                 placeholder="Email"
-                className="form-control"
+                className="form-control-343a40"
                 value={contact.email}
                 onChange={handleChange}
                 required
@@ -106,7 +89,7 @@ const TheForm = ({ handleSubmit, handleChange, contact }) => {
                 type="password"
                 name="password"
                 placeholder="Password"
-                className="form-control"
+                className="form-control-343a40"
                 value={contact.password}
                 onChange={handleChange}
                 required

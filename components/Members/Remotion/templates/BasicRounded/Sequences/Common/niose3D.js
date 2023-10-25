@@ -28,7 +28,6 @@ export const NoiseComp  = ({ speed, circleRadius, maxOffset }) => {
             [0, 0.1]
           );
           const key = `${i}-${j}`;
-            // Console.log(x , dx)
           return (
             <circle
               key={key}

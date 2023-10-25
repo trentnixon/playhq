@@ -201,15 +201,13 @@ export const UpcomingInvoicing = () => {
     account?.attributes?.order?.data?.attributes
   );
   const isPaused = ORDER?.isPaused;
-  console.log(isPaused);
+
   const theme = useMantineTheme();
   useEffect(() => {
     getInvoice();
   }, []);
 
   useEffect(() => {}, [invoice, loading]);
-
-  console.log("loading", loading);
 
   if (isPaused) return true;
 

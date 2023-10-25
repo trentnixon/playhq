@@ -1,5 +1,4 @@
 import React from "react";
-import Link from "next/link";
 import { useMantineTheme } from "@mantine/core";
 
 const FunFactsTwo = () => {
@@ -48,9 +47,6 @@ const FunFactsTwo = () => {
     </div>
   </div>
 </>
-
-
-
   );
 };
 

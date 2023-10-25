@@ -23,21 +23,19 @@ import { LoadingStateWrapper } from "../../components/Members/Account/HOC/Loadin
 
 const OrderHistory = (props) => {
   const { Renders } = props;
- 
+
   /* is User Auth */
   const { user } = useUser();
-/*   const router = useRouter();
+  /*   const router = useRouter();
   const currentRoute = router.pathname;
   useEffect(() => {
     if (!user) router.push(`/members/verification/?prev=${currentRoute}`);
   }, []); */
   /* End User Check*/
 
-  useEffect(() => {
-    console.log(Renders);
-  }, [Renders]);
+  useEffect(() => {}, [Renders]);
 
-   if (Renders?.renders === undefined)
+  if (Renders?.renders === undefined)
     return (
       <MembersWrapper>
         <SetupCheck>
@@ -46,19 +44,17 @@ const OrderHistory = (props) => {
       </MembersWrapper>
     );
 
-  return ( 
-    <MembersWrapper>   
+  return (
+    <MembersWrapper>
       <SetupCheck>
         <LoadingStateWrapper conditions={[user, Renders]}>
-           <PageTitle Copy={`Bundles`} ICON={<IconDownload size={40} />} />
+          <PageTitle Copy={`Bundles`} ICON={<IconDownload size={40} />} />
           <DownloadCopy />
           <Space h={20} />
           <DownloadsSelectDays renders={Renders.renders} />
           <Space h={20} />
-          <SubHeaders
-            Copy={`Bundles (${Renders.renders.length})`}
-          />
-          
+          <SubHeaders Copy={`Bundles (${Renders.renders.length})`} />
+
           <DownloadTable
             data={Renders.renders}
             Token={Renders?.render_token?.token}

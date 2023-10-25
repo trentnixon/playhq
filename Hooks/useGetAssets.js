@@ -21,7 +21,6 @@ export const useGetAssets = () => {
   );
     const GetAssets = async () => {
       const user = await getAccountFromLocalCookie();
-      console.log(user)
       setAssets(true)
       if (user) {
         try { 
@@ -37,7 +36,6 @@ export const useGetAssets = () => {
               }
             }
           );
-          console.log(response)
           setAssets(response.data);
         } catch (err) {
             setAssets(null);

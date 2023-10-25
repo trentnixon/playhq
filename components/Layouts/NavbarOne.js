@@ -64,45 +64,63 @@ const NavbarOne = () => {
               <ul className="navbar-nav">
                 <li className="nav-item">
                   <Link href="/">
-                    <a onClick={closeMenu} className="nav-link">Home</a>
+                    <a onClick={closeMenu} className="nav-link">
+                      Home
+                    </a>
                   </Link>
                 </li>
 
                 <li className="nav-item">
-                  <Link href="/portfolio" activeClassName="active">
-                    <a onClick={closeMenu} className="nav-link">Examples</a>
+                  <Link href="/Media-Options" activeClassName="active">
+                    <a onClick={closeMenu} className="nav-link">
+                      Digital Cricket Assets
+                    </a>
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link href="/graphics-packages" activeClassName="active">
+                    <a onClick={closeMenu} className="nav-link">
+                      Cricket Graphics Packages
+                    </a>
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link href="/customization" activeClassName="active">
+                    <a onClick={closeMenu} className="nav-link">
+                      Personalize Your Cricket Content
+                    </a>
                   </Link>
                 </li>
 
                 <li className="nav-item">
-                  <Link href="/about" activeClassName="active">
-                    <a onClick={closeMenu} className="nav-link">About</a>
+                  <Link href="/pricing" activeClassName="active">
+                    <a onClick={closeMenu} className="nav-link">
+                      Pricing
+                    </a>
                   </Link>
                 </li>
-                <li className="nav-item">
+                {/*  <li className="nav-item">
                   <Link href="/resources" activeClassName="active">
                     <a className="nav-link" onClick={() => setMenu(true)}>
                       Resources
                     </a>
                   </Link>
-                </li>
-                <li className="nav-item">
-                  <Link href="/pricing" activeClassName="active">
-                    <a onClick={closeMenu} className="nav-link">Pricing</a>
-                  </Link>
-                </li>
+                </li> */}
 
-                <li className="nav-item">
+                {/* <li className="nav-item">
                   <Link href="/faq" activeClassName="active">
-                    <a onClick={closeMenu} className="nav-link">FAQ</a>
+                    <a onClick={closeMenu} className="nav-link">
+                      FAQ
+                    </a>
                   </Link>
-                </li>
-
-                <li className="nav-item">
+                </li> */}
+                {/* <li className="nav-item">
                   <Link href="/contact" activeClassName="active">
-                    <a onClick={closeMenu} className="nav-link">Contact</a>
+                    <a onClick={closeMenu} className="nav-link">
+                      Contact
+                    </a>
                   </Link>
-                </li>
+                </li> */}
 
                 <SignIn closeMenu={closeMenu} />
               </ul>
@@ -132,7 +150,9 @@ const SignIn = ({ closeMenu }) => {
   return (
     <li className="nav-item">
       <Link href="/login" activeClassName="active">
-        <a onClick={closeMenu} className="nav-link">Sign In</a>
+        <a onClick={closeMenu} className="nav-link">
+          Sign In
+        </a>
       </Link>
     </li>
   );

@@ -1,7 +1,15 @@
 import { Carousel } from "@mantine/carousel";
 import { useMediaQuery } from "@mantine/hooks";
 import FsLightbox from "fslightbox-react";
-import { createStyles, Paper, Text, useMantineTheme, rem, ScrollArea } from "@mantine/core";
+import {
+  createStyles,
+  Paper,
+  Text,
+  useMantineTheme,
+  rem,
+  ScrollArea,
+  Box,
+} from "@mantine/core";
 import { useState } from "react";
 import { Modal } from "@mantine/core";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
@@ -43,11 +51,9 @@ function Card(props) {
     setVideoUrl,
   } = props;
   const { classes } = useStyles();
-
-  console.log("props ", props);
   const [articleModalOpen, setArticleModalOpen] = useState(false);
- 
-  const theme = useMantineTheme()
+
+  const theme = useMantineTheme();
   const handleArticleClick = () => {
     setArticleModalOpen(true);
   };
@@ -61,7 +67,7 @@ function Card(props) {
     <Paper
       shadow="md"
       w={"100%"}
-      p="xl"
+      p="sm"
       radius="md"
       sx={{
         backgroundImage: `url(${image})`,
@@ -94,9 +100,22 @@ function Card(props) {
         ) : (
           false
         )}
-        <Text className={classes.category} size="xs" color="dark">
-          {category}
-        </Text>
+        <Box
+          sx={(theme) => ({
+            backgroundColor: theme.colors.gray[9],
+            padding: theme.spacing.sm,
+            borderRadius: theme.radius.md,
+            cursor: "pointer",
+
+            "&:hover": {
+              backgroundColor: theme.colors.blue[9],
+            },
+          })}
+        >
+          <Text className={classes.category} size="xs" color="dark">
+            {category}
+          </Text>
+        </Box>
       </div>
       <Modal
         opened={articleModalOpen}
@@ -104,9 +123,12 @@ function Card(props) {
         title={title}
         size="xl"
         scrollAreaComponent={ScrollArea.Autosize}
-        transitionProps={{ transition: 'fade', duration: 600, timingFunction: 'linear' }}
+        transitionProps={{
+          transition: "fade",
+          duration: 600,
+          timingFunction: "linear",
+        }}
         centered
-
         overlayProps={{
           color: theme.colors.gray[6],
           opacity: 0.55,
@@ -125,7 +147,6 @@ function Card(props) {
         }}
       >
         <ReactMarkdown className="markdown">{MainDescription}</ReactMarkdown>
-        
       </Modal>
     </Paper>
   );

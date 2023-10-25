@@ -101,16 +101,6 @@ const ContactForm = () => {
   return (
     <>
       <div className="contact-form ptb-100">
-        <div className="contact-title">
-          <h2>Get In Touch</h2>
-          <p>
-            If you have any questions or need assistance with your account, our
-            team is here to help. Please fill out the form below and we will get
-            back to you as soon as possible. We look forward to hearing from you
-            and helping you get the most out of your Fixtura experience.
-          </p>
-        </div>
-
         <form onSubmit={handleSubmit}>
           <div className="container">
             <div className="row">
@@ -120,7 +110,7 @@ const ContactForm = () => {
                     type="text"
                     name="name"
                     placeholder="Name"
-                    className="form-control"
+                    className="form-control-343a40"
                     value={contact.name}
                     onChange={handleChange}
                     required
@@ -133,7 +123,7 @@ const ContactForm = () => {
                     type="email"
                     name="email"
                     placeholder="Email"
-                    className="form-control"
+                    className="form-control-343a40"
                     value={contact.email}
                     onChange={handleChange}
                     required
@@ -147,7 +137,7 @@ const ContactForm = () => {
                     type="text"
                     name="subject"
                     placeholder="Subject"
-                    className="form-control"
+                    className="form-control-343a40"
                     value={contact.subject}
                     onChange={handleChange}
                     required
@@ -161,7 +151,7 @@ const ContactForm = () => {
                     cols="30"
                     rows="6"
                     placeholder="Write your message..."
-                    className="form-control"
+                    className="form-control-343a40"
                     value={contact.text}
                     onChange={handleChange}
                     required

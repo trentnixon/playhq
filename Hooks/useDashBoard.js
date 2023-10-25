@@ -32,7 +32,6 @@ export const useGetSchedulerDetails = () => {
             },
           }
         );
-        console.log(response.data);
         setSchedulerDetails(response.data);
       } catch (error) {
         console.error("Failed to fetch scheduler details:", error);
@@ -79,8 +78,6 @@ export const useGetGalleryItems = () => {
             },
           }
         );
-
-        console.log(response.data);
         setGalleryItems(response.data);
         setError(null); // Reset error state if the request is successful
       } catch (fetchError) {

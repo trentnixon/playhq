@@ -1,5 +1,5 @@
 const FetchTest = ({associations})=>{
-    console.log('associations ',associations)
+ 
     return(
         <>
         Fetch FetchTest

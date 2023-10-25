@@ -9,7 +9,6 @@ export const useCreateStripePortal = () => {
   
     const CreatePortal= async () => {
       const user = await getAccountFromLocalCookie();
-      console.log(user)
       setPortal(true)
       if (user) {
         try {
@@ -25,7 +24,6 @@ export const useCreateStripePortal = () => {
               body: JSON.stringify({ user: user }),
             }
           );
-          console.log(response)
           setPortal(response);
         } catch (err) {
             setPortal(null);

@@ -30,9 +30,6 @@ import initialDATA from "../Remotion/utils/Data.json";
 "WeekendSingleGameResult"
 */
 const RemotionPreview = ({ setIsPlaying, userAccount, Assets }) => {
-
-  console.log("userAccount : ", userAccount)
-
   const theme = useMantineTheme();
   const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
   // Moved from RemotionPlayerContainer
@@ -55,7 +52,10 @@ const RemotionPreview = ({ setIsPlaying, userAccount, Assets }) => {
       // Generate JSON data for each asset type
       const newAssetJsonData = {};
       Assets.forEach((assetType) => {
-        newAssetJsonData[assetType] = generateJsonForAsset(userAccount, assetType);
+        newAssetJsonData[assetType] = generateJsonForAsset(
+          userAccount,
+          assetType
+        );
       });
 
       setAssetJsonData(newAssetJsonData);
@@ -93,8 +93,6 @@ const RemotionPreview = ({ setIsPlaying, userAccount, Assets }) => {
     ].reduce((a, b) => a + b, 0),
   };
 
-  console.log("Create", Create);
-  console.log("DATA", DATA);
   // Your existing code logic and rendering
   if (dataReady) {
     return (
@@ -144,44 +142,44 @@ const RemotionPreview = ({ setIsPlaying, userAccount, Assets }) => {
 const generateJsonForAsset = (userAccount, assetType) => {
   // Initialize the base structure
   const jsonData = {
-    "TIMINGS": {
-      "FPS_INTRO": 90,
-      "FPS_OUTRO": 120,
-      "FPS_MAIN": 360
+    TIMINGS: {
+      FPS_INTRO: 90,
+      FPS_OUTRO: 120,
+      FPS_MAIN: 360,
     },
-    "VIDEOMETA": {
-      "Video": {
+    VIDEOMETA: {
+      Video: {
         // Populate from userAccount
       },
-      "Club": {
+      Club: {
         // Populate from userAccount
-      }
+      },
     },
-    "DATA": []
+    DATA: [],
   };
 
   // Populate VIDEOMETA from userAccount
   if (userAccount) {
     jsonData.VIDEOMETA.Video = {
       // ...other fields
-      "Theme": userAccount.attributes?.theme?.data?.attributes?.Theme,
-      "Template": userAccount.attributes?.template?.data?.attributes?.Name,
-      "audio_option": userAccount.attributes?.audio_option?.data?.attributes?.URL,
+      Theme: userAccount.attributes?.theme?.data?.attributes?.Theme,
+      Template: userAccount.attributes?.template?.data?.attributes?.Name,
+      audio_option: userAccount.attributes?.audio_option?.data?.attributes?.URL,
       // ...other fields
     };
 
     jsonData.VIDEOMETA.Club = {
-      "Name": FindAccountLabel(userAccount),
-      "Logo": FindAccountLogo(userAccount),
+      Name: FindAccountLabel(userAccount),
+      Logo: FindAccountLogo(userAccount),
     };
   }
 
   // Populate DATA based on assetType
   switch (assetType) {
-    case 'UpComingFixtures':
+    case "UpComingFixtures":
       jsonData.DATA = DATA_UpComingFixtures;
       break;
-    case 'WeekendResults':
+    case "WeekendResults":
       jsonData.DATA = DATA_WeekendResults;
       break;
     // ...other cases
@@ -327,7 +325,6 @@ const RemotionPreview = ({ setIsPlaying, DATA }) => {
     ].reduce((a, b) => a + b, 0),
   };
 
-  console.log("ASSETDATA", ASSETDATA);
 
   return (
     <Center>
@@ -486,12 +483,12 @@ export default RemotionPreview; */
     }
 
     const listener = () => {
-      console.log("paused");
+   
       setIsPlaying(false);
     };
 
     const Playlistener = () => {
-      console.log("playing");
+   
       setIsPlaying(true);
     };
 

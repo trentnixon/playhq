@@ -16,17 +16,17 @@ export const CreateFreeTrial = ({ account }) => {
     const trialInstanceObj = constructTrialInstanceObj(account);
     // lets add the sub teir to teh account and remove on trial end
     //console.log(trialInstanceObj);
-    CreateTrial(trialInstanceObj); 
+    CreateTrial(trialInstanceObj);
   };
 
   // If the trial is successfully created, show the success message and then refresh the page after 2 seconds
   useEffect(() => {
-    console.log("Checking if Trial is updated:", Trial);
+    //console.log("Checking if Trial is updated:", Trial);
     if (Trial) {
-      console.log("Trial created, showing success message...");
+      //console.log("Trial created, showing success message...");
       setShowSuccess(true);
       setTimeout(() => {
-        console.log("Reloading page...");
+        //console.log("Reloading page...");
         window.location.reload();
       }, 2000);
     }

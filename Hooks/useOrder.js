@@ -18,7 +18,6 @@ export const useCreateNewInstanceOfSubscription = () => {
 
   const CreateSubscription = async (productId) => {
     const user = await getUserFromLocalCookie();
-    console.log("productId", productId);
     if (user) {
       try {
         const UserID = await getIdFromLocalCookie();
@@ -37,7 +36,6 @@ export const useCreateNewInstanceOfSubscription = () => {
             }),
           }
         );
-        console.log(response);
         setSubscription(response);
       } catch (err) {
         setSubscription(null);

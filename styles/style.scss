@@ -68,7 +68,7 @@ $transition: all 0.5s ease;
     --gradient-color-3: #D7F0EC;
   }
   #gradient-canvas-innerPage{ 
-    height:300px !important; 
+   
     width:100%;  
     position: absolute;
     top:0;
@@ -404,7 +404,24 @@ label {
         border-color: $main-color;
     }
 }
+.form-control-343a40 {
+    width: 100%;
+    height: 55px;
+    padding: 15px 20px;
+    font-size: 14px;
+    color: $black-color;
+    border: 1px solid #339AF0;
+    border-radius: 6px;
+    background: $gradient-color;
+    transition: $transition;
 
+    &:focus {
+        outline: 0;
+        background: $white-color;
+        box-shadow: unset;
+        border-color: $main-color;
+    }
+}
 /*================================================
 Navbar CSS
 =================================================*/
@@ -472,7 +489,7 @@ Navbar CSS
                         color: $black-color;
     
                         &::before {
-                            width: 60%;
+                            width: 80%;
                         }
                     }
 
@@ -581,12 +598,13 @@ Navbar CSS
             padding: 0;
             margin: 0 0 0 10px;
             list-style-type: none;
-    
+            text-align: center;
+           
             .btn {
                 border-radius: 50px;
                 padding: 11px 20px;
                 font-size: 14px;
-    
+               
                 &::before {
                     border-radius: 50px;
                 }
@@ -957,7 +975,7 @@ Main Banner CSS
 .hero-banner {
     position: relative;
     height: 100vh;
-    margin-bottom: 50px;
+  
     background: {
         position: center center;
         size: cover;
@@ -4871,12 +4889,9 @@ Page Title CSS
 .page-title-area {
     position: relative;
     background-size: cover;
-    height: 300px;
+    //height: 300px;
     background-position: top center;
-    padding: {
-        top: 120px;
-        bottom: 120px;
-    }
+   
     text-align: center;
 
     h2 {
@@ -5103,7 +5118,7 @@ Contact CSS
     }
 }
 .contact-form {
-    background-color: $white-color;
+ 
     text-align: center;
 
     .contact-title {

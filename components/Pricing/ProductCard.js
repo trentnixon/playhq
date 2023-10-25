@@ -25,6 +25,7 @@ import {
 import React from "react";
 import { trackButtonClick } from "../../lib/GA";
 import { useMediaQuery } from "@mantine/hooks";
+import { H, P } from "../Members/Common/Type";
 
 export const ProductCard = ({
   product,
@@ -62,35 +63,37 @@ export const ProductCard = ({
         className="pricing-table active-plan"
         data-aos="fade-up"
         data-aos-duration="1500"
-        data-aos-delay={timing?timing:0 * 200}
+        data-aos-delay={timing ? timing : 0 * 200}
       >
         <div className="pricing-header">
           <Center>
-            <h3>{product.Name}</h3>
-          </Center>
-        </div>
-
-        <Stack align="center" justify="flex-start" spacing={0}>
-          <Center>
-            <div className="price">
+            <H color={"white"} mb={0}>
               <span>
                 <sup>$</sup>
                 {product.price}
                 <span>/Weekly</span>
               </span>
-            </div>
+            </H>
+          </Center>
+        </div>
+
+        <Stack align="center" justify="flex-start" spacing={0} mb={10}>
+          <Center>
+            <H size={"h3"} color={"gray.7"} mb={0}>
+              {product.Name}
+            </H>
           </Center>
 
           {isActive ? (
-              <SelectedPlan />
-            ) : (
-              <CardCTA
-                signUp={signUp}
-                trackButtonClick={trackButtonClick}
-                Name={product.Name}
-                BTN={BTN}
-              />
-            )}
+            <SelectedPlan />
+          ) : (
+            <CardCTA
+              signUp={signUp}
+              trackButtonClick={trackButtonClick}
+              Name={product.Name}
+              BTN={BTN}
+            />
+          )}
         </Stack>
 
         {product.subscription_items.items.map((category, i) => (
@@ -216,9 +219,7 @@ const CardCTA = ({ signUp, trackButtonClick, Name, BTN }) => {
               <a
                 className="btn btn-secondary"
                 onClick={() =>
-                  trackButtonClick(
-                    `Product Card - Learn More - ${Name}`
-                  )
+                  trackButtonClick(`Product Card - Learn More - ${Name}`)
                 }
               >
                 {" "}

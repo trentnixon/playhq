@@ -3,24 +3,27 @@ import { ProductCard } from "./ProductCard";
 import { useGetSubscriptionTiers } from "../../Hooks/useSubscriptionTiers";
 import { P } from "../Members/Common/Type";
 import { Tabs } from "@mantine/core";
-import {
-  IconPhoto,
-  IconMessageCircle,
-  IconUsers,
-  IconUsersGroup,
-  IconShield,
-} from "@tabler/icons-react";
+import { IconUsersGroup, IconShield } from "@tabler/icons-react";
 import { trackButtonClick } from "../../lib/GA";
+import Section from "../UI/DefaultSection";
 
 const PricingStyleOne = () => {
   const [products, GetsetSubscriptionTiers] = useGetSubscriptionTiers();
+
+  const SectionData = {
+    title: "Experience Fixtura with a Two-Week Free Trial",
+    paragraphs: [
+      `Explore the benefits of Fixtura's platform tailored for cricket clubs and associations. Gain access to AI-generated write-ups, insightful fixture summaries, top performance highlights, custom videos, and quality images.`,
+      `Experience the convenience and value Fixtura brings to your club with a Two-Week Free Trial.`,
+      `When you're ready, you can easily subscribe using the pricing model below.`
+   ],
+  };
 
   useEffect(() => {
     if (products === null) GetsetSubscriptionTiers();
   }, [GetsetSubscriptionTiers]);
 
   const handleTabChange = (tabValue) => {
-    console.log("trackButtonClick");
     trackButtonClick(`Pricing Tab - ${tabValue}`);
   };
   const renderProducts = (isClub) => (
@@ -47,24 +50,13 @@ const PricingStyleOne = () => {
     );
 
   return (
-    <div className="pricing-area ptb-100 bg-f9f6f6">
-      <div className="container">
-        <div className="section-title">
-          <h2>Unlock the Full Power of Fixtura</h2>
-          <P>
-            With our single subscription tier, cricket clubs and associations
-            gain access to Fixtura's complete asset suite. Enjoy AI-generated
-            write-ups, fixture and results summaries, top-performances
-            highlights, tailored videos, high-quality images, and sponsor
-            displays – all at an affordable price.
-          </P>
-          <P>Elevate your club's digital presence with Fixtura today!</P>
-        </div>
+    <>
+      <Section {...SectionData} color="light">
         <Tabs
           variant="pills"
           radius="lg"
           defaultValue="Club"
-          color="blue.1"
+          color="blue.5"
           onTabChange={handleTabChange}
         >
           <Tabs.List position="center">
@@ -72,7 +64,7 @@ const PricingStyleOne = () => {
               value="Club"
               icon={<IconShield size="1.2rem" color="black" />}
             >
-              <P Weight={600} size={14} marginBottom="0" textAlign={"center"}>
+              <P Weight={600} size={14} marginBottom="0"  textAlign={"center"}>
                 Club
               </P>
             </Tabs.Tab>
@@ -80,7 +72,7 @@ const PricingStyleOne = () => {
               value="Association"
               icon={<IconUsersGroup size="1.2rem" color="black" />}
             >
-              <P Weight={600} size={14} marginBottom="0" textAlign={"center"}>
+              <P Weight={600} size={14} marginBottom="0" textAlign={"center"} >
                 Association
               </P>
             </Tabs.Tab>
@@ -94,8 +86,8 @@ const PricingStyleOne = () => {
             {renderProducts(false)}
           </Tabs.Panel>
         </Tabs>
-      </div>
-    </div>
+      </Section>
+    </>
   );
 };
 

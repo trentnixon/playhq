@@ -16,11 +16,6 @@ import { getTrialNotificationStatus } from "../../../lib/actions";
 export const IsFreeTrial = ({ user }) => {
   const theme = useMantineTheme();
   const trialNotificationStatus = getTrialNotificationStatus(user);
-  console.log(
-    "user.attributes.order.data ",
-    user.attributes.order.data,
-    trialNotificationStatus
-  );
   // epping order num 92
 
   if (user.attributes.trialStatus === true) {

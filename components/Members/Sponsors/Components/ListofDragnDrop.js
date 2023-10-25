@@ -59,7 +59,7 @@ export function DragnDropSponsorList({ SPONSORS, SPONSORLIMIT }) {
   const [isRerendering, setrerendering] = useState(false);
 
   const onDelete = (ID) => {
-    console.log("onDelete", ID);
+    //console.log("onDelete", ID);
     ConfirmDeleteSponsor(ID);
     return true;
   };
@@ -67,7 +67,7 @@ export function DragnDropSponsorList({ SPONSORS, SPONSORLIMIT }) {
   // USeEffect
   useEffect(() => {
     if (UpdatedSponsor?.data || DeleteSponsor?.data) {
-      console.log("RUN RENDER NOW");
+      //console.log("RUN RENDER NOW");
       setTimeout(() => {
         setrerendering(true);
         ReRender();

@@ -48,7 +48,7 @@ export const useAccount = (ctx) => {
     try {
       const ID = await getAccountIDFromServer();
       const JWT = getTokenFromLocalCookie();
-      console.log("fetchData accounts on id ", ID); 
+      //console.log("fetchData accounts on id ", ID); 
       
       // Check if ID and its nested properties exist
       if (ID && ID.account && ID.account.id) {
@@ -98,7 +98,7 @@ export const useSetAccountTrue = (ctx) => {
           }),
         }
       );
-      console.log(res);
+
       SetAccountTrue(res.data);
     }
   };

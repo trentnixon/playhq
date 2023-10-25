@@ -3,7 +3,6 @@ import { GalleryItemCard } from "./GalleryCard";
 import { P } from "../Common/Type";
 
 export const DisplayGallery = ({ DATA }) => {
-  console.log(DATA)
   return (
     <>
       <Group position="apart" mt={20}>

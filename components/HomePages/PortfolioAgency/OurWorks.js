@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 
 const OurWorks = ({ CaseStudies }) => {
-  console.log(CaseStudies);
+
   return (
     <>
       <section className="case-studies-area lg-portfolio ptb-100">
@@ -16,7 +16,6 @@ const OurWorks = ({ CaseStudies }) => {
 
           <div className="row justify-content-center">
             {CaseStudies.data.map((study, i) => {
-              console.log(study.attributes.Cover.data.attributes.url)
               return (
                 <div
                   key={i}

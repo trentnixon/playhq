@@ -4,7 +4,13 @@ import React, { useEffect } from "react";
 import Link from "next/link";
 import { Gradient } from "../../../utils/Gradient";
 import { Image, Text } from "@mantine/core";
-import { trackPageView, trackButtonClick, trackCustomEvent } from "../../../lib/GA";
+import {
+  trackPageView,
+  trackButtonClick,
+  trackCustomEvent,
+} from "../../../lib/GA";
+import { useMediaQuery } from "@mantine/hooks";
+import { P } from "../../Members/Common/Type";
 
 const MainBanner = () => {
   return (
@@ -28,6 +34,9 @@ const MainBanner = () => {
                         },
                       }}
                     />
+                    <P textAlign={"center"} Weight='900' size='xl' color='#1688D0'>
+                      Tailored Digital Content for Cricket Clubs and Associations
+                    </P>
                   </div>
                 </div>
 
@@ -35,36 +44,39 @@ const MainBanner = () => {
                   <div className="main-banner-content">
                     <Text
                       align="right"
-                      color="blue.9"
+                      color='#1688D0'
                       sx={{
-                        fontSize: "2.5em",
+                        fontSize: "4em",
                         lineHeight: ".9em",
-                        fontWeight: 600,
+                        letterSpacing: "-6px",
+                        fontWeight: 900,
                         marginBottom: "10px",
                         "@media (max-width: 48em)": {
-                          fontSize: "2em",
+                          fontSize: "5em",
                           textAlign: "center",
                           marginBottom: "20px",
                         },
                       }}
                     >
-                      Your Cricket Club's Digital Partner!
+                      SIGN UP TODAY
                     </Text>
 
                     <Text
-                      fz="xl"
-                      lh={"1"}
+                      fz="26px"
+                      lh={"1.1"}
+                      color="gray.8"
                       align="right"
                       sx={{
+                        letterSpacing: "-2px",
                         "@media (max-width: 48em)": {
                           textAlign: "center",
                           lineHeight: "1em",
+                          fontSize: "1.5em",
                         },
                       }}
                     >
-                      THE ONLY AI CONTENT CREATION TOOL FOR{" "}
-                      <strong>CRICKET CLUBS</strong> AND{" "}
-                      <strong>ASSOICATIONS</strong>
+                      For a <strong style={{  color:"#E97830" , fontWeight:900,fontSize: "1.5em"}}>Two-Week No-Obligation Trial</strong> for
+                      your Club or Association
                     </Text>
                     <Text
                       align="right"
@@ -79,7 +91,7 @@ const MainBanner = () => {
                           className="btn btn-secondary"
                           onClick={() => trackButtonClick("Get Started")} // Track button click
                         >
-                          Get Started
+                          Start Your Free Trial!
                         </a>
                       </Link>
                     </Text>

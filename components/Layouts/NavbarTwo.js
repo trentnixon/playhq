@@ -37,10 +37,7 @@ const NavbarTwo = () => {
     });
   });
 
-  useEffect(() => {
-    console.log("NavbarTwo User:", user);
-    console.log("NavbarTwo Loading:", loading);
-  }, []);
+  useEffect(() => {}, []);
 
   const classOne = menu
     ? "collapse navbar-collapse mean-menu"
@@ -196,11 +193,10 @@ const MembersNavItem = ({ user, setMenu }) => {
 
   const handleLogout = async () => {
     try {
-      
       await unsetToken(); // Assuming unsetToken is an async operation
-      console.log("unsetToken COMPLETED")
-      if (typeof window !== 'undefined') {
-        window.location.href = '/';
+      console.log("unsetToken COMPLETED");
+      if (typeof window !== "undefined") {
+        window.location.href = "/";
       }
     } catch (error) {
       console.error("Log out failed", error);
@@ -224,13 +220,21 @@ const MembersNavItem = ({ user, setMenu }) => {
       title: "Graphics Packages",
       IconComponent: IconColorPicker,
     },
-    { href: `${PATH}/branding`, title: "Your Branding", IconComponent: IconBadgeTm },
+    {
+      href: `${PATH}/branding`,
+      title: "Your Branding",
+      IconComponent: IconBadgeTm,
+    },
     {
       href: `${PATH}/gallery`,
       title: "Media Gallery",
       IconComponent: IconPhotoPlus,
     },
-    { href: `${PATH}/sponsors`, title: "Add Sponsors", IconComponent: IconCheck },
+    {
+      href: `${PATH}/sponsors`,
+      title: "Add Sponsors",
+      IconComponent: IconCheck,
+    },
 
     { href: `${PATH}/tracking`, title: "Season", IconComponent: IconTrack },
     {

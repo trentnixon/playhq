@@ -55,14 +55,7 @@ export const SetupStages = ({ setReview }) => {
   }, []);
 
   const checkProgress = useCallback(() => {
-    console.log(
-      "DATA.attributes.isRightsHolder",
-      DATA.attributes.isRightsHolder
-    );
-    console.log(
-      "DATA.attributes.isPermissionGiven",
-      DATA.attributes.isPermissionGiven
-    );
+  
     if (DATA) {
       setProgress({
         ...progress,

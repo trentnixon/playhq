@@ -19,7 +19,6 @@ const StripeSuccess = () => {
   const [order, confirmOrder] = useConfirmOrder();
 
   useEffect(() => {
-    console.log("session_id", session_id);
     if (order === null && session_id !== undefined) {
       confirmOrder(session_id);
     }
