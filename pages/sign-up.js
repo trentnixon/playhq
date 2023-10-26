@@ -3,6 +3,8 @@ import PageBanner from "../components/Common/PageBanner";
 import SignUpForm from "../components/SignUp/SignUpForm";
 import Section from "../components/UI/DefaultSection";
 import Meta from "../components/Layouts/Meta";
+import { P } from "../components/Members/Common/Type";
+import Link from "next/link";
 
 const Contact = () => {
   const SectionData = {
@@ -24,7 +26,15 @@ const Contact = () => {
         BGImage="/images/BG-Images/f21573128.jpg"
         position={`center center`}
       />
+
       <Section {...SectionData} color="light">
+        <P textAlign="center" Weight={600}>
+          Already have a Fixtura Account?{" "}
+          <Link href="/login">
+            <a>Sign in Here</a>
+          </Link>
+        </P>
+
         <SignUpForm />
       </Section>
     </>
