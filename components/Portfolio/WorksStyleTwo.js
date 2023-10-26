@@ -17,27 +17,27 @@ const WorksStyleTwo = ({ CaseStudies }) => {
     {
       icon: IconVideo,
       bgColor: "bg-video-color",
-      title: "Game Results Overview Video",
+      title: "Game Results Overview ",
       description:
         "Experience the full summary of game results in a dynamic video format.",
     },
     {
       icon: IconPhotoAi,
       bgColor: "bg-image-color",
-      title: "Game Results Overview Graphic",
+      title: "Game Results Overview ",
       description:
         "A visual representation of the game results, perfect for sharing on social media.",
     },
     {
       icon: IconPhotoAi,
       bgColor: "bg-image-color",
-      title: "Single Game Result Graphic",
+      title: "Single Game Result ",
       description: "Zoom into specific games with a dedicated result graphic.",
     },
     {
       icon: IconVideo,
       bgColor: "bg-video-color",
-      title: "Top 5 Batting Performances Video",
+      title: "Top 5 Batting Performances ",
       description:
         "Highlighting the top batsmen and their key moments from the game.",
     },
@@ -45,42 +45,42 @@ const WorksStyleTwo = ({ CaseStudies }) => {
     {
       icon: IconVideo,
       bgColor: "bg-video-color",
-      title: "Top 5 Bowling Performances Video",
+      title: "Top 5 Bowling Performances ",
       description:
         "Spotlight on the standout bowlers and their game-changing deliveries.",
     },
     {
       icon: IconPhotoAi,
       bgColor: "bg-image-color",
-      title: "Top 5 Performances Graphic",
+      title: "Top 5 Performances ",
       description:
         "Showcasing the batters and bowlers who made a difference, in a concise graphic.",
     },
     {
       icon: IconVideo,
       bgColor: "bg-video-color",
-      title: "Grade Ladder Video",
+      title: "Grade Ladder ",
       description:
         "A dynamic representation of the grade standings and shifts.",
     },
     {
       icon: IconPhotoAi,
       bgColor: "bg-image-color",
-      title: "Grade Ladder Graphic",
+      title: "Grade Ladder ",
       description:
         "Visual standings of the grades, perfect for a quick glance.",
     },
     {
       icon: IconVideo,
       bgColor: "bg-video-color",
-      title: "Upcoming Fixtures Video",
+      title: "Upcoming Fixtures ",
       description:
         "Get hyped for what's next with a preview of upcoming games.",
     },
     {
       icon: IconPhotoAi,
       bgColor: "bg-image-color",
-      title: "Upcoming Fixture Graphics",
+      title: "Upcoming Fixture ",
       description:
         "Know your next game's details with a dedicated fixture graphic.",
     },

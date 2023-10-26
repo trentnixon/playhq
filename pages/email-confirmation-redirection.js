@@ -2,6 +2,7 @@ import React from "react";
 import PageBanner from "../components/Common/PageBanner";
 import SignInForm from "../components/SignIn/SignInForm";
 import Section from "../components/UI/DefaultSection";
+import Meta from "../components/Layouts/Meta";
 const Emailconfirmationredirection = () => {
   const SectionData = {
     title: "Email Confirmed",
@@ -16,6 +17,11 @@ const Emailconfirmationredirection = () => {
 
   return (
     <>
+      <Meta
+        title="Email Confirmation - Fixtura"
+        description="Confirm your email to continue enjoying Fixtura's digital media tools. We ensure secure access for sports clubs and associations."
+        keywords="Email confirmation, Fixtura account security, sports media email verification, secure club access"
+      />
       <PageBanner
         pageTitle="Email Confirmation Complete"
         BGImage="/images/BG-Images/0D5A3369.jpg"

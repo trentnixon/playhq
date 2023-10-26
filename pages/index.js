@@ -6,10 +6,16 @@ import FunFacts from "../components/Common/FunFacts";
 import CtaArea from "../components/Common/CtaAreaTwo";
 import Partner from "../components/Common/Partner";
 import { fetcher } from "../lib/api";
+import Meta from "../components/Layouts/Meta";
 
 const Index = ({ associations }) => {
   return (
     <>
+      <Meta
+        title="Home - Fixtura: Elevate Your Club's Digital Presence"
+        description="Discover Fixtura's cutting-edge social media content tools for PlayHQ clubs and associations. Engage fans with AI-powered digital assets."
+        keywords="Fixtura, PlayHQ clubs, sports content creation, AI-powered social media, cricket digital assets, sports clubs marketing"
+      />
       <MainBanner />
       <Services />
       <FunFacts />
@@ -18,7 +24,7 @@ const Index = ({ associations }) => {
       <CtaArea />
     </>
   );
-}; 
+};
 
 export default Index;
 

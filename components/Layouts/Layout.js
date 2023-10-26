@@ -28,7 +28,6 @@ const Layout = ({ children }) => {
   //console.log("isMemberPage", isMemberPage);
   return (
     <>
-      <Meta />
       <div className="Container Main">
         {SelectedNavbar}
         {SelectedLayout}

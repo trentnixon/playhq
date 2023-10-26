@@ -4,6 +4,7 @@ import Footer from "../components/Layouts/Footer";
 import Section from "../components/UI/DefaultSection";
 import Link from "next/link";
 import { Center } from "@mantine/core";
+import Meta from "../components/Layouts/Meta";
 
 const Error = () => {
   const SectionData = {
@@ -14,6 +15,11 @@ const Error = () => {
   };
   return (
     <>
+      <Meta
+        title="404: Page Not Found - Fixtura"
+        description="The page you're looking for isn't here. Navigate back to Fixtura to explore our digital media solutions for sports clubs."
+        keywords="404 error, page not found, Fixtura error page, missing content, sports media navigation"
+      />
       <PageBanner
         pageTitle="Looks like you played and missed at one there!"
         BGImage="/images/page-banner3.jpg"

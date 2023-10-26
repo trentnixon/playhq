@@ -7,10 +7,16 @@ import { CardsCarousel } from "../components/Portfolio/Carousel";
 import Link from "next/link";
 import { trackButtonClick } from "../lib/GA";
 import { Center } from "@mantine/core";
+import Meta from "../components/Layouts/Meta";
 
-const GraphicsPackages = ({ associations, CaseStudies }) => {
+const GraphicsPackages = () => {
   return (
     <>
+      <Meta
+        title="Graphics Packages - Fixtura: Custom Branding Solutions"
+        description="Choose from Fixtura's range of graphic packages for sports clubs. Customize your brand with our unique and engaging visual designs."
+        keywords="Fixtura graphics, branding for sports clubs, custom graphics packages, sports club branding, digital design solutions"
+      />
       <PageBanner pageTitle="" BGImage="/images/BG-Images/0D5A3099.jpg" />
       <IntroToPackages />
       <Bespoke />
@@ -92,7 +98,7 @@ const FreeTier = () => {
     paragraphs: [
       "Dive into Fixtura's blend of style and utility, crafted to enhance your cricket content. Explore the 'Basic' package, featuring designs from sharp 'Square' angles to modern 'Pill' shapes. Or opt for the 'Gradient' package, showcasing four distinct gradient directions.",
       `Best of all? `,
-      "These packages are completely free."
+      "These packages are completely free.",
     ],
   };
 
@@ -168,7 +174,9 @@ const FreeTier = () => {
     <Section {...freePackageData} color="light">
       {/*  <PricingComponent /> */}
       <CardsCarousel data={carouselData} />
-      <P textAlign={'center'}>Stay tuned! We're constantly rolling out fresh, new packages.</P>
+      <P textAlign={"center"}>
+        Stay tuned! We're constantly rolling out fresh, new packages.
+      </P>
     </Section>
   );
 };

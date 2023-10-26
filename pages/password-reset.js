@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import PageBanner from "../components/Common/PageBanner";
 import { useRouter } from "next/router";
 import Section from "../components/UI/DefaultSection";
+import Meta from "../components/Layouts/Meta";
 
 const ResetPasswordForm = () => {
   const [password, setPassword] = useState("");
@@ -77,10 +78,12 @@ const ResetPasswordForm = () => {
 
   return (
     <>
-      <PageBanner
-        pageTitle=""
-        BGImage="/images/PLAYHQ-BG-RAINDROPS.jpg"
+      <Meta
+        title="Password Reset - Fixtura: Secure Your Account"
+        description="Reset your Fixtura account password for secure access to our digital sports media tools. Keep your club's content safe."
+        keywords="Password reset, secure account Fixtura, sports media security, club content protection, account update"
       />
+      <PageBanner pageTitle="" BGImage="/images/PLAYHQ-BG-RAINDROPS.jpg" />
       <Section {...SectionData} color="light">
         <div className="contact-form ptb-100">
           {error && <p>Error: {error}</p>}

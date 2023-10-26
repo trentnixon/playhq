@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import PageBanner from "../components/Common/PageBanner";
 import Section from "../components/UI/DefaultSection";
+import Meta from "../components/Layouts/Meta";
 
 const ForgotPasswordForm = () => {
   const [email, setEmail] = useState("");
@@ -35,6 +36,11 @@ const ForgotPasswordForm = () => {
 
   return (
     <>
+      <Meta
+        title="Password Request - Fixtura: Secure Account Access"
+        description="Request a password reset for your Fixtura account. We ensure secure and easy access to your sports club's digital media tools."
+        keywords="Password request, Fixtura account access, secure password reset, sports club account recovery"
+      />
       <PageBanner
         pageTitle="Forgot your Password"
         BGImage="/images/PLAYHQ-BG-RAINDROPS.jpg"

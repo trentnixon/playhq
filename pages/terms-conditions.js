@@ -1,10 +1,16 @@
 import React from "react";
 import PageBanner from "../components/Common/PageBanner";
 import { P } from "../components/Members/Common/Type";
+import Meta from "../components/Layouts/Meta";
 
 const TermsConditions = () => {
   return (
     <>
+      <Meta
+        title="Terms and Conditions - Fixtura: Understand Our Policies"
+        description="Review the terms and conditions of using Fixtura's digital media tools for sports clubs. Stay informed about our policies and guidelines."
+        keywords="Terms and conditions, Fixtura policies, sports media terms, club content guidelines, user agreement"
+      />
       <PageBanner pageTitle="Terms and Conditions" position={`center center`} />
 
       <div className="text-container ptb-100">
@@ -39,7 +45,6 @@ const TermsConditions = () => {
           </P>
           <h1>User Content</h1>
           <P>
-          
             In these terms and conditions, "your user content" means material
             (including without limitation text, images, audio material, video
             material, and audio-visual material) that you submit to our website,

@@ -23,6 +23,7 @@ import {
   IconAddressBook,
 } from "@tabler/icons-react";
 import { P, PageTitle } from "../components/Members/Common/Type";
+import Meta from "../components/Layouts/Meta";
 const Subscriptions = () => {
   const [products, GetsetSubscriptionTiers] = useGetSubscriptionTiers();
   const theme = useMantineTheme();
@@ -52,6 +53,11 @@ const Subscriptions = () => {
   };
   return (
     <>
+      <Meta
+        title="Subscriptions - Fixtura: Choose Your Plan"
+        description="Select the best Fixtura subscription plan for your sports club. Tailor your digital media strategy with our flexible options."
+        keywords="Fixtura subscriptions, sports club plans, digital media packages, club content subscription, media solutions pricing"
+      />
       <PageBanner
         pageTitle="Subscriptions"
         BGImage="/images/BG-Images/0D5A0607.jpg"
@@ -59,20 +65,20 @@ const Subscriptions = () => {
       />
       <div className="pricing-area ptb-100 bg-f9f6f6">
         <div className="container">
-          <div className="section-title">
-            
-          </div>
+          <div className="section-title"></div>
           {products.map((product, i) => {
-          
             if (product.attributes.isActive)
               return (
-                <div key={i} style={{ marginBottom:'120px'}}>
+                <div key={i} style={{ marginBottom: "120px" }}>
                   <PageTitle
                     Copy={`${product.attributes.Name}`}
                     ICON={<IconAddressBook size={40} />}
                   />
- 
-                  <P size={'lg'} Weight={900}>{`$${product.attributes.price}/Weekly`}</P>
+
+                  <P
+                    size={"lg"}
+                    Weight={900}
+                  >{`$${product.attributes.price}/Weekly`}</P>
                   <P>{product.attributes.description}</P>
                   <Box
                     key={i}

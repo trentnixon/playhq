@@ -14,6 +14,7 @@ import {
 import { IconBrowser, IconPresentation, IconVideo } from "@tabler/icons-react";
 import Link from "next/link";
 import Section from "../components/UI/DefaultSection";
+import Meta from "../components/Layouts/Meta";
 const Resources = () => {
   const theme = useMantineTheme();
 
@@ -172,6 +173,11 @@ const Resources = () => {
   };
   return (
     <>
+      <Meta
+        title="Resources - Fixtura: Enhance Your Media Skills"
+        description="Explore Fixtura's resources to boost your club's digital media presence. Gain insights and tips for effective sports content creation."
+        keywords="Fixtura resources, sports media guides, club content tips, digital marketing resources, sports club tools"
+      />
       <PageBanner
         pageTitle=""
         BGImage="/images/BG-Images/0D5A3099.jpg"

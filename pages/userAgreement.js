@@ -1,9 +1,15 @@
 import React from "react";
 import PageBanner from "../components/Common/PageBanner";
+import Meta from "../components/Layouts/Meta";
 
 const TermsConditions = () => {
   return (
     <>
+      <Meta
+        title="User Agreements - Fixtura: Our Commitment to You"
+        description="Understand your rights and responsibilities as a user of Fixtura's digital media tools for sports clubs. Our agreement ensures mutual respect and understanding."
+        keywords="User agreements, Fixtura user terms, sports club rights, digital media responsibilities, user commitment"
+      />
       <PageBanner
         pageTitle="User Agreement"
         BGImage="/images/BG-Images/f157110576.jpg"
