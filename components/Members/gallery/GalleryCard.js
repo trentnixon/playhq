@@ -24,7 +24,7 @@ import { FixturaLoading } from "../Common/Loading";
 import { ImageDetailsModal } from "./ImageDetailsModal";
 const useStyles = createStyles((theme) => ({
   card: {
-    backgroundColor: theme.colors.gray[2],
+    backgroundColor: theme.colors.gray[0],
   },
   section: {
     borderBottom: `${rem(1)} solid ${theme.colors.gray[5]}`,
@@ -36,7 +36,6 @@ const useStyles = createStyles((theme) => ({
 
 export function GalleryItemCard({ item }) {
   const { classes } = useStyles();
-  const { account } = useAccountDetails();
   const [opened, { open, close }] = useDisclosure(false);
   const [deleteMediaItem, deleteLoading, deleteError] = useDeleteMediaItem();
   const router = useRouter();
@@ -50,6 +49,9 @@ export function GalleryItemCard({ item }) {
   const tags = item?.attributes?.tags || [];
   const isActive = item?.attributes?.isActive;
   const fullImageUrl = findBestImage(item?.attributes?.imageId, "large");
+ 
+  const AgeGroup = item?.attributes?.AgeGroup || "Not specified";
+  const AssetType = item?.attributes?.AssetType || "Not specified";
 
   if (!thumbnailUrl) {
     return <div>Error: Incomplete item data.</div>;
@@ -80,6 +82,8 @@ export function GalleryItemCard({ item }) {
           tags,
           fullImageUrl,
           isActive,
+          AgeGroup, // Add these lines
+          AssetType, // Add these lines
         }}
       />
 
@@ -100,12 +104,6 @@ export function GalleryItemCard({ item }) {
         className={classes.card}
         style={{ opacity: deletingItemId === item.id ? 0.5 : 1 }}
       >
-        <Card.Section>
-          <ImageThumbnail
-            thumbnailUrl={thumbnailUrl}
-            isActive={item?.attributes?.isActive}
-          />
-        </Card.Section>
         <Card.Section className={classes.section}>
           {deletingItemId !== item.id ? (
             <CardActions
@@ -120,13 +118,24 @@ export function GalleryItemCard({ item }) {
             </Center>
           )}
         </Card.Section>
-        {tags.length !== 0 && (
-          <Card.Section className={classes.section}>
-            <TagList tags={tags} />
-          </Card.Section>
-        )}
+        <Card.Section>
+          <ImageThumbnail
+            thumbnailUrl={thumbnailUrl}
+            isActive={item?.attributes?.isActive}
+          />
+        </Card.Section>
 
-        
+        {/* Add new badges for AgeGroup and AssetType */}
+        <Card.Section className={classes.section}>
+          <Group spacing={7} position="apart" mt={10}>
+            <Badge color="green.8" variant="filled">
+              {AgeGroup}
+            </Badge>
+            <Badge color="blue.8" variant="filled">
+              {AssetType}
+            </Badge>
+          </Group>
+        </Card.Section>
       </Card>
     </>
   );
@@ -140,7 +149,7 @@ export function ImageThumbnail({ thumbnailUrl, isActive }) {
         style={{
           position: "absolute",
           top: "0",
-          right: "0",
+          left: "0",
           zIndex: "200",
         }}
       >
@@ -157,21 +166,9 @@ export function ImageThumbnail({ thumbnailUrl, isActive }) {
   );
 }
 
-export function TagList({ tags }) {
-  return (
-    <Group spacing={7} position="apart" mt={10}>
-      {tags.map((tag, index) => (
-        <Badge key={index} color="gray.8" variant="filled">
-          {tag}
-        </Badge>
-      ))}
-    </Group>
-  );
-}
-
 export function CardActions({ itemId, handleConfirmDelete, open, title }) {
   return (
-    <Group mt="xs" position="right">
+    <Group mt="xs" spacing={5} position="right">
       <Text fz="xs" fw={500}>
         {title}
       </Text>
@@ -184,7 +181,7 @@ export function CardActions({ itemId, handleConfirmDelete, open, title }) {
           radius="xl"
           variant="filled"
         >
-          <IconEdit size=".9rem" />
+          <IconEdit size=".8rem" />
         </ActionIcon>
       </Tooltip>
 
@@ -196,7 +193,7 @@ export function CardActions({ itemId, handleConfirmDelete, open, title }) {
           radius="xl"
           variant="filled"
         >
-          <IconTrashXFilled size=".9rem" />
+          <IconTrashXFilled size=".8rem" />
         </ActionIcon>
       </Tooltip>
     </Group>

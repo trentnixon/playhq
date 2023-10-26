@@ -134,7 +134,7 @@ const UI_WithSelectedAndButton = ({
     <Group position="apart">
       <Box>
         {error ? (
-          <P>{error}</P>
+          <P color={'white'}>{error}</P>
         ) : showSelect ? (
           <Select
             onChange={handleChange}
@@ -144,6 +144,7 @@ const UI_WithSelectedAndButton = ({
         ) : (
           <Group>
             <P
+            color={'white'}
               textTransform={`uppercase`}
               size={`sm`}
               marginBottom={0}
@@ -185,7 +186,7 @@ const UI_WithButton = ({
 }) => {
   return (
     <Group position="apart">
-      {showSelect ? false : <P color={1} marginBottom={0}>{SelectLabel}</P>}
+      {showSelect ? false : <P color={'white'} marginBottom={0}>{SelectLabel}</P>}
 
       <Box>
         {error ? (

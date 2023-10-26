@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { useRouter } from "next/router";
 import { useAccountDetails } from "../../lib/userContext";
 import { useUser } from "../../lib/authContext";
 import cookie from "cookie";
@@ -12,10 +11,11 @@ import {
 } from "../../components/Members/Common/Containers";
 import { Space } from "@mantine/core";
 import { LoadingStateWrapper } from "../../components/Members/Account/HOC/LoadingStateWrapper";
-import { IconBadgeTm, IconPhotoPlus } from "@tabler/icons-react";
+import { IconPhotoPlus } from "@tabler/icons-react";
 import { MediaGalleryFileUpload } from "../../components/Members/gallery/FileUpload";
 import { DisplayGallery } from "../../components/Members/gallery/DisplayGallery";
 import SetupCheck from "../../components/Members/Account/HOC/SetupCheck";
+import { FixturaLoading } from "../../components/Members/Common/Loading";
 const qs = require("qs");
 
 const query = qs.stringify(
@@ -32,12 +32,30 @@ export default function MediaGallery({ Response }) {
   const [userAccount, setUserAccount] = useState(account);
   const { user } = useUser();
 
-  useEffect(() => {}, [userAccount, Response]);
-  if (Response?.attributes === undefined) return "Loading";
+  const [isLoading, setIsLoading] = useState(true); // New state for loading
+  const [error, setError] = useState(null); // New state for error
+
+  useEffect(() => {
+    if (Response?.attributes) {
+      setIsLoading(false);
+    } else {
+      setError("Failed to load data");
+    }
+  }, [Response, userAccount]); // Consolidated useEffect
+
+  if (isLoading) {
+    return <FixturaLoading />; // Show a loader while data is loading
+  }
+
+  if (error) {
+    return <div>Error: {error}</div>; // Show an error message if there's an error
+  }
   return (
+    
     <MembersWrapper>
       <SetupCheck>
         <LoadingStateWrapper conditions={[user, userAccount]}>
+ 
           <PageTitle
             Copy={"Media Gallery"}
             ICON={<IconPhotoPlus size={40} />}
@@ -62,7 +80,35 @@ export default function MediaGallery({ Response }) {
   );
 }
 
+
 export async function getServerSideProps(ctx) {
+  const parsedCookies = cookie.parse(ctx.req.headers.cookie || "");
+  const jwt = parsedCookies["jwt"];
+  const linkedAccount = parsedCookies["LinkedAccount"];
+
+  if (!jwt || !linkedAccount) {
+    // Redirect to login or show a relevant message if cookies are missing
+    return { redirect: { destination: '/', permanent: false } };
+  }
+
+  try {
+    const response = await fetcher(
+      `${process.env.NEXT_PUBLIC_STRAPI_URL}/accounts/${linkedAccount}?${query}`,
+      {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${jwt}`,
+        },
+      }
+    );
+    return { props: { Response: response.data } };
+  } catch (error) {
+    console.error("Failed to fetch data:", error);
+    return { props: { Response: null } }; // Handle error accordingly
+  }
+}
+
+/* export async function getServerSideProps(ctx) {
   const parsedCookies = cookie.parse(ctx.req.headers.cookie || "");
   const jwt = parsedCookies["jwt"]; // Replace 'jwt' with the actual key you set the JWT cookie with
   const linkedAccount = parsedCookies["LinkedAccount"]; // Same here, replace with the actual key
@@ -80,4 +126,4 @@ export async function getServerSideProps(ctx) {
 
   const Response = response.data;
   return { props: { Response } };
-}
+} */

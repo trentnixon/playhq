@@ -10,14 +10,14 @@ export const ImageDetailsModal = ({
   imageDetails,
   itemId,
 }) => {
-  const { title, tags, fullImageUrl, isActive } = imageDetails;
+  const { title, fullImageUrl, AgeGroup, AssetType } = imageDetails;
   const [updateSetImage, updateLoading, updateError, updatedImage] =
     useUpdateSetImage();
   const router = useRouter();
 
-  const saveDetails = async (title, isActive, tags) => {
+  const saveDetails = async (title, isActive, AgeGroup, AssetType) => {
     const updateData = {
-      data: { title, isActive: isActive, tags },
+      data: { title, isActive, AgeGroup, AssetType },
     };
 
     if (itemId) {
@@ -37,17 +37,15 @@ export const ImageDetailsModal = ({
         <FixturaLoading />
       ) : (
         <>
-          <Group spacing={7} position="right">
-            {tags.map((tag, index) => (
-              <Badge key={index}>{tag}</Badge>
-            ))}
-          </Group>
           <Image src={fullImageUrl} alt={title} />
-
           <EditDetailsForm
-            initialData={{}} // Fill this with initial data if needed
+            initialData={{
+              title: title,
+              AgeGroup: AgeGroup,
+              AssetType: AssetType,
+            }} // Fill this with initial data if needed
             onSubmit={saveDetails}
-            resetForm={()=>{}}
+            resetForm={() => {}}
             imageDetails={imageDetails}
           />
         </>

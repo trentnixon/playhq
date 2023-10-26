@@ -45,7 +45,7 @@ const DaysTill = ({ days_of_the_week, renders }) => {
       <Box>
         {!checkDeliveryDate(renders) ? (
           <P
-            color={1}
+            color={'white'}
             marginBottom={0}
            >{`Next Order will be delivered in ${daysUntil(
             days_of_the_week

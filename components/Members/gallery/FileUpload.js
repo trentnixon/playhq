@@ -9,7 +9,7 @@ import { FixturaLoading } from "../Common/Loading";
 import { useRouter } from "next/router";
 
 export function MediaGalleryFileUpload({ ITEMCOUNT }) {
-  const MAX_UPLOADS = 15;
+  const MAX_UPLOADS = 25;
   const { account } = useAccountDetails();
   const router = useRouter();
   const [Image, setImage] = useState(null);
@@ -62,14 +62,20 @@ export function MediaGalleryFileUpload({ ITEMCOUNT }) {
     setImageToAccount(PATH, OBJ);
   };
 
-  const saveDetails = (title, isActive, tags) => {
-    if (!title || !tags || tags.length === 0 || !GalleryItemID) {
+  const saveDetails = (title, isActive, AgeGroup, AssetType) => {
+    if (!title || !GalleryItemID) {
       // Handle this error. Maybe set an error state and display it
       router.replace(router.asPath);
       return;
     }
+
     const updateData = {
-      data: { title, isActive, tags },
+      data: {
+        title,
+        isActive,
+        AgeGroup, // Add ageGroup to the update data
+        AssetType, // Add assetType to the update data
+      },
     };
 
     if (GalleryItemID) {
@@ -91,17 +97,17 @@ export function MediaGalleryFileUpload({ ITEMCOUNT }) {
     return <Group position="right">Limit Reached</Group>;
   return (
     <>
-      <Group position="right">
+      <Group position="right" mb={10}>
         {step === "initial" && (
           <BTN_ONCLICK
             HANDLE={() => setStep("uploading")}
-            LABEL={`Upload Item`}
+            LABEL={`Add Image to Gallery Pool`}
           />
         )}
 
         {step === "uploading" && (
           <BTN_ONCLICK HANDLE={resetState} LABEL={`Cancel`} THEME="error" />
-        )} 
+        )}
       </Group>
 
       {step === "uploading" && (

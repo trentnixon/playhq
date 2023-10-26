@@ -1,17 +1,74 @@
 import {
-  ActionIcon,
-  Badge,
   Group,
   Image,
   Paper,
+  Select,
   SimpleGrid,
   Switch,
-  rem,
 } from "@mantine/core";
 import { useEffect, useState } from "react";
 import { BTN_ONCLICK } from "../Common/utils/Buttons";
-import { IconX } from "@tabler/icons-react";
 
+// TitleInput Component
+const TitleInput = ({ value, onChange }) => (
+  <Group my={5}>
+    <input
+      type="text"
+      className="form-control"
+      placeholder={"Title"}
+      value={value}
+      onChange={(e) => onChange(e.target.value)}
+    />
+  </Group>
+);
+
+// AgeGroupSelect Component
+const AgeGroupSelect = ({ value, onChange }) => (
+  <Group my={5}>
+    <Select
+      style={{
+        width: "100%",
+      }}
+      size="md"
+      label="Is this image particularly suited for seniors, juniors, or both?"
+      placeholder="Select Age Group"
+      value={value}
+      onChange={onChange}
+      data={[
+        { value: "Seniors", label: "Seniors" },
+        { value: "Juniors", label: "Juniors" },
+        { value: "Both", label: "Both" },
+      ]}
+    />
+  </Group>
+);
+
+// AssetTypeSelect Component
+const AssetTypeSelect = ({ value, onChange }) => (
+  <Group my={5}>
+    <Select
+      style={{
+        width: "100%",
+      }}
+      size="md"
+      label="Would you like to assign this image to a specific asset type, or should it be included in all types?"
+      placeholder="Select Asset Type"
+      value={value}
+      onChange={onChange}
+      data={[
+        "ALL",
+        "Upcoming Fixtures",
+        "Weekend Results",
+        "Top 5 Run Scorers",
+        "Top 5 Bowlers",
+        "League Tables",
+        "Team List",
+      ].map((type) => ({ value: type, label: type }))}
+    />
+  </Group>
+);
+
+// DetailsForm Component
 export const DetailsForm = ({
   initialData,
   onSubmit,
@@ -19,38 +76,14 @@ export const DetailsForm = ({
   ImagePath,
 }) => {
   const [title, setTitle] = useState(initialData.title || "");
-  const [tags, setTags] = useState(initialData.tags || []);
-  const [currentTag, setCurrentTag] = useState("");
+  const [AgeGroup, setAgeGroup] = useState(initialData.AgeGroup || "Both");
+  const [AssetType, setAssetType] = useState(initialData.AssetType || "ALL");
+
   const handleSubmit = () => {
     const isActive = true; // Replace with a checkbox or toggle switch if needed
-    onSubmit(title, isActive, tags);
+    onSubmit(title, isActive, AgeGroup, AssetType);
     resetForm();
   };
-
-  const addTag = () => {
-    if (currentTag) {
-      setTags([...tags, currentTag]);
-      setCurrentTag("");
-    }
-  };
-
-  const removeTag = (index) => {
-    const newTags = tags.slice();
-    newTags.splice(index, 1);
-    setTags(newTags);
-  };
-
-  const removeButton = (ID) => (
-    <ActionIcon
-      size="xs"
-      color="gray.9"
-      radius="xl"
-      variant="transparent"
-      onClick={() => removeTag(ID)}
-    >
-      <IconX size={rem(10)} />
-    </ActionIcon>
-  );
 
   return (
     <>
@@ -60,49 +93,14 @@ export const DetailsForm = ({
           { minWidth: "md", cols: 2 },
         ]}
       >
+        {/* Image and Paper Components */}
         <Paper shadow="xs" p="md" withBorder>
           <Image src={ImagePath[0].url} width={"100%"} radius={5} />
-          <div>
-            <Paper>
-              {tags.map((tag, index) => (
-                <Badge
-                  key={index}
-                  color="blue"
-                  mx={2}
-                  variant="filled"
-                  pr={3}
-                  rightSection={removeButton(index)}
-                >
-                  {tag}
-                </Badge>
-              ))}
-            </Paper>
-          </div>
         </Paper>
-
         <Paper p="md">
-          <Group my={5}>
-            <input
-              type="text"
-              className="form-control"
-              placeholder={"Title"}
-              value={title}
-              onChange={(e) => setTitle(e.target.value)}
-            />
-          </Group>
-          <Group my={5} noWrap={true}>
-            <input
-              type="text"
-              placeholder={"Tags"}
-              className="form-control"
-              value={currentTag}
-              onChange={(e) => setCurrentTag(e.target.value)}
-            />
-            <BTN_ONCLICK LABEL="Add" HANDLE={addTag}>
-              Add Tag
-            </BTN_ONCLICK>
-          </Group>
-
+          <TitleInput value={title} onChange={setTitle} />
+          <AgeGroupSelect value={AgeGroup} onChange={setAgeGroup} />
+          <AssetTypeSelect value={AssetType} onChange={setAssetType} />
           <Group my={5} position="right">
             <BTN_ONCLICK
               HANDLE={handleSubmit}
@@ -116,92 +114,36 @@ export const DetailsForm = ({
   );
 };
 
-export const EditDetailsForm = ({ initialData, onSubmit, resetForm, imageDetails }) => {
-    const [title, setTitle] = useState(initialData.title || "");
-    const [tags, setTags] = useState(initialData.tags || []);
-    const [currentTag, setCurrentTag] = useState("");
-    const [isActive, setIsActive] = useState(initialData.isActive || false);
-  
-
-  const handleSubmit = () => {
-    onSubmit(title, isActive, tags);
-    resetForm();
-  };
-
-  const addTag = () => {
-    if (currentTag) {
-      setTags([...tags, currentTag]);
-      setCurrentTag("");
-    }
-  };
-
-  const removeTag = (index) => {
-    const newTags = tags.slice();
-    newTags.splice(index, 1);
-    setTags(newTags);
-  };
-
-  const removeButton = (ID) => (
-    <ActionIcon
-      size="xs"
-      color="gray.9"
-      radius="xl"
-      variant="transparent"
-      onClick={() => removeTag(ID)}
-    >
-      <IconX size={rem(10)} />
-    </ActionIcon>
-  );
+// EditDetailsForm Component
+export const EditDetailsForm = ({
+  initialData,
+  onSubmit,
+  resetForm,
+  imageDetails,
+}) => {
+  const [title, setTitle] = useState(initialData.title || "");
+  const [isActive, setIsActive] = useState(initialData.isActive || false);
+  const [AgeGroup, setAgeGroup] = useState(initialData.AgeGroup || "Both");
+  const [AssetType, setAssetType] = useState(initialData.AssetType || "ALL");
 
   useEffect(() => {
     if (imageDetails) {
       setTitle(imageDetails.title);
-      setTags(imageDetails.tags);
-      // Set isActive if it exists in imageDetails
-      if ('isActive' in imageDetails) {
-        setIsActive(imageDetails.isActive);
-      }
+      if ("isActive" in imageDetails) setIsActive(imageDetails.isActive);
     }
   }, [imageDetails]);
+
+  const handleSubmit = () => {
+    onSubmit(title, isActive, AgeGroup, AssetType);
+    resetForm();
+  };
+
   return (
     <>
-       <Paper>
-            {tags.map((tag, index) => (
-              <Badge
-                key={index}
-                color="blue"
-                mx={2}
-                variant="filled"
-                pr={3}
-                rightSection={removeButton(index)}
-              >
-                {tag}
-              </Badge>
-            ))}
-          </Paper>
-
       <Paper p="md">
-        <Group my={5}>
-          <input
-            type="text"
-            className="form-control"
-            placeholder={"Title"}
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-          />
-        </Group>
-        <Group my={5} noWrap={true}>
-          <input
-            type="text"
-            placeholder={"Tags"}
-            className="form-control"
-            value={currentTag}
-            onChange={(e) => setCurrentTag(e.target.value)}
-          />
-          <BTN_ONCLICK LABEL="Add" HANDLE={addTag}>
-            Add Tag
-          </BTN_ONCLICK>
-        </Group>
+        <TitleInput value={title} onChange={setTitle} />
+        <AgeGroupSelect value={AgeGroup} onChange={setAgeGroup} />
+        <AssetTypeSelect value={AssetType} onChange={setAssetType} />
         <Group my={5} position="right">
           <label>Active:</label>
           <Switch
@@ -212,7 +154,7 @@ export const EditDetailsForm = ({ initialData, onSubmit, resetForm, imageDetails
         <Group my={5} position="right">
           <BTN_ONCLICK
             HANDLE={handleSubmit}
-            LABEL={"Update Details"}
+            LABEL={"Update Image"}
             THEME="cta"
           />
         </Group>
