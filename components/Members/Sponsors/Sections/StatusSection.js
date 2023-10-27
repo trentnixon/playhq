@@ -25,7 +25,7 @@ export const StatusSection = ({ account, Sponsors, SPONSORLIMIT }) => {
           })}
         >
           <P
-            color={0}
+            color={'white'}
             marginBottom={0}
             Copy={`${SPONSORLIMIT - Sponsors.length} spaces remaining`}
           />
@@ -46,7 +46,7 @@ export const StatusSection = ({ account, Sponsors, SPONSORLIMIT }) => {
           })}
         >
           <Group position="apart" noWrap>
-            <P color={0} marginBottom={0}>
+            <P color={'white'} marginBottom={0}>
               {includesSponsors
                 ? "Sponsors included in subscription"
                 : "Sponsors not included in your subscription"}

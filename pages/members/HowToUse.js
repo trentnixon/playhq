@@ -28,6 +28,7 @@ import {
 
 import { P, PageTitle, SubHeaders } from "../../components/Members/Common/Type";
 import { IconQuestionMark } from "@tabler/icons";
+import Meta from "../../components/Layouts/Meta";
 
 const OBJ = {
   sections: [
@@ -93,7 +94,7 @@ const HowToUse = (props) => {
   const { classes } = useStyles();
   /* is User Auth */
   const { user, loading } = useUser();
-/*   const router = useRouter();
+  /*   const router = useRouter();
   const currentRoute = router.pathname;
   useEffect(() => {
     if (!user) router.push(`/members/verification/?prev=${currentRoute}`);
@@ -125,6 +126,11 @@ const HowToUse = (props) => {
   if (Response === null) return false;
   return (
     <MembersWrapper>
+      <Meta
+        title="Member Tutorial - Fixtura: Learn to Maximize Benefits"
+        description="Learn how to effectively use Fixtura's tools as a member. Maximize the impact of your sports club's digital media strategy."
+        keywords="Member tutorial, Fixtura guide, sports media usage, club content tips, digital media learning"
+      />
       <PageTitle Copy={"How to use"} ICON={<IconQuestionMark size={40} />} />
       <PageCopyWrapper>
         <P

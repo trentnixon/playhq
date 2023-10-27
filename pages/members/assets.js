@@ -19,6 +19,7 @@ import { IconHome } from "@tabler/icons";
 import { showNotification } from "@mantine/notifications";
 import { useAccountDetails } from "../../lib/userContext";
 import { FixturaLoading } from "../../components/Members/Common/Loading";
+import Meta from "../../components/Layouts/Meta";
 const qs = require("qs");
 
 const query = qs.stringify(
@@ -46,7 +47,7 @@ const Overview = () => {
 
   /* is User Auth */
   const { user, loading } = useUser();
-/*   const router = useRouter();
+  /*   const router = useRouter();
   const currentRoute = router.pathname;
   useEffect(() => {
     if (!user) router.push(`/members/verification/?prev=${currentRoute}`);
@@ -80,6 +81,11 @@ const Overview = () => {
   }
   return (
     <MembersWrapper>
+      <Meta
+        title="Member Assets - Fixtura: Your Digital Toolkit"
+        description="Explore the digital assets available to you as a Fixtura member. Utilize our sports media tools to enhance your club's presence."
+        keywords="Member assets, Fixtura digital tools, sports media resources, club content assets, media toolkit"
+      />
       <PageTitle Copy={"Assets"} ICON={<IconHome size={40} />} />
 
       <SubHeaders Copy={"Choose Your Customized Digital Assets"} />

@@ -8,8 +8,6 @@ import Cookies from "js-cookie";
 import { fetcher } from "../../lib/api";
 // components
 
-
-
 import {
   MembersWrapper,
   PageCopyWrapper,
@@ -25,6 +23,7 @@ import { showNotification } from "@mantine/notifications";
 import { useAccountDetails } from "../../lib/userContext";
 import { FixturaLoading } from "../../components/Members/Common/Loading";
 import { FixturaSettings } from "../../components/Members/Account/userFixturaSettings";
+import Meta from "../../components/Layouts/Meta";
 const qs = require("qs");
 
 const query = qs.stringify(
@@ -52,7 +51,7 @@ const Overview = () => {
 
   /* is User Auth */
   const { user, loading } = useUser();
-/*   const router = useRouter();
+  /*   const router = useRouter();
   const currentRoute = router.pathname;
   useEffect(() => {
     if (!user) router.push(`/members/verification/?prev=${currentRoute}`);
@@ -83,6 +82,11 @@ const Overview = () => {
   }
   return (
     <MembersWrapper>
+      <Meta
+        title="Member Settings - Fixtura: Personalize Your Experience"
+        description="Personalize your experience on Fixtura by adjusting your member settings. Fine-tune your sports club's digital media preferences."
+        keywords="Member settings, Fixtura personalization, sports media customization, club content settings, digital preferences"
+      />
       <PageTitle Copy={"Overview"} ICON={<IconHome size={40} />} />
       <Wrapper>
         <Group position="apart">

@@ -9,8 +9,12 @@ import {
 import { PageTitle, P } from "../../components/Members/Common/Type";
 import { Box, Center, Container, Group } from "@mantine/core";
 import { IconCheck } from "@tabler/icons";
-import { BTN_TOEXTLINK, BTN_TOINTERALLINK } from "../../components/Members/Common/utils/Buttons";
+import {
+  BTN_TOEXTLINK,
+  BTN_TOINTERALLINK,
+} from "../../components/Members/Common/utils/Buttons";
 import { useAccountDetails } from "../../lib/userContext";
+import Meta from "../../components/Layouts/Meta";
 
 const StripeSuccess = () => {
   const router = useRouter();
@@ -25,13 +29,18 @@ const StripeSuccess = () => {
   }, [session_id]);
 
   useEffect(() => {
-    if (order !== null) { 
-      ReRender(); 
+    if (order !== null) {
+      ReRender();
     }
   }, [order]);
-  
+
   return (
     <MembersWrapper>
+      <Meta
+        title="Subscription Success - Fixtura: Welcome Aboard"
+        description="Celebrate your successful subscription to Fixtura. Begin your journey in enhancing your sports club's digital media presence."
+        keywords="Subscription success, Fixtura welcome, sports media journey, club content services, digital media access"
+      />
       <PageTitle
         Copy={"Thankyou for your Subscription"}
         ICON={<IconCheck size={40} />}
@@ -42,8 +51,16 @@ const StripeSuccess = () => {
           <Group position="apart">
             <Box>
               <P>Thank you for subscribing to Fixtura!</P>
-              <P>Your subscription is now active, and you will begin receiving personalized digital assets according to your preferences. Thank you for choosing Fixtura, and we look forward to helping you enhance your club's social media presence.</P>
-              <P>Thank you for choosing Fixtura, and we look forward to helping you enhance your club's social media presence.</P>
+              <P>
+                Your subscription is now active, and you will begin receiving
+                personalized digital assets according to your preferences. Thank
+                you for choosing Fixtura, and we look forward to helping you
+                enhance your club's social media presence.
+              </P>
+              <P>
+                Thank you for choosing Fixtura, and we look forward to helping
+                you enhance your club's social media presence.
+              </P>
             </Box>
           </Group>
         </Wrapper>

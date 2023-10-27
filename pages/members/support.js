@@ -18,6 +18,7 @@ import { FixturaDivider } from "../../components/Members/Common/Divider";
 import qs from "qs";
 import { PageTitle } from "../../components/Members/Common/Type";
 import { IconAddressBook } from "@tabler/icons-react";
+import Meta from "../../components/Layouts/Meta";
 
 const query = qs.stringify(
   {
@@ -43,7 +44,7 @@ const Support = () => {
   const [userAccount, setUserAccount] = useState(account);
   /* is User Auth */
   const { user, loading } = useUser();
-/*   const router = useRouter();
+  /*   const router = useRouter();
   const currentRoute = router.pathname;
 
   useEffect(() => {
@@ -64,6 +65,11 @@ const Support = () => {
 
   return (
     <MembersWrapper>
+      <Meta
+        title="Member Support - Fixtura: We're Here to Help"
+        description="Get the support you need as a Fixtura member. We're dedicated to assisting you in maximizing your sports club's digital media."
+        keywords="Member support, Fixtura assistance, sports media help, club content support, digital media aid"
+      />
       <PageTitle Copy={"Support"} ICON={<IconAddressBook size={40} />} />
 
       <Container size={"lg"}>

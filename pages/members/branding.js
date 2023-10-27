@@ -16,6 +16,7 @@ import { AccountLogo } from "../../components/Members/Design/AddLogo";
 import { SelectATheme } from "../../components/Members/Common/Customiser/Design/SelectATheme";
 import { LoadingStateWrapper } from "../../components/Members/Account/HOC/LoadingStateWrapper";
 import { IconBadgeTm } from "@tabler/icons-react";
+import Meta from "../../components/Layouts/Meta";
 const qs = require("qs");
 
 const query = qs.stringify(
@@ -53,6 +54,11 @@ const OurBrand = () => {
   return (
     <LoadingStateWrapper conditions={[user, userAccount]}>
       <MembersWrapper>
+        <Meta
+          title="Member Branding - Fixtura: Customize Your Identity"
+          description="Tailor the branding of your sports club using Fixtura's customization options. Create a unique and consistent club identity."
+          keywords="Member branding, Fixtura customization, sports club identity, digital media branding, club visuals"
+        />
         <PageTitle Copy={"Your Brand"} ICON={<IconBadgeTm size={40} />} />
         <SubHeaders Copy={"Brand Settings"} />
 

@@ -12,9 +12,10 @@ import { StatusSection } from "../../components/Members/Sponsors/Sections/Status
 import { HeaderSection } from "../../components/Members/Sponsors/Sections/HeaderSection";
 import { ContentSection } from "../../components/Members/Sponsors/Sections/ContentSection";
 import { SponsorLimitMessage } from "../../components/Members/Sponsors/Sections/SponsorLimitMessage";
+import Meta from "../../components/Layouts/Meta";
 
 const SPONSORS = () => {
-  const SPONSORLIMIT = 5; 
+  const SPONSORLIMIT = 5;
   const { account } = useAccountDetails();
   const [userAccount, setUserAccount] = useState(account);
   const [isCreate, setIsCreate] = useState(false);
@@ -22,7 +23,7 @@ const SPONSORS = () => {
     userAccount?.attributes?.sponsors?.data
   );
   const { user, loading } = useUser();
-/*   const router = useRouter();
+  /*   const router = useRouter();
   const currentRoute = router.pathname;
 
   useEffect(() => {
@@ -38,6 +39,11 @@ const SPONSORS = () => {
 
   return (
     <MembersWrapper>
+      <Meta
+        title="Member Sponsors - Fixtura: Manage Your Partnerships"
+        description="Manage your sports club's sponsorships with ease on Fixtura. Enhance your partnerships and digital media collaborations."
+        keywords="Member sponsors, Fixtura partnerships, sports media sponsors, club content management, digital collaborations"
+      />
       <PageTitle Copy={"SPONSORS"} ICON={<IconCheck size={40} />} />
       <DescriptionSection />
       <StatusSection

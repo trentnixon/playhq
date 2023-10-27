@@ -2,12 +2,11 @@
 import { useEffect, useState } from "react";
 /* import { useRouter } from "next/router"; */
 import { useUser } from "../../lib/authContext";
-import Link from "next/link";
 // UTILS
 /* import { fetcher } from "../../lib/api";
 import Cookies from "js-cookie"; */
 // PACK
-import { Container, Paper, Space } from "@mantine/core";
+import { Space } from "@mantine/core";
 // Components
 import { MembersWrapper } from "../../components/Members/Common/Containers";
 //import { showNotification } from "@mantine/notifications";
@@ -17,7 +16,7 @@ import SetupCheck from "../../components/Members/Account/HOC/SetupCheck";
 
 import {
   Invoicing,
-  UpcomingInvoicing, 
+  UpcomingInvoicing,
 } from "../../components/Members/stripe/Invoicing";
 import { useAccountDetails } from "../../lib/userContext";
 import { FixturaDivider } from "../../components/Members/Common/Divider";
@@ -29,7 +28,7 @@ import { getTrialNotificationStatus } from "../../lib/actions";
 import { IsFreeTrialFeedback } from "../../components/Members/Account/userIsFreeTrial";
 import { FreeTrialActive } from "../../components/Members/Account/userFreeTrialActive";
 import { CreateFreeTrial } from "../../components/Members/Account/userCreateFreeTrial";
-
+import Meta from "../../components/Layouts/Meta";
 const Account = () => {
   const { account } = useAccountDetails();
   const [userAccount, setUserAccount] = useState(account);
@@ -41,14 +40,20 @@ const Account = () => {
       setUserAccount(account);
     }
   }, [account]);
+  
 
   return (
     <MembersWrapper>
       <SetupCheck>
         <LoadingStateWrapper conditions={[user, userAccount]}>
+          <Meta
+            title="Member Account - Fixtura: Manage Your Profile"
+            description="Access and manage your account settings on Fixtura. Keep your membership details up-to-date for a seamless digital media experience."
+            keywords="Member account, Fixtura profile management, sports media account settings, club content customization"
+          />
           {trialNotificationStatus === "available_trial" && (
             <CreateFreeTrial account={account} />
-          )} 
+          )}
 
           {trialNotificationStatus === "active_trial" && (
             <FreeTrialActive account={account} />

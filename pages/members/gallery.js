@@ -16,6 +16,7 @@ import { MediaGalleryFileUpload } from "../../components/Members/gallery/FileUpl
 import { DisplayGallery } from "../../components/Members/gallery/DisplayGallery";
 import SetupCheck from "../../components/Members/Account/HOC/SetupCheck";
 import { FixturaLoading } from "../../components/Members/Common/Loading";
+import Meta from "../../components/Layouts/Meta";
 const qs = require("qs");
 
 const query = qs.stringify(
@@ -51,11 +52,14 @@ export default function MediaGallery({ Response }) {
     return <div>Error: {error}</div>; // Show an error message if there's an error
   }
   return (
-    
     <MembersWrapper>
       <SetupCheck>
         <LoadingStateWrapper conditions={[user, userAccount]}>
- 
+          <Meta
+            title="Member Gallery - Fixtura: Showcase Your Media"
+            description="View and manage your club's digital media gallery on Fixtura. Display your sports content creatively and attractively."
+            keywords="Member gallery, Fixtura media showcase, sports club gallery, digital content display, club visuals"
+          />
           <PageTitle
             Copy={"Media Gallery"}
             ICON={<IconPhotoPlus size={40} />}
@@ -80,7 +84,6 @@ export default function MediaGallery({ Response }) {
   );
 }
 
-
 export async function getServerSideProps(ctx) {
   const parsedCookies = cookie.parse(ctx.req.headers.cookie || "");
   const jwt = parsedCookies["jwt"];
@@ -88,7 +91,7 @@ export async function getServerSideProps(ctx) {
 
   if (!jwt || !linkedAccount) {
     // Redirect to login or show a relevant message if cookies are missing
-    return { redirect: { destination: '/', permanent: false } };
+    return { redirect: { destination: "/", permanent: false } };
   }
 
   try {

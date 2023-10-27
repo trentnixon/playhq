@@ -26,6 +26,7 @@ import { TeamList } from "../../components/Members/Tracking/Teams";
 import { FindAccountType, FindAccountTypeOBJ } from "../../lib/actions";
 import { useGetOrganizationDetails } from "../../Hooks/useGetOrganizationDetails";
 import { ClubList } from "../../components/Members/Tracking/Clubs";
+import Meta from "../../components/Layouts/Meta";
 
 const Tracking = ({ DATA }) => {
   const { account } = useAccountDetails();
@@ -48,6 +49,11 @@ const Tracking = ({ DATA }) => {
   }, [account]);
   return (
     <MembersWrapper>
+      <Meta
+        title="Season Tracking - Fixtura: Stay Updated with Your Games"
+        description="Track your sports club's season fixtures and performances on Fixtura. Stay informed and organized throughout the season."
+        keywords="Season tracking, Fixtura games update, sports club fixtures, digital media schedule, club game tracking"
+      />
       <SetupCheck>
         <LoadingStateWrapper conditions={[user, userAccount, DATA]}>
           <PageTitle Copy={`Season Tracking`} ICON={<IconTrack size={40} />} />
@@ -154,7 +160,11 @@ const TrackingLayout = (props) => {
       verticalSpacing="xs"
     >
       <Stack>
-        {accountType === "Association" ? <ClubList {...props} /> : <TeamList {...props} />}
+        {accountType === "Association" ? (
+          <ClubList {...props} />
+        ) : (
+          <TeamList {...props} />
+        )}
       </Stack>
       <GamesListing gamesData={gamesData} />
     </SimpleGrid>

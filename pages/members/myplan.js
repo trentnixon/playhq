@@ -39,6 +39,7 @@ import qs from "qs";
 import { P, PageTitle, SubHeaders } from "../../components/Members/Common/Type";
 import { IconAddressBook } from "@tabler/icons-react";
 import { LoadingStateWrapper } from "../../components/Members/Account/HOC/LoadingStateWrapper";
+import Meta from "../../components/Layouts/Meta";
 
 const MyPlan = () => {
   const { account, ReRender } = useAccountDetails();
@@ -49,7 +50,7 @@ const MyPlan = () => {
   const theme = useMantineTheme();
   /* is User Auth */
   const { user, loading } = useUser();
-/*   const router = useRouter();
+  /*   const router = useRouter();
   const currentRoute = router.pathname;
   
 
@@ -87,6 +88,11 @@ const MyPlan = () => {
   return (
     <LoadingStateWrapper conditions={[user, userAccount, subscriptionTier]}>
       <MembersWrapper>
+        <Meta
+          title="Member Plan - Fixtura: Review Your Subscription"
+          description="Review and manage your subscription plan as a Fixtura member. Tailor your sports club's digital media services to your needs."
+          keywords="Member plan, Fixtura subscription, sports media services, club content plan, digital media package"
+        />
         <PageTitle
           Copy={`My Plan : ${subscriptionTier?.Name}`}
           ICON={<IconAddressBook size={40} />}

@@ -15,6 +15,7 @@ import { IconColorPicker } from "@tabler/icons";
 import { DesignTabs } from "../../components/Members/Design/DesignTabs";
 import { LoadingStateWrapper } from "../../components/Members/Account/HOC/LoadingStateWrapper";
 import { BTN_TOEXTLINK } from "../../components/Members/Common/utils/Buttons";
+import Meta from "../../components/Layouts/Meta";
 const qs = require("qs");
 
 const query = qs.stringify(
@@ -46,6 +47,11 @@ const Design = ({ Response }) => {
   return (
     <LoadingStateWrapper conditions={[user, userAccount]}>
       <MembersWrapper>
+        <Meta
+          title="Member Graphics Packages - Fixtura: Choose Your Style"
+          description="Select and customize graphics packages for your club as a Fixtura member. Elevate your sports media with our diverse designs."
+          keywords="Member graphics, Fixtura packages, sports media styles, club content design, digital visuals"
+        />
         <PageTitle
           Copy={"Graphics Package"}
           ICON={<IconColorPicker size={40} />}

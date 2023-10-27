@@ -26,6 +26,7 @@ import { useUser } from "../../lib/authContext";
 import { DashBoardAssets } from "../../components/Members/Dashboard/Assets";
 import { IsFreeTrialFeedback } from "../../components/Members/Account/userIsFreeTrial";
 import { IsFreeTrialWelcome } from "../../components/Members/Account/components/isTrialNotifications.js/FreeTrialMessaging";
+import Meta from "../../components/Layouts/Meta";
 
 const DashBoard = () => {
   const { account } = useAccountDetails();
@@ -114,6 +115,11 @@ const DashBoard = () => {
     <MembersWrapper>
       <SetupCheck>
         <LoadingStateWrapper conditions={[user, account]}>
+          <Meta
+            title="Member Dashboard - Fixtura: Your Control Center"
+            description="Access your member dashboard on Fixtura to manage and overview your sports club's digital media activities."
+            keywords="Member dashboard, Fixtura control panel, sports media overview, club content management, digital hub"
+          />
           <PageTitle
             Copy={`Hi ${account.attributes.FirstName}`}
             ICON={<IconLayoutDashboard size={40} />}

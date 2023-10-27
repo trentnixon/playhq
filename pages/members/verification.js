@@ -6,6 +6,7 @@ import {
   Wrapper,
 } from "../../components/Members/Common/Containers";
 import { P, PageTitle } from "../../components/Members/Common/Type";
+import Meta from "../../components/Layouts/Meta";
 
 const UserVerification = () => {
   const router = useRouter();
@@ -17,14 +18,14 @@ const UserVerification = () => {
   useEffect(() => {
     const handleRedirect = async () => {
       if (isRedirecting.current) return;
-      
+
       if (user === undefined) {
         isRedirecting.current = true;
-        await router.push('/');
+        await router.push("/");
         isRedirecting.current = false;
         return;
       }
-  
+
       if (user !== null) {
         isRedirecting.current = true;
         await router.push(prev);
@@ -32,12 +33,17 @@ const UserVerification = () => {
         return;
       }
     };
-  
+
     handleRedirect();
   }, [router, user]);
 
   return (
     <MembersWrapper>
+      <Meta
+        title="Account Verification - Fixtura: Secure Your Membership"
+        description="Complete your account verification for secure access to Fixtura's member features. Protect your sports club's digital media."
+        keywords="Account verification, Fixtura security, sports media protection, club content verification, digital membership"
+      />
       <PageTitle Copy={"Verifying User"} />
       <Wrapper>
         <P>{`Please Wait here for 2 seconds.`}</P>

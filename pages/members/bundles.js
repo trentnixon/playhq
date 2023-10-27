@@ -17,7 +17,7 @@ import { DownloadCopy } from "../../components/Downloads/DownloadCopy";
 import { DownloadsSelectDays } from "../../components/Downloads/DownloadsSelectDays";
 import SetupCheck from "../../components/Members/Account/HOC/SetupCheck";
 import { LoadingStateWrapper } from "../../components/Members/Account/HOC/LoadingStateWrapper";
-
+import Meta from "../../components/Layouts/Meta";
 
 const OrderHistory = (props) => {
   const { Renders } = props;
@@ -38,6 +38,11 @@ const OrderHistory = (props) => {
 
   return (
     <MembersWrapper>
+      <Meta
+        title="Member Downloads - Fixtura: Access Your Bundles"
+        description="Download your purchased bundles and resources as a Fixtura member. Enhance your club's digital media with our exclusive content."
+        keywords="Member downloads, Fixtura bundles, sports media resources, club content download, digital bundles"
+      />
       <SetupCheck>
         <LoadingStateWrapper conditions={[user, Renders]}>
           <PageTitle Copy={`Bundles`} ICON={<IconDownload size={40} />} />
