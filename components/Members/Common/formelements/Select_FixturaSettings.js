@@ -144,7 +144,7 @@ const UI_WithSelectedAndButton = ({
         ) : (
           <Group>
             <P
-            color={'white'}
+            color={'black'}
               textTransform={`uppercase`}
               size={`sm`}
               marginBottom={0}
