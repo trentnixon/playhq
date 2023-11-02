@@ -27,6 +27,7 @@ import { DashBoardAssets } from "../../components/Members/Dashboard/Assets";
 import { IsFreeTrialFeedback } from "../../components/Members/Account/userIsFreeTrial";
 import { IsFreeTrialWelcome } from "../../components/Members/Account/components/isTrialNotifications.js/FreeTrialMessaging";
 import Meta from "../../components/Layouts/Meta";
+import { GroupBySwitch } from "../../components/Members/Account/components/Settings/GroupBySwitch";
 
 const DashBoard = () => {
   const { account } = useAccountDetails();
@@ -126,9 +127,7 @@ const DashBoard = () => {
           />
           <SubHeaders Copy="DashBoard" />
           <IsFreeTrialWelcome user={account} />
-          <PageCopyWrapper>
-            <P> Info About deliuvery day and how to change it</P>
-          </PageCopyWrapper>
+       
 
           <Space h={20} />
           <SubHeaders Copy="Account" />
@@ -179,13 +178,8 @@ const DashBoard = () => {
             })}
           </SimpleGrid>
           <Space h={50} />
-          {/*  <SubHeaders Copy="Juniors" />
-          <PageCopyWrapper>
-
-            <Container fluid={true} mt={40}>
-              <P>Settings for Juniors. Allow Junior Assets, Slpit Juniors and seniors. Opting out</P>
-            </Container>
-          </PageCopyWrapper> */}
+          <SubHeaders Copy="Settings" />
+              <GroupBySwitch account={account}/>
           <Space h={50} />
           <IsFreeTrialFeedback />
         </LoadingStateWrapper>
