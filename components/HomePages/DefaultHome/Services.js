@@ -11,11 +11,12 @@ const Services = () => {
   const padding = isMobile ? 0 : "sm";
   const SectionData = {
     title:
-      "Revamp Your Club's Digital Presence with Fixtura!",
+      "Starting at Only $20 a Week, Discover Fixtura's Revolutionary Digital Content for Your Club!",
     paragraphs: [
-      `Experience hassle-free weekend wrap-ups and upcoming fixture posts tailored just for your club. With Fixtura, you get a seamless blend of research, design, and content curation—all under one roof.`,
-      `Give your fans a treat with standout content, while you stay laser-focused on the game.`,
-      `Start your two-week free trial and embrace the Fixtura advantage.`
+      `Transform your club's digital narrative with Fixtura's elite content services, starting at just $20 a week. Experience a unique blend of creativity and AI-driven precision in crafting engaging fixture posts and captivating club stories.`,
+
+      `Embark on your Fixtura journey today with a no-obligation two-week free trial and unlock the power of affordable, professional-grade digital storytelling.`,
+      `Start your two-week free trial and embrace the Fixtura advantage.`,
     ],
   };
   return (
@@ -45,7 +46,9 @@ const Services = () => {
               Your browser does not support the video tag.
             </video>
           </div>
-          <P textAlign='right' size={'sm'}>Check out our brief about Video</P>
+          <P textAlign="right" size={"sm"}>
+            Check out our brief about Video
+          </P>
         </Container>
 
         <OrangisatonAlreadyUsingFixtura />
@@ -67,13 +70,14 @@ const OrangisatonAlreadyUsingFixtura = () => {
       IMG: "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logan_Grey_947e4522b4.png",
     },
     {
+      Name: "CNSW Sydney Shires",
+      IMG: "https://fixtura.s3.ap-southeast-2.amazonaws.com/Cricket_NSW_Shires_gray_798703895c.png",
+    },
+    {
       Name: "Runaway Bay Cricket Club Inc",
       IMG: "https://fixtura.s3.ap-southeast-2.amazonaws.com/rbccgrey_a7f0d27008.png",
     },
-    {
-      Name: "Moss Vale Cricket Club",
-      IMG: "https://fixtura.s3.ap-southeast-2.amazonaws.com/mossvalegrey_3c71c208da.png",
-    },
+
     {
       Name: "Mudgeeraba Nerang & Districts' Cricket Club",
       IMG: "https://fixtura.s3.ap-southeast-2.amazonaws.com/bushmengrey_7179c8fc93.png",
