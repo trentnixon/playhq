@@ -37,9 +37,7 @@ export const Example_Video_Upcoming = (props) => {
           THEME={THEME}
         />
         Outside AbsoluteFill
-        <AbsoluteFill style={{ zIndex: 100 }}>
-          inside AbsoluteFill
-          <Sequence durationInFrames={TIMINGS.FPS_INTRO}>
+		<Sequence durationInFrames={TIMINGS.FPS_INTRO}>
             <TitleSequenceFrame
               THEME={THEME}
               fontFamily={fontFamily}
@@ -47,6 +45,9 @@ export const Example_Video_Upcoming = (props) => {
               VIDEOMETA={DATA.VIDEOMETA}
             />
           </Sequence>
+	    <AbsoluteFill style={{ zIndex: 100 }}>
+         
+          
           {/* <Series>
             <Series.Sequence durationInFrames={TIMINGS.FPS_INTRO}>
               inside Series title
