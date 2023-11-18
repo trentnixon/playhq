@@ -36,8 +36,7 @@ export const Example_Video_Upcoming = (props) => {
 					TIMINGS={TIMINGS.FPS_MAIN + 210}
 					THEME={THEME}
 				/>
-				<AbsoluteFill style={{zIndex: 1000}}>
-					<Series>
+				<Series>
 						<Series.Sequence durationInFrames={TIMINGS.FPS_INTRO}>
 							<TitleSequenceFrame
 								THEME={THEME}
@@ -58,7 +57,6 @@ export const Example_Video_Upcoming = (props) => {
 							/>
 						</Series.Sequence>
 					</Series>
-				</AbsoluteFill>
 				<Audio
 					volume={(f) =>
 						interpolate(

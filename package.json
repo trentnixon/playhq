@@ -6,7 +6,6 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "upgrade": "remotion upgrade",
     "outdated": "npm outdated",
     "updateALL": "npm update",
     "lint": "next lint",
@@ -25,10 +24,10 @@
     "@mantine/next": "^6.0.17",
     "@mantine/notifications": "^6.0.17",
     "@mantine/styles": "^6.0.17",
-    "@remotion/google-fonts": "3.3.103",
-    "@remotion/noise": "3.3.103",
-    "@remotion/paths": "3.3.103",
-    "@remotion/player": "3.3.103",
+    "@remotion/google-fonts": "^4.0.71",
+    "@remotion/noise": "^4.0.71",
+    "@remotion/paths": "^4.0.71",
+    "@remotion/player": "^4.0.71",
     "@stripe/stripe-js": "^1.46.0",
     "@tabler/icons": "^1.117.0",
     "@tabler/icons-react": "^2.25.0",
@@ -59,7 +58,7 @@
     "react-markdown": "^8.0.7",
     "react-tabs": "^5.1.0",
     "react-visibility-sensor": "^5.1.1",
-    "remotion": "3.3.103",
+    "remotion": "^4.0.71",
     "sass": "^1.43.4",
     "styled-components": "^5.3.6",
     "sweetalert2": "^11.4.8",
@@ -73,7 +72,7 @@
     "node": "18.x"
   },
   "devDependencies": {
-    "@remotion/eslint-config": "3.3.103",
+    "@remotion/eslint-config": "^4.0.71",
     "eslint": "^8.14.0",
     "prettier": "^2.6.2"
   }
