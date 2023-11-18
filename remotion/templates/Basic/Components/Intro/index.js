@@ -8,8 +8,7 @@ import {PrincipalSponsor} from './PrincipalSponsor';
 export const TitleSequenceFrame = (props) => {
 	const {FPS_INTRO} = props;
 	return ( 
-		<Sequence>
-				<Series>
+		<Series>
 					<Series.Sequence durationInFrames={FPS_INTRO} layout="none">
 						<IntroContainer>
 							<AccountName {...props} />
@@ -19,7 +18,6 @@ export const TitleSequenceFrame = (props) => {
 						<PrincipalSponsor {...props} />
 					</Series.Sequence> 
 				</Series>
-			</Sequence>
 	);
 };
 
