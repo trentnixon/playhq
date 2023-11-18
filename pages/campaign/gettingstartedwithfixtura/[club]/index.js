@@ -107,7 +107,11 @@ const RemotionPlayer = ({ clubData }) => {
       <Player
         id={"UpComingFixtures"}
         component={Example_Video_Upcoming}
-        durationInFrames={500}
+        durationInFrames={[
+          DATA.TIMINGS.FPS_INTRO,
+          DATA.TIMINGS.FPS_MAIN,
+          DATA.TIMINGS.FPS_OUTRO,
+        ].reduce((a, b) => a + b, 0)}
         fps={30}
         compositionHeight={1350}
         compositionWidth={1080}

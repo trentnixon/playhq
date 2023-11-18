@@ -27,7 +27,7 @@ export const Example_Video_Upcoming = (props) => {
 		TemplateVariation: DATA.VIDEOMETA.Video.TemplateVariation,
 	};
  
-	console.log(commonProps)
+	
 	return (
 		<ThemeProvider theme={THEME}>
 			<AbsoluteFill>
@@ -36,6 +36,17 @@ export const Example_Video_Upcoming = (props) => {
 					TIMINGS={TIMINGS.FPS_MAIN + 210}
 					THEME={THEME}
 				/>
+				<Series>
+      <Series.Sequence durationInFrames={60}>
+        1
+      </Series.Sequence>
+      <Series.Sequence durationInFrames={60}>
+        2
+      </Series.Sequence>
+      <Series.Sequence durationInFrames={60}>
+        3
+      </Series.Sequence>
+    </Series>
 				<Series>
 						<Series.Sequence durationInFrames={TIMINGS.FPS_INTRO}>
 							<TitleSequenceFrame
