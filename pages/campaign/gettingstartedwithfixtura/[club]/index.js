@@ -106,7 +106,6 @@ const RemotionPlayer = ({ clubData }) => {
     return null;
   }
 
-  console.log(DATA)
   return (
     <Container p={padding}>
       <Player
@@ -124,10 +123,10 @@ const RemotionPlayer = ({ clubData }) => {
           DATA: DATA,
         }}
         controls
-        /* style={{
+        style={{
           width: 1080 / 2,
           height: 1350 / 2,
-        }} */
+        }}
       />
     </Container>
   );
