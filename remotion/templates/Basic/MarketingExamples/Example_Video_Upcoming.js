@@ -38,15 +38,14 @@ export const Example_Video_Upcoming = (props) => {
         />
 
         <AbsoluteFill style={{ zIndex: 100 }}>
-          <Series>
-            <Series.Sequence durationInFrames={90}>
-              <TitleSequenceFrame
+		<TitleSequenceFrame
                 THEME={THEME}
                 fontFamily={fontFamily}
                 FPS_INTRO={90}
                 VIDEOMETA={DATA.VIDEOMETA}
               />
-            </Series.Sequence>
+          <Series>
+            
             <Series.Sequence durationInFrames={540}>
               <Fixtures {...commonProps} />
             </Series.Sequence>

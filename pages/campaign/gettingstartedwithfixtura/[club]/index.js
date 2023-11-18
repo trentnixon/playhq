@@ -1,5 +1,5 @@
 // [club].js
-
+import { useState, useEffect } from "react";
 import { fetcher } from "../../../../lib/api";
 import Meta from "../../../../components/Layouts/Meta";
 import { P } from "../../../../components/Members/Common/Type";
@@ -11,8 +11,6 @@ import FixturaAndYourClubBanner from "../../../../components/HomePages/PLAYHQ/Fi
 import { Player } from "@remotion/player";
 import { Example_Video_Upcoming } from "../../../../remotion/templates/Basic/MarketingExamples/Example_Video_Upcoming";
 import DATA_FIXTURES from "../../../../remotion/utils/upcoming_v2.json";
-import { useState } from "react";
-import { useEffect } from "react";
 
 const qs = require("qs");
 const ClubPage = ({ clubData }) => {
@@ -44,11 +42,9 @@ const ClubPage = ({ clubData }) => {
           <Container p={padding}>
             <P>Hi {clubName}</P>
           </Container>
-          <RemotionPlayer clubData={clubData}/>
+          <RemotionPlayer clubData={clubData} />
         </Section>
       </>
-
-
     </>
   );
 };
