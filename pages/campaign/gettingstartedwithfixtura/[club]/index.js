@@ -83,7 +83,6 @@ export const getStaticProps = async ({ params }) => {
   const clubDataResponse = await fetcher(
     `${process.env.NEXT_PUBLIC_STRAPI_URL}/clubs?${query}`
   );
-  console.log("clubDataResponse", clubDataResponse.data);
   const clubData = clubDataResponse.data[0]; // Assuming the first match is correct
 
   return {
