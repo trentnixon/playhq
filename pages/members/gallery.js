@@ -110,23 +110,3 @@ export async function getServerSideProps(ctx) {
     return { props: { Response: null } }; // Handle error accordingly
   }
 }
-
-/* export async function getServerSideProps(ctx) {
-  const parsedCookies = cookie.parse(ctx.req.headers.cookie || "");
-  const jwt = parsedCookies["jwt"]; // Replace 'jwt' with the actual key you set the JWT cookie with
-  const linkedAccount = parsedCookies["LinkedAccount"]; // Same here, replace with the actual key
-
-  // Now you can use these in your fetcher
-  const response = await fetcher(
-    `${process.env.NEXT_PUBLIC_STRAPI_URL}/accounts/${linkedAccount}?${query}`,
-    {
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${jwt}`,
-      },
-    }
-  );
-
-  const Response = response.data;
-  return { props: { Response } };
-} */

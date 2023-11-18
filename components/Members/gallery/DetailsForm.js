@@ -1,13 +1,9 @@
-import {
-  Group,
-  Image,
-  Paper,
-  Select,
-  SimpleGrid,
-  Switch,
-} from "@mantine/core";
+import { Group, Image, Paper, Select, SimpleGrid, Switch } from "@mantine/core";
 import { useEffect, useState } from "react";
 import { BTN_ONCLICK } from "../Common/utils/Buttons";
+import ImageMarker from "react-image-marker";
+import { P } from "../Common/Type";
+import { IconTarget } from "@tabler/icons-react";
 
 // TitleInput Component
 const TitleInput = ({ value, onChange }) => (
@@ -78,10 +74,16 @@ export const DetailsForm = ({
   const [title, setTitle] = useState(initialData.title || "");
   const [AgeGroup, setAgeGroup] = useState(initialData.AgeGroup || "Both");
   const [AssetType, setAssetType] = useState(initialData.AssetType || "ALL");
+  const [markerPosition, setMarkerPosition] = useState([]);
+
+  const handleAddMarker = (marker) => {
+    console.log(marker);
+    setMarkerPosition([marker]); // Ensure it's an array
+  };
 
   const handleSubmit = () => {
     const isActive = true; // Replace with a checkbox or toggle switch if needed
-    onSubmit(title, isActive, AgeGroup, AssetType);
+    onSubmit(title, isActive, AgeGroup, AssetType, markerPosition);
     resetForm();
   };
 
@@ -95,7 +97,20 @@ export const DetailsForm = ({
       >
         {/* Image and Paper Components */}
         <Paper shadow="xs" p="md" withBorder>
-          <Image src={ImagePath[0].url} width={"100%"} radius={5} />
+          <ImageMarker
+            src={ImagePath[0].url}
+            markers={markerPosition}
+            onAddMarker={handleAddMarker}
+            width={"100%"}
+          />
+          <Group noWrap>
+            <IconTarget size={40} style={{ marginRight: "5px" }} />
+            <P size={"xs"} marginBottom={0}>
+              Please click on the image to mark the focus point. This will help
+              identify players or key items in your videos and graphics.
+            </P>
+          </Group>
+          {/* <Image src={ImagePath[0].url} width={"100%"} radius={5} /> */}
         </Paper>
         <Paper p="md">
           <TitleInput value={title} onChange={setTitle} />

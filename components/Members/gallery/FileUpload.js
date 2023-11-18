@@ -62,7 +62,7 @@ export function MediaGalleryFileUpload({ ITEMCOUNT }) {
     setImageToAccount(PATH, OBJ);
   };
 
-  const saveDetails = (title, isActive, AgeGroup, AssetType) => {
+  const saveDetails = (title, isActive, AgeGroup, AssetType, markerPosition) => {
     if (!title || !GalleryItemID) {
       // Handle this error. Maybe set an error state and display it
       router.replace(router.asPath);
@@ -75,6 +75,7 @@ export function MediaGalleryFileUpload({ ITEMCOUNT }) {
         isActive,
         AgeGroup, // Add ageGroup to the update data
         AssetType, // Add assetType to the update data
+        markerPosition
       },
     };
 
