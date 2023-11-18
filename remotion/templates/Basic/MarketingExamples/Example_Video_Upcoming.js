@@ -31,11 +31,11 @@ export const Example_Video_Upcoming = (props) => {
 	return (
 		<ThemeProvider theme={THEME}>
 			<AbsoluteFill>
-				<BGImageAnimation
+				{/* <BGImageAnimation
 					HeroImage={DATA.VIDEOMETA.Video.HeroImage}
 					TIMINGS={TIMINGS.FPS_MAIN + 210}
 					THEME={THEME}
-				/>
+				/> */}
 				<AbsoluteFill style={{zIndex: 1000}}>
 					<Series>
 						<Series.Sequence durationInFrames={TIMINGS.FPS_INTRO}>
