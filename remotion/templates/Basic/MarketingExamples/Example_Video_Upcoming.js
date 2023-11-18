@@ -37,7 +37,7 @@ export const Example_Video_Upcoming = (props) => {
 					THEME={THEME}
 				/>
 				<Series>
-      <Series.Sequence durationInFrames={60}>
+      <Series.Sequence durationInFrames={60} offset={0}>
         1
       </Series.Sequence>
       <Series.Sequence durationInFrames={60}>
@@ -48,7 +48,7 @@ export const Example_Video_Upcoming = (props) => {
       </Series.Sequence>
     </Series>
 				<Series>
-						<Series.Sequence durationInFrames={TIMINGS.FPS_INTRO}>
+						<Series.Sequence offset={0} durationInFrames={TIMINGS.FPS_INTRO}>
 							<TitleSequenceFrame
 								THEME={THEME}
 								fontFamily={fontFamily}
