@@ -106,6 +106,7 @@ const RemotionPlayer = ({ clubData }) => {
     return null;
   }
 
+  console.log(DATA)
   return (
     <Container p={padding}>
       <Player
