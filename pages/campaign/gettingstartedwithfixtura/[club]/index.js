@@ -1,11 +1,5 @@
 // [club].js
 
-import MainBanner from "../../../../components/HomePages/PLAYHQ/MainBanner";
-import PricingStyleOne from "../../../../components/Pricing/PricingStyleOne";
-import Services from "../../../../components/HomePages/DefaultHome/Services";
-import FunFacts from "../../../../components/Common/FunFacts";
-import CtaArea from "../../../../components/Common/CtaAreaTwo";
-import Partner from "../../../../components/Common/Partner";
 import { fetcher } from "../../../../lib/api";
 import Meta from "../../../../components/Layouts/Meta";
 import { P } from "../../../../components/Members/Common/Type";
@@ -17,6 +11,8 @@ import FixturaAndYourClubBanner from "../../../../components/HomePages/PLAYHQ/Fi
 import { Player } from "@remotion/player";
 import { Example_Video_Upcoming } from "../../../../remotion/templates/Basic/MarketingExamples/Example_Video_Upcoming";
 import DATA_FIXTURES from "../../../../remotion/utils/upcoming_v2.json";
+import { useState } from "react";
+import { useEffect } from "react";
 
 const qs = require("qs");
 const ClubPage = ({ clubData }) => {
@@ -52,11 +48,7 @@ const ClubPage = ({ clubData }) => {
         </Section>
       </>
 
-      {/*  <Services />
-        <FunFacts />
-        <Partner associations={associations} />
-        <PricingStyleOne />
-        <CtaArea /> */}
+
     </>
   );
 };
@@ -101,10 +93,19 @@ export const getStaticProps = async ({ params }) => {
   };
 };
 
-const RemotionPlayer = ({clubData}) => {
+const RemotionPlayer = ({ clubData }) => {
+  const [isMounted, setIsMounted] = useState(false);
   const DATA = DATA_FIXTURES;
   const isMobile = useMediaQuery("(max-width: 768px)");
   const padding = isMobile ? 0 : "sm";
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) {
+    return null;
+  }
 
   return (
     <Container p={padding}>
