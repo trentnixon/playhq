@@ -43,6 +43,9 @@ export const Example_Video_Upcoming = (props) => {
             VIDEOMETA={DATA.VIDEOMETA}
           />
         </Sequence>
+		<Sequence durationInFrames={TIMINGS.FPS_MAIN} from={TIMINGS.FPS_INTRO}>
+            <Fixtures {...commonProps} />
+          </Sequence>
         {/*    <Series>
           <Series.Sequence offset={0} durationInFrames={TIMINGS.FPS_INTRO}>
             <TitleSequenceFrame
