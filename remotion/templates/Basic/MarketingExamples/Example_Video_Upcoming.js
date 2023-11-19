@@ -36,17 +36,7 @@ export const Example_Video_Upcoming = (props) => {
 					TIMINGS={TIMINGS.FPS_MAIN + 210}
 					THEME={THEME}
 				/>
-				<Series>
-      <Series.Sequence durationInFrames={60} offset={0}>
-        1
-      </Series.Sequence>
-      <Series.Sequence durationInFrames={60}>
-        2
-      </Series.Sequence>
-      <Series.Sequence durationInFrames={60}>
-        3
-      </Series.Sequence>
-    </Series>
+				
 				<Series>
 						<Series.Sequence offset={0} durationInFrames={TIMINGS.FPS_INTRO}>
 							<TitleSequenceFrame

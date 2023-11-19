@@ -11,6 +11,7 @@ import FixturaAndYourClubBanner from "../../../../components/HomePages/PLAYHQ/Fi
 import { Player } from "@remotion/player";
 import { Example_Video_Upcoming } from "../../../../remotion/templates/Basic/MarketingExamples/Example_Video_Upcoming";
 import DATA_FIXTURES from "../../../../remotion/utils/upcoming_v2.json";
+import { Series } from "remotion";
 
 const qs = require("qs");
 const ClubPage = ({ clubData }) => {
@@ -105,6 +106,18 @@ const RemotionPlayer = ({ clubData }) => {
   return (
     <Container p={padding}>
       <Player
+        component={MyVideo}
+        durationInFrames={180}
+        compositionWidth={1920}
+        compositionHeight={1080}
+        fps={30}
+        controls
+        style={{
+          width: 1080 / 2,
+          height: 1350 / 2,
+        }}
+      />
+      {/* <Player
         id={"UpComingFixtures"}
         component={Example_Video_Upcoming}
         durationInFrames={[
@@ -123,7 +136,23 @@ const RemotionPlayer = ({ clubData }) => {
           width: 1080 / 2,
           height: 1350 / 2,
         }}
-      />
+      /> */}
     </Container>
+  );
+};
+
+const MyVideo = () => {
+  return (
+    <Series offset={0}>
+      <Series.Sequence durationInFrames={60} offset={0}>
+        <h1>1</h1>
+      </Series.Sequence>
+      <Series.Sequence durationInFrames={60}>
+        <h1>2</h1>
+      </Series.Sequence>
+      <Series.Sequence durationInFrames={60}>
+        <h1>3</h1>
+      </Series.Sequence>
+    </Series>
   );
 };
