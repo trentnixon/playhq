@@ -43,30 +43,21 @@ export const Example_Video_Upcoming = (props) => {
             VIDEOMETA={DATA.VIDEOMETA}
           />
         </Sequence>
-		<Sequence durationInFrames={TIMINGS.FPS_MAIN} from={TIMINGS.FPS_INTRO}>
-            <Fixtures {...commonProps} />
-          </Sequence>
-        {/*    <Series>
-          <Series.Sequence offset={0} durationInFrames={TIMINGS.FPS_INTRO}>
-            <TitleSequenceFrame
-              THEME={THEME}
-              fontFamily={fontFamily}
-              FPS_INTRO={TIMINGS.FPS_INTRO}
-              VIDEOMETA={DATA.VIDEOMETA}
-            />
-          </Series.Sequence>
-          <Series.Sequence durationInFrames={TIMINGS.FPS_MAIN}>
-            <Fixtures {...commonProps} />
-          </Series.Sequence>
-          <Series.Sequence durationInFrames={TIMINGS.FPS_OUTRO}>
-            <OutroSequenceFrame
-              theme={THEME}
-              fontFamily={fontFamily}
-              FPS={TIMINGS.FPS_OUTRO}
-              DATA={DATA}
-            />
-          </Series.Sequence>
-        </Series> */}
+        <Sequence durationInFrames={TIMINGS.FPS_MAIN} from={TIMINGS.FPS_INTRO}>
+          <Fixtures {...commonProps} />
+        </Sequence>
+        <Sequence
+          durationInFrames={TIMINGS.FPS_OUTRO}
+          from={TIMINGS.FPS_INTRO + TIMINGS.FPS_MAIN}
+        >
+          <OutroSequenceFrame
+            theme={THEME}
+            fontFamily={fontFamily}
+            FPS={TIMINGS.FPS_OUTRO}
+            DATA={DATA}
+          />
+        </Sequence>
+
         <Audio
           volume={(f) =>
             interpolate(

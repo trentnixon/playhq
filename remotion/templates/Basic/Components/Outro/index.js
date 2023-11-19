@@ -9,9 +9,8 @@ import {ClubNameComponent} from './ClubNameComponent';
 export const OutroSequenceFrame = ({theme, DATA, FPS}) => {
 	const frame = useCurrentFrame();
 	return (
-		<Sequence>
-			<Series>
-				<Series.Sequence durationInFrames={FPS} layout="none">
+		<Sequence durationInFrames={FPS}>
+			
 					<SponsorOuterContainer>
 						<MadePossibleBy frame={frame} FPS={FPS} theme={theme} />
 						<SponsorRows DATA={DATA} theme={theme} FPS={FPS} />
@@ -29,8 +28,7 @@ export const OutroSequenceFrame = ({theme, DATA, FPS}) => {
 							/>
 						</ClubNameContainer>
 					</SponsorOuterContainer>
-				</Series.Sequence>
-			</Series>
+			
 		</Sequence>
 	);
 };
