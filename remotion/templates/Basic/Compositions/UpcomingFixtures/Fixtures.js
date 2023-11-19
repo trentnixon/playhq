@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {Series} from 'remotion';
+import {Sequence, Series} from 'remotion';
 import {Match} from './Sections';
 import {MatchContainer} from './Sections/MatchContainer';
 
@@ -9,10 +9,10 @@ export const FixturesMain = (props) => {
 	const groupsOfTwo = splitIntoGroupsOfTwo(DATA);
 	return (
 		<FixtureContainer>
-			<Series>
+		
 				{groupsOfTwo.map((item, index) => {
 					return (
-						<Series.Sequence key={index} durationInFrames={FPS_SCORECARD}>
+						<Sequence key={index} durationInFrames={FPS_SCORECARD} from={FPS_SCORECARD*index}>
 							<MatchContainer>
 								{item.map((game, i) => (
 									<Match
@@ -23,10 +23,10 @@ export const FixturesMain = (props) => {
 									/>
 								))}
 							</MatchContainer>
-						</Series.Sequence>
+						</Sequence>
 					);
 				})}
-			</Series>
+			
 		</FixtureContainer>
 	);
 };

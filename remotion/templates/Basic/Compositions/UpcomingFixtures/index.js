@@ -1,5 +1,4 @@
 import React from "react";
-import { Series } from "remotion";
 
 // Components
 import { LogoClubTitleHeader } from "../../Components/Header/LogoClubTitleHeader";
