@@ -1,6 +1,6 @@
 /* eslint-disable camelcase */
 import { ThemeProvider } from "styled-components";
-import { Series, AbsoluteFill, Audio, interpolate, Sequence } from "remotion";
+import { AbsoluteFill, Audio, interpolate, Sequence } from "remotion";
 import { loadFont } from "@remotion/google-fonts/Heebo";
 import { BGImageAnimation } from "../Components/Common/BGImageAnimation";
 import { TitleSequenceFrame } from "../Components/Intro";
@@ -55,7 +55,7 @@ export const Example_Video_Upcoming = (props) => {
             fontFamily={fontFamily}
             FPS={TIMINGS.FPS_OUTRO}
             DATA={DATA}
-			from={TIMINGS.FPS_INTRO + TIMINGS.FPS_MAIN}
+            from={TIMINGS.FPS_INTRO + TIMINGS.FPS_MAIN}
           />
         </Sequence>
 
