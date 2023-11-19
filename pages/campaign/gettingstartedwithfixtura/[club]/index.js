@@ -107,11 +107,18 @@ const RemotionPlayer = ({ clubData }) => {
     <Container p={padding}>
       <Player
         component={MyVideo}
-        durationInFrames={180}
-        compositionWidth={1920}
-        compositionHeight={1080}
+        durationInFrames={[
+          DATA.TIMINGS.FPS_INTRO,
+          DATA.TIMINGS.FPS_MAIN,
+          DATA.TIMINGS.FPS_OUTRO,
+        ].reduce((a, b) => a + b, 0)}
+        compositionHeight={1350}
+        compositionWidth={1080}
         fps={30}
         controls
+        inputProps={{
+          DATA: DATA,
+        }}
         style={{
           width: 1080 / 2,
           height: 1350 / 2,
@@ -141,17 +148,23 @@ const RemotionPlayer = ({ clubData }) => {
   );
 };
 
-const MyVideo = () => {
+const MyVideo = ({ DATA }) => {
+  console.log([
+    DATA.TIMINGS.FPS_INTRO,
+    DATA.TIMINGS.FPS_MAIN,
+    DATA.TIMINGS.FPS_OUTRO,
+  ].reduce((a, b) => a + b, 0))
   return (
     <>
-      <Sequence durationInFrames={60} from={0}>
-        <h1>1</h1>
-      </Sequence>
-      <Sequence durationInFrames={60} from={60}>
-        <h1>2</h1>
-      </Sequence>
-      <Sequence durationInFrames={60} from={120}>
-        <h1>3</h1>
+      <Sequence
+        durationInFrames={[
+          DATA.TIMINGS.FPS_INTRO,
+          DATA.TIMINGS.FPS_MAIN,
+          DATA.TIMINGS.FPS_OUTRO,
+        ].reduce((a, b) => a + b, 0)}
+        from={0}
+      >
+        <Example_Video_Upcoming DATA={DATA} />
       </Sequence>
     </>
   );
