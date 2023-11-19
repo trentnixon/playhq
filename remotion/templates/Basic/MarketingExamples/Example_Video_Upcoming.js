@@ -55,6 +55,7 @@ export const Example_Video_Upcoming = (props) => {
             fontFamily={fontFamily}
             FPS={TIMINGS.FPS_OUTRO}
             DATA={DATA}
+			from={TIMINGS.FPS_INTRO + TIMINGS.FPS_MAIN}
           />
         </Sequence>
 

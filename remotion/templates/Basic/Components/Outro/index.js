@@ -6,10 +6,10 @@ import {MadePossibleBy} from './MadePossibleBy';
 import {ClubLogo} from './ClubLogo';
 import {ClubNameComponent} from './ClubNameComponent';
 
-export const OutroSequenceFrame = ({theme, DATA, FPS}) => {
+export const OutroSequenceFrame = ({theme, DATA, FPS,from}) => {
 	const frame = useCurrentFrame();
 	return (
-		<Sequence durationInFrames={FPS}>
+		<Sequence durationInFrames={FPS} from={from}>
 			
 					<SponsorOuterContainer>
 						<MadePossibleBy frame={frame} FPS={FPS} theme={theme} />
