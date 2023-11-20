@@ -20,11 +20,11 @@ export const RemotionPlayer = ({ clubData, selectedMedia }) => {
 
   //console.log("selectedMedia", selectedMedia);
   const ASSETS = {
-    UpComingFixtures: {
+    UpComingFixtures: { 
       component: UpComingFixtures,
       DATA: DATA_FIXTURES,
     },
-    WeekendResults: {
+   /*  WeekendResults: {
       component: WeekendResults,
       DATA: DATA_RESULTS,
     },
@@ -39,7 +39,7 @@ export const RemotionPlayer = ({ clubData, selectedMedia }) => {
     Ladder: {
       component: Ladder,
       DATA: DATA_LADDER,
-    },
+    }, */
   };
 
   useEffect(() => {

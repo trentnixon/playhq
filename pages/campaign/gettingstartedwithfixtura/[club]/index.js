@@ -43,8 +43,8 @@ const ClubPage = ({ clubData, useAssets }) => {
         <Section {...SectionPlayer} color="grey">
           <Container p={padding}>
             <Previewer clubData={clubData} useAssets={useAssets} />
-          </Container>
-        </Section>
+          </Container> 
+        </Section> 
         <Section {...SectionData} color="light">
           <Container p={padding}>
             <P>Hi {clubName}</P>
