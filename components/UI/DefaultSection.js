@@ -9,6 +9,11 @@ const useStyles = createStyles((theme) => ({
     backgroundColor: theme.colors.dark[5],
     color: theme.colors.gray[2],
   },
+  grey: {
+    ref: getStylesRef('grey'),
+    backgroundColor: theme.colors.gray[3],
+    color: theme.colors.gray[8],
+  },
   light: {
     ref: getStylesRef('light'),
     backgroundColor: theme.colors.gray[1],

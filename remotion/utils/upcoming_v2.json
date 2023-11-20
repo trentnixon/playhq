@@ -3,7 +3,7 @@
 	  "FPS_INTRO": 90,
 	  "FPS_SCORECARD": 270,
 	  "FPS_OUTRO": 180,
-	  "FPS_MAIN": 540
+	  "FPS_MAIN": 810
 	},
 	"VIDEOMETA": {
 	  "Video": {
@@ -45,94 +45,81 @@
 		"Logo": "https://fixtura.s3.ap-southeast-2.amazonaws.com/logo_21_4a9066b25c.png",
 		"Sponsors": []
 	  },
-	  "DATA": [
-		{
-		  "gameID": 25758,
-		  "round": "Round 6",
-		  "teamHome": "Feilding Cricket Club Pak Design Premier 1",
-		  "teamHomeLogo": "https://fixtura.s3.ap-southeast-2.amazonaws.com/logo_21_4a9066b25c.png",
-		  "teamAwayLogo": "https://res.cloudinary.com/playhq/image/upload/v1/production/nzc/86b1f2c1-f7f6-4cf1-b7a7-bc9933b869d4/1667037583799/logo.jpg",
-		  "teamAway": "PNBHS 1st XI",
-		  "date": "Saturday, 18 November 2023",
-		  "ground": "Kowhai Park / 1",
-		  "type": "One Day",
-		  "gender": "Men",
-		  "ageGroup": "Senior/Open",
-		  "gradeName": "Premier 1 One Day & Two Day"
-		},
-		{
-		  "gameID": 25766,
-		  "round": "Round 4",
-		  "teamHome": "Marist Men P2 One Day",
-		  "teamHomeLogo": "https://res.cloudinary.com/playhq/image/upload/v1/production/nzc/a8f28ea6-a5ba-47c3-a195-d4816bac8c97/1663756750874/logo.png",
-		  "teamAwayLogo": "https://fixtura.s3.ap-southeast-2.amazonaws.com/logo_21_4a9066b25c.png",
-		  "teamAway": "Feilding Cricket Club Yorb Premier 2 OneDayers",
-		  "date": "Sunday, 19 November 2023",
-		  "ground": "Manawaroa Park / 5 - McDonald's Manawatu",
-		  "type": "One Day",
-		  "gender": "Men",
-		  "ageGroup": "Senior/Open",
-		  "gradeName": "Premier 2 One Day"
-		},
-		{
-		  "gameID": 25779,
-		  "round": "Round 4",
-		  "teamHome": "Dannevirke P1 Women",
-		  "teamHomeLogo": "https://res.cloudinary.com/playhq/image/upload/v1/production/nzc/ff3c93d1-1f4e-4c85-b18c-990baf98d823/1658385479433/logo.jpg",
-		  "teamAwayLogo": "https://fixtura.s3.ap-southeast-2.amazonaws.com/logo_21_4a9066b25c.png",
-		  "teamAway": "Feilding Cricket Club Robin Young HR Womens",
-		  "date": "Saturday, 18 November 2023",
-		  "ground": "Dannevirke High School / 1A",
-		  "type": "T20",
-		  "gender": "Women",
-		  "ageGroup": "Senior/Open",
-		  "gradeName": "Premier 1 Womens"
-		}
-	  ],
+	
 	  "grouping_category": "Senior"
 	},
 	"DATA": [
-	  {
-		"gameID": 25758,
-		"round": "Round 6",
-		"teamHome": "Feilding Cricket Club Pak Design Premier 1",
-		"teamHomeLogo": "https://fixtura.s3.ap-southeast-2.amazonaws.com/logo_21_4a9066b25c.png",
-		"teamAwayLogo": "https://res.cloudinary.com/playhq/image/upload/v1/production/nzc/86b1f2c1-f7f6-4cf1-b7a7-bc9933b869d4/1667037583799/logo.jpg",
-		"teamAway": "PNBHS 1st XI",
-		"date": "Saturday, 18 November 2023",
-		"ground": "Kowhai Park / 1",
-		"type": "One Day",
-		"gender": "Men",
-		"ageGroup": "Senior/Open",
-		"gradeName": "Premier 1 One Day & Two Day"
-	  },
-	  {
-		"gameID": 25766,
-		"round": "Round 4",
-		"teamHome": "Marist Men P2 One Day",
-		"teamHomeLogo": "https://res.cloudinary.com/playhq/image/upload/v1/production/nzc/a8f28ea6-a5ba-47c3-a195-d4816bac8c97/1663756750874/logo.png",
-		"teamAwayLogo": "https://fixtura.s3.ap-southeast-2.amazonaws.com/logo_21_4a9066b25c.png",
-		"teamAway": "Feilding Cricket Club Yorb Premier 2 OneDayers",
-		"date": "Sunday, 19 November 2023",
-		"ground": "Manawaroa Park / 5 - McDonald's Manawatu",
-		"type": "One Day",
-		"gender": "Men",
-		"ageGroup": "Senior/Open",
-		"gradeName": "Premier 2 One Day"
-	  },
-	  {
-		"gameID": 25779,
-		"round": "Round 4",
-		"teamHome": "Dannevirke P1 Women",
-		"teamHomeLogo": "https://res.cloudinary.com/playhq/image/upload/v1/production/nzc/ff3c93d1-1f4e-4c85-b18c-990baf98d823/1658385479433/logo.jpg",
-		"teamAwayLogo": "https://fixtura.s3.ap-southeast-2.amazonaws.com/logo_21_4a9066b25c.png",
-		"teamAway": "Feilding Cricket Club Robin Young HR Womens",
-		"date": "Saturday, 18 November 2023",
-		"ground": "Dannevirke High School / 1A",
-		"type": "T20",
-		"gender": "Women",
-		"ageGroup": "Senior/Open",
-		"gradeName": "Premier 1 Womens"
-	  }
-	]
+		{
+		  "gameID": 1,
+		  "round": "Match 1",
+		  "teamHome": "India",
+		  "teamHomeLogo": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Default_ICON_171b58a21b.png",
+		  "teamAway": "Australia",
+		  "teamAwayLogo": null,
+		  "date": "Saturday, 8 October 2023",
+		  "ground": "MA Chidambaram Stadium, Chennai",
+		  "type": "ODI",
+		  "gender": "Men",
+		  "ageGroup": "Senior/Open",
+		  "gradeName": "World Cup"
+		},
+		{
+		  "gameID": 2,
+		  "round": "Match 2",
+		  "teamHome": "South Africa",
+		  "teamHomeLogo": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Default_ICON_171b58a21b.png",
+		  "teamAway": "Australia",
+		  "teamAwayLogo": null,
+		  "date": "Wednesday, 12 October 2023",
+		  "ground": "Bharat Ratna Shri Atal Bihari Vajpayee Ekana Cricket Stadium, Lucknow",
+		  "type": "ODI",
+		  "gender": "Men",
+		  "ageGroup": "Senior/Open",
+		  "gradeName": "World Cup"
+		},
+		{
+		  "gameID": 3,
+		  "round": "Match 3",
+		  "teamHome": "Australia",
+		  "teamHomeLogo": null,
+		  "teamAway": "England",
+		  "teamAwayLogo": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Default_ICON_171b58a21b.png",
+		  "date": "Sunday, 16 October 2023",
+		  "ground": "Eden Gardens, Kolkata",
+		  "type": "ODI",
+		  "gender": "Men",
+		  "ageGroup": "Senior/Open",
+		  "gradeName": "World Cup"
+		},
+		{
+		  "gameID": 4,
+		  "round": "Match 4",
+		  "teamHome": "New Zealand",
+		  "teamHomeLogo": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Default_ICON_171b58a21b.png",
+		  "teamAway": "Australia",
+		  "teamAwayLogo": null,
+		  "date": "Saturday, 22 October 2023",
+		  "ground": "Wankhede Stadium, Mumbai",
+		  "type": "ODI",
+		  "gender": "Men",
+		  "ageGroup": "Senior/Open",
+		  "gradeName": "World Cup"
+		},
+		{
+		  "gameID": 5,
+		  "round": "Match 5",
+		  "teamHome": "Pakistan",
+		  "teamHomeLogo": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Default_ICON_171b58a21b.png",
+		  "teamAway": "Australia",
+		  "teamAwayLogo": null,
+		  "date": "Thursday, 27 October 2023",
+		  "ground": "Vidarbha Cricket Association Stadium, Nagpur",
+		  "type": "ODI",
+		  "gender": "Men",
+		  "ageGroup": "Senior/Open",
+		  "gradeName": "World Cup"
+		}
+	  ]
+	  
+	  
   }

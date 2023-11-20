@@ -1,5 +1,3 @@
-// [club].js
-import { useState, useEffect } from "react";
 import { fetcher } from "../../../../lib/api";
 import Meta from "../../../../components/Layouts/Meta";
 import { P } from "../../../../components/Members/Common/Type";
@@ -8,15 +6,12 @@ import { Container } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
 import FixturaAndYourClubBanner from "../../../../components/HomePages/PLAYHQ/FixturaAndYourClub";
 
-import { Player } from "@remotion/player";
-import { Example_Video_Upcoming } from "../../../../remotion/templates/Basic/MarketingExamples/Example_Video_Upcoming";
-import DATA_FIXTURES from "../../../../remotion/utils/upcoming_v2.json";
-import { Sequence, Series } from "remotion";
-
+import { Previewer } from "./Previewer";
 const qs = require("qs");
-const ClubPage = ({ clubData }) => {
+
+const ClubPage = ({ clubData, useAssets }) => {
   const clubName = clubData.attributes.Name; // Adjust based on your data structure
-  console.log(clubData.attributes);
+
   const isMobile = useMediaQuery("(max-width: 768px)");
   const padding = isMobile ? 0 : "sm";
   const SectionData = {
@@ -29,6 +24,11 @@ const ClubPage = ({ clubData }) => {
       `Start your two-week free trial and embrace the Fixtura advantage.`,
     ],
   };
+
+  const SectionPlayer = {
+    title: "Preview",
+    paragraphs: [``],
+  };
   return (
     <>
       <Meta
@@ -39,11 +39,16 @@ const ClubPage = ({ clubData }) => {
       <FixturaAndYourClubBanner clubData={clubData.attributes} />
 
       <>
+        <Section {...SectionData} color="light"></Section>
+        <Section {...SectionPlayer} color="grey">
+          <Container p={padding}>
+            <Previewer clubData={clubData} useAssets={useAssets} />
+          </Container>
+        </Section>
         <Section {...SectionData} color="light">
           <Container p={padding}>
             <P>Hi {clubName}</P>
           </Container>
-          <RemotionPlayer clubData={clubData} />
         </Section>
       </>
     </>
@@ -62,110 +67,46 @@ export const getStaticPaths = async () => {
 };
 
 export const getStaticProps = async ({ params }) => {
-  console.log("params.club", params.club);
-
-  const query = qs.stringify(
+  // Fetch club data
+  const clubQuery = qs.stringify(
     {
       filters: {
-        Name: {
-          $eq: params.club,
-        },
+        Name: { $eq: params.club },
       },
       populate: ["Logo"],
     },
+    { encodeValuesOnly: true }
+  );
+
+  const assetQuery = qs.stringify(
     {
-      encodeValuesOnly: true,
-    }
-  );
-  const clubDataResponse = await fetcher(
-    `${process.env.NEXT_PUBLIC_STRAPI_URL}/clubs?${query}`
-  );
-  const clubData = clubDataResponse.data[0]; // Assuming the first match is correct
-
-  return {
-    props: {
-      clubData,
+      populate: ["asset_type", "asset_category"],
     },
-  };
-};
+    { encodeValuesOnly: true }
+  );
 
-const RemotionPlayer = ({ clubData }) => {
-  const [isMounted, setIsMounted] = useState(false);
-  const DATA = DATA_FIXTURES;
-  const isMobile = useMediaQuery("(max-width: 768px)");
-  const padding = isMobile ? 0 : "sm";
+  const clubDataResponse = await fetcher(
+    `${process.env.NEXT_PUBLIC_STRAPI_URL}/clubs?${clubQuery}`
+  );
 
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
-
-  if (!isMounted) {
-    return null;
+  if (!clubDataResponse || !clubDataResponse.data) {
+    // Handle error or return not found
+    return { notFound: true };
   }
 
-  return (
-    <Container p={padding}>
-      <Player
-        component={MyVideo}
-        durationInFrames={[
-          DATA.TIMINGS.FPS_INTRO,
-          DATA.TIMINGS.FPS_MAIN,
-          DATA.TIMINGS.FPS_OUTRO,
-        ].reduce((a, b) => a + b, 0)}
-        compositionHeight={1350}
-        compositionWidth={1080}
-        fps={30}
-        controls
-        inputProps={{
-          DATA: DATA,
-        }}
-        style={{
-          width: 1080 / 2,
-          height: 1350 / 2,
-        }}
-      />
-      {/* <Player
-        id={"UpComingFixtures"}
-        component={Example_Video_Upcoming}
-        durationInFrames={[
-          DATA.TIMINGS.FPS_INTRO,
-          DATA.TIMINGS.FPS_MAIN,
-          DATA.TIMINGS.FPS_OUTRO,
-        ].reduce((a, b) => a + b, 0)}
-        fps={30}
-        compositionHeight={1350}
-        compositionWidth={1080}
-        inputProps={{
-          DATA: DATA,
-        }}
-        controls
-        style={{
-          width: 1080 / 2,
-          height: 1350 / 2,
-        }}
-      /> */}
-    </Container>
-  );
-};
+  const clubData = clubDataResponse.data[0]; // Assuming the first match is correct
 
-const MyVideo = ({ DATA }) => {
-  console.log([
-    DATA.TIMINGS.FPS_INTRO,
-    DATA.TIMINGS.FPS_MAIN,
-    DATA.TIMINGS.FPS_OUTRO,
-  ].reduce((a, b) => a + b, 0))
-  return (
-    <>
-      <Sequence
-        durationInFrames={[
-          DATA.TIMINGS.FPS_INTRO,
-          DATA.TIMINGS.FPS_MAIN,
-          DATA.TIMINGS.FPS_OUTRO,
-        ].reduce((a, b) => a + b, 0)}
-        from={0}
-      >
-        <Example_Video_Upcoming DATA={DATA} />
-      </Sequence>
-    </>
+  // Fetch assets data
+  const assetsResponse = await fetcher(
+    `${process.env.NEXT_PUBLIC_STRAPI_URL}/assets?${assetQuery}`
   );
+
+  if (!assetsResponse || !assetsResponse.data) {
+    // Handle error or default to an empty array
+    return { props: { clubData, useAssets: [] } };
+  }
+
+  const useAssets = assetsResponse.data;
+
+  return { props: { clubData, useAssets } };
 };

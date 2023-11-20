@@ -1,8 +1,8 @@
 /* eslint-disable camelcase */
-import { loadFont } from "@remotion/google-fonts/Heebo";
-import { Top5List } from "../Compositions/Top5List";
 
-export const Example_Video_Top5Bowlers = (props) => {
+import { loadFont } from "@remotion/google-fonts/Heebo";
+import { WeekendResults } from "../Compositions/WeekendResults";
+export const Example_Video_WEEKENDRESULTS = (props) => {
   const { DATA } = props;
   const { fontFamily } = loadFont();
   const { TIMINGS } = DATA;
@@ -21,5 +21,5 @@ export const Example_Video_Top5Bowlers = (props) => {
     TemplateVariation: DATA.VIDEOMETA.Video.TemplateVariation,
   };
 
-  return <Top5List {...commonProps} TYPE="BOWLING" />;
+  return <WeekendResults {...commonProps} />;
 };

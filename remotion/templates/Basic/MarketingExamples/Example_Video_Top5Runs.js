@@ -28,49 +28,5 @@ export const Example_Video_Top5Runs = (props) => {
 	};
 
 	console.log(commonProps)
-	return (
-		<ThemeProvider theme={THEME}>
-			<AbsoluteFill>
-				<BGImageAnimation
-					HeroImage={DATA.VIDEOMETA.Video.HeroImage}
-					TIMINGS={TIMINGS.FPS_MAIN + 210}
-					THEME={THEME}
-				/>
-				<AbsoluteFill style={{zIndex: 1000}}>
-					<Series>
-						<Series.Sequence durationInFrames={TIMINGS.FPS_INTRO}>
-							<TitleSequenceFrame
-								THEME={THEME}
-								fontFamily={fontFamily}
-								FPS_INTRO={TIMINGS.FPS_INTRO}
-								VIDEOMETA={DATA.VIDEOMETA}
-							/>
-						</Series.Sequence>
-						<Series.Sequence durationInFrames={TIMINGS.FPS_MAIN}>
-							<Top5List {...commonProps} TYPE="BATTING" />
-						</Series.Sequence>
-						<Series.Sequence durationInFrames={TIMINGS.FPS_OUTRO}>
-							<OutroSequenceFrame
-								theme={THEME}
-								fontFamily={fontFamily}
-								FPS={TIMINGS.FPS_OUTRO}
-								DATA={DATA}
-							/>
-						</Series.Sequence>
-					</Series>
-				</AbsoluteFill>
-				<Audio
-					volume={(f) =>
-						interpolate(
-							f,
-							[CompositionLength(DATA) - 30, CompositionLength(DATA)],
-							[0.7, 0],
-							{extrapolateLeft: 'clamp'}
-						)
-					}
-					src={`${DATA.VIDEOMETA.Video.audio_option}`}
-				/>
-			</AbsoluteFill>
-		</ThemeProvider>
-	);
+	return (<Top5List {...commonProps} TYPE="BATTING" />);
 };
