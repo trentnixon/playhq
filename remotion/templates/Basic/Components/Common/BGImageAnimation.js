@@ -39,6 +39,7 @@ export const BGImageAnimation = ({HeroImage, TIMINGS, THEME}) => {
 	let style = {};
 
 	if (url) {
+		console.log("url", url)
 		if (ratio === 'landscape') {
 			style = landscapeAnimation(frame, TIMINGS, direction);
 		} else if (ratio === 'portrait') {
