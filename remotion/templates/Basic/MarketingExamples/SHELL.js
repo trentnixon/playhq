@@ -5,9 +5,7 @@ import { loadFont } from "@remotion/google-fonts/Heebo";
 import { BGImageAnimation } from "../Components/Common/BGImageAnimation";
 import { TitleSequenceFrame } from "../Components/Intro";
 import { OutroSequenceFrame } from "../Components/Outro";
-import { Fixtures } from "../Compositions/UpcomingFixtures";
 import { CompositionLength } from "../../../utils/helpers";
-import { WeekendResults } from "../Compositions/WeekendResults";
 
 export const ExampleSHELL = (props) => {
   const { DATA } = props;
@@ -32,9 +30,9 @@ export const ExampleSHELL = (props) => {
             VIDEOMETA={DATA.VIDEOMETA}
           />
         </Sequence>
-        <Sequence durationInFrames={TIMINGS.FPS_MAIN} from={TIMINGS.FPS_INTRO}>
-          children
-         {/*  {props.children} */}
+        {/* <Sequence durationInFrames={TIMINGS.FPS_MAIN} from={TIMINGS.FPS_INTRO}>
+      
+           {props.children}
         </Sequence>
         <Sequence
           durationInFrames={TIMINGS.FPS_OUTRO}
@@ -47,7 +45,7 @@ export const ExampleSHELL = (props) => {
             DATA={DATA}
             from={TIMINGS.FPS_INTRO + TIMINGS.FPS_MAIN}
           />
-        </Sequence>
+        </Sequence> */}
 
         <Audio
           volume={(f) =>
