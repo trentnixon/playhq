@@ -19,35 +19,34 @@ export const ExampleSHELL = (props) => {
   return (
     <ThemeProvider theme={THEME}>
       <AbsoluteFill>
-       {/*  <BGImageAnimation
+        <BGImageAnimation
           HeroImage={DATA.VIDEOMETA.Video.HeroImage}
           TIMINGS={TIMINGS.FPS_MAIN + 210}
           THEME={THEME}
-        /> */}
+        />
         <Sequence durationInFrames={TIMINGS.FPS_INTRO} from={0}>
-          {/* <TitleSequenceFrame
+          <TitleSequenceFrame
             THEME={THEME}
             fontFamily={fontFamily}
             FPS_INTRO={TIMINGS.FPS_INTRO}
             VIDEOMETA={DATA.VIDEOMETA}
-          /> */}
-          intro
+          />
         </Sequence>
         <Sequence durationInFrames={TIMINGS.FPS_MAIN} from={TIMINGS.FPS_INTRO}>
-          {props.children}
+          children
+         {/*  {props.children} */}
         </Sequence>
         <Sequence
           durationInFrames={TIMINGS.FPS_OUTRO}
           from={TIMINGS.FPS_INTRO + TIMINGS.FPS_MAIN}
         >
-          outro
-          {/* <OutroSequenceFrame
+          <OutroSequenceFrame
             theme={THEME}
             fontFamily={fontFamily}
             FPS={TIMINGS.FPS_OUTRO}
             DATA={DATA}
             from={TIMINGS.FPS_INTRO + TIMINGS.FPS_MAIN}
-          /> */}
+          />
         </Sequence>
 
         <Audio
