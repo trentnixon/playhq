@@ -17,14 +17,15 @@ import {
 export const RemotionPlayer = ({ clubData, selectedMedia }) => {
   const [isMounted, setIsMounted] = useState(false);
   const [data, setData] = useState({});
-
+  const DEFAULTLOGO =
+    "https://fixtura.s3.ap-southeast-2.amazonaws.com/Default_ICON_171b58a21b.png";
   //console.log("selectedMedia", selectedMedia);
   const ASSETS = {
     UpComingFixtures: {
       component: UpComingFixtures,
       DATA: DATA_FIXTURES,
     },
-    /*  WeekendResults: {
+    WeekendResults: {
       component: WeekendResults,
       DATA: DATA_RESULTS,
     },
@@ -39,7 +40,7 @@ export const RemotionPlayer = ({ clubData, selectedMedia }) => {
     Ladder: {
       component: Ladder,
       DATA: DATA_LADDER,
-    }, */
+    },
   };
 
   useEffect(() => {
@@ -49,7 +50,11 @@ export const RemotionPlayer = ({ clubData, selectedMedia }) => {
       ASSETS[selectedMedia.CompositionID]
     ) {
       const currentAsset = ASSETS[selectedMedia.CompositionID];
-      let updatedData = updateDataWithClubInfo(clubData, currentAsset.DATA);
+      let updatedData = updateDataWithClubInfo(
+        clubData,
+        currentAsset.DATA,
+        DEFAULTLOGO
+      );
 
       // Additional check for logo data
       const logoUrl = clubData.attributes.Logo.data
@@ -69,21 +74,25 @@ export const RemotionPlayer = ({ clubData, selectedMedia }) => {
     }
   }, [clubData, selectedMedia, ASSETS]);
 
-  const updateDataWithClubInfo = (clubData, initialData) => {
+  const updateDataWithClubInfo = (clubData, initialData, defaultLogo) => {
     const updatedData = { ...initialData };
-    const useLOGO = clubData.attributes.Logo.data
-      ? clubData.attributes.Logo.data
-      : clubData.attributes.ParentLogo;
-
+    
+    // Determine the logo to use: Club Logo > Parent Logo > Default Logo
+    const useLOGO = clubData.attributes.Logo?.data || 
+                    clubData.attributes.ParentLogo || 
+                    defaultLogo;
+  
     updatedData.VIDEOMETA.Club.Name = clubData.attributes.Name;
     updatedData.VIDEOMETA.Club.Logo = useLOGO;
+    
     updatedData.DATA.forEach((game) => {
-      if (!game.teamHomeLogo) game.teamHomeLogo = useLOGO;
-      if (!game.teamAwayLogo) game.teamAwayLogo = useLOGO;
+      game.teamHomeLogo = game.teamHomeLogo || useLOGO;
+      game.teamAwayLogo = game.teamAwayLogo || useLOGO;
     });
-
+  
     return updatedData;
   };
+  
 
   useEffect(() => {
     setIsMounted(true);
