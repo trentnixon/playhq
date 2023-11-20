@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import {Series} from 'remotion';
+import {Sequence, Series} from 'remotion';
 
 import {LadderPositions} from './Sections';
 import {LadderContainer} from './Sections/LadderContainer';
@@ -9,10 +9,10 @@ export const LadderMain = (props) => {
 	const {DATA, FPS_LADDER} = props;
 	return (
 		<FixtureContainer>
-			<Series>
+		
 				{DATA.map((item, index) => {
 					return (
-						<Series.Sequence key={index} durationInFrames={FPS_LADDER}>
+						<Sequence key={index} durationInFrames={FPS_LADDER} from={FPS_LADDER*index}>
 							<LadderContainer>
 								<LadderPositions
 									key={`${index}_${index}`}
@@ -21,10 +21,10 @@ export const LadderMain = (props) => {
 									{...props}
 								/>
 							</LadderContainer>
-						</Series.Sequence>
+						</Sequence>
 					);
 				})}
-			</Series>
+			
 		</FixtureContainer>
 	);
 };

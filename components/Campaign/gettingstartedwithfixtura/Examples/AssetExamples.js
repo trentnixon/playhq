@@ -1,9 +1,9 @@
 import { Sequence } from "remotion";
-import { Example_Video_Upcoming } from "../../../../../remotion/templates/Basic/MarketingExamples/Example_Video_Upcoming";
-import { Example_Video_WEEKENDRESULTS } from "../../../../../remotion/templates/Basic/MarketingExamples/Example_Video_WeekendResults";
-import { ExampleSHELL } from "../../../../../remotion/templates/Basic/MarketingExamples/SHELL";
-import { Example_Video_Top5Runs } from "../../../../../remotion/templates/Basic/MarketingExamples/Example_Video_Top5Runs";
-import { Example_Video_Ladder } from "../../../../../remotion/templates/Basic/MarketingExamples/Example_Video_Ladder";
+import { Example_Video_Upcoming } from "../../../../remotion/templates/Basic/MarketingExamples/Example_Video_Upcoming";
+import { Example_Video_WEEKENDRESULTS } from "../../../../remotion/templates/Basic/MarketingExamples/Example_Video_WeekendResults";
+import { ExampleSHELL } from "../../../../remotion/templates/Basic/MarketingExamples/SHELL";
+import { Example_Video_Top5Runs } from "../../../../remotion/templates/Basic/MarketingExamples/Example_Video_Top5Runs";
+import { Example_Video_Ladder } from "../../../../remotion/templates/Basic/MarketingExamples/Example_Video_Ladder";
 export const UpComingFixtures = ({ DATA }) => {
   return (
     <>

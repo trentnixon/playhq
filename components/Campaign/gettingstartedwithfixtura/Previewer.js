@@ -1,9 +1,7 @@
 import { useState } from "react";
-
 import { Grid, Select } from "@mantine/core";
-
 import { MediaTabs } from "./MediaTabs";
-import { P } from "../../../../components/Members/Common/Type";
+import { P } from "../../Members/Common/Type";
 
 function groupAssetsByCategory(assets) {
   return assets.reduce((groupedAssets, asset) => {
@@ -25,11 +23,9 @@ function groupAssetsByCategory(assets) {
 }
 
 export const Previewer = ({ clubData, useAssets }) => {
-    const groupedAssets = groupAssetsByCategory(useAssets);
+  const groupedAssets = groupAssetsByCategory(useAssets);
   const [selectedTab, setSelectedTab] = useState("VIDEO");
   const [selectedMedia, setSelectedMedia] = useState(null);
-
- 
 
   const mediaOptions = groupedAssets[selectedTab]?.map((asset) => ({
     value: asset.id, // Assuming each asset has a unique id
@@ -49,22 +45,22 @@ export const Previewer = ({ clubData, useAssets }) => {
     <Grid>
       <Grid.Col span={6}>
         <P>Select a Media Type to preview</P>
-        {/* <MediaTabs
+        <MediaTabs
           clubData={clubData}
           selectedTab={selectedTab}
           setSelectedTab={setSelectedTab}
           selectedMedia={selectedMedia}
-        /> */}
+        />
       </Grid.Col>
 
       <Grid.Col span={6}>
-       {/*  [Title] [small instruction text] [Asset Selector] [color selector] */}
-       {/*  <Select
+         [Title] [small instruction text] [Asset Selector] [color selector]
+        <Select
           label="Choose Media Option"
           value={selectedMedia?.id}
           onChange={handleMediaChange}
           data={mediaOptions || []}
-        /> */}
+        />
         {/* <Controls clubData={clubData} /> */}
       </Grid.Col>
     </Grid>

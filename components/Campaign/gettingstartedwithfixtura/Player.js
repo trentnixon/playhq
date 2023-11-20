@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 import { Player } from "@remotion/player";
-import DATA_FIXTURES from "../../../../remotion/utils/upcoming_v2.json";
-import DATA_RESULTS from "../../../../remotion/utils/WeekendResultsV2.json";
-import DATA_TOP5RUNS from "../../../../remotion/utils/Top5RunsV2.json";
-import DATA_TOP5WICKETS from "../../../../remotion/utils/Top5WicketsV2.json";
-import DATA_LADDER from "../../../../remotion/utils/LadderV2.json";
-import { getDominantColors } from "../../../../remotion/utils/colors";
+import DATA_FIXTURES from "../../../remotion/utils/upcoming_v2.json";
+import DATA_RESULTS from "../../../remotion/utils/WeekendResultsV2.json";
+import DATA_TOP5RUNS from "../../../remotion/utils/Top5RunsV2.json";
+import DATA_TOP5WICKETS from "../../../remotion/utils/Top5WicketsV2.json";
+import DATA_LADDER from "../../../remotion/utils/LadderV2.json";
+import { getDominantColors } from "../../../remotion/utils/colors";
 import {
   UpComingFixtures,
   WeekendResults,
@@ -18,7 +18,7 @@ export const RemotionPlayer = ({ clubData, selectedMedia }) => {
   const [isMounted, setIsMounted] = useState(false);
   const [data, setData] = useState({});
 
-  console.log("selectedMedia", selectedMedia);
+  //console.log("selectedMedia", selectedMedia);
   const ASSETS = {
     UpComingFixtures: {
       component: UpComingFixtures,

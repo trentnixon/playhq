@@ -6,7 +6,7 @@ import { Container } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
 import FixturaAndYourClubBanner from "../../../../components/HomePages/PLAYHQ/FixturaAndYourClub";
 
-import { Previewer } from "./Previewer";
+import { Previewer } from "../../../../components/Campaign/gettingstartedwithfixtura/Previewer";
 const qs = require("qs");
 
 const ClubPage = ({ clubData, useAssets }) => {
