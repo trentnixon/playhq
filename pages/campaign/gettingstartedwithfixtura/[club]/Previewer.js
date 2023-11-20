@@ -49,22 +49,22 @@ export const Previewer = ({ clubData, useAssets }) => {
     <Grid>
       <Grid.Col span={6}>
         <P>Select a Media Type to preview</P>
-        <MediaTabs
+        {/* <MediaTabs
           clubData={clubData}
           selectedTab={selectedTab}
           setSelectedTab={setSelectedTab}
           selectedMedia={selectedMedia}
-        />
+        /> */}
       </Grid.Col>
 
       <Grid.Col span={6}>
-        [Title] [small instruction text] [Asset Selector] [color selector]
-        <Select
+       {/*  [Title] [small instruction text] [Asset Selector] [color selector] */}
+       {/*  <Select
           label="Choose Media Option"
           value={selectedMedia?.id}
           onChange={handleMediaChange}
           data={mediaOptions || []}
-        />
+        /> */}
         {/* <Controls clubData={clubData} /> */}
       </Grid.Col>
     </Grid>
