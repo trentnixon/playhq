@@ -19,11 +19,11 @@ export const ExampleSHELL = (props) => {
   return (
     <ThemeProvider theme={THEME}>
       <AbsoluteFill>
-        <BGImageAnimation
+        {/* <BGImageAnimation
           HeroImage={DATA.VIDEOMETA.Video.HeroImage}
           TIMINGS={TIMINGS.FPS_MAIN + 210}
           THEME={THEME}
-        />
+        /> */}
         <Sequence durationInFrames={TIMINGS.FPS_INTRO} from={0}>
           <TitleSequenceFrame
             THEME={THEME}
