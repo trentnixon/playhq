@@ -6,8 +6,6 @@ import { FixturesMain } from "./Fixtures";
 import { PrincipalBodySponsor } from "../../Components/Intro/PrincipalSponsor";
 
 export const Fixtures = (props) => {
-  const { FPS_MAIN } = props;
-
   return (
     <>
       <LogoClubTitleHeader {...props} />
