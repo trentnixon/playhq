@@ -7,6 +7,7 @@ import { useMediaQuery } from "@mantine/hooks";
 import FixturaAndYourClubBanner from "../../../../components/HomePages/PLAYHQ/FixturaAndYourClub";
 
 import { Previewer } from "../../../../components/Campaign/gettingstartedwithfixtura/Previewer";
+import CtaAreaTwo from "../../../../components/Common/CtaAreaTwo";
 const qs = require("qs");
 
 const ClubPage = ({ clubData, useAssets }) => {
@@ -15,20 +16,24 @@ const ClubPage = ({ clubData, useAssets }) => {
   const isMobile = useMediaQuery("(max-width: 768px)");
   const padding = isMobile ? 0 : "sm";
   const SectionData = {
-    title:
-      "Starting at Only $20 a Week, Discover Fixtura's Revolutionary Digital Content for Your Club!",
+    title: `${clubName} Starting at Only $20 a Week`,
     paragraphs: [
-      `Transform your club's digital narrative with Fixtura's elite content services, starting at just $20 a week. Experience a unique blend of creativity and AI-driven precision in crafting engaging fixture posts and captivating club stories.`,
-
       `Embark on your Fixtura journey today with a no-obligation two-week free trial and unlock the power of affordable, professional-grade digital storytelling.`,
       `Start your two-week free trial and embrace the Fixtura advantage.`,
     ],
   };
 
-  const SectionPlayer = {
-    title: "Preview",
+  const SectionCaseStudies = {
+    title: "Case Studies",
     paragraphs: [``],
   };
+  const SectionPlayer = {
+    title: "Playground - Your Creative Hub",
+    paragraphs: [
+      "Step into the Playground, your gateway to crafting personalized cricket media. From vibrant videos to bespoke graphics and articles, preview and customize each asset to echo your club's spirit. Select, stylize, and see your club's colors and logo in action, bringing a unique flair to every creation."
+    ],
+  };
+  
   return (
     <>
       <Meta
@@ -38,21 +43,20 @@ const ClubPage = ({ clubData, useAssets }) => {
       />
       <FixturaAndYourClubBanner clubData={clubData.attributes} />
 
-      <>
+      <> 
         <Section {...SectionData} color="light"></Section>
         <Section {...SectionPlayer} color="grey">
           <Container p={padding}>
             <Previewer clubData={clubData} useAssets={useAssets} />
-          </Container> 
-        </Section> 
-        <Section {...SectionData} color="light">
-          <Container p={padding}>
-            <P>Hi {clubName}</P>
           </Container>
         </Section>
+        <Section {...SectionCaseStudies} color="light">
+          <Container p={padding}>Case Studies</Container>
+        </Section>
+        <CtaAreaTwo />
       </>
     </>
-  );
+  ); 
 };
 
 export default ClubPage;

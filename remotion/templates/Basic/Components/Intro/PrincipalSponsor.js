@@ -198,7 +198,7 @@ export const PrincipalBodySponsor = (props) => {
 		getPrimarySponsor(VIDEOMETA.Club.Sponsors).Logo,
 		IMGSIZING
 	);
-	console.log(props.TIMINGS.FPS_INTRO);
+
 	return (
 		<PrincipalBodyLogo
 			style={{

@@ -193,8 +193,6 @@ export const TeamsAndScores = (props) => {
 
 	const primaryColor = props.THEME.primary;
 
-	console.log(homeTeam);
-
 	const IMGSIZING = [80, 80, 80];
 	const teamHomeLogoStyles = useImageDimensions(teamHomeLogo, IMGSIZING);
 	const teamAwayLogoStyles = useImageDimensions(teamAwayLogo, IMGSIZING);

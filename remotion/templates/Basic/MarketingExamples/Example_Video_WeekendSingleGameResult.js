@@ -1,9 +1,9 @@
 /* eslint-disable camelcase */
-import { loadFont } from "@remotion/google-fonts/Heebo";
-import { Top5List } from "../Compositions/Top5List";
 
-export const Example_Video_Top5Runs = (props) => {
-  const { DATA, TYPE } = props;
+import { loadFont } from "@remotion/google-fonts/Heebo";
+import { WeekendSingleGameResult } from "../Compositions/WeekendSingleGameResult";
+export const Example_Video_WeekendSingleGameResult= (props) => {
+  const { DATA } = props;
   const { fontFamily } = loadFont();
   const { TIMINGS } = DATA;
 
@@ -21,5 +21,5 @@ export const Example_Video_Top5Runs = (props) => {
     TemplateVariation: DATA.VIDEOMETA.Video.TemplateVariation,
   };
 
-  return <Top5List {...commonProps} TYPE={TYPE} />;
+  return <WeekendSingleGameResult {...commonProps} />;
 };

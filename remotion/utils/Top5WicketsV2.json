@@ -29,6 +29,7 @@
         "FPS_OUTRO": 180,
         "FPS_MAIN": 360
       },
+      "FRAMES": [100,360],
       "includeSponsors": false
     },
     "Club": {
@@ -43,100 +44,54 @@
         }
       ]
     },
-    "DATA": [
-      {
-        "name": "Jake Serotsky",
-        "key": 6,
-        "param1": 10,
-        "param2": 31,
-        "playedFor": "Tikipunga Premier",
-        "playedAgainst": "Kensington CC Premiers",
-        "teamLogo": "https://res.cloudinary.com/playhq/image/upload/v1/production/nzc/85f2c61c-c827-4798-8284-cb00d2a069fc/1655678435700/logo.png"
-      },
-      {
-        "name": "Hayden Greene",
-        "key": 5,
-        "param1": 8,
-        "param2": 29,
-        "playedFor": "Wellsford 40 (S)",
-        "playedAgainst": "Duracrete City Reserves 40 (S)",
-        "teamLogo": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Default_ICON_171b58a21b.png"
-      },
-      {
-        "name": "Zachary West",
-        "key": 5,
-        "param1": 7,
-        "param2": 31,
-        "playedFor": "Seeka Kerikeri Cricket Colts",
-        "playedAgainst": "Barfoot and Thompson Kerikeri Cricket Club 40 (N)",
-        "teamLogo": "https://res.cloudinary.com/playhq/image/upload/v1/production/nzc/fc0163fb-3fd9-4895-af1e-5077499502c6/1692093146341/logo.jpg"
-      },
-      {
-        "name": "Ravi Somal",
-        "key": 4,
-        "param1": 1,
-        "param2": 3,
-        "playedFor": "Signature Homes BBCC 40 (S)",
-        "playedAgainst": "Pakiri 40 (S)",
-        "teamLogo": "https://res.cloudinary.com/playhq/image/upload/v1/production/nzc/bda4ddb7-352e-4683-8369-2f2c2a3755aa/1670409190956/logo.jpg"
-      },
-      {
-        "name": "Vaisakh Bijukumar (vc)",
-        "key": 4,
-        "param1": 8,
-        "param2": 21,
-        "playedFor": "Signature Homes BBCC 40 (S)",
-        "playedAgainst": "Pakiri 40 (S)",
-        "teamLogo": "https://res.cloudinary.com/playhq/image/upload/v1/production/nzc/bda4ddb7-352e-4683-8369-2f2c2a3755aa/1670409190956/logo.jpg"
-      }
-    ],
     "grouping_category": "Senior Club Cricket"
   },
   "DATA": [
     {
-      "name": "Jake Serotsky",
+      "name": "Pat Cummins",
       "key": 6,
       "param1": 10,
       "param2": 31,
-      "playedFor": "Tikipunga Premier",
-      "playedAgainst": "Kensington CC Premiers",
-      "teamLogo": "https://res.cloudinary.com/playhq/image/upload/v1/production/nzc/85f2c61c-c827-4798-8284-cb00d2a069fc/1655678435700/logo.png"
+      "playedFor": "Australian National Team",
+      "playedAgainst": "New Zealand National Team",
+      "teamLogo": "https://example.com/pat-cummins-logo.png"
     },
     {
-      "name": "Hayden Greene",
+      "name": "Trent Boult",
       "key": 5,
       "param1": 8,
       "param2": 29,
-      "playedFor": "Wellsford 40 (S)",
-      "playedAgainst": "Duracrete City Reserves 40 (S)",
-      "teamLogo": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Default_ICON_171b58a21b.png"
+      "playedFor": "New Zealand National Team",
+      "playedAgainst": "Australian National Team",
+      "teamLogo": "https://example.com/trent-boult-logo.png"
     },
     {
-      "name": "Zachary West",
+      "name": "Mitchell Starc",
       "key": 5,
       "param1": 7,
       "param2": 31,
-      "playedFor": "Seeka Kerikeri Cricket Colts",
-      "playedAgainst": "Barfoot and Thompson Kerikeri Cricket Club 40 (N)",
-      "teamLogo": "https://res.cloudinary.com/playhq/image/upload/v1/production/nzc/fc0163fb-3fd9-4895-af1e-5077499502c6/1692093146341/logo.jpg"
+      "playedFor": "Australian National Team",
+      "playedAgainst": "New Zealand National Team",
+      "teamLogo": "https://example.com/mitchell-starc-logo.jpg"
     },
     {
-      "name": "Ravi Somal",
+      "name": "Tim Southee",
       "key": 4,
       "param1": 1,
       "param2": 3,
-      "playedFor": "Signature Homes BBCC 40 (S)",
-      "playedAgainst": "Pakiri 40 (S)",
-      "teamLogo": "https://res.cloudinary.com/playhq/image/upload/v1/production/nzc/bda4ddb7-352e-4683-8369-2f2c2a3755aa/1670409190956/logo.jpg"
+      "playedFor": "New Zealand National Team",
+      "playedAgainst": "Australian National Team",
+      "teamLogo": "https://example.com/tim-southee-logo.jpg"
     },
     {
-      "name": "Vaisakh Bijukumar (vc)",
+      "name": "Josh Hazlewood",
       "key": 4,
       "param1": 8,
       "param2": 21,
-      "playedFor": "Signature Homes BBCC 40 (S)",
-      "playedAgainst": "Pakiri 40 (S)",
-      "teamLogo": "https://res.cloudinary.com/playhq/image/upload/v1/production/nzc/bda4ddb7-352e-4683-8369-2f2c2a3755aa/1670409190956/logo.jpg"
+      "playedFor": "Australian National Team",
+      "playedAgainst": "New Zealand National Team",
+      "teamLogo": "https://example.com/josh-hazlewood-logo.jpg"
     }
   ]
+  
 }

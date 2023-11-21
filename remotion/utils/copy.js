@@ -38,7 +38,13 @@ export const restrictName = (name, maxLength) => {
 	return `${firstNameInitial}. ${lastName}`;
   }; 
 
-export  function removeEmojis(str) {
+  export function removeEmojis(str) {
+	// Check if str is a string
+	if (typeof str !== 'string') {
+	  // Handle non-string input, could return an empty string or some default value
+	  return '';
+	}
+  
 	const regex = /[\u0000-\u007F\u0080-\u00FF\u0100-\u017F\u0180-\u024F\u1E00-\u1EFF]/g;
 	return str.match(regex) ? str.match(regex).join('') : '';
   }
