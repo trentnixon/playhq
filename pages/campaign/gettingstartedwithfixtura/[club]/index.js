@@ -8,6 +8,7 @@ import FixturaAndYourClubBanner from "../../../../components/HomePages/PLAYHQ/Fi
 
 import { Previewer } from "../../../../components/Campaign/gettingstartedwithfixtura/Previewer";
 import CtaAreaTwo from "../../../../components/Common/CtaAreaTwo";
+import Feedback from "../../../../components/Common/Feedback";
 const qs = require("qs");
 
 const ClubPage = ({ clubData, useAssets }) => {
@@ -16,19 +17,19 @@ const ClubPage = ({ clubData, useAssets }) => {
   const isMobile = useMediaQuery("(max-width: 768px)");
   const padding = isMobile ? 0 : "sm";
   const SectionData = {
-    title: `${clubName} Starting at Only $20 a Week`,
+    title: `Direct PlayHQ Integration, Instant Digital Assets`,
     paragraphs: [
-      `Embark on your Fixtura journey today with a no-obligation two-week free trial and unlock the power of affordable, professional-grade digital storytelling.`,
-      `Start your two-week free trial and embrace the Fixtura advantage.`,
+      `Elevate ANU Cricket Club Juniors with Fixtura.`,
+      `For just $20 a week, get full access to tailored videos, graphics, and articles that celebrate your team's achievements. Experience the ease of automated content generation—your PlayHQ data now delivers more than just scores.`,
     ],
   };
 
   const SectionCaseStudies = {
-    title: "Case Studies",
+    title: "How Fixtura is Helping",
     paragraphs: [``],
   };
   const SectionPlayer = {
-    title: "Playground - Your Creative Hub",
+    title: "Try Fixtura Today",
     paragraphs: [
       "Step into the Playground, your gateway to crafting personalized cricket media. From vibrant videos to bespoke graphics and articles, preview and customize each asset to echo your club's spirit. Select, stylize, and see your club's colors and logo in action, bringing a unique flair to every creation."
     ],
@@ -51,7 +52,7 @@ const ClubPage = ({ clubData, useAssets }) => {
           </Container>
         </Section>
         <Section {...SectionCaseStudies} color="light">
-          <Container p={padding}>Case Studies</Container>
+          <Feedback />
         </Section>
         <CtaAreaTwo />
       </> 

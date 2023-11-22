@@ -19,7 +19,10 @@ const FixturaAndYourClubBanner = ({ clubData }) => {
   console.log(useLOGO);
   return (
     <>
-      <div className="hero-banner video-studio overly-0" style={{height:"60vh"}}>
+      <div
+        className="hero-banner video-studio overly-0"
+        style={{ height: "60vh" }}
+      >
         <MainCSSBanner />
 
         <div className="d-table">
@@ -51,7 +54,8 @@ const FixturaAndYourClubBanner = ({ clubData }) => {
                     </div>
                     <Image
                       src={useLOGO}
-                      width={"200px"}
+                      height={"130px"}
+                      width={"auto"}
                       sx={{
                         "@media (max-width: 48em)": {
                           innerWidth: "40%",
@@ -66,10 +70,10 @@ const FixturaAndYourClubBanner = ({ clubData }) => {
                   <P
                     textAlign={"center"}
                     Weight="900"
-                    size="xl"
-                    color="#1688D0"
+                    size="2.3em"
+                    color="#fff"
                   >
-                    Tailored Digital Content for {clubData.Name}
+                    Digital Excellence for {clubData.Name} at $20/Week
                   </P>
                 </div>
 

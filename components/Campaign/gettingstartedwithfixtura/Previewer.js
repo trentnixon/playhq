@@ -5,6 +5,7 @@ import { GradientTitle, H, P } from "../../Members/Common/Type";
 import { IconCircle, IconCircleCheck } from "@tabler/icons";
 import ColorPickerComponent from "./ColorPickerComponent";
 import ImageUploader from "./ImageUploader";
+import { IconAlertCircle, IconShieldOff } from "@tabler/icons-react";
 function groupAssetsByCategory(assets) {
   // Define the list of CompositionIDs to exclude
   const excludeTerms = [
@@ -12,6 +13,8 @@ function groupAssetsByCategory(assets) {
     "Up Coming Fixtures (Twitter)",
     "Weekend Results (Long Form)",
     "Weekend Results (Twitter)",
+    "Stumps Review (Twitter)",
+    "Stumps Review (Article)",
   ];
 
   return assets.reduce((groupedAssets, asset) => {
@@ -104,19 +107,22 @@ export const Previewer = ({ clubData, useAssets }) => {
           userColors={userColors}
           userlogoUrl={logoUrl}
         />
-        <Paper p={10} my={10} withBorder style={{ backgroundColor:"#dee2e6"}}>
-          <P marginBottom={0}>
-            Explore with our Free Basic template, available to all users.
-            Looking for something more personalized? Contact us to integrate
-            your own designs into Fixtura and enhance your club's uniqueness.
-          </P>
-        </Paper >
-        <Paper p={10} my={10} withBorder style={{ backgroundColor:"#dee2e6"}}>
-          <P marginBottom={0}>
-            The data in videos and graphics is a fun showcase of Fixtura's
-            capabilities, featuring your fixtures and leagues. The write-ups use
-            real-world content from our 23/24 season, bringing authentic stories
-            to your club's media.
+        
+
+        <Paper
+          p={10}
+          my={10}
+          withBorder
+          style={{
+            backgroundColor: "#dee2e6",
+            display: "flex",
+            alignItems: "center",
+          }}
+        >
+          <IconShieldOff size={'4em'} style={{ marginRight: "10px" }} />
+          <P marginBottom={0} style={{ flex: 1 }}>
+          Our videos and graphics blend international teams with your club's details to demonstrate Fixtura's dynamic capabilities. The write-ups are examples from the real world, modified for privacy by removing names and teams. Experience a realistic preview, while we ensure the confidentiality of personal information.
+
           </P>
         </Paper>
       </Grid.Col>
@@ -157,10 +163,27 @@ export const Previewer = ({ clubData, useAssets }) => {
         <Paper
           p={10}
           withBorder
-          shadow="lg"
+          shadow="md"
+          mb={20}
           style={{ backgroundColor: "#495057" }}
         >
           <ColorPickerComponent onColorChange={handleColorChange} />
+        </Paper>
+        <Paper
+          p={10}
+          my={10}
+          withBorder
+          style={{
+            backgroundColor: "#dee2e6",
+            display: "flex",
+            alignItems: "center",
+          }}
+        >
+          <IconAlertCircle size={'4em'} style={{ marginRight: "10px" }} />
+          <P marginBottom={0} style={{ flex: 1 }}>
+            Looking for something more personalized? Contact us to integrate
+            your own designs into Fixtura and enhance your club's uniqueness.
+          </P>
         </Paper>
       </Grid.Col>
     </Grid>
