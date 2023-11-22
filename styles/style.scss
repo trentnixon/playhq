@@ -82,6 +82,38 @@ $transition: all 0.5s ease;
   .bg-2C2E33{
     background-color: #373A40;
 }
+.markdown h1 {
+    text-decoration: none;
+    font-size: 1.15rem;
+    font-weight: 700;
+    text-align: left;
+    line-height: 1.4rem;
+    font-style: normal;
+    color: #495057;
+    margin-bottom: 10px;
+  }
+
+  .markdown h2,.markdown h3 {
+    text-decoration: none;
+    font-size: 1.15rem;
+    font-weight: 700;
+    text-align: left;
+    line-height: 1.4rem;
+    font-style: normal;
+    color: #495057;
+    margin-bottom: 10px;
+  }
+  
+  .markdown p {
+    text-decoration: none;
+    font-size: .95rem;
+    font-weight: 400;
+    text-align: left;
+    line-height: 1.3rem;
+    font-style: normal;
+    color: #495057;
+    margin-bottom: 10px;
+  }
 body {
     padding: 0;
     margin: 0;

@@ -81,9 +81,9 @@ export const H = (props) => {
   );
 };
 
-export const GradientTitle = ({ title, mb, gradient }) => {
+export const GradientTitle = ({ title, mb, gradient, size = "h1" }) => {
   return (
-    <Title mb={mb} variant="gradient" gradient={gradient}>
+    <Title mb={mb}  size={size} variant="gradient" gradient={gradient}>
       {title}
     </Title>
   );
@@ -92,7 +92,7 @@ export const GradientTitle = ({ title, mb, gradient }) => {
 export const P = (props) => {
   const {
     Copy,
-    color = 'gray.8',
+    color = "gray.8",
     Weight = 400,
     size = "md",
     marginBottom = "14px",
@@ -114,7 +114,7 @@ export const P = (props) => {
         marginBottom: marginBottom,
         textAlign: textAlign,
         fontStyle: fontStyle,
-        color: color
+        color: color,
       })}
     >
       {props.children || Copy}

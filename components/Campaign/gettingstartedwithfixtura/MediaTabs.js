@@ -1,20 +1,20 @@
 import { Paper, Tabs } from "@mantine/core";
 
 import {
-  IconPhoto,
-  IconMessageCircle,
-  IconSettings,
   IconVideo,
   IconPictureInPicture,
   IconFileText,
 } from "@tabler/icons-react";
 import { RemotionPlayer } from "./Player";
+import { DisplayWriteups } from "./DisplayWriteups";
 
 export const MediaTabs = ({
   clubData,
   selectedTab,
   setSelectedTab,
   selectedMedia,
+  userColors,
+  userlogoUrl,
 }) => {
   console.log("selectedMedia", selectedMedia);
   return (
@@ -43,6 +43,8 @@ export const MediaTabs = ({
               clubData={clubData}
               selectedMedia={selectedMedia}
               TYPE={"Player"}
+              userColors={userColors}
+              userlogoUrl={userlogoUrl}
             />
           </Paper>
         </Tabs.Panel>
@@ -53,12 +55,14 @@ export const MediaTabs = ({
               clubData={clubData}
               selectedMedia={selectedMedia}
               TYPE={"Thumbnail"}
+              userColors={userColors}
+              userlogoUrl={userlogoUrl}
             />
           </Paper>
         </Tabs.Panel>
 
         <Tabs.Panel value="WRITEUP" pt="xs">
-          Writeups tab content
+          <DisplayWriteups clubData={clubData} selectedMedia={selectedMedia} />
         </Tabs.Panel>
       </Tabs>
     </>

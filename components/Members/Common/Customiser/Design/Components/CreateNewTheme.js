@@ -146,7 +146,7 @@ export const CreateNewTheme = (props) => {
               )}
 
               <td>
-                <SketchExample
+                <SketchExample 
                   SetColor={SetPrimary}
                   UsersTheme={UseBaseColor("primary")}
                 />

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { Player, Thumbnail } from "@remotion/player";
 import DATA_FIXTURES from "../../../remotion/utils/upcoming_v2.json";
 import DATA_RESULTS from "../../../remotion/utils/WeekendResultsV2.json";
@@ -16,8 +16,17 @@ import {
   WeekendSingleGameResult,
   RosterPoster,
 } from "./Examples/AssetExamples";
+import { AbsoluteFill } from "remotion";
+import { IconPlayBasketball, IconPlayerPlayFilled } from "@tabler/icons-react";
+import { Image } from "@mantine/core";
 
-export const RemotionPlayer = ({ clubData, selectedMedia, TYPE }) => {
+export const RemotionPlayer = ({
+  clubData,
+  selectedMedia,
+  TYPE,
+  userColors,
+  userlogoUrl,
+}) => {
   const [isMounted, setIsMounted] = useState(false);
   const [data, setData] = useState({});
   const DEFAULTLOGO =
@@ -49,12 +58,41 @@ export const RemotionPlayer = ({ clubData, selectedMedia, TYPE }) => {
       component: WeekendSingleGameResult,
       DATA: DATA_RESULTS,
     },
-    RosterPoster:{
+    RosterPoster: {
       component: RosterPoster,
       DATA: DATA_ROSTER,
-    }
- 
+    },
   };
+
+  const renderPoster = useCallback(
+    ({ height, width, useLOGO, accountName, assetType }) => {
+      return (
+        <AbsoluteFill
+          style={{
+            backgroundColor: "white",
+            opacity: 0.8,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            flexDirection: "column",
+          }}
+        >
+          {useLOGO && (
+            <Image
+              height={200}
+              width={"auto"}
+              src={useLOGO}
+              alt={`${accountName} logo`}
+              style={{ marginBottom: "10px" }}
+            />
+          )}
+          <IconPlayerPlayFilled size={60} style={{ marginRight: "10px" }} />
+          <p>Click to play to preview</p>
+        </AbsoluteFill>
+      );
+    },
+    []
+  );
 
   useEffect(() => {
     if (
@@ -65,7 +103,7 @@ export const RemotionPlayer = ({ clubData, selectedMedia, TYPE }) => {
       let updatedData;
       const currentAsset = ASSETS[selectedMedia.CompositionID];
       const accountName = clubData.attributes.Name; // or the appropriate field for the account name
-      const useLOGO = DefineLogo(clubData);
+      const useLOGO = DefineLogo(clubData, userlogoUrl);
       updatedData = updateDataWithClubInfo(
         clubData,
         currentAsset.DATA,
@@ -117,13 +155,20 @@ export const RemotionPlayer = ({ clubData, selectedMedia, TYPE }) => {
     }
   }, [clubData, selectedMedia, ASSETS]);
 
-  const DefineLogo = (clubData) => {
+  const DefineLogo = (clubData, userlogoUrl) => {
+    // If userlogoUrl is provided and not false, use it as the logo
+    if (userlogoUrl) {
+      return userlogoUrl;
+    }
+
+    // Otherwise, fallback to the existing logic
     return (
       clubData.attributes.Logo?.data ||
       clubData.attributes?.ParentLogo ||
       DEFAULTLOGO
     );
   };
+
   const updateTop5RunScorers = (data, useLOGO, accountName) => {
     data.DATA.forEach((player) => {
       player.teamLogo = useLOGO;
@@ -132,13 +177,13 @@ export const RemotionPlayer = ({ clubData, selectedMedia, TYPE }) => {
     return data;
   };
 
-  const updateUpComingFixtures = (data,useLOGO,NAME) => {
+  const updateUpComingFixtures = (data, useLOGO, NAME) => {
     data.DATA.forEach((game) => {
       game.teamHomeLogo = game.teamHomeLogo || useLOGO;
       game.teamAwayLogo = game.teamAwayLogo || useLOGO;
 
-      game.teamHome = game.teamHomeLogo ? game.teamHome : NAME; 
-      game.teamAway = game.teamAwayLogo ? game.teamAway : NAME; 
+      game.teamHome = game.teamHomeLogo ? game.teamHome : NAME;
+      game.teamAway = game.teamAwayLogo ? game.teamAway : NAME;
     });
     return data;
   };
@@ -160,7 +205,7 @@ export const RemotionPlayer = ({ clubData, selectedMedia, TYPE }) => {
   };
 
   const updateLadderFirstItem = (data, useLOGO, accountName) => {
-    console.log(data.DATA[0].bias);
+    /*  console.log(data.DATA[0].bias); */
     if (data && data.DATA.length > 0) {
       data.DATA[0].League[0].teamName = accountName;
       data.DATA[0].League[0].teamLogo = useLOGO;
@@ -171,14 +216,19 @@ export const RemotionPlayer = ({ clubData, selectedMedia, TYPE }) => {
   };
   // Extracted color theme update function
   const updateColorTheme = (clubData, updatedData) => {
+    /* console.log("OVERRIDE COLORS", userColors); */
     const logoUrl =
       clubData.attributes.Logo.data || clubData.attributes.ParentLogo;
     if (logoUrl) {
       getDominantColors(logoUrl)
         .then((colors) => {
           if (colors && colors.length >= 2) {
-            updatedData.VIDEOMETA.Video.Theme.primary = colors[0];
-            updatedData.VIDEOMETA.Video.Theme.secondary = colors[1];
+            updatedData.VIDEOMETA.Video.Theme.primary = userColors[0]
+              ? userColors[0]
+              : colors[0];
+            updatedData.VIDEOMETA.Video.Theme.secondary = userColors[1]
+              ? userColors[1]
+              : colors[1];
           }
           setData(updatedData);
         })
@@ -187,6 +237,9 @@ export const RemotionPlayer = ({ clubData, selectedMedia, TYPE }) => {
           setData(updatedData); // Set data even if color fetching fails
         });
     } else {
+      updatedData.VIDEOMETA.Video.Theme.primary = userColors[0];
+      updatedData.VIDEOMETA.Video.Theme.secondary = userColors[1];
+
       setData(updatedData);
     }
   };
@@ -195,15 +248,10 @@ export const RemotionPlayer = ({ clubData, selectedMedia, TYPE }) => {
     const updatedData = { ...initialData };
 
     // Determine the logo to use: Club Logo > Parent Logo > Default Logo
-    const useLOGO = DefineLogo(clubData);
+    const useLOGO = DefineLogo(clubData, userlogoUrl);
 
     updatedData.VIDEOMETA.Club.Name = clubData.attributes.Name;
     updatedData.VIDEOMETA.Club.Logo = useLOGO;
-    /* 
-    updatedData.DATA.forEach((game) => {
-      game.teamHomeLogo = game.teamHomeLogo || useLOGO;
-      game.teamAwayLogo = game.teamAwayLogo || useLOGO;
-    }); */
 
     return updatedData;
   };
@@ -235,6 +283,16 @@ export const RemotionPlayer = ({ clubData, selectedMedia, TYPE }) => {
         controls
         inputProps={{ DATA: data }}
         style={{ width: "100%" }}
+        renderPoster={({ height, width }) =>
+          renderPoster({
+            height,
+            width,
+            useLOGO: DefineLogo(clubData, userlogoUrl),
+            accountName: clubData.attributes.Name,
+            assetType: selectedMedia.CompositionID,
+          })
+        }
+        showPosterWhenUnplayed
       />
     );
   if (TYPE === "Thumbnail")

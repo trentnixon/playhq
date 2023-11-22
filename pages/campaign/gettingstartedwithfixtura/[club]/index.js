@@ -54,7 +54,7 @@ const ClubPage = ({ clubData, useAssets }) => {
           <Container p={padding}>Case Studies</Container>
         </Section>
         <CtaAreaTwo />
-      </>
+      </> 
     </>
   ); 
 };
