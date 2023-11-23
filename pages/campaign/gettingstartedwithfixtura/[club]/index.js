@@ -1,7 +1,7 @@
 import { fetcher } from "../../../../lib/api";
 import Meta from "../../../../components/Layouts/Meta";
 import Section from "../../../../components/UI/DefaultSection";
-import { Container } from "@mantine/core";
+import { Center, Container, Image } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
 import FixturaAndYourClubBanner from "../../../../components/HomePages/PLAYHQ/FixturaAndYourClub";
 
@@ -22,7 +22,6 @@ const ClubPage = ({ clubData, useAssets }) => {
     ],
   };
 
-
   const SectionPlayer = {
     title: "What does Fixtura provide?",
     paragraphs: [
@@ -40,14 +39,21 @@ const ClubPage = ({ clubData, useAssets }) => {
       <FixturaAndYourClubBanner clubData={clubData.attributes} />
 
       <>
-        <Section {...SectionData} color="light"></Section>
-        <Section {...SectionPlayer} color="grey">
+        <Section {...SectionPlayer} color="light">
           <Container p={padding}>
             <Previewer clubData={clubData} useAssets={useAssets} />
           </Container>
         </Section>
+        <Section {...SectionData} color="grey">
+          <Center>
+            <Image
+              height={"400px"}
+              width={"auto"}
+              src={`https://fixtura.s3.ap-southeast-2.amazonaws.com/Exampe_Group_9e88443b76.png`}
+            />
+          </Center>
+        </Section>
         <Feedback />
-        
         <CtaAreaTwo />
       </>
     </>
@@ -57,13 +63,49 @@ const ClubPage = ({ clubData, useAssets }) => {
 export default ClubPage;
 
 export const getStaticPaths = async () => {
-  const clubs = await fetcher(`${process.env.NEXT_PUBLIC_STRAPI_URL}/clubs`);
-  const paths = clubs.data.map((club) => ({
-    params: { club: club.attributes.Name }, // Using Name for paths
-  }));
+  let hasMoreClubs = true;
+  let pageNumber = 1;
+  const paths = [];
+
+  while (hasMoreClubs) {
+    const clubs = await fetchClubs(pageNumber);
+   
+    if (clubs.data.length === 0) {
+      hasMoreClubs = false;
+      break;
+    }
+
+    for (const club of clubs.data) {
+      console.log(encodeURIComponent(club.attributes.Name))
+      paths.push({ params: { club: encodeURIComponent(club.attributes.Name) } });
+    }
+
+    pageNumber++;
+  }
 
   return { paths, fallback: false };
 };
+
+// You can place the fetchClubs function outside of getStaticPaths
+async function fetchClubs(pageNumber = 1, pageSize = 25) {
+  const queryWithPagination = qs.stringify(
+    {
+      pagination: {
+        page: pageNumber,
+        pageSize: pageSize,
+      },
+      populate: ["teams"],
+    },
+    {
+      encodeValuesOnly: true,
+    }
+  );
+  return await fetcher(`${process.env.NEXT_PUBLIC_STRAPI_URL}/clubs?${queryWithPagination}`);
+}
+
+ 
+
+
 
 export const getStaticProps = async ({ params }) => {
   // Fetch club data

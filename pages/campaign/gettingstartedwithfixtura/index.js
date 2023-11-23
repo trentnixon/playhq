@@ -13,14 +13,14 @@ const ClubsList = ({ clubs }) => {
             console.log(club)
           return (
             <li key={club.id}>
-              <Link href={`/campaign/gettingstartedwithfixtura/${club.attributes.Name}`}>
+              <Link href={`/campaign/gettingstartedwithfixtura/${encodeURIComponent(club.attributes.Name)}`}>
                 <a>{club.attributes.Name}</a>
               </Link>
             </li>
           );
         })}
       </ul>
-    </div>
+    </div> 
   );
 };
 
