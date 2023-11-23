@@ -69,14 +69,14 @@ export const getStaticPaths = async () => {
 
   while (hasMoreClubs) {
     const clubs = await fetchClubs(pageNumber);
-   
+    console.log(clubs)
     if (clubs.data.length === 0) {
       hasMoreClubs = false;
       break;
     }
 
     for (const club of clubs.data) {
-      console.log(encodeURIComponent(club.attributes.Name))
+      console.log(club.attributes.Name)
       paths.push({ params: { club: encodeURIComponent(club.attributes.Name) } });
     }
 
@@ -112,7 +112,7 @@ export const getStaticProps = async ({ params }) => {
   const clubQuery = qs.stringify(
     {
       filters: {
-        Name: { $eq: params.club },
+        Name: { $eq: decodeURIComponent(params.club) },
       },
       populate: ["Logo"],
     },
