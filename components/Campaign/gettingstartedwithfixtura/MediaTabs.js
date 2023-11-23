@@ -23,7 +23,7 @@ export const MediaTabs = ({
         variant="pills"
         value={selectedTab}
         onTabChange={setSelectedTab}
-        color="gray.7"
+        color="blue"
       >
         <Tabs.List grow position="center">
           <Tabs.Tab value="VIDEO" icon={<IconVideo size="30px" />}>

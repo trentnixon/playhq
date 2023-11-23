@@ -79,6 +79,18 @@ $transition: all 0.5s ease;
     --gradient-color-4: #D7F0EC;
 }
 
+
+/* Campaign BG */
+#gradient-canvas-campaign {
+    width:100%;
+    height:100%;
+    position: absolute;
+    --gradient-color-4: #7A7A7A; 
+    --gradient-color-1: #AEAEAE; 
+    --gradient-color-2: #A5D8FF;  
+    --gradient-color-3: #D7F0EC;
+  }
+
   .bg-2C2E33{
     background-color: #373A40;
 }

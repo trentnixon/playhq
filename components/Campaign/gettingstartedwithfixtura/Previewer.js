@@ -81,7 +81,7 @@ export const Previewer = ({ clubData, useAssets }) => {
       key={asset.id}
       variant={selectedButton === asset.id ? "filled" : "filled"}
       onClick={() => handleButtonClick(asset)}
-      color={selectedButton === asset.id ? "blue" : "gray.7"}
+      color={selectedButton === asset.id ? "blue" : "gray.5"}
       rightIcon={
         selectedButton === asset.id ? (
           <IconCircleCheck size={24} />
@@ -97,7 +97,7 @@ export const Previewer = ({ clubData, useAssets }) => {
 
   return (
     <Grid>
-      <Grid.Col span={7}>
+      <Grid.Col md={1} lg={7}> 
         <MediaTabs
           key={playerKey} // Assign the key here
           clubData={clubData}
@@ -107,7 +107,6 @@ export const Previewer = ({ clubData, useAssets }) => {
           userColors={userColors}
           userlogoUrl={logoUrl}
         />
-        
 
         <Paper
           p={10}
@@ -119,15 +118,18 @@ export const Previewer = ({ clubData, useAssets }) => {
             alignItems: "center",
           }}
         >
-          <IconShieldOff size={'4em'} style={{ marginRight: "10px" }} />
+          <IconShieldOff size={"4em"} style={{ marginRight: "10px" }} />
           <P marginBottom={0} style={{ flex: 1 }}>
-          Our videos and graphics blend international teams with your club's details to demonstrate Fixtura's dynamic capabilities. The write-ups are examples from the real world, modified for privacy by removing names and teams. Experience a realistic preview, while we ensure the confidentiality of personal information.
-
+            Our videos and graphics blend international teams with your club's
+            details to demonstrate Fixtura's dynamic capabilities. The write-ups
+            are examples from the real world, modified for privacy by removing
+            names and teams. Experience a realistic preview, while we ensure the
+            confidentiality of personal information.
           </P>
         </Paper>
       </Grid.Col>
 
-      <Grid.Col span={5}>
+      <Grid.Col md={1} lg={5}>
         <GradientTitle size={"h2"} title={"Customise Your Fixtura Journey"} />
         <P>
           Choose from the asset list below. Instantly see it in your club’s
@@ -150,7 +152,7 @@ export const Previewer = ({ clubData, useAssets }) => {
           p={10}
           withBorder
           shadow="lg"
-          style={{ backgroundColor: "#495057" }}
+          style={{ backgroundColor: "#adb5bd" }}
         >
           <ImageUploader onImageSelect={handleImageSelect} />
         </Paper>
@@ -165,7 +167,7 @@ export const Previewer = ({ clubData, useAssets }) => {
           withBorder
           shadow="md"
           mb={20}
-          style={{ backgroundColor: "#495057" }}
+          style={{ backgroundColor: "#adb5bd" }}
         >
           <ColorPickerComponent onColorChange={handleColorChange} />
         </Paper>
@@ -179,7 +181,7 @@ export const Previewer = ({ clubData, useAssets }) => {
             alignItems: "center",
           }}
         >
-          <IconAlertCircle size={'4em'} style={{ marginRight: "10px" }} />
+          <IconAlertCircle size={"4em"} style={{ marginRight: "10px" }} />
           <P marginBottom={0} style={{ flex: 1 }}>
             Looking for something more personalized? Contact us to integrate
             your own designs into Fixtura and enhance your club's uniqueness.

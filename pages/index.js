@@ -7,7 +7,7 @@ import CtaArea from "../components/Common/CtaAreaTwo";
 import Partner from "../components/Common/Partner";
 import { fetcher } from "../lib/api";
 import Meta from "../components/Layouts/Meta";
-
+import Feedback from "../components/Common/Feedback";
 const Index = ({ associations }) => {
   return (
     <>
@@ -19,7 +19,8 @@ const Index = ({ associations }) => {
       <MainBanner />
       <Services />
       <FunFacts />
-      <Partner associations={associations} />
+     {/*  <Partner associations={associations} /> */}
+      <Feedback />
       <PricingStyleOne />
       <CtaArea />
     </>

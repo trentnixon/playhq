@@ -3,10 +3,15 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper";
 import Link from "next/link";
 import { trackButtonClick } from "../../lib/GA";
+import Section from "../UI/DefaultSection";
 
 const Feedback = () => {
+  const SectionCaseStudies = {
+    title: "How Fixtura is Helping",
+    paragraphs: [``],
+  };
   return (
-    <>
+    <Section {...SectionCaseStudies} color="light">
       <div className="feedback-area ptb-100">
         <div className="container">
           <div className="feedback-list">
@@ -54,7 +59,9 @@ const Feedback = () => {
                       className="custom-btn"
                       target="_blank"
                       onClick={() =>
-                        trackButtonClick("How Fixtura is Helping Sydney Shires Instagram")
+                        trackButtonClick(
+                          "How Fixtura is Helping Sydney Shires Instagram"
+                        )
                       }
                     >
                       Instagram Account
@@ -225,7 +232,7 @@ const Feedback = () => {
           />
         </div>
       </div>
-    </>
+    </Section>
   );
 };
 
