@@ -105,6 +105,7 @@ export const P = (props) => {
   return (
     <Text
       size={size}
+      
       className={className}
       sx={(theme) => ({
         fontFamily: theme.fontFamily,

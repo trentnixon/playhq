@@ -163,7 +163,7 @@ export const RemotionPlayer = ({
 
     // Otherwise, fallback to the existing logic
     return (
-      clubData.attributes.Logo?.data ||
+      clubData.attributes.Logo?.data.url ||
       clubData.attributes?.ParentLogo ||
       DEFAULTLOGO
     );

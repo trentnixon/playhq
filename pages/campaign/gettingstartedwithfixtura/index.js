@@ -4,13 +4,11 @@ import Link from "next/link";
 import { fetcher } from "../../../lib/api";
 
 const ClubsList = ({ clubs }) => {
-  console.log(clubs);
   return (
     <div>
       <h1>Clubs List</h1>
       <ul>
         {clubs.data.map((club) => {
-            console.log(club)
           return (
             <li key={club.id}>
               <Link href={`/campaign/gettingstartedwithfixtura/${club.id}`}>
@@ -20,7 +18,7 @@ const ClubsList = ({ clubs }) => {
           );
         })}
       </ul>
-    </div> 
+    </div>
   );
 };
 

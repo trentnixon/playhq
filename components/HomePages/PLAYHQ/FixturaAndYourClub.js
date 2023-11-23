@@ -4,15 +4,16 @@ import React, { useEffect } from "react";
 import { Gradient } from "../../../utils/Gradient";
 import { Group, Image, Text } from "@mantine/core";
 
-import { P } from "../../Members/Common/Type";
+import { GradientTitle, P } from "../../Members/Common/Type";
 import Link from "next/link";
 import { trackButtonClick } from "../../../lib/GA";
 
 const FixturaAndYourClubBanner = ({ clubData }) => {
+  //console.log(clubData)
   const useLOGO = !clubData.Logo.data
     ? clubData.ParentLogo
-    : clubData.Logo.data;
-  console.log(useLOGO);
+    : clubData.Logo.data.attributes.url;
+  //console.log(useLOGO);
   return (
     <>
       <div
@@ -66,13 +67,20 @@ const FixturaAndYourClubBanner = ({ clubData }) => {
                   <P
                     textAlign={"center"}
                     Weight="900"
-                    size="2.3em"
+                    size="3em"
                     color="#343a40"
                     lineHeight="1.1em"
                   >
-                    {clubData.Name} you can <br /> Secure Digital Independence
-                    <br />
-                    for just $20/w
+                    Simplify Your Social Media
+                  </P>
+                  <P
+                    textAlign={"center"}
+                    Weight="400"
+                    size="2.6em"
+                    color="#343a40"
+                    lineHeight="1.1em"
+                  >
+                    Easy / Affordable / Efficient
                   </P>
                   <Text
                     align="center"
