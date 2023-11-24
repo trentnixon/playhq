@@ -38,7 +38,7 @@ const ClubPage = ({ clubData, useAssets }) => {
       />
       <FixturaAndYourClubBanner clubData={clubData.attributes} />
 
-      <>
+      <> 
         <Section {...SectionPlayer} color="light">
           <Container p={padding}>
             <Previewer clubData={clubData} useAssets={useAssets} />
@@ -76,8 +76,8 @@ export const getStaticPaths = async () => {
     }
 
     for (const club of clubs.data) {
-      console.log(club.id.toString())
-      paths.push({ params: { club: club.id.toString() } });
+      console.log(club.attributes.PlayHQID.toString())
+      paths.push({ params: { club: club.attributes.PlayHQID.toString() } });
     }
 
     pageNumber++;
@@ -112,7 +112,7 @@ export const getStaticProps = async ({ params }) => {
   const clubQuery = qs.stringify(
     {
       filters: {
-        id: { $eq: params.club },
+        PlayHQID: { $eq: params.club },
       },
       populate: ["Logo"],
     },
