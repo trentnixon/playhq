@@ -7,6 +7,7 @@ import { Group, Image, Text } from "@mantine/core";
 import { GradientTitle, P } from "../../Members/Common/Type";
 import Link from "next/link";
 import { trackButtonClick } from "../../../lib/GA";
+import { useMediaQuery } from "@mantine/hooks";
 
 const FixturaAndYourClubBanner = ({ clubData }) => {
   //console.log(clubData)
@@ -14,6 +15,7 @@ const FixturaAndYourClubBanner = ({ clubData }) => {
     ? clubData.ParentLogo
     : clubData.Logo.data.attributes.url;
   //console.log(useLOGO);
+  const matches = useMediaQuery('(min-width: 56.25em)');
   return (
     <>
       <div
@@ -39,7 +41,7 @@ const FixturaAndYourClubBanner = ({ clubData }) => {
                         },
                       }}
                     />
-                    <div className="main-banner-content">
+                    <div className="main-banner-content" style={{marginTop:0}}>
                       <P
                         textAlign={"center"}
                         Weight="900"
@@ -54,10 +56,11 @@ const FixturaAndYourClubBanner = ({ clubData }) => {
                       height={"130px"}
                       width={"auto"}
                       sx={{
+                        marginBottom: "0px",
                         "@media (max-width: 48em)": {
                           innerWidth: "40%",
                           marginTop: "40px",
-                          marginBottom: "20px",
+                          marginBottom: "0px",
                         },
                       }}
                     />
@@ -69,6 +72,7 @@ const FixturaAndYourClubBanner = ({ clubData }) => {
                     Weight="900"
                     size="3em"
                     color="#343a40"
+                    marginBottom={0}
                     lineHeight="1.1em"
                   >
                     Simplify Your Social Media
@@ -79,6 +83,7 @@ const FixturaAndYourClubBanner = ({ clubData }) => {
                     size="2.6em"
                     color="#343a40"
                     lineHeight="1.1em"
+                    marginBottom={0}
                   >
                     Easy / Affordable / Efficient
                   </P>

@@ -90,6 +90,9 @@ export const getStaticPaths = async () => {
 async function fetchClubs(pageNumber = 1, pageSize = 25) {
   const queryWithPagination = qs.stringify(
     {
+      filters: {
+        contactDetails: { $ne: null },
+      },
       pagination: {
         page: pageNumber,
         pageSize: pageSize,
