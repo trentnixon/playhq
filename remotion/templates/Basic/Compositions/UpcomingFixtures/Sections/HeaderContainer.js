@@ -31,6 +31,7 @@ const HeaderCopy = styled.p`
 	width: 100%;
 	font-size: 1.6em;
 	line-height: 1.1em;
+	margin-bottom:0;
 `;
 
 const GameType = styled(HeaderCopy)`

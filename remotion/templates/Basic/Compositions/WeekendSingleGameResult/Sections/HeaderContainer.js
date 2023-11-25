@@ -22,6 +22,7 @@ const HeaderCopy = styled.p`
 	letter-spacing: -0.015em;
 	text-transform: uppercase;
 	width: 100%;
+	margin-bottom: 0;
 `;
 
 const GameType = styled(HeaderCopy)`
