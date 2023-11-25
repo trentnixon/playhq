@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import { Grid, Button, Paper, Space } from "@mantine/core";
+import { Grid, Button, Paper, Space, Group, Tooltip, Box } from "@mantine/core";
 import { MediaTabs } from "./MediaTabs";
 import { GradientTitle, H, P } from "../../Members/Common/Type";
-import { IconCircle, IconCircleCheck } from "@tabler/icons";
+import { IconCircle, IconCircleCheck, IconQuestionCircle } from "@tabler/icons";
 import ColorPickerComponent from "./ColorPickerComponent";
 import ImageUploader from "./ImageUploader";
 import { IconAlertCircle, IconShieldOff } from "@tabler/icons-react";
@@ -97,7 +97,7 @@ export const Previewer = ({ clubData, useAssets }) => {
 
   return (
     <Grid>
-      <Grid.Col md={1} lg={7}> 
+      <Grid.Col md={1} lg={7}>
         <MediaTabs
           key={playerKey} // Assign the key here
           clubData={clubData}
@@ -119,12 +119,10 @@ export const Previewer = ({ clubData, useAssets }) => {
           }}
         >
           <IconShieldOff size={"4em"} style={{ marginRight: "10px" }} />
-          <P marginBottom={0} style={{ flex: 1 }}>
-            Our videos and graphics blend international teams with your club's
-            details to demonstrate Fixtura's dynamic capabilities. The write-ups
-            are examples from the real world, modified for privacy by removing
-            names and teams. Experience a realistic preview, while we ensure the
-            confidentiality of personal information.
+          <P size={"xs"} marginBottom={0} style={{ flex: 1 }}>
+            Demo content blends international teams with your club's details for
+            illustrative purposes only. The write-ups are examples from the real
+            world, modified for privacy by removing names and teams.
           </P>
         </Paper>
       </Grid.Col>
@@ -136,7 +134,21 @@ export const Previewer = ({ clubData, useAssets }) => {
           colors and logo for a perfect preview.
         </P>
 
-        <GradientTitle size={"h3"} title={"Select an Asset"} />
+        <Group position="apart">
+          <GradientTitle size={"h3"} title={"Select an Asset"} />
+          <Tooltip
+            multiline
+            width={220}
+            label="Pick a content category, such as Weekend Results or Top 5 Performances, to see a relevant preview."
+            color="blue"
+            withArrow
+            arrowPosition="center"
+          >
+            <Box>
+              <IconQuestionCircle color="gray" />
+            </Box>
+          </Tooltip>
+        </Group>
         <Paper
           p={0}
           withBorder
@@ -146,8 +158,21 @@ export const Previewer = ({ clubData, useAssets }) => {
           <Button.Group orientation="vertical">{buttons}</Button.Group>
         </Paper>
         <Space h={20} />
-
-        <GradientTitle size={"h3"} title={"Change your Logo"} />
+        <Group position="apart">
+          <GradientTitle size={"h3"} title={"Change your Logo"} />
+          <Tooltip
+            multiline
+            width={220}
+            label="Upload your club's logo to see it seamlessly integrated into the assets."
+            color="blue"
+            withArrow
+            arrowPosition="center"
+          >
+            <Box>
+              <IconQuestionCircle color="gray" />
+            </Box>
+          </Tooltip>
+        </Group>
         <Paper
           p={10}
           withBorder
@@ -157,7 +182,23 @@ export const Previewer = ({ clubData, useAssets }) => {
           <ImageUploader onImageSelect={handleImageSelect} />
         </Paper>
         <Space h={20} />
-        <GradientTitle size={"h3"} title={"Club Colors Customization"} />
+
+        <Group position="apart">
+          <GradientTitle size={"h3"} title={"Club Colors Customization"} />
+          <Tooltip
+            multiline
+            width={220}
+            label="Adjust the color scheme of the assets to match your club's official branding."
+            color="blue"
+            withArrow
+            arrowPosition="center"
+          >
+            <Box>
+              <IconQuestionCircle color="gray" />
+            </Box>
+          </Tooltip>
+        </Group>
+
         <P>
           Refine your club's theme by adjusting the colors to match your exact
           branding.

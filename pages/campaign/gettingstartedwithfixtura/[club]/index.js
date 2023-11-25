@@ -49,9 +49,9 @@ const ClubPage = ({ clubData, useAssets }) => {
             <Image
               height={"400px"}
               width={"auto"}
-              src={`https://fixtura.s3.ap-southeast-2.amazonaws.com/Exampe_Group_9e88443b76.png`}
+              src={`https://fixtura.s3.ap-southeast-2.amazonaws.com/Asset_Examples_With_Labels_6796528404.png`}
             />
-          </Center>
+          </Center> 
         </Section>
         <Feedback />
         <CtaAreaTwo />
