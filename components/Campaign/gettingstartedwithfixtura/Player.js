@@ -8,7 +8,7 @@ import DATA_LADDER from "../../../remotion/utils/LadderV2.json";
 import DATA_ROSTER from "../../../remotion/utils/RosterPoster.json";
 import { getDominantColors } from "../../../remotion/utils/colors";
 import {
-  UpComingFixtures,
+  UpComingFixtures, 
   WeekendResults,
   Top5BattingList,
   Top5BowlingList,

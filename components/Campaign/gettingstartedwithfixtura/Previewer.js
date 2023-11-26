@@ -200,8 +200,8 @@ export const Previewer = ({ clubData, useAssets }) => {
         </Group>
 
         <P>
-          Refine your club's theme by adjusting the colors to match your exact
-          branding.
+          Refine your assets' theme by tweaking the colors, initially estimated
+          from your logo, to precisely match your club's branding.
         </P>
         <Paper
           p={10}
@@ -212,6 +212,7 @@ export const Previewer = ({ clubData, useAssets }) => {
         >
           <ColorPickerComponent onColorChange={handleColorChange} />
         </Paper>
+
         <Paper
           p={10}
           my={10}
