@@ -4,6 +4,11 @@ import FaqContent from "../components/Faq/FaqContent";
 import CtaAreaTwo from "../components/Common/CtaAreaTwo";
 import Section from "../components/UI/DefaultSection";
 import Meta from "../components/Layouts/Meta";
+import FAQ_AccessandUsage from "../components/Faq/FAQ_AccessandUsage";
+import FAQ_SubscriptionManagement from "../components/Faq/FAQ_SubscriptionManagement";
+import FAQ_PrivacyandSecurity from "../components/Faq/FAQ_PrivacyandSecurity";
+import FAQ_ContentandCustomization from "../components/Faq/FAQ_ContentandCustomization";
+import FAQ_General from "../components/Faq/FAQ_General";
 const Faq = () => {
   const SectionData = {
     title: "Frequently Asked Questions",
@@ -21,11 +26,12 @@ const Faq = () => {
         BGImage="/images/BG-Images/0D5A3369.jpg"
         position={`top center`}
       />
-
-      <Section {...SectionData} color="light">
-        <FaqContent />
-      </Section>
-
+      {/* <FAQ_General /> */}
+      <FAQ_ContentandCustomization />
+      {/* <FAQ_AccessandUsage />
+     
+      <FAQ_SubscriptionManagement />
+      <FAQ_PrivacyandSecurity /> */}
       <CtaAreaTwo />
     </>
   );

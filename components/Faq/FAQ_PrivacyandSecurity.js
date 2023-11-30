@@ -170,15 +170,15 @@ const faqs = [
 ];
 
 const SectionData = {
-  title: "Frequently Asked Questions",
+  title: "Privacy and Security",
   paragraphs: [
     `Frequently Asked Questions`,
   ],
 };
-const FaqContent = () => {
+const FAQ_PrivacyandSecurity = () => {
   return (
     <>
-    <Section {...SectionData} color="dark">
+    <Section {...SectionData} color="light">
     <div className="faq-area ptb-100">
         <div className="container">
           <div className="row align-items-center">
@@ -211,4 +211,4 @@ const FaqContent = () => {
   );
 };
 
-export default FaqContent;
+export default FAQ_PrivacyandSecurity;
