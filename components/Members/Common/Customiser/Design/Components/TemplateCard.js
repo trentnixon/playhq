@@ -64,21 +64,23 @@ export function TemplateCard({
   // Extract new attributes
   const { Name, Category, Variation, FrontEndName } = template.attributes;
   const posterURL =
-    template.attributes.Poster.data.attributes.formats.small.url;
+    template.attributes.Poster.data.attributes.formats?.small.url;
   const requiresMedia = template.attributes.requiresMedia;
   
   return (
-    <Card radius="md" p={0}>
-      <Group position="right">
+    <Card radius="md" p={0} >
+      <Group position="center">
         <Text fw={900}>{FrontEndName}</Text>
       </Group>
       <Paper
-        withBorder
+        
         p={0}
         className={isSelected ? `${classes.selectedCard}` : classes.card}
       >
-        <Card.Section className={classes.imageSection}>
-          <Image src={posterURL} alt={Name}   />
+        <Card.Section className={classes.imageSection} >
+          <Group>
+          <Image src={posterURL} alt={Name}  height={'150px'} fit="cover"/>
+          </Group>
         </Card.Section>
         <Group position="apart" mt="0" p={'xs'}>
           <div>
@@ -118,7 +120,7 @@ const Locked = () => {
 };
 
 const CTABTN = ({ FUNC }) => {
-  return <BTN_ONCLICK HANDLE={FUNC} LABEL={"View"} />;
+  return <BTN_ONCLICK HANDLE={FUNC} LABEL={"Details"} />;
 };
 
 /*  {isSelected ? (

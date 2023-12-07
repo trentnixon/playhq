@@ -215,16 +215,21 @@ const MembersNavItem = ({ user, setMenu }) => {
       title: "Bundles",
       IconComponent: IconDownload,
     },
-    {
+   /*  {
       href: `${PATH}/graphics-packages`,
       title: "Graphics Packages",
       IconComponent: IconColorPicker,
-    },
+    }, */
     {
+      href: `${PATH}/customizer`,
+      title: "Customizer",
+      IconComponent: IconColorPicker,
+    },
+    /* {
       href: `${PATH}/branding`,
       title: "Your Branding",
       IconComponent: IconBadgeTm,
-    },
+    }, */
     {
       href: `${PATH}/gallery`,
       title: "Media Gallery",

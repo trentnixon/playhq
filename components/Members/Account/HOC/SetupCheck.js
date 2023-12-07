@@ -12,6 +12,7 @@ import {
 } from "@tabler/icons";
 import { FindAccountLabel } from "../../../../lib/actions";
 import { useMediaQuery } from "@mantine/hooks";
+import { BTN_ONCLICK, BTN_TOINTERALLINK } from "../../Common/utils/Buttons";
 
 const SetupCheck = ({ children }) => {
   const { account, ReRender } = useAccountDetails();
@@ -34,7 +35,7 @@ const SetupCheck = ({ children }) => {
     setIsSetup(account?.attributes?.isSetup); // Update isSetup when the account details change
   }, [account]);
 
-console.log("isSetup", isSetup)
+  console.log("isSetup", isSetup);
 
   if (isSetup === null || isSetup === undefined) return <FixturaLoading />;
   if (isSetup) {
@@ -55,17 +56,26 @@ console.log("isSetup", isSetup)
                 textAlign={"center"}
                 size={"xl"}
                 textTransform={"uppercase"}
-                marginBottom={0}
-                color={8}
+                marginBottom={20}
+                color={"blue.8"}
               >
-                Syncing with PlayHQ
-              </P>
-              <P textAlign={"center"} size={"xs"} marginBottom={25} color={8}>
-                There is no need to reload this page as your account will
-                display when it is ready. ETA:3-5 minutes
+                Syncing in Progress with PlayHQ:
               </P>
 
-              <P>What awaits you after this process:</P>
+              <P textAlign={"center"} size={"md"} marginBottom={25} color={8}>
+                We're actively syncing with PlayHQ to tailor our platform
+                specifically for your club or association. Keep in mind, the
+                size of your organization influences the syncing time – we're
+                ensuring everything is just right for you.
+              </P>
+              <P textAlign={"center"} size={"md"} marginBottom={25} color={8}>
+                Larger organizations might require a bit more time, but rest
+                assured, we're efficiently processing everything.
+              </P>
+
+              <P Weight={600}>
+                In the meantime, let's continue setting up your profile:
+              </P>
               <Paper shadow="sm" p="md" withBorder>
                 <List spacing="xs" size="sm" center>
                   <List.Item
@@ -73,13 +83,22 @@ console.log("isSetup", isSetup)
                       <IconTools stroke={1.5} size="2rem" color={"#6699CC"} />
                     }
                   >
-                    <P Weight={600} color={4}>
-                      Customization Galore
-                    </P>
+                    <Group position="apart">
+                      <P Weight={600} color={4}>
+                        Graphics Packages
+                      </P>
+                      <BTN_TOINTERALLINK
+                        URL={`/members/graphics-packages/`}
+                        LABEL={"Graphics Packages"}
+                      />
+                    </Group>
                     <P>
-                      Once Fixtura has learned about {FindAccountLabel(account)}
-                      , you can tailor your experience just the way you like.
-                      Select layouts, audio themes, and more.
+                      Step into a world of visual diversity with Fixtura's
+                      Graphics Packages. Choose the style that resonates with
+                      {FindAccountLabel(account)}'s identity, whether you're
+                      looking for dynamic match summaries or elegant player
+                      profiles. Our wide range ensures there's a perfect fit for
+                      every club's personality.
                     </P>
                   </List.Item>
                   <List.Item
@@ -91,12 +110,27 @@ console.log("isSetup", isSetup)
                       />
                     }
                   >
-                    <P Weight={600} color={4}>
-                      Scheduled Delivery
-                    </P>
+                    <Group position="apart">
+                      <P Weight={600} color={4}>
+                        Branding
+                      </P>
+                      <BTN_TOINTERALLINK
+                        URL={`/members/graphics-packages/`}
+                        LABEL={"Graphics Packages"}
+                      />
+                    </Group>
                     <P>
-                      Choose the day for your weekly asset delivery and know
-                      exactly when to expect your content.
+                      Your club's brand is central to your identity. Fixtura
+                      empowers you to integrate your unique brand elements into
+                      every digital asset. From embedding your logo to matching
+                      your club's colors, each piece of content becomes an
+                      authentic representation of {FindAccountLabel(account)}.
+                    </P>
+                    <P textAlign={`right`}>
+                      <BTN_TOINTERALLINK
+                        URL={`/members/bundles/`}
+                        LABEL={"Bundles"}
+                      />
                     </P>
                   </List.Item>
                   <List.Item
@@ -104,12 +138,26 @@ console.log("isSetup", isSetup)
                       <IconEye stroke={1.5} size="2rem" color={"#6699CC"} />
                     }
                   >
-                    <P Weight={600} color={4}>
-                      Season Tracking
-                    </P>
+                    <Group position="apart">
+                      <P Weight={600} color={4}>
+                        Gallery Items
+                      </P>
+                      <BTN_TOINTERALLINK
+                        URL={`/members/graphics-packages/`}
+                        LABEL={"Graphics Packages"}
+                      />
+                    </Group>
                     <P>
-                      We'll keep an eye on the fixtures throughout your season,
-                      so you're always in the loop.
+                      Elevate your visual storytelling with Fixtura’s Gallery
+                      Items. These images are not just static displays; they
+                      become the backbone of your videos and graphics. Whether
+                      it's for impactful background visuals or striking hero
+                      images, the photos you upload set the stage for each
+                      digital creation. Tailor your {FindAccountLabel(account)}'s narrative by
+                      choosing images that resonate with your team’s spirit and
+                      triumphs. With each upload, you're not just adding a
+                      picture; you're crafting the visual essence of your club's
+                      story.
                     </P>
                   </List.Item>
                   <List.Item
@@ -121,13 +169,21 @@ console.log("isSetup", isSetup)
                       />
                     }
                   >
-                    <P Weight={600} color={4}>
-                      Subscription Selection
-                    </P>
+                    <Group position="apart">
+                      <P Weight={600} color={4}>
+                        Sponsorships
+                      </P>
+                      <BTN_TOINTERALLINK
+                        URL={`/members/graphics-packages/`}
+                        LABEL={"Graphics Packages"}
+                      />
+                    </Group>
                     <P>
-                      Pick the subscription that suits you, sit back, and watch
-                      as custom-made assets about your weekend fixtures fill
-                      your inbox.
+                      Showcase the supporters behind {FindAccountLabel(account)}
+                      with ease and impact. Fixtura simplifies the creation and
+                      display of sponsor profiles, ensuring your partners
+                      receive the recognition they deserve, while elevating your
+                      club's digital footprint.
                     </P>
                   </List.Item>
                 </List>

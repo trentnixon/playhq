@@ -10,18 +10,18 @@ import { getDominantColors } from "../../../remotion/utils/colors";
 import {
   UpComingFixtures, 
   WeekendResults,
-  Top5BattingList,
+  Top5BattingList, 
   Top5BowlingList,
   Ladder,
   WeekendSingleGameResult,
   RosterPoster,
-} from "./Examples/AssetExamples";
+} from "../GLOBAL/Examples/AssetExamples";
 import { AbsoluteFill } from "remotion";
 import { IconPlayBasketball, IconPlayerPlayFilled } from "@tabler/icons-react";
 import { Image } from "@mantine/core";
 
 export const RemotionPlayer = ({
-  clubData,
+  AccountData,
   selectedMedia,
   TYPE,
   userColors,
@@ -96,16 +96,16 @@ export const RemotionPlayer = ({
 
   useEffect(() => {
     if (
-      clubData &&
+      AccountData &&
       selectedMedia?.CompositionID &&
       ASSETS[selectedMedia.CompositionID]
     ) {
       let updatedData;
       const currentAsset = ASSETS[selectedMedia.CompositionID];
-      const accountName = clubData.attributes.Name; // or the appropriate field for the account name
-      const useLOGO = DefineLogo(clubData, userlogoUrl);
+      const accountName = AccountData.attributes.Name; // or the appropriate field for the account name
+      const useLOGO = DefineLogo(AccountData, userlogoUrl);
       updatedData = updateDataWithClubInfo(
-        clubData,
+        AccountData,
         currentAsset.DATA,
         DEFAULTLOGO
       );
@@ -151,11 +151,11 @@ export const RemotionPlayer = ({
       }
 
       // updatedData = { ...currentAsset.DATA };
-      updateColorTheme(clubData, updatedData);
+      updateColorTheme(AccountData, updatedData);
     }
-  }, [clubData, selectedMedia, ASSETS]);
+  }, [AccountData, selectedMedia, ASSETS]);
 
-  const DefineLogo = (clubData, userlogoUrl) => {
+  const DefineLogo = (AccountData, userlogoUrl) => {
     // If userlogoUrl is provided and not false, use it as the logo
     if (userlogoUrl) {
       return userlogoUrl;
@@ -163,8 +163,8 @@ export const RemotionPlayer = ({
 
     // Otherwise, fallback to the existing logic
     return (
-      clubData.attributes.Logo?.data?.url ||
-      clubData.attributes?.ParentLogo ||
+      AccountData.attributes.Logo?.data?.url ||
+      AccountData.attributes?.ParentLogo ||
       DEFAULTLOGO
     );
   };
@@ -215,10 +215,10 @@ export const RemotionPlayer = ({
     return data;
   };
   // Extracted color theme update function
-  const updateColorTheme = (clubData, updatedData) => {
+  const updateColorTheme = (AccountData, updatedData) => {
     /* console.log("OVERRIDE COLORS", userColors); */
     const logoUrl =
-      clubData.attributes.Logo.data || clubData.attributes.ParentLogo;
+      AccountData.attributes.Logo.data || AccountData.attributes.ParentLogo;
     if (logoUrl) {
       getDominantColors(logoUrl)
         .then((colors) => {
@@ -244,13 +244,13 @@ export const RemotionPlayer = ({
     }
   };
 
-  const updateDataWithClubInfo = (clubData, initialData, defaultLogo) => {
+  const updateDataWithClubInfo = (AccountData, initialData, defaultLogo) => {
     const updatedData = { ...initialData };
 
     // Determine the logo to use: Club Logo > Parent Logo > Default Logo
-    const useLOGO = DefineLogo(clubData, userlogoUrl);
+    const useLOGO = DefineLogo(AccountData, userlogoUrl);
 
-    updatedData.VIDEOMETA.Club.Name = clubData.attributes.Name;
+    updatedData.VIDEOMETA.Club.Name = AccountData.attributes.Name;
     updatedData.VIDEOMETA.Club.Logo = useLOGO;
 
     return updatedData;
@@ -287,8 +287,8 @@ export const RemotionPlayer = ({
           renderPoster({
             height,
             width,
-            useLOGO: DefineLogo(clubData, userlogoUrl),
-            accountName: clubData.attributes.Name,
+            useLOGO: DefineLogo(AccountData, userlogoUrl),
+            accountName: AccountData.attributes.Name,
             assetType: selectedMedia.CompositionID,
           })
         }

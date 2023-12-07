@@ -3,8 +3,8 @@ import { Grid, Button, Paper, Space, Group, Tooltip, Box } from "@mantine/core";
 import { MediaTabs } from "./MediaTabs";
 import { GradientTitle, H, P } from "../../Members/Common/Type";
 import { IconCircle, IconCircleCheck, IconQuestionCircle } from "@tabler/icons";
-import ColorPickerComponent from "./ColorPickerComponent";
-import ImageUploader from "./ImageUploader";
+import ColorPickerComponent from "../GLOBAL/ColorPickerComponent";
+import ImageUploader from "../GLOBAL/ImageUploader";
 import { IconAlertCircle, IconShieldOff } from "@tabler/icons-react";
 function groupAssetsByCategory(assets) {
   // Define the list of CompositionIDs to exclude
@@ -38,8 +38,8 @@ function groupAssetsByCategory(assets) {
     return groupedAssets;
   }, {});
 }
-
-export const Previewer = ({ clubData, useAssets }) => {
+ 
+export const Previewer = ({ AccountData, useAssets }) => {
   const groupedAssets = groupAssetsByCategory(useAssets);
   const [selectedTab, setSelectedTab] = useState("VIDEO");
   const [selectedMedia, setSelectedMedia] = useState(null);
@@ -100,7 +100,7 @@ export const Previewer = ({ clubData, useAssets }) => {
       <Grid.Col md={1} lg={7}>
         <MediaTabs
           key={playerKey} // Assign the key here
-          clubData={clubData}
+          AccountData={AccountData}
           selectedTab={selectedTab}
           setSelectedTab={setSelectedTab}
           selectedMedia={selectedMedia}

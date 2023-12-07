@@ -15,6 +15,7 @@ import { useMediaQuery } from "@mantine/hooks";
 import ReactMarkdown from "react-markdown";
 import { useEffect, useRef, useState } from "react";
 import {
+  IconDiscountCheckFilled,
   IconMusic,
   IconPlayerPauseFilled,
   IconPlayerPlayFilled,
@@ -24,66 +25,107 @@ export function TemplateDetail({ template, onBack, onSelect, isSelected }) {
 
   const Display = template.attributes;
   return (
-    <div>
+    <>
       <Container my="md" fluid>
-        <Group position="apart">
-          <P Weight={900}>{Display.FrontEndName}</P>
+        <Group position="apart" mb={20}>
+          <Group position="apart">
+            <P Weight={900} size={"xl"} marginBottom={0}> 
+              {Display.FrontEndName}
+            </P>
+          </Group>
+          <Group>
+            {isSelected ? (
+              <>
+                <Group position="left">
+                  <IconDiscountCheckFilled fill="#0000ff" size={"2em"} />
+                  <P textAlign="right" color={6} marginBottom={0}>
+                    Selected template.
+                  </P>
+                </Group>
+              </>
+            ) : (
+              <BTN_ONCLICK
+                HANDLE={() => onSelect(template)}
+                LABEL={"Use this Template"}
+                THEME="success"
+              />
+            )}
+            <BTN_ONCLICK HANDLE={onBack} LABEL={"Back to List"} THEME="error" />
+          </Group>
         </Group>
 
-        <Group position="apart" mb={20}>
-          {isSelected ? (
-            <P textAlign="right" color={6} marginBottom={0}>
-              This is your currently selected template.
+        <Paper withBorder p={"md"}>
+          <SimpleGrid
+            cols={2}
+            breakpoints={[
+              { maxWidth: "md", cols: 3, spacing: "md" },
+              { maxWidth: "sm", cols: 2, spacing: "sm" },
+              { maxWidth: "xs", cols: 1, spacing: "sm" },
+            ]}
+            spacing="md"
+            mt={0}
+          >
+            <Paper mb={20}>
+              <Paper
+                p={"xs"}
+                sx={(theme) => ({
+                  backgroundColor: theme.colors.gray[3],
+                })}
+              >
+                <P Weight={900} marginBottom={0}>
+                  About
+                </P>
+              </Paper>
+
+              <Paper shadow="0" mb={20} p="sm">
+                <ReactMarkdown>{Display.Description}</ReactMarkdown>
+              </Paper>
+            </Paper>
+            <Paper>
+              <AudioPlayer
+                Audio={
+                  template.attributes.bundle_audio.data.attributes.audio_options
+                    .data
+                }
+              />
+            </Paper>
+            
+          </SimpleGrid>
+          <Paper
+            p={"xs"}
+            sx={(theme) => ({
+              backgroundColor: theme.colors.gray[3],
+            })}
+          >
+            <P Weight={900} marginBottom={0}>
+              Samples
             </P>
+          </Paper>
+
+          <ExampleGallery Gallery={Display.Gallery.data} />
+        </Paper>
+
+        <Group position="right" mb={20} mt={20}>
+          {isSelected ? (
+            <>
+              <Group position="left">
+                <IconDiscountCheckFilled fill="#0000ff" size={"2em"} />
+                <P textAlign="right" color={6} marginBottom={0}>
+                  Selected template.
+                </P>
+              </Group>
+            </>
           ) : (
             <BTN_ONCLICK
               HANDLE={() => onSelect(template)}
-              LABEL={"Select this Template"}
+              LABEL={"Use this Template"}
               THEME="success"
             />
           )}
-          <BTN_ONCLICK HANDLE={onBack} LABEL={"Back"} THEME="error" />
-        </Group>
-        <SimpleGrid
-          cols={2}
-          breakpoints={[
-            { maxWidth: "md", cols: 3, spacing: "md" },
-            { maxWidth: "sm", cols: 2, spacing: "sm" },
-            { maxWidth: "xs", cols: 1, spacing: "sm" },
-          ]}
-          spacing="md"
-        >
-          <Paper>
-            <Group position="right" mb={20}>
-              <VideoPlayer url={Display.Video.data.attributes.url} />
-            </Group>
-
-            <AudioPlayer
-              Audio={
-                template.attributes.bundle_audio.data.attributes.audio_options
-                  .data
-              }
-            />
-          </Paper>
-          <Paper mb={20}>
-            <Paper shadow="md" mb={20} p="sm" >
-              <ReactMarkdown>{Display.Description}</ReactMarkdown>
-            </Paper>
-            <Group position="right" mb={20}>
-              <BTN_ONCLICK
-                HANDLE={() => onSelect(template)}
-                LABEL={"Select this Template"}
-                THEME="success"
-              />
-            </Group>
-          </Paper>
-        </SimpleGrid>
-        <ExampleGallery Gallery={Display.Gallery.data} />
-        <Group position="right" mt={20}>
-          <BTN_ONCLICK HANDLE={onBack} LABEL={"Back"} THEME="error" />
+          <BTN_ONCLICK HANDLE={onBack} LABEL={"Back to List"} THEME="error" />
         </Group>
       </Container>
-    </div>
+    </>
   );
 }
 
@@ -100,11 +142,11 @@ function ExampleGallery({ Gallery }) {
   const theme = useMantineTheme();
   const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
   return (
-    <Paper shadow="md" p="sm" withBorder>
+    <Paper shadow="0" p="sm">
       <Center>
         <Carousel
           maw={"100%"}
-          slideSize="33.33333%"
+          slideSize="25%"
           breakpoints={[{ maxWidth: "xs", slideSize: "100%", slideGap: 0 }]}
           slideGap="xs"
           align="start"
@@ -146,8 +188,18 @@ const AudioPlayer = ({ Audio }) => {
   }, [currentAudio]);
   return (
     <>
-      <P Weight={900}>Curated Audio Bundle</P>
-      <Paper mb={20}>
+      <Paper
+        p={"xs"}
+        sx={(theme) => ({
+          backgroundColor: theme.colors.gray[3],
+        })}
+      >
+        <P Weight={900} marginBottom={0}>
+          Curated Audio Bundle
+        </P>
+      </Paper>
+
+      <Paper my={20}>
         {Audio.map((audio, i) => (
           <Group key={i} position="apart">
             <Group>
@@ -163,7 +215,7 @@ const AudioPlayer = ({ Audio }) => {
                 )}
               </ActionIcon>
 
-              <P marginBottom={0} textAlign="left"> 
+              <P marginBottom={0} textAlign="left">
                 {audio.attributes.ComponentName}
               </P>
             </Group>

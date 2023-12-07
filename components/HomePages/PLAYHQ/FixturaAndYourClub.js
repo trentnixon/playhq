@@ -4,17 +4,18 @@ import React, { useEffect } from "react";
 import { Gradient } from "../../../utils/Gradient";
 import { Group, Image, Text } from "@mantine/core";
 
-import { GradientTitle, P } from "../../Members/Common/Type";
+import { P } from "../../Members/Common/Type";
 import Link from "next/link";
 import { trackButtonClick } from "../../../lib/GA";
 import { useMediaQuery } from "@mantine/hooks";
 
-const FixturaAndYourClubBanner = ({ clubData }) => {
-  //console.log(clubData)
-  const useLOGO = !clubData.Logo.data
-    ? clubData.ParentLogo
-    : clubData.Logo.data.attributes.url;
-  //console.log(useLOGO);
+const FixturaAndYourClubBanner = ({ AccountData }) => {
+  console.log(AccountData)
+  const useLOGO = !AccountData.Logo.data
+    ? AccountData.ParentLogo
+    : AccountData.Logo.data.attributes.url;
+
+
   const matches = useMediaQuery('(min-width: 56.25em)');
   return (
     <>
@@ -95,12 +96,12 @@ const FixturaAndYourClubBanner = ({ clubData }) => {
                       },
                     }}
                   >
-                    <Link href="/SignUp">
+                    <Link href="/sign-up">
                       <a
                         className="btn btn-secondary"
                         onClick={() =>
-                          trackButtonClick("Campaign Header CTA Click")
-                        } // Track button click
+                          trackButtonClick("Campaign Header CTA Click SIGN UP")
+                        }
                       >
                         Start Your Free Trial!
                       </a>

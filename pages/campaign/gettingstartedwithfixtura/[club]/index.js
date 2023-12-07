@@ -36,12 +36,12 @@ const ClubPage = ({ clubData, useAssets }) => {
         description={`Discover Fixtura's cutting-edge social media content tools for ${clubName}. Engage fans with AI-powered digital assets.`}
         keywords={`Fixtura, ${clubName}, sports content creation, AI-powered social media, cricket digital assets, sports clubs marketing`}
       />
-      <FixturaAndYourClubBanner clubData={clubData.attributes} />
+      <FixturaAndYourClubBanner AccountData={clubData.attributes} />
 
       <> 
         <Section {...SectionPlayer} color="light">
           <Container p={padding}>
-            <Previewer clubData={clubData} useAssets={useAssets} />
+            <Previewer AccountData={clubData} useAssets={useAssets} />
           </Container>
         </Section>
         <Section {...SectionData} color="grey">

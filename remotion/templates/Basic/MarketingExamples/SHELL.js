@@ -30,7 +30,7 @@ export const ExampleSHELL = (props) => {
             VIDEOMETA={DATA.VIDEOMETA}
           />
         </Sequence>
-        <Sequence durationInFrames={TIMINGS.FPS_MAIN} from={TIMINGS.FPS_INTRO}>
+        <Sequence durationInFrames={TIMINGS.FPS_MAIN} from={TIMINGS.FPS_INTRO} style={{ zIndex:100}}>
           {props.children}
         </Sequence>
         <Sequence

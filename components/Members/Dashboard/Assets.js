@@ -111,7 +111,7 @@ export const DashBoardAssets = ({
       <Group position="right" mt="md">
         <BTN_TOINTERALLINK
           LABEL={"Change"}
-          URL={"members/graphics-packages/"}
+          URL={"members/customizer/"}
         />
       </Group>
     </Paper>

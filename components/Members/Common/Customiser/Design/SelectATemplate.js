@@ -1,6 +1,13 @@
 import { useEffect, useState } from "react";
 import { FixturaLoading } from "../../Loading";
-import { Container, Paper, SimpleGrid, Space, useMantineTheme } from "@mantine/core";
+import {
+  Container,
+  Paper,
+  ScrollArea,
+  SimpleGrid,
+  Space,
+  useMantineTheme,
+} from "@mantine/core";
 import {
   useAssignDesignElement,
   useGETDesignElement,
@@ -61,7 +68,7 @@ export const SelectATemplate = ({ hasMediaItems }) => {
       return acc;
     }, {});
   }
-  
+
   if (loading || !GetElement || !userAccount) {
     return (
       <>
@@ -92,10 +99,9 @@ export const SelectATemplate = ({ hasMediaItems }) => {
   }
   return (
     <>
-      <Space h={10} />
       <Paper
         radius="md"
-        mt={30}
+        mt={0}
         p="0"
         sx={(theme) => ({ backgroundColor: theme.white })}
       >
@@ -107,6 +113,7 @@ export const SelectATemplate = ({ hasMediaItems }) => {
             {/* Display the category name */}
             <SimpleGrid
               breakpoints={[
+                { minWidth: "xs", cols: 2 },
                 { minWidth: "sm", cols: 2 },
                 { minWidth: "md", cols: 3 },
               ]}
@@ -127,7 +134,7 @@ export const SelectATemplate = ({ hasMediaItems }) => {
                   hasMediaItems={hasMediaItems}
                 />
               ))}
-            </SimpleGrid>
+            </SimpleGrid> 
           </Container>
         ))}
       </Paper>
