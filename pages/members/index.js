@@ -11,7 +11,16 @@ import {
   MembersWrapper,
   PageCopyWrapper,
 } from "../../components/Members/Common/Containers";
-import { Container, Progress, SimpleGrid, Space } from "@mantine/core";
+import {
+  Center,
+  Container,
+  Group,
+  Paper,
+  Progress,
+  SimpleGrid,
+  Space,
+  useMantineTheme,
+} from "@mantine/core";
 import { LoadingStateWrapper } from "../../components/Members/Account/HOC/LoadingStateWrapper";
 
 import { useAccountDetails } from "../../lib/userContext";
@@ -28,6 +37,10 @@ import { IsFreeTrialFeedback } from "../../components/Members/Account/userIsFree
 import { IsFreeTrialWelcome } from "../../components/Members/Account/components/isTrialNotifications.js/FreeTrialMessaging";
 import Meta from "../../components/Layouts/Meta";
 import { GroupBySwitch } from "../../components/Members/Account/components/Settings/GroupBySwitch";
+import { Carousel } from "@mantine/carousel";
+import { useMediaQuery } from "@mantine/hooks";
+import { PreviewGallery } from "../../components/Members/Dashboard/PreviewGallery";
+import { BTN_TOINTERALLINK } from "../../components/Members/Common/utils/Buttons";
 
 const DashBoard = () => {
   const { account } = useAccountDetails();
@@ -125,9 +138,23 @@ const DashBoard = () => {
             Copy={`Hi ${account.attributes.FirstName}`}
             ICON={<IconLayoutDashboard size={40} />}
           />
-          <SubHeaders Copy="DashBoard" />
           <IsFreeTrialWelcome user={account} />
-       
+
+          <SubHeaders Copy="Preview" />
+          <P>
+            Preview your assets here with our sample data. For a look that
+            perfectly fits your brand, don't forget to visit our customization
+            section
+          </P>
+          <PreviewGallery account={account} />
+          <Group position="right">
+            <BTN_TOINTERALLINK
+              LABEL={"Customizer"}
+              URL={"/members/customizer/"}
+            />
+          </Group>
+
+          {/*   <SubHeaders Copy="DashBoard" /> */}
 
           <Space h={20} />
           <SubHeaders Copy="Account" />
@@ -179,7 +206,7 @@ const DashBoard = () => {
           </SimpleGrid>
           <Space h={50} />
           <SubHeaders Copy="Settings" />
-              <GroupBySwitch account={account}/>
+          <GroupBySwitch account={account} />
           <Space h={50} />
           <IsFreeTrialFeedback />
         </LoadingStateWrapper>

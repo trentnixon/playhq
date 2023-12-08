@@ -50,7 +50,7 @@ const Design = ({ Response }) => {
   const { user } = useUser();
 
   useEffect(() => {}, [userAccount]);
-  useEffect(() => {
+  useEffect(() => { 
     setUserAccount(account);
   }, [account]);
 

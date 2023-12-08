@@ -31,7 +31,7 @@
         "FPS_OUTRO": 180,
         "FPS_MAIN": 2700
       },
-      "FRAMES": [100, 600],
+      "FRAMES": [600],
       "includeSponsors": true
     },
     "Club": {

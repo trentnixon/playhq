@@ -1,54 +1,31 @@
+// MembersPreviewShell component file
 import { useEffect, useState } from "react";
-import { Select, Paper } from "@mantine/core";
-import {
-  FindAccountLabel,
-  FindAccountLogo,
-  FindAccountType,
-} from "../../../lib/actions";
+import { Paper } from "@mantine/core";
 import { MembersPreviewPlayer } from "./Player";
 import { P } from "../Common/Type";
+import { createPreviewObject } from "../../../utils/RemotionUtils";
 
 export const MembersPreviewShell = (props) => {
   const { userAccount, selectedAsset, selectedHeroImage } = props;
-  //const [selectedAsset, setSelectedAsset] = useState("UpComingFixtures");
   const [previewObj, setPreviewObj] = useState({});
 
-  //console.log(selectedAsset, userAccount.attributes.template.data.attributes.bundle_audio.data.attributes.audio_options.data)
   useEffect(() => {
-    const audioOptions = userAccount.attributes.template.data.attributes.bundle_audio.data.attributes.audio_options.data;
-
-    const filteredAudioOptions = audioOptions.filter(option => option.attributes.CompositionID === selectedAsset);
-
-    const updatedPreviewObj = {
-      theme: userAccount.attributes.theme.data.attributes.Theme,
-      template: userAccount.attributes.template.data.attributes,
-      sponsors: userAccount.attributes.sponsors.data,
-      account_media_libraries:
-        userAccount.attributes.account_media_libraries.data,
-      Account: {
-        type: FindAccountType(userAccount),
-        logo: FindAccountLogo(userAccount),
-        name: FindAccountLabel(userAccount),
-      },
-      HeroImage: selectedHeroImage, 
-      audio_option: filteredAudioOptions.length > 0 ? filteredAudioOptions[0] : null,
-    };
-
+    const updatedPreviewObj = createPreviewObject(userAccount, selectedAsset, selectedHeroImage);
     setPreviewObj(updatedPreviewObj);
-  }, [userAccount, selectedHeroImage]); // Dependency array includes userAccount
+  }, [userAccount, selectedAsset, selectedHeroImage]); // Update the dependency array
 
   if (Object.keys(previewObj).length === 0) {
     return <P>Loading...</P>;
   }
+  
   return (
-    <>
-      <Paper shadow="md" w={"100%"} p={0} withBorder>
-        <MembersPreviewPlayer
-          OBJ={previewObj}
-          Selected={selectedAsset}
-          HeroImage={selectedHeroImage}
-        />
-      </Paper> 
-    </>
-  );
+    <Paper shadow="md" w={"100%"} p={0} withBorder>
+      <MembersPreviewPlayer
+        OBJ={previewObj}
+        Selected={selectedAsset}
+        HeroImage={selectedHeroImage}
+      />
+    </Paper>
+  ); 
 };
+ 
