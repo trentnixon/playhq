@@ -23,7 +23,7 @@ export const PreviewGallery = ({ account }) => {
   
   const templateType = previewObj.template.Category;
   const assetTypes = Object.keys(ASSETS[templateType]);
-
+ 
   return (
     <Paper shadow="0" p="sm">
       <Center>
