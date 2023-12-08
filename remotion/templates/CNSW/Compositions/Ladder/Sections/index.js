@@ -12,7 +12,7 @@ export const LadderPositions = (props) => {
 			<LadderContainer>
 				<LadderHeader {...props} />
 				{Ladder.League.map((position, i) => {
-					console.log(i)
+				
 					return (
 						<LadderPosition
 							key={i}

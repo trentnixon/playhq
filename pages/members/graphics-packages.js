@@ -85,7 +85,7 @@ const Design = ({ Response }) => {
               key={playerKey}
               userAccount={userAccount}
               selectedAsset={selectedAsset}
-              selectedHeroImage={selectedHeroImage}
+              selectedHeroImage={selectedHeroImage} 
             />
           </Grid.Col>
           <Grid.Col  sm={12} md={6}>

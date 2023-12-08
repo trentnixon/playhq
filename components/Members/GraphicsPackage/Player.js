@@ -99,6 +99,8 @@ export const MembersPreviewPlayer = ({ OBJ, Selected, HeroImage }) => {
     DEFAULTLOGO
   );
 
+    console.log(updatedData.VIDEOMETA.Video.audio_option)
+
   return (
     <Player
       component={useData.component}
@@ -227,5 +229,12 @@ const mergeData = (useData, customObj) => {
   // Hero Image Replacement
   useData.VIDEOMETA.Video.HeroImage = customObj.HeroImage;
   console.log(useData);
+
+    // Hero Image Replacement
+    console.log(customObj)
+    useData.VIDEOMETA.Video.audio_option = customObj.audio_option.attributes.URL;
+    console.log(useData);
+
+
   return useData;
 };

@@ -8,7 +8,7 @@ export const Results = (props) => {
 	const {DATA, FPS_SCORECARD} = props;
 
 	const groupsOfTwo = splitIntoGroupsOfTwo(DATA);
-	console.log(DATA)
+	//console.log(DATA)
 	return (
 		<ResultsContainer>
 			<Series>

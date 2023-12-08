@@ -33,7 +33,7 @@ export const Top5PlayersMap = (props) => {
 					<PlayerROW
 						key={i}
 						style={{
-							borderRadius: TemplateVariation.borderRadius,
+							
 							backgroundColor: lightenColor(THEME.primary),
 							width: `${SpringToFrom(i * 1, 0, 100, 'Wobbly')}%`,
 							transform: `translateX(${SpringToFrom(
@@ -58,13 +58,13 @@ export const Top5PlayersMap = (props) => {
 							<ImageWithFallback
 								fallbackSrc="https://fixtura.s3.ap-southeast-2.amazonaws.com/Default_ICON_171b58a21b.png" // Replace with your fallback image URL
 								src={player.teamLogo}
-								style={{...TemLogoStyles, borderRadius: '0%'}}
+								style={{...TemLogoStyles}}
 							/>
 						</SmallBoxLeftSide>
 						<PlayerMetaContainer>
 							<PlayerName
 								style={{
-									borderRadius: TemplateVariation.borderRadius,
+									
 									color: getContrastColor(darkenColor(THEME.primary)),
 									fontFamily, 
 									clipPath: FromLeftToRight(45 + i * 7, 'Slow'),
@@ -81,14 +81,14 @@ export const Top5PlayersMap = (props) => {
 									clipPath: FromLeftToRight(45 + i * 7, 'Slow'),
 								}}
 							>
-								{restrictString(removeEmojis(player.playedFor), 40)}
+								{restrictString(removeEmojis(player.playedFor), 30)}
 							</PlayerGradeTeam>
 						</PlayerMetaContainer>
 
 						<PlayerScoreContianer
 							style={{
 								width: `${SpringToFrom(30 + i * 1, 0, 250, 'Wobbly')}px`,
-								borderRadius: TemplateVariation.borderRadius,
+							
 								background: darkenColor(THEME.primary),
 								borderColor: i === 0 ? THEME.secondary : THEME.primary,
 							}}
@@ -130,7 +130,7 @@ const BattingScores = ({COLOR, player, fontFamily, style}) => {
 
 			<span
 				style={{
-					fontSize: '.4em',
+					fontSize: '.65em',
 				}}
 			>
 				{player.param1 === 0 ? '' : `(${player.param1})`}

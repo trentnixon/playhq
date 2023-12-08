@@ -12,7 +12,7 @@ export const UpComingFixtures = ({ DATA }) => {
         durationInFrames={[
           DATA.TIMINGS.FPS_INTRO,
           DATA.TIMINGS.FPS_MAIN,
-          DATA.TIMINGS.FPS_OUTRO,
+          DATA.TIMINGS.FPS_OUTRO, 
         ].reduce((a, b) => a + b, 0)}
         from={0}
       >

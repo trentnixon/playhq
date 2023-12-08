@@ -13,8 +13,12 @@ export const MembersPreviewShell = (props) => {
   //const [selectedAsset, setSelectedAsset] = useState("UpComingFixtures");
   const [previewObj, setPreviewObj] = useState({});
 
+  //console.log(selectedAsset, userAccount.attributes.template.data.attributes.bundle_audio.data.attributes.audio_options.data)
   useEffect(() => {
-  
+    const audioOptions = userAccount.attributes.template.data.attributes.bundle_audio.data.attributes.audio_options.data;
+
+    const filteredAudioOptions = audioOptions.filter(option => option.attributes.CompositionID === selectedAsset);
+
     const updatedPreviewObj = {
       theme: userAccount.attributes.theme.data.attributes.Theme,
       template: userAccount.attributes.template.data.attributes,
@@ -26,7 +30,8 @@ export const MembersPreviewShell = (props) => {
         logo: FindAccountLogo(userAccount),
         name: FindAccountLabel(userAccount),
       },
-      HeroImage: selectedHeroImage,
+      HeroImage: selectedHeroImage, 
+      audio_option: filteredAudioOptions.length > 0 ? filteredAudioOptions[0] : null,
     };
 
     setPreviewObj(updatedPreviewObj);
@@ -43,7 +48,7 @@ export const MembersPreviewShell = (props) => {
           Selected={selectedAsset}
           HeroImage={selectedHeroImage}
         />
-      </Paper>
+      </Paper> 
     </>
   );
 };

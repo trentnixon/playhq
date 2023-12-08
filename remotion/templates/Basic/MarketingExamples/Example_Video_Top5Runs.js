@@ -1,9 +1,10 @@
 /* eslint-disable camelcase */
+
 import { loadFont } from "@remotion/google-fonts/Heebo";
 import { Top5List } from "../Compositions/Top5List";
 
 export const Example_Video_Top5Runs = (props) => {
-  const { DATA, TYPE } = props;
+  const { DATA,TYPE } = props;
   const { fontFamily } = loadFont();
   const { TIMINGS } = DATA;
 

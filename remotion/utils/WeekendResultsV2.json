@@ -11,7 +11,7 @@
       "ASSETTYPEID": 2,
       "Title": "Results",
       "TitleSplit": ["Results"],
-      "CompositionID": "WeekendSingleGameResult",
+      "CompositionID": "WeekendSingleGameResult", 
       "TemplateVariation": {
         "borderRadius": "10px"
       },
@@ -45,7 +45,8 @@
           "isPrimary": true
         }
       ]
-    }
+    },
+    "grouping_category": "Senior"
   },
   "DATA": [
     {

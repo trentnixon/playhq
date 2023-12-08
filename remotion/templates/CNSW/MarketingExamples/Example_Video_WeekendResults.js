@@ -1,9 +1,9 @@
 /* eslint-disable camelcase */
 import { AbsoluteFill } from "remotion";
 import { loadFont } from "@remotion/google-fonts/Heebo";
-import { Ladder } from "../Compositions/Ladder";
+import { WeekendResults } from "../Compositions/WeekendResults/index";
 
-export const Example_Video_Ladder = (props) => {
+export const Example_Video_WEEKENDRESULTS = (props) => {
   const { DATA } = props;
   const { fontFamily } = loadFont();
   const { TIMINGS } = DATA;
@@ -24,7 +24,7 @@ export const Example_Video_Ladder = (props) => {
 
   return (
     <AbsoluteFill style={{ zIndex: 100 }}>
-      <Ladder {...commonProps} />
+      <WeekendResults {...commonProps} />
     </AbsoluteFill>
   );
 };

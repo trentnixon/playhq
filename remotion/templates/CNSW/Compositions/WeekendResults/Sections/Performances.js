@@ -34,7 +34,6 @@ const PerformanceItem = styled.div`
 	display: flex;
 	align-items: center;
 	background-color: ${(props) => props.bgColor};
-	border-radius: ${(props) => props.borderRadius};
 	padding: 0px;
 	margin-bottom: 5px;
 	width: auto;
@@ -90,7 +89,6 @@ export const PlayerPerformances = (props) => {
 							<PerformanceItem
 								key={`home-batting-${index}`}
 								bgColor={darkenColor(THEME.secondary)}
-								borderRadius={TemplateVariation.borderRadius}
 								style={{
 									clipPath: FromRightToLeft(45 + index * 7, 'Slow'),
 									opacity: interpolateOpacityByFrame(
@@ -126,7 +124,6 @@ export const PlayerPerformances = (props) => {
 							<PerformanceItem
 								key={`home-bowling-${index}`}
 								bgColor={darkenColor(THEME.secondary)}
-								borderRadius={TemplateVariation.borderRadius}
 								style={{
 									clipPath: FromLeftToRight(45 + index * 7, 'Slow'),
 									opacity: interpolateOpacityByFrame(

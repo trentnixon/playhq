@@ -78,6 +78,7 @@ export const TeamsAndScores = (props) => {
 	const teamHomeLogoStyles = useImageDimensions(teamHomeLogo, IMGSIZING);
 	const teamAwayLogoStyles = useImageDimensions(teamAwayLogo, IMGSIZING);
 
+
 	if (teamHome === 'Bye' || teamAway === 'Bye')
 		return <BYEContainer {...props} />;
 

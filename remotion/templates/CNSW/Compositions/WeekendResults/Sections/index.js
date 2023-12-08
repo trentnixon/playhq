@@ -26,7 +26,7 @@ export const Match = (props) => {
 
 	const primaryColor = props.THEME.primary;
 
-	console.log(matchData);
+	//console.log(matchData);
 
 	const IMGSIZING = [80, 80, 80];
 	const teamHomeLogoStyles = useImageDimensions(teamHomeLogo, IMGSIZING);

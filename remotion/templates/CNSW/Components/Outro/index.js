@@ -21,12 +21,12 @@ export const OutroSequenceFrame = ({theme, DATA, FPS}) => {
 								frame={frame}
 								FPS={FPS}
 							/>
-							<ClubNameComponent
+							{/* <ClubNameComponent
 								name={DATA.VIDEOMETA.Club.Name}
 								frame={frame}
 								FPS={FPS}
 								theme={theme}
-							/>
+							/> */}
 						</ClubNameContainer>
 					</SponsorOuterContainer>
 				</Series.Sequence>

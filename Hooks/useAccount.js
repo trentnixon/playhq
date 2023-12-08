@@ -30,6 +30,8 @@ export const useAccount = (ctx) => {
         "clubs.Logo",
         "clubs.trial_instance",
         "template",
+        "template.bundle_audio",
+        "template.bundle_audio.audio_options",
         "theme",
         "audio_option",
         "order",

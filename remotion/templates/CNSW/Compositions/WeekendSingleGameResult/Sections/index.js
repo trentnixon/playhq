@@ -34,7 +34,7 @@ const GradeName = styled.h2`
 `;
 const DisplayGradeName = (props) => {
 	const {fontFamily, THEME} = props;
-	console.log('gradeName', props.matchData.gradeName);
+	//console.log('gradeName', props.matchData.gradeName);
 	return (
 		<GradeName
 			fontFamily={fontFamily}

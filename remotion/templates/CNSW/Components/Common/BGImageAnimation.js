@@ -40,7 +40,10 @@ const ImageBackground = ({url, style, backgroundColor}) => (
 				position: 'absolute',
 			}}
 		></div>
-		<Img src={url} style={style} />
+		{
+			url ?<Img src={url} style={style} />:false
+		}
+		
 	</div>
 );
 
@@ -72,7 +75,7 @@ export const BGImageAnimation = ({
 }) => {
 	const frame = useCurrentFrame();
 	const [direction, setDirection] = useState(null);
-	const {url, ratio} = HeroImage || {};
+	const {url, ratio, height, width} = HeroImage || {};
 	const backgroundColor = THEME.primary;
 
 	useEffect(() => {
@@ -85,13 +88,13 @@ export const BGImageAnimation = ({
 
 	let style = {};
 	if (ratio === 'landscape') {
-		style = landscapeAnimation(frame, TIMINGS, direction);
+		style = landscapeAnimation(frame, TIMINGS, direction, width,height);
 	} else if (ratio === 'portrait') {
-		style = portraitAnimation(frame, TIMINGS, direction);
+		style = portraitAnimation(frame, TIMINGS, direction, width,height);
 	}
 
 	const renderBackground = (THEME, TemplateVariation) => {
-		console.log(TemplateVariation);
+		
 		switch (TemplateVariation.Background) {
 			case 'Image':
 				return (
@@ -101,7 +104,7 @@ export const BGImageAnimation = ({
 						backgroundColor={backgroundColor}
 					/>
 				);
-			case 'Gradient':
+			case 'Gradient': 
 				// Define your gradient here or pass it through props
 				const gradient = `linear-gradient(15deg, ${
 					THEME.secondary
@@ -113,7 +116,7 @@ export const BGImageAnimation = ({
 				return <BlankColorBackground backgroundColor={backgroundColor} />;
 		}
 	};
-
+ 
 	return (
 		<div style={{marginLeft: '-1px'}}>
 			<div
@@ -139,47 +142,49 @@ const landscapeAnimation = (
 	direction,
 	imageWidth,
 	imageHeight
-) => {
+  ) => {
 	// Calculate aspect ratio
 	const aspectRatio = imageWidth / imageHeight;
-
+  
 	// Screen dimensions
 	const screenHeight = 1350; // You should replace this with a dynamic value if possible
 	const screenWidth = 1080; // You should replace this with a dynamic value if possible
-
+  
 	// Scale the image to be 1.2 times the size of the screen
 	const scale = 1.005;
-
+  
+   
 	// Calculate new dimensions while maintaining the aspect ratio
 	const newHeight = screenHeight * scale;
-	const newWidth = newHeight * aspectRatio; // maintain aspect ratio
-
+	// console.log("newHeight, aspectRatio", newHeight, aspectRatio)
+	const newWidth = (newHeight * aspectRatio); // maintain aspect ratio
+  
 	const zoomScale = interpolateValueByFrame(frame, 0, TIMINGS, scale, scale);
-
+  
 	// Calculate the left position to center the image horizontally in the viewport
 	const leftCenter = 50;
-
+  
 	// Interpolate the position for movement 10% either side of center
 	const interpolatedPosition = interpolateValueByFrame(
-		frame,
-		0,
-		TIMINGS,
-		direction === 'leftToRight' ? -10 : 10,
-		direction === 'leftToRight' ? 10 : -10
+	  frame,
+	  0,
+	  TIMINGS,
+	  direction === "leftToRight" ? -10 : 10,
+	  direction === "leftToRight" ? 10 : -10
 	);
-
+  
 	// Calculate the actual left position including the interpolated movement
 	const leftPosition = leftCenter + interpolatedPosition;
-
+  
 	return {
-		position: 'absolute',
-		height: `${newHeight}px`,
-		width: `${newWidth}px`,
-		top: '50%',
-		left: `calc(${leftPosition}%)`,
-		transform: `translate(-50%, -50%) scale(${zoomScale})`,
+	  position: "absolute",
+	  maxHeight: `${newHeight}px`,
+	  maxWidth: `${newWidth}px`,
+	  top: "50%",
+	  left: `calc(${leftPosition}%)`,
+	  transform: `translate(-50%, -50%) scale(${zoomScale})`,
 	};
-};
+  };
 
 // Helper function for portrait image animation
 const portraitAnimation = (
@@ -188,43 +193,43 @@ const portraitAnimation = (
 	direction,
 	imageWidth,
 	imageHeight
-) => {
+  ) => {
 	const screenHeight = 1350; // You should replace this with a dynamic value if possible
 	const screenWidth = 1080; // You should replace this with a dynamic value if possible
-
-	const {widthRatio, heightRatio} = imageSizeRatio(
-		imageWidth,
-		imageHeight,
-		screenWidth,
-		screenHeight
+  
+	const { widthRatio, heightRatio } = imageSizeRatio(
+	  imageWidth,
+	  imageHeight,
+	  screenWidth,
+	  screenHeight
 	);
-
+  
 	// Scale the image to be 1.2 times the size of the screen
 	const scale = 1.2;
 	const zoomScale = interpolateValueByFrame(frame, 0, TIMINGS, scale, scale);
-
+  
 	// Calculate the top position to center the image vertically in the viewport
 	const topCenter = 50;
-
+  
 	// Interpolate the position for movement 10% either side of center (instead of 20%)
 	const interpolatedPosition = interpolateValueByFrame(
-		frame,
-		0,
-		TIMINGS,
-		direction === 'topToBottom' ? -10 : 10, // Reduced to 10%
-		direction === 'topToBottom' ? 10 : -10 // Reduced to 10%
+	  frame,
+	  0,
+	  TIMINGS,
+	  direction === "topToBottom" ? -10 : 10, // Reduced to 10%
+	  direction === "topToBottom" ? 10 : -10 // Reduced to 10%
 	);
-
+  
 	// Calculate the actual top position including the interpolated movement
 	const topPosition = topCenter + interpolatedPosition;
-
+  
 	return {
-		position: 'absolute',
-		height: `${screenHeight * scale}px`,
-		width: `${screenWidth * scale}px`,
-		top: `calc(${topPosition}%)`,
-		left: '50%',
-
-		transform: `translate(-50%, -50%) scale(${zoomScale})`,
+	  position: "absolute",
+	  maxHeight: `${screenHeight * scale}px`,
+	  maxWidth: `${screenWidth * scale}px`,
+	  top: `calc(${topPosition}%)`,
+	  left: "50%",
+  
+	  transform: `translate(-50%, -50%) scale(${zoomScale})`,
 	};
-};
+  };
