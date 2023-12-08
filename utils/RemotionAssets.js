@@ -45,7 +45,7 @@ export const ASSETS = {
       component: Example_Video_Ladder_Basic,
       DATA: DATA_LADDER,
     },
-  },
+  }, 
   CNSW: {
     UpComingFixtures: {
       component: Example_Video_Upcoming_CNSW, // Replace with actual Basic template component for Upcoming Fixtures

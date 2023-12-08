@@ -78,7 +78,7 @@ const Design = ({ Response }) => {
         <Space h={20} />
         <Grid>
           <Grid.Col sm={12} md={6}>
-            <MembersPreviewShell
+            <MembersPreviewShell 
               key={playerKey}
               userAccount={userAccount}
               selectedAsset={selectedAsset}

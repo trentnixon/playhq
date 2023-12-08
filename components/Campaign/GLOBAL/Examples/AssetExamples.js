@@ -6,7 +6,7 @@ import { Example_Video_Top5Runs } from "../../../../remotion/templates/Basic/Mar
 import { Example_Video_Ladder } from "../../../../remotion/templates/Basic/MarketingExamples/Example_Video_Ladder";
 import { Example_Video_WeekendSingleGameResult } from "../../../../remotion/templates/Basic/MarketingExamples/Example_Video_WeekendSingleGameResult";
 export const UpComingFixtures = ({ DATA }) => {
-  return (
+  return ( 
     <>
       <Sequence
         durationInFrames={[

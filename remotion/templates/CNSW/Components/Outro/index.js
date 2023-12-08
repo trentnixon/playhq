@@ -4,15 +4,13 @@ import {useCurrentFrame} from 'remotion';
 import {SponsorRows} from './SponsorRows';
 import {MadePossibleBy} from './MadePossibleBy';
 import {ClubLogo} from './ClubLogo';
-import {ClubNameComponent} from './ClubNameComponent';
+/* import {ClubNameComponent} from './ClubNameComponent'; */
 
-export const OutroSequenceFrame = ({theme, DATA, FPS}) => {
+export const OutroSequenceFrame = ({theme, DATA, FPS,Startfrom}) => {
 	const frame = useCurrentFrame();
 	return (
-		<Sequence>
-			<Series>
-				<Series.Sequence durationInFrames={FPS} layout="none">
-					<SponsorOuterContainer>
+		<Sequence  durationInFrames={FPS} from={Startfrom}>
+			<SponsorOuterContainer>
 						<MadePossibleBy frame={frame} FPS={FPS} theme={theme} />
 						<SponsorRows DATA={DATA} theme={theme} FPS={FPS} />
 						<ClubNameContainer>
@@ -29,8 +27,6 @@ export const OutroSequenceFrame = ({theme, DATA, FPS}) => {
 							/> */}
 						</ClubNameContainer>
 					</SponsorOuterContainer>
-				</Series.Sequence>
-			</Series>
 		</Sequence>
 	);
 };

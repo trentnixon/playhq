@@ -9,7 +9,7 @@ export const Results = (props) => {
 
 	const groupsOfTwo = splitIntoGroupsOfTwo(DATA);
 	return (
-		<ResultsContainer>
+		<ResultsContainer> 
 			
 				{groupsOfTwo.map((item, index) => {
 					return (

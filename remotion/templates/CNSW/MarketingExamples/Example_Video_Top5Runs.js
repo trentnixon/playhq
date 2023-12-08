@@ -22,7 +22,7 @@ export const Example_Video_Top5Runs = (props) => {
     TemplateVariation: DATA.VIDEOMETA.Video.TemplateVariation,
   };
 
-
+ 
   return (
     <AbsoluteFill style={{ zIndex: 100 }}>
       <Top5List {...commonProps} TYPE="BATTING" />

@@ -69,13 +69,23 @@ const AdminSideBar = () => {
   return (
     <Container fluid mx={0} p={0}>
       <UserDetailsCard user={account} />
+      {/* Days till next,
+      Totla Bundles
+      Total Videos
+      Total Images
+      Total Write ups
+      Num Images
+      Num Sponsors
+      Num Games tracking 
+       
+       */}
+
     </Container>
   );
 };
 
 const AdminHero = () => {
   const { account } = useAccountDetails();
-  //if (!account) return null;
   return (
     <Container fluid mx={0} p={0}>
       <Box

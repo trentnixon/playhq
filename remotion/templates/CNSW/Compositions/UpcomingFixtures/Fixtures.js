@@ -12,7 +12,6 @@ export const FixturesMain = (props) => {
 			{groupsOfTwo.map((item, index) => {
 					return ( 
 						<Sequence key={index} durationInFrames={FPS_SCORECARD} from={FPS_SCORECARD*index}>
-							
 							<MatchContainer>
 								{item.map((game, i) => (
 									<Match
