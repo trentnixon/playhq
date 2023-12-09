@@ -20,6 +20,7 @@ import { IconCircleCheck } from "@tabler/icons";
 import { FixturaLoading } from "../../../../Common/Loading";
 import hexRgb from "hex-rgb";
 import { useMediaQuery } from "@mantine/hooks";
+import { IconColorSwatch } from "@tabler/icons-react";
 /* CreateNewTheme * ***************************** */
 
 export const CreateNewTheme = (props) => {
@@ -117,7 +118,7 @@ export const CreateNewTheme = (props) => {
   if (IsLoading) return <FixturaLoading />;
   return (
     <>
-      <SubHeaders Copy={`Create your own Theme`} />
+      <SubHeaders Copy={`Create your own Theme`} ICON={<IconColorSwatch size={30} />}/>
       <P>
         To create a new theme, simply select your primary and secondary brand
         colors from the color selector and click the "Create" button.

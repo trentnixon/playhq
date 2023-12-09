@@ -19,6 +19,7 @@ import { DisplayCustomTheme } from "./Components/DisplayCustomTheme";
 import { CreateNewTheme } from "./Components/CreateNewTheme";
 import { FixturaDivider } from "../../Divider";
 import { useMediaQuery } from "@mantine/hooks";
+import { IconColorSwatch, IconFileDownload } from "@tabler/icons-react";
 
 export const SelectATheme = () => {
   const { account, ReRender } = useAccountDetails();
@@ -68,7 +69,7 @@ export const SelectATheme = () => {
   ) {
     return (
       <>
-        <SubHeaders Copy={`Storing New Theme`} />
+        <SubHeaders Copy={`Storing New Theme`} ICON={<IconFileDownload size={30} />}/>
         <Paper
           radius="md"
           shadow="md"
@@ -159,7 +160,7 @@ const ColorTable = (props) => {
   const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
   return (
     <>
-      <SubHeaders Copy={`Color themes`} />
+      <SubHeaders Copy={`Color themes`} ICON={<IconColorSwatch size={30} />}/>
       <P>
       Choose your brand colors to personalize your assets. Select from predefined themes or create a custom theme that reflects your club's unique personality. This will create visually appealing videos and images that highlight your team's achievements in your brand's style.
       </P>
@@ -174,7 +175,7 @@ const ColorTable = (props) => {
       >
         <DisplayCustomTheme {...props} />
 
-        <SubHeaders Copy={`Public Themes`} />
+        <SubHeaders Copy={`Public Themes`} ICON={<IconColorSwatch size={30} />}/>
 
         <Table>
           <tbody>

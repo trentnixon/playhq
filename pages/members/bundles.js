@@ -18,10 +18,13 @@ import { DownloadsSelectDays } from "../../components/Downloads/DownloadsSelectD
 import SetupCheck from "../../components/Members/Account/HOC/SetupCheck";
 import { LoadingStateWrapper } from "../../components/Members/Account/HOC/LoadingStateWrapper";
 import Meta from "../../components/Layouts/Meta";
+import { GroupBySwitch } from "../../components/Members/Account/components/Settings/GroupBySwitch";
+import { IconSettings } from "@tabler/icons-react";
+import { useAccountDetails } from "../../lib/userContext";
 
 const OrderHistory = (props) => {
   const { Renders } = props;
-
+  const { account } = useAccountDetails();
   /* is User Auth */
   const { user } = useUser();
 
@@ -50,12 +53,18 @@ const OrderHistory = (props) => {
           <Space h={20} />
           <DownloadsSelectDays renders={Renders.renders} />
           <Space h={20} />
-          <SubHeaders Copy={`Bundles (${Renders.renders.length})`} />
+          <SubHeaders
+            Copy={`Bundles (${Renders.renders.length})`}
+            ICON={<IconDownload size={30} />}
+          />
 
           <DownloadTable
             data={Renders.renders}
             Token={Renders?.render_token?.token}
           />
+          <Space h={50} />
+          <SubHeaders Copy="Asset Settings" ICON={<IconSettings size={30} />} />
+          <GroupBySwitch account={account} />
         </LoadingStateWrapper>
       </SetupCheck>
     </MembersWrapper>

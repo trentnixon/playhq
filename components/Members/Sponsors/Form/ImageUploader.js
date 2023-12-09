@@ -17,6 +17,7 @@ import { useUploadImageViaDropzone } from "../../../../Hooks/useUploadViaDropzon
 import { useEffect, useState } from "react";
 import { BTN_ONCLICK } from "../../Common/utils/Buttons";
 import { P, SubHeaders } from "../../Common/Type";
+import { IconError404 } from "@tabler/icons-react";
 
 export function StrapiImageUploader({ setLogo, setLogoPath, SAVEDLOGO }) {
   const theme = useMantineTheme();
@@ -96,7 +97,7 @@ const RejectedFiles = ({ rejected, setRejected }) => {
   //console.log(rejected[0].errors);
   return (
     <>
-      <SubHeaders>ERROR!</SubHeaders>
+      <SubHeaders ICON={<IconError404 size={30} />}>ERROR!</SubHeaders>
 
       <P>
         The following errors occurred whilst attempting to upload your image.

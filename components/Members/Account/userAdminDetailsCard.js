@@ -12,7 +12,7 @@ import {
 import { useMediaQuery } from "@mantine/hooks";
 import { SideBarTrialNotification } from "./components/isTrialNotifications.js/sideBarNotification";
 import { getTrialNotificationStatus } from "../../../lib/actions";
-
+ 
 export function UserDetailsCard({ user }) {
   const ORDER = user.attributes.order?.data;
   const includesSponsors =

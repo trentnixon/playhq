@@ -30,7 +30,7 @@ export const SelectDeliveryDay = () => {
         <Paper
           shadow="lg"
           p="md"
-          mb={20}
+         
           withBorder
           radius="md"
           sx={(theme) => ({

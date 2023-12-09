@@ -11,6 +11,7 @@ import { FixturaHeaderMeta } from "../Members/Account/userFixturaSettings";
 import { UserDetailsCard } from "../Members/Account/userAdminDetailsCard";
 import HasCompletedStartSequence from "../Members/Account/HOC/hasCompletedStartSequence";
 import withUserAuth from "../Members/Account/HOC/withUserAuth";
+import { SideBarExtraShell } from "../Members/Account/SideBarExtras";
 
 const Layout = ({ children }) => {
   const { user } = useUser();
@@ -69,16 +70,8 @@ const AdminSideBar = () => {
   return (
     <Container fluid mx={0} p={0}>
       <UserDetailsCard user={account} />
-      {/* Days till next,
-      Totla Bundles
-      Total Videos
-      Total Images
-      Total Write ups
-      Num Images
-      Num Sponsors
-      Num Games tracking 
-       
-       */}
+      <SideBarExtraShell account={account}/>
+      
 
     </Container>
   );

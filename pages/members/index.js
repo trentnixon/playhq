@@ -6,6 +6,10 @@ import {
   IconBrush,
   IconPhotoPlus,
   IconCurrencyDollar,
+  IconCarouselHorizontalFilled,
+  IconUserCircle,
+  IconColorSwatch,
+  IconSettings,
 } from "@tabler/icons-react";
 import {
   MembersWrapper,
@@ -135,12 +139,15 @@ const DashBoard = () => {
             keywords="Member dashboard, Fixtura control panel, sports media overview, club content management, digital hub"
           />
           <PageTitle
-            Copy={`Hi ${account.attributes.FirstName}`} 
+            Copy={`Hi ${account.attributes.FirstName}`}
             ICON={<IconLayoutDashboard size={40} />}
           />
           <IsFreeTrialWelcome user={account} />
 
-          <SubHeaders Copy="Preview" />
+          <SubHeaders
+            Copy="Preview"
+            ICON={<IconCarouselHorizontalFilled size={30} />}
+          />
           <P>
             Preview your assets here with our sample data. For a look that
             perfectly fits your brand, don't forget to visit our customization
@@ -157,7 +164,7 @@ const DashBoard = () => {
           {/*   <SubHeaders Copy="DashBoard" /> */}
 
           <Space h={20} />
-          <SubHeaders Copy="Account" />
+          <SubHeaders Copy="Account" ICON={<IconUserCircle size={30} />} />
           <SimpleGrid
             cols={4}
             spacing="xs"
@@ -181,7 +188,7 @@ const DashBoard = () => {
             })}
           </SimpleGrid>
           <Space h={50} />
-          <SubHeaders Copy="Branding" />
+          <SubHeaders Copy="Branding" ICON={<IconColorSwatch size={30} />} />
           <SimpleGrid
             cols={3}
             spacing="lg"
@@ -204,9 +211,9 @@ const DashBoard = () => {
               );
             })}
           </SimpleGrid>
-          <Space h={50} />
-          <SubHeaders Copy="Settings" />
-          <GroupBySwitch account={account} />
+        {/*   <Space h={50} />
+          <SubHeaders Copy="Settings" ICON={<IconSettings size={30} />} />
+          <GroupBySwitch account={account} /> */}
           <Space h={50} />
           <IsFreeTrialFeedback />
         </LoadingStateWrapper>

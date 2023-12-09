@@ -16,7 +16,7 @@ import { BTN_TOEXTLINK } from "../../components/Members/Common/utils/Buttons";
 import Meta from "../../components/Layouts/Meta";
 import { MembersPreviewShell } from "../../components/Members/GraphicsPackage/PreviewShell";
 import { AccountLogo } from "../../components/Members/Design/AddLogo";
-import { IconPhoto, IconSettingsAutomation, IconUpload } from "@tabler/icons-react";
+import { IconError404, IconPhoto, IconScissors, IconSettingsAutomation, IconTemplate, IconUpload } from "@tabler/icons-react";
 import { IconMessageCircle } from "@tabler/icons-react";
 import { UpdateYourTheme } from "../../components/Members/GraphicsPackage/UpdateYourTheme";
 import { FixturaDivider } from "../../components/Members/Common/Divider";
@@ -134,7 +134,7 @@ const Design = ({ Response }) => {
           <Grid.Col span={12}>
             <FixturaDivider />
 
-            <SubHeaders Copy={"Template Selection"} />
+            <SubHeaders Copy={"Template Selection"} ICON={<IconTemplate size={30} />}/>
             <P>
               Browse through a diverse range of pre-designed templates. Our
               selection caters to various styles and preferences, offering
@@ -151,7 +151,7 @@ const Design = ({ Response }) => {
         </Grid>
 
         <PageCopyWrapper>
-          <SubHeaders Copy={"Bespoken Graphics"} />
+          <SubHeaders Copy={"Bespoken Graphics"} ICON={<IconScissors size={30} />}/>
           <P>
             For a truly unique and tailored feel, collaborate with us to craft
             bespoke graphics that resonate with your organization's brand and

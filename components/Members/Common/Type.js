@@ -37,19 +37,22 @@ export const PageTitle = (props) => {
 };
 
 export const SubHeaders = (props) => {
-  const { Copy } = props;
+  const { Copy, ICON } = props;
   return (
     <Container fluid px={0}>
-      <Title
-        order={3}
-        transform="uppercase"
-        sx={(theme) => ({
-          color: theme.colors.gray[8],
-          fontFamily: theme.fontFamily,
-        })}
-      >
-        {Copy}
-      </Title>
+      <Group my={10} spacing={5}>
+        {ICON}
+        <Title
+          order={3}
+          transform="uppercase"
+          sx={(theme) => ({
+            color: theme.colors.gray[8],
+            fontFamily: theme.fontFamily,
+          })}
+        >
+          {Copy}
+        </Title>
+      </Group>
     </Container>
   );
 };
@@ -83,7 +86,7 @@ export const H = (props) => {
 
 export const GradientTitle = ({ title, mb, gradient, size = "h1" }) => {
   return (
-    <Title mb={mb}  size={size} variant="gradient" gradient={gradient}>
+    <Title mb={mb} size={size} variant="gradient" gradient={gradient}>
       {title}
     </Title>
   );
@@ -105,7 +108,6 @@ export const P = (props) => {
   return (
     <Text
       size={size}
-      
       className={className}
       sx={(theme) => ({
         fontFamily: theme.fontFamily,

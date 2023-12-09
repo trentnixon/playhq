@@ -20,6 +20,7 @@ import { CreateNewTheme } from "../Common/Customiser/Design/Components/CreateNew
 import { FixturaDivider } from "../Common/Divider";
 import { useMediaQuery } from "@mantine/hooks";
 import { FixturaLoading } from "../Common/Loading";
+import { IconColorSwatch, IconFileDownload } from "@tabler/icons-react";
 
 export const UpdateYourTheme = () => {
   const { account, ReRender } = useAccountDetails();
@@ -69,7 +70,7 @@ export const UpdateYourTheme = () => {
   ) {
     return (
       <>
-        <SubHeaders Copy={`Storing New Theme`} />
+        <SubHeaders Copy={`Storing New Theme`} ICON={<IconFileDownload size={30} />}/>
         <Paper
           radius="md"
           shadow="md"
@@ -167,7 +168,7 @@ const ColorTable = (props) => {
     <>
       <DisplayCustomTheme {...props} />
 
-      <SubHeaders Copy={`Public Themes`} />
+      <SubHeaders Copy={`Public Themes`} ICON={<IconColorSwatch size={30} />}/>
 
       <Table>
         <tbody>

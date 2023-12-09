@@ -64,7 +64,7 @@ export default function MediaGallery({ Response }) {
             Copy={"Media Gallery"}
             ICON={<IconPhotoPlus size={40} />}
           />
-          <SubHeaders Copy={"Manage Your Club's Media Assets"} />
+          <SubHeaders Copy={"Manage Your Club's Media Assets"} ICON={<IconPhotoPlus size={30} />} />
 
           <PageCopyWrapper>
             <P

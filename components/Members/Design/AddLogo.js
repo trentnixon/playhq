@@ -22,6 +22,7 @@ import { useSetLogo } from "../../../Hooks/useOrganisationLogo";
 import { IconUpload } from "@tabler/icons";
 import { useMediaQuery } from "@mantine/hooks";
 import StrapiImageUploader from "../Sponsors/Form/ImageUploader";
+import { IconPhotoFilled } from "@tabler/icons-react";
 
 export const AccountLogo = () => {
   const theme = useMantineTheme();
@@ -56,7 +57,7 @@ export const AccountLogo = () => {
 
   return (
     <>
-      <SubHeaders Copy={`${FindAccountType(userAccount)} Logo`} />
+      <SubHeaders Copy={`${FindAccountType(userAccount)} Logo`} ICON={<IconPhotoFilled size={30} />}/>
       <P
         Copy={`
         Upload a high-resolution image of your logo to ensure the best quality representation for your organization.`}

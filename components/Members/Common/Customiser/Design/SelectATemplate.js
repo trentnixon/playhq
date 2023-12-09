@@ -17,6 +17,7 @@ import { P, SubHeaders } from "../../Type";
 import { FixturaDivider } from "../../Divider";
 import { TemplateCard } from "./Components/TemplateCard";
 import { TemplateDetail } from "./TemplateDetials";
+import { IconFileDownload } from "@tabler/icons-react";
 
 export const SelectATemplate = ({ hasMediaItems }) => {
   const { account, ReRender } = useAccountDetails();
@@ -72,7 +73,7 @@ export const SelectATemplate = ({ hasMediaItems }) => {
   if (loading || !GetElement || !userAccount) {
     return (
       <>
-        <SubHeaders Copy={`Storing New Graphics Package`} />
+        <SubHeaders Copy={`Storing New Graphics Package`} ICON={<IconFileDownload size={30} />}/>
 
         <Paper
           radius="md"
