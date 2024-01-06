@@ -17,8 +17,6 @@ export const BGImageAnimation = ({ HeroImage, TIMINGS, THEME }) => {
   const { url, ratio, height, width } = HeroImage || {};
   const backgroundColor = getBackgroundColor(THEME.primary, THEME.secondary);
 
-  console.log("HeroImage", HeroImage)
-
   useEffect(() => {
     if (ratio === "landscape") {
       setDirection("leftToRight");
@@ -31,11 +29,10 @@ export const BGImageAnimation = ({ HeroImage, TIMINGS, THEME }) => {
 
   if (url) {
     if (ratio === "landscape") {
-      style = landscapeAnimation(frame, TIMINGS, direction, width,height);
+      style = landscapeAnimation(frame, TIMINGS, direction, width, height);
     } else if (ratio === "portrait") {
-      style = portraitAnimation(frame, TIMINGS, direction, width,height);
+      style = portraitAnimation(frame, TIMINGS, direction, width, height);
     }
-
 
     return (
       <div style={{ marginLeft: "-1px" }}>
@@ -104,11 +101,10 @@ const landscapeAnimation = (
   // Scale the image to be 1.2 times the size of the screen
   const scale = 1.005;
 
- 
   // Calculate new dimensions while maintaining the aspect ratio
   const newHeight = screenHeight * scale;
-  console.log("newHeight, aspectRatio", newHeight, aspectRatio)
-  const newWidth = (newHeight * aspectRatio); // maintain aspect ratio
+  //console.log("newHeight, aspectRatio", newHeight, aspectRatio);
+  const newWidth = newHeight * aspectRatio; // maintain aspect ratio
 
   const zoomScale = interpolateValueByFrame(frame, 0, TIMINGS, scale, scale);
 

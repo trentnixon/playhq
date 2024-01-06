@@ -2,15 +2,13 @@ import styled from "styled-components";
 import {
   darkenColor,
   getContrastColor,
-  getForegroundColor,
   lightenColor,
-  setOpacity,
 } from "../../../../../utils/colors";
-import { Img, useCurrentFrame } from "remotion";
+import { useCurrentFrame } from "remotion";
 import { interpolateOpacityByFrame } from "../../../../../Animation/interpolate";
 import { FromLeftToRight } from "../../../../../Animation/ClipWipe";
 import useImageDimensions from "../../../../../hooks/useImageDimensions";
-import { useState } from "react";
+
 import { ImageWithFallback } from "../../../Components/Common/ImageWithFallback";
 import { restrictString } from "../../../../../utils/copy";
 import { SpringToFrom } from "../../../../../Animation/RemotionSpring";
@@ -32,12 +30,12 @@ const LadderPositionContainer = styled.div`
 
 const MetaContainer = styled.div`
   background-color: ${(props) => props.bgColor};
-  width: 30%;
+  width: 33.5%;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 5px 0;
+  padding: 5px 10px;
 `;
 const ImgContainer = styled.div``;
 
@@ -129,7 +127,10 @@ export const LadderPosition = (props) => {
       </Name>
       <MetaContainer
         bgColor={darkenColor(THEME.primary)}
-        style={{ minHeight: '60%',clipPath: FromLeftToRight(15 + LADDERINT * 2, "Slow") }} 
+        style={{
+          minHeight: "80%",
+          clipPath: FromLeftToRight(15 + LADDERINT * 2, "Slow"),
+        }}
       >
         <Performance
           color={getContrastColor(THEME.primary)}

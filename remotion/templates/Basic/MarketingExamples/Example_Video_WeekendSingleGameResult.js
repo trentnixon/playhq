@@ -2,7 +2,8 @@
 
 import { loadFont } from "@remotion/google-fonts/Heebo";
 import { WeekendSingleGameResult } from "../Compositions/WeekendSingleGameResult";
-export const Example_Video_WeekendSingleGameResult= (props) => {
+import { AbsoluteFill } from "remotion";
+export const Example_Video_WeekendSingleGameResult = (props) => {
   const { DATA } = props;
   const { fontFamily } = loadFont();
   const { TIMINGS } = DATA;
@@ -21,5 +22,9 @@ export const Example_Video_WeekendSingleGameResult= (props) => {
     TemplateVariation: DATA.VIDEOMETA.Video.TemplateVariation,
   };
 
-  return <WeekendSingleGameResult {...commonProps} />;
+  return (
+    <AbsoluteFill style={{ zIndex: 100 }}>
+      <WeekendSingleGameResult {...commonProps} />
+    </AbsoluteFill>
+  );
 };

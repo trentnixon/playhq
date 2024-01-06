@@ -16,6 +16,7 @@
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/server": "^11.10.0",
+    "@gsap/react": "^2.0.2",
     "@mantine/carousel": "^6.0.17",
     "@mantine/core": "^6.0.17",
     "@mantine/dates": "^6.0.17",
@@ -43,6 +44,7 @@
     "framer-motion": "^10.13.0",
     "fslightbox-react": "^1.6.2-2",
     "generate-password": "^1.7.0",
+    "gsap": "^3.12.4",
     "hex-rgb": "^5.0.0",
     "js-cookie": "^3.0.1",
     "next": "^12.3.1",

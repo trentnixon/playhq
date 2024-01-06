@@ -65,7 +65,7 @@ const SETUP = () => {
       <CreateAccountInit setAccountsetup={ReRender} />{" "}
       {/* Assuming ReRender fetches and updates account state */}
     </>
-  );
+  ); 
 
   if (review) return <ReviewSetupData DATA={UserAccount} />;
 

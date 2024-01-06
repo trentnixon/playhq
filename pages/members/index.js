@@ -70,7 +70,7 @@ const DashBoard = () => {
         </SetupCheck>
       </MembersWrapper>
     );
-  }
+  } 
 
   const commonProps = {
     Theme: account.attributes.theme.data.attributes.Theme,

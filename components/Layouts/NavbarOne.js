@@ -69,14 +69,21 @@ const NavbarOne = () => {
                     </a>
                   </Link>
                 </li>
-
+                
                 <li className="nav-item">
+                  <Link href="/live-demo" activeClassName="active">
+                    <a onClick={closeMenu} className="nav-link">
+                      Live Demo
+                    </a>
+                  </Link>
+                </li>
+               {/*  <li className="nav-item">
                   <Link href="/Media-Options" activeClassName="active">
                     <a onClick={closeMenu} className="nav-link">
                       Digital Cricket Assets
                     </a>
                   </Link>
-                </li>
+                </li> */}
                 <li className="nav-item">
                   <Link href="/graphics-packages" activeClassName="active">
                     <a onClick={closeMenu} className="nav-link">

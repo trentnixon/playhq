@@ -23,32 +23,25 @@ const ImageUploader = ({ onImageSelect }) => {
     fileInputRef.current.click();
   };
   return (
-    <Box>
-      <Group position="apart">
-        <Button onClick={handleButtonClick} color="blue">
-          <P marginBottom={0} color="white">
-            Upload Image
-          </P>
-        </Button>
-        <input
-          ref={fileInputRef}
-          id="file-upload"
-          type="file"
-          accept="image/*"
-          onChange={handleImageChange}
-          style={{ display: "none" }}
-        />
+    <Group position="apart">
+      <Button onClick={handleButtonClick} color="blue">
+        <P marginBottom={0} color="white">
+          Select Logo
+        </P>
+      </Button>
+      <input
+        ref={fileInputRef}
+        id="file-upload"
+        type="file"
+        accept="image/*"
+        onChange={handleImageChange}
+        style={{ display: "none" }}
+      />
 
-        {logoUrl && (
-          <Image
-            height={100}
-            width={"auto"}
-            src={logoUrl}
-            alt="Uploaded Logo"
-          />
-        )}
-      </Group>
-    </Box>
+      {logoUrl && (
+        <Image height={100} width={"auto"} src={logoUrl} alt="Uploaded Logo" />
+      )}
+    </Group>
   );
 };
 

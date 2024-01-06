@@ -16,10 +16,10 @@ const Index = ({ associations }) => {
         description="Discover Fixtura's cutting-edge social media content tools for PlayHQ clubs and associations. Engage fans with AI-powered digital assets."
         keywords="Fixtura, PlayHQ clubs, sports content creation, AI-powered social media, cricket digital assets, sports clubs marketing"
       />
+
       <MainBanner />
       <Services />
       <FunFacts />
-     {/*  <Partner associations={associations} /> */}
       <Feedback />
       <PricingStyleOne />
       <CtaArea />

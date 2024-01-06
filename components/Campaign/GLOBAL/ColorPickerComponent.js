@@ -53,9 +53,13 @@ const ColorPickerComponent = ({ onColorChange }) => {
 
   return (
     <div>
-      <Group position="center">
+      <Group position="apart" p={10}>
         <Stack spacing="xs">
           <Center>
+            <P size={"xs"} marginBottom={0} color="#343a40">
+              Primary Color
+            </P>{" "}
+            &nbsp;
             <SketchExample
               SetColor={handlePrimaryColorChange}
               UsersTheme={{
@@ -65,16 +69,18 @@ const ColorPickerComponent = ({ onColorChange }) => {
                 a: "1",
               }}
             />
-          </Center> 
-          <Center>
-            <P size={"xs"} marginBottom={0} color='white'>
-              Primary Color
-            </P>
           </Center>
+          {/* <Center>
+           
+          </Center> */}
         </Stack>
 
         <Stack spacing="xs">
           <Center>
+            <P size={"xs"} marginBottom={0} color="#343a40">
+              Secondary Color
+            </P>{" "}
+            &nbsp;
             <SketchExample
               SetColor={handleSecondaryColorChange}
               UsersTheme={{
@@ -85,11 +91,11 @@ const ColorPickerComponent = ({ onColorChange }) => {
               }}
             />
           </Center>
-          <Center>
-            <P size={"xs"} marginBottom={0} color='white'>
+          {/* <Center>
+            <P size={"xs"} marginBottom={0} color="#343a40">
               Secondary Color
             </P>
-          </Center>
+          </Center> */}
         </Stack>
       </Group>
     </div>

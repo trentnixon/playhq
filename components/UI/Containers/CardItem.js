@@ -26,8 +26,9 @@ const CardItem = ({ item }) => {
     >
       <div className="funfact-card">
         <item.icon size="4rem" stroke={1} color={theme.colors.blue[6]} />
-        <GradientTitle
+        <GradientTitle 
           mb={20}
+          ta='center'
           variant="gradient"
           gradient={{ from: "#339AF0", to: "#3BC9DB", deg: 45 }}
           title={item.title}

@@ -1,9 +1,10 @@
 import React from "react";
 import { P } from "../../Members/Common/Type";
-import { trackCustomEvent } from "../../../lib/GA";
+import { trackButtonClick, trackCustomEvent } from "../../../lib/GA";
 import Section from "../../UI/DefaultSection";
-import { Container, Image, Stack } from "@mantine/core";
+import { Center, Container, Image, Stack } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
+import Link from "next/link";
 // Import GA functions
 
 const Services = () => {
@@ -11,17 +12,27 @@ const Services = () => {
   const padding = isMobile ? 0 : "sm";
   const SectionData = {
     title:
-      "Starting at Only $20 a Week, Discover Fixtura's Revolutionary Digital Content for Your Club!",
+      "Looking for an Easier Solution for Social Media and Website Content Creation for Your Club or Association?",
     paragraphs: [
-      `Transform your club's digital narrative with Fixtura's elite content services, starting at just $20 a week. Experience a unique blend of creativity and AI-driven precision in crafting engaging fixture posts and captivating club stories.`,
+      `We specialize in curating and delivering bespoke content for your club's social media and website presence. Our service ensures scheduled deliveries are always on time, thanks to our cutting-edge automated AI and generative video creation tools.`,
 
-      `Embark on your Fixtura journey today with a no-obligation two-week free trial and unlock the power of affordable, professional-grade digital storytelling.`,
       `Start your two-week free trial and embrace the Fixtura advantage.`,
     ],
   };
+  // /`Embark on your Fixtura journey today with a no-obligation two-week free trial and unlock the power of affordable, professional-grade digital storytelling.`,
   return (
     <>
       <Section {...SectionData} color="light">
+        <Center>
+          <Link href="/live-demo">
+            <a
+              className="btn btn-secondary"
+              onClick={() => trackButtonClick("Live Demo")} // Track button click
+            >
+              Try our Live Demo
+            </a>
+          </Link>
+        </Center>
         <Container p={padding}>
           <div
             style={{

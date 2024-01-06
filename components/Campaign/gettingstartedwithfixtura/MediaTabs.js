@@ -8,15 +8,8 @@ import {
 import { RemotionPlayer } from "./Player";
 import { DisplayWriteups } from "./DisplayWriteups";
 
-export const MediaTabs = ({
-  AccountData,
-  selectedTab,
-  setSelectedTab,
-  selectedMedia,
-  userColors,
-  userlogoUrl,
-}) => {
-  console.log("selectedMedia", selectedMedia);
+export const MediaTabs = (props) => {
+  const { selectedTab, setSelectedTab, selectedMedia } = props;
   return (
     <>
       <Tabs
@@ -24,6 +17,7 @@ export const MediaTabs = ({
         value={selectedTab}
         onTabChange={setSelectedTab}
         color="blue"
+      
       >
         <Tabs.List grow position="center">
           <Tabs.Tab value="VIDEO" icon={<IconVideo size="30px" />}>
@@ -39,25 +33,13 @@ export const MediaTabs = ({
 
         <Tabs.Panel value="VIDEO" pt="xs">
           <Paper shadow="md" p={0} withBorder>
-            <RemotionPlayer
-              AccountData={AccountData}
-              selectedMedia={selectedMedia}
-              TYPE={"Player"}
-              userColors={userColors}
-              userlogoUrl={userlogoUrl}
-            />
+            <RemotionPlayer TYPE={"Player"} {...props} />
           </Paper>
         </Tabs.Panel>
 
         <Tabs.Panel value="IMAGE" pt="xs">
           <Paper shadow="md" p={0} withBorder>
-            <RemotionPlayer
-              AccountData={AccountData}
-              selectedMedia={selectedMedia}
-              TYPE={"Thumbnail"}
-              userColors={userColors}
-              userlogoUrl={userlogoUrl}
-            />
+            <RemotionPlayer TYPE={"Thumbnail"} {...props} />
           </Paper>
         </Tabs.Panel>
 

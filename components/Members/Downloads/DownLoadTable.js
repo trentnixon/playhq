@@ -135,7 +135,7 @@ export function DownloadTable({ data, Token }) {
 
 const TableRow = ({ row, Token }) => {
   const { account } = useAccountDetails();
-
+ console.log("account", account.attributes.Sport)
   return (
     <tr key={row.name}>
       <td>{row.Processing ? <FixturaLoading /> : row.Name}</td>
@@ -147,7 +147,7 @@ const TableRow = ({ row, Token }) => {
         {row.Complete ? (
           <BTN_TOEXTLINK
             LABEL="Visit"
-            URL={`https://content.fixtura.com.au/${account.id}/${row.id}?token=${Token}`}
+            URL={`https://content.fixtura.com.au/${account.id}/${account.attributes.Sport.toLowerCase()}/${row.id}?token=${Token}`}
             THEME="cta"
           />
         ) : (

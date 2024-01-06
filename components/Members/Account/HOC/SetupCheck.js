@@ -59,7 +59,7 @@ const SetupCheck = ({ children }) => {
                 marginBottom={20}
                 color={"blue.8"}
               >
-                Syncing in Progress with PlayHQ:
+                Syncing in Progress with PlayHQ: 
               </P>
 
               <P textAlign={"center"} size={"md"} marginBottom={25} color={8}>
@@ -83,13 +83,13 @@ const SetupCheck = ({ children }) => {
                       <IconTools stroke={1.5} size="2rem" color={"#6699CC"} />
                     }
                   >
-                    <Group position="apart">
+                    <Group position="apart"  mb={20}>
                       <P Weight={600} color={4}>
-                        Graphics Packages
+                        Customizer
                       </P>
                       <BTN_TOINTERALLINK
-                        URL={`/members/graphics-packages/`}
-                        LABEL={"Graphics Packages"}
+                        URL={`/members/customizer/`}
+                        LABEL={"Customizer"}
                       />
                     </Group>
                     <P>
@@ -101,7 +101,7 @@ const SetupCheck = ({ children }) => {
                       every club's personality.
                     </P>
                   </List.Item>
-                  <List.Item
+                 {/*  <List.Item
                     icon={
                       <IconCalendarEvent
                         stroke={1.5}
@@ -132,19 +132,19 @@ const SetupCheck = ({ children }) => {
                         LABEL={"Bundles"}
                       />
                     </P>
-                  </List.Item>
+                  </List.Item> */}
                   <List.Item
                     icon={
                       <IconEye stroke={1.5} size="2rem" color={"#6699CC"} />
                     }
                   >
-                    <Group position="apart">
+                    <Group position="apart"  mb={20}>
                       <P Weight={600} color={4}>
                         Gallery Items
                       </P>
                       <BTN_TOINTERALLINK
-                        URL={`/members/graphics-packages/`}
-                        LABEL={"Graphics Packages"}
+                        URL={`/members/gallery/`}
+                        LABEL={"Media Gallery"}
                       />
                     </Group>
                     <P>
@@ -169,13 +169,13 @@ const SetupCheck = ({ children }) => {
                       />
                     }
                   >
-                    <Group position="apart">
+                    <Group position="apart" mb={20}>
                       <P Weight={600} color={4}>
                         Sponsorships
                       </P>
                       <BTN_TOINTERALLINK
-                        URL={`/members/graphics-packages/`}
-                        LABEL={"Graphics Packages"}
+                        URL={`/members/sponsors/`}
+                        LABEL={"Add Sponsors"}
                       />
                     </Group>
                     <P>

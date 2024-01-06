@@ -1,4 +1,4 @@
-import { Box, Container, Loader } from "@mantine/core";
+import { Box, Container, Loader, useMantineTheme } from "@mantine/core";
 import React, { useEffect, useState } from "react";
 import { useAssociations, useClubs } from "../../Hooks/useExpressionOfInterest";
 import { P } from "../Members/Common/Type";
@@ -7,13 +7,13 @@ import { trackButtonClick, trackCustomEvent } from "../../lib/GA";
 import Section from "../UI/DefaultSection";
 import { useMediaQuery } from "@mantine/hooks";
 
-const Partner = () => {
+const SelectClubForLiveDemo = () => {
   const [clubs, fetchClubs] = useClubs();
   const [associations, fetchAssociations] = useAssociations();
   const [showAutocomplete, setShowAutocomplete] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [storedName, setStoredName] = useState(false);
-  const [StoredPlayhqID, setStoredPlayhqID] = useState(false)
+  const [StoredPlayhqID, setStoredPlayhqID] = useState(false);
 
   const handleInputClubOrAssociationChange = (event) => {
     const inputValue = event.target.value;
@@ -24,9 +24,9 @@ const Partner = () => {
         "Eligibility Check Started",
         inputValue
       );
-    }
+    } 
 
-    if (inputValue.length >= 3) { 
+    if (inputValue.length >= 3) {
       setShowAutocomplete(true);
       setIsLoading(true);
       fetchClubs(inputValue);
@@ -37,6 +37,7 @@ const Partner = () => {
   };
 
   const renderAutocompleteOptions = () => {
+    const theme = useMantineTheme();
     if (isLoading) {
       return <Loader />; // Show spinner while data is loading
     }
@@ -46,12 +47,16 @@ const Partner = () => {
       /* ...(Array.isArray(associations) ? associations : []), */
     ];
 
-    console.log("clubs", clubs)
+    /* console.log("clubs", clubs); */
     return options.map((option) => (
       <li
         key={option.id}
         className="list-group-item"
         onClick={() => handleAutocompleteClick(option.attributes)}
+        style={{
+          backgroundColor: theme.colors.gray[8],
+          color: theme.colors.gray[1],
+        }}
       >
         {option.attributes.Name}
       </li>
@@ -65,9 +70,9 @@ const Partner = () => {
   }, [clubs, associations]);
 
   const handleAutocompleteClick = (name) => {
-    console.log(name.PlayHQID)
+    //console.log(name.PlayHQID)
     setStoredName(name.Name);
-    setStoredPlayhqID(name.PlayHQID)
+    setStoredPlayhqID(name.PlayHQID);
     setShowAutocomplete(false);
     trackCustomEvent(
       "Autocomplete Selection",
@@ -77,55 +82,58 @@ const Partner = () => {
   };
 
   const SectionData = {
-    title: "Preview Your Club's Fixtura Experience",
+    title: "Fixtura's Live Demo",
     paragraphs: [
       `Curious to see how Fixtura can transform your club's digital content? `,
-      `Enter your club's name below for an exclusive preview of a custom Fixtura assets tailored for your club.`
+      `Enter your club's name below for an exclusive preview of a custom Fixtura assets tailored for your club.`,
     ],
   };
 
   return (
     <>
       <Section {...SectionData} color="light">
-        <div className="row align-items-center justify-content-center">
-          <Container>
-            <Box
-              sx={(theme) => ({
-                backgroundColor: theme.colors.gray[8],
-                textAlign: "center",
-                padding: theme.spacing.xl,
-                borderRadius: theme.radius.md,
-                cursor: "pointer",
-              })}
-            >
-              <div className="mb-3">
-                <input
-                type="text"
-                className="form-control"
-                id="inputClubOrAssociation"
-                name="clubOrAssociation"
-                onChange={handleInputClubOrAssociationChange}
-                required
-                placeholder="Enter Your Club Name for a Preview"
-                />
-                {(clubs || associations) && showAutocomplete && (
-                  <ul className="list-group">{renderAutocompleteOptions()}</ul>
-                )}
-              </div>
-              {storedName ? <PositiveResult storedName={storedName} StoredPlayhqID={StoredPlayhqID} /> : false}
-            </Box>
-          </Container>
-        </div>
+        <Container>
+          <Box
+            sx={(theme) => ({
+              backgroundColor: theme.colors.gray[5],
+              textAlign: "center",
+              padding: theme.spacing.xl,
+              borderRadius: theme.radius.md,
+              cursor: "pointer",
+            })}
+          >
+            <input
+              type="text"
+              className="form-control"
+              id="inputClubOrAssociation"
+              name="clubOrAssociation"
+              onChange={handleInputClubOrAssociationChange}
+              required
+              placeholder="Enter Your Club Name"
+            />
+            {(clubs || associations) && showAutocomplete && (
+              <ul className="list-group">{renderAutocompleteOptions()}</ul>
+            )}
+          </Box>
+          {storedName ? (
+            <PositiveResult
+              storedName={storedName}
+              StoredPlayhqID={StoredPlayhqID}
+            />
+          ) : (
+            false
+          )}
+        </Container>
       </Section>
     </>
   );
 };
 
-export default Partner;
+export default SelectClubForLiveDemo;
 
-const PositiveResult = ({ storedName,StoredPlayhqID }) => {
+const PositiveResult = ({ storedName, StoredPlayhqID }) => {
   const isMobile = useMediaQuery("(max-width: 768px)");
-  const textAlign = isMobile ? "left" : "center";
+  const textAlign = "center";
 
   useEffect(() => {
     trackCustomEvent(
@@ -140,22 +148,32 @@ const PositiveResult = ({ storedName,StoredPlayhqID }) => {
   };
 
   return (
-    <Box>
+    <Box
+      mt={20}
+      sx={(theme) => ({
+        backgroundColor: theme.colors.gray[2],
+        textAlign: "center",
+        padding: theme.spacing.xl,
+        borderRadius: theme.radius.md,
+        cursor: "pointer",
+      })}
+    >
       <P
-        color={"white"}
+        color={"gray.8"}
         textAlign={textAlign}
-        Weight={600}
+        Weight={400}
         size={"xl"}
-      >{`Great news! ${storedName} is eligible to join Fixtura's exclusive network of cricket clubs and associations.`}</P>
-     <P
-        color={"white"}
+      >{`Great news!`}</P>
+      <P
+        color={"gray.8"}
         textAlign={textAlign}
-        Weight={600}
+        Weight={400}
         size={"xl"}
-      >{`Here's a glimpse of a custom assets for ${storedName}.`}</P>
-     <Link href={`/campaign/gettingstartedwithfixtura/${StoredPlayhqID}`}>
-        <a className="btn btn-primary" onClick={handleButtonClick}>
-          See how {storedName} looks with Fixtura 
+      >{`${storedName} is eligible to join Fixtura's exclusive network of cricket clubs and associations.`}</P>
+
+      <Link href={`/campaign/gettingstartedwithfixtura/${StoredPlayhqID}`}>
+        <a className="btn btn-secondary" onClick={handleButtonClick}>
+          Check out our Live Demo for {storedName}
         </a>
       </Link>
     </Box>

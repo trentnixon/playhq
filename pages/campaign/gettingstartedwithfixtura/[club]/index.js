@@ -20,10 +20,10 @@ const ClubPage = ({ clubData, useAssets }) => {
     paragraphs: [
       `For just $20 a week, get full access to tailored videos, graphics, and articles that celebrate your team's achievements. Experience the ease of automated content generation—your PlayHQ data now delivers more than just scores.`,
     ],
-  };
-
+  }; 
+ 
   const SectionPlayer = {
-    title: "What does Fixtura provide?",
+    title: "Fixtura's Live Demo",
     paragraphs: [
       `Check out Fixtura's range of assets designed to highlight your club's weekly highlights and achievements.`,
     ],
@@ -90,7 +90,11 @@ export const getStaticPaths = async () => {
 async function fetchClubs(pageNumber = 1, pageSize = 25) {
   const queryWithPagination = qs.stringify(
     {
-   
+      filter:{
+        Sport:{
+          $eq:'Cricket'
+        }
+      },
       pagination: {
         page: pageNumber,
         pageSize: pageSize,

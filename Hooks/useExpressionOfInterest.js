@@ -32,7 +32,7 @@ const buildQueryStringClubs = (name,ID) => {
           }
         }
       },
-      fields: ["Name"],
+      fields: ["Name","PlayHQID"],
     },
     {
       encodeValuesOnly: true,

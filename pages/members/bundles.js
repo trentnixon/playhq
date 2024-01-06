@@ -63,7 +63,7 @@ const OrderHistory = (props) => {
             Token={Renders?.render_token?.token}
           />
           <Space h={50} />
-          <SubHeaders Copy="Asset Settings" ICON={<IconSettings size={30} />} />
+          <SubHeaders Copy="Bundle Settings" ICON={<IconSettings size={30} />} />
           <GroupBySwitch account={account} />
         </LoadingStateWrapper>
       </SetupCheck>

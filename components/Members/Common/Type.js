@@ -84,9 +84,25 @@ export const H = (props) => {
   );
 };
 
-export const GradientTitle = ({ title, mb, gradient, size = "h1" }) => {
+export const GradientTitle = ({
+  title,
+  mb,
+  gradient,
+  tt = "",
+  size = "h1",
+  ta = "left",
+  fw = "lg",
+}) => {
   return (
-    <Title mb={mb} size={size} variant="gradient" gradient={gradient}>
+    <Title
+      mb={mb}
+      tt={tt}
+      size={size}
+      ta={ta}
+      variant="gradient"
+      fw={fw}
+      gradient={gradient}
+    >
       {title}
     </Title>
   );

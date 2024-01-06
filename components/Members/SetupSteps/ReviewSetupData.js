@@ -137,7 +137,7 @@ export const ReviewSetupData = ({ DATA }) => {
       <Container size="lg" pt={200} pb={70}>
         <FixturaLoading />
       </Container>
-    );
+    ); 
   }
 
   return (
