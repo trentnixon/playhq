@@ -46,7 +46,7 @@ const Partner = () => {
       /* ...(Array.isArray(associations) ? associations : []), */
     ];
 
-    console.log("clubs", clubs)
+    //console.log("clubs", clubs)
     return options.map((option) => (
       <li
         key={option.id}
@@ -65,7 +65,7 @@ const Partner = () => {
   }, [clubs, associations]);
 
   const handleAutocompleteClick = (name) => {
-    console.log(name.PlayHQID)
+    //console.log(name.PlayHQID)
     setStoredName(name.Name);
     setStoredPlayhqID(name.PlayHQID)
     setShowAutocomplete(false);

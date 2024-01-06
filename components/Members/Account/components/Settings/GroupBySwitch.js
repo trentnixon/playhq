@@ -5,7 +5,7 @@ import { P } from "../../../Common/Type";
 import { useSetGroupAssetsBySetting } from "../../../../../Hooks/useAccountSettings";
 
 export const GroupBySwitch = ({ account }) => {
-  console.log(account.attributes.group_assets_by);
+  //console.log(account.attributes.group_assets_by);
   const AccType = FindAccountType(account);
   const [GroupAssetsBy, putGroupAssetsBy] = useSetGroupAssetsBySetting();
 

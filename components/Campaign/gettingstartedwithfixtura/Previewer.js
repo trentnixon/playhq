@@ -310,12 +310,12 @@ const TemplateSelection = ({ selectedTemplate, setSelectedTemplate }) => {
   ];
 
   const handleSelectChange = (value) => {
-    console.log(value);
+    //console.log(value);
     const selectedOption = templates.find(
       (template) => template.value === value
     );
     if (selectedOption) {
-      console.log("selectedOption.templateData ", selectedOption.templateData);
+      //console.log("selectedOption.templateData ", selectedOption.templateData);
       setSelectedTemplate(selectedOption.templateData);
     }
   };
@@ -426,7 +426,7 @@ const BackgroundImageSelection = ({ onBackgroundImageSelect }) => {
     const selectedOption = backgroundImages.find(
       (image) => image.value === value
     );
-    console.log(selectedOption);
+    //console.log(selectedOption);
     if (selectedOption) {
       setSelectedBackground(selectedOption.imageData);
       onBackgroundImageSelect(selectedOption.imageData);

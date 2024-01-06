@@ -76,7 +76,7 @@ export const getStaticPaths = async () => {
     }
 
     for (const club of clubs.data) {
-      console.log(club.attributes.PlayHQID.toString())
+      //console.log(club.attributes.PlayHQID.toString())
       paths.push({ params: { club: club.attributes.PlayHQID.toString() } });
     }
 

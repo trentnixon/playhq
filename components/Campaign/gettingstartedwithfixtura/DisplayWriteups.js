@@ -1,8 +1,6 @@
 import { Paper, ScrollArea } from "@mantine/core";
 import ReactMarkdown from "react-markdown";
 export const DisplayWriteups = ({ selectedMedia }) => {
-  console.log(selectedMedia);
-
   const WRITEUPOBJ = {
     Top5BowlingList: {
       COPY: `# Top 5 Bowlers:

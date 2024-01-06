@@ -13,7 +13,7 @@ const getCardStyles = (theme) => {
 export const TeamList = (props) => {
   const { organizationDetails } = props;
   const theme = useMantineTheme();
-  console.log(organizationDetails);
+  //console.log(organizationDetails);
   if (!organizationDetails || !organizationDetails.data.attributes.teams.data) {
     return <p>No team data available.</p>;
   }

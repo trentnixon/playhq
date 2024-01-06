@@ -16,7 +16,7 @@ export const MediaTabs = ({
   userColors,
   userlogoUrl,
 }) => {
-  console.log("selectedMedia", selectedMedia);
+  //console.log("selectedMedia", selectedMedia);
   return (
     <>
       <Tabs

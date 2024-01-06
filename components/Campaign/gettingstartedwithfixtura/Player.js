@@ -43,7 +43,7 @@ export const RemotionPlayer = (props) => {
     selectedTemplate,
   } = props;
 
-  console.log("RemotionPlayer selectedTemplate ", selectedTemplate);
+  //console.log("RemotionPlayer selectedTemplate ", selectedTemplate);
 
   const [isMounted, setIsMounted] = useState(false);
   const [previewData, setPreviewData] = useState({});
@@ -67,18 +67,18 @@ export const RemotionPlayer = (props) => {
       const logoUrl =
         AccountData.attributes.Logo?.data?.url ||
         AccountData.attributes?.ParentLogo;
-      console.log(updatedData);
+        //console.log(updatedData);
       if (logoUrl || userColors.length !== 0) {
         // Apply color theme updates
         updatedData = await updateColorTheme(logoUrl, userColors, updatedData);
       }
 
-      console.log(selectedMedia, updatedData);
+      //console.log(selectedMedia, updatedData);
       //
       updatedData.VIDEOMETA.Video.HeroImage = BackgroundImageUrl;
       updatedData.VIDEOMETA.Video.TemplateVariation =
         selectedTemplate.TemplateVariation;
-      console.log(updatedData, userlogoUrl);
+      //console.log(updatedData, userlogoUrl);
       /* BackgroundImageUrl */
       setPreviewData(updatedData);
       setIsMounted(true);
@@ -130,8 +130,6 @@ export const RemotionPlayer = (props) => {
   useEffect(() => {
     setIsMounted(true);
   }, []);
-
-  console.log("previewData ", previewData);
 
   if (
     !isMounted ||

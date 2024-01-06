@@ -201,7 +201,6 @@ const Timelines = () => {
   return (
     <Grid>
       {timelineData.map((timeline, index) => {
-        console.log(index);
         const TextAlign = index === 0 ? "left" : "right";
         const useGradient =
           index === 0
@@ -215,7 +214,6 @@ const Timelines = () => {
           );
         return (
           <Col key={index} span={12} md={6}>
-            
             <Center>
               <ThemeIcon
                 my={30}
@@ -239,7 +237,7 @@ const Timelines = () => {
               title={timeline.title}
               gradient={useGradient}
             /> */}
-           
+
             {timeline.sections.map((section, sectionIndex) => {
               return (
                 <TimelineSection
@@ -250,7 +248,7 @@ const Timelines = () => {
                 />
               );
             })}
-             <Center mb={20}>
+            <Center mb={20}>
               <GradientTitle
                 size={"1em"}
                 title={"Est"}
@@ -264,10 +262,8 @@ const Timelines = () => {
               />
             </Center>
           </Col>
-          
         );
       })}
-      
     </Grid>
   );
 };

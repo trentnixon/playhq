@@ -35,7 +35,7 @@ const ColorPickerComponent = ({ onColorChange }) => {
   const [Secondary, SetSecondary] = useState(false);
 
   const handlePrimaryColorChange = (color) => {
-    console.log("handlePrimaryColorChange ", color);
+    //console.log("handlePrimaryColorChange ", color);
     SetPrimary(color);
     onColorChange({
       Primary: rgbaToHex(color),

@@ -35,7 +35,7 @@ const SetupCheck = ({ children }) => {
     setIsSetup(account?.attributes?.isSetup); // Update isSetup when the account details change
   }, [account]);
 
-  console.log("isSetup", isSetup);
+  //console.log("isSetup", isSetup);
 
   if (isSetup === null || isSetup === undefined) return <FixturaLoading />;
   if (isSetup) {

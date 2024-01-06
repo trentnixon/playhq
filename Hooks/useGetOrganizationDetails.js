@@ -59,7 +59,7 @@ export const useGetOrganizationDetails = (accountType, accountId) => {
     const fetchData = async () => {
       setLoading(true);
       try {
-        console.log("accountType", accountType)
+        //console.log("accountType", accountType)
         const endpoint =
           accountType === "Association"
             ? `/associations/${accountId}`

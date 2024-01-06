@@ -1,7 +1,7 @@
 import Head from "next/head";
 
 const Meta = ({ title, description, keywords }) => {
-  console.log("title", title)
+  //console.log("title", title)
   return (
     <Head>
       <meta charSet="utf-8" />

@@ -10,7 +10,7 @@ import { trackButtonClick } from "../../../lib/GA";
 import { useMediaQuery } from "@mantine/hooks";
 
 const FixturaAndYourClubBanner = ({ AccountData }) => {
-  console.log(AccountData)
+  //console.log(AccountData)
   const useLOGO = !AccountData.Logo.data
     ? AccountData.ParentLogo
     : AccountData.Logo.data.attributes.url;

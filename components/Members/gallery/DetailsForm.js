@@ -77,7 +77,7 @@ export const DetailsForm = ({
   const [markerPosition, setMarkerPosition] = useState([]);
 
   const handleAddMarker = (marker) => {
-    console.log(marker);
+    //console.log(marker);
     setMarkerPosition([marker]); // Ensure it's an array
   };
 

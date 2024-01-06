@@ -205,7 +205,6 @@ export const RemotionPlayer = ({
   };
 
   const updateLadderFirstItem = (data, useLOGO, accountName) => {
-    /*  console.log(data.DATA[0].bias); */
     if (data && data.DATA.length > 0) {
       data.DATA[0].League[0].teamName = accountName;
       data.DATA[0].League[0].teamLogo = useLOGO;

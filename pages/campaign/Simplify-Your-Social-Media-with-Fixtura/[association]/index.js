@@ -15,7 +15,7 @@ const AssociationPage = ({ associationData, useAssets }) => {
   const associationName = associationData.attributes.Name; // Adjust based on your data structure
 
   const DefaultLogo='https://fixtura.s3.ap-southeast-2.amazonaws.com/Default_ICON_171b58a21b.png'
-  console.log(associationData.attributes.ParentLogo)
+  //console.log(associationData.attributes.ParentLogo)
   associationData.attributes.ParentLogo = associationData.attributes.ParentLogo ==='No Parent Logo'?DefaultLogo:associationData.attributes.ParentLogo
   const isMobile = useMediaQuery("(max-width: 768px)");
   const padding = isMobile ? 0 : "sm";

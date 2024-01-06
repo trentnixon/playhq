@@ -72,7 +72,7 @@ export const updateTop5Bowlers = (data, useLOGO, accountName) => {
 };
 
 export const updateLadderFirstItem = (data, useLOGO, accountName) => {
-  /*  console.log(data.DATA[0].bias); */
+
   if (data && data.DATA.length > 0) {
     data.DATA[0].League[0].teamName = accountName;
     data.DATA[0].League[0].teamLogo = useLOGO;
@@ -83,8 +83,8 @@ export const updateLadderFirstItem = (data, useLOGO, accountName) => {
 };
 
 export const mergeData = (useData, customObj) => {
-  console.log(useData.VIDEOMETA.Video.HeroImage);
-  console.log(customObj.HeroImage);
+  //console.log(useData.VIDEOMETA.Video.HeroImage);
+  //console.log(customObj.HeroImage);
 
   if (customObj.theme) {
     useData.VIDEOMETA.Video.Theme = {

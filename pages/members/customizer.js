@@ -206,7 +206,7 @@ const PreviewControls = ({
   selectedHeroImage,
   setHeroImage,
 }) => {
-  console.log(userAccount.attributes.account_media_libraries.data);
+  //console.log(userAccount.attributes.account_media_libraries.data);
   const mediaGallery = userAccount.attributes.account_media_libraries.data;
 
   const assetOptions = [
@@ -223,7 +223,7 @@ const PreviewControls = ({
 
   const imageOptions = userAccount.attributes.account_media_libraries.data.map(
     (item) => {
-      console.log(item);
+      //console.log(item);
       const imageUrl = item.attributes.imageId.data.attributes.url;
       const imageWidth = item.attributes.imageId.data.attributes.width;
       const imageHeight = item.attributes.imageId.data.attributes.height;

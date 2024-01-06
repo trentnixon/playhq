@@ -98,7 +98,7 @@ export const ReviewSetupData = ({ DATA }) => {
   const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
   const CompleteRegistration = async () => {
     setLoading(true);
-    console.log("CompleteRegistration");
+    //console.log("CompleteRegistration");
     try {
       await CreateSetAccountTrue(DATA.id);
     } catch (error) {

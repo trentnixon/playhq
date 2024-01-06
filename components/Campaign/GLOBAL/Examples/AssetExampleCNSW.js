@@ -26,7 +26,6 @@ export const UpComingFixtures = ({ DATA }) => {
 };
 
 export const WeekendResults = ({ DATA }) => {
-  console.log(DATA)
   return (
     <>
       <Sequence
