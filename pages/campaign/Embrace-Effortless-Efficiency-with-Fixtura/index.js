@@ -1,15 +1,15 @@
 import React from "react";
 import Meta from "../../../components/Layouts/Meta";
-import PageBanner from "../../../components/Common/PageBanner";
+//import PageBanner from "../../../components/Common/PageBanner";
 import Section from "../../../components/UI/DefaultSection";
-import { Container, Image } from "@mantine/core";
+//import { Container, Image } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
-import Timelines from "../../../components/Campaign/Embrace-Effortless-Efficiency-with-Fixtura/timeline";
+//import Timelines from "../../../components/Campaign/Embrace-Effortless-Efficiency-with-Fixtura/timeline";
 import Partner from "../../../components/Common/Partner";
-import Feedback from "../../../components/Common/Feedback";
+//import Feedback from "../../../components/Common/Feedback";
 import CtaAreaTwo from "../../../components/Common/CtaAreaTwo";
 import TestimonialSingle from "../../../components/Common/TestimonialSingle";
-import PageBannerDarkMode from "../../../components/Common/PageBannerDarkMode";
+//import PageBannerDarkMode from "../../../components/Common/PageBannerDarkMode";
 import { ScrollingSections } from "../../../components/Campaign/Embrace-Effortless-Efficiency-with-Fixtura/GsapScrollPIn";
 
 const EmbraceEffortlessEfficiencywithFixtura = () => {

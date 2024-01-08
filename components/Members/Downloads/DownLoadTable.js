@@ -19,6 +19,8 @@ import { IconIdBadge2 } from "@tabler/icons-react";
 import { ShadowWrapper } from "../Common/Containers";
 import {
   FormattDateFormDownloadTable,
+  FormattReadableDateFormDownloadTable,
+  isBefore2024,
   orderedArray,
 } from "../../Downloads/helpers";
 import { useAccountDetails } from "../../../lib/userContext";
@@ -135,23 +137,28 @@ export function DownloadTable({ data, Token }) {
 
 const TableRow = ({ row, Token }) => {
   const { account } = useAccountDetails();
- console.log("account", account.attributes.Sport)
+  console.log("row.createdAt", row.createdAt);
+  const disableLink = isBefore2024(row.createdAt);
   return (
     <tr key={row.name}>
       <td>{row.Processing ? <FixturaLoading /> : row.Name}</td>
-      <td>{FormattDateFormDownloadTable(row.createdAt)}</td>
+      <td>{FormattReadableDateFormDownloadTable(row.createdAt)}</td>
       <td>{row.Processing ? "0" : row.downloads}</td>
       <td>{row.Processing ? "0" : row.game_results_in_renders}</td>
       <td>{row.Processing ? "0" : row.upcoming_games_in_renders}</td>
       <td>
-        {row.Complete ? (
+        {row.Complete && !disableLink ? (
           <BTN_TOEXTLINK
-            LABEL="Visit"
-            URL={`https://content.fixtura.com.au/${account.id}/${account.attributes.Sport.toLowerCase()}/${row.id}?token=${Token}`}
+            LABEL="Download"
+            URL={`https://content.fixtura.com.au/${
+              account.id
+            }/${account.attributes.Sport.toLowerCase()}/${
+              row.id
+            }?token=${Token}`}
             THEME="cta"
           />
         ) : (
-          false
+          <BTN_TOEXTLINK LABEL="Unavailable" idDisabled={true} THEME="cta" />
         )}
       </td>
     </tr>

@@ -67,4 +67,30 @@ export  const FormattDateFormDownloadTable = (formattDate) => {
 
   });
   return formattedDate;
+}; 
+
+export const FormattReadableDateFormDownloadTable = (formattDate) => {
+  const date = new Date(formattDate);
+  const day = date.getDate();
+  const month = date.toLocaleString('en-GB', { month: 'long' });
+
+  // Function to add ordinal suffix to day
+  const getOrdinalSuffix = (day) => {
+    if (day > 3 && day < 21) return 'th';
+    switch (day % 10) {
+      case 1:  return "st";
+      case 2:  return "nd";
+      case 3:  return "rd";
+      default: return "th";
+    }
+  };
+
+  return `${day}${getOrdinalSuffix(day)} ${month}`;
+};
+
+
+export const isBefore2024 = (dateString) => {
+  const cutoffDate = new Date("2024-01-01");
+  const date = new Date(dateString);
+  return date < cutoffDate;
 };

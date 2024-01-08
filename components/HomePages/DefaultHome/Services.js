@@ -12,9 +12,9 @@ const Services = () => {
   const padding = isMobile ? 0 : "sm";
   const SectionData = {
     title:
-      "Looking for an Easier Solution for Social Media and Website Content Creation for Your Club or Association?",
+      "Simplify Your Club or Association's Match Reporting!",
     paragraphs: [
-      `We specialize in curating and delivering bespoke content for your club's social media and website presence. Our service ensures scheduled deliveries are always on time, thanks to our cutting-edge automated AI and generative video creation tools.`,
+      `We specialize in curating and delivering bespoke content for your club or Association's social media and website presence. Our service ensures scheduled deliveries are always on time, thanks to our cutting-edge automated AI and generative video creation tools.`,
 
       `Start your two-week free trial and embrace the Fixtura advantage.`,
     ],
