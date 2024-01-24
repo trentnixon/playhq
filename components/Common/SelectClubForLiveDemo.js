@@ -1,4 +1,4 @@
-import { Box, Container, Loader, useMantineTheme } from "@mantine/core";
+import { Box, Center, Container, Loader, useMantineTheme } from "@mantine/core";
 import React, { useEffect, useState } from "react";
 import { useAssociations, useClubs } from "../../Hooks/useExpressionOfInterest";
 import { P } from "../Members/Common/Type";
@@ -24,7 +24,7 @@ const SelectClubForLiveDemo = () => {
         "Eligibility Check Started",
         inputValue
       );
-    } 
+    }
 
     if (inputValue.length >= 3) {
       setShowAutocomplete(true);
@@ -82,10 +82,18 @@ const SelectClubForLiveDemo = () => {
   };
 
   const SectionData = {
-    title: "Fixtura's Live Demo",
+    title: "Fixtura's Club Demo",
     paragraphs: [
       `Curious to see how Fixtura can transform your club's digital content? `,
       `Enter your club's name below for an exclusive preview of a custom Fixtura assets tailored for your club.`,
+    ],
+  };
+
+  const AssoicationActionData = {
+    title: "Fixtura for Associations",
+    paragraphs: [
+      `Currently, our live demo is tailored specifically for cricket clubs, showcasing how Fixtura seamlessly enhances their digital storytelling. For cricket associations interested in exploring Fixtura's capabilities, we offer detailed information and customized demonstrations to suit your broader needs. `,
+      `We invite associations to contact us directly on Facebook for an in-depth understanding of how Fixtura can revolutionize your content creation and fan engagement. Let's discuss the possibilities and tailor a solution that aligns with your association's vision.`,
     ],
   };
 
@@ -124,6 +132,18 @@ const SelectClubForLiveDemo = () => {
             false
           )}
         </Container>
+      </Section>
+      <Section {...AssoicationActionData} color="light">
+        <Center>
+          <Link href="https://www.facebook.com/profile.php?id=100095406210560">
+            <a
+              className="btn btn-secondary"
+              onClick={() => trackButtonClick("Facebook FAQ Chat")} // Track button click
+            >
+              Contact Us on Facebook
+            </a>
+          </Link>
+        </Center>
       </Section>
     </>
   );

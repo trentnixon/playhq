@@ -10,7 +10,9 @@ const Contact = () => {
   const SectionData = {
     title: "Start Your Two-Week Free Trial with Fixtura!",
     paragraphs: [
-      `No credit card. No obligations. Just tailored content for your cricket club or association. Experience all our features and receive personalized assets in your inbox, with dedicated support throughout your trial.`,
+     
+      `Experience all our features and receive personalized assets in your inbox.`,
+      `No credit card | No obligations. Just tailored content for your cricket club or association. `,
       `Set up your account below and hit 'Start Trial' to begin your journey.`,
     ],
   };
