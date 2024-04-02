@@ -10,14 +10,14 @@ export const StepHeaderandDescription = ({ Header, Description }) => {
       <Space h={mobile ? 0 : 20} />
       <Wrapper px={mobile ? 0 : "sm"}>
         <P
-          color={2}
+          color={6}
           size={mobile ? 'md' : "xl"}
           Weight={900}
           marginBottom={10}
           textTransform={"uppercase"}
           Copy={Header}
         />
-        <P color={2} size={mobile ? 'sm' : "md"} Copy={Description} lineHeight={"1.3em"} />
+        <P color={6} size={mobile ? 'sm' : "md"} Copy={Description} lineHeight={"1.3em"} />
       </Wrapper>
     </>
   );

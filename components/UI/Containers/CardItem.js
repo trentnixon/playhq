@@ -35,7 +35,7 @@ const CardItem = ({ item }) => {
         >
           {item.title}
         </GradientTitle>
-        <P color={0} textAlign={"center"}>
+        <P color={6} textAlign={"center"}>
           {item.description}
         </P>
       </div>

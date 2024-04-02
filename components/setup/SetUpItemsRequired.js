@@ -20,7 +20,7 @@ export const SetUpItemsRequired = () => {
         <List.Item
           icon={<IconMail stroke={1.5} size="2rem" color={"#6699CC"} />}
         >
-          <P Weight={600} marginBottom={0} color={4}>
+          <P Weight={600} marginBottom={0} color={7}>
             Email Delivery
           </P>
           {matches ? (
@@ -32,7 +32,7 @@ export const SetUpItemsRequired = () => {
         <List.Item
           icon={<IconUser stroke={1.5} size="2rem" color={"#6699CC"} />}
         >
-          <P Weight={600} marginBottom={0} color={4}>
+          <P Weight={600} marginBottom={0} color={7}>
             Recipient's Name
           </P>
           {matches ? (
@@ -44,7 +44,7 @@ export const SetUpItemsRequired = () => {
         <List.Item
           icon={<IconBuilding stroke={1.5} size="2rem" color={"#6699CC"} />}
         >
-          <P Weight={600} marginBottom={0} color={4}>
+          <P Weight={600} marginBottom={0} color={7}>
             Organization Type
           </P>
           {matches ? (
@@ -56,7 +56,7 @@ export const SetUpItemsRequired = () => {
         <List.Item
           icon={<IconUsers stroke={1.5} size="2rem" color={"#6699CC"} />}
         >
-          <P Weight={600} marginBottom={0} color={4}>
+          <P Weight={600} marginBottom={0} color={7}>
             Association
           </P>
           {matches ? (
@@ -70,7 +70,7 @@ export const SetUpItemsRequired = () => {
         <List.Item
           icon={<IconShield stroke={1.5} size="2rem" color={"#6699CC"} />}
         >
-          <P Weight={600} marginBottom={0} color={4}>
+          <P Weight={600} marginBottom={0} color={7}>
             Club Name
           </P>
           {matches ? (
@@ -82,7 +82,7 @@ export const SetUpItemsRequired = () => {
         <List.Item
           icon={<IconBrandStripe stroke={1.5} size="2rem" color={"#6699CC"} />}
         >
-          <P Weight={600} marginBottom={0} color={4}>
+          <P Weight={600} marginBottom={0} color={7}>
             Organization Logo
           </P>
           {matches ? (
@@ -94,7 +94,7 @@ export const SetUpItemsRequired = () => {
         <List.Item
           icon={<IconPalette stroke={1.5} size="2rem" color={"#6699CC"} />}
         >
-          <P Weight={600} marginBottom={0} color={4}>
+          <P Weight={600} marginBottom={0} color={7}>
             Brand Colors
           </P>
           {matches ? (

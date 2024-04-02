@@ -139,7 +139,7 @@ const TableRow = ({ item, userAccount, StoreUSerChange }) => {
         </Group>
       </td>
       <td>
-        <P marginBottom={0} color={isSelected ? 2 : 2}>
+        <P marginBottom={0} color={isSelected ? 6 : 7}>
           {item.attributes.Name}
         </P>
       </td>

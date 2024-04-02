@@ -8,7 +8,7 @@ export const CreateFirstSponsor = (props) => {
         Weight={400}
         size={"md"}
         textTransform={`uppercase`}
-        color={2}
+        color={6}
         Copy={`0 Sponsors found...`}
       />
       <Group>
@@ -16,7 +16,7 @@ export const CreateFirstSponsor = (props) => {
           Weight={600}
           size={20}
           textTransform={`uppercase`}
-          color={3}
+          color={6}
           Copy={`Use the Create New button to Create Your First Sponsor`}
           marginBottom={0}
         />

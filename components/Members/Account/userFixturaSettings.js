@@ -117,7 +117,7 @@ export const FixturaSettings = ({ user, setHasUpdated }) => {
       <P color={4} size={20} marginBottom={0}>
         {stat.title}
       </P>
-      <P color={3} Weight={900} size={20} marginBottom={0}>
+      <P color={6} Weight={900} size={20} marginBottom={0}>
         {stat.stats}
       </P>
     </Paper>
@@ -174,7 +174,7 @@ export const SetupInputs = ({ user, setHasUpdated }) => {
           }
           setAssociationID={setAssociationID}
           setHasUpdated={setHasUpdated}
-        />
+        /> 
       </ShadowWrapper>
 
       <Space h="lg" />
@@ -257,7 +257,7 @@ export const SetupInputs = ({ user, setHasUpdated }) => {
 const LabelMe = ({ label }) => {
   return (
     <Wrapper>
-      <P color={4} Weight={900} marginBottom={0} textTransform={"uppercase"}>
+      <P color={6} Weight={900} marginBottom={0} textTransform={"uppercase"}>
         {label}
       </P>
     </Wrapper>

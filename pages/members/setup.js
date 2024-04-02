@@ -43,7 +43,7 @@ const SETUP = () => {
   }
 
   const Content = UserAccount ? (
-    <>
+    <> 
       <Meta
         title="Member Setup - Fixtura: Get Started Effectively"
         description="Start your journey with Fixtura by setting up your member account. Optimize your sports club's digital media from the get-go."
@@ -69,7 +69,7 @@ const SETUP = () => {
 
   if (review) return <ReviewSetupData DATA={UserAccount} />;
 
-  return (
+  return ( 
     <MembersWrapper>
       <Meta
         title="Member Setup - Fixtura: Get Started Effectively"

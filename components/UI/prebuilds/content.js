@@ -23,7 +23,7 @@ export const Paragraphs = ({ paragraphs, className }) => {
   const isMobile = useMediaQuery("(max-width: 768px)");
   // Adjust the font size based on whether it's a mobile device or not
   const textAlign = isMobile ? "left" : "center"; // Assuming 24px for mobile and 45px for desktop
-  const padding = isMobile ? 0 : "sm";
+  //const padding = isMobile ? 0 : "sm";
   return (
     <>
       {paragraphs.map((paragraph, index) => (

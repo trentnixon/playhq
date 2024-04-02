@@ -16,7 +16,7 @@ export const SponsorLimitMessage = ({ Sponsors, SPONSORLIMIT, isCreate }) => {
           marginTop: "10px", // Space between this message and previous components
         })}
       >
-        <P color={2} size={'xs'}  Weight={400} textAlign={"right"}>
+        <P color={6} size={'xs'}  Weight={400} textAlign={"right"}>
           {message}
         </P>
       </Box>

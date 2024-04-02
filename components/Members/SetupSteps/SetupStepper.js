@@ -54,14 +54,14 @@ export const SetupStages = ({ setReview }) => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
 
-  const checkProgress = useCallback(() => {
+  const checkProgress = useCallback(() => { 
   
     if (DATA) {
       setProgress({
         ...progress,
 
         step1: {
-          ...progress.step1,
+          ...progress.step1, 
           account_type: DATA.attributes?.account_type?.data?.attributes,
           associations: DATA.attributes?.associations?.data[0]?.attributes,
           clubs:

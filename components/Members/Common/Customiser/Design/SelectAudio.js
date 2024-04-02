@@ -215,7 +215,7 @@ const Player = ({ currentSong, DeSelectAudio }) => {
           marginBottom={0}
           size="lg"
           textTransform="uppercase"
-          color={0}
+          color={6}
           fontStyle="italic"
         >{`Preview  : ${currentSong.attributes.Name}`}</P>
 

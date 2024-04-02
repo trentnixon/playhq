@@ -111,7 +111,7 @@ export const GradientTitle = ({
 export const P = (props) => {
   const {
     Copy,
-    color = "gray.8",
+    color = 8,
     Weight = 400,
     size = "md",
     marginBottom = "14px",
@@ -133,7 +133,7 @@ export const P = (props) => {
         marginBottom: marginBottom,
         textAlign: textAlign,
         fontStyle: fontStyle,
-        color: color,
+        color: theme.colors.gray[color],
       })}
     >
       {props.children || Copy}

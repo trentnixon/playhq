@@ -5,7 +5,7 @@ import { useUser } from "../../lib/authContext";
 import { getIdFromLocalCookie } from "../../lib/auth";
 // UTILS
 import Adminfetcher from "../../lib/Adminfetcher";
-import { IconTrack } from "@tabler/icons-react";
+import { IconCalendarEvent, IconTrack, IconUsersGroup } from "@tabler/icons-react";
 // Components
 import {
   MembersWrapper,
@@ -13,7 +13,7 @@ import {
   ShadowWrapper,
 } from "../../components/Members/Common/Containers";
 import { showNotification } from "@mantine/notifications";
-import { Grid, SimpleGrid, Stack } from "@mantine/core";
+import { SimpleGrid, Stack } from "@mantine/core";
 
 import { useAccountDetails } from "../../lib/userContext";
 import { FixturaDivider } from "../../components/Members/Common/Divider";
@@ -27,13 +27,25 @@ import { FindAccountType, FindAccountTypeOBJ } from "../../lib/actions";
 import { useGetOrganizationDetails } from "../../Hooks/useGetOrganizationDetails";
 import { ClubList } from "../../components/Members/Tracking/Clubs";
 import Meta from "../../components/Layouts/Meta";
+import { Tabs } from "@mantine/core";
+import {
+  IconPhoto,
+  IconMessageCircle, 
+  IconSettings,
+} from "@tabler/icons-react";
 
 const Tracking = ({ DATA }) => {
+
+
+  console.log("Tracking DATA", DATA)
+
   const { account } = useAccountDetails();
   const [userAccount, setUserAccount] = useState(account);
   const { user, loading } = useUser();
   const accountType = FindAccountType(account);
   const accountId = FindAccountTypeOBJ(account).id;
+
+;
 
   const { data: organizationDetails, loading: loadingOrgDetails } =
     useGetOrganizationDetails(accountType, accountId);
@@ -57,14 +69,14 @@ const Tracking = ({ DATA }) => {
       <SetupCheck>
         <LoadingStateWrapper conditions={[user, userAccount, DATA]}>
           <PageTitle Copy={`Season Tracking`} ICON={<IconTrack size={40} />} />
-          <PageCopyWrapper>
+        {/*   <PageCopyWrapper>
             <P>
               Dive into a comprehensive view of all the fixtures Fixtura is
               diligently monitoring for your club or association.
             </P>
-          </PageCopyWrapper>
+          </PageCopyWrapper> */}
 
-          <PageCopyWrapper>
+       {/*    <PageCopyWrapper>
             <P marginBottom={10} size={20} Weight={600}>
               WHY CAN'T I SEE A TEAM?
             </P>
@@ -86,22 +98,7 @@ const Tracking = ({ DATA }) => {
               your team has an established ladder but is still not visible,
               please contact us on Facebook for quick assistance.
             </P>
-          </PageCopyWrapper>
-          {Object.keys(DATA).length === 0 ? (
-            <>
-              <ShadowWrapper>
-                <P textAlign="center" Weight={900} color={8}>
-                  No fixtures registered at the moment.{" "}
-                </P>
-                <P textAlign="center" color={8}>
-                  Fixtura is currently tracking 0 fixtures. If you believe this
-                  is incorrect, please contact us here.
-                </P>
-              </ShadowWrapper>
-            </>
-          ) : (
-            false
-          )}
+          </PageCopyWrapper> */}
 
           {Object.keys(DATA).length === 0 ? (
             <ShadowWrapper>
@@ -151,22 +148,29 @@ const TrackingLayout = (props) => {
   const { gamesData, organizationDetails, accountType } = props;
 
   return (
-    <SimpleGrid
-      breakpoints={[
-        { minWidth: "sm", cols: 1 },
-        { minWidth: "md", cols: 2 },
-      ]}
-      spacing="xl"
-      verticalSpacing="xs"
-    >
-      <Stack>
-        {accountType === "Association" ? (
-          <ClubList {...props} />
-        ) : (
-          <TeamList {...props} />
-        )}
-      </Stack>
-      <GamesListing gamesData={gamesData} />
-    </SimpleGrid>
+    <>
+      <Tabs defaultValue="fixtures" variant="pills" color="blue" > 
+        <Tabs.List position="right">
+          <Tabs.Tab value="fixtures" icon={<IconCalendarEvent size="1.2rem" />}>
+            View Fixtures
+          </Tabs.Tab>
+          <Tabs.Tab value="clubs" icon={<IconUsersGroup size="1.2rem" />}>
+            {accountType === "Association" ? "View Clubs" : "View Teams"}
+          </Tabs.Tab> 
+        </Tabs.List>
+
+        <Tabs.Panel value="fixtures" pt="xs">
+          <GamesListing gamesData={gamesData} />
+        </Tabs.Panel>
+
+        <Tabs.Panel value="clubs" pt="xs">
+          {accountType === "Association" ? (
+            <ClubList {...props} />
+          ) : (
+            <TeamList {...props} />
+          )}
+        </Tabs.Panel>
+      </Tabs>
+    </>
   );
 };

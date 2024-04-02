@@ -18,7 +18,7 @@ export function SelectFixturaSetting({
   SelectPlaceholder,
   COLLECTIONID,
   WithIcon = false,
-  showSelectInit=false
+  showSelectInit = false,
 }) {
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -134,7 +134,7 @@ const UI_WithSelectedAndButton = ({
     <Group position="apart">
       <Box>
         {error ? (
-          <P color={'white'}>{error}</P>
+          <P color={2}>{error}</P>
         ) : showSelect ? (
           <Select
             onChange={handleChange}
@@ -144,11 +144,11 @@ const UI_WithSelectedAndButton = ({
         ) : (
           <Group>
             <P
-            color={'black'}
+              color={6}
               textTransform={`uppercase`}
               size={`sm`}
               marginBottom={0}
-             >{`${selected ? selected.Name : "Select Option"}`}</P>
+            >{`${selected ? selected.Name : "Select Option"}`}</P>
             {selected ? (
               <ActionIcon
                 variant="filled"
@@ -186,7 +186,13 @@ const UI_WithButton = ({
 }) => {
   return (
     <Group position="apart">
-      {showSelect ? false : <P color={'white'} marginBottom={0}>{SelectLabel}</P>}
+      {showSelect ? (
+        false
+      ) : (
+        <P color={6} marginBottom={0}>
+          {SelectLabel}
+        </P>
+      )}
 
       <Box>
         {error ? (

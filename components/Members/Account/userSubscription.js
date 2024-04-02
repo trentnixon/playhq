@@ -60,7 +60,7 @@ export const UserSubscription = () => {
           subscriptionTier={subscriptionTier}
           Value={`Your subscription is cancelling...`}
         />
-        <P color={3} size="sm" Weight={400} textAlign="center">
+        <P color={6} size="sm" Weight={400} textAlign="center">
           By cancelling your plan, you will no longer receive automated assets
           from Fixtura. This change will take effect from the date of
           cancellation. To continue enjoying our services, please consider
@@ -79,7 +79,7 @@ export const UserSubscription = () => {
           Value={`Paused until one weeks before the next fixture. `}
         />
         <P
-          color={3}
+          color={6}
           size="sm"
           Weight={400}
           textAlign="center"
@@ -124,7 +124,7 @@ export const UserSubscription = () => {
           })}
         >
           <P
-            color={0}
+            color={6}
             Weight={400}
             marginBottom={0}
             textTransform={"uppercase"}

@@ -94,11 +94,11 @@ export const Input_FixturaSetting = ({
                   })}
                 >
                   {user?.attributes[Input.Field] === null ? (
-                    <P color={0} marginBottom={0}>
+                    <P color={2} marginBottom={0}>
                       Required
                     </P>
                   ) : (
-                    <P color={0} marginBottom={0}>
+                    <P color={2} marginBottom={0}>
                       {user?.attributes[Input.Field]}
                     </P>
                   )}
@@ -189,7 +189,7 @@ const LabelMe = ({ label }) => {
   return (
     <Wrapper px={mobile ? 0 : "sm"}>
       <P
-        color={4}
+        color={7}
         Weight={900}
         marginBottom={0}
         size={mobile ? "sm":'md'}

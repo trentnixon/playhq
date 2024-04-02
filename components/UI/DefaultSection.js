@@ -7,27 +7,27 @@ const useStyles = createStyles((theme) => ({
   dark: {
     ref: getStylesRef('dark'),
     backgroundColor: theme.colors.dark[5],
-    color: theme.colors.gray[2],
+    color: `${theme.colors.gray[2]} !important`,
   },
   grey: {
     ref: getStylesRef('grey'),
     backgroundColor: theme.colors.gray[3],
-    color: theme.colors.gray[8],
+    color:`${theme.colors.gray[8]} !important`,
   },
   light: {
     ref: getStylesRef('light'),
     backgroundColor: theme.colors.gray[1],
-    color: theme.colors.gray[7],
+    color:`${theme.colors.gray[7]} !important`,
   },
   primary: {
     ref: getStylesRef('primary'),
     backgroundColor: "#339AF0",
-    color: theme.colors.gray[1], // assuming you want a light text color for contrast
+    color: `${theme.colors.gray[1]} !important`, // assuming you want a light text color for contrast
   },
   secondary: {
     ref: getStylesRef('secondary'),
     backgroundColor: "#3BC9DB",
-    color: theme.colors.gray[7], // assuming you want a light text color for contrast
+    color: `${theme.colors.gray[7]} !important`, // assuming you want a light text color for contrast
   },
 }));
 

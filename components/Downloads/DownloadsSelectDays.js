@@ -15,7 +15,7 @@ export const DownloadsSelectDays = ({ renders }) => {
       <Group position="apart">
         <Box p={0} m={0}>
           <SelectDeliveryDay />
-        </Box>
+        </Box> 
 
         {days_of_the_week ? (
           <DaysTill days_of_the_week={days_of_the_week} renders={renders} />
@@ -45,13 +45,13 @@ const DaysTill = ({ days_of_the_week, renders }) => {
       <Box>
         {!checkDeliveryDate(renders) ? (
           <P
-            color={'white'}
+            color={2}
             marginBottom={0}
            >{`Next Order will be delivered in ${daysUntil(
             days_of_the_week
           )} days`}</P>
         ) : (
-          <P color={1} marginBottom={0}>{checkDeliveryDate(renders)}</P>
+          <P color={2} marginBottom={0}>{checkDeliveryDate(renders)}</P>
         )}
       </Box>
     </Paper>

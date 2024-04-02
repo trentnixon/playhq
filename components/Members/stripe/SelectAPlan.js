@@ -119,7 +119,7 @@ export const UpdateYourPlan = ({ user, setHasUpdated }) => {
     return (
       <>
         <P
-          color={2}
+          color={6}
           textAlign={"center"}
           marginBottom={0}
           Weight={600}

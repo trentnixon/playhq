@@ -42,7 +42,7 @@ export const UserDetails = ({
             Plan
           </P>
           <P
-            color={3}
+            color={6}
             Weight={900}
             marginBottom={0}
             textTransform={"uppercase"}
@@ -67,7 +67,7 @@ export const UserDetails = ({
             })}
           >
             <P
-              color={0}
+              color={6}
               Weight={400}
               marginBottom={0}
               textTransform={"uppercase"}

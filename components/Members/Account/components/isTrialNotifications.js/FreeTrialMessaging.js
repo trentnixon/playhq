@@ -19,7 +19,7 @@ export const IsFreeTrialWelcome = ({ user }) => {
         "The trial gives full access and lasts for 14 days. After which, you'll need to SUBSCRIBE to continue receiving weekly digital assets to your inbox.",
       bgColor: theme.colors.green[0],
       iconColor: theme.colors.green[5],
-      textColor: 6,
+      textColor:1,
     },
     ended_trial: {
       headerText: "Trial Ended!",
@@ -30,7 +30,7 @@ export const IsFreeTrialWelcome = ({ user }) => {
       textColor: 8,
     },
     available_trial: {
-      headerText: "Activate Your Free Trial!",
+      headerText: "Free Trial Available!",
       message:
         "You have a free trial available! To activate, visit your account page and click the activate button.",
       bgColor: theme.colors.blue[0],
@@ -41,16 +41,22 @@ export const IsFreeTrialWelcome = ({ user }) => {
 
   const config = welcomeConfig[trialNotificationStatus];
 
-  return (
-    <Container fluid={true} my={40}>
+ if(!config)
+ return false 
+ return (
+    <Container fluid={true}>
       <Group position="right">
-        <IconAlertTriangleFilled  style={{ color:config.iconColor }}/>
-        <P Weight={900} marginBottom={0} color={config.textColor}>
-          {config.headerText}
+        
+        <IconAlertTriangleFilled  style={{ color:config?.iconColor }}/>
+        <P Weight={400} marginBottom={0} color={'5'}>
+          {config?.headerText}
         </P>
       </Group>
+    </Container>
+  );
+};
 
-      <Paper
+/* <Paper
         p="md"
         mb={10}
         shadow="xs"
@@ -60,7 +66,4 @@ export const IsFreeTrialWelcome = ({ user }) => {
           <IconAlertTriangleFilled style={{ color:config.iconColor }} />
           <P marginBottom={0}>{config.message}</P>
         </Group>
-      </Paper>
-    </Container>
-  );
-};
+      </Paper> */

@@ -200,7 +200,7 @@ const SuccessfulRegistration = () => {
       <div className="contact-form ptb-100">
         <div className="contact-title">
           <P
-            color={2}
+            color={6}
             Weight={900}
             size={30}
             textAlign={"center"}

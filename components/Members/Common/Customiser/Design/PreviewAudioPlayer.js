@@ -96,7 +96,7 @@ export const PreviewAudioPlayer = ({ currentSong, DeSelectAudio }) => {
           marginBottom={0}
           size="md"
           textTransform="uppercase"
-          color={2}
+          color={6}
           fontStyle="italic"
         >
           {`Preview  : ${currentSong.attributes.Name}`}

@@ -14,10 +14,12 @@ import {
   IconPhotoPlus,
   IconTrack,
 } from "@tabler/icons-react";
-import { Group, useMantineTheme } from "@mantine/core";
+import { Group, Image, useMantineTheme } from "@mantine/core";
 import { useAccountDetails } from "../../lib/userContext";
+import { IsFreeTrial } from "../Members/Account/userIsFreeTrial";
+import { IsFreeTrialWelcome } from "../Members/Account/components/isTrialNotifications.js/FreeTrialMessaging";
 
-const NavbarTwo = () => {
+const NavbarMembers = () => {
   const [menu, setMenu] = useState(true);
   const toggleNavbar = () => {
     setMenu(!menu);
@@ -25,6 +27,7 @@ const NavbarTwo = () => {
 
   // user Context
   const { user, loading } = useUser();
+  const { account } = useAccountDetails();
 
   useEffect(() => {
     let elementId = document.getElementById("navbarTwo");
@@ -58,14 +61,25 @@ const NavbarTwo = () => {
                   className="black-logo"
                   alt="logo"
                 />
-                <img
-                  src="/images/image_processing_white.png"
-                  className="white-logo"
-                  alt="logo"
-                />
+                {account?.attributes?.Sport ? (
+                  <Image
+                    src={`/images/Fixtura-Logo-${account?.attributes?.Sport}.png`}
+                    height={60}
+                    width={"auto"}
+                    className="white-logo"
+                  />
+                ) : (
+                  <Image
+                    src={`/images/fixturaHeaderLogo.png`}
+                    height={40}
+                    width={"auto"}
+                    className="white-logo"
+                  />
+                )}
               </a>
             </Link>
 
+            <IsFreeTrialWelcome user={account} />
             {/* Toggle navigation */}
             <button
               onClick={toggleNavbar}
@@ -95,7 +109,7 @@ const NavbarTwo = () => {
   );
 };
 
-export default NavbarTwo;
+export default NavbarMembers;
 
 const VisitorMenu = ({ setMenu }) => {
   return (
@@ -189,8 +203,6 @@ const MembersNavItem = ({ user, setMenu }) => {
   const hasSetup = getAccountFromLocalCookie();
   const { account } = useAccountDetails();
 
-  //console.log(account?.attributes?.hasCompletedStartSequence);
-
   const handleLogout = async () => {
     try {
       await unsetToken(); // Assuming unsetToken is an async operation
@@ -215,7 +227,7 @@ const MembersNavItem = ({ user, setMenu }) => {
       title: "Bundles",
       IconComponent: IconDownload,
     },
-   /*  {
+    /*  {
       href: `${PATH}/graphics-packages`,
       title: "Graphics Packages",
       IconComponent: IconColorPicker,

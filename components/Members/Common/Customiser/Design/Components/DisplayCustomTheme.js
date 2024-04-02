@@ -80,7 +80,7 @@ export const DisplayCustomTheme = (props) => {
                     <P
                       marginBottom={0}
                       color={
-                        userAccount.attributes.theme.data.id === item.id ? 2 : 2
+                        userAccount.attributes.theme.data.id === item.id ? 6 : 7
                       }
                     >{`${FindAccountLabel(userAccount)} `}</P>
                     {userAccount.attributes.theme.data.id === item.id ? (

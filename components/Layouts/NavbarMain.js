@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Link from "../../utils/ActiveLink";
 
-const NavbarOne = () => {
+const NavbarMain = () => {
   const [menu, setMenu] = useState(true);
   const toggleNavbar = () => {
     setMenu(!menu);
@@ -141,7 +141,7 @@ const NavbarOne = () => {
   );
 };
 
-export default NavbarOne;
+export default NavbarMain;
 
 const SignUp = () => {
   return (

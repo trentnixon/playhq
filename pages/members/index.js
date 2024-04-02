@@ -138,11 +138,12 @@ const DashBoard = () => {
             description="Access your member dashboard on Fixtura to manage and overview your sports club's digital media activities."
             keywords="Member dashboard, Fixtura control panel, sports media overview, club content management, digital hub"
           />
+           {/* <IsFreeTrialWelcome user={account} /> */}
           <PageTitle
             Copy={`Hi ${account.attributes.FirstName}`}
             ICON={<IconLayoutDashboard size={40} />}
           />
-          <IsFreeTrialWelcome user={account} />
+         
 
           <SubHeaders
             Copy="Preview"

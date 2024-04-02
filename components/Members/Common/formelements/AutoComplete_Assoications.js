@@ -77,7 +77,7 @@ const AssociationsList = ({ associations, handleAssociationClick }) => (
         style={{ cursor: "pointer" }}
         onClick={() => handleAssociationClick(association)}
       >
-        {association.attributes.Name}
+        {association.attributes.Name} | {association.attributes.Sport}
       </li>
     ))}
   </ul>
@@ -93,6 +93,7 @@ export const AutoCompleteSelectAssociation = ({
   const [inputValue, setInputValue] = useState("");
   const [selectedAssociationId, setSelectedAssociationId] = useState(null);
   const [selectedAssociationName, setSelectedAssociationName] = useState("");
+  const [selectedAssociationSport, setSelectedAssociationSport] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
   const [showAutocomplete, setShowAutocomplete] = useState(false);
@@ -118,8 +119,11 @@ export const AutoCompleteSelectAssociation = ({
   };
 
   const handleAssociationClick = (association) => {
+    console.log("association")
+    console.log(association)
     setSelectedAssociationName(association.attributes.Name);
     setSelectedAssociationId(association.id);
+    setSelectedAssociationSport(association.attributes.Sport)
     setIsSelectionMade(true);
     setShowAutocomplete(false);
   };
@@ -137,7 +141,7 @@ export const AutoCompleteSelectAssociation = ({
             Authorization: `Bearer ${Cookies.get("jwt")}`,
           },
           body: JSON.stringify({
-            data: { associations: selectedAssociationId },
+            data: { associations: selectedAssociationId,Sport:selectedAssociationSport },
           }),
         }
       );

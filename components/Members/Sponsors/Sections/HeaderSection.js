@@ -15,7 +15,7 @@ export const HeaderSection = ({ Sponsors, SPONSORLIMIT, setIsCreate, isCreate })
         {Sponsors.length < SPONSORLIMIT ? (
           <Group position="right">
             <P
-              color={3}
+              color={6}
               Weight={400}
               textTransform={`uppercase`}
               Copy={`sponsors : ${Sponsors.length}`}
@@ -24,7 +24,7 @@ export const HeaderSection = ({ Sponsors, SPONSORLIMIT, setIsCreate, isCreate })
             <SPONSOR_CTABTN setIsCreate={setIsCreate} isCreate={isCreate} />
           </Group>
         ) : (
-          <P color={3} Weight={400} marginBottom={0}>
+          <P color={6} Weight={400} marginBottom={0}>
             Sponsor limit has been reached.
           </P>
         )}

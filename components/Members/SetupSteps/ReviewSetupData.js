@@ -20,7 +20,7 @@ import { setAccountFromLocalCookie } from "../../../lib/auth";
 import {
   IconCheck,
   IconHome2,
-  IconMailbox,
+  IconMailbox, 
   IconSettings2,
   IconShield,
   IconUser,
@@ -55,7 +55,7 @@ const ReviewContainer = ({ OBJ, Title }) => {
                     Copy={item.key}
                     size={"md"}
                     Weight={600}
-                    color={3}
+                    color={6}
                     marginBottom={0}
                   />
                 </Group>
@@ -172,19 +172,19 @@ export const ReviewSetupData = ({ DATA }) => {
           textAlign: "right",
         })}
       >
-        <P>
+        <P textAlign="center"> 
           It's time to link up with PlayHQ and
           embark on an exciting journey with Fixtura.
         </P>
         {mobile ? (
           false
         ) : (
-          <P>Your custom-made content and insights are just a click away.</P>
+          <P  textAlign="center">Your custom-made content and insights are just a click away.</P>
         )}
-        {mobile ? (
+        {mobile ? ( 
           false
         ) : (
-          <P> Ready to transform your season? Let's sync and get started!</P>
+          <P  textAlign="center"> Ready to transform your season? Let's sync and get started!</P>
         )}
 
         <Group position="center">

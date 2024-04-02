@@ -71,7 +71,7 @@ export const AIEXAMPLE = ({ AISETTINGS }) => {
           {typeof AIExample !== "string" ? (
             <FixturaLoading />
           ) : (
-            <P color={0} lineHeight={"1.4em"}  marginBottom={0} >{AIExample}</P>
+            <P color={6} lineHeight={"1.4em"}  marginBottom={0} >{AIExample}</P>
           )}
         </Paper>
       </Box>

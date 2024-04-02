@@ -114,7 +114,7 @@ const Overview = () => {
           >
             <Group position="apart">
               <P
-                color={0}
+                color={6}
                 marginBottom={0}
                 Copy={`${userAccount.attributes.assets.data.length} Assets Selected`}
               />

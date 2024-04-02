@@ -68,7 +68,7 @@ const FunFacts = () => {
                 >
                   {fact.title}
                 </Title>
-                <P color={0} textAlign={"center"}>
+                <P color={6} textAlign={"center"}>
                   {fact.description}
                 </P>
               </div>
@@ -76,7 +76,7 @@ const FunFacts = () => {
           ))}
         </div>
         <Space h={50} />
-        <P color={0} textAlign={"center"}>
+        <P color={6} textAlign={"center"}>
         Fixtura: Precision-Crafted Stories that Make an Impact.
         </P>
       </Section>

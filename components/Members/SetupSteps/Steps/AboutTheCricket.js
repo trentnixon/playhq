@@ -10,7 +10,7 @@ export const StepAboutTheCricket = ({ user, setHasUpdated  }) => {
         Description={
           "Tell us about your organization so we can ensure accuracy and tailor your experience accordingly."
         }
-      />
+      /> 
 
       <SetupInputs user={user} setHasUpdated={setHasUpdated}/> 
       <P color={8} size={"xs"} textAlign="right">

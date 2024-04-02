@@ -11,7 +11,7 @@ const buildQueryString = (name) => {
           $containsi: name,
         },
       },
-      fields: ["Name"],
+      fields: ["Name","Sport"],
     },
     {
       encodeValuesOnly: true,
@@ -32,7 +32,7 @@ const buildQueryStringClubs = (name,ID) => {
           }
         }
       },
-      fields: ["Name","PlayHQID"],
+      fields: ["Name","PlayHQID","Sport"],
     },
     {
       encodeValuesOnly: true,
@@ -85,7 +85,7 @@ export const useAssociations = () => {
   };
 
   return [associations, fetchAssociations];
-};
+}; 
 
 
 export const useSendExpressionOfInterestForm = () => {

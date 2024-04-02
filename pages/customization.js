@@ -84,7 +84,7 @@ const CustomisationSection = () => {
           ))}
         </div>
         <Space h={50} />
-        <P color={0} textAlign={"center"}>
+        <P color={6} textAlign={"center"}>
           Craft your narrative, and let Fixtura bring it to life with finesse
           and flair.
         </P>
