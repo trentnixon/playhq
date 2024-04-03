@@ -62,6 +62,41 @@ const ClubPage = ({ clubData, useAssets }) => {
 
 export default ClubPage;
 
+export const getServerSideProps = async ({ params }) => {
+  const qs = require('qs');
+  
+  // Fetch club data just like you did in getStaticProps
+  const clubQuery = qs.stringify({
+    filters: {
+      PlayHQID: { $eq: params.club },
+    },
+    populate: ["Logo"],
+  }, { encodeValuesOnly: true });
+
+  const assetQuery = qs.stringify({
+    populate: ["asset_type", "asset_category"],
+  }, { encodeValuesOnly: true });
+
+  const clubDataResponse = await fetcher(
+    `${process.env.NEXT_PUBLIC_STRAPI_URL}/clubs?${clubQuery}`
+  );
+
+  if (!clubDataResponse || !clubDataResponse.data) {
+    return { notFound: true };
+  }
+
+  const clubData = clubDataResponse.data[0];
+
+  const assetsResponse = await fetcher(
+    `${process.env.NEXT_PUBLIC_STRAPI_URL}/assets?${assetQuery}`
+  );
+
+  const useAssets = assetsResponse ? assetsResponse.data : [];
+
+  return { props: { clubData, useAssets } };
+};
+
+/* 
 export const getStaticPaths = async () => {
   let hasMoreClubs = true;
   let pageNumber = 1;
@@ -69,7 +104,6 @@ export const getStaticPaths = async () => {
 
   while (hasMoreClubs) {
     const clubs = await fetchClubs(pageNumber);
-    /* console.log(clubs) */
     if (clubs.data.length === 0) {
       hasMoreClubs = false;
       break;
@@ -84,10 +118,10 @@ export const getStaticPaths = async () => {
   }
 
   return { paths, fallback: false };
-};
+}; */
 
 // You can place the fetchClubs function outside of getStaticPaths
-async function fetchClubs(pageNumber = 1, pageSize = 25) {
+/* async function fetchClubs(pageNumber = 1, pageSize = 25) {
   const queryWithPagination = qs.stringify(
     {
       filter:{
@@ -106,13 +140,13 @@ async function fetchClubs(pageNumber = 1, pageSize = 25) {
     }
   );
   return await fetcher(`${process.env.NEXT_PUBLIC_STRAPI_URL}/clubs?${queryWithPagination}`);
-}
+} */
 
  
 
 
 
-export const getStaticProps = async ({ params }) => {
+/* export const getStaticProps = async ({ params }) => {
   // Fetch club data
   const clubQuery = qs.stringify(
     {
@@ -155,4 +189,4 @@ export const getStaticProps = async ({ params }) => {
   const useAssets = assetsResponse.data;
 
   return { props: { clubData, useAssets } };
-};
+}; */
