@@ -10,6 +10,7 @@ const AssociationsList = ({ associations }) => {
           return (
             <li key={association.id}>
               <Link
+               legacyBehavior 
                 href={`/campaign/Simplify-Your-Social-Media-with-Fixtura/${association.attributes.PlayHQID}`}
               >
                 <a>{association.attributes.Name}</a>

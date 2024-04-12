@@ -69,7 +69,7 @@ export const BTN_TOINTERALLINK = ({
 }) => {
   const { classes } = useStyles();
   return (
-    <Link href={URL}>
+    <Link legacyBehavior  href={URL}>
       <Button
         disabled={idDisabled}
         variant="outline"

@@ -96,7 +96,7 @@ const FixturaAndYourClubBanner = ({ AccountData }) => {
                       },
                     }}
                   >
-                    <Link href="/sign-up">
+                    <Link legacyBehavior  href="/sign-up">
                       <a
                         className="btn btn-secondary"
                         onClick={() =>

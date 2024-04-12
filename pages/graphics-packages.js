@@ -96,7 +96,7 @@ const FreeTier = () => {
   const freePackageData = {
     title: "Kickstart Your Journey with Our Free Packages!",
     paragraphs: [
-      "Dive into Fixtura's blend of style and utility, crafted to enhance your cricket content. Explore the 'Basic' package, featuring designs from sharp 'Square' angles to modern 'Pill' shapes. Or opt for the 'Gradient' package, showcasing four distinct gradient directions.",
+      "Dive into Fixtura's blend of style and utility, crafted to enhance your clubs content. Explore the 'Basic' package, featuring designs from sharp 'Square' angles to modern 'Pill' shapes. Or opt for the 'Gradient' package, showcasing four distinct gradient directions.",
       `Best of all? `,
       "These packages are completely free.",
     ],
@@ -196,7 +196,7 @@ const Bespoke = () => {
     <>
       <Section {...bespokeIntroOffer} color="dark">
         <Center>
-          <Link href="https://www.facebook.com/profile.php?id=100095406210560">
+          <Link legacyBehavior  href="https://www.facebook.com/profile.php?id=100095406210560">
             <a
               target="_blank"
               className="btn btn-primary"

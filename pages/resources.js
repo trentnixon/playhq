@@ -117,7 +117,7 @@ const Resources = () => {
             </P>
             <Center>
               <button className="btn btn-secondary">
-                <Link href={option.downloadLink}>
+                <Link legacyBehavior  href={option.downloadLink}>
                   <a target="_blank">Download</a>
                 </Link>
               </button>

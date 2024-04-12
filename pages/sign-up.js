@@ -32,7 +32,7 @@ const Contact = () => {
       <Section {...SectionData} color="light">
         <P textAlign="center" Weight={600}>
           Already have a Fixtura Account?{" "}
-          <Link href="/login">
+          <Link legacyBehavior  href="/login">
             <a>Sign in Here</a>
           </Link>
         </P>

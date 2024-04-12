@@ -132,7 +132,7 @@ const TermsConditions = () => {
             Fixtura uses GPT-3 and PlayHQ data for generating digital assets.
             While we strive for accuracy, we are not liable for misleading or
             false narratives created by AI. By using Fixtura's services, you
-            give Fixtura rights to contact Cricket Australia and PlayHQ on your
+            give Fixtura rights to contact your sports governing body and PlayHQ on your
             behalf to obtain data for digital asset creation.
           </P>
           <h1>Data Usages</h1>

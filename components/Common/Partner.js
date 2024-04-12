@@ -153,7 +153,7 @@ const PositiveResult = ({ storedName,StoredPlayhqID }) => {
         Weight={600}
         size={"xl"}
       >{`Here's a glimpse of a custom assets for ${storedName}.`}</P>
-     <Link href={`/campaign/gettingstartedwithfixtura/${StoredPlayhqID}`}>
+     <Link legacyBehavior  href={`/campaign/gettingstartedwithfixtura/${StoredPlayhqID}`}>
         <a className="btn btn-primary" onClick={handleButtonClick}>
           See how {storedName} looks with Fixtura 
         </a>

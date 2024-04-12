@@ -92,7 +92,7 @@ const SelectClubForLiveDemo = () => {
   const AssoicationActionData = {
     title: "Fixtura for Associations",
     paragraphs: [
-      `Currently, our live demo is tailored specifically for cricket clubs, showcasing how Fixtura seamlessly enhances their digital storytelling. For cricket associations interested in exploring Fixtura's capabilities, we offer detailed information and customized demonstrations to suit your broader needs. `,
+      `Currently, our live demo is tailored specifically for  clubs, showcasing how Fixtura seamlessly enhances their digital storytelling. For associations interested in exploring Fixtura's capabilities, we offer detailed information and customized demonstrations to suit your broader needs. `,
       `We invite associations to contact us directly on Facebook for an in-depth understanding of how Fixtura can revolutionize your content creation and fan engagement. Let's discuss the possibilities and tailor a solution that aligns with your association's vision.`,
     ],
   };
@@ -135,7 +135,10 @@ const SelectClubForLiveDemo = () => {
       </Section>
       <Section {...AssoicationActionData} color="light">
         <Center>
-          <Link href="https://www.facebook.com/profile.php?id=100095406210560">
+          <Link
+            legacyBehavior
+            href="https://www.facebook.com/profile.php?id=100095406210560"
+          >
             <a
               className="btn btn-secondary"
               onClick={() => trackButtonClick("Facebook FAQ Chat")} // Track button click
@@ -191,7 +194,10 @@ const PositiveResult = ({ storedName, StoredPlayhqID }) => {
         size={"xl"}
       >{`${storedName} is eligible to join Fixtura's exclusive network of cricket clubs and associations.`}</P>
 
-      <Link href={`/campaign/gettingstartedwithfixtura/${StoredPlayhqID}`}>
+      <Link
+        legacyBehavior
+        href={`/campaign/gettingstartedwithfixtura/${StoredPlayhqID}`}
+      >
         <a className="btn btn-secondary" onClick={handleButtonClick}>
           Check out our Live Demo for {storedName}
         </a>

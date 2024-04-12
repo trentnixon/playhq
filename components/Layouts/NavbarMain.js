@@ -34,7 +34,7 @@ const NavbarMain = () => {
       <div id="navbarOne" className={`navbar-area navbar-style-1`}>
         <nav className="navbar navbar-expand-md navbar-light">
           <div className="container-fluid">
-            <Link href="/">
+            <Link  legacyBehavior href="/">
               <a className="navbar-brand" onClick={closeMenu}>
                 <img
                   src="/images/image_processing20220611-3013-fimmni.png"
@@ -63,7 +63,7 @@ const NavbarMain = () => {
             <div className={classOne} id="navbarSupportedContent">
               <ul className="navbar-nav">
                 <li className="nav-item">
-                  <Link href="/">
+                  <Link legacyBehavior  href="/">
                     <a onClick={closeMenu} className="nav-link">
                       Home
                     </a>
@@ -71,43 +71,43 @@ const NavbarMain = () => {
                 </li>
                 
                 <li className="nav-item">
-                  <Link href="/live-demo" activeClassName="active">
+                  <Link legacyBehavior  href="/live-demo" activeClassName="active">
                     <a onClick={closeMenu} className="nav-link">
                       Live Demo
                     </a>
                   </Link>
                 </li>
                {/*  <li className="nav-item">
-                  <Link href="/Media-Options" activeClassName="active">
+                  <Link  legacyBehavior  href="/Media-Options" activeClassName="active">
                     <a onClick={closeMenu} className="nav-link">
                       Digital Cricket Assets
                     </a>
                   </Link>
                 </li> */}
                 <li className="nav-item">
-                  <Link href="/graphics-packages" activeClassName="active">
+                  <Link  legacyBehavior href="/graphics-packages" activeClassName="active">
                     <a onClick={closeMenu} className="nav-link">
-                      Cricket Graphics Packages
+                       Graphics Packages
                     </a>
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link href="/customization" activeClassName="active">
+                  <Link  legacyBehavior href="/customization" activeClassName="active">
                     <a onClick={closeMenu} className="nav-link">
-                      Personalize Your Cricket Content
+                      Personalize Your clubs Content
                     </a>
                   </Link>
                 </li>
 
                 <li className="nav-item">
-                  <Link href="/pricing" activeClassName="active">
+                  <Link  legacyBehavior  href="/pricing" activeClassName="active">
                     <a onClick={closeMenu} className="nav-link">
                       Pricing
                     </a>
                   </Link>
                 </li>
                 {/*  <li className="nav-item">
-                  <Link href="/resources" activeClassName="active">
+                  <Link  legacyBehavior href="/resources" activeClassName="active">
                     <a className="nav-link" onClick={() => setMenu(true)}>
                       Resources
                     </a>
@@ -115,14 +115,14 @@ const NavbarMain = () => {
                 </li> */}
 
                 {/* <li className="nav-item">
-                  <Link href="/faq" activeClassName="active">
+                  <Link  legacyBehavior href="/faq" activeClassName="active">
                     <a onClick={closeMenu} className="nav-link">
                       FAQ
                     </a>
                   </Link>
                 </li> */}
                 {/* <li className="nav-item">
-                  <Link href="/contact" activeClassName="active">
+                  <Link legacyBehavior  href="/contact" activeClassName="active">
                     <a onClick={closeMenu} className="nav-link">
                       Contact
                     </a>
@@ -146,7 +146,7 @@ export default NavbarMain;
 const SignUp = () => {
   return (
     <div className="others-options">
-      <Link href="/sign-up">
+      <Link legacyBehavior  href="/sign-up">
         <a className="btn btn-primary">Sign Up</a>
       </Link>
     </div>
@@ -156,7 +156,7 @@ const SignUp = () => {
 const SignIn = ({ closeMenu }) => {
   return (
     <li className="nav-item">
-      <Link href="/login" activeClassName="active">
+      <Link legacyBehavior  href="/login" activeClassName="active">
         <a onClick={closeMenu} className="nav-link">
           Sign In
         </a>

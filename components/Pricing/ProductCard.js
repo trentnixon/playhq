@@ -215,7 +215,7 @@ const CardCTA = ({ signUp, trackButtonClick, Name, BTN }) => {
       <Center mt={20}>
         {signUp ? (
           <Group position="apart">
-            <Link href="/subscriptions/">
+            <Link legacyBehavior  href="/subscriptions/">
               <a
                 className="btn btn-secondary"
                 onClick={() =>
@@ -226,7 +226,7 @@ const CardCTA = ({ signUp, trackButtonClick, Name, BTN }) => {
                 learn more
               </a>
             </Link>
-            <Link href="/SignUp/">
+            <Link legacyBehavior  href="/SignUp/">
               <a
                 className="btn btn-primary"
                 onClick={() =>
@@ -249,7 +249,7 @@ const CardCTA = ({ signUp, trackButtonClick, Name, BTN }) => {
             <Center mt={20}>
               {signUp ? (
                 <Group position="apart">
-                  <Link href="/subscriptions/">
+                  <Link legacyBehavior  href="/subscriptions/">
                     <a
                       className="btn btn-secondary"
                       onClick={() =>
@@ -262,7 +262,7 @@ const CardCTA = ({ signUp, trackButtonClick, Name, BTN }) => {
                       learn more
                     </a>
                   </Link>
-                  <Link href="/SignUp/">
+                  <Link legacyBehavior  href="/SignUp/">
                     <a
                       className="btn btn-primary"
                       onClick={() =>

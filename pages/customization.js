@@ -19,9 +19,9 @@ const qs = require("qs");
 
 const customization = () => {
   const customizationSectionData = {
-    title: "Elevate Your Cricket Club's Brand with Customization",
+    title: "Elevate Your Club's Brand with Customization",
     paragraphs: [
-      "At Fixtura, we believe that your cricket club or association's story is best told through a lens of authenticity.",
+      "At Fixtura, we believe that your club or association's story is best told through a lens of authenticity.",
       `That's why we've crafted our platform to champion your unique brand identity in every piece of content. Dive into a world where your videos, images, and AI-enhanced write-ups seamlessly mirror your brand ethos.`,
       `From color palettes and logo placements to sponsor integrations, wield the power of customization. With Fixtura, take the reins of your narrative and present a digital brand image that captivates and resonates.`,
     ],
@@ -65,9 +65,9 @@ export const getServerSideProps = async (context) => {
 
 const CustomisationSection = () => {
   const customizationSectionData = {
-    title: "Craft a Distinct Cricket Narrative with Fixtura",
+    title: "Craft a Distinct Narrative with Fixtura",
     paragraphs: [
-      `Every cricket match, every victory, and every moment holds a story. With Fixtura, you're not just sharing these moments; you're crafting a narrative that encapsulates your club or association's spirit.`,
+      `Every match, every victory, and every moment holds a story. With Fixtura, you're not just sharing these moments; you're crafting a narrative that encapsulates your club or association's spirit.`,
       `Dive into our customization suite and mold content that speaks directly to your audience.`,
     ],
   };

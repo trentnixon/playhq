@@ -41,7 +41,7 @@ const PromoBanner = () => {
                       size="xl"
                       color="#1688D0"
                     >
-                      Your Weekly Cricket Reports, Made Easy with Fixtura!
+                      Your Weekly Sports Reports, Made Easy with Fixtura!
                     </P>
                   </div>
                 </div>
@@ -101,7 +101,7 @@ const PromoBanner = () => {
                         },
                       }}
                     >
-                      <Link href="/SignUp">
+                      <Link legacyBehavior  href="/SignUp">
                         <a
                           className="btn btn-secondary"
                           onClick={() => trackButtonClick("Get Started")} // Track button click

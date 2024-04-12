@@ -27,7 +27,7 @@ const Error = () => {
       <Section {...SectionData} color="light">
         <Center>
           <div className="back-btn">
-            <Link href="/">
+            <Link legacyBehavior  href="/">
               <a className="btn btn-primary">Go Back Home</a>
             </Link>
           </div>

@@ -19,7 +19,7 @@ const CtaAreaTwo = () => {
             data-aos="fade-up"
             data-aos-duration="1200"
           >
-            <Link href="/SignUp/">
+            <Link legacyBehavior href="/SignUp/">
               <a
                 className="custom-btn"
                 onClick={() => trackButtonClick("CTA Area - Get Started")}

@@ -35,7 +35,7 @@ const Faq = () => {
       />
       <Section {...SectionData} color="light">
         <Center>
-          <Link href="https://www.facebook.com/profile.php?id=100095406210560">
+          <Link legacyBehavior  href="https://www.facebook.com/profile.php?id=100095406210560">
             <a
               className="btn btn-secondary"
               onClick={() => trackButtonClick("Facebook FAQ Chat")} // Track button click

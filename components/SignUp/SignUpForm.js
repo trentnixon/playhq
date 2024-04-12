@@ -151,7 +151,7 @@ const SignUpForm = () => {
                   />
                   <label className="form-check-label" htmlFor="termsCheck">
                     I agree to the{" "}
-                    <Link href={"terms-conditions/"}>terms and conditions</Link>
+                    <Link legacyBehavior  href={"terms-conditions/"}>terms and conditions</Link>
                   </label>
                 </div>
               </Center>
@@ -159,7 +159,7 @@ const SignUpForm = () => {
                 {!terms && (
                   <p className="error-message">
                     Please agree to the{" "}
-                    <Link href={"terms-conditions/"}>terms and conditions</Link>{" "}
+                    <Link legacyBehavior  href={"terms-conditions/"}>terms and conditions</Link>{" "}
                     to continue
                   </p>
                 )}

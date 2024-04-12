@@ -11,7 +11,7 @@ const ClubsList = ({ clubs }) => {
         {clubs.data.map((club) => {
           return (
             <li key={club.id}>
-              <Link href={`/campaign/gettingstartedwithfixtura/${club.attributes.PlayHQID}`}>
+              <Link legacyBehavior  href={`/campaign/gettingstartedwithfixtura/${club.attributes.PlayHQID}`}>
                 <a>{club.attributes.Name}</a>
               </Link>
             </li>

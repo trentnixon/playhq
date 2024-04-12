@@ -54,7 +54,7 @@ const Feedback = () => {
                   <div className="bar"></div>
 
                   <h3>CNSW Sydney Shires</h3>
-                  <Link href="https://www.instagram.com/sydneyshirescricket/">
+                  <Link legacyBehavior href="https://www.instagram.com/sydneyshirescricket/">
                     <a
                       className="custom-btn"
                       target="_blank"
@@ -92,7 +92,7 @@ const Feedback = () => {
                   <div className="bar"></div>
 
                   <h3>Runaway Bay CC</h3>
-                  <Link href="https://www.facebook.com/RunawayBayCricketClub">
+                  <Link legacyBehavior href="https://www.facebook.com/RunawayBayCricketClub">
                     <a
                       className="custom-btn"
                       target="_blank"
@@ -130,7 +130,7 @@ const Feedback = () => {
 
                   <h3>Logan District Cricket Association</h3>
 
-                  <Link href="https://www.facebook.com/logandistrictca">
+                  <Link legacyBehavior href="https://www.facebook.com/logandistrictca">
                     <a
                       className="custom-btn"
                       target="_blank"

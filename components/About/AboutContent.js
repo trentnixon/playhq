@@ -22,33 +22,36 @@ const AboutContent = () => {
               <div className="about-content about-content-two">
                 <div className="section-title">
                   <H>
-                    Introducing Fixtura: Elevating Cricket's Digital Landscape
+                    Introducing Fixtura: Elevating Sports' Digital Landscape
                   </H>
                   <P>
-                    At Fixtura, we're not just a platform; we're your digital
-                    ally in the world of cricket. We amplify your cricketing
-                    journey, celebrate achievements, and help you connect with
-                    fans in a digital age where distinction is key.
+                    At Fixtura, we're more than just a platform; we're your
+                    digital ally across Cricket, AFL, and Netball. We amplify
+                    your sports journey, celebrate your achievements, and
+                    enhance your connection with fans in a digital age where
+                    standing out is paramount.
                   </P>
-                  <H align='left' size='h3' mb={10}>Why Fixtura?</H>
+                  <H align="left" size="h3" mb={10}>
+                    Why Fixtura?
+                  </H>
                   <P>
-                    <strong>Innovation Meets Passion:</strong> We marry
-                    cutting-edge technology with our love for cricket. The
-                    result? Tailored videos that bring match reviews, fixtures,
-                    and game results to life. Immersive images that capture
-                    iconic moments. And AI-powered content that serves as your
-                    analytical sidekick on match days.
+                    <strong>Innovation Meets Passion:</strong> Combining
+                    cutting-edge technology with our passion for sports, we
+                    deliver tailored videos that animate match reviews,
+                    fixtures, and results. Our immersive images capture iconic
+                    moments, and our AI-powered content serves as your
+                    analytical sidekick on game days.
                   </P>
                   <P>
                     <strong>Crafted for You:</strong> Every club and association
-                    has a story. We make it our mission to ensure that story is
-                    told in a way that's as unique as you are.
+                    has a story. We're dedicated to ensuring that your story is
+                    told in a way that's as unique as your team.
                   </P>
                   <P>
-                    <strong>Your Partner in Success:</strong> With Fixtura,
-                    you're not getting a service; you're gaining a partner.
-                    We're committed to ensuring your digital content resonates
-                    with your ethos, objectives, and dreams.
+                    <strong>Your Partner in Success:</strong> With Fixtura, you
+                    gain more than a service; you gain a partner. We're
+                    committed to ensuring your digital content resonates with
+                    your ethos, objectives, and dreams across all your sports.
                   </P>
                 </div>
 
@@ -60,17 +63,17 @@ const AboutContent = () => {
                     <li>
                       <i className="fa-solid fa-circle-check"></i>
                       <P>
-                        <strong>Celebrate Cricket:</strong> Craft world-class
-                        digital assets that highlight the essence of cricket
-                        clubs and associations.
+                        <strong>Celebrate Sports:</strong> Craft world-class
+                        digital assets that highlight the essence of Cricket,
+                        AFL, and Netball clubs and associations.
                       </P>
                     </li>
                     <li>
                       <i className="fa-solid fa-circle-check"></i>
                       <P>
                         <strong>Connect & Engage:</strong> Build lasting
-                        connections with fans, igniting their passion and
-                        boosting your digital prominence.
+                        connections with fans across all sports, igniting their
+                        passion and boosting your digital prominence.
                       </P>
                     </li>
                     <li>
@@ -79,24 +82,24 @@ const AboutContent = () => {
                         <strong>Innovative Excellence:</strong> Seamlessly
                         integrate sports media expertise, AI-driven insights,
                         and technological prowess to deliver fresh, engaging
-                        content.
+                        content for all your sporting needs.
                       </P>
                     </li>
                     <li>
                       <i className="fa-solid fa-circle-check"></i>
                       <P>
-                        <strong>Your Story, Your Way: </strong>Prioritize
+                        <strong>Your Story, Your Way:</strong> Prioritize
                         customization, ensuring every piece of content is a true
-                        reflection of your journey in the world of cricket.
+                        reflection of your multifaceted sports journey.
                       </P>
                     </li>
                     <li>
                       <i className="fa-solid fa-circle-check"></i>
                       <P>
-                        <strong>Beyond Business: </strong> We aim to be more
-                        than a service. With Fixtura, you're gaining a teammate,
-                        a confidant, and a supporter in amplifying your cricket
-                        narrative.
+                        <strong>Beyond Business:</strong> With Fixtura, you gain
+                        more than a service—you gain a teammate, a confidant,
+                        and a supporter in amplifying your narrative across
+                        Cricket, AFL, and Netball.
                       </P>
                     </li>
                   </ul>
@@ -111,51 +114,3 @@ const AboutContent = () => {
 };
 
 export default AboutContent;
-{
-  /* <p>
-                    Take your cricket club or association to new heights with
-                    Fixtura's personalized content solutions. Let us elevate
-                    your digital presence and amplify your cricketing journey.
-                    Get started today!
-                  </p> */
-}
-{
-  /* <p>
-                    Fixtura is your go-to web application for personalized
-                    digital assets designed exclusively for cricket clubs and
-                    associations. Our team of experts harnesses cutting-edge
-                    technology, including AI, to craft innovative and
-                    high-quality content tailored to your unique needs and
-                    objectives. Whether you want to showcase your players'
-                    achievements, engage with your fans, or promote the sport,
-                    Fixtura has the expertise and resources to help you achieve
-                    your goals.
-                  </p> */
-}
-{
-  /* <div className="about-text">
-                  <p>
-                    Our comprehensive range of services includes captivating
-                    videos, striking images, and AI-generated content. Our
-                    videos encompass match reviews, upcoming fixtures, game
-                    results, and player profiles, all customized to your club or
-                    association, showcasing your players and games in the best
-                    light. Moreover, our AI-powered match reports and weekend
-                    summaries offer valuable insights and analysis of cricket
-                    matches and events.
-                  </p>
-                </div> */
-}
-
-{
-  /*  <div className="about-text">
-                  <p>
-                    At Fixtura, we are dedicated to empowering cricket clubs and
-                    associations with powerful tools and resources to connect
-                    with their fanbase and showcase their accomplishments. With
-                    a strong commitment to customer service, we work closely
-                    with our clients to ensure their digital assets meet their
-                    specific requirements and aspirations.
-                  </p>
-                </div> */
-}

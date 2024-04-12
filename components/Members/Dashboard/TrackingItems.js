@@ -81,11 +81,10 @@ export const DashBoardTrackingItems = ({ IconComponent, AccountID, Theme }) => {
     return <div>Loading...</div>; // You can use your loading component here
   }
 
-  if (!trackingData || totalGames === 0) {
+  if (!trackingData ) {
     return <ZeroItemsState classes={classes} Theme={Theme} />;
   }
-
-
+ 
   // Calculate total number of dates and games
   const totalDates = Object.keys(trackingData).length;
   const totalGames = Object.values(trackingData).reduce(
@@ -93,6 +92,9 @@ export const DashBoardTrackingItems = ({ IconComponent, AccountID, Theme }) => {
     0
   );
 
+  if (!trackingData || totalGames === 0) {
+    return <ZeroItemsState classes={classes} Theme={Theme} />;
+  }
   return (
     <Paper
     radius="md"

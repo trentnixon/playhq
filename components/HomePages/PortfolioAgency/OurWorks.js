@@ -29,11 +29,11 @@ const OurWorks = ({ CaseStudies }) => {
 
                     <div className="content text-center">
                       <span>
-                        <Link href="/portfolio">
+                        <Link  legacyBehavior href="/portfolio">
                           <a>{study.attributes.Name}</a>
                         </Link>
                       </span>
-                      <Link href="/portfolio-details">
+                      <Link  legacyBehavior href="/portfolio-details">
                         <a className="custom-btn">
                           View {study.attributes.Name}
                         </a>

@@ -48,7 +48,7 @@ const TestimonialSingle = () => {
                 <div className="bar"></div>
 
                 <h3>Trav Harker | President</h3>
-                <Link href="https://www.instagram.com/runawaybaycc/">
+                <Link legacyBehavior  href="https://www.instagram.com/runawaybaycc/">
                   <a
                     className="custom-btn"
                     target="_blank"

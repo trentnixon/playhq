@@ -39,14 +39,14 @@ class LatestNewsSliderTwo extends Component {
               <SwiperSlide>
                 <div className="single-blog-item">
                   <div className="blog-image">
-                    <Link href="/blog-details">
+                    <Link  legacyBehavior href="/blog-details">
                       <a>
                         <img src="/images/blog/blog7.jpg" alt="image" />
                       </a>
                     </Link>
 
                     <div className="post-tag">
-                      <Link href="/blog">
+                      <Link legacyBehavior  href="/blog">
                         <a>Technology</a>
                       </Link>
                     </div>
@@ -55,7 +55,7 @@ class LatestNewsSliderTwo extends Component {
                   <div className="blog-post-content">
                     <span className="date">Feb 15, 2022</span>
                     <h3>
-                      <Link href="/blog-details">
+                      <Link legacyBehavior  href="/blog-details">
                         <a>The Most Popular New top Business Apps</a>
                       </Link>
                     </h3>
@@ -65,7 +65,7 @@ class LatestNewsSliderTwo extends Component {
                       voluptatem accusantium.
                     </p>
 
-                    <Link href="/blog-details">
+                    <Link legacyBehavior  href="/blog-details">
                       <a className="read-more-btn">
                         Read More
                         <i className="fa-solid fa-angles-right"></i>
@@ -78,14 +78,14 @@ class LatestNewsSliderTwo extends Component {
               <SwiperSlide>
                 <div className="single-blog-item">
                   <div className="blog-image">
-                    <Link href="/blog-details">
+                    <Link legacyBehavior  href="/blog-details">
                       <a>
                         <img src="/images/blog/blog8.jpg" alt="image" />
                       </a>
                     </Link>
 
                     <div className="post-tag">
-                      <Link href="/blog">
+                      <Link legacyBehavior  href="/blog">
                         <a>Agency</a>
                       </Link>
                     </div>
@@ -95,7 +95,7 @@ class LatestNewsSliderTwo extends Component {
                     <span className="date">Feb 16, 2022</span>
 
                     <h3>
-                      <Link href="/blog-details">
+                      <Link legacyBehavior  href="/blog-details">
                         <a>The Best Marketing top use Management Tools</a>
                       </Link>
                     </h3>
@@ -105,7 +105,7 @@ class LatestNewsSliderTwo extends Component {
                       voluptatem accusantium.
                     </p>
 
-                    <Link href="/blog-details">
+                    <Link legacyBehavior  href="/blog-details">
                       <a className="read-more-btn">
                         Read More
                         <i className="fa-solid fa-angles-right"></i>
@@ -118,14 +118,14 @@ class LatestNewsSliderTwo extends Component {
               <SwiperSlide>
                 <div className="single-blog-item">
                   <div className="blog-image">
-                    <Link href="/blog-details">
+                    <Link legacyBehavior  href="/blog-details">
                       <a>
                         <img src="/images/blog/blog9.jpg" alt="image" />
                       </a>
                     </Link>
 
                     <div className="post-tag">
-                      <Link href="/blog">
+                      <Link legacyBehavior  href="/blog">
                         <a>IT Agency</a>
                       </Link>
                     </div>
@@ -135,7 +135,7 @@ class LatestNewsSliderTwo extends Component {
                     <span className="date">Feb 17, 2022</span>
 
                     <h3>
-                      <Link href="/blog-details">
+                      <Link legacyBehavior  href="/blog-details">
                         <a>3 WooCommerce Plugins to Boost Sales</a>
                       </Link>
                     </h3>
@@ -145,7 +145,7 @@ class LatestNewsSliderTwo extends Component {
                       voluptatem accusantium.
                     </p>
 
-                    <Link href="/blog-details">
+                    <Link legacyBehavior  href="/blog-details">
                       <a className="read-more-btn">
                         Read More
                         <i className="fa-solid fa-angles-right"></i>
@@ -158,14 +158,14 @@ class LatestNewsSliderTwo extends Component {
               <SwiperSlide>
                 <div className="single-blog-item">
                   <div className="blog-image">
-                    <Link href="/blog-details">
+                    <Link legacyBehavior  href="/blog-details">
                       <a>
                         <img src="/images/blog/blog10.jpg" alt="image" />
                       </a>
                     </Link>
 
                     <div className="post-tag">
-                      <Link href="/blog">
+                      <Link legacyBehavior  href="/blog">
                         <a>Development</a>
                       </Link>
                     </div>
@@ -175,7 +175,7 @@ class LatestNewsSliderTwo extends Component {
                     <span className="date">Feb 18, 2022</span>
 
                     <h3>
-                      <Link href="/blog-details">
+                      <Link legacyBehavior  href="/blog-details">
                         <a>Top 21 Must-Read Blogs For Creative Agencies</a>
                       </Link>
                     </h3>
@@ -185,7 +185,7 @@ class LatestNewsSliderTwo extends Component {
                       voluptatem accusantium.
                     </p>
 
-                    <Link href="/blog-details">
+                    <Link legacyBehavior  href="/blog-details">
                       <a className="read-more-btn">
                         Read More
                         <i className="fa-solid fa-angles-right"></i>

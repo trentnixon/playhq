@@ -75,7 +75,7 @@ export const StatusSection = ({ account, Sponsors, SPONSORLIMIT }) => {
             Sponsors are currently not available under your current subscription
             package. However, feel free to add your sponsors, and when you are
             ready to include them in your online assets, visit your{" "}
-            <Link href={`/members/account/`}>
+            <Link  legacyBehavior href={`/members/account/`}>
               <a>account page</a>
             </Link>{" "}
             to upgrade your subscription.

@@ -18,7 +18,7 @@ const LatestNews = () => {
             <div className="col-lg-6 col-md-12">
               <div className="single-blog-post mb-0">
                 <div className="post-image">
-                  <Link href="/blog-details">
+                  <Link legacyBehavior href="/blog-details">
                     <a>
                       <img src="/images/blog/blog1.jpg" alt="image" />
                     </a>
@@ -29,13 +29,13 @@ const LatestNews = () => {
                   <ul className="post-meta">
                     <li>
                       <i className="fa-solid fa-user"></i>
-                      <Link href="/blog">
+                      <Link legacyBehavior href="/blog">
                         <a>Admin</a>
                       </Link>
                     </li>
                     <li>
                       <i className="fa-solid fa-tag"></i>
-                      <Link href="/blog-details">
+                      <Link legacyBehavior href="/blog-details">
                         <a>Web Development</a>
                       </Link>
                     </li>
@@ -46,7 +46,7 @@ const LatestNews = () => {
                   </ul>
 
                   <h3 className="mb-0">
-                    <Link href="/blog-details">
+                    <Link legacyBehavior href="/blog-details">
                       <a>How to Become a Successful Entry Level UX Designer</a>
                     </Link>
                   </h3>
@@ -60,7 +60,7 @@ const LatestNews = () => {
                   <div className="row align-items-center">
                     <div className="col-lg-4 col-md-3 col-sm-4">
                       <div className="post-image">
-                        <Link href="/blog-details">
+                        <Link legacyBehavior href="/blog-details">
                           <a>
                             <img src="/images/blog/blog2.jpg" alt="image" />
                           </a>
@@ -73,13 +73,13 @@ const LatestNews = () => {
                         <ul className="post-meta">
                           <li>
                             <i className="fa-solid fa-user"></i>
-                            <Link href="/blog">
+                            <Link  legacyBehavior href="/blog">
                               <a>Admin</a>
                             </Link>
                           </li>
                           <li>
                             <i className="fa-solid fa-tag"></i>
-                            <Link href="/blog-details">
+                            <Link legacyBehavior  href="/blog-details">
                               <a>React Js</a>
                             </Link>
                           </li>
@@ -90,7 +90,7 @@ const LatestNews = () => {
                         </ul>
 
                         <h3>
-                          <Link href="/blog-details">
+                          <Link  legacyBehavior href="/blog-details">
                             <a>
                               How to Become a Successful Entry Level UX Designer
                             </a>
@@ -105,7 +105,7 @@ const LatestNews = () => {
                   <div className="row align-items-center">
                     <div className="col-lg-4 col-md-3 col-sm-4">
                       <div className="post-image">
-                        <Link href="/blog-details">
+                        <Link  legacyBehavior href="/blog-details">
                           <a>
                             <img src="/images/blog/blog3.jpg" alt="image" />
                           </a>
@@ -118,13 +118,13 @@ const LatestNews = () => {
                         <ul className="post-meta">
                           <li>
                             <i className="fa-solid fa-user"></i>
-                            <Link href="/blog">
+                            <Link legacyBehavior  href="/blog">
                               <a>Admin</a>
                             </Link>
                           </li>
                           <li>
                             <i className="fa-solid fa-tag"></i>
-                            <Link href="/blog-details">
+                            <Link legacyBehavior  href="/blog-details">
                               <a>Angular Js</a>
                             </Link>
                           </li>
@@ -135,7 +135,7 @@ const LatestNews = () => {
                         </ul>
 
                         <h3>
-                          <Link href="/blog-details">
+                          <Link  legacyBehavior href="/blog-details">
                             <a>
                               The Guide to Running a Client Discovery Process
                             </a>
@@ -150,7 +150,7 @@ const LatestNews = () => {
                   <div className="row align-items-center">
                     <div className="col-lg-4 col-md-3 col-sm-4">
                       <div className="post-image">
-                        <Link href="/blog-details">
+                        <Link legacyBehavior  href="/blog-details">
                           <a>
                             <img src="/images/blog/blog4.jpg" alt="image" />
                           </a>
@@ -163,13 +163,13 @@ const LatestNews = () => {
                         <ul className="post-meta">
                           <li>
                             <i className="fa-solid fa-user"></i>
-                            <Link href="/blog">
+                            <Link legacyBehavior  href="/blog">
                               <a>Admin</a>
                             </Link>
                           </li>
                           <li>
                             <i className="fa-solid fa-tag"></i>
-                            <Link href="/blog-details">
+                            <Link legacyBehavior  href="/blog-details">
                               <a>Design</a>
                             </Link>
                           </li>
@@ -180,7 +180,7 @@ const LatestNews = () => {
                         </ul>
 
                         <h3>
-                          <Link href="/blog-details">
+                          <Link legacyBehavior  href="/blog-details">
                             <a>
                               3 Ways to Get Client Approval for Scope Changes
                             </a>
@@ -195,7 +195,7 @@ const LatestNews = () => {
                   <div className="row align-items-center">
                     <div className="col-lg-4 col-md-3 col-sm-4">
                       <div className="post-image">
-                        <Link href="/blog-details">
+                        <Link legacyBehavior  href="/blog-details">
                           <a>
                             <img src="/images/blog/blog1.jpg" alt="image" />
                           </a>
@@ -208,13 +208,13 @@ const LatestNews = () => {
                         <ul className="post-meta">
                           <li>
                             <i className="fa-solid fa-user"></i>
-                            <Link href="/blog">
+                            <Link legacyBehavior  href="/blog">
                               <a>Admin</a>
                             </Link>
                           </li>
                           <li>
                             <i className="fa-solid fa-tag"></i>
-                            <Link href="/blog-details">
+                            <Link legacyBehavior  href="/blog-details">
                               <a>Design</a>
                             </Link>
                           </li>
@@ -225,7 +225,7 @@ const LatestNews = () => {
                         </ul>
 
                         <h3>
-                          <Link href="/blog-details">
+                          <Link legacyBehavior  href="/blog-details">
                             <a>Top 21 Must-Read Blogs For Creative Agencies</a>
                           </Link>
                         </h3>

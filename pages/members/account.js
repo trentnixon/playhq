@@ -108,7 +108,7 @@ export default Account;
             >
               Have any questions about Fixturas Subscriptions please contact our
               support team{" "}
-              <Link href="/members/support">
+              <Link  legacyBehavior  href="/members/support">
                 <a>Customer Support</a>
               </Link>
             </Paper>

@@ -13,10 +13,10 @@ const PricingStyleOne = () => {
   const SectionData = {
     title: "Experience Fixtura with a Two-Week Free Trial",
     paragraphs: [
-      `Explore the benefits of Fixtura's platform tailored for cricket clubs and associations. Gain access to AI-generated write-ups, insightful fixture summaries, top performance highlights, custom videos, and quality images.`,
-      `Experience the convenience and value Fixtura brings to your club with a Two-Week Free Trial.`,
-      `When you're ready, you can easily subscribe using the pricing model below.`
-   ],
+      `Dive into the world of Fixtura, a platform now serving Cricket, AFL, and Netball clubs and associations. Enjoy access to AI-generated write-ups, comprehensive fixture summaries, top performance highlights, custom videos, and stunning images tailored to each sport.`,
+    
+      `When you're ready to elevate your club's digital presence, seamlessly transition to a full subscription with our flexible pricing model.`,
+    ],
   };
 
   useEffect(() => {
@@ -64,7 +64,7 @@ const PricingStyleOne = () => {
               value="Club"
               icon={<IconShield size="1.2rem" color="black" />}
             >
-              <P Weight={600} size={14} marginBottom="0"  textAlign={"center"}>
+              <P Weight={600} size={14} marginBottom="0" textAlign={"center"}>
                 Club
               </P>
             </Tabs.Tab>
@@ -72,7 +72,7 @@ const PricingStyleOne = () => {
               value="Association"
               icon={<IconUsersGroup size="1.2rem" color="black" />}
             >
-              <P Weight={600} size={14} marginBottom="0" textAlign={"center"} >
+              <P Weight={600} size={14} marginBottom="0" textAlign={"center"}>
                 Association
               </P>
             </Tabs.Tab>

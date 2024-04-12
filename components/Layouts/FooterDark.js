@@ -15,28 +15,28 @@ const FooterDark = () => {
 
                 <ul className="list">
                   <li>
-                    <Link href="/about">
+                    <Link legacyBehavior href="/about">
                       <a>About</a>
                     </Link>
                   </li>
                   <li>
-                    <Link href="/resources">
+                    <Link legacyBehavior href="/resources">
                       <a>Resources</a>
                     </Link>
                   </li>
 
                   <li>
-                    <Link href="/faq">
+                    <Link legacyBehavior href="/faq">
                       <a>Faq</a>
                     </Link>
                   </li>
                   <li>
-                    <Link href="/privacy-policy">
+                    <Link legacyBehavior href="/privacy-policy">
                       <a>Privacy Policy</a>
                     </Link>
                   </li>
                   <li>
-                    <Link href="/terms-conditions">
+                    <Link legacyBehavior href="/terms-conditions">
                       <a>Terms & Conditions</a>
                     </Link>
                   </li>
@@ -51,7 +51,7 @@ const FooterDark = () => {
                 <ul className="get-in-touch">
                   <li className="pt-2">
                     <i className="fa-solid fa-headset"></i>
-                    <Link href="/contact">
+                    <Link legacyBehavior href="/contact">
                       <a>Contact</a>
                     </Link>
                   </li>
@@ -67,7 +67,7 @@ const FooterDark = () => {
             <div className="col-lg-4 col-sm-6">
               <div className="single-footer-widget">
                 <div className="logo">
-                  <Link href="/">
+                  <Link legacyBehavior href="/">
                     <a>
                       <img
                         src="/images/image_processing20220611-3013-fimmni.png"
@@ -77,19 +77,19 @@ const FooterDark = () => {
                   </Link>
                 </div>
                 <P Weight={900}>
-                  Fixtura: Your Premier Digital Solution for Cricket Clubs &
+                  Fixtura: Your Premier Digital Solution for sports Clubs &
                   Associations
                 </P>
                 <P>
-                  Dive into the realm of cricket with Fixtura, your trusted
-                  partner for AI-driven, personalized digital assets tailored
-                  specifically for cricket clubs and associations. Leveraging
-                  sports media insights, cutting-edge AI technology, and
-                  creative flair, we craft impactful content that enhances fan
-                  engagement and highlights your club's milestones. Whether it's
-                  about gaining a competitive advantage or celebrating your
-                  team's triumphs, Fixtura ensures you're always in the
-                  spotlight.
+                  Embrace the dynamic world of sports with Fixtura, your
+                  ultimate partner for AI-driven, personalized digital assets
+                  across Cricket, AFL, and Netball. With our deep understanding
+                  of sports media, innovative AI technology, and creative
+                  expertise, we deliver compelling content that drives fan
+                  engagement and celebrates your club's achievements. Whether
+                  it's securing a competitive edge or commemorating your team's
+                  victories, Fixtura puts your club in the limelight across all
+                  your favorite sports.
                 </P>
 
                 <ul className="social-links">
@@ -125,9 +125,9 @@ const FooterDark = () => {
 
         <div className="copyright-area">
           <div className="container">
-            <P color="#ffffff" textAlign={'center'} size='xs'>
+            <P color="#ffffff" textAlign={"center"} size="xs">
               Copyright &copy; {currentYear} FIXTURA - Revolutionizing Digital
-              Content for Cricket Clubs & Associations.
+              Content for Sports Clubs & Associations.
             </P>
           </div>
         </div>

@@ -11,7 +11,7 @@ const SignIn = () => {
   const SectionData = {
     title: "Welcome Back to Fixtura!",
     paragraphs: [
-      `Your digital cricketing journey awaits. Sign in to access a world of personalized content and powerful customization options tailored for your club or association.`,
+      `Your digital journey awaits. Sign in to access a world of personalized content and powerful customization options tailored for your club or association.`,
     ],
   };
   return (
@@ -28,13 +28,13 @@ const SignIn = () => {
         <Center>
           <Stack justify="flex-start" spacing="xs" h={50} mt={20}>
             <P textAlign={"center"} size={"xs"} marginBottom={0}>
-              <Link href="/password-request">
+              <Link legacyBehavior  href="/password-request">
                 <a>Forgot Password?</a>
               </Link>
             </P>
             <P textAlign={"center"} size={"xs"} marginBottom={0}>
               Don’t have an account yet?{" "}
-              <Link href="/SignUp">
+              <Link legacyBehavior  href="/SignUp">
                 <a> Sign up here</a>
               </Link>
             </P>

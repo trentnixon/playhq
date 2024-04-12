@@ -67,7 +67,7 @@ const PricingStyleThree = () => {
                 </ul>
 
                 <div className="btn-box">
-                  <Link href="#">
+                  <Link legacyBehavior  href="#">
                     <a className="btn btn-primary">Select the plan</a>
                   </Link>
                 </div>
@@ -126,7 +126,7 @@ const PricingStyleThree = () => {
                 </ul>
 
                 <div className="btn-box">
-                  <Link href="#">
+                  <Link legacyBehavior  href="#">
                     <a className="btn btn-primary">Select the plan</a>
                   </Link>
                 </div>
@@ -185,7 +185,7 @@ const PricingStyleThree = () => {
                 </ul>
 
                 <div className="btn-box">
-                  <Link href="#">
+                  <Link legacyBehavior  href="#">
                     <a className="btn btn-primary">Select the plan</a>
                   </Link>
                 </div>

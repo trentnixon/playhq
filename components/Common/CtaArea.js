@@ -20,7 +20,7 @@ const CtaArea = () => {
               data-aos-duration="1200"
             >
               <div className="cta-btn-box">
-                <Link href="/contact">
+                <Link legacyBehavior href="/contact">
                   <a className="btn btn-primary">Contact Us</a>
                 </Link>
               </div>

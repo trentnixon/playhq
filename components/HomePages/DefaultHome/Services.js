@@ -24,7 +24,7 @@ const Services = () => {
     <>
       <Section {...SectionData} color="light">
         <Center>
-          <Link href="/live-demo">
+          <Link legacyBehavior  href="/live-demo">
             <a
               className="btn btn-secondary"
               onClick={() => trackButtonClick("Live Demo")} // Track button click

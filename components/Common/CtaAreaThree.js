@@ -16,7 +16,7 @@ const CtaAreaThree = () => {
             data-aos="fade-up"
             data-aos-duration="1200"
           >
-            <Link href="/contact">
+            <Link legacyBehavior href="/contact">
               <a className="default-btn-two">
                 Contact Us <i className="fa-solid fa-chevron-right"></i>
               </a>

@@ -11,7 +11,7 @@ const Footer = () => {
             <div className="col-lg-3 col-sm-6">
               <div className="single-footer-widget">
                 <div className="logo">
-                  <Link href="/">
+                  <Link legacyBehavior  href="/">
                     <a>
                       <img src="/images/logo.png" alt="Logo" />
                     </a>
@@ -55,27 +55,27 @@ const Footer = () => {
 
                 <ul className="list">
                   <li>
-                    <Link href="/">
+                    <Link legacyBehavior  href="/">
                       <a>Home</a>
                     </Link>
                   </li>
                   <li>
-                    <Link href="/about">
+                    <Link legacyBehavior  href="/about">
                       <a>About</a>
                     </Link>
                   </li>
                   <li>
-                    <Link href="/services">
+                    <Link legacyBehavior  href="/services">
                       <a>Services</a>
                     </Link>
                   </li>
                   <li>
-                    <Link href="/portfolio">
+                    <Link legacyBehavior  href="/portfolio">
                       <a>Portfolio</a>
                     </Link>
                   </li>
                   <li>
-                    <Link href="/team">
+                    <Link  legacyBehavior href="/team">
                       <a>Team</a>
                     </Link>
                   </li>
@@ -89,27 +89,27 @@ const Footer = () => {
 
                 <ul className="list">
                   <li>
-                    <Link href="/contact">
+                    <Link legacyBehavior  href="/contact">
                       <a>Contact Us</a>
                     </Link>
                   </li>
                   <li>
-                    <Link href="/pricing">
+                    <Link legacyBehavior  href="/pricing">
                       <a>Pricing</a>
                     </Link>
                   </li>
                   <li>
-                    <Link href="/faq">
+                    <Link legacyBehavior  href="/faq">
                       <a>Faq</a>
                     </Link>
                   </li>
                   <li>
-                    <Link href="/privacy-policy">
+                    <Link legacyBehavior  href="/privacy-policy">
                       <a>Privacy Policy</a>
                     </Link>
                   </li>
                   <li>
-                    <Link href="/terms-conditions">
+                    <Link legacyBehavior  href="/terms-conditions">
                       <a>Terms & Conditions</a>
                     </Link>
                   </li>

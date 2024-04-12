@@ -26,7 +26,7 @@ const PrivacyPolicy = () => {
             privacy policy serves as a comprehensive guide to how we handle your
             personal and non-personal information when you access and use our
             services, including our website (Fixtura.com) and AI-generated
-            cricket-related digital assets. By using any of Fixtura's services,
+            sports-related digital assets. By using any of Fixtura's services,
             you consent to the data practices outlined in this policy.
           </p>
 
@@ -43,8 +43,8 @@ const PrivacyPolicy = () => {
 
           <h3>Specialized Data Use</h3>
           <p>
-            As a service focused on cricket clubs and associations, we utilize
-            public-facing cricket fixtures and metadata from PlayHQ to generate
+            As a service focused on sports clubs and associations, we utilize
+            public-facing sports fixtures and metadata from PlayHQ to generate
             specialized digital assets. Users are required to give explicit
             permission during the setup process for Fixtura to access and
             utilize this data to create digital assets for them.
@@ -70,9 +70,9 @@ const PrivacyPolicy = () => {
 
           <h3>Third-Party Data</h3>
           <p>
-            We also use cricket-related data that is publicly available on
+            We also use sports-related data that is publicly available on
             PlayHQ. This information allows us to create personalized,
-            AI-generated cricket assets that are of interest to you.
+            AI-generated sports assets that are of interest to you.
           </p>
 
           <h2>How We Use Your Information</h2>
@@ -81,7 +81,7 @@ const PrivacyPolicy = () => {
           <p>
             We use the information we collect to create and manage your account,
             fulfilling your subscriptions, and generating AI-powered
-            cricket-related digital assets for your use.
+            sports-related digital assets for your use.
           </p>
 
           <h3>Customer Support</h3>

@@ -75,7 +75,7 @@ const PricingStyleTwo = () => {
                       </ul>
 
                       <div className="btn-box">
-                        <Link href="#">
+                        <Link legacyBehavior  href="#">
                           <a className="btn btn-primary">
                             <i className="bx bxs-hot"></i>
                             Try It Free Now
@@ -137,7 +137,7 @@ const PricingStyleTwo = () => {
                       </ul>
 
                       <div className="btn-box">
-                        <Link href="#">
+                        <Link legacyBehavior  href="#">
                           <a className="btn btn-primary">
                             <i className="bx bxs-hot"></i>
                             Try It Free Now
@@ -199,7 +199,7 @@ const PricingStyleTwo = () => {
                       </ul>
 
                       <div className="btn-box">
-                        <Link href="#">
+                        <Link  legacyBehavior href="#">
                           <a className="btn btn-primary">
                             <i className="bx bxs-hot"></i>
                             Try It Free Now
@@ -265,7 +265,7 @@ const PricingStyleTwo = () => {
                       </ul>
 
                       <div className="btn-box">
-                        <Link href="#">
+                        <Link legacyBehavior  href="#">
                           <a className="btn btn-primary">
                             <i className="bx bxs-hot"></i>
                             Try It Free Now
@@ -327,7 +327,7 @@ const PricingStyleTwo = () => {
                       </ul>
 
                       <div className="btn-box">
-                        <Link href="#">
+                        <Link legacyBehavior  href="#">
                           <a className="btn btn-primary">
                             <i className="bx bxs-hot"></i>
                             Try It Free Now
@@ -389,7 +389,7 @@ const PricingStyleTwo = () => {
                       </ul>
 
                       <div className="btn-box">
-                        <Link href="#">
+                        <Link legacyBehavior  href="#">
                           <a className="btn btn-primary">
                             <i className="bx bxs-hot"></i>
                             Try It Free Now

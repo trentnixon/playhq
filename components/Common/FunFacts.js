@@ -36,11 +36,12 @@ const FunFacts = () => {
     trackCustomEvent("Hover", `Hovered over ${title}`, "Fun Facts Section");
   };
   const SectionData = {
-    title: "Craft Your Cricket Story with Fixtura",
+    title: "Craft Your Club's Story with Fixtura",
     paragraphs: [
-      `From thrilling matches to unforgettable victories, let Fixtura's advanced tools immortalize your cricket journey. Our suite of AI-powered write-ups, dynamic videos, and captivating images ensures your narrative stands out.`,
+      `From nail-biting matches to monumental victories across Cricket, AFL, and Netball, Fixtura's suite of advanced tools brings your sports journey to life. Embrace the power of AI-driven write-ups, dynamic videos, and stunning images designed to make your narrative shine. Whether it's the cricket pitch, the football field, or the netball court, ensure every moment is captured and celebrated with Fixtura.`,
     ],
   };
+
   return (
     <>
       <Section {...SectionData} color="dark">
@@ -77,7 +78,7 @@ const FunFacts = () => {
         </div>
         <Space h={50} />
         <P color={6} textAlign={"center"}>
-        Fixtura: Precision-Crafted Stories that Make an Impact.
+          Fixtura: Precision-Crafted Stories that Make an Impact.
         </P>
       </Section>
     </>
