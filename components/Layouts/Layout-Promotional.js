@@ -1,6 +1,6 @@
 import Meta from "./Meta";
 
-import Footer from "./FooterDark";
+import Footer from "./Fixtura_Footer";
 import { useRouter } from "next/router";
 
 const PromotionalLayout = ({ children }) => {

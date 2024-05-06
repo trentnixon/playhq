@@ -30,7 +30,7 @@ const templateMapping = {
   CNSW: AssetExampleCNSW,
   Basic: AssetExamplesBasic,
   // Add more mappings as needed
-};
+}; 
 
 export const RemotionPlayer = (props) => {
   const {

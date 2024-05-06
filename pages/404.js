@@ -1,6 +1,5 @@
 import React from "react";
 import PageBanner from "../components/Common/PageBanner";
-import Footer from "../components/Layouts/Footer";
 import Section from "../components/UI/DefaultSection";
 import Link from "next/link";
 import { Center } from "@mantine/core";
@@ -27,7 +26,7 @@ const Error = () => {
       <Section {...SectionData} color="light">
         <Center>
           <div className="back-btn">
-            <Link legacyBehavior  href="/">
+            <Link legacyBehavior href="/">
               <a className="btn btn-primary">Go Back Home</a>
             </Link>
           </div>

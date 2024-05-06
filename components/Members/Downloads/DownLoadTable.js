@@ -137,7 +137,7 @@ export function DownloadTable({ data, Token }) {
 
 const TableRow = ({ row, Token }) => {
   const { account } = useAccountDetails();
-  console.log("row.createdAt", row.createdAt);
+ 
   const disableLink = isBefore2024(row.createdAt);
   return (
     <tr key={row.name}>

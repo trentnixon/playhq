@@ -23,7 +23,6 @@ const SetupCheck = ({ children }) => {
   const theme = useMantineTheme();
   const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
 
-  console.log(account?.attributes.data_collections.data[0]);
   useEffect(() => {
     if (!isSetup) {
       const interval = setInterval(() => {

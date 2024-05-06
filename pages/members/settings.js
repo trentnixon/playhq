@@ -118,7 +118,7 @@ const Overview = () => {
                 WithIcon={true}
               />
 
-              {!userAccount.attributes.order.data?.attributes.Status ? (
+              {!userAccount.attributes.orders.data?.attributes.Status ? (
                 <Tooltip label="An Active Subscription Required">
                   <IconAlertTriangle size={25} color="yellow" />
                 </Tooltip>

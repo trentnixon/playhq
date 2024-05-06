@@ -7,7 +7,7 @@ export const BTN_ChangePlan = ({ setChangePlan, changePlan }) => {
   const { account, ReRender } = useAccountDetails();
   const [userAccount, setUserAccount] = useState(account);
   const [ORDER, setOrder] = useState(
-    userAccount?.attributes?.order?.data?.attributes
+    userAccount?.attributes?.orders?.data?.attributes
   );
  
   // Check if the subscription is active

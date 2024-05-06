@@ -3,20 +3,15 @@ import {
   Group,
   useMantineTheme,
   Tooltip,
-  Text,
-  Button,
   Paper,
   Container,
 } from "@mantine/core";
 import { IconAlertTriangleFilled } from "@tabler/icons-react";
 import { P } from "../Common/Type";
 import { BTN_TOEXTLINK } from "../Common/utils/Buttons";
-import { getTrialNotificationStatus } from "../../../lib/actions";
 
 export const IsFreeTrial = ({ user }) => {
   const theme = useMantineTheme();
-  const trialNotificationStatus = getTrialNotificationStatus(user);
-  // epping order num 92
 
   if (user.attributes.trialStatus === true) {
     // Free trial is active
@@ -99,7 +94,12 @@ export const IsFreeTrialFeedback = () => {
       >
         <Group position="right">
           <P marginBottom={0}>
-            We would greatly appreciate it if you could take a moment to message us on our Facebook channel with any issues or feedback you might have. We are committed to refining and enhancing our product, and your valuable insights play a pivotal role in ensuring we offer the best possible experience for your organization. Your feedback truly matters to us.
+            We would greatly appreciate it if you could take a moment to message
+            us on our Facebook channel with any issues or feedback you might
+            have. We are committed to refining and enhancing our product, and
+            your valuable insights play a pivotal role in ensuring we offer the
+            best possible experience for your organization. Your feedback truly
+            matters to us.
           </P>
         </Group>
       </Paper>
@@ -115,4 +115,3 @@ export const IsFreeTrialFeedback = () => {
     </Container>
   );
 };
-

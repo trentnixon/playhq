@@ -21,9 +21,9 @@ export const UI_SubscriptionStatus_TEXT = () => {
     <>
       <P
         textTransform="uppercase"
-        color={userAccount.attributes.order?.data?.attributes.Status ? 6 : 8}
+        color={userAccount.attributes.orders?.data?.attributes.Status ? 6 : 8}
         Copy={`Subscription : ${
-          userAccount.attributes.order?.data?.attributes.Status
+          userAccount.attributes.orders?.data?.attributes.Status
             ? "Active"
             : "InActive"
         }`}
@@ -58,7 +58,7 @@ export const UI_SubscriptionStatus_Light = () => {
 
   return (
     <>
-      {userAccount.attributes.order?.data?.attributes.Status
+      {userAccount.attributes.orders?.data?.attributes.Status
         ? CreateSwatch(theme.colors.members[6], "Active")
         : CreateSwatch(theme.colors.members[8], "InActive")}
     </>

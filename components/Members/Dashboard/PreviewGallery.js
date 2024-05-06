@@ -6,7 +6,7 @@ import { Thumbnail } from "@remotion/player";
 import { useEffect, useState } from "react";
 import { createPreviewObject, mergeData, updateDataBasedOnSelected } from "../../../utils/RemotionUtils";
 import { ASSETS, DEFAULTLOGO } from "../../../utils/RemotionAssets";
-
+ 
 export const PreviewGallery = ({ account }) => {
   const [previewObj, setPreviewObj] = useState({});
   const theme = useMantineTheme();
@@ -72,4 +72,4 @@ export const PreviewGallery = ({ account }) => {
       </Center>
     </Paper>
   );
-};
+}; 

@@ -12,11 +12,12 @@ export const useGetInvoice = () => {
 
   const Getinvoice = async () => {
     const user = await getAccountFromLocalCookie();  
+    //console.log("getAccountFromLocalCookie user ", user)
     setLoading(true);
     if (user) {
       try {
         const response = await fetcher(
-          `${process.env.NEXT_PUBLIC_STRAPI_URL}/orders/invoicing`,
+          `${process.env.NEXT_PUBLIC_STRAPI_URL}/orders/invoicing`, 
           {
             method: "POST",
             headers: {

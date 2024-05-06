@@ -10,7 +10,7 @@ export const SelectDeliveryDay = () => {
   const { account, ReRender } = useAccountDetails();
   const [userAccount, setUserAccount] = useState(account);
   const [ORDER, setOrder] = useState(
-    userAccount?.attributes?.order?.data?.attributes
+    userAccount?.attributes?.orders?.data?.attributes
   );
 
   const setHasUpdated = () => {

@@ -15,7 +15,7 @@ export const useGetUsersSubscriptionOrder = () => {};
  */
 export const useCreateNewInstanceOfSubscription = () => {
   const [Subscription, setSubscription] = useState(null); 
-
+ 
   const CreateSubscription = async (productId) => {
     const user = await getUserFromLocalCookie();
     if (user) {
@@ -33,14 +33,14 @@ export const useCreateNewInstanceOfSubscription = () => {
             body: JSON.stringify({
               subscription_tier: productId,
               account: UserID,
-            }),
+            }), 
           }
         );
         setSubscription(response);
       } catch (err) {
         setSubscription(null);
       }
-    }
+    } 
   };
 
   return [Subscription, CreateSubscription];

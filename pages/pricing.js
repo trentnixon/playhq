@@ -2,8 +2,8 @@ import React from "react";
 import PageBanner from "../components/Common/PageBanner";
 
 import CtaAreaTwo from "../components/Common/CtaAreaTwo";
-import PricingStyleOne from "../components/Pricing/PricingStyleOne";
 import Meta from "../components/Layouts/Meta";
+import FixturaPricingCards from "../components/FixturaPricingCards/FixturaPricingCards";
 const Pricing = () => {
   return (
     <>
@@ -17,7 +17,7 @@ const Pricing = () => {
         BGImage="/images/BG-Images/0D5A3099.jpg"
         position={`bottom center`}
       />
-      <PricingStyleOne />
+      <FixturaPricingCards />
       <CtaAreaTwo />
     </>
   );

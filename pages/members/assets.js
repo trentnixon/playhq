@@ -71,7 +71,7 @@ const Overview = () => {
 
   useEffect(() => {
     // do something with the userAccount prop
-    //console.log(userAccount.attributes.order.data.attributes.Status);
+    //console.log(userAccount.attributes.orders.data.attributes.Status);
   }, [userAccount]);
 
   if (!user) return <FixturaLoading />;

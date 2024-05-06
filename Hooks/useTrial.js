@@ -18,8 +18,8 @@ export const useCreateTrial = () => {
         const response = await fetcher(
           `${process.env.NEXT_PUBLIC_STRAPI_URL}/trial-instances`,
           {
-            method: "POST",
-            headers: {
+            method: "POST", 
+            headers: { 
               Accept: "application/json",
               "Content-Type": "application/json",
               Authorization: `Bearer ${Cookies.get("jwt")}`,

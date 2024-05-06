@@ -2,7 +2,7 @@ import { Group, useMantineTheme, Paper, Container } from "@mantine/core";
 import { IconAlertTriangleFilled } from "@tabler/icons-react";
 
 import { P } from "../../../Common/Type";
-import { getTrialNotificationStatus } from "../../../../../lib/actions";
+import { getTrialNotificationStatus } from "../../../../../lib/members/getTrialNotificationStatus";
 
 export const IsFreeTrialWelcome = ({ user }) => {
   const theme = useMantineTheme();
@@ -19,7 +19,7 @@ export const IsFreeTrialWelcome = ({ user }) => {
         "The trial gives full access and lasts for 14 days. After which, you'll need to SUBSCRIBE to continue receiving weekly digital assets to your inbox.",
       bgColor: theme.colors.green[0],
       iconColor: theme.colors.green[5],
-      textColor:1,
+      textColor: 1,
     },
     ended_trial: {
       headerText: "Trial Ended!",
@@ -41,29 +41,15 @@ export const IsFreeTrialWelcome = ({ user }) => {
 
   const config = welcomeConfig[trialNotificationStatus];
 
- if(!config)
- return false 
- return (
+  if (!config) return false;
+  return (
     <Container fluid={true}>
       <Group position="right">
-        
-        <IconAlertTriangleFilled  style={{ color:config?.iconColor }}/>
-        <P Weight={400} marginBottom={0} color={'5'}>
+        <IconAlertTriangleFilled style={{ color: config?.iconColor }} />
+        <P Weight={400} marginBottom={0} color={"5"}>
           {config?.headerText}
         </P>
       </Group>
     </Container>
   );
 };
-
-/* <Paper
-        p="md"
-        mb={10}
-        shadow="xs"
-        style={{ backgroundColor: config.bgColor }}
-      >
-        <Group position="apart" noWrap={true}>
-          <IconAlertTriangleFilled style={{ color:config.iconColor }} />
-          <P marginBottom={0}>{config.message}</P>
-        </Group>
-      </Paper> */

@@ -1,6 +1,6 @@
 // Components
 import Meta from "./Meta";
-import Footer from "./FooterDark";
+import Footer from "./Fixtura_Footer";
 import {  UserProvider } from "../../lib/authContext";
 import { AccountDetailsProvider } from "../../lib/userContext";
 

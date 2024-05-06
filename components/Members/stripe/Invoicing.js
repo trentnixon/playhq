@@ -20,20 +20,9 @@ import {
 } from "@tabler/icons-react";
 import { useAccountDetails } from "../../../lib/userContext";
 import { LoadingStateWrapper } from "../Account/HOC/LoadingStateWrapper";
+import { convertUnixTimestamp } from "../../../lib/actions";
 
-function convertUnixTimestamp(timestamp) {
-  // Create a new JavaScript Date object based on the timestamp
-  // multiplied by 1000 so that the argument is in milliseconds, not seconds
-  const date = new Date(timestamp * 1000);
 
-  // Get the year, month and day from the date object
-  const year = date.getFullYear();
-  const month = date.getMonth() + 1; // Months are zero-indexed, so add 1
-  const day = date.getDate();
-
-  // Return the formatted date string
-  return `${day}-${month}-${year}`;
-}
 
 export const Invoicing = () => {
   const [invoice, getInvoice, loading] = useGetInvoice();
@@ -198,7 +187,7 @@ export const UpcomingInvoicing = () => {
   const [invoice, getInvoice, loading] = useGetUpcomingInvoice();
   const { account, ReRender } = useAccountDetails();
   const [ORDER, setOrder] = useState(
-    account?.attributes?.order?.data?.attributes
+    account?.attributes?.orders?.data?.attributes
   );
   const isPaused = ORDER?.isPaused;
 

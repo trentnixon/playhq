@@ -41,6 +41,12 @@ const useStyles = createStyles((theme, _params, getRef) => ({
   },
 }));
 
+/**
+ * Generates a button component with the specified label, onClick handler, and theme.
+ *
+ * @param {Object} params - An object containing the LABEL, HANDLE, idDisabled, and THEME properties.
+ * @return {JSX.Element} The button component with the specified properties.
+ */
 export const BTN_ONCLICK = ({
   LABEL,
   HANDLE,
@@ -69,7 +75,7 @@ export const BTN_TOINTERALLINK = ({
 }) => {
   const { classes } = useStyles();
   return (
-    <Link legacyBehavior  href={URL}>
+    <Link legacyBehavior href={URL} target="_blank">
       <Button
         disabled={idDisabled}
         variant="outline"
@@ -86,7 +92,7 @@ export const BTN_TOEXTLINK = ({
   URL,
   idDisabled = false,
   THEME = "standard",
-  target="_blank"
+  target = "_blank",
 }) => {
   const { classes } = useStyles();
   return (

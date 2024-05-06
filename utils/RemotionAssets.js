@@ -22,7 +22,7 @@ import {
 
 export const DEFAULTLOGO = "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_Blue_on_transparent_0e86187b28.png";
 
-
+ 
 export const ASSETS = {
   Basic: {
     UpComingFixtures: {

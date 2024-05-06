@@ -36,9 +36,6 @@ import {
 
 const Tracking = ({ DATA }) => {
 
-
-  console.log("Tracking DATA", DATA)
-
   const { account } = useAccountDetails();
   const [userAccount, setUserAccount] = useState(account);
   const { user, loading } = useUser();
@@ -141,7 +138,7 @@ Tracking.getInitialProps = async (ctx) => {
   const res = await Adminfetcher(`/account/createTracking/${ID}`);
   let DATA = res;
 
-  return { DATA };
+  return { DATA }; 
 };
 
 const TrackingLayout = (props) => {

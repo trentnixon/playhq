@@ -8,44 +8,19 @@ import {
   IconCurrencyDollar,
   IconClockPause,
 } from "@tabler/icons-react";
-import { getTrialNotificationStatus } from "../../../lib/actions";
+import { getTrialNotificationStatus } from "../../../lib/members/getTrialNotificationStatus";
+import { useUserStatus } from "../../Layouts/members/Members_Account_Details_Card/components/useUserStatus";
 
 const ICON_SIZE = rem(60);
 
 export const DashBoardSubscriptionItems = ({ user, Theme }) => {
   const { classes } = useStyles();
   const trialNotificationStatus = getTrialNotificationStatus(user);
-  // Extract user's subscription status and details
-  const { isActive, Status, cancel_at_period_end, isPaused } =
-    user.attributes.order?.data?.attributes ?? {};
-  const subscriptionTier = user.attributes.subscription_tier?.data?.attributes;
-  const includesSponsors =
-    user.attributes.subscription_tier.data?.attributes?.includeSponsors;
+  const { statusMessage, statusColor, Title, includeSponsors } =
+    useUserStatus(user);
 
-  let statusMessage = "Unknown status";
-  let statusColor = "red.9"; // Default color
   let StatusIcon = IconCurrencyDollar; // Default icon
 
-  if (isActive) {
-    if (Status) {
-      if (cancel_at_period_end) {
-        statusMessage = "Cancelling";
-        StatusIcon = IconAlertTriangle;
-        statusColor = "yellow.6";
-      } else if (isPaused) {
-        statusMessage = "Paused";
-        StatusIcon = IconClockPause;
-        statusColor = "yellow.6";
-      } else {
-        statusMessage = "Active";
-        StatusIcon = IconCheck;
-        statusColor = "green.6";
-      }
-    }
-  } else {
-    statusMessage = "Not Active";
-    statusColor = "red.9";
-  }
   if (
     ["available_trial", "active_trial", "ended_trial"].includes(
       trialNotificationStatus
@@ -84,11 +59,11 @@ export const DashBoardSubscriptionItems = ({ user, Theme }) => {
         </Text>
 
         <Text ta="center" fz="sm" c="dimmed">
-          Plan: {subscriptionTier?.Name ?? "Awaiting Selection"}
+          Plan: {Title}
         </Text>
 
         <Group position="center" mt="md">
-          {includesSponsors ? (
+          {includeSponsors ? (
             <Text fz="sm" c="dimmed">
               Sponsors Enabled: <IconCheck size={"1em"} color={"green"} />
             </Text>
@@ -121,7 +96,8 @@ const TrialStatusCard = ({ status, user, Theme }) => {
       statusMessage = "Your free trial is currently active.";
       StatusIcon = IconCheck;
       statusColor = "green.6";
-      ctaMessage = "Your automated assets are on their way. Experience Fixtura's convenience firsthand!";
+      ctaMessage =
+        "Your automated assets are on their way. Experience Fixtura's convenience firsthand!";
       buttonText = "Go to Account";
       break;
     case "ended_trial":
@@ -135,13 +111,13 @@ const TrialStatusCard = ({ status, user, Theme }) => {
       statusMessage = "You have a free trial available!";
       StatusIcon = IconCurrencyDollar;
       statusColor = "blue.6";
-      ctaMessage = "Kickstart your Fixtura experience with a 14-day free trial.";
+      ctaMessage =
+        "Kickstart your Fixtura experience with a 14-day free trial.";
       buttonText = "Start Free Trial";
       break;
     default:
       statusMessage = "Unknown Status";
   }
-
 
   return (
     <Paper

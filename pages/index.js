@@ -1,6 +1,6 @@
 // Components
 import MainBanner from "../components/HomePages/PLAYHQ/MainBanner";
-import PricingStyleOne from "../components/Pricing/PricingStyleOne";
+import PricingStyleOne from "../components/FixturaPricingCards/FixturaPricingCards";
 import Services from "../components/HomePages/DefaultHome/Services";
 import FunFacts from "../components/Common/FunFacts";
 import CtaArea from "../components/Common/CtaAreaTwo";

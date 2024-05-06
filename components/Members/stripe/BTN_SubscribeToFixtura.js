@@ -11,7 +11,7 @@ import { Group } from "@mantine/core";
 export const BTN_SubscribeToFixtura = () => {
   const { account, ReRender } = useAccountDetails();
   const [userAccount, setUserAccount] = useState(account);
-  const ORDER = userAccount?.attributes?.order?.data?.attributes;
+  const ORDER = userAccount?.attributes?.orders?.data?.attributes;
   const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PK);
   const [Subscription, CreateSubscription] =
     useCreateNewInstanceOfSubscription();

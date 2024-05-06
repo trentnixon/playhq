@@ -119,8 +119,7 @@ export const AutoCompleteSelectAssociation = ({
   };
 
   const handleAssociationClick = (association) => {
-    console.log("association")
-    console.log(association)
+
     setSelectedAssociationName(association.attributes.Name);
     setSelectedAssociationId(association.id);
     setSelectedAssociationSport(association.attributes.Sport)

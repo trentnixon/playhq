@@ -1,17 +1,7 @@
-import {
-  Card,
-  Group,
-  useMantineTheme,
-  Tooltip,
-  Text,
-  Button,
-  Paper,
-  Container,
-} from "@mantine/core";
-import { IconAlertTriangleFilled } from "@tabler/icons-react";
+import { Card, Group, useMantineTheme, Tooltip } from "@mantine/core";
 
 import { P } from "../../../Common/Type";
-import { getTrialNotificationStatus } from "../../../../../lib/actions";
+import { getTrialNotificationStatus } from "../../../../../lib/members/getTrialNotificationStatus";
 
 export const SideBarTrialNotification = ({ user }) => {
   const theme = useMantineTheme();
@@ -21,12 +11,11 @@ export const SideBarTrialNotification = ({ user }) => {
     // The user has an active subscription, so no need to show any notifications
     return null;
   }
-  // eppiong order 92
 
   const notificationConfig = {
     active_trial: {
       label: "Free trial is Active",
-      backgroundColor: theme.colors.green[2],
+      backgroundColor: theme.colors.green[1],
       text: "Trial Version",
     },
     ended_trial: {
@@ -36,8 +25,7 @@ export const SideBarTrialNotification = ({ user }) => {
       text: "Trial Ended",
     },
     available_trial: {
-      label:
-        "Activate now for two weeks FREE on us!",
+      label: "Activate now for two weeks FREE on us!",
       backgroundColor: theme.colors.blue[1],
       text: "Free Trial Available",
     },
@@ -48,7 +36,7 @@ export const SideBarTrialNotification = ({ user }) => {
   return (
     <Tooltip label={config?.label} position="top">
       <Card
-        withBorder
+        shadow="md"
         padding="sm"
         radius="md"
         mt={5}
