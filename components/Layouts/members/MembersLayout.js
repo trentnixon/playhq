@@ -19,4 +19,3 @@ export const MembersLayout = ({ children }) => {
     </HasCompletedStartSequence>
   );
 };
-``;

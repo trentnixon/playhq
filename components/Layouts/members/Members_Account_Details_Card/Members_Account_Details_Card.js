@@ -26,7 +26,7 @@ export function UserDetailsCard({ user }) {
   const trialNotificationStatus = useMemo(
     () => getTrialNotificationStatus(user),
     [user]
-  ); 
+  );
 
   const TRIAL_STATUS_COMPONENTS = {
     no_user: NoUser,
@@ -39,6 +39,7 @@ export function UserDetailsCard({ user }) {
     account_active_pending: PendingActivation,
   };
 
+  console.log("Side Bar trialNotificationStatus ", trialNotificationStatus);
   const TrialStatusComponent =
     TRIAL_STATUS_COMPONENTS[trialNotificationStatus] || NoUser;
 
@@ -68,7 +69,7 @@ export function UserDetailsCard({ user }) {
     </Card>
   );
 }
-
+  
 const NoUser = () => <span>No user object provided</span>;
 const Subscribed = ({ user }) => <IsUserSubscriptionDetails user={user} />;
 const PendingActivation = ({ user }) => <AwaitingActivation user={user} />; // Example usage

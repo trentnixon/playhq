@@ -17,7 +17,7 @@ export const CreateNewInvoice = (props) => {
     setLoading(true);
     //console.log("handleBuy ", productId, startDate, endDate);
     await createInvoice(productId, startDate, endDate).catch((err) => {
-      console.error(err);
+      console.error(err); 
     });
   };
 

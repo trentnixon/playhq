@@ -21,7 +21,7 @@ export const UsersAccountStatusViews = () => {
     subscribed: <UserSubscriptionActive />,
     ended_paid_subscription: <UserSubscription />,
   };
-  
+   
   useEffect(() => {}, [account]);
   console.log("getTrialNotificationStatus(account) ", getTrialNotificationStatus(account))
   const componentToRender = trialStatusObj[getTrialNotificationStatus(account)];
@@ -32,3 +32,4 @@ export const UsersAccountStatusViews = () => {
     </LoadingStateWrapper>
   );
 };
+ 
