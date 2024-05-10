@@ -5,7 +5,7 @@ import {
 } from "../../../components/Members/Common/Containers";
 import Meta from "../../../components/Layouts/Meta";
 import { IconSettings } from "@tabler/icons-react";
-import { Setting_GroupBy } from "./how-to-group-your-bundles/Settings_GroupBy";
+import { Setting_GroupBy } from "../../../components/pages/members/settings/how-to-group-your-bundles/Settings_GroupBy";
 
 const Settings = () => {
   return (
@@ -22,7 +22,7 @@ const Settings = () => {
         competition or grade, ensuring streamlined access and management
         tailored to your specific needs.
       </P>
-      <Wrapper px={'10%'}>
+      <Wrapper px={'5%'}>
           <Setting_GroupBy />
         </Wrapper>
     </MembersWrapper>

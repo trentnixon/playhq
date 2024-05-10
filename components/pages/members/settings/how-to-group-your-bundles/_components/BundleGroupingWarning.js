@@ -1,5 +1,5 @@
 import { Card } from "@mantine/core";
-import { P } from "../../../../../components/Members/Common/Type";
+import { P } from "../../../../../Members/Common/Type";
 
 export const BundleGroupingWarning = ({ NumItems }) => {
     if (NumItems > 9)

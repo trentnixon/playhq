@@ -1,6 +1,6 @@
 import { Group } from "@mantine/core";
-import { Wrapper } from "../../../../components/Members/Common/Containers";
-import { BTN_TOINTERALLINK } from "../../../../components/Members/Common/utils/Buttons";
+import { Wrapper } from "../../../../Members/Common/Containers";
+import { BTN_TOINTERALLINK } from "../../../../Members/Common/utils/Buttons";
 
 export const BackToSettings = () => {
   return (

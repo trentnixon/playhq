@@ -1,9 +1,9 @@
 import { Group } from "@mantine/core";
-import { ShadowWrapper } from "../../../../components/Members/Common/Containers";
-import { P, H, SubHeaders } from "../../../../components/Members/Common/Type";
-import { BTN_TOINTERALLINK } from "../../../../components/Members/Common/utils/Buttons";
-import { useAccountDetails } from "../../../../lib/userContext";
-import { FindAccountType } from "../../../../lib/actions";
+import { ShadowWrapper } from "../../../../Members/Common/Containers";
+import { P,SubHeaders } from "../../../../Members/Common/Type";
+import { BTN_TOINTERALLINK } from "../../../../Members/Common/utils/Buttons";
+import { useAccountDetails } from "../../../../../lib/userContext";
+import { FindAccountType } from "../../../../../lib/actions";
 
 export const Setting_GroupBy = () => {
   const { account } = useAccountDetails();
