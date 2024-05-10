@@ -10,7 +10,7 @@ import { FindAccountType } from "../../../../lib/actions";
 import { useSetGroupAssetsBySetting } from "../../../../Hooks/useAccountSettings";
 import { useAccountDetails } from "../../../../lib/userContext";
 
-import { DisplayKeys } from "./_components/DisplayKeys";
+import { DisplayKeys } from "./@components/DisplayKeys";
 import { BackToSettings } from "../_components/BackToSettings";
 import { IconSettings } from "@tabler/icons";
 
