@@ -18,8 +18,6 @@ import { DownloadsSelectDays } from "../../components/Downloads/DownloadsSelectD
 import SetupCheck from "../../components/Members/Account/HOC/SetupCheck";
 import { LoadingStateWrapper } from "../../components/Members/Account/HOC/LoadingStateWrapper";
 import Meta from "../../components/Layouts/Meta";
-import { GroupBySwitch } from "../../components/Members/Account/components/Settings/GroupBySwitch";
-import { IconSettings } from "@tabler/icons-react";
 import { useAccountDetails } from "../../lib/userContext";
 
 const OrderHistory = (props) => {
@@ -46,11 +44,13 @@ const OrderHistory = (props) => {
         description="Download your purchased bundles and resources as a Fixtura member. Enhance your club's digital media with our exclusive content."
         keywords="Member downloads, Fixtura bundles, sports media resources, club content download, digital bundles"
       />
+
       <SetupCheck>
         <LoadingStateWrapper conditions={[user, Renders]}>
           <PageTitle Copy={`Bundles`} ICON={<IconDownload size={40} />} />
           <DownloadCopy />
           <Space h={20} />
+
           <DownloadsSelectDays renders={Renders.renders} />
           <Space h={20} />
           <SubHeaders
@@ -62,9 +62,6 @@ const OrderHistory = (props) => {
             data={Renders.renders}
             Token={Renders?.render_token?.token}
           />
-          <Space h={50} />
-          <SubHeaders Copy="Bundle Settings" ICON={<IconSettings size={30} />} />
-          <GroupBySwitch account={account} />
         </LoadingStateWrapper>
       </SetupCheck>
     </MembersWrapper>

@@ -77,7 +77,6 @@ export function useUserStatus(user) {
   return parseInt(order.id) > parseInt(latest.id) ? order : latest;
 }, orders[0]);
 
-console.log("mostRecentOrder ", mostRecentOrder);
   try {
     const { createdAt, endOrderAt, startOrderAt, subscription_tier } = mostRecentOrder.attributes;
     const { statusMessage, statusColor, StatusIcon } = getStatus(mostRecentOrder.attributes);

@@ -9,22 +9,12 @@ import {
   IconCarouselHorizontalFilled,
   IconUserCircle,
   IconColorSwatch,
-  IconSettings,
 } from "@tabler/icons-react";
 import {
   MembersWrapper,
   PageCopyWrapper,
 } from "../../components/Members/Common/Containers";
-import {
-  Center,
-  Container,
-  Group,
-  Paper,
-  Progress,
-  SimpleGrid,
-  Space,
-  useMantineTheme,
-} from "@mantine/core";
+import { Group, Progress, SimpleGrid, Space } from "@mantine/core";
 import { LoadingStateWrapper } from "../../components/Members/Account/HOC/LoadingStateWrapper";
 
 import { useAccountDetails } from "../../lib/userContext";
@@ -38,11 +28,8 @@ import SetupCheck from "../../components/Members/Account/HOC/SetupCheck";
 import { useUser } from "../../lib/authContext";
 import { DashBoardAssets } from "../../components/Members/Dashboard/Assets";
 import { IsFreeTrialFeedback } from "../../components/Members/Account/userIsFreeTrial";
-import { IsFreeTrialWelcome } from "../../components/Members/Account/components/isTrialNotifications.js/FreeTrialMessaging";
 import Meta from "../../components/Layouts/Meta";
-import { GroupBySwitch } from "../../components/Members/Account/components/Settings/GroupBySwitch";
-import { Carousel } from "@mantine/carousel";
-import { useMediaQuery } from "@mantine/hooks";
+
 import { PreviewGallery } from "../../components/Members/Dashboard/PreviewGallery";
 import { BTN_TOINTERALLINK } from "../../components/Members/Common/utils/Buttons";
 
@@ -70,7 +57,7 @@ const DashBoard = () => {
         </SetupCheck>
       </MembersWrapper>
     );
-  } 
+  }
 
   const commonProps = {
     Theme: account.attributes.theme.data.attributes.Theme,
@@ -138,12 +125,11 @@ const DashBoard = () => {
             description="Access your member dashboard on Fixtura to manage and overview your sports club's digital media activities."
             keywords="Member dashboard, Fixtura control panel, sports media overview, club content management, digital hub"
           />
-           {/* <IsFreeTrialWelcome user={account} /> */}
+          {/* <IsFreeTrialWelcome user={account} /> */}
           <PageTitle
             Copy={`Hi ${account.attributes.FirstName}`}
             ICON={<IconLayoutDashboard size={40} />}
           />
-         
 
           <SubHeaders
             Copy="Preview"
@@ -212,10 +198,8 @@ const DashBoard = () => {
               );
             })}
           </SimpleGrid>
-        {/*   <Space h={50} />
-          <SubHeaders Copy="Settings" ICON={<IconSettings size={30} />} />
-          <GroupBySwitch account={account} /> */}
           <Space h={50} />
+
           <IsFreeTrialFeedback />
         </LoadingStateWrapper>
       </SetupCheck>

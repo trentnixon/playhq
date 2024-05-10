@@ -15,14 +15,23 @@ export const useGetOrganizationDetails = (accountType, accountId) => {
           populate: {
             // Include specific fields for each team and exclude gameHistory
             gameHistory: {
-              fields: [] // Leave empty to exclude all fields from gameHistory
-            }
+              fields: [], // Leave empty to exclude all fields from gameHistory
+            },
+            grades:true
           },
-          fields: ['teamName', 'gamesPlayed', 'wins', 'losses', 'form', 'href', 'teamID'] // Specify the fields you want to include
+          fields: [
+            "teamName",
+            "gamesPlayed",
+            "wins",
+            "losses",
+            "form",
+            "href",
+            "teamID",
+          ], // Specify the fields you want to include
         },
         associations: true, // Include all fields for associations
-        club_to_competitions: true // Include all fields for club_to_competitions
-      }
+        club_to_competitions: true, // Include all fields for club_to_competitions
+      },
     },
     {
       encodeValuesOnly: true,
@@ -38,23 +47,27 @@ export const useGetOrganizationDetails = (accountType, accountId) => {
               populate: {
                 // Exclude all fields from gameHistory
                 gameHistory: {
-                  fields: [] 
-                }
+                  fields: [],
+                },
               },
               // Include only the 'teamName' field for each team
-              fields: ['teamName'] 
-            }
-          }
+              fields: ["teamName"],
+            },
+          },
+        },
+        competitions: {
+          populate: {
+            grades: true,
+          },
         },
         // Including other relevant fields or relationships if needed
-      }
+      },
     },
     {
       encodeValuesOnly: true,
     }
   );
-  
-  
+
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
@@ -65,7 +78,8 @@ export const useGetOrganizationDetails = (accountType, accountId) => {
             ? `/associations/${accountId}`
             : `/clubs/${accountId}`;
 
-        const query = accountType === "Association" ? Assoicationquery : Clubquery;
+        const query =
+          accountType === "Association" ? Assoicationquery : Clubquery;
 
         const response = await fetcher(
           `${process.env.NEXT_PUBLIC_STRAPI_URL}${endpoint}?${query}`,

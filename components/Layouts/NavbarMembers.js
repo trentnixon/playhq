@@ -12,6 +12,7 @@ import {
   IconLayoutDashboard,
   IconLogout2,
   IconPhotoPlus,
+  IconSettings,
   IconTrack,
 } from "@tabler/icons-react";
 import { Group, Image, useMantineTheme } from "@mantine/core";
@@ -223,6 +224,11 @@ const MembersNavItem = ({ user, setMenu }) => {
       IconComponent: IconLayoutDashboard,
     },
     {
+      href: `${PATH}/settings`,
+      title: "Settings",
+      IconComponent: IconSettings,
+    },
+    {
       href: `${PATH}/bundles`,
       title: "Bundles",
       IconComponent: IconDownload,
@@ -237,6 +243,7 @@ const MembersNavItem = ({ user, setMenu }) => {
       title: "Customizer",
       IconComponent: IconColorPicker,
     },
+    
     /* {
       href: `${PATH}/branding`,
       title: "Your Branding",

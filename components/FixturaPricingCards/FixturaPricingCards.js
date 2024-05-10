@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { ProductCard } from "./components/ProductCard";
 import { useGetSubscriptionTiers } from "../../Hooks/useSubscriptionTiers";
 import { P } from "../Members/Common/Type";
@@ -6,10 +6,12 @@ import { Tabs } from "@mantine/core";
 import { IconUsersGroup, IconShield } from "@tabler/icons-react";
 import { trackButtonClick } from "../../lib/GA";
 import Section from "../UI/DefaultSection";
+import FixturaLoader from "../UI/Loaders/FixturaLoader";
 
 const FixturaPricingCards = () => {
   const [products, setProducts] = useGetSubscriptionTiers();
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   const sectionData = {
     title: "Experience Fixtura with a Two-Week Free Trial",
@@ -19,17 +21,21 @@ const FixturaPricingCards = () => {
     ],
   };
 
+  const sortedProducts = useMemo(() => products?.sort((a, b) => a.id - b.id), [products]);
+
   useEffect(() => {
-    async function fetchSubscriptionTiers() {
+    const fetchSubscriptionTiers = async () => {
+      setLoading(true);
+      setError(null);
       try {
-        setLoading(true);
         await setProducts();
       } catch (error) {
         console.error("Failed to fetch subscription tiers:", error);
+        setError(error.message);
       } finally {
         setLoading(false);
       }
-    }
+    };
 
     if (!products) {
       fetchSubscriptionTiers();
@@ -42,12 +48,12 @@ const FixturaPricingCards = () => {
 
   const renderProducts = (isClub) => (
     <div className="row justify-content-center">
-      {products?.map((product, index) => {
+      {sortedProducts?.map(product => {
         const { isActive, isClub: productIsClub } = product.attributes;
         if (isActive && productIsClub === isClub) {
           return (
             <ProductCard
-              key={index}
+              key={product.id}
               product={product.attributes}
               signUp={true}
             />
@@ -55,8 +61,16 @@ const FixturaPricingCards = () => {
         }
         return null;
       })}
-    </div> 
+    </div>
   );
+
+  if (loading) {
+    return <FixturaLoader />;
+  }
+
+  if (error) {
+    return <div className="error">Error: {error}</div>;
+  }
 
   if (!products) {
     return (
@@ -78,24 +92,13 @@ const FixturaPricingCards = () => {
         onTabChange={handleTabChange}
       >
         <Tabs.List position="center">
-          <Tabs.Tab
-            value="Club"
-            icon={<IconShield size="1.2rem" color="black" />}
-          >
-            <P Weight={600} size={14} marginBottom="0" textAlign="center">
-              Club
-            </P>
+          <Tabs.Tab value="Club" icon={<IconShield size="1.2rem" color="black" />} aria-label="Club Pricing">
+            <P Weight={600} size={14} marginBottom="0" textAlign="center">Club</P>
           </Tabs.Tab>
-          <Tabs.Tab
-            value="Association"
-            icon={<IconUsersGroup size="1.2rem" color="black" />}
-          >
-            <P Weight={600} size={14} marginBottom="0" textAlign="center">
-              Association
-            </P>
+          <Tabs.Tab value="Association" icon={<IconUsersGroup size="1.2rem" color="black" />} aria-label="Association Pricing">
+            <P Weight={600} size={14} marginBottom="0" textAlign="center">Association</P>
           </Tabs.Tab>
         </Tabs.List>
-
         <Tabs.Panel value="Club" pt="xs">
           {renderProducts(true)}
         </Tabs.Panel>
@@ -108,17 +111,3 @@ const FixturaPricingCards = () => {
 };
 
 export default FixturaPricingCards;
-
-// Dev Notes:
-// - Improved error handling with try-catch and logging.
-// - Introduced loading state for better UI management and user feedback.
-// - Refactored useEffect to encapsulate logic and handle asynchronous actions.
-// - Utilized optional chaining (?) for safer access to potentially undefined properties.
-// - Improved readability with clearer variable names and simplified JSX structure.
-
-// Recommendations:
-// - Consider implementing error feedback to the user through UI, not just console.
-// - Possible addition of loading indicators or skeletons during fetch operations.
-
-// LLm Notes:
-// This component displays subscription products for a sports association management platform. It is located under `src/components/Pricing/FixturaPricingCards.jsx` in the project structure. It dynamically fetches product data, handles user interactions with tabs, and displays product cards conditionally based on the type of club.
