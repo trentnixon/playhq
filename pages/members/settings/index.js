@@ -16,15 +16,8 @@ const Settings = () => {
         keywords="Member settings, Fixtura personalization, sports media customization, club content settings, digital preferences"
       />
       <PageTitle Copy={"Settings"} ICON={<IconSettings size={40} />} />
-      <P>
-        Adjust your bundle grouping settings to organize account bundles by
-        categories—clubs can sort by age, while associations can organize by
-        competition or grade, ensuring streamlined access and management
-        tailored to your specific needs.
-      </P>
-      <Wrapper px={'5%'}>
-          <Setting_GroupBy />
-        </Wrapper>
+
+      <Setting_GroupBy />
     </MembersWrapper>
   );
 };

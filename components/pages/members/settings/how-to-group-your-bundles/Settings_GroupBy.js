@@ -1,9 +1,11 @@
 import { Group } from "@mantine/core";
-import { ShadowWrapper } from "../../../../Members/Common/Containers";
-import { P,SubHeaders } from "../../../../Members/Common/Type";
+import { P } from "../../../../Members/Common/Type";
 import { BTN_TOINTERALLINK } from "../../../../Members/Common/utils/Buttons";
 import { useAccountDetails } from "../../../../../lib/userContext";
 import { FindAccountType } from "../../../../../lib/actions";
+import {
+  RoundedSectionContainer,
+} from "../../../../UI/Containers/SectionContainer";
 
 export const Setting_GroupBy = () => {
   const { account } = useAccountDetails();
@@ -37,18 +39,32 @@ export const Setting_GroupBy = () => {
   };
 
   return (
-    <>
-      <SubHeaders Copy={"Bundle Grouping"} />
-      <P>{settings[AccType].descriptions[GroupByValue]}</P>
-      <ShadowWrapper>
-        <Group position="apart">
-          <P marginBottom={0}>Select how your weekly bundles will be grouped</P>
-          <BTN_TOINTERALLINK
-            LABEL={"Change"}
-            URL={"/members/settings/how-to-group-your-bundles/"}
-          />
-        </Group>
-      </ShadowWrapper>
-    </>
+    <RoundedSectionContainer
+      headerContent="Bundle Groupings"
+      topContent={<ContainerTopSection />}
+      bottomContent={
+        <ContainerBottomSection
+          string={settings[AccType].descriptions[GroupByValue]}
+        />
+      }
+    />
   );
+};
+
+const ContainerTopSection = () => {
+  return (
+    <Group position="apart">
+      <P Weight={600} marginBottom={0}>
+        Select how your weekly bundles will be grouped
+      </P>
+      <BTN_TOINTERALLINK
+        LABEL={"Change"}
+        URL={"/members/settings/how-to-group-your-bundles/"}
+      />
+    </Group>
+  );
+};
+
+const ContainerBottomSection = ({ string }) => {
+  return <P marginBottom={0}>{string}</P>;
 };

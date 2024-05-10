@@ -14,7 +14,7 @@ export const Wrapper = (props) => {
     <Container size={"lg"} px={px} py={py}>
       {props.children}
     </Container>
-  );
+  ); 
 };
 
 export const PageCopyWrapper = (props) => {

@@ -1,10 +1,10 @@
-import { Table } from "@mantine/core";
+import { Space, Table } from "@mantine/core";
 import {
   FindAccountType,
   FindAccountTypeOBJ,
 } from "../../../../../../lib/actions";
 
-import { P } from "../../../../../Members/Common/Type";
+import { P, SectionHeaders } from "../../../../../Members/Common/Type";
 import { useGetOrganizationDetails } from "../../../../../../Hooks/useGetOrganizationDetails";
 import { useAccountDetails } from "../../../../../../lib/userContext";
 import {
@@ -14,6 +14,8 @@ import {
   groupByCompetitionName,
 } from "../../../../../../utils/group_assets_by";
 import { BundleGroupingWarning } from "./BundleGroupingWarning";
+import { Wrapper } from "../../../../../Members/Common/Containers";
+import { RoundedSectionContainer } from "../../../../../UI/Containers/SectionContainer";
 
 export const DisplayKeys = ({ switchValue }) => {
   const { account } = useAccountDetails();
@@ -60,15 +62,56 @@ export const DisplayKeys = ({ switchValue }) => {
 
   return (
     <>
+      <RoundedSectionContainer
+        headerContent="Expected Grouping"
+        topContent={<ContainerTopSection keys={keys} />}
+        bottomContent={<ContainerBottomSection keys={keys} />}
+      />
+      {/* <SectionHeaders Copy={"Expected Grouping"} /> */}
+      {/*  <Wrapper px="xl">
+        <BundleGroupingWarning NumItems={keys.length} />
+        <Table my={20}>
+          <thead>
+            <tr>
+              <th>
+                How your Bundle will be grouped {keys.length} Bundle Categories
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {keys.map((key, index) => (
+              <tr key={index}>
+                <td>
+                  <P textAlign="left" marginBottom={0}>
+                    {decodeURIComponent(key)}
+                  </P>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </Table>
+      </Wrapper> */}
+    </>
+  );
+};
+
+const ContainerTopSection = ({ keys }) => {
+  return (
+    <>
+     
+      <P marginBottom={0}>
+        How your Bundle will be grouped {keys.length} Bundle Categories
+      </P>
       <BundleGroupingWarning NumItems={keys.length} />
-      <Table my={20} w={"70%"} mx={'15%'} >
-        <thead>
-          <tr>
-            <th>
-              How your Bundle will be grouped {keys.length} Bundle Categories
-            </th>
-          </tr>
-        </thead>
+    </>
+  );
+};
+
+const ContainerBottomSection = ({ keys }) => {
+  return (
+    <Wrapper px="xl">
+      
+      <Table my={0}>
         <tbody>
           {keys.map((key, index) => (
             <tr key={index}>
@@ -81,6 +124,6 @@ export const DisplayKeys = ({ switchValue }) => {
           ))}
         </tbody>
       </Table>
-    </>
+    </Wrapper>
   );
 };

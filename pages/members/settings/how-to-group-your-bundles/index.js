@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Meta from "../../../../components/Layouts/Meta";
-import { Group, Paper, Switch } from "@mantine/core";
+import { Group, Switch } from "@mantine/core";
 import { P, PageTitle } from "../../../../components/Members/Common/Type";
 import { MembersWrapper } from "../../../../components/Members/Common/Containers";
 import SetupCheck from "../../../../components/Members/Account/HOC/SetupCheck";
@@ -11,6 +11,7 @@ import { useAccountDetails } from "../../../../lib/userContext";
 import { DisplayKeys } from "../../../../components/pages/members/settings/how-to-group-your-bundles/_components/DisplayKeys";
 import { IconSettings } from "@tabler/icons";
 import { BackToSettings } from "../../../../components/pages/members/settings/_components/BackToSettings";
+import { RoundedSectionContainer } from "../../../../components/UI/Containers/SectionContainer";
 
 const GroupBySwitch = () => {
   const { account } = useAccountDetails();
@@ -68,38 +69,28 @@ const GroupBySwitch = () => {
         <SetupCheck>
           <LoadingStateWrapper conditions={[account]}>
             <PageTitle
-              Copy={`Grouping your Bundles`}
+              Copy={`Settings - Bundle Grouping `}
               ICON={<IconSettings size={40} />}
             />
             <BackToSettings />
-            <P>
-              Adjust your bundle grouping settings to organize account bundles
-              by categories: clubs can sort by age, while associations can
-              organize by competition or grade, ensuring streamlined access and
-              management tailored to your specific needs.
-            </P>
 
-            <Paper radius="md" withBorder shadow="md" mt={20} mb={20} p={10}>
-              <Group position="apart">
-                <P marginBottom={0} Weight={600}>
-                  {settings[AccType].label}
-                </P>
-                <Switch
-                  checked={switchValue}
-                  onChange={(event) =>
-                    handleSwitchChange(event.currentTarget.checked)
-                  }
-                  onLabel={settings[AccType].onLabel}
-                  offLabel={settings[AccType].offLabel}
-                  size="xl"
-                  color="indigo"
-                  labelPosition="left"
+            <RoundedSectionContainer
+              headerContent="Bundle Groupings"
+              topContent={
+                <ContainerTopSection
+                  setting={settings[AccType]}
+                  handleSwitchChange={handleSwitchChange}
+                  switchValue={switchValue}
                 />
-              </Group>
-            </Paper>
-            <P marginBottom={0}>
-              {settings[AccType].descriptions[switchValue]}
-            </P>
+              }
+              bottomContent={
+                <ContainerBottomSection
+                  setting={settings[AccType]}
+                  handleSwitchChange={handleSwitchChange}
+                  switchValue={switchValue}
+                />
+              }
+            />
 
             <DisplayKeys switchValue={switchValue} />
           </LoadingStateWrapper>
@@ -109,3 +100,30 @@ const GroupBySwitch = () => {
   );
 };
 export default GroupBySwitch;
+
+const ContainerBottomSection = ({ setting, switchValue }) => {
+  return (
+    <>
+      <P marginBottom={0}>{setting.descriptions[switchValue]}</P>
+    </>
+  );
+};
+
+const ContainerTopSection = ({ setting, handleSwitchChange, switchValue }) => {
+  return (
+    <Group position="apart">
+      <P marginBottom={0} Weight={600}>
+        {setting.label}
+      </P>
+      <Switch
+        checked={switchValue}
+        onChange={(event) => handleSwitchChange(event.currentTarget.checked)}
+        onLabel={setting.onLabel}
+        offLabel={setting.offLabel}
+        size="xl"
+        color="indigo"
+        labelPosition="left"
+      />
+    </Group>
+  );
+};

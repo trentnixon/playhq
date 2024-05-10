@@ -57,6 +57,31 @@ export const SubHeaders = (props) => {
   );
 };
 
+
+export const SectionHeaders = (props) => {
+  const { Copy, ICON } = props;
+  return (
+    <Container fluid px={0}>
+      <Group my={10} spacing={5}>
+        {ICON}
+        <Title
+          order={5}
+          transform="uppercase"
+          sx={(theme) => ({
+            color: theme.colors.gray[7],
+            fontFamily: theme.fontFamily,
+            marginLeft:'1.5rem',
+            width:'100%',
+            paddingBottom:'0px'
+          })}
+        >
+          {Copy}
+        </Title>
+      </Group>
+    </Container>
+  );
+};
+
 export const H = (props) => {
   const {
     size = "h1",
