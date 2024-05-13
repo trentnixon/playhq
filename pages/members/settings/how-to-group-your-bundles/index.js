@@ -1,10 +1,7 @@
 import { useState } from "react";
-import Meta from "../../../../components/Layouts/Meta";
+
 import { Group, Switch } from "@mantine/core";
 import { P, PageTitle } from "../../../../components/Members/Common/Type";
-import { MembersWrapper } from "../../../../components/Members/Common/Containers";
-import SetupCheck from "../../../../components/Members/Account/HOC/SetupCheck";
-import { LoadingStateWrapper } from "../../../../components/Members/Account/HOC/LoadingStateWrapper";
 import { FindAccountType } from "../../../../lib/actions";
 import { useSetGroupAssetsBySetting } from "../../../../Hooks/useAccountSettings";
 import { useAccountDetails } from "../../../../lib/userContext";
@@ -12,6 +9,8 @@ import { DisplayKeys } from "../../../../components/pages/members/settings/how-t
 import { IconSettings } from "@tabler/icons";
 import { BackToSettings } from "../../../../components/pages/members/settings/_components/BackToSettings";
 import { RoundedSectionContainer } from "../../../../components/UI/Containers/SectionContainer";
+import SecureRouteHOC from "../../../../components/Layouts/members/security/SecureRouteHC";
+import { PageMetaData } from "../../../../components/Layouts/members/Meta/pageMetaData";
 
 const GroupBySwitch = () => {
   const { account } = useAccountDetails();
@@ -57,46 +56,42 @@ const GroupBySwitch = () => {
     putGroupAssetsBy(newValue);
   };
 
+  const MetaOBJ = {
+    title: "How to Group your Bundles - Fixtura",
+    description: "How to Group your Bundles",
+    keywords: "How to group your Fixtura Bundles",
+  };
+
   return (
-    <>
-      <MembersWrapper>
-        <Meta
-          title="Member Downloads - Fixtura: Access Your Bundles"
-          description="Download your purchased bundles and resources as a Fixtura member. Enhance your club's digital media with our exclusive content."
-          keywords="Member downloads, Fixtura bundles, sports media resources, club content download, digital bundles"
-        />
+    <SecureRouteHOC conditions={[account]}>
+      <PageMetaData MetaOBJ={MetaOBJ} />
 
-        <SetupCheck>
-          <LoadingStateWrapper conditions={[account]}>
-            <PageTitle
-              Copy={`Settings - Bundle Grouping `}
-              ICON={<IconSettings size={40} />}
-            />
-            <BackToSettings />
+      <PageTitle
+        Copy={`Settings - Bundle Grouping `}
+        ICON={<IconSettings size={40} />}
+      />
+      <BackToSettings />
 
-            <RoundedSectionContainer
-              headerContent="Bundle Groupings"
-              topContent={
-                <ContainerTopSection
-                  setting={settings[AccType]}
-                  handleSwitchChange={handleSwitchChange}
-                  switchValue={switchValue}
-                />
-              }
-              bottomContent={
-                <ContainerBottomSection
-                  setting={settings[AccType]}
-                  handleSwitchChange={handleSwitchChange}
-                  switchValue={switchValue}
-                />
-              }
-            />
+      <RoundedSectionContainer
+        headerContent="Bundle Groupings"
+        topContent={
+          <ContainerTopSection
+            setting={settings[AccType]}
+            handleSwitchChange={handleSwitchChange}
+            switchValue={switchValue}
+          />
+        }
+        bottomContent={
+          <ContainerBottomSection
+            setting={settings[AccType]}
+            handleSwitchChange={handleSwitchChange}
+            switchValue={switchValue}
+          />
+        }
+      />
 
-            <DisplayKeys switchValue={switchValue} />
-          </LoadingStateWrapper>
-        </SetupCheck>
-      </MembersWrapper>
-    </>
+      <DisplayKeys switchValue={switchValue} />
+    </SecureRouteHOC>
   );
 };
 export default GroupBySwitch;

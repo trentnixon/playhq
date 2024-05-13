@@ -16,8 +16,13 @@ import { BTN_TOEXTLINK } from "../../components/Members/Common/utils/Buttons";
 import Meta from "../../components/Layouts/Meta";
 import { MembersPreviewShell } from "../../components/Members/GraphicsPackage/PreviewShell";
 import { AccountLogo } from "../../components/Members/Design/AddLogo";
-import { IconError404, IconPhoto, IconScissors, IconSettingsAutomation, IconTemplate, IconUpload } from "@tabler/icons-react";
-import { IconMessageCircle } from "@tabler/icons-react";
+import {
+  IconScissors,
+  IconSettingsAutomation,
+  IconTemplate,
+  IconUpload,
+} from "@tabler/icons-react";
+
 import { UpdateYourTheme } from "../../components/Members/GraphicsPackage/UpdateYourTheme";
 import { FixturaDivider } from "../../components/Members/Common/Divider";
 import { IconColorSwatch } from "@tabler/icons-react";
@@ -77,64 +82,13 @@ const Design = ({ Response }) => {
         </PageCopyWrapper>
         <Space h={20} />
         <Grid>
-          <Grid.Col sm={12} md={6}>
-            <MembersPreviewShell 
-              key={playerKey}
-              userAccount={userAccount}
-              selectedAsset={selectedAsset}
-              selectedHeroImage={selectedHeroImage}
+        <Grid.Col span={12}>
+           
+
+            <SubHeaders
+              Copy={"Template Selection"}
+              ICON={<IconTemplate size={30} />}
             />
-          </Grid.Col>
-          <Grid.Col sm={12} md={6}>
-            <Tabs defaultValue="setting" variant="pills" color="blue">
-              <Paper
-                p={"xs"}
-                sx={(theme) => ({
-                  backgroundColor: theme.colors.gray[3],
-                })}
-              >
-                <Tabs.List grow position="center">
-                  <Tabs.Tab
-                    value="setting"
-                    icon={<IconSettingsAutomation size="1.1rem" />}
-                  >
-                    Preview Settings
-                  </Tabs.Tab>
-                  <Tabs.Tab value="gallery" icon={<IconColorSwatch  size="1.1rem" />}>
-                    Update Theme
-                  </Tabs.Tab>
-                  <Tabs.Tab
-                    value="messages"
-                    icon={<IconUpload  size="1.1rem" />}
-                  >
-                    Update Logo
-                  </Tabs.Tab>
-                </Tabs.List>
-              </Paper>
-              <Tabs.Panel value="setting" pt="xs">
-                <PreviewControls
-                  setSelectedAsset={setSelectedAsset}
-                  selectedAsset={selectedAsset}
-                  userAccount={userAccount}
-                  selectedHeroImage={selectedHeroImage}
-                  setHeroImage={setHeroImage}
-                />
-              </Tabs.Panel>
-              <Tabs.Panel value="gallery" pt="xs">
-                <UpdateYourTheme />
-              </Tabs.Panel>
-
-              <Tabs.Panel value="messages" pt="xs">
-                <Paper>
-                  <AccountLogo />
-                </Paper>
-              </Tabs.Panel>
-            </Tabs>
-          </Grid.Col>
-          <Grid.Col span={12}>
-            <FixturaDivider />
-
-            <SubHeaders Copy={"Template Selection"} ICON={<IconTemplate size={30} />}/>
             <P>
               Browse through a diverse range of pre-designed templates. Our
               selection caters to various styles and preferences, offering
@@ -148,10 +102,31 @@ const Design = ({ Response }) => {
               }
             />
           </Grid.Col>
+          <Grid.Col sm={12} md={6}>
+            <MembersPreviewShell
+              key={playerKey}
+              userAccount={userAccount}
+              selectedAsset={selectedAsset}
+              selectedHeroImage={selectedHeroImage}
+            />
+          </Grid.Col>
+          <Grid.Col sm={12} md={6}>
+            <PreviewControls
+              setSelectedAsset={setSelectedAsset}
+              selectedAsset={selectedAsset}
+              userAccount={userAccount}
+              selectedHeroImage={selectedHeroImage}
+              setHeroImage={setHeroImage}
+            />
+          </Grid.Col>
+          
         </Grid>
 
         <PageCopyWrapper>
-          <SubHeaders Copy={"Bespoken Graphics"} ICON={<IconScissors size={30} />}/>
+          <SubHeaders
+            Copy={"Bespoken Graphics"}
+            ICON={<IconScissors size={30} />}
+          />
           <P>
             For a truly unique and tailored feel, collaborate with us to craft
             bespoke graphics that resonate with your organization's brand and

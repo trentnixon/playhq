@@ -19,6 +19,13 @@ import { BTN_ONCLICK } from "../../Common/utils/Buttons";
 import { P, SubHeaders } from "../../Common/Type";
 import { IconError404 } from "@tabler/icons-react";
 
+
+/*
+  !IMOPORTANT!
+  THIS FILE NEEDS TO BE MOVED TO A UTILS FOLDER
+
+*/
+
 export function StrapiImageUploader({ setLogo, setLogoPath, SAVEDLOGO }) {
   const theme = useMantineTheme();
   // useSTate

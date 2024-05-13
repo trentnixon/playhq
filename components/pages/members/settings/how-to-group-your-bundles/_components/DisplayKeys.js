@@ -1,4 +1,4 @@
-import { Space, Table } from "@mantine/core";
+import { Table } from "@mantine/core";
 import {
   FindAccountType,
   FindAccountTypeOBJ,
@@ -61,44 +61,17 @@ export const DisplayKeys = ({ switchValue }) => {
   const keys = Object.keys(groupedComps);
 
   return (
-    <>
-      <RoundedSectionContainer
-        headerContent="Expected Grouping"
-        topContent={<ContainerTopSection keys={keys} />}
-        bottomContent={<ContainerBottomSection keys={keys} />}
-      />
-      {/* <SectionHeaders Copy={"Expected Grouping"} /> */}
-      {/*  <Wrapper px="xl">
-        <BundleGroupingWarning NumItems={keys.length} />
-        <Table my={20}>
-          <thead>
-            <tr>
-              <th>
-                How your Bundle will be grouped {keys.length} Bundle Categories
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {keys.map((key, index) => (
-              <tr key={index}>
-                <td>
-                  <P textAlign="left" marginBottom={0}>
-                    {decodeURIComponent(key)}
-                  </P>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </Table>
-      </Wrapper> */}
-    </>
+    <RoundedSectionContainer
+      headerContent="Expected Grouping"
+      topContent={<ContainerTopSection keys={keys} />}
+      bottomContent={<ContainerBottomSection keys={keys} />}
+    />
   );
 };
 
 const ContainerTopSection = ({ keys }) => {
   return (
     <>
-     
       <P marginBottom={0}>
         How your Bundle will be grouped {keys.length} Bundle Categories
       </P>
@@ -110,7 +83,6 @@ const ContainerTopSection = ({ keys }) => {
 const ContainerBottomSection = ({ keys }) => {
   return (
     <Wrapper px="xl">
-      
       <Table my={0}>
         <tbody>
           {keys.map((key, index) => (

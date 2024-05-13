@@ -34,9 +34,9 @@ const innerSectionStyles = (theme) => ({
   borderBottom: `1px solid ${theme.colors.gray[3]}`,
   width: '100%',
 });
-export const RoundedSectionContainer = ({ headerContent, topContent, bottomContent }) => (
+export const RoundedSectionContainer = ({ headerContent, topContent, bottomContent,ICON=null }) => (
   <>
-    <SectionHeaders Copy={headerContent} />
+    <SectionHeaders Copy={headerContent} ICON={ICON} />
     <Container p={3} fluid sx={sectionStyles}>
       <Container size="xl" p={0}>
         <Wrapper px="xl">{topContent}</Wrapper>

@@ -17,11 +17,10 @@ import { useAccountDetails } from "../../../lib/userContext";
 import { P, SubHeaders } from "../Common/Type";
 import { DisplayCustomTheme } from "../Common/Customiser/Design/Components/DisplayCustomTheme";
 import { CreateNewTheme } from "../Common/Customiser/Design/Components/CreateNewTheme";
-import { FixturaDivider } from "../Common/Divider";
 import { useMediaQuery } from "@mantine/hooks";
 import { FixturaLoading } from "../Common/Loading";
 import { IconColorSwatch, IconFileDownload } from "@tabler/icons-react";
-
+ 
 export const UpdateYourTheme = () => {
   const { account, ReRender } = useAccountDetails();
   const [userAccount, setuserAccount] = useState(account);
@@ -135,7 +134,7 @@ const TableRow = ({ item, userAccount, StoreUSerChange }) => {
   return (
     <tr>
       <td>
-        <P marginBottom={0} color={isSelected ? 2 : 2}>
+        <P marginBottom={3} color={isSelected ? 9 : 6} Weight={isSelected ? 900 : 400}>
           {item.attributes.Name}
         </P>
       </td>

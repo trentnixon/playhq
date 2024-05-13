@@ -69,7 +69,7 @@ export function UserDetailsCard({ user }) {
     </Card>
   );
 }
-  
+
 const NoUser = () => <span>No user object provided</span>;
 const Subscribed = ({ user }) => <IsUserSubscriptionDetails user={user} />;
 const PendingActivation = ({ user }) => <AwaitingActivation user={user} />; // Example usage
@@ -80,7 +80,6 @@ const PendingSubscriber = ({ user }) => (
 const EndedTrial = ({ user }) => <SideBarTrialNotification user={user} />;
 const ActiveTrial = ({ user }) => (
   <>
-    <SideBarTrialNotification user={user} />{" "}
     <IsUserSubscriptionDetails user={user} />
   </>
 );

@@ -3,9 +3,7 @@ import { P } from "../../../../Members/Common/Type";
 import { BTN_TOINTERALLINK } from "../../../../Members/Common/utils/Buttons";
 import { useAccountDetails } from "../../../../../lib/userContext";
 import { FindAccountType } from "../../../../../lib/actions";
-import {
-  RoundedSectionContainer,
-} from "../../../../UI/Containers/SectionContainer";
+import { RoundedSectionContainer } from "../../../../UI/Containers/SectionContainer";
 
 export const Setting_GroupBy = () => {
   const { account } = useAccountDetails();
@@ -58,7 +56,7 @@ const ContainerTopSection = () => {
         Select how your weekly bundles will be grouped
       </P>
       <BTN_TOINTERALLINK
-        LABEL={"Change"}
+        LABEL={"Group by"}
         URL={"/members/settings/how-to-group-your-bundles/"}
       />
     </Group>
@@ -66,5 +64,9 @@ const ContainerTopSection = () => {
 };
 
 const ContainerBottomSection = ({ string }) => {
-  return <P marginBottom={0}>{string}</P>;
+  return (
+    <>
+      <P marginBottom={0}>{string}</P>
+    </>
+  );
 };

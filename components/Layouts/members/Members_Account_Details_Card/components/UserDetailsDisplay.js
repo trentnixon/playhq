@@ -1,5 +1,6 @@
 import { Avatar, Text } from "@mantine/core";
 import { useMemo } from "react";
+import { CTAIconBundle } from "./IconBundle";
 
 export const UserDetailsDisplay = ({ user }) => {
   const AccountTypeDetails = useMemo(() => {
@@ -21,12 +22,13 @@ export const UserDetailsDisplay = ({ user }) => {
         mx="auto"
         mt={-30}
       />
-      <Text ta="center" fz="lg" fw={500} mt="sm">
+      <CTAIconBundle />
+      <Text ta="center" fz="lg" fw={500} mt={0}>
         {AccountTypeDetails?.Name}
       </Text>
       <Text ta="center" fz="sm" c="dimmed">
         {AccountType}
       </Text>
     </>
-  ); 
+  );
 };

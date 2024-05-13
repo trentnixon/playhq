@@ -1,15 +1,7 @@
-import {
-  Avatar,
-  Container,
-  Group,
-  Space,
-  Text,
-  Title,
-  useMantineTheme,
-} from "@mantine/core";
-import { Wrapper } from "./Containers";
+import { Avatar, Container, Group, Space, Text, Title } from "@mantine/core";
+
 import { useMediaQuery } from "@mantine/hooks";
-import { Gradient } from "../../../utils/Gradient";
+
 export const PageTitle = (props) => {
   const { Copy, ICON } = props;
 
@@ -57,22 +49,22 @@ export const SubHeaders = (props) => {
   );
 };
 
-
 export const SectionHeaders = (props) => {
-  const { Copy, ICON } = props;
+  const { Copy } = props;
   return (
     <Container fluid px={0}>
-      <Group my={10} spacing={5}>
-        {ICON}
+      <Group my={10} spacing={5} position="left">
         <Title
           order={5}
           transform="uppercase"
           sx={(theme) => ({
             color: theme.colors.gray[7],
             fontFamily: theme.fontFamily,
-            marginLeft:'1.5rem',
-            width:'100%',
-            paddingBottom:'0px'
+            marginLeft: "1.5rem",
+            width: "100%",
+            paddingBottom: "0px",
+            alignItems: "center",
+            display: "flex",
           })}
         >
           {Copy}

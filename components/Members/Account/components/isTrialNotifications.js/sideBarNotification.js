@@ -16,7 +16,7 @@ export const SideBarTrialNotification = ({ user }) => {
     active_trial: {
       label: "Free trial is Active",
       backgroundColor: theme.colors.green[1],
-      text: "Trial Version",
+      text: "Trial Version...",
     },
     ended_trial: {
       label:
