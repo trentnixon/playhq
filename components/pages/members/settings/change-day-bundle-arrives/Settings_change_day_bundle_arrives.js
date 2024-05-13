@@ -1,4 +1,4 @@
-import { Group } from "@mantine/core";
+import { Group, Paper, Progress, Text, ThemeIcon, rem } from "@mantine/core";
 import { P } from "../../../../Members/Common/Type";
 import { BTN_TOINTERALLINK } from "../../../../Members/Common/utils/Buttons";
 import { useAccountDetails } from "../../../../../lib/userContext";
@@ -11,11 +11,13 @@ export const Settings_change_day_bundle_arrives = () => {
   if (!account?.attributes) return;
 
   return (
-    <RoundedSectionContainer
-      headerContent="Asset Delivery"
-      topContent={<ContainerTopSection />}
-      bottomContent={<ContainerBottomSection />}
-    />
+    <>
+      <RoundedSectionContainer
+        headerContent="Asset Delivery"
+        topContent={<ContainerTopSection />}
+        bottomContent={<ContainerBottomSection />}
+      />
+    </>
   );
 };
 
