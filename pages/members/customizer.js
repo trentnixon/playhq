@@ -82,9 +82,7 @@ const Design = ({ Response }) => {
         </PageCopyWrapper>
         <Space h={20} />
         <Grid>
-        <Grid.Col span={12}>
-           
-
+          <Grid.Col span={12}>
             <SubHeaders
               Copy={"Template Selection"}
               ICON={<IconTemplate size={30} />}
@@ -119,7 +117,6 @@ const Design = ({ Response }) => {
               setHeroImage={setHeroImage}
             />
           </Grid.Col>
-          
         </Grid>
 
         <PageCopyWrapper>

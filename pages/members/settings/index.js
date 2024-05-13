@@ -5,7 +5,7 @@ import { Setting_GroupBy } from "../../../components/pages/members/settings/how-
 import SecureRouteHOC from "../../../components/Layouts/members/security/SecureRouteHC";
 import { Settings_change_day_bundle_arrives } from "../../../components/pages/members/settings/change-day-bundle-arrives/Settings_change_day_bundle_arrives";
 import { Divider } from "@mantine/core";
-import { Setting_change_brand_logo } from "../../../components/pages/members/settings/change-brand-logo/setting_change_brand_logo";
+import { Setting_change_brand_logo } from "../../../components/pages/members/settings/change-brand-logo/Setting_change_brand_logo";
 import { Setting_change_brand_Colors } from "../../../components/pages/members/settings/change-brand-colors/Setting_change_brand_Colors";
 
 const Settings = () => {
