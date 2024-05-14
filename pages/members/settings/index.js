@@ -6,6 +6,7 @@ import {
   IconColorSwatch,
   IconPhoto,
   IconSettings,
+  IconTools,
 } from "@tabler/icons-react";
 import SecureRouteHOC from "../../../components/Layouts/members/security/SecureRouteHC";
 import { Group, Paper, SimpleGrid, Text, ThemeIcon, rem } from "@mantine/core";
@@ -13,6 +14,7 @@ import { Group, Paper, SimpleGrid, Text, ThemeIcon, rem } from "@mantine/core";
 import { useStyles } from "../../../components/pages/members/index/Dashboard/DashboardCardStyles";
 import { BTN_TOINTERALLINK } from "../../../components/Members/Common/utils/Buttons";
 import { IconStack } from "@tabler/icons-react";
+import { IconUsers } from "@tabler/icons";
 
 //import { Settings_change_day_bundle_arrives } from "../../../components/pages/members/settings/change-day-bundle-arrives/Settings_change_day_bundle_arrives";
 //import { Setting_GroupBy } from "../../../components/pages/members/settings/how-to-group-your-bundles/Settings_GroupBy";
@@ -26,30 +28,52 @@ const Settings = () => {
       description: "Select a day you would like your bundles to arrive.",
       link: "/members/settings/change-day-bundle-arrives/",
       label: "Set Delivery Day",
-      icon: <IconBrandDaysCounter size={40} stroke={1.5} />,
+      icon: <IconBrandDaysCounter size={40} stroke={1.5} />
     },
     {
       title: "Grouping Bundles",
       description: "Configure how your bundles are grouped.",
       link: "/members/settings/how-to-group-your-bundles/",
       label: "Group Bundles",
-      icon: <IconStack size={40} stroke={1.5} />,
+      icon: <IconStack size={40} stroke={1.5} />
     },
     {
       title: "Brand Logo",
       description: "Update your club's brand logo.",
       link: "/members/settings/change-brand-logo/",
       label: "Update Logo",
-      icon: <IconPhoto size={40} stroke={1.5} />,
+      icon: <IconPhoto size={40} stroke={1.5} />
     },
     {
       title: "Brand Colors",
       description: "Customize your brand's primary and secondary colors.",
       link: "/members/settings/change-brand-colors/",
       label: "Customize Colors",
-      icon: <IconColorSwatch size={40} stroke={1.5} />,
+      icon: <IconColorSwatch size={40} stroke={1.5} />
     },
+    {
+      title: "Sponsors",
+      description: "Add or update your club's sponsors.",
+      link: "/members/settings/sponsors/",
+      label: "Manage Sponsors",
+      icon: <IconUsers size={40} stroke={1.5} />
+    },
+    {
+      title: "Media/Images",
+      description: "Manage your club's media and image libraries.",
+      link: "/members/settings/media-images/",
+      label: "Update Media",
+      icon: <IconPhoto size={40} stroke={1.5} />
+    },
+    {
+      title: "Template Customization",
+      description: "Customize templates for your digital assets and communications.",
+      link: "/members/settings/template-customization/",
+      label: "Customize Templates",
+      icon: <IconTools size={40} stroke={1.5} />
+    }
   ];
+  
 
   return (
     <SecureRouteHOC>
