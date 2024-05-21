@@ -1,15 +1,13 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { Group } from "@mantine/core";
-
 import { DetailsForm } from "./DetailsForm";
-
 import { BTN_ONCLICK } from "../../../Members/Common/utils/Buttons";
 import { FixturaLoading } from "../../../Members/Common/Loading";
 import { useAccountDetails } from "../../../../lib/userContext";
 import { useSetImage, useUpdateSetImage } from "../../../../Hooks/useGalleryImage";
-import StrapiImageUploader from "../../../Members/Sponsors/Form/ImageUploader";
 
+import StrapiImageUploader from "../sponsors/Form/ImageUploader";
 export function MediaGalleryFileUpload({ ITEMCOUNT }) {
   const MAX_UPLOADS = 25;
   const { account } = useAccountDetails();

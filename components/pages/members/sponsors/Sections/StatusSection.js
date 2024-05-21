@@ -1,10 +1,11 @@
 import { Group, Paper } from "@mantine/core";
+import Link from "next/link";
 import { useMantineTheme } from "@mantine/styles";
-import { P } from "../../Common/Type";
 import { IconCheck } from "@tabler/icons";
 import { IconInfoHexagon } from "@tabler/icons-react";
-import Link from "next/link";
 import { useMediaQuery } from "@mantine/hooks";
+import { P } from "../../../../Members/Common/Type";
+import { BTN_TOINTERALLINK } from "../../../../Members/Common/utils/Buttons";
 
 export const StatusSection = ({ account, Sponsors, SPONSORLIMIT }) => {
   const includesSponsors =
@@ -13,8 +14,8 @@ export const StatusSection = ({ account, Sponsors, SPONSORLIMIT }) => {
   const matches = useMediaQuery("(min-width: 48em)");
   return (
     <>
-      <Group position="apart" my={10}>
-      <Paper
+      <Group position="right" my={10}>
+        <Paper
           shadow="lg"
           p="md"
           withBorder
@@ -25,18 +26,23 @@ export const StatusSection = ({ account, Sponsors, SPONSORLIMIT }) => {
           })}
         >
           <P
-            color={'white'}
+            color={0}
             marginBottom={0}
             Copy={`${SPONSORLIMIT - Sponsors.length} spaces remaining`}
           />
         </Paper>
-        <Paper
+        {/* <BTN_TOINTERALLINK
+              LABEL="Sponsor Allocation"
+              URL="/members/sponsors/allocation/"
+              THEME="success"
+            /> */}
+       {/*  <Paper
           shadow="lg"
           p="md"
           withBorder
           radius="md"
           sx={(theme) => ({
-            backgroundColor: includesSponsors
+             backgroundColor: includesSponsors
               ? theme.colors.green[7]
               : theme.colors.red[7],
             display: "flex",
@@ -46,7 +52,8 @@ export const StatusSection = ({ account, Sponsors, SPONSORLIMIT }) => {
           })}
         >
           <Group position="apart" noWrap>
-            <P color={'white'} marginBottom={0}>
+            
+            <P color={0} marginBottom={0}>
               {includesSponsors
                 ? "Sponsors included in subscription"
                 : "Sponsors not included in your subscription"}
@@ -57,8 +64,7 @@ export const StatusSection = ({ account, Sponsors, SPONSORLIMIT }) => {
               <IconInfoHexagon size={20} color={theme.colors.yellow[5]} />
             )}
           </Group>
-        </Paper>
-        
+        </Paper> */}
       </Group>
       {!includesSponsors && (
         <Paper
@@ -75,7 +81,7 @@ export const StatusSection = ({ account, Sponsors, SPONSORLIMIT }) => {
             Sponsors are currently not available under your current subscription
             package. However, feel free to add your sponsors, and when you are
             ready to include them in your online assets, visit your{" "}
-            <Link  legacyBehavior href={`/members/account/`}>
+            <Link legacyBehavior href={`/members/account/`}>
               <a>account page</a>
             </Link>{" "}
             to upgrade your subscription.

@@ -1,5 +1,5 @@
 import { Container, Group } from "@mantine/core";
-import { P } from "../../Common/Type";
+import { P } from "../../../../Members/Common/Type";
 
 export const CreateFirstSponsor = (props) => {
   return (

@@ -1,5 +1,5 @@
 import { Box, Image } from "@mantine/core";
-import { BTN_ONCLICK } from "../../Common/utils/Buttons";
+import { BTN_ONCLICK } from "../../../../Members/Common/utils/Buttons";
 
 export const DisplaySponsorsLogo = ({ LOGO, setLogoPath }) => {
   const USELOGO =
@@ -42,8 +42,7 @@ export const DisplaySponsorsLogo = ({ LOGO, setLogoPath }) => {
           radius={10}
         />
       </div>
-      <BTN_ONCLICK
-        LABEL={`Change`}
+      <BTN_ONCLICK        LABEL={`Change`}
         HANDLE={() => {
           setLogoPath(false);
         }}

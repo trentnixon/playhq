@@ -20,6 +20,7 @@ const UserVerification = () => {
     
       if (user === null || user === undefined) {
         console.error("User is null or undefined");
+        await router.push("/");
         return;
       }
     

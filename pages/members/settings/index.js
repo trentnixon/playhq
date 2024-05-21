@@ -54,14 +54,14 @@ const Settings = () => {
     {
       title: "Sponsors",
       description: "Add or update your club's sponsors.",
-      link: "/members/settings/sponsors/",
+      link: "/members/sponsors/",
       label: "Manage Sponsors",
       icon: <IconUsers size={40} stroke={1.5} />
     },
     {
       title: "Media/Images",
       description: "Manage your club's media and image libraries.",
-      link: "/members/settings/media-images/",
+      link: "/members/gallery/",
       label: "Update Media",
       icon: <IconPhoto size={40} stroke={1.5} />
     },

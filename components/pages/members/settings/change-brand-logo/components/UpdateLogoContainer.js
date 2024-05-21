@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import StrapiImageUploader from "../../../../../Members/Sponsors/Form/ImageUploader";
+import StrapiImageUploader from "../../../sponsors/Form/ImageUploader";
 import { useAccountDetails } from "../../../../../../lib/userContext";
 
 import {

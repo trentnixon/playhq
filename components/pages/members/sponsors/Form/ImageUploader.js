@@ -7,18 +7,12 @@ import {
   useMantineTheme,
 } from "@mantine/core";
 import { IconUpload, IconCircleCheck } from "@tabler/icons";
-import {
-  Dropzone,
-  DropzoneProps,
-  DropzoneStatus,
-  MIME_TYPES,
-} from "@mantine/dropzone";
-import { useUploadImageViaDropzone } from "../../../../Hooks/useUploadViaDropzone";
+import { Dropzone, MIME_TYPES } from "@mantine/dropzone";
+import { useUploadImageViaDropzone } from "../../../../../Hooks/useUploadViaDropzone";
 import { useEffect, useState } from "react";
-import { BTN_ONCLICK } from "../../Common/utils/Buttons";
-import { P, SubHeaders } from "../../Common/Type";
+import { BTN_ONCLICK } from "../../../../Members/Common/utils/Buttons";
+import { P, SubHeaders } from "../../../../Members/Common/Type";
 import { IconError404 } from "@tabler/icons-react";
-
 
 /*
   !IMOPORTANT!
@@ -58,7 +52,7 @@ export function StrapiImageUploader({ setLogo, setLogoPath, SAVEDLOGO }) {
         textAlign: "center",
       })}
     >
-      <Dropzone 
+      <Dropzone
         onDrop={(files) => handleFileUpload(files)}
         onReject={(files) => {
           setRejected(files);

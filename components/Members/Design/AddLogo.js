@@ -21,8 +21,9 @@ import { BTN_ONCLICK } from "../Common/utils/Buttons";
 import { useSetLogo } from "../../../Hooks/useOrganisationLogo";
 import { IconUpload } from "@tabler/icons";
 import { useMediaQuery } from "@mantine/hooks";
-import StrapiImageUploader from "../Sponsors/Form/ImageUploader";
+
 import { IconPhotoFilled } from "@tabler/icons-react";
+import StrapiImageUploader from "../../pages/members/sponsors/Form/ImageUploader";
 
 export const AccountLogo = () => {
   const theme = useMantineTheme();
@@ -47,7 +48,7 @@ export const AccountLogo = () => {
     setLogoToAccount(
       FindAccountTypeOBJ(userAccount).id,
       OBJ,
-      FindAccountTypeAPI(userAccount)
+      FindAccountTypeAPI(userAccount) 
     );
     setUploadedLogo(LogoPath[0]?.url); // Save the path of the newly uploaded logo
     ReRender();

@@ -256,7 +256,7 @@ const MembersNavItem = ({ user, setMenu }) => {
     },
     {
       href: `${PATH}/sponsors`,
-      title: "Add Sponsors",
+      title: "Manage Sponsors",
       IconComponent: IconCheck,
     },
 

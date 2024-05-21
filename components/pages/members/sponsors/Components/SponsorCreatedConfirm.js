@@ -1,9 +1,9 @@
 import { Avatar, Center, Group } from "@mantine/core";
 import { IconCheck } from "@tabler/icons";
-import { P } from "../../Common/Type";
-import { BTN_ONCLICK } from "../../Common/utils/Buttons";
 
-export const SponsorCreatedConfirm = ({ Sponsor,setIsCreate }) => {
+import { P } from "../../../../Members/Common/Type";
+
+export const SponsorCreatedConfirm = ({ Sponsor, setIsCreate }) => {
   return (
     <>
       <Center>

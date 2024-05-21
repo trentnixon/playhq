@@ -1,6 +1,6 @@
 import { Box } from "@mantine/core";
 import { useState } from "react";
-import { P } from "../../Common/Type";
+import { P } from "../../../../Members/Common/Type";
 
 export const InputFormContainer = ({ Input, FORMMETA, setFORMMETA }) => {
   const [error, setError] = useState(null);

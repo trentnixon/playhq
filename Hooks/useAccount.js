@@ -38,6 +38,7 @@ export const useAccount = (ctx) => {
         "orders.subscription_tier",
         "sponsors",
         "sponsors.Logo",
+        "sponsors.sponsorship_allocations",
         "subscription_tier",
         "account_media_libraries",
         "account_media_libraries.imageId",

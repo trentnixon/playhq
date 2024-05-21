@@ -1,27 +1,26 @@
+import { useEffect, useState } from "react";
 import {
   createStyles,
   Table,
   Image,
   Avatar,
-  Group,
   Box,
   Container,
 } from "@mantine/core";
 import { useListState, useMediaQuery } from "@mantine/hooks";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
-import { IconCheck, IconCross, IconGripVertical } from "@tabler/icons";
-import { BTN_ONCLICK } from "../../Common/utils/Buttons";
-import { useEffect, useState } from "react";
-import { useAccountDetails } from "../../../../lib/userContext";
+import { IconCheck, IconGripVertical } from "@tabler/icons";
+import { BTN_ONCLICK } from "../../../../Members/Common/utils/Buttons";
 
 import {
   useUpdateSponsor,
   useDeleteSponsor,
-} from "../../../../Hooks/useSponsorships";
+} from "../../../../../Hooks/useSponsorships";
 import { EditSponsor } from "./EditSponsor";
-import { SponsorDeleteBtn } from "./SponsorDeleteBtn";
-import { P } from "../../Common/Type";
+
 import { IconX } from "@tabler/icons-react";
+import { useAccountDetails } from "../../../../../lib/userContext";
+import { P } from "../../../../Members/Common/Type";
 
 const useStyles = createStyles((theme) => ({
   item: {
@@ -253,7 +252,7 @@ export function DragnDropSponsorList({ SPONSORS, SPONSORLIMIT }) {
                 <th></th>
 
                 <th style={{ textAlign: "center" }}>
-                  {matches ? <td>Name</td> : <td></td>}{" "}
+                  {matches ? `Name` : false }
                 </th>
                 {matches ? (
                   <th style={{ textAlign: "center" }}>Tagline</th>
@@ -262,7 +261,7 @@ export function DragnDropSponsorList({ SPONSORS, SPONSORLIMIT }) {
                 )}
 
                 <th style={{ textAlign: "center" }}>
-                  {matches ? <td>Primary</td> : <td></td>}{" "}
+                  {matches ? `Primary` :false}
                 </th>
                 {matches ? (
                   <th style={{ textAlign: "center" }}>Videos</th>
@@ -279,9 +278,7 @@ export function DragnDropSponsorList({ SPONSORS, SPONSORLIMIT }) {
                 ) : (
                   false
                 )}
-                <th style={{ textAlign: "center" }}>
-                  {matches ? <td></td> : <td></td>}{" "}
-                </th>
+                <th style={{ textAlign: "center" }}> </th>
               </tr>
             </thead>
             <Droppable droppableId="dnd-list" direction="vertical">
