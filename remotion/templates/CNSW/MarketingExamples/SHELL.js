@@ -16,7 +16,7 @@ export const ExampleSHELL = (props) => {
 
   return (
     <ThemeProvider theme={THEME}>
-      <AbsoluteFill> 
+      <AbsoluteFill>  
         <BGImageAnimation
          HeroImage={DATA.VIDEOMETA.Video.HeroImage}
          TemplateVariation={DATA.VIDEOMETA.Video.TemplateVariation}

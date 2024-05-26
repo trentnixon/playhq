@@ -32,22 +32,20 @@ function MyApp({ Component, pageProps }) {
 
   useEffect(() => {
     AOS.init();
-  }, []); 
+  }, []);
 
   const getLayout = Component.getLayout || ((page) => <Layout>{page}</Layout>);
- 
+
   return (
-    <>
-      <UserProvider>
-        <AccountDetailsProvider>
-          <MantineProviderWrapper>
-            {getLayout(<Component {...pageProps} />)}
-            <GoTop />
-          </MantineProviderWrapper>
-          <Analytics />
-        </AccountDetailsProvider>
-      </UserProvider>
-    </>
+    <UserProvider>
+      <AccountDetailsProvider>
+        <MantineProviderWrapper>
+          {getLayout(<Component {...pageProps} />)}
+          <GoTop />
+        </MantineProviderWrapper>
+        <Analytics />
+      </AccountDetailsProvider>
+    </UserProvider>
   );
 }
 

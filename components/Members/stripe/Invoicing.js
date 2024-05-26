@@ -27,7 +27,6 @@ import { convertUnixTimestamp } from "../../../lib/actions";
 export const Invoicing = () => {
   const [invoice, getInvoice, loading] = useGetInvoice();
 
-  console.log("invoice ", invoice)
   const theme = useMantineTheme();
   useEffect(() => {
     getInvoice();

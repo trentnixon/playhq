@@ -12,8 +12,7 @@ import { IconFileInvoice, IconCalendarEvent, IconCheck } from "@tabler/icons";
 export const UserSubscriptionActiveDatePending = () => {
   const { account } = useAccountDetails();
   const pendingInvoice = findPendingInvoice(account.attributes.orders.data);
-  console.log("pendingInvoice ", pendingInvoice);
-
+ 
   const startDate = dayjs(pendingInvoice.attributes.startOrderAt).format(
     "MMMM D, YYYY"
   );

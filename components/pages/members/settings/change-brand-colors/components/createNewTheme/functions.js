@@ -1,7 +1,4 @@
-import hexRgb from "hex-rgb";
 export const UseBaseColor = (SetColor) => {
-
-  console.log("SetColor ", SetColor)
   const OBJ = SetColor
     ? SetColor
     : {
@@ -11,7 +8,6 @@ export const UseBaseColor = (SetColor) => {
         a: "1",
       };
 
-  console.log("UseBaseColor FIRED", OBJ);
   return OBJ;
 };
 

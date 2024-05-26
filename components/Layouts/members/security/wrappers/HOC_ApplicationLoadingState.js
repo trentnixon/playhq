@@ -1,9 +1,11 @@
 import { Center, Paper } from "@mantine/core";
 import { FixturaLoading } from "../../../../Members/Common/Loading";
+import { useEffect } from "react";
 
 export const HOC_ApplicationLoadingState = ({ conditions, children }) => {
   const isLoading = conditions.some((condition) => !condition);
 
+  useEffect(()=>{},[conditions])
   return isLoading ? (
     <Paper
       radius="md"

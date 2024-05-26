@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { PageTitle } from "../../components/Members/Common/Type";
 import { IconLayoutDashboard } from "@tabler/icons-react";
 import { Space } from "@mantine/core";
@@ -14,8 +14,14 @@ import { Cards_Branding } from "../../components/pages/members/index/Dashboard/B
 import { FixturaLoading } from "../../components/Members/Common/Loading";
 
 const DashBoard = () => {
-  const { account } = useAccountDetails();
+  const { ReRender, account } = useAccountDetails();
   const { user } = useUser();
+
+  useEffect(() => {
+    if (account === null || account.attributes === null) {
+      ReRender();
+    }
+  }, [account, user]);
 
   if (account === null || account.attributes === null) {
     return <FixturaLoading />;
@@ -37,7 +43,7 @@ const DashBoard = () => {
   return (
     <SecureRouteHOC conditions={[user, account]}>
       <PageMetaData MetaOBJ={MetaOBJ} />
- 
+
       <PageTitle
         Copy={`Hi ${account.attributes.FirstName || ""}`}
         ICON={<IconLayoutDashboard size={40} />}

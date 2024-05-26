@@ -15,17 +15,9 @@ import { LoadingStateWrapper } from "../../components/Members/Account/HOC/Loadin
 import { BTN_TOEXTLINK } from "../../components/Members/Common/utils/Buttons";
 import Meta from "../../components/Layouts/Meta";
 import { MembersPreviewShell } from "../../components/Members/GraphicsPackage/PreviewShell";
-import { AccountLogo } from "../../components/Members/Design/AddLogo";
-import {
-  IconScissors,
-  IconSettingsAutomation,
-  IconTemplate,
-  IconUpload,
-} from "@tabler/icons-react";
 
-import { UpdateYourTheme } from "../../components/Members/GraphicsPackage/UpdateYourTheme";
-import { FixturaDivider } from "../../components/Members/Common/Divider";
-import { IconColorSwatch } from "@tabler/icons-react";
+import { IconScissors, IconTemplate } from "@tabler/icons-react";
+
 const qs = require("qs");
 
 const query = qs.stringify(
@@ -34,9 +26,6 @@ const query = qs.stringify(
       "template",
       "theme",
       "audio_option",
-      "ai_publication",
-      "ai_writting_tone",
-      "ai_writting_style",
       "account_media_libraries",
       "account_media_libraries.imageId",
     ],
@@ -107,7 +96,7 @@ const Design = ({ Response }) => {
               selectedAsset={selectedAsset}
               selectedHeroImage={selectedHeroImage}
             />
-          </Grid.Col>
+          </Grid.Col> 
           <Grid.Col sm={12} md={6}>
             <PreviewControls
               setSelectedAsset={setSelectedAsset}
@@ -188,7 +177,7 @@ const PreviewControls = ({
     { value: "Top5BowlingList", label: "Top 5 Bowling" },
     { value: "Ladder", label: "Ladder" },
   ];
-
+ 
   const handleAssetChange = (value) => {
     setSelectedAsset(value);
   };

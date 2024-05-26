@@ -30,10 +30,6 @@ export const DisplayKeys = ({ switchValue }) => {
 
   if (loadingOrgDetails) return null;
 
-  console.log(
-    "organizationDetails ",
-    organizationDetails?.data?.attributes?.teams?.data
-  );
   // Ensuring useComps is consistently defined
   const useComps =
     organizationDetails?.data?.attributes?.competitions?.data || [];
@@ -45,7 +41,6 @@ export const DisplayKeys = ({ switchValue }) => {
     (comp) => new Date(comp.attributes.endDate) > currentDate
   );
 
-  console.log("AccType ", AccType);
   let groupedComps;
   if (AccType === "Club") {
     groupedComps = switchValue

@@ -13,7 +13,7 @@ export const useGetAIExample = () => {
     setAIExample(true);
     if (user) {
       try {
-        console.log("AI IS RUNNING");
+       
         const response = await fetcher(
           `${process.env.NEXT_PUBLIC_STRAPI_URL}/ai-publication/openai`,
           {

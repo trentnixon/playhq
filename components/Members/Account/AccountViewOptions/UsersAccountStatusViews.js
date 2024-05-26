@@ -23,7 +23,7 @@ export const UsersAccountStatusViews = () => {
   };
    
   useEffect(() => {}, [account]);
-  console.log("getTrialNotificationStatus(account) ", getTrialNotificationStatus(account))
+  //console.log("getTrialNotificationStatus(account) ", getTrialNotificationStatus(account))
   const componentToRender = trialStatusObj[getTrialNotificationStatus(account)];
 
   return (

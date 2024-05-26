@@ -75,7 +75,7 @@ export const AwaitingActivation = ({ user }) => {
   const { statusMessage, statusColor, StatusIcon, Title, startOrderAt } =
     useUserStatus(user);
 
-  console.log("useUserStatus(user) ", useUserStatus(user));
+  //console.log("useUserStatus(user) ", useUserStatus(user));
   return (
     <Box
       sx={(theme) => ({

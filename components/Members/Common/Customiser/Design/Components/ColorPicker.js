@@ -4,7 +4,6 @@ import { ChromePicker } from "react-color";
 
 const SketchExample = ({ UsersTheme, SetColor }) => { 
 
-  console.log({ UsersTheme, SetColor })
   const [displayColorPicker, setDisplayColorPicker] = useState(false);
   const [color, setColor] = useState(UsersTheme);
 

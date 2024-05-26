@@ -41,7 +41,7 @@ export const CreateNewInvoice = (props) => {
     onConfirm(null);
   };
 
-  console.log("loading ", loading);
+
   return (
     <Group position="apart">
       <BTN_ONCLICK

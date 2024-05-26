@@ -39,7 +39,7 @@ export function UserDetailsCard({ user }) {
     account_active_pending: PendingActivation,
   };
 
-  console.log("Side Bar trialNotificationStatus ", trialNotificationStatus);
+  //console.log("Side Bar trialNotificationStatus ", trialNotificationStatus);
   const TrialStatusComponent =
     TRIAL_STATUS_COMPONENTS[trialNotificationStatus] || NoUser;
 
