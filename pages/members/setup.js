@@ -1,17 +1,16 @@
-import React, { useEffect, useState, useCallback } from "react";
+import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { useUser } from "../../lib/authContext";
 import { useAccountDetails } from "../../lib/userContext";
-import { P, PageTitle, SubHeaders } from "../../components/Members/Common/Type";
+import { PageTitle } from "../../components/Members/Common/Type";
 import { Space } from "@mantine/core";
-import { CreateAccountInit } from "../../components/Members/SetupSteps/CreateAccountInit";
-import { SetupStages } from "../../components/Members/SetupSteps/SetupStepper";
-import { ReviewSetupData } from "../../components/Members/SetupSteps/ReviewSetupData";
-import { MembersWrapper } from "../../components/Members/Common/Containers";
 
+import { SetupStages } from "../../components/pages/members/setup/phases/SetupSteps/SetupStepper";
+import { ReviewSetupData } from "../../components/pages/members/setup/phases/SetupSteps/ReviewSetupData";
+import { MembersWrapper } from "../../components/Members/Common/Containers";
 import { IconSettings } from "@tabler/icons-react";
-import { SetUpItemsRequired } from "../../components/setup/SetUpItemsRequired";
 import Meta from "../../components/Layouts/Meta";
+import { InitialSetupScreen } from "../../components/pages/members/setup/phases/init";
 
 const SETUP = () => {
   const router = useRouter();
@@ -43,42 +42,32 @@ const SETUP = () => {
   }
 
   const Content = UserAccount ? (
-    <> 
-      <Meta
-        title="Member Setup - Fixtura: Get Started Effectively"
-        description="Start your journey with Fixtura by setting up your member account. Optimize your sports club's digital media from the get-go."
-        keywords="Member setup, Fixtura account creation, sports media initiation, club content setup, digital onboarding"
-      />
-      <Space h={20} />
-      <SetupStages DATA={UserAccount} setReview={setReview} />
-    </>
+    <SetupStages DATA={UserAccount} setReview={setReview} />
   ) : (
+    <InitialSetupScreen />
+  );
+
+  if (review) return <ReviewSetupData DATA={UserAccount} />;
+
+  return (
+    <MembersWrapper>
+      <SetupMetaData />
+      <PageTitle Copy={"Account Set up"} ICON={<IconSettings size={40} />} />
+      <Space h={20} />
+      {Content}
+    </MembersWrapper>
+  );
+};
+export default SETUP;
+
+const SetupMetaData = () => {
+  return (
     <>
       <Meta
         title="Member Setup - Fixtura: Get Started Effectively"
         description="Start your journey with Fixtura by setting up your member account. Optimize your sports club's digital media from the get-go."
         keywords="Member setup, Fixtura account creation, sports media initiation, club content setup, digital onboarding"
       />
-      <SubHeaders Copy={`Let's set up your account!`} />
-      <P Weight={600}>Items needed to complete the setup:</P>
-      <SetUpItemsRequired />
-      <CreateAccountInit setAccountsetup={ReRender} />{" "}
-      {/* Assuming ReRender fetches and updates account state */}
     </>
-  ); 
-
-  if (review) return <ReviewSetupData DATA={UserAccount} />;
-
-  return ( 
-    <MembersWrapper>
-      <Meta
-        title="Member Setup - Fixtura: Get Started Effectively"
-        description="Start your journey with Fixtura by setting up your member account. Optimize your sports club's digital media from the get-go."
-        keywords="Member setup, Fixtura account creation, sports media initiation, club content setup, digital onboarding"
-      />
-      <PageTitle Copy={"Account Set up"} ICON={<IconSettings size={40} />} />
-      {Content}
-    </MembersWrapper>
   );
 };
-export default SETUP;

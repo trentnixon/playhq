@@ -1,5 +1,5 @@
 import { Progress, Table, Loader, useMantineTheme, Paper } from "@mantine/core";
-import { P } from "../../Common/Type";
+import { P } from "../../../../../../Members/Common/Type";
 
 function SyncProgress({ processingTracker }) {
   const { currentStage, completedStages, pendingStages, ...stages } =

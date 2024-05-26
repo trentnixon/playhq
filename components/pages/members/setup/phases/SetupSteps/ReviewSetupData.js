@@ -14,24 +14,29 @@ import {
   Stack,
   Center,
 } from "@mantine/core";
-import { useAccountDetails } from "../../../lib/userContext";
-import { useDeleteAccount, useSetAccountTrue } from "../../../Hooks/useAccount";
-import { setAccountFromLocalCookie } from "../../../lib/auth";
+import { useAccountDetails } from "../../../../../../lib/userContext";
+import {
+  useDeleteAccount,
+  useSetAccountTrue,
+} from "../../../../../../Hooks/useAccount";
+import { setAccountFromLocalCookie } from "../../../../../../lib/auth";
 import {
   IconCheck,
   IconHome2,
-  IconMailbox, 
+  IconMailbox,
   IconSettings2,
   IconShield,
   IconUser,
   IconUsersGroup,
 } from "@tabler/icons-react";
 import { IconPhoneCall, IconAt } from "@tabler/icons-react";
-import { BTN_ONCLICK } from "../../../components/Members/Common/utils/Buttons";
-import { P, PageTitle } from "../Common/Type";
-import { FixturaLoading } from "../../../components/Members/Common/Loading";
-import { FindAccountLogo } from "../../../lib/actions";
+import { BTN_ONCLICK } from "../../../../../Members/Common/utils/Buttons";
+import { P, PageTitle } from "../../../../../Members/Common/Type";
+import { FixturaLoading } from "../../../../../Members/Common/Loading";
+import { FindAccountLogo } from "../../../../../../lib/actions";
 import { useMediaQuery } from "@mantine/hooks";
+import { PaperWithBorder } from "../../../../../Members/Common/Containers";
+import { RoundedSectionContainer } from "../../../../../UI/Containers/SectionContainer";
 
 const ReviewContainer = ({ OBJ, Title }) => {
   const theme = useMantineTheme();
@@ -137,78 +142,92 @@ export const ReviewSetupData = ({ DATA }) => {
       <Container size="lg" pt={200} pb={70}>
         <FixturaLoading />
       </Container>
-    ); 
+    );
   }
 
   return (
     <Container size="lg" px={0} pt={50} pb={70}>
       <PageTitle Copy="Almost Done" ICON={<IconSettings2 size={40} />} />
 
-      {mobile ? (
-        false
-      ) : (
-        <P>
-          We're excited to learn about your upcoming season, but first, we need
-          to make sure everything is spot on. Take a moment to review the
-          details below. It's vital we get this right, as it will help us tailor
-          your Fixtura experience to your unique needs.
-        </P>
-      )}
-
-      <P Weight={600}>Let's Make Sure Everything's Perfect!</P>
-      {ConfirmReset ? (
-        <ConfirmResetCopy onProceed={handleProceed} />
-      ) : (
-        <ReviewAccontDetails DATA={DATA} />
-      )}
-
-      <Space h={20} />
-      <Box
-        sx={(theme) => ({
-          padding: theme.spacing.md,
-          border: `1px solid ${theme.colors.members[1]}`,
-          backgroundColor: theme.colors.members[1],
-          borderRadius: "5px",
-          textAlign: "right",
-        })}
-      >
-        <P textAlign="center"> 
-          It's time to link up with PlayHQ and
-          embark on an exciting journey with Fixtura.
-        </P>
-        {mobile ? (
-          false
-        ) : (
-          <P  textAlign="center">Your custom-made content and insights are just a click away.</P>
-        )}
-        {mobile ? ( 
-          false
-        ) : (
-          <P  textAlign="center"> Ready to transform your season? Let's sync and get started!</P>
-        )}
-
-        <Group position="center">
-          <BTN_ONCLICK
-            LABEL={ConfirmReset ? "Back" : "Reset"}
-            THEME={ConfirmReset ? "success" : "error"}
-            HANDLE={() => {
-              setConfirmReset(!ConfirmReset);
-            }}
-          />
-          {ConfirmReset ? (
+      <RoundedSectionContainer
+        headerContent={
+          <P Weight={600}>Let's Make Sure Everything's Perfect!</P>
+        }
+        topContent={
+          mobile ? (
             false
           ) : (
-            <BTN_ONCLICK LABEL="Finish" HANDLE={CompleteRegistration} />
-          )}
-        </Group>
-      </Box>
+            <P>
+              We're excited to learn about your upcoming season, but first, we
+              need to make sure everything is spot on. Take a moment to review
+              the details below. It's vital we get this right, as it will help
+              us tailor your Fixtura experience to your unique needs.
+            </P>
+          )
+        }
+        bottomContent={
+          <>
+            {ConfirmReset ? (
+              <ConfirmResetCopy onProceed={handleProceed} />
+            ) : (
+              <ReviewAccontDetails DATA={DATA} />
+            )}
+
+            <Space h={20} />
+            <Box
+              sx={(theme) => ({
+                padding: theme.spacing.md,
+                border: `1px solid ${theme.colors.members[1]}`,
+                backgroundColor: theme.colors.members[1],
+                borderRadius: "5px",
+                textAlign: "right",
+              })}
+            >
+              <P textAlign="center">
+                It's time to link up with PlayHQ and embark on an exciting
+                journey with Fixtura.
+              </P>
+              {mobile ? (
+                false
+              ) : (
+                <P textAlign="center">
+                  Your custom-made content and insights are just a click away.
+                </P>
+              )}
+              {mobile ? (
+                false
+              ) : (
+                <P textAlign="center">
+                  {" "}
+                  Ready to transform your season? Let's sync and get started!
+                </P>
+              )}
+
+              <Group position="center">
+                <BTN_ONCLICK
+                  LABEL={ConfirmReset ? "Back" : "Reset"}
+                  THEME={ConfirmReset ? "success" : "error"}
+                  HANDLE={() => {
+                    setConfirmReset(!ConfirmReset);
+                  }}
+                />
+                {ConfirmReset ? (
+                  false
+                ) : (
+                  <BTN_ONCLICK LABEL="Finish" HANDLE={CompleteRegistration} />
+                )}
+              </Group>
+            </Box>
+          </>
+        }
+      />
     </Container>
   );
 };
 
 const ConfirmResetCopy = ({ onProceed }) => {
   return (
-    <Paper shadow="sm" p="md" withBorder>
+    <PaperWithBorder>
       <P Weight={600}>Reset Setup</P>
       <P>
         Please note that items such as name, email, logo, and colors can be
@@ -219,7 +238,7 @@ const ConfirmResetCopy = ({ onProceed }) => {
       <Group position="center">
         <BTN_ONCLICK LABEL="Proceed" HANDLE={onProceed} THEME={"error"} />
       </Group>
-    </Paper>
+    </PaperWithBorder>
   );
 };
 
@@ -228,7 +247,7 @@ const ReviewAccontDetails = ({ DATA }) => {
   const theme = useMantineTheme();
   const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
   return (
-    <Paper shadow="sm" p="md" withBorder>
+    <PaperWithBorder>
       {mobile ? (
         <Center>
           <Avatar src={FindAccountLogo(DATA)} size={120} radius="md" />
@@ -301,6 +320,6 @@ const ReviewAccontDetails = ({ DATA }) => {
           <Avatar src={FindAccountLogo(DATA)} size={120} radius="md" />
         )}
       </Group>
-    </Paper>
+    </PaperWithBorder>
   );
 };

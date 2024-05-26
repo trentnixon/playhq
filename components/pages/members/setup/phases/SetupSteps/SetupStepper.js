@@ -7,15 +7,19 @@ import {
   Box,
   useMantineTheme,
 } from "@mantine/core";
-import { useAccountDetails } from "../../../lib/userContext";
+import { useAccountDetails } from "../../../../../../lib/userContext";
+
+import { BTN_ONCLICK } from "../../../../../Members/Common/utils/Buttons";
+import { P } from "../../../../../Members/Common/Type";
+import { LoadingStateWrapper } from "../../../../../Members/Account/HOC/LoadingStateWrapper";
+
+import { useMediaQuery } from "@mantine/hooks";
+
+
+import StepAboutLogo from "./Steps/AboutLogo";
 import { StepAboutUser } from "./Steps/AboutUser";
 import { StepAboutTheCricket } from "./Steps/AboutTheCricket";
 import { StepAboutBranding } from "./Steps/AboutBranding";
-import { BTN_ONCLICK } from "../Common/utils/Buttons";
-import { P } from "../Common/Type";
-import { LoadingStateWrapper } from "../Account/HOC/LoadingStateWrapper";
-import StepAboutLogo from "./Steps/AboutLogo";
-import { useMediaQuery } from "@mantine/hooks";
 
 export const SetupStages = ({ setReview }) => {
   const theme = useMantineTheme();
@@ -28,7 +32,7 @@ export const SetupStages = ({ setReview }) => {
     step2: {},
     step3: {},
     step4: {},
-  });
+  }); 
   const [active, setActive] = useState(0);
 
   const updateData = useCallback(() => {
@@ -121,9 +125,9 @@ export const SetupStages = ({ setReview }) => {
             },
           })}
         >
-          <Stepper.Step label={mobile ? false : "About the Cricket"}>
+          <Stepper.Step label={mobile ? false : "About the Organisation"}>
             <StepAboutTheCricket user={DATA} setHasUpdated={ReRender} />
-          </Stepper.Step>
+          </Stepper.Step> 
           <Stepper.Step label={mobile ? false : "Upload your Logo"}>
             <StepAboutLogo user={DATA} setHasUpdated={ReRender} />
           </Stepper.Step>

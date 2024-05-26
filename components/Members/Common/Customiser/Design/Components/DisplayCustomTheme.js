@@ -38,13 +38,11 @@ export const DisplayCustomTheme = (props) => {
     return (
       <Paper
         radius="md"
-        shadow="lg"
         withBorder
         p="sm"
-        my={20}
+        mb={20}
         sx={(theme) => ({
           backgroundColor: theme.white,
-          backgroundColor: theme.colors.members[1],
         })}
       >
         <Group position="apart">

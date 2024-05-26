@@ -1,12 +1,11 @@
 import { List, Paper } from "@mantine/core";
-import { P } from "../Members/Common/Type";
+import { P } from "../../../../../Members/Common/Type";
 import { useMediaQuery } from "@mantine/hooks";
 import {
   IconMail,
   IconUser,
   IconBuilding,
   IconPalette,
-  IconSettings,
   IconBrandStripe,
   IconShield,
   IconUsers,
@@ -15,7 +14,7 @@ import {
 export const SetUpItemsRequired = () => {
   const matches = useMediaQuery("(min-width: 48em)");
   return (
-    <Paper shadow="sm" p="md" withBorder>
+    <Paper  p="0">
       <List spacing="xs" size="sm" center>
         <List.Item
           icon={<IconMail stroke={1.5} size="2rem" color={"#6699CC"} />}
@@ -110,3 +109,4 @@ export const SetUpItemsRequired = () => {
     </Paper>
   );
 };
+ 

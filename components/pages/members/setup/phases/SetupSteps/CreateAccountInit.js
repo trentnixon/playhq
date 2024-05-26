@@ -1,12 +1,12 @@
+import { Box } from "@mantine/core";
 import { useState } from "react";
-import { getIdFromLocalCookie } from "../../../lib/auth";
-import { fetcher } from "../../../lib/api";
 import Cookies from "js-cookie";
 
-import { useCreateScheduler } from "../../../Hooks/useScheduler";
-import { BTN_ONCLICK } from "../Common/utils/Buttons";
-import { Box } from "@mantine/core";
-import { FixturaLoading } from "../Common/Loading";
+import { getIdFromLocalCookie } from "../../../../../../lib/auth";
+import { fetcher } from "../../../../../../lib/api";
+import { BTN_ONCLICK } from "../../../../../Members/Common/utils/Buttons";
+import { FixturaLoading } from "../../../../../Members/Common/Loading";
+import { useCreateScheduler } from "../../../../../../Hooks/useScheduler";
 
 export const CreateAccountInit = ({ setAccountsetup }) => {
   const [ACCOUNTID, setACCOUNTID] = useState(false);
@@ -19,7 +19,7 @@ export const CreateAccountInit = ({ setAccountsetup }) => {
         const data = await postAccountData(ID);
         setAccountsetup(data);
         setACCOUNTID(true);
-        CreateData(data.data.id); 
+        CreateData(data.data.id);
       } catch (error) {
         console.error(error);
       } finally {
@@ -54,15 +54,7 @@ export const CreateAccountInit = ({ setAccountsetup }) => {
   };
 
   return (
-    <Box
-      sx={(theme) => ({
-        padding: theme.spacing.md,
-        border: `1px solid ${theme.colors.members[1]}`,
-        backgroundColor: theme.colors.members[1],
-        borderRadius: "5px",
-        textAlign: "center",
-      })}
-    >
+    <Box>
       {loading ? (
         <FixturaLoading />
       ) : (

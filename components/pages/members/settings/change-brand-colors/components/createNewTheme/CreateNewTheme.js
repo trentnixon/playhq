@@ -3,7 +3,7 @@ import hexRgb from "hex-rgb";
 import { Table, useMantineTheme } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
 import {
-  UserCreateTheme,
+  UserCreateTheme, 
   UserUpdateTheme,
 } from "../../../../../../../Hooks/useCustomizer";
 import SketchExample from "../../../../../../Members/Common/Customiser/Design/Components/ColorPicker";
@@ -13,7 +13,7 @@ import { CTA_BTNS } from "./CTA_BTNS";
 import { SelectColorLabel } from "./SelectColorLabel";
 import { BTN_ReverseColors } from "./BTN_ReverseColors";
 /* CreateNewTheme * ***************************** */
-
+ 
 export const CreateNewTheme = (props) => {
   const { userAccount, setCreateNew, ReRender, GetElement } = props;
 
@@ -29,7 +29,7 @@ export const CreateNewTheme = (props) => {
   const CTHEME = GetElement.filter(
     (item) => item.attributes.CreatedBy === userAccount.id
   );
-
+ 
   useEffect(() => {
     if (Primary !== false && Secondary !== false) {
       setDisabled(false);

@@ -37,7 +37,7 @@ const DashBoard = () => {
   return (
     <SecureRouteHOC conditions={[user, account]}>
       <PageMetaData MetaOBJ={MetaOBJ} />
-
+ 
       <PageTitle
         Copy={`Hi ${account.attributes.FirstName || ""}`}
         ICON={<IconLayoutDashboard size={40} />}

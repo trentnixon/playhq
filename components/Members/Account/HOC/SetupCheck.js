@@ -15,7 +15,8 @@ import { IconTools, IconEye, IconCreditCard } from "@tabler/icons";
 import { FindAccountLabel } from "../../../../lib/actions";
 import { useMediaQuery } from "@mantine/hooks";
 import { BTN_TOINTERALLINK } from "../../Common/utils/Buttons";
-import SyncProgress from "../../SetupSteps/Progress/TrackProgress";
+import SyncProgress from "../../../pages/members/setup/phases/SetupSteps/Progress/TrackProgress";
+
 
 const SetupCheck = ({ children }) => {
   const { account, ReRender } = useAccountDetails();

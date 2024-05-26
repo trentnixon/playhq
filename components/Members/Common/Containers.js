@@ -1,4 +1,4 @@
-import { Box, Container } from "@mantine/core";
+import { Box, Container, Paper } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
 export const MembersWrapper = (props) => {
   return (
@@ -14,7 +14,7 @@ export const Wrapper = (props) => {
     <Container size={"lg"} px={px} py={py}>
       {props.children}
     </Container>
-  ); 
+  );
 };
 
 export const PageCopyWrapper = (props) => {
@@ -40,6 +40,7 @@ export const ShadowWrapper = (props) => {
       sx={(theme) => ({
         backgroundColor: theme.colors[theme.primaryColor][BGColor],
         borderRadius: "5px",
+
         boxShadow:
           "0 1px 3px rgba(0, 0, 0, 0.05),rgba(0, 0, 0, 0.05) 0px 36px 28px -7px,rgba(0, 0, 0, 0.04) 0px 17px 17px -7px",
         "@media (max-width: 565px)": { padding: "5px" },
@@ -47,5 +48,21 @@ export const ShadowWrapper = (props) => {
     >
       {props.children}
     </Container>
+  );
+};
+
+export const PaperWithBorder = ({ children }) => {
+  return (
+    <Paper
+      radius="md"
+      withBorder
+      p="sm"
+      mb={20}
+      sx={(theme) => ({
+        backgroundColor: theme.white,
+      })}
+    >
+      {children}
+    </Paper>
   );
 };

@@ -1,26 +1,20 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
-import {
-  Center,
-  Group,
-  Loader,
-  Paper,
-  Table,
-  useMantineTheme,
-} from "@mantine/core";
+import { Center, Group, Paper, Table, useMantineTheme } from "@mantine/core";
 import {
   UserCreateTheme,
   UserUpdateTheme,
 } from "../../../../../../Hooks/useCustomizer";
 import { BTN_ONCLICK } from "../../../utils/Buttons";
 
-import { P, SubHeaders } from "../../../Type";
+import { P } from "../../../Type";
 import SketchExample from "./ColorPicker";
+
 import { IconCircleCheck } from "@tabler/icons";
 import { FixturaLoading } from "../../../../Common/Loading";
-import hexRgb from "hex-rgb";
+
 import { useMediaQuery } from "@mantine/hooks";
-import { IconColorSwatch } from "@tabler/icons-react";
+import { UseBaseColor } from "../../../../../pages/members/settings/change-brand-colors/components/createNewTheme/functions";
 /* CreateNewTheme * ***************************** */
 
 export const CreateNewTheme = (props) => {
@@ -39,23 +33,6 @@ export const CreateNewTheme = (props) => {
     (item) => item.attributes.CreatedBy === userAccount.id
   );
 
-  const UseBaseColor = (PATH) => {
-    const OBJ = CTHEME[0]?.attributes?.Theme[PATH]
-      ? {
-          r: hexRgb(CTHEME[0].attributes.Theme[PATH]).red,
-          g: hexRgb(CTHEME[0].attributes.Theme[PATH]).green,
-          b: hexRgb(CTHEME[0].attributes.Theme[PATH]).blue,
-          a: hexRgb(CTHEME[0].attributes.Theme[PATH]).alpha,
-        }
-      : {
-          r: "0",
-          g: "0",
-          b: "0",
-          a: "1",
-        };
-    return OBJ;
-  };
-
   useEffect(() => {
     if (Primary !== false && Secondary !== false) {
       setDisabled(false);
@@ -63,6 +40,15 @@ export const CreateNewTheme = (props) => {
       setDisabled(true);
     }
   }, [Primary, Secondary]);
+
+  useEffect(() => {
+    //console.log(THEME,UPDATE);
+    if (THEME || UPDATE) {
+      ReRender();
+      setIsLoading(false);
+      setCreateNew(false);
+    }
+  }, [THEME, UPDATE]);
 
   function rgbaToHex({ r, g, b, a }) {
     return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
@@ -89,44 +75,11 @@ export const CreateNewTheme = (props) => {
     setIsLoading(true);
   };
 
-  useEffect(() => {
-    //console.log(THEME,UPDATE);
-    if (THEME || UPDATE) {
-      ReRender();
-      setIsLoading(false);
-      setCreateNew(false);
-    }
-  }, [THEME, UPDATE]);
-
-  useEffect(() => {
-    if (CTHEME[0]?.attributes?.Theme != undefined) {
-      SetPrimary({
-        r: hexRgb(CTHEME[0].attributes.Theme.primary).red,
-        g: hexRgb(CTHEME[0].attributes.Theme.primary).green,
-        b: hexRgb(CTHEME[0].attributes.Theme.primary).blue,
-        a: hexRgb(CTHEME[0].attributes.Theme.primary).alpha,
-      });
-      SetSecondary({
-        r: hexRgb(CTHEME[0].attributes.Theme.secondary).red,
-        g: hexRgb(CTHEME[0].attributes.Theme.secondary).green,
-        b: hexRgb(CTHEME[0].attributes.Theme.secondary).blue,
-        a: hexRgb(CTHEME[0].attributes.Theme.secondary).alpha,
-      });
-    }
-  }, []);
-
   if (IsLoading) return <FixturaLoading />;
   return (
     <>
-      <SubHeaders Copy={`Create your own Theme`} ICON={<IconColorSwatch size={30} />}/>
-      <P>
-        To create a new theme, simply select your primary and secondary brand
-        colors from the color selector and click the "Create" button.
-      </P>
       <Paper
         radius="md"
-        shadow="md"
-        withBorder
         mb={20}
         p="lg"
         sx={(theme) => ({ backgroundColor: theme.white })}
@@ -146,8 +99,8 @@ export const CreateNewTheme = (props) => {
                 </td>
               )}
 
-              <td>
-                <SketchExample 
+              <td style={{ textAlign: "right" }}>
+                <SketchExample
                   SetColor={SetPrimary}
                   UsersTheme={UseBaseColor("primary")}
                 />
@@ -170,7 +123,7 @@ export const CreateNewTheme = (props) => {
                 </td>
               )}
 
-              <td>
+              <td style={{ textAlign: "right" }}>
                 <SketchExample
                   SetColor={SetSecondary}
                   UsersTheme={UseBaseColor("secondary")}

@@ -32,7 +32,7 @@ export const SubHeaders = (props) => {
   const { Copy, ICON } = props;
   return (
     <Container fluid px={0}>
-      <Group my={10} spacing={5}>
+      <Group my={10} spacing={5} >
         {ICON}
         <Title
           order={3}

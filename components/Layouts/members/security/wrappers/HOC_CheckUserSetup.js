@@ -15,9 +15,10 @@ import { useAccountDetails } from "../../../../../lib/userContext";
 import { P, PageTitle } from "../../../../Members/Common/Type";
 import { Wrapper } from "../../../../Members/Common/Containers";
 import { FixturaLoading } from "../../../../Members/Common/Loading";
-import SyncProgress from "../../../../Members/SetupSteps/Progress/TrackProgress";
+
 import { FindAccountLabel } from "../../../../../lib/actions";
 import { BTN_TOINTERALLINK } from "../../../../Members/Common/utils/Buttons";
+import SyncProgress from "../../../../pages/members/setup/phases/SetupSteps/Progress/TrackProgress";
 
 const HOC_CheckUserSetup = ({ children }) => {
   const { account, ReRender } = useAccountDetails();

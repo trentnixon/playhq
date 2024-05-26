@@ -2,7 +2,9 @@ import React, { useEffect, useState } from "react";
 import reactCSS from "reactcss";
 import { ChromePicker } from "react-color";
 
-const SketchExample = ({ UsersTheme, SetColor }) => {
+const SketchExample = ({ UsersTheme, SetColor }) => { 
+
+  console.log({ UsersTheme, SetColor })
   const [displayColorPicker, setDisplayColorPicker] = useState(false);
   const [color, setColor] = useState(UsersTheme);
 

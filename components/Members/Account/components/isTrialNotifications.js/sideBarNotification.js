@@ -2,6 +2,7 @@ import { Card, Group, useMantineTheme, Tooltip } from "@mantine/core";
 
 import { P } from "../../../Common/Type";
 import { getTrialNotificationStatus } from "../../../../../lib/members/getTrialNotificationStatus";
+import { BTN_TOINTERALLINK } from "../../../Common/utils/Buttons";
 
 export const SideBarTrialNotification = ({ user }) => {
   const theme = useMantineTheme();
@@ -31,21 +32,15 @@ export const SideBarTrialNotification = ({ user }) => {
     },
   };
 
-  const config = notificationConfig[trialNotificationStatus];
+  const config = notificationConfig[trialNotificationStatus]; 
 
   return (
-    <Tooltip label={config?.label} position="top">
-      <Card
-        shadow="md"
-        padding="sm"
-        radius="md"
-        mt={5}
-        style={{ backgroundColor: config?.backgroundColor }}
-      >
-        <Group position="center">
-          <P marginBottom={0}>{config?.text}</P>
+    <>
+      <Tooltip label={config?.label} position="top">
+        <Group position="center" mt={14}>
+          <BTN_TOINTERALLINK LABEL={config?.text} URL={"/members/account"} />
         </Group>
-      </Card>
-    </Tooltip>
+      </Tooltip>
+    </>
   );
 };

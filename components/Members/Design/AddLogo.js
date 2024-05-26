@@ -24,6 +24,8 @@ import { useMediaQuery } from "@mantine/hooks";
 
 import { IconPhotoFilled } from "@tabler/icons-react";
 import StrapiImageUploader from "../../pages/members/sponsors/Form/ImageUploader";
+import { RoundedSectionContainer } from "../../UI/Containers/SectionContainer";
+import { StepHeaderandDescription } from "../../pages/members/setup/phases/SetupSteps/Steps/StepHeaderandDescription";
 
 export const AccountLogo = () => {
   const theme = useMantineTheme();
@@ -48,7 +50,7 @@ export const AccountLogo = () => {
     setLogoToAccount(
       FindAccountTypeOBJ(userAccount).id,
       OBJ,
-      FindAccountTypeAPI(userAccount) 
+      FindAccountTypeAPI(userAccount)
     );
     setUploadedLogo(LogoPath[0]?.url); // Save the path of the newly uploaded logo
     ReRender();
@@ -58,57 +60,65 @@ export const AccountLogo = () => {
 
   return (
     <>
-      <SubHeaders Copy={`${FindAccountType(userAccount)} Logo`} ICON={<IconPhotoFilled size={30} />}/>
-      <P
-        Copy={`
-        Upload a high-resolution image of your logo to ensure the best quality representation for your organization.`}
-      />
-      <Paper
-        radius="md"
-        shadow="md"
-        mb={30}
-    
-        p="xs"
-        sx={(theme) => ({ backgroundColor: theme.white })}
-      >
-        <Group position="right" mb={20}>
-          <BTN_ONCLICK
-            LABEL={uploadLogo ? `Close` : `Upload a Logo`}
-            THEME={`cta`}
-            HANDLE={() => {
-              setUploadLogo(!uploadLogo);
-            }}
+      <RoundedSectionContainer
+        headerContent={""}
+        topContent={
+          <StepHeaderandDescription
+            Header={`${FindAccountType(userAccount)} Logo`}
+            Description={
+              "Upload a high-resolution image of your logo to ensure the best quality representation for your organization."
+            }
           />
-        </Group>
+        }
+        bottomContent={
+          <>
+            <Paper
+              radius="md"
+              mb={0}
+              p="0"
+              sx={(theme) => ({ backgroundColor: theme.white })}
+            >
+              <Group position="right" mb={20}>
+                <BTN_ONCLICK
+                  LABEL={uploadLogo ? `Close` : `Upload a Logo`}
+                  THEME={`cta`}
+                  HANDLE={() => {
+                    setUploadLogo(!uploadLogo);
+                  }}
+                />
+              </Group>
 
-        {uploadLogo && (
-          <StrapiImageUploader
-            setLogo={setLogo}
-            setLogoPath={setLogoPath}
-            SAVEDLOGO={false}
-          />
-        )}
-
-        {LogoPath ? (
-          <NewLogoImageAndStore
-            image={LogoPath[0]?.url}
-            saveLogoToAccount={saveLogoToAccount}
-            setLogoPath={setLogoPath}
-          />
-        ) : (
-          !uploadLogo && (
-            <>
-              {uploadedLogo ? (
-                <CurrentLogo LOGO={uploadedLogo} />
-              ) : FindAccountLogo(userAccount) ? (
-                <CurrentLogo LOGO={FindAccountLogo(userAccount)} />
-              ) : (
-                <NewLogoCopy org={FindAccountLabel(userAccount)} />
+              {uploadLogo && (
+                <StrapiImageUploader
+                  setLogo={setLogo}
+                  setLogoPath={setLogoPath}
+                  SAVEDLOGO={false}
+                />
               )}
-            </>
-          )
-        )}
-      </Paper>
+
+              {LogoPath ? (
+                <NewLogoImageAndStore
+                  image={LogoPath[0]?.url}
+                  saveLogoToAccount={saveLogoToAccount}
+                  setLogoPath={setLogoPath}
+                />
+              ) : (
+                !uploadLogo && (
+                  <>
+                    {uploadedLogo ? (
+                      <CurrentLogo LOGO={uploadedLogo} />
+                    ) : FindAccountLogo(userAccount) ? (
+                      <CurrentLogo LOGO={FindAccountLogo(userAccount)} />
+                    ) : (
+                      <NewLogoCopy org={FindAccountLabel(userAccount)} />
+                    )}
+                  </>
+                )
+              )}
+            </Paper>
+          </>
+        }
+      />
     </>
   );
 };
@@ -194,10 +204,14 @@ const NewLogoCopy = ({ org }) => {
           textAlign={`center`}
           Copy={`Let's get started by uploading a logo for ${org}.`}
         />
-        {mobile ? false : <P
-          textAlign={`center`}
-          Copy={`This logo will be used in the digital assets we create for you, making them unique and personalized. Click the 'upload a logo' button to select a logo from your device.`}
-        />}
+        {mobile ? (
+          false
+        ) : (
+          <P
+            textAlign={`center`}
+            Copy={`This logo will be used in the digital assets we create for you, making them unique and personalized. Click the 'upload a logo' button to select a logo from your device.`}
+          />
+        )}
       </Box>
     </Group>
   );

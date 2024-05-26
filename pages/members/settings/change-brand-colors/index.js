@@ -6,7 +6,6 @@ import { RoundedSectionContainer } from "../../../../components/UI/Containers/Se
 import SecureRouteHOC from "../../../../components/Layouts/members/security/SecureRouteHC";
 import { PageMetaData } from "../../../../components/Layouts/members/Meta/pageMetaData";
 import { Divider } from "@mantine/core";
-import { UpdateBrandLogo } from "../../../../components/pages/members/settings/change-brand-logo/components/UpdateLogoContainer";
 import { Previewer } from "../../../../components/pages/members/index/Dashboard/userPreview/Previewer";
 import { UpdateYourTheme } from "../../../../components/pages/members/settings/change-brand-colors/components/UpdateYourTheme";
 

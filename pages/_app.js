@@ -32,7 +32,7 @@ function MyApp({ Component, pageProps }) {
 
   useEffect(() => {
     AOS.init();
-  }, []);
+  }, []); 
 
   const getLayout = Component.getLayout || ((page) => <Layout>{page}</Layout>);
  

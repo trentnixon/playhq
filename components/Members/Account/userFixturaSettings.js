@@ -1,13 +1,5 @@
-import {
-  Avatar,
-  Checkbox,
-  Container,
-  Group,
-  Paper,
-  Space,
-  Stack,
-} from "@mantine/core";
-import { ShadowWrapper, Wrapper } from "../Common/Containers";
+import { Avatar, Group, Paper, Space } from "@mantine/core";
+import { PaperWithBorder, ShadowWrapper, Wrapper } from "../Common/Containers";
 import { SelectFixturaSetting } from "../Common/formelements/Select_FixturaSettings";
 import { P } from "../Common/Type";
 import { createStyles } from "@mantine/core";
@@ -73,8 +65,7 @@ const useStyles = createStyles((theme) => ({
 }));
 
 export const FixturaSettings = ({ user, setHasUpdated }) => {
-  const { classes } = useStyles();
-
+ 
   const data = [
     {
       title: "Account Type",
@@ -96,9 +87,9 @@ export const FixturaSettings = ({ user, setHasUpdated }) => {
     },
   ];
 
-  const stats = data.map((stat) => (
+  const stats = data.map((stat, index) => (
     <Paper
-      key={stat.title}
+      key={`${stat.title}_${index}`}
       radius="md"
       shadow="lg"
       withBorder
@@ -149,7 +140,7 @@ export const SetupInputs = ({ user, setHasUpdated }) => {
   return (
     <>
       <LabelMe label="We are a ..." />
-      <ShadowWrapper>
+      <PaperWithBorder>
         <SelectFixturaSetting
           RelationProperty={"account_type"}
           setHasUpdated={setHasUpdated}
@@ -163,10 +154,10 @@ export const SetupInputs = ({ user, setHasUpdated }) => {
           COLLECTIONID={user.id}
           showSelectInit={true}
         />
-      </ShadowWrapper>
+      </PaperWithBorder>
       <Space h="lg" />
       <LabelMe label="Select Your Association" />
-      <ShadowWrapper>
+      <PaperWithBorder>
         <AutoCompleteSelectAssociation
           COLLECTIONID={user.id}
           SelectedBaseValueObject={
@@ -174,8 +165,8 @@ export const SetupInputs = ({ user, setHasUpdated }) => {
           }
           setAssociationID={setAssociationID}
           setHasUpdated={setHasUpdated}
-        /> 
-      </ShadowWrapper>
+        />
+      </PaperWithBorder>
 
       <Space h="lg" />
       {user.attributes?.account_type?.data?.attributes.Name ===
@@ -184,7 +175,7 @@ export const SetupInputs = ({ user, setHasUpdated }) => {
       ) : (
         <>
           <LabelMe label="Select Your Club" />
-          <ShadowWrapper>
+          <PaperWithBorder>
             {AssociationID === false ? (
               "Awaiting Association Selection"
             ) : (
@@ -198,32 +189,62 @@ export const SetupInputs = ({ user, setHasUpdated }) => {
                 setHasUpdated={setHasUpdated}
               />
             )}
-          </ShadowWrapper>
-         
+          </PaperWithBorder>
         </>
       )}
-       <Space h="lg" />
-          <LabelMe label="Permissions" />
-          <ShadowWrapper>
-            <DBCheckbox
-              label="You hold the rights or have permission from the rights holder for the specified organization."
-              name="isRightsHolder"
-              collectionId={user.id}
-              CollectionSaveTo={"accounts"}
-              setHasUpdated={setHasUpdated}
-            /> 
+      <Space h="lg" />
+      <LabelMe label="Permissions" />
+      <PaperWithBorder>
+        <DBCheckbox
+          label="You hold the rights or have permission from the rights holder for the specified organization."
+          name="isRightsHolder"
+          collectionId={user.id}
+          CollectionSaveTo={"accounts"}
+          setHasUpdated={setHasUpdated}
+        />
 
-            <DBCheckbox
-              label="You, being the rights holder, grant Fixtura the authority to use PlayHQ data to produce assets for your organization on a weekly basis."
-              name="isPermissionGiven"
-              collectionId={user.id}
-              CollectionSaveTo={"accounts"}
-              setHasUpdated={setHasUpdated}
-            />
-          </ShadowWrapper>
+        <DBCheckbox
+          label="You, being the rights holder, grant Fixtura the authority to use PlayHQ data to produce assets for your organization on a weekly basis."
+          name="isPermissionGiven"
+          collectionId={user.id}
+          CollectionSaveTo={"accounts"}
+          setHasUpdated={setHasUpdated}
+        />
+      </PaperWithBorder>
     </>
   );
 };
+
+
+const LabelMe = ({ label }) => {
+  return (
+    <Wrapper>
+      <P color={6} Weight={900} marginBottom={0} textTransform={"uppercase"}>
+        {label}
+      </P>
+    </Wrapper>
+  );
+};
+
+export const FixturaHeaderMeta = ({ user, setHasUpdated }) => {
+  return (
+    <Group
+      position="apart"
+      grow
+      py={3}
+      sx={(theme) => ({
+        background: theme.fn.linearGradient(
+          45,
+          theme.colors.blue[5],
+          theme.colors.cyan[5]
+        ),
+      })}
+    ></Group>
+  );
+};
+
+
+
 /*
  <SelectFixturaSetting
               CollectionFrom={"clubs"}
@@ -253,30 +274,3 @@ export const SetupInputs = ({ user, setHasUpdated }) => {
       
         />
 */
-
-const LabelMe = ({ label }) => {
-  return (
-    <Wrapper>
-      <P color={6} Weight={900} marginBottom={0} textTransform={"uppercase"}>
-        {label}
-      </P>
-    </Wrapper>
-  );
-};
-
-export const FixturaHeaderMeta = ({ user, setHasUpdated }) => {
-  return (
-    <Group
-      position="apart"
-      grow
-      py={3}
-      sx={(theme) => ({
-        background: theme.fn.linearGradient(
-          45,
-          theme.colors.blue[5],
-          theme.colors.cyan[5]
-        ),
-      })}
-    ></Group>
-  );
-};

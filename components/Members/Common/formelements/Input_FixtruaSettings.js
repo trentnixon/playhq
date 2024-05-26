@@ -1,10 +1,18 @@
-import { Button, Group, Box, Space, Loader, ActionIcon, useMantineTheme } from "@mantine/core";
+import {
+  Button,
+  Group,
+  Box,
+  Space,
+  Loader,
+  ActionIcon,
+  useMantineTheme,
+} from "@mantine/core";
 import { IconCheck } from "@tabler/icons";
 import Cookies from "js-cookie";
 
 import { useState } from "react";
 import { fetcher } from "../../../../lib/api";
-import { ShadowWrapper, Wrapper } from "../Containers";
+import { PaperWithBorder, ShadowWrapper, Wrapper } from "../Containers";
 import { FixturaLoading } from "../Loading";
 import { P } from "../Type";
 import { BTN_ONCLICK } from "../utils/Buttons";
@@ -18,7 +26,9 @@ export const Input_FixturaSetting = ({
   canCancel = true,
 }) => {
   const [editing, setEditing] = useState(editingState);
-  const [value, setValue] = useState(user?.attributes[Input.Field] ?user?.attributes[Input.Field]:'');
+  const [value, setValue] = useState(
+    user?.attributes[Input.Field] ? user?.attributes[Input.Field] : ""
+  );
   const [disabled, setDisabled] = useState(true);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -75,7 +85,8 @@ export const Input_FixturaSetting = ({
   return (
     <>
       <LabelMe label={Input.Label} />
-      <ShadowWrapper KEY={Input.Name}>
+
+      <PaperWithBorder KEY={Input.Name}>
         <Group position="apart">
           <Box>
             {!editing ? (
@@ -137,8 +148,9 @@ export const Input_FixturaSetting = ({
                         lineHeight={`2em`}
                         marginBottom={0}
                         textAlign="center"
-                        
-                      >{error}</P>
+                      >
+                        {error}
+                      </P>
                     )}
                   </>
                 )}
@@ -177,7 +189,8 @@ export const Input_FixturaSetting = ({
             </Group>
           </Box>
         </Group>
-      </ShadowWrapper>
+      </PaperWithBorder>
+
       <Space h={20} />
     </>
   );
@@ -192,9 +205,11 @@ const LabelMe = ({ label }) => {
         color={7}
         Weight={900}
         marginBottom={0}
-        size={mobile ? "sm":'md'}
+        size={mobile ? "sm" : "md"}
         textTransform={"uppercase"}
-       >{label}</P>
+      >
+        {label}
+      </P>
     </Wrapper>
   );
 };

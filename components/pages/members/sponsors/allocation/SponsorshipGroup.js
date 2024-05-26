@@ -32,7 +32,7 @@ const SponsorshipGroup = ({
             ))}
           </tbody>
         </Table>
-      }
+      } 
     />
   );
 };

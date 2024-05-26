@@ -17,9 +17,10 @@ import { useAccountDetails } from "../../../../../lib/userContext";
 import { P, SubHeaders } from "../../Type";
 import { DisplayCustomTheme } from "./Components/DisplayCustomTheme";
 import { CreateNewTheme } from "./Components/CreateNewTheme";
-import { FixturaDivider } from "../../Divider";
 import { useMediaQuery } from "@mantine/hooks";
 import { IconColorSwatch, IconFileDownload } from "@tabler/icons-react";
+import { RoundedSectionContainer } from "../../../../UI/Containers/SectionContainer";
+import { StepHeaderandDescription } from "../../../../pages/members/setup/phases/SetupSteps/Steps/StepHeaderandDescription";
 
 export const SelectATheme = () => {
   const { account, ReRender } = useAccountDetails();
@@ -69,7 +70,10 @@ export const SelectATheme = () => {
   ) {
     return (
       <>
-        <SubHeaders Copy={`Storing New Theme`} ICON={<IconFileDownload size={30} />}/>
+        <SubHeaders
+          Copy={`Storing New Theme`}
+          ICON={<IconFileDownload size={30} />}
+        />
         <Paper
           radius="md"
           shadow="md"
@@ -77,7 +81,7 @@ export const SelectATheme = () => {
           p="xs"
           sx={(theme) => ({ backgroundColor: theme.white })}
         >
-          <FixturaLoading /> 
+          <FixturaLoading />
         </Paper>
       </>
     );
@@ -85,40 +89,72 @@ export const SelectATheme = () => {
 
   return (
     <>
-      {createNew ? (
-        <CreateNewTheme 
-          userAccount={userAccount}
-          setCreateNew={setCreateNew}
-          ReRender={ReRender}
-          GetElement={GetElement}
-        />
-      ) : (
-        <ColorTable
-          GetElement={GetElement} 
-          userAccount={userAccount}
-          StoreUSerChange={StoreUSerChange}
-          setCreateNew={setCreateNew}
-        />
-      )}
+      <RoundedSectionContainer
+        headerContent={""}
+        topContent={
+          <StepHeaderandDescription
+            Header={`Oranisation Branding`}
+            Description={`Choose your brand colors to personalize your assets. Select from
+                predefined themes or create a custom theme that reflects your
+                club's unique personality.`}
+          />
+        }
+        bottomContent={
+          createNew ? (
+            <CreateNewTheme
+              userAccount={userAccount}
+              setCreateNew={setCreateNew}
+              ReRender={ReRender}
+              GetElement={GetElement}
+            />
+          ) : (
+            <ColorTable
+              GetElement={GetElement}
+              userAccount={userAccount}
+              StoreUSerChange={StoreUSerChange}
+              setCreateNew={setCreateNew}
+            />
+          )
+        }
+      />
     </>
   );
 };
 
-const Swatches = ({ colors }) => {
-  const theme = useMantineTheme();
-  const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
-  return colors.map((color) => (
-    <ColorSwatch key={color} color={color} size={mobile?14:25}  radius='xl' />
-  ));
-};
+const ColorTable = (props) => {
+  const { GetElement, userAccount, StoreUSerChange } = props;
+  return (
+    <Paper
+      radius="md"
+      p={0}
+      sx={(theme) => ({
+        backgroundColor: theme.white,
+      })}
+    >
+      <DisplayCustomTheme {...props} />
 
-const SelectButton = ({ isSelected, onClick, label }) => {
-  const theme = useMantineTheme();
-  if (isSelected) {
-    return <IconCircleCheck color={theme.colors.green[5]} />;
-  }
+      <SubHeaders Copy={`Public Themes`} ICON={<IconColorSwatch size={30} />} />
 
-  return <BTN_ONCLICK HANDLE={onClick} LABEL={label} />;
+      <Table>
+        <tbody>
+          {GetElement.map((item, i) => (
+            <TableRow
+              key={i}
+              item={item}
+              userAccount={userAccount}
+              StoreUSerChange={StoreUSerChange}
+            />
+          ))}
+        </tbody>
+      </Table>
+      <P
+        size="xs"
+        textAlign="right"
+        color={7}
+        Copy={`Brand settings can be changed via your admin panel after setup.`}
+      />
+    </Paper>
+  );
 };
 
 const TableRow = ({ item, userAccount, StoreUSerChange }) => {
@@ -154,43 +190,24 @@ const TableRow = ({ item, userAccount, StoreUSerChange }) => {
   );
 };
 
-const ColorTable = (props) => {
-  const { GetElement, userAccount, StoreUSerChange } = props;
+const Swatches = ({ colors }) => {
   const theme = useMantineTheme();
   const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
-  return (
-    <>
-      <SubHeaders Copy={`Color themes`} ICON={<IconColorSwatch size={30} />}/>
-      <P>
-      Choose your brand colors to personalize your assets. Select from predefined themes or create a custom theme that reflects your club's unique personality. This will create visually appealing videos and images that highlight your team's achievements in your brand's style.
-      </P>
-      <Paper
-        radius="md"
-        shadow={mobile ? false :"md"}
-        //withBorder={mobile ? false :true}
-        p={mobile ? 0 :"xs"}
-        sx={(theme) => ({
-          backgroundColor: theme.white,
-        })}
-      >
-        <DisplayCustomTheme {...props} />
+  return colors.map((color) => (
+    <ColorSwatch
+      key={color}
+      color={color}
+      size={mobile ? 14 : 25}
+      radius="xl"
+    />
+  ));
+};
 
-        <SubHeaders Copy={`Public Themes`} ICON={<IconColorSwatch size={30} />}/>
+const SelectButton = ({ isSelected, onClick, label }) => {
+  const theme = useMantineTheme();
+  if (isSelected) {
+    return <IconCircleCheck color={theme.colors.green[5]} />;
+  }
 
-        <Table>
-          <tbody>
-            {GetElement.map((item, i) => (
-              <TableRow
-                key={i}
-                item={item}
-                userAccount={userAccount}
-                StoreUSerChange={StoreUSerChange}
-              />
-            ))}
-          </tbody>
-        </Table>
-      </Paper>
-      <FixturaDivider />
-    </>
-  );
+  return <BTN_ONCLICK HANDLE={onClick} LABEL={label} />;
 };
