@@ -10,6 +10,7 @@ import { PageMetaData } from "../../../../components/Layouts/members/Meta/pageMe
 import { Divider } from "@mantine/core";
 import { UpdateBrandLogo } from "../../../../components/pages/members/settings/change-brand-logo/components/UpdateLogoContainer";
 import { Previewer } from "../../../../components/pages/members/index/Dashboard/userPreview/Previewer";
+import { useEffect } from "react";
 
 const ChangeBrandLogo = () => {
   const { account } = useAccountDetails();
@@ -17,11 +18,14 @@ const ChangeBrandLogo = () => {
 
   if (!account) return;
 
+  useEffect(()=>{},[account])
+
+
   const MetaOBJ = {
     title: "How to Group your Bundles - Fixtura",
     description: "How to Group your Bundles",
     keywords: "How to group your Fixtura Bundles",
-  };
+  }; 
 
   return (
     <SecureRouteHOC conditions={[account]}>

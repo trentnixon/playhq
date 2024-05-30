@@ -5,7 +5,7 @@ import {
   IconPictureInPicture,
   IconFileText,
 } from "@tabler/icons-react";
-import { RemotionPlayer } from "./Player";
+//import { RemotionPlayer } from "./Player";
 import { DisplayWriteups } from "./DisplayWriteups";
 
 export const MediaTabs = (props) => {
@@ -33,13 +33,13 @@ export const MediaTabs = (props) => {
 
         <Tabs.Panel value="VIDEO" pt="xs">
           <Paper shadow="md" p={0} withBorder>
-            <RemotionPlayer TYPE={"Player"} {...props} />
+            {/* <RemotionPlayer TYPE={"Player"} {...props} /> */}
           </Paper>
         </Tabs.Panel>
 
         <Tabs.Panel value="IMAGE" pt="xs">
           <Paper shadow="md" p={0} withBorder>
-            <RemotionPlayer TYPE={"Thumbnail"} {...props} />
+            {/* <RemotionPlayer TYPE={"Thumbnail"} {...props} /> */}
           </Paper>
         </Tabs.Panel>
 

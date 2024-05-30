@@ -5,14 +5,14 @@ import Section from "../../UI/DefaultSection";
 import { Center, Container, Image, Stack } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
 import Link from "next/link";
+import { ExampleGallery } from "../../pages/public/index/ExampleGallery";
 // Import GA functions
 
 const Services = () => {
   const isMobile = useMediaQuery("(max-width: 768px)");
   const padding = isMobile ? 0 : "sm";
   const SectionData = {
-    title:
-      "Simplify Your Club or Association's Match Reporting!",
+    title: "Simplify Your Club or Association's Match Reporting!",
     paragraphs: [
       `We specialize in curating and delivering bespoke content for your club or Association's social media and website presence. Our service ensures scheduled deliveries are always on time, thanks to our cutting-edge automated AI and generative video creation tools.`,
 
@@ -24,7 +24,7 @@ const Services = () => {
     <>
       <Section {...SectionData} color="light">
         <Center>
-          <Link legacyBehavior  href="/live-demo">
+          <Link legacyBehavior href="/live-demo">
             <a
               className="btn btn-secondary"
               onClick={() => trackButtonClick("Live Demo")} // Track button click
@@ -33,35 +33,10 @@ const Services = () => {
             </a>
           </Link>
         </Center>
-        <Container p={padding}>
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              height: "auto", // This sets the container height to be the full viewport height
-            }}
-          >
-            <video
-              poster="https://fixtura.s3.ap-southeast-2.amazonaws.com/titlescreen_2_6_1_24fb7299f3.jpg"
-              style={{
-                maxWidth: "100%", // This makes the video responsive
-                maxHeight: "100%",
-              }}
-              controls
-            >
-              <source
-                src="https://fixtura.s3.ap-southeast-2.amazonaws.com/Fixtura_Introduction_Version_1_86590be452.mp4"
-                type="video/mp4"
-              />
-              Your browser does not support the video tag.
-            </video>
-          </div>
-          <P textAlign="right" size={"sm"}>
-            Check out our brief about Video
-          </P>
-        </Container>
 
+        <Container p={padding}>
+          <WelcomeVideo />
+        </Container>
         <OrangisatonAlreadyUsingFixtura />
       </Section>
     </>
@@ -128,5 +103,40 @@ const OrangisatonAlreadyUsingFixtura = () => {
         ))}
       </div>
     </Section>
+  );
+};
+
+const WelcomeVideo = () => {
+  const isMobile = useMediaQuery("(max-width: 768px)");
+  const padding = isMobile ? 0 : "sm";
+  return (
+    <Container p={padding}>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          height: "auto", // This sets the container height to be the full viewport height
+        }}
+      >
+        <video
+          poster="https://fixtura.s3.ap-southeast-2.amazonaws.com/titlescreen_2_6_1_24fb7299f3.jpg"
+          style={{
+            maxWidth: "100%", // This makes the video responsive
+            maxHeight: "100%",
+          }}
+          controls
+        >
+          <source
+            src="https://fixtura.s3.ap-southeast-2.amazonaws.com/Fixtura_Introduction_Version_1_86590be452.mp4"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      <P textAlign="right" size={"sm"}>
+        Check out our brief about Video
+      </P>
+    </Container>
   );
 };

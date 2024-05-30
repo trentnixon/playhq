@@ -1,0 +1,726 @@
+[
+  {
+    "gameID": "25101",
+    "status": "Completed",
+    "homeTeam": {
+      "name": "India",
+      "isHome": true,
+      "logo": {
+        "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/logo_india.png",
+        "width": 128,
+        "height": 128
+      },
+      "score": "8/272",
+      "overs": null,
+      "homeScoresFirstInnings": null,
+      "battingPerformances": [
+        {
+          "player": "Virat Kohli",
+          "runs": 102,
+          "balls": 88,
+          "fours": 14,
+          "sixes": 2,
+          "SR": 115.9,
+          "team": "India"
+        },
+        {
+          "player": "Rohit Sharma",
+          "runs": 81,
+          "balls": 70,
+          "fours": 10,
+          "sixes": 3,
+          "SR": 115.7,
+          "team": "India"
+        },
+        {
+          "player": "KL Rahul",
+          "runs": 65,
+          "balls": 58,
+          "fours": 8,
+          "sixes": 2,
+          "SR": 112.1,
+          "team": "India"
+        }
+      ],
+      "bowlingPerformances": [
+        {
+          "player": "Jofra Archer",
+          "overs": 10,
+          "maidens": 1,
+          "runs": 50,
+          "wickets": 3,
+          "economy": 5.0,
+          "team": "England"
+        },
+        {
+          "player": "Chris Woakes",
+          "overs": 10,
+          "maidens": 1,
+          "runs": 48,
+          "wickets": 3,
+          "economy": 4.8,
+          "team": "England"
+        },
+        {
+          "player": "Mark Wood",
+          "overs": 10,
+          "maidens": 0,
+          "runs": 60,
+          "wickets": 2,
+          "economy": 6.0,
+          "team": "England"
+        }
+      ]
+    },
+    "awayTeam": {
+      "name": "England",
+      "isHome": false,
+      "logo": {
+        "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/logo_england.png",
+        "width": 128,
+        "height": 128
+      },
+      "score": "7/268",
+      "overs": null,
+      "awayScoresFirstInnings": null,
+      "battingPerformances": [
+        {
+          "player": "Joe Root",
+          "runs": 95,
+          "balls": 90,
+          "fours": 8,
+          "sixes": 1,
+          "SR": 105.5,
+          "team": "England"
+        },
+        {
+          "player": "Eoin Morgan",
+          "runs": 60,
+          "balls": 65,
+          "fours": 5,
+          "sixes": 2,
+          "SR": 92.3,
+          "team": "England"
+        },
+        {
+          "player": "Jos Buttler",
+          "runs": 50,
+          "balls": 45,
+          "fours": 7,
+          "sixes": 1,
+          "SR": 111.1,
+          "team": "England"
+        }
+      ],
+      "bowlingPerformances": [
+        {
+          "player": "Jasprit Bumrah",
+          "overs": 10,
+          "maidens": 0,
+          "runs": 45,
+          "wickets": 4,
+          "economy": 4.5,
+          "team": "India"
+        },
+        {
+          "player": "Ravindra Jadeja",
+          "overs": 10,
+          "maidens": 2,
+          "runs": 40,
+          "wickets": 2,
+          "economy": 4.0,
+          "team": "India"
+        },
+        {
+          "player": "Mohammed Shami",
+          "overs": 10,
+          "maidens": 0,
+          "runs": 55,
+          "wickets": 2,
+          "economy": 5.5,
+          "team": "India"
+        }
+      ]
+    },
+    "teamHomeLogo": {
+      "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/logo_india.png",
+      "width": 128,
+      "height": 128
+    },
+    "teamAwayLogo": {
+      "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/logo_england.png",
+      "width": 128,
+      "height": 128
+    },
+    "date": "Saturday, 18 November 2023",
+    "type": "One Day",
+    "ground": "Wankhede Stadium, Mumbai",
+    "round": "Round 1",
+    "gender": "Men",
+    "ageGroup": "Senior/Open",
+    "gradeName": "International ODI",
+    "assignSponsors": {
+      "competition": {
+        "id": 12345,
+        "name": "ICC Cricket"
+      },
+      "grade": {
+        "id": 6670,
+        "name": "International ODI"
+      },
+      "Teams": {
+        "home": {
+          "name": "India"
+        },
+        "away": {
+          "name": "England"
+        }
+      }
+    },
+    "result": "8/272 - 7/268",
+    "prompt": "Match Summary: India vs. England: India won with a score of 8/272 against England's 7/268. Virat Kohli scored 102 runs for India, and Joe Root scored 95 runs for England."
+  },
+  {
+    "gameID": "25105",
+    "status": "Completed",
+    "homeTeam": {
+      "name": "South Africa",
+      "isHome": true,
+      "logo": {
+        "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/logo_south_africa.png",
+        "width": 128,
+        "height": 128
+      },
+      "score": "5/290",
+      "overs": null,
+      "homeScoresFirstInnings": null,
+      "battingPerformances": [
+        {
+          "player": "Quinton de Kock",
+          "runs": 105,
+          "balls": 90,
+          "fours": 11,
+          "sixes": 3,
+          "SR": 116.67,
+          "team": "South Africa"
+        },
+        {
+          "player": "Faf du Plessis",
+          "runs": 80,
+          "balls": 65,
+          "fours": 8,
+          "sixes": 1,
+          "SR": 123.08,
+          "team": "South Africa"
+        },
+        {
+          "player": "AB de Villiers",
+          "runs": 50,
+          "balls": 40,
+          "fours": 5,
+          "sixes": 2,
+          "SR": 125.0,
+          "team": "South Africa"
+        }
+      ],
+      "bowlingPerformances": [
+        {
+          "player": "Trent Boult",
+          "overs": 10,
+          "maidens": 0,
+          "runs": 52,
+          "wickets": 3,
+          "economy": 5.2,
+          "team": "New Zealand"
+        },
+        {
+          "player": "Tim Southee",
+          "overs": 10,
+          "maidens": 1,
+          "runs": 46,
+          "wickets": 2,
+          "economy": 4.6,
+          "team": "New Zealand"
+        },
+        {
+          "player": "Mitchell Santner",
+          "overs": 10,
+          "maidens": 0,
+          "runs": 50,
+          "wickets": 2,
+          "economy": 5.0,
+          "team": "New Zealand"
+        }
+      ]
+    },
+    "awayTeam": {
+      "name": "New Zealand",
+      "isHome": false,
+      "logo": {
+        "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/logo_new_zealand.png",
+        "width": 128,
+        "height": 128
+      },
+      "score": "6/294",
+      "overs": null,
+      "awayScoresFirstInnings": null,
+      "battingPerformances": [
+        {
+          "player": "Kane Williamson",
+          "runs": 120,
+          "balls": 100,
+          "fours": 14,
+          "sixes": 2,
+          "SR": 120.0,
+          "team": "New Zealand"
+        },
+        {
+          "player": "Ross Taylor",
+          "runs": 75,
+          "balls": 58,
+          "fours": 9,
+          "sixes": 1,
+          "SR": 129.31,
+          "team": "New Zealand"
+        },
+        {
+          "player": "Martin Guptill",
+          "runs": 55,
+          "balls": 45,
+          "fours": 7,
+          "sixes": 2,
+          "SR": 122.22,
+          "team": "New Zealand"
+        }
+      ],
+      "bowlingPerformances": [
+        {
+          "player": "Kagiso Rabada",
+          "overs": 10,
+          "maidens": 2,
+          "runs": 42,
+          "wickets": 4,
+          "economy": 4.2,
+          "team": "South Africa"
+        },
+        {
+          "player": "Anrich Nortje",
+          "overs": 10,
+          "maidens": 1,
+          "runs": 48,
+          "wickets": 3,
+          "economy": 4.8,
+          "team": "South Africa"
+        },
+        {
+          "player": "Dale Steyn",
+          "overs": 10,
+          "maidens": 0,
+          "runs": 48,
+          "wickets": 2,
+          "economy": 4.8,
+          "team": "South Africa"
+        }
+      ]
+    },
+    "teamHomeLogo": {
+      "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/logo_south_africa.png",
+      "width": 128,
+      "height": 128
+    },
+    "teamAwayLogo": {
+      "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/logo_new_zealand.png",
+      "width": 128,
+      "height": 128
+    },
+    "date": "Sunday, 26 November 2023",
+    "type": "One Day",
+    "ground": "Newlands Cricket Ground",
+    "round": "Round 1",
+    "gender": "Men",
+    "ageGroup": "Senior/Open",
+    "gradeName": "International ODI",
+    "assignSponsors": {
+      "competition": {
+        "id": 12345,
+        "name": "ICC Cricket"
+      },
+      "grade": {
+        "id": 6670,
+        "name": "International ODI"
+      },
+      "Teams": {
+        "home": {
+          "name": "South Africa"
+        },
+        "away": {
+          "name": "New Zealand"
+        }
+      }
+    },
+    "result": "5/290 - 6/294",
+    "prompt": "Match Summary: South Africa vs. New Zealand: New Zealand won with a score of 6/294 against South Africa's 5/290. Kane Williamson scored 120 runs for New Zealand, and Quinton de Kock scored 105 runs for South Africa."
+  },
+  {
+    "gameID": "25103",
+    "status": "Completed",
+    "homeTeam": {
+      "name": "England",
+      "isHome": true,
+      "logo": {
+        "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/logo_england.png",
+        "width": 128,
+        "height": 128
+      },
+      "score": "7/280",
+      "overs": null,
+      "homeScoresFirstInnings": null,
+      "battingPerformances": [
+        {
+          "player": "Joe Root",
+          "runs": 95,
+          "balls": 80,
+          "fours": 10,
+          "sixes": 2,
+          "SR": 118.75,
+          "team": "England"
+        },
+        {
+          "player": "Ben Stokes",
+          "runs": 60,
+          "balls": 50,
+          "fours": 8,
+          "sixes": 1,
+          "SR": 120.0,
+          "team": "England"
+        },
+        {
+          "player": "Eoin Morgan",
+          "runs": 45,
+          "balls": 40,
+          "fours": 5,
+          "sixes": 2,
+          "SR": 112.5,
+          "team": "England"
+        }
+      ],
+      "bowlingPerformances": [
+        {
+          "player": "Jofra Archer",
+          "overs": 10,
+          "maidens": 1,
+          "runs": 45,
+          "wickets": 4,
+          "economy": 4.5,
+          "team": "England"
+        },
+        {
+          "player": "Chris Woakes",
+          "overs": 10,
+          "maidens": 1,
+          "runs": 45,
+          "wickets": 2,
+          "economy": 4.5,
+          "team": "England"
+        },
+        {
+          "player": "Adil Rashid",
+          "overs": 10,
+          "maidens": 0,
+          "runs": 48,
+          "wickets": 2,
+          "economy": 4.8,
+          "team": "England"
+        }
+      ]
+    },
+    "awayTeam": {
+      "name": "Pakistan",
+      "isHome": false,
+      "logo": {
+        "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/logo_pakistan.png",
+        "width": 128,
+        "height": 128
+      },
+      "score": "5/281",
+      "overs": null,
+      "awayScoresFirstInnings": null,
+      "battingPerformances": [
+        {
+          "player": "Babar Azam",
+          "runs": 125,
+          "balls": 100,
+          "fours": 15,
+          "sixes": 3,
+          "SR": 125.0,
+          "team": "Pakistan"
+        },
+        {
+          "player": "Mohammad Rizwan",
+          "runs": 70,
+          "balls": 60,
+          "fours": 7,
+          "sixes": 2,
+          "SR": 116.67,
+          "team": "Pakistan"
+        },
+        {
+          "player": "Fakhar Zaman",
+          "runs": 55,
+          "balls": 45,
+          "fours": 6,
+          "sixes": 1,
+          "SR": 122.22,
+          "team": "Pakistan"
+        }
+      ],
+      "bowlingPerformances": [
+        {
+          "player": "Shaheen Afridi",
+          "overs": 10,
+          "maidens": 0,
+          "runs": 50,
+          "wickets": 3,
+          "economy": 5.0,
+          "team": "Pakistan"
+        },
+        {
+          "player": "Shaheen Afridi",
+          "overs": 10,
+          "maidens": 0,
+          "runs": 50,
+          "wickets": 3,
+          "economy": 5.0,
+          "team": "Pakistan"
+        },
+        {
+          "player": "Hasan Ali",
+          "overs": 10,
+          "maidens": 0,
+          "runs": 55,
+          "wickets": 2,
+          "economy": 5.5,
+          "team": "Pakistan"
+        }
+      ]
+    },
+    "teamHomeLogo": {
+      "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/logo_england.png",
+      "width": 128,
+      "height": 128
+    },
+    "teamAwayLogo": {
+      "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/logo_pakistan.png",
+      "width": 128,
+      "height": 128
+    },
+    "date": "Friday, 24 November 2023",
+    "type": "One Day",
+    "ground": "Lord's Cricket Ground",
+    "round": "Round 1",
+    "gender": "Men",
+    "ageGroup": "Senior/Open",
+    "gradeName": "International ODI",
+    "assignSponsors": {
+      "competition": {
+        "id": 12345,
+        "name": "ICC Cricket"
+      },
+      "grade": {
+        "id": 6670,
+        "name": "International ODI"
+      },
+      "Teams": {
+        "home": {
+          "name": "England"
+        },
+        "away": {
+          "name": "Pakistan"
+        }
+      }
+    },
+    "result": "7/280 - 5/281",
+    "prompt": "Match Summary: England vs. Pakistan: Pakistan won with a score of 5/281 against England's 7/280. Babar Azam scored 125 runs for Pakistan, and Joe Root scored 95 runs for England."
+  },
+  {
+    "gameID": "25104",
+    "status": "Completed",
+    "homeTeam": {
+      "name": "Australia",
+      "isHome": true,
+      "logo": {
+        "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/logo_australia.png",
+        "width": 128,
+        "height": 128
+      },
+      "score": "6/300",
+      "overs": null,
+      "homeScoresFirstInnings": null,
+      "battingPerformances": [
+        {
+          "player": "Steve Smith",
+          "runs": 110,
+          "balls": 95,
+          "fours": 12,
+          "sixes": 3,
+          "SR": 115.79,
+          "team": "Australia"
+        },
+        {
+          "player": "David Warner",
+          "runs": 85,
+          "balls": 70,
+          "fours": 9,
+          "sixes": 2,
+          "SR": 121.43,
+          "team": "Australia"
+        },
+        {
+          "player": "Aaron Finch",
+          "runs": 65,
+          "balls": 55,
+          "fours": 7,
+          "sixes": 2,
+          "SR": 118.18,
+          "team": "Australia"
+        }
+      ],
+      "bowlingPerformances": [
+        {
+          "player": "Jasprit Bumrah",
+          "overs": 10,
+          "maidens": 1,
+          "runs": 45,
+          "wickets": 4,
+          "economy": 4.5,
+          "team": "India"
+        },
+        {
+          "player": "Yuzvendra Chahal",
+          "overs": 10,
+          "maidens": 0,
+          "runs": 55,
+          "wickets": 3,
+          "economy": 5.5,
+          "team": "India"
+        },
+        {
+          "player": "Ravindra Jadeja",
+          "overs": 10,
+          "maidens": 2,
+          "runs": 30,
+          "wickets": 1,
+          "economy": 4.0,
+          "team": "India"
+        }
+      ]
+    },
+    "awayTeam": {
+      "name": "India",
+      "isHome": false,
+      "logo": {
+        "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/logo_india.png",
+        "width": 128,
+        "height": 128
+      },
+      "score": "4/305",
+      "overs": null,
+      "awayScoresFirstInnings": null,
+      "battingPerformances": [
+        {
+          "player": "Virat Kohli",
+          "runs": 130,
+          "balls": 110,
+          "fours": 16,
+          "sixes": 4,
+          "SR": 118.18,
+          "team": "India"
+        },
+        {
+          "player": "Rohit Sharma",
+          "runs": 95,
+          "balls": 80,
+          "fours": 10,
+          "sixes": 3,
+          "SR": 118.75,
+          "team": "India"
+        },
+        {
+          "player": "KL Rahul",
+          "runs": 70,
+          "balls": 60,
+          "fours": 8,
+          "sixes": 2,
+          "SR": 116.67,
+          "team": "India"
+        }
+      ],
+      "bowlingPerformances": [
+        {
+          "player": "Pat Cummins",
+          "overs": 10,
+          "maidens": 2,
+          "runs": 40,
+          "wickets": 3,
+          "economy": 4.0,
+          "team": "Australia"
+        },
+        {
+          "player": "Mitchell Starc",
+          "overs": 10,
+          "maidens": 1,
+          "runs": 50,
+          "wickets": 2,
+          "economy": 5.0,
+          "team": "Australia"
+        },
+        {
+          "player": "Josh Hazlewood",
+          "overs": 10,
+          "maidens": 0,
+          "runs": 55,
+          "wickets": 2,
+          "economy": 5.5,
+          "team": "Australia"
+        }
+      ]
+    },
+    "teamHomeLogo": {
+      "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/logo_australia.png",
+      "width": 128,
+      "height": 128
+    },
+    "teamAwayLogo": {
+      "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/logo_india.png",
+      "width": 128,
+      "height": 128
+    },
+    "date": "Saturday, 25 November 2023",
+    "type": "One Day",
+    "ground": "Melbourne Cricket Ground",
+    "round": "Round 1",
+    "gender": "Men",
+    "ageGroup": "Senior/Open",
+    "gradeName": "International ODI",
+    "assignSponsors": {
+      "competition": {
+        "id": 12345,
+        "name": "ICC Cricket"
+      },
+      "grade": {
+        "id": 6670,
+        "name": "International ODI"
+      },
+      "Teams": {
+        "home": {
+          "name": "Australia"
+        },
+        "away": {
+          "name": "India"
+        }
+      }
+    },
+    "result": "6/300 - 4/305",
+    "prompt": "Match Summary: Australia vs. India: India won with a score of 4/305 against Australia's 6/300. Virat Kohli scored 130 runs for India, and Steve Smith scored 110 runs for Australia."
+  }
+]

@@ -3,30 +3,26 @@ import { Center, Group, Paper } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
 import { useMantineTheme } from "@mantine/styles";
 import { Thumbnail } from "@remotion/player";
-import { useMemo } from "react";
-import {
-  createPreviewObject,
-  mergeData,
-  updateDataBasedOnSelected,
-} from "../../../../../../utils/RemotionUtils";
-import { ASSETS, DEFAULTLOGO } from "../../../../../../utils/RemotionAssets";
+import { useEffect, useState } from "react";
 import { BTN_TOINTERALLINK } from "../../../../../Members/Common/utils/Buttons";
+import { prepareMockData } from "../../../../../../utils/Remotion/RemotionPrepareMockData";
 
 export const Previewer = ({ account }) => {
   const theme = useMantineTheme();
   const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
+  
+  const [mockData, setMockData] = useState([]);
 
-  // Use useMemo to only recreate the previewObj when `account` changes
-  const previewObj = useMemo(() => createPreviewObject(account), [account]);
+  useEffect(() => {
+    if (account) {
+      const data = prepareMockData(account);
+      setMockData(data);
+    }
+  }, [account]);
 
-  // No useEffect needed anymore unless you have other side effects to handle
-
-  if (!previewObj.template) {
+  if (!mockData.length) {
     return <Center>Loading...</Center>;
   }
-
-  const templateType = previewObj.template.Category;
-  const assetTypes = Object.keys(ASSETS[templateType]);
 
   return (
     <>
@@ -43,36 +39,25 @@ export const Previewer = ({ account }) => {
             slidesToScroll={mobile ? 1 : 2}
             withIndicators
           >
-            {assetTypes.map((assetType, i) => {
-              const asset = ASSETS[templateType][assetType];
-              let updatedData = mergeData(asset.DATA, previewObj);
-              updatedData = updateDataBasedOnSelected(
-                updatedData,
-                assetType,
-                previewObj.Account.logo,
-                previewObj.Account.name,
-                DEFAULTLOGO
-              );
-
-              return (
-                <Carousel.Slide key={i}>
-                  <Thumbnail
-                    component={asset.component}
-                    compositionHeight={1350}
-                    compositionWidth={1080}
-                    frameToDisplay={updatedData.VIDEOMETA.Video.FRAMES[0]}
-                    durationInFrames={[
-                      updatedData.TIMINGS.FPS_INTRO,
-                      updatedData.TIMINGS.FPS_MAIN,
-                      updatedData.TIMINGS.FPS_OUTRO,
-                    ].reduce((a, b) => a + b, 0)}
-                    fps={30}
-                    inputProps={{ DATA: updatedData }}
-                    style={{ width: "100%" }}
-                  />
-                </Carousel.Slide>
-              );
-            })}
+            {mockData.map((asset, i) => (
+              <Carousel.Slide key={i}>
+                <Thumbnail
+                  component={asset.component}
+                  compositionHeight={1350}
+                  compositionWidth={1080}
+                  frameToDisplay={asset.data.VIDEOMETA.Video.FRAMES[0]}
+                  durationInFrames={[
+                    asset.data.TIMINGS.FPS_INTRO,
+                    asset.data.TIMINGS.FPS_MAIN,
+                    asset.data.TIMINGS.FPS_OUTRO,
+                  ].reduce((a, b) => a + b, 0)}
+                  fps={30}
+                  inputProps={{ DATA: asset.data }}
+                  key={JSON.stringify(asset.data)} // Use key to force re-render
+                  style={{ width: "100%" }}
+                />
+              </Carousel.Slide>
+            ))}
           </Carousel>
         </Center>
       </Paper>

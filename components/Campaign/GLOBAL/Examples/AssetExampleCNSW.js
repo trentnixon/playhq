@@ -17,12 +17,12 @@ export const UpComingFixtures = ({ DATA }) => {
         ].reduce((a, b) => a + b, 0)}
         from={0}
       >
-        <ExampleSHELL DATA={DATA}>
+        <ExampleSHELL DATA={DATA}> 
           <Example_Video_Upcoming DATA={DATA} />
-        </ExampleSHELL>
-      </Sequence>
+        </ExampleSHELL> 
+      </Sequence> 
     </>
-  );
+  ); 
 };
 
 export const WeekendResults = ({ DATA }) => {

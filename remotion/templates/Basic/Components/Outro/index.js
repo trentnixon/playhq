@@ -1,34 +1,31 @@
 import {Sequence, Series} from 'remotion';
 import styled from 'styled-components';
 import {useCurrentFrame} from 'remotion';
-import {SponsorRows} from './SponsorRows';
-import {MadePossibleBy} from './MadePossibleBy';
-import {ClubLogo} from './ClubLogo';
-import {ClubNameComponent} from './ClubNameComponent';
 
-export const OutroSequenceFrame = ({theme, DATA, FPS,Startfrom}) => {
+import OutroSponsorsAsGrid from '../../../../structural/Sponsors/outro/OutroSponsorsAsGrid';
+import {OutroScaleFromZero} from '../../../../structural/AccoutLogo/ScaleFromZero/outro_ScaleFromZero';
+import {MadePossibleBy} from '../../../../structural/Sponsors/outro/MadePossibleBy';
+
+export const OutroSequenceFrame = (props) => {
+	const {DATA, FPS, StyleConfig} = props;
 	const frame = useCurrentFrame();
+
 	return (
-		<Sequence durationInFrames={FPS} from={Startfrom}>
-			
+		<Sequence>
+			<Series>
+				<Series.Sequence durationInFrames={FPS} layout="none">
 					<SponsorOuterContainer>
-						<MadePossibleBy frame={frame} FPS={FPS} theme={theme} />
-						<SponsorRows DATA={DATA} theme={theme} FPS={FPS} />
-						<ClubNameContainer>
-							<ClubLogo
-								src={DATA.VIDEOMETA.Club.Logo}
-								frame={frame}
-								FPS={FPS}
-							/>
-							{/* <ClubNameComponent
-								name={DATA.VIDEOMETA.Club.Name}
-								frame={frame}
-								FPS={FPS}
-								theme={theme}
-							/> */}
-						</ClubNameContainer>
+						<MadePossibleBy frame={frame} FPS={FPS} StyleConfig={StyleConfig} />
+
+						<OutroSponsorsAsGrid DATA={DATA} FPS={FPS} />
+						<OutroScaleFromZero
+							src={DATA.VIDEOMETA.Club.Logo}
+							frame={frame}
+							FPS={FPS}
+						/>
 					</SponsorOuterContainer>
-			
+				</Series.Sequence>
+			</Series>
 		</Sequence>
 	);
 };
@@ -41,10 +38,4 @@ const SponsorOuterContainer = styled.div`
 	width: 100%;
 	justify-content: space-between;
 	align-items: center;
-`;
-
-const ClubNameContainer = styled.div`
-	width: 100%;
-	z-index: 2000;
-	margin: 30px 0;
 `;

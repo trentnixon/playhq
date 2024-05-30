@@ -18,8 +18,9 @@ $paragraph-color: #646464;
 $white-color: #ffffff;
 $transition: .5s;
 
-
-
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 /* Add this to your CSS file */
 @keyframes slideUp {

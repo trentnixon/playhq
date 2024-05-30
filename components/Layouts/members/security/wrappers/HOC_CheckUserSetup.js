@@ -98,11 +98,11 @@ const HOC_CheckUserSetup = ({ children }) => {
                   >
                     <Group position="apart" mb={20}>
                       <P Weight={600} color={8} marginBottom={0}>
-                        Customizer
+                        Templates
                       </P>
                       <BTN_TOINTERALLINK
                         URL={`/members/customizer/`}
-                        LABEL={"Customizer"}
+                        LABEL={"Templates"}
                       />
                     </Group>
                     <P>

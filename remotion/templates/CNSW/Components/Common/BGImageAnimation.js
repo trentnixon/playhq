@@ -1,235 +1,46 @@
-import {useEffect, useState} from 'react';
-import {useCurrentFrame, Img} from 'remotion';
-import {interpolateValueByFrame} from '../../../../Animation/interpolate';
-import {SVGAnimation} from './SVGAnimation';
-import {darkenColor, lightenColor} from '../../../../utils/colors';
-//import {getBackgroundColor} from '../../../../utils/colors';
+import {SimpleGradientBackground} from '../../../../structural/Backgrounds/GradientBackground/GradientBackground';
+import {SimpleBlankColorBackground} from '../../../../structural/Backgrounds/BlankColorBackground/BlankColorBackground';
+import ImageBackgroundSimple from '../../../../structural/Backgrounds/ImageBackground/ImageBackgroundSimple';
+import {CNSWSVGBackground} from '../../../../structural/Backgrounds/SVGBackground/CNSW/CNSWSVGBackground';
+import {darkenColor} from '../../../../utils/colors';
 
-const BlankColorBackground = ({backgroundColor}) => (
-	<div
-		style={{
-			backgroundColor: backgroundColor,
-			width: '100%',
-			height: '100%',
-			zIndex: 1,
-			position: 'absolute',
-			opacity: 1,
-		}}
-	/>
-);
-
-const ImageBackground = ({url, style, backgroundColor}) => (
-	<div>
-		<div
-			style={{
-				backgroundColor: backgroundColor,
-				width: '102%',
-				height: '100%',
-				zIndex: 1,
-				position: 'absolute',
-				opacity: 0.8,
-			}}
-		></div>
-		<div
-			style={{
-				backgroundColor,
-				mixBlendMode: 'color',
-				width: '100%',
-				height: '100%',
-				zIndex: 1,
-				position: 'absolute',
-			}}
-		></div>
-		{
-			url ?<Img src={url} style={style} />:false
-		}
-		
-	</div>
-);
-
-const GradientBackground = ({gradient}) => (
-	<div
-		style={{
-			background: gradient,
-			width: '100%',
-			height: '100%',
-			zIndex: 1,
-			position: 'absolute',
-			opacity: 0.8,
-		}}
-	/>
-);
-
-// Helper function to check the image size ratio compared to the screen size
-const imageSizeRatio = (imageWidth, imageHeight, screenWidth, screenHeight) => {
-	const widthRatio = imageWidth / screenWidth;
-	const heightRatio = imageHeight / screenHeight;
-	return {widthRatio, heightRatio};
-};
 // CNSW
-export const BGImageAnimation = ({
-	HeroImage,
-	TIMINGS,
-	THEME,
-	TemplateVariation,
-}) => {
-	const frame = useCurrentFrame();
-	const [direction, setDirection] = useState(null);
-	const {url, ratio, height, width} = HeroImage || {};
-	const backgroundColor = THEME.primary;
+export const BGImageAnimation = (props) => {
+	const {THEME, TemplateVariation, Sport, HeroImage, TIMINGS} = props.BuildProps ?? {};
 
-	useEffect(() => {
-		if (ratio === 'landscape') {
-			setDirection('leftToRight');
-		} else {
-			setDirection('topToBottom');
-		}
-	}, [ratio]);
-
-	let style = {};
-	if (ratio === 'landscape') {
-		style = landscapeAnimation(frame, TIMINGS, direction, width,height);
-	} else if (ratio === 'portrait') {
-		style = portraitAnimation(frame, TIMINGS, direction, width,height);
-	}
-
+	const backgroundColor = THEME?.primary ?? null;
 	const renderBackground = (THEME, TemplateVariation) => {
-		
+		if (!THEME || !TemplateVariation) {
+			throw new Error(
+				'BGImageAnimation: missing data: THEME or TemplateVariation'
+			);
+		}
+ 
 		switch (TemplateVariation.Background) {
 			case 'Image':
 				return (
-					<ImageBackground
-						url={url}
-						style={style}
-						backgroundColor={backgroundColor}
+					<ImageBackgroundSimple
+						backgroundColor={darkenColor(backgroundColor, 5)}
+						HeroImage={HeroImage}
+						TIMINGS={TIMINGS}
+						{...props}
 					/>
 				);
-			case 'Gradient': 
-				// Define your gradient here or pass it through props
-				const gradient = `linear-gradient(15deg, ${
-					THEME.secondary
-				}, ${darkenColor(THEME.primary)}, ${THEME.primary},${lightenColor(
-					THEME.secondary
-				)})`;
-				return <GradientBackground gradient={gradient} />;
+			case 'Gradient':
+				return <SimpleGradientBackground THEME={THEME} DEG="20deg" />;
 			default:
-				return <BlankColorBackground backgroundColor={backgroundColor} />;
+				return (
+					<SimpleBlankColorBackground
+						backgroundColor={darkenColor(backgroundColor, 7)}
+					/>
+				);
 		}
 	};
- 
+
 	return (
-		<div style={{marginLeft: '-1px'}}>
-			<div
-				style={{
-					width: '100%',
-					height: '100%',
-					zIndex: 100,
-					position: 'absolute',
-					opacity: 1,
-				}}
-			>
-				<SVGAnimation THEME={THEME} />
-			</div>
+		<>
+			<CNSWSVGBackground THEME={THEME} Sport={Sport} />
 			{renderBackground(THEME, TemplateVariation)}
-		</div>
+		</>
 	);
 };
-
-// Helper function for landscape image animation
-const landscapeAnimation = (
-	frame,
-	TIMINGS,
-	direction,
-	imageWidth,
-	imageHeight
-  ) => {
-	// Calculate aspect ratio
-	const aspectRatio = imageWidth / imageHeight;
-  
-	// Screen dimensions
-	const screenHeight = 1350; // You should replace this with a dynamic value if possible
-	const screenWidth = 1080; // You should replace this with a dynamic value if possible
-  
-	// Scale the image to be 1.2 times the size of the screen
-	const scale = 1.005;
-  
-   
-	// Calculate new dimensions while maintaining the aspect ratio
-	const newHeight = screenHeight * scale;
-	// console.log("newHeight, aspectRatio", newHeight, aspectRatio)
-	const newWidth = (newHeight * aspectRatio); // maintain aspect ratio
-  
-	const zoomScale = interpolateValueByFrame(frame, 0, TIMINGS, scale, scale);
-  
-	// Calculate the left position to center the image horizontally in the viewport
-	const leftCenter = 50;
-  
-	// Interpolate the position for movement 10% either side of center
-	const interpolatedPosition = interpolateValueByFrame(
-	  frame,
-	  0,
-	  TIMINGS,
-	  direction === "leftToRight" ? -10 : 10,
-	  direction === "leftToRight" ? 10 : -10
-	);
-  
-	// Calculate the actual left position including the interpolated movement
-	const leftPosition = leftCenter + interpolatedPosition;
-  
-	return {
-	  position: "absolute",
-	  maxHeight: `${newHeight}px`,
-	  maxWidth: `${newWidth}px`,
-	  top: "50%",
-	  left: `calc(${leftPosition}%)`,
-	  transform: `translate(-50%, -50%) scale(${zoomScale})`,
-	};
-  };
-
-// Helper function for portrait image animation
-const portraitAnimation = (
-	frame,
-	TIMINGS,
-	direction,
-	imageWidth,
-	imageHeight
-  ) => {
-	const screenHeight = 1350; // You should replace this with a dynamic value if possible
-	const screenWidth = 1080; // You should replace this with a dynamic value if possible
-  
-	const { widthRatio, heightRatio } = imageSizeRatio(
-	  imageWidth,
-	  imageHeight,
-	  screenWidth,
-	  screenHeight
-	);
-  
-	// Scale the image to be 1.2 times the size of the screen
-	const scale = 1.2;
-	const zoomScale = interpolateValueByFrame(frame, 0, TIMINGS, scale, scale);
-  
-	// Calculate the top position to center the image vertically in the viewport
-	const topCenter = 50;
-  
-	// Interpolate the position for movement 10% either side of center (instead of 20%)
-	const interpolatedPosition = interpolateValueByFrame(
-	  frame,
-	  0,
-	  TIMINGS,
-	  direction === "topToBottom" ? -10 : 10, // Reduced to 10%
-	  direction === "topToBottom" ? 10 : -10 // Reduced to 10%
-	);
-  
-	// Calculate the actual top position including the interpolated movement
-	const topPosition = topCenter + interpolatedPosition;
-  
-	return {
-	  position: "absolute",
-	  maxHeight: `${screenHeight * scale}px`,
-	  maxWidth: `${screenWidth * scale}px`,
-	  top: `calc(${topPosition}%)`,
-	  left: "50%",
-  
-	  transform: `translate(-50%, -50%) scale(${zoomScale})`,
-	};
-  };

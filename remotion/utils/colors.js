@@ -1,7 +1,8 @@
+var tinycolor = require('tinycolor2');
 import ColorThief from 'colorthief';
 
+const colorThief = new ColorThief();
 
-var tinycolor = require('tinycolor2');
 
 /* Color functions, move to Actions/Utils */
 export function getContrastColor(
@@ -12,13 +13,13 @@ export function getContrastColor(
 	return bgColorObj.isDark() ? COLORS.white : COLORS.dark;
 }
 
-export const lightenColor = (color) => {
-	const darkColor = tinycolor(color).lighten(10); // darken the color by 10%
+export const lightenColor = (color,by=10) => {
+	const darkColor = tinycolor(color).lighten(by); // darken the color by 10%
 	return darkColor.toHexString(); // return the color as a hex string
 };
 
-export const darkenColor = (color) => {
-	const darkColor = tinycolor(color).darken(10); // darken the color by 10%
+export const darkenColor = (color, by=10) => {
+	const darkColor = tinycolor(color).darken(by); // darken the color by 10%
 	return darkColor.toHexString(); // return the color as a hex string
 };
 
@@ -66,7 +67,7 @@ const adjustColorLightness = (baseColor, targetColor, minContrast) => {
 
 export const getBackgroundColor = (primary, secondary) => {
 	const {isContrasting, contrast} = checkColorContrast(primary, secondary);
-	if (isContrasting) return primary;
+	if (isContrasting) return darkenColor(primary) ;
 
 	const desiredContrast = 4.5; // Minimum desired contrast ratio for AA level
 
@@ -283,24 +284,3 @@ export const getDominantColor = async (imgSrc) => {
     }
 };
 
-export const getDominantColors = async (imgSrc, colorCount = 2) => {
-    try {
-        const img = new Image();
-        img.crossOrigin = 'Anonymous'; // This enables CORS
-        img.src = imgSrc;
-
-        // Ensure the image has loaded before processing
-        await new Promise((resolve, reject) => {
-            img.onload = resolve;
-            img.onerror = reject;
-        });
-
-        const colorThief = new ColorThief();
-        const palette = colorThief.getPalette(img, colorCount);
-
-        return palette.map(color => `rgb(${color[0]}, ${color[1]}, ${color[2]})`);
-    } catch (error) {
-        console.error('Failed to get dominant colors:', error);
-        return ['#ffffff', '#000000']; // Return default colors in case of any error
-    }
-};

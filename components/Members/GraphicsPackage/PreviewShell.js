@@ -3,29 +3,49 @@ import { useEffect, useState } from "react";
 import { Paper } from "@mantine/core";
 import { MembersPreviewPlayer } from "./Player";
 import { P } from "../Common/Type";
-import { createPreviewObject } from "../../../utils/RemotionUtils";
+import { prepareMockData } from "../../../utils/Remotion/RemotionPrepareMockData";
 
 export const MembersPreviewShell = (props) => {
   const { userAccount, selectedAsset, selectedHeroImage } = props;
-  const [previewObj, setPreviewObj] = useState({});
+
+  const [filteredData, setFilteredData] = useState(null);
 
   useEffect(() => {
-    const updatedPreviewObj = createPreviewObject(userAccount, selectedAsset, selectedHeroImage);
-    setPreviewObj(updatedPreviewObj);
+    const data = prepareMockData(userAccount);
+    let filtered = data.find(
+      (item) => item.data.VIDEOMETA.Video.CompositionID === selectedAsset
+    );
+
+    if (filtered && selectedHeroImage) {
+      // Replace HeroImage with selectedHeroImage if it's not null
+      filtered = {
+        ...filtered,
+        data: {
+          ...filtered.data,
+          VIDEOMETA: {
+            ...filtered.data.VIDEOMETA,
+            Video: {
+              ...filtered.data.VIDEOMETA.Video,
+              HeroImage: {
+                ...filtered.data.VIDEOMETA.Video.HeroImage,
+                ...selectedHeroImage,
+              },
+            },
+          },
+        },
+      };
+    }
+
+    setFilteredData(filtered);
   }, [userAccount, selectedAsset, selectedHeroImage]); // Update the dependency array
 
-  if (Object.keys(previewObj).length === 0) {
+  if (!filteredData) {
     return <P>Loading...</P>;
   }
-  
+
   return (
     <Paper shadow="md" w={"100%"} p={0} withBorder>
-      <MembersPreviewPlayer
-        OBJ={previewObj}
-        Selected={selectedAsset}
-        HeroImage={selectedHeroImage}
-      />
+      <MembersPreviewPlayer Data={filteredData} />
     </Paper>
-  ); 
+  );
 };
- 

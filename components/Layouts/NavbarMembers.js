@@ -55,7 +55,7 @@ const NavbarMembers = () => {
       <div id="navbarTwo" className={`navbar-area navbar-style-2`}>
         <nav className="navbar navbar-expand-md navbar-light">
           <div className="container-fluid">
-            <Link legacyBehavior  href="/">
+            <Link legacyBehavior href="/">
               <a className="navbar-brand">
                 <img
                   src="/images/image_processing20220611-3013-fimmni.png"
@@ -116,7 +116,7 @@ const VisitorMenu = ({ setMenu }) => {
   return (
     <>
       <li className="nav-item">
-        <Link legacyBehavior  href="/">
+        <Link legacyBehavior href="/">
           <a className="nav-link" onClick={() => setMenu(true)}>
             Home
           </a>
@@ -124,7 +124,7 @@ const VisitorMenu = ({ setMenu }) => {
       </li>
 
       <li className="nav-item">
-        <Link legacyBehavior  href="/portfolio" activeClassName="active">
+        <Link legacyBehavior href="/portfolio" activeClassName="active">
           <a className="nav-link" onClick={() => setMenu(true)}>
             Examples
           </a>
@@ -132,21 +132,21 @@ const VisitorMenu = ({ setMenu }) => {
       </li>
 
       <li className="nav-item">
-        <Link  legacyBehavior href="/about" activeClassName="active">
+        <Link legacyBehavior href="/about" activeClassName="active">
           <a className="nav-link" onClick={() => setMenu(true)}>
             About
           </a>
         </Link>
       </li>
       <li className="nav-item">
-        <Link legacyBehavior  href="/resources" activeClassName="active">
+        <Link legacyBehavior href="/resources" activeClassName="active">
           <a className="nav-link" onClick={() => setMenu(true)}>
             Resources
           </a>
         </Link>
       </li>
       <li className="nav-item">
-        <Link legacyBehavior  href="/faq" activeClassName="active">
+        <Link legacyBehavior href="/faq" activeClassName="active">
           <a className="nav-link" onClick={() => setMenu(true)}>
             FAQ
           </a>
@@ -154,7 +154,7 @@ const VisitorMenu = ({ setMenu }) => {
       </li>
 
       <li className="nav-item">
-        <Link  legacyBehavior href="/contact" activeClassName="active">
+        <Link legacyBehavior href="/contact" activeClassName="active">
           <a className="nav-link" onClick={() => setMenu(true)}>
             Contact
           </a>
@@ -168,7 +168,7 @@ const NavItem = ({ href, title, IconComponent, setMenu }) => {
   const theme = useMantineTheme();
   return (
     <li className="nav-item members-item">
-      <Link legacyBehavior  href={href} activeClassName="active">
+      <Link legacyBehavior href={href} activeClassName="active">
         <Group
           position="apart"
           sx={(theme) => ({
@@ -233,22 +233,13 @@ const MembersNavItem = ({ user, setMenu }) => {
       title: "Bundles",
       IconComponent: IconDownload,
     },
-    /*  {
-      href: `${PATH}/graphics-packages`,
-      title: "Graphics Packages",
-      IconComponent: IconColorPicker,
-    }, */
+
     {
       href: `${PATH}/customizer`,
-      title: "Customizer",
+      title: "Templates",
       IconComponent: IconColorPicker,
     },
-    
-    /* {
-      href: `${PATH}/branding`,
-      title: "Your Branding",
-      IconComponent: IconBadgeTm,
-    }, */
+
     {
       href: `${PATH}/gallery`,
       title: "Media Gallery",
@@ -284,7 +275,7 @@ const MembersNavItem = ({ user, setMenu }) => {
       : navItems;
   return (
     <li className="nav-item">
-      <Link legacyBehavior  href="#">
+      <Link legacyBehavior href="#">
         <a className="nav-link" onClick={(e) => e.preventDefault()}>
           {user} <i className="fa-solid fa-angle-down"></i>
         </a>

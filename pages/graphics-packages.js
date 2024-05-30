@@ -115,67 +115,54 @@ const FreeTier = () => {
   const carouselData = [
     {
       image:
-        "https://fixtura.s3.ap-southeast-2.amazonaws.com/Redlands_Tigers_Cricket_Club_Weekend_Result_bc576e311ef1_2a54f30c7b.png",
+        "https://fixtura.s3.ap-southeast-2.amazonaws.com/Up_Coming_Fixtures_inner_west_canterbury_bankstown_825_0658baac1472_806c81da54.png",
       title: "Example 2",
       category: "Basic: Outside Edge",
       video: "",
-      MainDescription: "This is a gradient design.",
+      MainDescription: "",
     },
-    {
-      image:
-        "https://fixtura.s3.ap-southeast-2.amazonaws.com/Northern_Suburbs_District_Cricket_Club_Weekend_Result_8b632f09df84_f0f6052960.png",
-      title: "Example 1",
-      category: "Basic: Thats a Pill",
-      video: "",
-      MainDescription: "This is a basic square design.",
-    },
+    
     {
       image:
         "https://fixtura.s3.ap-southeast-2.amazonaws.com/LDCC_Lindfield_Cricket_SENIORS_Ladder_d4fa6ef4097c_a1fdd02d07_0ac91bba80.png",
       title: "Example 1",
       category: "Basic: Soft Hands",
       video: "",
-      MainDescription: "This is a basic square design.",
+      MainDescription: "",
     },
     {
       image:
-        "https://fixtura.s3.ap-southeast-2.amazonaws.com/Northern_Suburbs_District_Cricket_Club_Weekend_Result_eb8f8c23dc68_d2c5b86f9c.png",
+        "https://fixtura.s3.ap-southeast-2.amazonaws.com/Coastal_Challenge_Weekend_Result_Coastal_Challenge_Coastal_Challenge_50_Overs_7222c88a67fc_120_cc66332dc7.png",
       title: "Example 1",
-      category: "Gradient: From Below",
+      category: "Basic: Soft Hands",
       video: "",
-      MainDescription: "This is a basic square design.",
+      MainDescription: "",
     },
     {
       image:
-        "https://fixtura.s3.ap-southeast-2.amazonaws.com/University_of_QLD_Cricket_Club_Results_ce9df3e76061_254a7f11f8.png",
+        "https://fixtura.s3.ap-southeast-2.amazonaws.com/Sydney_Shires_Competition_Top_5_Sydney_Shires_Competition_Second_Grade_The_SJ_Mayne_Trophy_5373b8a442a0_390_a30c65e65d.png",
       title: "Example 1",
-      category: "Gradient: From the Left",
+      category: "Basic: Soft Hands",
       video: "",
-      MainDescription: "This is a basic square design.",
-    },
-    {
+      MainDescription: "",
+    },{
       image:
-        "  https://fixtura.s3.ap-southeast-2.amazonaws.com/LDCC_Lindfield_Cricket_SENIORS_Fixtures_88ca73ce29ba_46af24425e.png",
+        "https://fixtura.s3.ap-southeast-2.amazonaws.com/Freyberg_CC_Top_5_Senior_d09d77e19e2f_390_19a6018aab.png",
       title: "Example 1",
-      category: "Gradient: From the Top",
+      category: "Basic: Soft Hands",
       video: "",
-      MainDescription: "This is a basic square design.",
+      MainDescription: "",
     },
-    {
-      image:
-        "https://fixtura.s3.ap-southeast-2.amazonaws.com/Sunshine_Coast_Scorchers_Weekend_Result_7a6e81fa1029_7d2422129a.png",
-      title: "Example 1",
-      category: "Gradient: From the Right",
-      video: "",
-      MainDescription: "This is a basic square design.",
-    },
+
+
+    
   ];
   return (
     <Section {...freePackageData} color="light">
       {/*  <PricingComponent /> */}
       <CardsCarousel data={carouselData} />
       <P textAlign={"center"}>
-        Stay tuned! We're constantly rolling out fresh, new packages.
+        We're constantly rolling out fresh, new packages.
       </P>
     </Section>
   );
@@ -196,7 +183,10 @@ const Bespoke = () => {
     <>
       <Section {...bespokeIntroOffer} color="dark">
         <Center>
-          <Link legacyBehavior  href="https://www.facebook.com/profile.php?id=100095406210560">
+          <Link
+            legacyBehavior
+            href="https://www.facebook.com/profile.php?id=100095406210560"
+          >
             <a
               target="_blank"
               className="btn btn-primary"

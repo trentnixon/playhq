@@ -20,8 +20,8 @@ const ClubPage = ({ clubData, useAssets }) => {
     paragraphs: [
       `For just $20 a week, get full access to tailored videos, graphics, and articles that celebrate your team's achievements. Experience the ease of automated content generation—your PlayHQ data now delivers more than just scores.`,
     ],
-  }; 
- 
+  };
+
   const SectionPlayer = {
     title: "Fixtura's Live Demo",
     paragraphs: [
@@ -38,7 +38,7 @@ const ClubPage = ({ clubData, useAssets }) => {
       />
       <FixturaAndYourClubBanner AccountData={clubData.attributes} />
 
-      <> 
+      <>
         <Section {...SectionPlayer} color="light">
           <Container p={padding}>
             <Previewer AccountData={clubData} useAssets={useAssets} />
@@ -51,7 +51,7 @@ const ClubPage = ({ clubData, useAssets }) => {
               width={"auto"}
               src={`https://fixtura.s3.ap-southeast-2.amazonaws.com/Asset_Examples_With_Labels_6796528404.png`}
             />
-          </Center> 
+          </Center>
         </Section>
         <Feedback />
         <CtaAreaTwo />
@@ -63,91 +63,9 @@ const ClubPage = ({ clubData, useAssets }) => {
 export default ClubPage;
 
 export const getServerSideProps = async ({ params }) => {
-  const qs = require('qs');
-  
+  const qs = require("qs");
+
   // Fetch club data just like you did in getStaticProps
-  const clubQuery = qs.stringify({
-    filters: {
-      PlayHQID: { $eq: params.club },
-    },
-    populate: ["Logo"],
-  }, { encodeValuesOnly: true });
-
-  const assetQuery = qs.stringify({
-    populate: ["asset_type", "asset_category"],
-  }, { encodeValuesOnly: true });
-
-  const clubDataResponse = await fetcher(
-    `${process.env.NEXT_PUBLIC_STRAPI_URL}/clubs?${clubQuery}`
-  );
-
-  if (!clubDataResponse || !clubDataResponse.data) {
-    return { notFound: true };
-  }
-
-  const clubData = clubDataResponse.data[0];
-
-  const assetsResponse = await fetcher(
-    `${process.env.NEXT_PUBLIC_STRAPI_URL}/assets?${assetQuery}`
-  );
-
-  const useAssets = assetsResponse ? assetsResponse.data : [];
-
-  return { props: { clubData, useAssets } };
-};
-
-/* 
-export const getStaticPaths = async () => {
-  let hasMoreClubs = true;
-  let pageNumber = 1;
-  const paths = [];
-
-  while (hasMoreClubs) {
-    const clubs = await fetchClubs(pageNumber);
-    if (clubs.data.length === 0) {
-      hasMoreClubs = false;
-      break;
-    }
-
-    for (const club of clubs.data) {
-      //console.log(club.attributes.PlayHQID.toString())
-      paths.push({ params: { club: club.attributes.PlayHQID.toString() } });
-    }
-
-    pageNumber++;
-  }
-
-  return { paths, fallback: false };
-}; */
-
-// You can place the fetchClubs function outside of getStaticPaths
-/* async function fetchClubs(pageNumber = 1, pageSize = 25) {
-  const queryWithPagination = qs.stringify(
-    {
-      filter:{
-        Sport:{
-          $eq:'Cricket'
-        }
-      },
-      pagination: {
-        page: pageNumber,
-        pageSize: pageSize,
-      },
-      populate: ["teams"],
-    },
-    {
-      encodeValuesOnly: true,
-    }
-  );
-  return await fetcher(`${process.env.NEXT_PUBLIC_STRAPI_URL}/clubs?${queryWithPagination}`);
-} */
-
- 
-
-
-
-/* export const getStaticProps = async ({ params }) => {
-  // Fetch club data
   const clubQuery = qs.stringify(
     {
       filters: {
@@ -170,23 +88,16 @@ export const getStaticPaths = async () => {
   );
 
   if (!clubDataResponse || !clubDataResponse.data) {
-    // Handle error or return not found
     return { notFound: true };
   }
 
-  const clubData = clubDataResponse.data[0]; // Assuming the first match is correct
+  const clubData = clubDataResponse.data[0];
 
-  // Fetch assets data
   const assetsResponse = await fetcher(
     `${process.env.NEXT_PUBLIC_STRAPI_URL}/assets?${assetQuery}`
   );
 
-  if (!assetsResponse || !assetsResponse.data) {
-    // Handle error or default to an empty array
-    return { props: { clubData, useAssets: [] } };
-  }
-
-  const useAssets = assetsResponse.data;
+  const useAssets = assetsResponse ? assetsResponse.data : [];
 
   return { props: { clubData, useAssets } };
-}; */
+};

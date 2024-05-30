@@ -2,11 +2,11 @@ import { Center } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
 import { useMantineTheme } from "@mantine/styles";
 import { useEffect, useState } from "react";
-import { createPreviewObject } from "../../../../../../utils/RemotionUtils";
 import { RoundedSectionContainer } from "../../../../../UI/Containers/SectionContainer";
 import { Previewer } from "./Previewer";
 import { UserPreviewTitle } from "./UserPreviewTitle";
 import { useAccountDetails } from "../../../../../../lib/userContext";
+import { createPreviewObject } from "../../../../../../utils/Remotion/RemotionUtils";
 
 export const PreviewGallery = () => {
   const { account } = useAccountDetails();
@@ -22,9 +22,9 @@ export const PreviewGallery = () => {
 
   if (!previewObj.template) {
     return <Center>Loading...</Center>;
-  }
+  } 
 
-  const templateType = previewObj.template.Category;
+  //const templateType = previewObj.template.Category;
   //const assetTypes = Object.keys(ASSETS[templateType]);
 
   return (
@@ -34,4 +34,4 @@ export const PreviewGallery = () => {
       bottomContent={<Previewer account={account} />}
     />
   );
-}; 
+};  

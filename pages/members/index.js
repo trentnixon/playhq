@@ -47,12 +47,12 @@ const DashBoard = () => {
       <PageTitle
         Copy={`Hi ${account.attributes.FirstName || ""}`}
         ICON={<IconLayoutDashboard size={40} />}
-      />
+      /> 
 
       <PreviewGallery />
       <Space h={20} />
       <Cards_Account commonProps={commonProps} />
-
+ 
       <Space h={30} />
       <Cards_Branding commonProps={commonProps} />
 

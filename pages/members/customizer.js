@@ -17,6 +17,7 @@ import Meta from "../../components/Layouts/Meta";
 import { MembersPreviewShell } from "../../components/Members/GraphicsPackage/PreviewShell";
 
 import { IconScissors, IconTemplate } from "@tabler/icons-react";
+import { RoundedSectionContainer } from "../../components/UI/Containers/SectionContainer";
 
 const qs = require("qs");
 
@@ -56,57 +57,59 @@ const Design = ({ Response }) => {
     <LoadingStateWrapper conditions={[user, userAccount]}>
       <MembersWrapper>
         <Meta
-          title="Fixtura Member Customizer - Tailor Your Graphics"
-          description="Effortlessly customize your club's graphics with Fixtura's member-exclusive Customizer. Choose, design, and showcase with ease."
+          title="Fixtura Member Templates - Tailor Your Graphics"
+          description="Effortlessly customize your club's graphics with Fixtura's member-exclusive Templates. Choose, design, and showcase with ease."
           keywords="Custom graphics, Fixtura, club branding, design customization, sports visual content"
         />
-        <PageTitle Copy={"Customizer"} ICON={<IconColorPicker size={40} />} />
+        <PageTitle Copy={"Templates"} ICON={<IconColorPicker size={40} />} />
 
-        <PageCopyWrapper>
-          <P>
-            Customize, and visualize your club's graphics with ease. Fixtura's
-            Customizer provides a straightforward and efficient way to ensure
-            your club's visual content is always on-brand and impactful.
-          </P>
-        </PageCopyWrapper>
-        <Space h={20} />
-        <Grid>
-          <Grid.Col span={12}>
-            <SubHeaders
-              Copy={"Template Selection"}
-              ICON={<IconTemplate size={30} />}
-            />
-            <P>
+        <RoundedSectionContainer
+          headerContent=""
+          topContent={
+            <P marginBottom={0}>
               Browse through a diverse range of pre-designed templates. Our
               selection caters to various styles and preferences, offering
               something for every club. New designs are added regularly to keep
               your content fresh and engaging.
             </P>
+          }
+          bottomContent={
             <DesignTabs
               userAccount={userAccount}
               hasMediaItems={
                 Response?.attributes.account_media_libraries.data.length
               }
             />
-          </Grid.Col>
-          <Grid.Col sm={12} md={6}>
-            <MembersPreviewShell
-              key={playerKey}
-              userAccount={userAccount}
-              selectedAsset={selectedAsset}
-              selectedHeroImage={selectedHeroImage}
-            />
-          </Grid.Col> 
-          <Grid.Col sm={12} md={6}>
-            <PreviewControls
-              setSelectedAsset={setSelectedAsset}
-              selectedAsset={selectedAsset}
-              userAccount={userAccount}
-              selectedHeroImage={selectedHeroImage}
-              setHeroImage={setHeroImage}
-            />
-          </Grid.Col>
-        </Grid>
+          }
+        />
+
+        <Space h={20} />
+
+        <RoundedSectionContainer
+          headerContent=""
+          topContent={<P marginBottom={0}>Preview your template</P>}
+          bottomContent={
+            <Grid>
+              <Grid.Col sm={12} md={6}>
+                <MembersPreviewShell
+                  key={playerKey}
+                  userAccount={userAccount}
+                  selectedAsset={selectedAsset}
+                  selectedHeroImage={selectedHeroImage}
+                />
+              </Grid.Col>
+              <Grid.Col sm={12} md={6}>
+                <PreviewControls
+                  setSelectedAsset={setSelectedAsset}
+                  selectedAsset={selectedAsset}
+                  userAccount={userAccount}
+                  selectedHeroImage={selectedHeroImage}
+                  setHeroImage={setHeroImage}
+                />
+              </Grid.Col>
+            </Grid>
+          }
+        />
 
         <PageCopyWrapper>
           <SubHeaders
@@ -177,7 +180,7 @@ const PreviewControls = ({
     { value: "Top5BowlingList", label: "Top 5 Bowling" },
     { value: "Ladder", label: "Ladder" },
   ];
- 
+
   const handleAssetChange = (value) => {
     setSelectedAsset(value);
   };

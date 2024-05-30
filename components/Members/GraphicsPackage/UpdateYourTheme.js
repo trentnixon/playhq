@@ -5,7 +5,7 @@ import {
   Group,
   Paper,
   Table,
-  useMantineTheme,
+  useMantineTheme, 
 } from "@mantine/core";
 import {
   useAssignDesignElement,
