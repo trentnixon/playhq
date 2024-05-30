@@ -1,11 +1,11 @@
 import { useState, useEffect, useCallback } from "react";
 import { Player, Thumbnail } from "@remotion/player";
-import DATA_FIXTURES from "../../../remotion/utils/upcoming_v2.json";
+/* import DATA_FIXTURES from "../../../remotion/utils/upcoming_v2.json";
 import DATA_RESULTS from "../../../remotion/utils/WeekendResultsV2.json";
 import DATA_TOP5RUNS from "../../../remotion/utils/Top5RunsV2.json";
 import DATA_TOP5WICKETS from "../../../remotion/utils/Top5WicketsV2.json";
 import DATA_LADDER from "../../../remotion/utils/LadderV2.json";
-import DATA_ROSTER from "../../../remotion/utils/RosterPoster.json";
+import DATA_ROSTER from "../../../remotion/utils/RosterPoster.json"; */
 import { getDominantColors } from "../../../remotion/utils/colors";
 import {
   UpComingFixtures, 
@@ -33,7 +33,7 @@ export const RemotionPlayer = ({
     "https://fixtura.s3.ap-southeast-2.amazonaws.com/Default_ICON_171b58a21b.png";
 
   //console.log("selectedMedia", selectedMedia);
-  const ASSETS = {
+  /* const ASSETS = {
     UpComingFixtures: {
       component: UpComingFixtures,
       DATA: DATA_FIXTURES,
@@ -62,7 +62,7 @@ export const RemotionPlayer = ({
       component: RosterPoster,
       DATA: DATA_ROSTER,
     },
-  };
+  }; */
 
   const renderPoster = useCallback(
     ({ height, width, useLOGO, accountName, assetType }) => {

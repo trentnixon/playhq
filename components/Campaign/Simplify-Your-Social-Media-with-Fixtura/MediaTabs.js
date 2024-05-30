@@ -5,7 +5,7 @@ import {
   IconPictureInPicture,
   IconFileText,
 } from "@tabler/icons-react";
-import { RemotionPlayer } from "./Player";
+/* import { RemotionPlayer } from "./Player"; */
 import { DisplayWriteups } from "./DisplayWriteups";
 
 export const MediaTabs = ({
@@ -39,25 +39,25 @@ export const MediaTabs = ({
 
         <Tabs.Panel value="VIDEO" pt="xs">
           <Paper shadow="md" p={0} withBorder>
-            <RemotionPlayer
+           {/*  <RemotionPlayer
               AccountData={AccountData}
-              selectedMedia={selectedMedia}
+              selectedMedia={selectedMedia} 
               TYPE={"Player"}
               userColors={userColors}
               userlogoUrl={userlogoUrl}
-            />
+            /> */}
           </Paper>
         </Tabs.Panel>
 
         <Tabs.Panel value="IMAGE" pt="xs">
           <Paper shadow="md" p={0} withBorder>
-            <RemotionPlayer
+           {/*  <RemotionPlayer
               AccountData={AccountData}
               selectedMedia={selectedMedia}
               TYPE={"Thumbnail"}
               userColors={userColors}
               userlogoUrl={userlogoUrl}
-            />
+            /> */}
           </Paper>
         </Tabs.Panel>
 
