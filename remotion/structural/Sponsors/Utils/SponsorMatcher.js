@@ -19,8 +19,8 @@ class SponsorMatcher {
 	getSponsorsForFixture(fixture) {
 		const sponsors = [];
 
-		//console.log("fixture ", fixture)
-		//console.log("this.sponsors ", this.sponsors)
+		console.log("fixture ", fixture)
+		console.log("this.sponsors ", this.sponsors)
 
 		// Check for league sponsors
 		if (

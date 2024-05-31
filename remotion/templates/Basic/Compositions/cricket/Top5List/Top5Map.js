@@ -104,7 +104,7 @@ export const Top5PlayersMap = (props) => {
 										),
 									}}
 								>
-									{restrictString(removeEmojis(player.playedFor), 30)}
+									{restrictString(removeEmojis(player.playedFor), 40)}
 								</PlayerGradeTeam>
 							</PlayerMetaContainer>
 

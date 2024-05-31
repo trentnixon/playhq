@@ -14,7 +14,7 @@ export const Fixtures = (props) => {
 		props.VIDEOMETA.Club.Sponsors
 	);
 	const {groupedFixtures, groupedSponsors} = sponsorMatcher.matchSponsors(); 
- 	//console.log("props ", props)
+ 
 	return (
 		<Series>
 			<Series.Sequence

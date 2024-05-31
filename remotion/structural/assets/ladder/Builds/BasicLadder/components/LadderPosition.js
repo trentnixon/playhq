@@ -39,6 +39,7 @@ export const LadderPosition = (props) => {
 	const {teamLogo} = LadderItem;
 	const {Font, Color} = StyleConfig;
 	const ContainerHeight = (SectionHeights.Body-60);
+	console.log("ContainerHeight ", ContainerHeight)
 	const frame = useCurrentFrame();
 	const NumTeams = getTeamsLength(Ladder);
 	const useTHEMECOLOR = findRowBackgroundColor(isTeam, Color);

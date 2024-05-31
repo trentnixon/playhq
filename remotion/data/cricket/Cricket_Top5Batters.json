@@ -1,0 +1,473 @@
+{
+	"RENDER": {
+	  "SchedulerID": 176,
+	  "RenderID": 6625
+	},
+	"ACCOUNT": {
+	  "accountId": 288
+	},
+	"ASSET": {
+	  "ASSETID": 15,
+	  "ASSETTYPEID": 3,
+	  "ASSETCATEGORYID": 2,
+	  "ASSETSLINKID": "a45fe8a72a6b72f2ae19fae0e92834c9d216109d65c9624cd309bfa06c2b58c4"
+	},
+	"VIDEOMETA": {
+	  "grouping_category": "2024 qvc intrastate over 40s t20",
+	  "Video": {
+		"Title": "Top 5",
+		"TitleSplit": [
+		  "Weekend",
+		  "Run-Scorers"
+		],
+		"CompositionID": "Top5BattingList",
+		"VideoTitle": "Top 5 Run Scorers - undefined",
+		"HeroImage": {
+		  "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/gettyimages_1556632641_2048x2048_f14e09c17b.jpg",
+		  "width": 1419,
+		  "height": 2048,
+		  "ratio": "portrait",
+		  "AgeGroup": "Both",
+		  "AssetType": "ALL",
+		  "markerPosition": []
+		},
+		"Template": "CNSW",
+		"TemplateVariation": {
+		  "Background": "Image"
+		},
+		"Theme": {
+		  "primary": "#79001f",
+		  "secondary": "#fdbc2c",
+		  "dark": "#111",
+		  "white": "#FFF"
+		},
+		"includeSponsors": true,
+		"audio_option": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Audiio_Marscott_Readyand_Go_Speed_Outburst_Inst_fb6bfe8381.mp3",
+		"ASSETID": 15,
+		"ASSETTYPEID": 3,
+		"FRAMES": [
+		  390
+		]
+	  },
+	  "THEME": {
+		"Template": "CNSW",
+		"TemplateVariation": {
+		  "Background": "Image"
+		},
+		"Theme": {
+		  "primary": "#79001f",
+		  "secondary": "#fdbc2c",
+		  "dark": "#111",
+		  "white": "#FFF"
+		}
+	  },
+	  "Club": {
+		"Name": "Queensland Veterans Cricket",
+		"Sport": "Cricket",
+		"Logo": {
+		  "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/logo_41_486b5e1edd.jpg",
+		  "width": 132,
+		  "height": 176
+		},
+		"Sponsors": {
+		  "default": {
+			"primary_sponsor": {
+			  "sponsorId": 113,
+			  "name": "Test 1",
+			  "logo": {
+				"url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/SJWCA_Logo_Fixtura_016b2f16bd.png",
+				"width": 279,
+				"height": 279
+			  }
+			},
+			"general_sponsors": [
+			  {
+				"position": 1,
+				"sponsorId": 114,
+				"name": "Test 2",
+				"logo": {
+				  "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/logo_41_75c1709638.png",
+				  "width": 440,
+				  "height": 595
+				}
+			  },
+			  {
+				"position": 2,
+				"sponsorId": 116,
+				"name": "Test 3",
+				"logo": {
+				  "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/434901405_2109664729400735_1483511238917312281_n_1743f0bed2.jpg",
+				  "width": 500,
+				  "height": 500
+				}
+			  }
+			]
+		  },
+		  "league": [
+			{
+			  "level": "league_7201",
+			  "id": 7201,
+			  "allocationName": "QVC Over 50's",
+			  "sponsorId": 113,
+			  "name": "Test 1",
+			  "logo": {
+				"url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/SJWCA_Logo_Fixtura_016b2f16bd.png",
+				"width": 279,
+				"height": 279
+			  }
+			},
+			{
+			  "level": "league_11106",
+			  "id": 11106,
+			  "allocationName": "2024 QVC Intrastate Over 40s T20",
+			  "sponsorId": 113,
+			  "name": "Test 1",
+			  "logo": {
+				"url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/SJWCA_Logo_Fixtura_016b2f16bd.png",
+				"width": 279,
+				"height": 279
+			  }
+			},
+			{
+			  "level": "league_9885",
+			  "id": 9885,
+			  "allocationName": "2024 QVC Intrastate Over 40s T20",
+			  "sponsorId": 114,
+			  "name": "Test 2",
+			  "logo": {
+				"url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/logo_41_75c1709638.png",
+				"width": 440,
+				"height": 595
+			  }
+			},
+			{
+			  "level": "league_7200",
+			  "id": 7200,
+			  "allocationName": "Brisbane Over 40s Cricket Competition",
+			  "sponsorId": 116,
+			  "name": "Test 3",
+			  "logo": {
+				"url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/434901405_2109664729400735_1483511238917312281_n_1743f0bed2.jpg",
+				"width": 500,
+				"height": 500
+			  }
+			},
+			{
+			  "level": "league_10766",
+			  "id": 10766,
+			  "allocationName": "2024 QVC Intrastate Over 40s T20",
+			  "sponsorId": 116,
+			  "name": "Test 3",
+			  "logo": {
+				"url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/434901405_2109664729400735_1483511238917312281_n_1743f0bed2.jpg",
+				"width": 500,
+				"height": 500
+			  }
+			}
+		  ],
+		  "grade": [
+			{
+			  "level": "grade_17155",
+			  "id": 17155,
+			  "allocationName": "Brisbane Over 40s Cricket Division 1",
+			  "sponsorId": 114,
+			  "name": "Test 2",
+			  "logo": {
+				"url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/logo_41_75c1709638.png",
+				"width": 440,
+				"height": 595
+			  }
+			},
+			{
+			  "level": "grade_10961",
+			  "id": 10961,
+			  "allocationName": "Andrew Knight Shield (O50 Div 2)",
+			  "sponsorId": 114,
+			  "name": "Test 2",
+			  "logo": {
+				"url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/logo_41_75c1709638.png",
+				"width": 440,
+				"height": 595
+			  }
+			},
+			{
+			  "level": "grade_10963",
+			  "id": 10963,
+			  "allocationName": "Peter Sherman Shield (O50 Div 3)",
+			  "sponsorId": 114,
+			  "name": "Test 2",
+			  "logo": {
+				"url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/logo_41_75c1709638.png",
+				"width": 440,
+				"height": 595
+			  }
+			},
+			{
+			  "level": "grade_23647",
+			  "id": 23647,
+			  "allocationName": "O50 Div 2 - Andrew Knight Shield",
+			  "sponsorId": 114,
+			  "name": "Test 2",
+			  "logo": {
+				"url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/logo_41_75c1709638.png",
+				"width": 440,
+				"height": 595
+			  }
+			},
+			{
+			  "level": "grade_23649",
+			  "id": 23649,
+			  "allocationName": "O60 Div 1 - Geoff Dymock Shield",
+			  "sponsorId": 114,
+			  "name": "Test 2",
+			  "logo": {
+				"url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/logo_41_75c1709638.png",
+				"width": 440,
+				"height": 595
+			  }
+			},
+			{
+			  "level": "grade_23651",
+			  "id": 23651,
+			  "allocationName": "O60 Div 3 - Kratzmann Shield",
+			  "sponsorId": 114,
+			  "name": "Test 2",
+			  "logo": {
+				"url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/logo_41_75c1709638.png",
+				"width": 440,
+				"height": 595
+			  }
+			},
+			{
+			  "level": "grade_27993",
+			  "id": 27993,
+			  "allocationName": "QVC Intrastate Over 40s T20",
+			  "sponsorId": 114,
+			  "name": "Test 2",
+			  "logo": {
+				"url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/logo_41_75c1709638.png",
+				"width": 440,
+				"height": 595
+			  }
+			},
+			{
+			  "level": "grade_17156",
+			  "id": 17156,
+			  "allocationName": "Brisbane Over 40s Cricket Division 2",
+			  "sponsorId": 116,
+			  "name": "Test 3",
+			  "logo": {
+				"url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/434901405_2109664729400735_1483511238917312281_n_1743f0bed2.jpg",
+				"width": 500,
+				"height": 500
+			  }
+			},
+			{
+			  "level": "grade_10962",
+			  "id": 10962,
+			  "allocationName": "Gill Chapman Shield (O50 Div 1)",
+			  "sponsorId": 116,
+			  "name": "Test 3",
+			  "logo": {
+				"url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/434901405_2109664729400735_1483511238917312281_n_1743f0bed2.jpg",
+				"width": 500,
+				"height": 500
+			  }
+			},
+			{
+			  "level": "grade_23646",
+			  "id": 23646,
+			  "allocationName": "O50 Div 1 - Gill Chapman Shield",
+			  "sponsorId": 116,
+			  "name": "Test 3",
+			  "logo": {
+				"url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/434901405_2109664729400735_1483511238917312281_n_1743f0bed2.jpg",
+				"width": 500,
+				"height": 500
+			  }
+			},
+			{
+			  "level": "grade_23648",
+			  "id": 23648,
+			  "allocationName": "O50 Div 3 (Maroon) - Peter Sherman Shield",
+			  "sponsorId": 116,
+			  "name": "Test 3",
+			  "logo": {
+				"url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/434901405_2109664729400735_1483511238917312281_n_1743f0bed2.jpg",
+				"width": 500,
+				"height": 500
+			  }
+			},
+			{
+			  "level": "grade_23650",
+			  "id": 23650,
+			  "allocationName": "O60 Div 2 - Kerry Emery Shield",
+			  "sponsorId": 116,
+			  "name": "Test 3",
+			  "logo": {
+				"url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/434901405_2109664729400735_1483511238917312281_n_1743f0bed2.jpg",
+				"width": 500,
+				"height": 500
+			  }
+			},
+			{
+			  "level": "grade_23652",
+			  "id": 23652,
+			  "allocationName": "O50 Div 3 (White) - Peter Sherman Shield",
+			  "sponsorId": 116,
+			  "name": "Test 3",
+			  "logo": {
+				"url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/434901405_2109664729400735_1483511238917312281_n_1743f0bed2.jpg",
+				"width": 500,
+				"height": 500
+			  }
+			}
+		  ]
+		}
+	  },
+	  "FixtureCategory": "2024 qvc intrastate over 40s t20"
+	},
+	"TIMINGS": {
+	  "FPS_INTRO": 90,
+	  "FPS_OUTRO": 120,
+	  "FPS_MAIN": 360
+	},
+	"DATA": [
+	  {
+		"name": "Matthew Gurr",
+		"runs": 53,
+		"balls": 7,
+		"SR": 757.14,
+		"playedFor": "Toowoomba Grey Cavaliers",
+		"teamLogo": {
+		  "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/logo_793d6a4161.jpg",
+		  "width": 555,
+		  "height": 542
+		},
+		"notOut": false,
+		"assignSponsors": {
+		  "competition": {
+			"id": 9885,
+			"name": "2024 QVC Intrastate Over 40s T20"
+		  },
+		  "grade": {
+			"id": 23652,
+			"name": "O50 Div 3 (White) - Peter Sherman Shield"
+		  },
+		  "Team": {
+			"name": "Toowoomba Grey Cavaliers"
+		  }
+		},
+		"prompt": "Matthew Gurr played for Toowoomba Grey Cavaliers, scoring 53 runs from 7 balls with a strike rate of 757.14. Game details: This was a One Day in the O50 Div 3 (White) - Peter Sherman Shield grade, and the current match status is Match Completed . Wide Bay White, (0/196) vs Toowoomba Grey Cavaliers (8/191), the match result was Wide Bay White won by 10 wickets."
+	  },
+	  {
+		"name": "Ken McKnight",
+		"runs": 53,
+		"balls": 49,
+		"SR": 108.16,
+		"playedFor": "Wide Bay",
+		"teamLogo": {
+		  "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Default_ICON_171b58a21b.png",
+		  "width": 1211,
+		  "height": 1211
+		},
+		"notOut": true,
+		"assignSponsors": {
+		  "competition": {
+			"id": 9885,
+			"name": "2024 QVC Intrastate Over 40s T20"
+		  },
+		  "grade": {
+			"id": 23649,
+			"name": "O60 Div 1 - Geoff Dymock Shield"
+		  },
+		  "Team": {
+			"name": "Wide Bay"
+		  }
+		},
+		"prompt": "Ken McKnight played for Wide Bay, scoring 53 runs from 49 balls with a strike rate of 108.16. Game details: This was a One Day in the O60 Div 1 - Geoff Dymock Shield grade, and the current match status is Match Completed . Wide Bay, (10/168) vs GC Thunder Gold (5/194), the match result was GC Thunder Gold won by 26 runs."
+	  },
+	  {
+		"name": "Nic Comino",
+		"runs": 53,
+		"balls": 52,
+		"SR": 101.92,
+		"playedFor": "Redlands Logan White",
+		"teamLogo": {
+		  "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/logo_7_950cdc3373.jpg",
+		  "width": 706,
+		  "height": 725
+		},
+		"notOut": false,
+		"assignSponsors": {
+		  "competition": {
+			"id": 9885,
+			"name": "2024 QVC Intrastate Over 40s T20"
+		  },
+		  "grade": {
+			"id": 23652,
+			"name": "O50 Div 3 (White) - Peter Sherman Shield"
+		  },
+		  "Team": {
+			"name": "Redlands Logan White"
+		  }
+		},
+		"prompt": "Nic Comino played for Redlands Logan White, scoring 53 runs from 52 balls with a strike rate of 101.92. Game details: This was a One Day in the O50 Div 3 (White) - Peter Sherman Shield grade, and the current match status is Match Completed . Redlands Logan Maroon, (9/198) vs Redlands Logan White (2/205), the match result was Redlands Logan White won by 7 runs."
+	  },
+	  {
+		"name": "Jason Riley",
+		"runs": 51,
+		"balls": 37,
+		"SR": 137.83,
+		"playedFor": "Wide Bay White",
+		"teamLogo": {
+		  "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Default_ICON_171b58a21b.png",
+		  "width": 1211,
+		  "height": 1211
+		},
+		"notOut": false,
+		"assignSponsors": {
+		  "competition": {
+			"id": 9885,
+			"name": "2024 QVC Intrastate Over 40s T20"
+		  },
+		  "grade": {
+			"id": 23652,
+			"name": "O50 Div 3 (White) - Peter Sherman Shield"
+		  },
+		  "Team": {
+			"name": "Wide Bay White"
+		  }
+		},
+		"prompt": "Jason Riley played for Wide Bay White, scoring 51 runs from 37 balls with a strike rate of 137.83. Game details: This was a One Day in the O50 Div 3 (White) - Peter Sherman Shield grade, and the current match status is Match Completed . Wide Bay White, (0/196) vs Toowoomba Grey Cavaliers (8/191), the match result was Wide Bay White won by 10 wickets."
+	  },
+	  {
+		"name": "Ian Chattin",
+		"runs": 51,
+		"balls": 51,
+		"SR": 100,
+		"playedFor": "Brisbane Silver",
+		"teamLogo": {
+		  "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/logo_d511586d15.jpg",
+		  "width": 1334,
+		  "height": 750
+		},
+		"notOut": false,
+		"assignSponsors": {
+		  "competition": {
+			"id": 9885,
+			"name": "2024 QVC Intrastate Over 40s T20"
+		  },
+		  "grade": {
+			"id": 23652,
+			"name": "O50 Div 3 (White) - Peter Sherman Shield"
+		  },
+		  "Team": {
+			"name": "Brisbane Silver"
+		  }
+		},
+		"prompt": "Ian Chattin played for Brisbane Silver, scoring 51 runs from 51 balls with a strike rate of 100. Game details: This was a One Day in the O50 Div 3 (White) - Peter Sherman Shield grade, and the current match status is Match Completed . GC Thunder Bronze, (9/148) vs Brisbane Silver (4/154), the match result was Brisbane Silver won by 6 wickets."
+	  }
+	],
+	"PROMPT": []
+  }

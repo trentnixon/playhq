@@ -7,7 +7,6 @@ import {darkenColor} from '../../../../utils/colors';
 // CNSW
 export const BGImageAnimation = (props) => {
 	const {THEME, TemplateVariation, Sport, HeroImage, TIMINGS} = props.BuildProps ?? {};
-
 	const backgroundColor = THEME?.primary ?? null;
 	const renderBackground = (THEME, TemplateVariation) => {
 		if (!THEME || !TemplateVariation) {
@@ -15,7 +14,7 @@ export const BGImageAnimation = (props) => {
 				'BGImageAnimation: missing data: THEME or TemplateVariation'
 			);
 		}
- 
+
 		switch (TemplateVariation.Background) {
 			case 'Image':
 				return (

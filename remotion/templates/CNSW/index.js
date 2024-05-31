@@ -43,7 +43,7 @@ export const Template_CNSW = (props) => {
 		}
 		const templateProps = {
 			...StyleConfig,
-			...createTemplateProps(DATA, TIMINGS), 
+			...createTemplateProps(DATA, TIMINGS),
 			SectionHeights: {
 				Header: Heights.Header,
 				Body: Heights.AssetHeight - (Heights.Header + Heights.Footer),
@@ -82,7 +82,7 @@ export const Template_CNSW = (props) => {
 							<TitleSequenceFrame
 								StyleConfig={StyleConfig}
 								FPS_INTRO={TIMINGS.FPS_INTRO}
-								VIDEOMETA={DATA.VIDEOMETA} 
+								VIDEOMETA={DATA.VIDEOMETA}
 							/>
 						</Series.Sequence>
 						<Series.Sequence durationInFrames={TIMINGS.FPS_MAIN}>

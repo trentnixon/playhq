@@ -15,7 +15,7 @@ export const calculateDimensions = async (
 	dimensions = [150, 250, 150]
 ) => {
 	try {
-		//console.log('src ', src);
+		console.log('src ', src);
 		const [portraitDimension, landscapeDimension, squareDimension] = dimensions;
 		const {width, height} = src;
 		const aspectRatio = width / height;

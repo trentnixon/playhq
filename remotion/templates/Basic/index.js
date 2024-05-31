@@ -42,7 +42,7 @@ export const Template_Basic = (props) => {
 	const Heights = {
 		AssetHeight: 1350,
 		Header: 190,
-		Footer: 110, 
+		Footer: 110,
 	};
 
 	const hasPrimarySponsor = getPrimarySponsor(DATA.VIDEOMETA.Club.Sponsors);
@@ -78,11 +78,6 @@ export const Template_Basic = (props) => {
 	return (
 		<ThemeProvider theme={THEME}>
 			<AbsoluteFill>
-				<BGImageAnimation
-					HeroImage={DATA.VIDEOMETA.Video.HeroImage}
-					TIMINGS={TIMINGS.FPS_MAIN + 210}
-					THEME={THEME}
-				/>
 				<AbsoluteFill style={{zIndex: 1000}}>
 					<Series>
 						<Series.Sequence durationInFrames={TIMINGS.FPS_INTRO}>
@@ -111,6 +106,11 @@ export const Template_Basic = (props) => {
 						</Series.Sequence>
 					</Series>
 				</AbsoluteFill>
+				<BGImageAnimation
+					HeroImage={DATA.VIDEOMETA.Video.HeroImage}
+					TIMINGS={TIMINGS.FPS_MAIN + 210}
+					THEME={THEME}
+				/>
 				<AssetFullAudioTrack
 					useAudio={DATA.VIDEOMETA.Video.audio_option}
 					DATA={DATA}
