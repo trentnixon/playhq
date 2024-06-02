@@ -18,10 +18,13 @@ $paragraph-color: #646464;
 $white-color: #ffffff;
 $transition: .5s;
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
+// set some resets for remotion
+.__remotion-player{
+    img{
+        max-width: unset;
+    }
+}
 /* Add this to your CSS file */
 @keyframes slideUp {
     0% {
