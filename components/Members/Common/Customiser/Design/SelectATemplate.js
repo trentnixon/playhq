@@ -1,12 +1,18 @@
 import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 import { FixturaLoading } from "../../Loading";
 import {
   Container,
   Paper,
-  ScrollArea,
   SimpleGrid,
-  Space,
   useMantineTheme,
+  Card,
+  Text,
+  Group,
+  createStyles,
+  rem,
+  Tooltip,
+  BackgroundImage,
 } from "@mantine/core";
 import {
   useAssignDesignElement,
@@ -15,9 +21,61 @@ import {
 import { useAccountDetails } from "../../../../../lib/userContext";
 import { P, SubHeaders } from "../../Type";
 import { FixturaDivider } from "../../Divider";
+import { IconFileDownload, IconLockSquareRounded } from "@tabler/icons-react";
+import { BTN_ONCLICK } from "../../utils/Buttons";
 import { TemplateCard } from "./Components/TemplateCard";
-import { TemplateDetail } from "./TemplateDetials";
-import { IconFileDownload } from "@tabler/icons-react";
+
+const useStyles = createStyles((theme) => ({
+  card: {
+    backgroundColor:
+      theme.colorScheme === "dark" ? theme.colors.dark[7] : theme.white,
+  },
+  selectedCard: {
+    backgroundColor: theme.colors.green[1],
+  },
+  imageSection: {
+    padding: 0,
+    textAlign: "center",
+    marginTop: 0,
+    alignItems: "center",
+    justifyContent: "center",
+    minHeight: "200px",
+  },
+
+  label: {
+    marginBottom: theme.spacing.xs,
+    lineHeight: 1,
+    fontWeight: 700,
+    fontSize: theme.fontSizes.xs,
+    letterSpacing: rem(-0.25),
+    textTransform: "uppercase",
+  },
+
+  section: {
+    padding: theme.spacing.xs,
+  },
+
+  icon: {
+    marginRight: rem(5),
+    color:
+      theme.colorScheme === "dark"
+        ? theme.colors.dark[2]
+        : theme.colors.gray[5],
+  },
+}));
+
+const Locked = () => {
+  const theme = useMantineTheme();
+  return (
+    <Tooltip
+      position="bottom"
+      withArrow
+      label="Upload a media item to unlock this item"
+    >
+      <IconLockSquareRounded size={"1.9em"} color={theme.colors.gray[5]} />
+    </Tooltip>
+  );
+};
 
 export const SelectATemplate = ({ hasMediaItems }) => {
   const { account, ReRender } = useAccountDetails();
@@ -30,12 +88,15 @@ export const SelectATemplate = ({ hasMediaItems }) => {
   const handleMoreInfoClick = (template) => {
     setSelectedTemplate(template);
   };
+
   const handleBackClick = () => {
     setSelectedTemplate(null);
   };
+
   const isUserTemplate = (templateId) => {
     return userAccount.attributes.template.data.id === templateId;
   };
+
   useEffect(() => {
     FetchElement({ COLLECTIONID: "templates" });
   }, []);
@@ -73,7 +134,10 @@ export const SelectATemplate = ({ hasMediaItems }) => {
   if (loading || !GetElement || !userAccount) {
     return (
       <>
-        <SubHeaders Copy={`Storing New Graphics Package`} ICON={<IconFileDownload size={30} />}/>
+        <SubHeaders
+          Copy={`Storing New Graphics Package`}
+          ICON={<IconFileDownload size={30} />}
+        />
 
         <Paper
           radius="md"
@@ -88,16 +152,6 @@ export const SelectATemplate = ({ hasMediaItems }) => {
     );
   }
 
-  if (selectedTemplate) {
-    return (
-      <TemplateDetail
-        onSelect={(selectedTemplate) => StoreUSerChange(selectedTemplate)}
-        template={selectedTemplate}
-        isSelected={isUserTemplate(selectedTemplate.id)}
-        onBack={handleBackClick}
-      />
-    );
-  }
   return (
     <>
       <Paper
@@ -135,7 +189,7 @@ export const SelectATemplate = ({ hasMediaItems }) => {
                   hasMediaItems={hasMediaItems}
                 />
               ))}
-            </SimpleGrid> 
+            </SimpleGrid>
           </Container>
         ))}
       </Paper>

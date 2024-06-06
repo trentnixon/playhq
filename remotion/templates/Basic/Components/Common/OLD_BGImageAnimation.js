@@ -21,7 +21,7 @@ export const BGImageAnimation = ({ HeroImage, TIMINGS, THEME }) => {
     if (ratio === "landscape") {
       setDirection("leftToRight");
     } else {
-      setDirection("topToBottom");
+      setDirection("topToBottom"); 
     }
   }, [ratio]);
 

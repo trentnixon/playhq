@@ -22,10 +22,10 @@ export const DashBoardTheme = ({
 }) => {
   // Consistent variable naming
   const { classes } = useStyles();
-  const { Name: templateName = "N/A" } = template;
-  const { Name: audioOptionName = "N/A" } = audio_option;
-  const isDefaultTemplate = templateName === "Basic Sqaure";
-  const isDefaultAudioOption = audioOptionName === "Groover";
+/*   const { Name: templateName = "N/A" } = template;
+  const { Name: audioOptionName = "N/A" } = audio_option; */
+/*   const isDefaultTemplate = templateName === "Basic Sqaure";
+  const isDefaultAudioOption = audioOptionName === "Groover"; */
 
   return (
     <Paper
@@ -88,7 +88,7 @@ export const DashBoardTheme = ({
         />
       </Box>
       <Group position="right" mt="md">
-        <BTN_TOINTERALLINK LABEL={"Change"} URL={"members/customizer/"} />
+        <BTN_TOINTERALLINK LABEL={"Change"} URL={"members/templates/"} />
       </Group>
     </Paper>
   );

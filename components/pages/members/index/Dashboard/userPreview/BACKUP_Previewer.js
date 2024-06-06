@@ -84,7 +84,7 @@ export const Previewer = ({ account }) => {
       </Paper>
 
       <Group position="right">
-        <BTN_TOINTERALLINK LABEL={"Templates"} URL={"/members/customizer/"} />
+        <BTN_TOINTERALLINK LABEL={"Templates"} URL={"/members/templates/"} />
       </Group>
     </>
   );

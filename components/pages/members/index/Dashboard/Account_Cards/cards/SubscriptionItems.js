@@ -54,7 +54,7 @@ export const DashBoardSubscriptionItems = ({ user, Theme }) => {
 
         <Text ta="center" fw={700} className={classes.title}>
           {statusMessage}
-        </Text>
+        </Text> 
         <Text c="dimmed" ta="center" fz="sm">
           Subscription Status
         </Text>

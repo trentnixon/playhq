@@ -10,14 +10,14 @@ import {
 } from "../../components/Members/Common/Containers";
 import { Grid, Group, Image, Paper, Select, Space, Tabs } from "@mantine/core";
 import { IconColorPicker } from "@tabler/icons";
-import { DesignTabs } from "../../components/Members/Design/DesignTabs";
 import { LoadingStateWrapper } from "../../components/Members/Account/HOC/LoadingStateWrapper";
 import { BTN_TOEXTLINK } from "../../components/Members/Common/utils/Buttons";
 import Meta from "../../components/Layouts/Meta";
 import { MembersPreviewShell } from "../../components/Members/GraphicsPackage/PreviewShell";
 
-import { IconScissors, IconTemplate } from "@tabler/icons-react";
+import { IconScissors } from "@tabler/icons-react";
 import { RoundedSectionContainer } from "../../components/UI/Containers/SectionContainer";
+import { SelectATemplate } from "../../components/Members/Common/Customiser/Design/SelectATemplate";
 
 const qs = require("qs");
 
@@ -28,7 +28,7 @@ const query = qs.stringify(
       "theme",
       "audio_option",
       "account_media_libraries",
-      "account_media_libraries.imageId",
+      "account_media_libraries.imageId", 
     ],
   },
   {
@@ -74,7 +74,7 @@ const Design = ({ Response }) => {
             </P>
           }
           bottomContent={
-            <DesignTabs
+            <SelectATemplate
               userAccount={userAccount}
               hasMediaItems={
                 Response?.attributes.account_media_libraries.data.length

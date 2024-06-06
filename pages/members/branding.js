@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useRouter } from "next/router";
+
 import { useAccountDetails } from "../../lib/userContext";
 import { useUser } from "../../lib/authContext";
 import Cookies from "js-cookie";
@@ -9,9 +9,8 @@ import {
   MembersWrapper,
   PageCopyWrapper,
 } from "../../components/Members/Common/Containers";
-import { Container, Space } from "@mantine/core";
-import { IconColorPicker } from "@tabler/icons";
-//import { DesignTabs } from "../../components/Members/Design/DesignTabs";
+import { Space } from "@mantine/core";
+
 import { AccountLogo } from "../../components/Members/Design/AddLogo";
 import { SelectATheme } from "../../components/Members/Common/Customiser/Design/SelectATheme";
 import { LoadingStateWrapper } from "../../components/Members/Account/HOC/LoadingStateWrapper";

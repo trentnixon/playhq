@@ -3,7 +3,8 @@
 import { Template_Basic } from "../../remotion/templates/Basic/PreviewShell";
 import { Template_CNSW } from "../../remotion/templates/CNSW/PreviewShell";
 import { Template_QLDC } from "../../remotion/templates/QLDC/PreviewShell";
-
+import { Template_CoastalCricketLeague } from "../../remotion/templates/CoastalCricketLeague/PreviewShell";
+ 
 // DATA
 import DATA_CRICKET_UPCOMINGFIXTURES from "../../remotion/data/cricket/DATA_CRICKET_UPCOMINGFIXTURES.json";
 import DATA_CRICKET_RESULTS from "../../remotion/data/cricket/DATA_CRICKET_RESULTS.json";
@@ -80,6 +81,8 @@ export const ASSETS = {
     Basic: createCategoryAssets(Template_Basic, cricketData),
     CNSW: createCategoryAssets(Template_CNSW, cricketData),
     QLDC: createCategoryAssets(Template_QLDC, cricketData),
+    CoastalCricketLeague: createCategoryAssets(Template_CoastalCricketLeague, cricketData),
+    
   },
   AFL: {},
   Netball: {},

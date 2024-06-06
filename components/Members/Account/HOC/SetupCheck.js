@@ -99,7 +99,7 @@ const SetupCheck = ({ children }) => {
                       Templates
                       </P>
                       <BTN_TOINTERALLINK
-                        URL={`/members/customizer/`}
+                        URL={`/members/templates/`}
                         LABEL={"Templates"}
                       />
                     </Group>

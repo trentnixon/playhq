@@ -22,7 +22,7 @@ export const Previewer = ({ account }) => {
 
   if (!mockData.length) {
     return <Center>Loading...</Center>;
-  }
+  } 
 
   return (
     <>
@@ -62,9 +62,9 @@ export const Previewer = ({ account }) => {
         </Center>
       </Paper>
 
-      <Group position="right">
-        <BTN_TOINTERALLINK LABEL={"Templates"} URL={"/members/customizer/"} />
-      </Group>
+    {/*   <Group position="right">
+        <BTN_TOINTERALLINK LABEL={"Free Template"} URL={"/members/templates/"} />
+      </Group> */}
     </>
   );
 };

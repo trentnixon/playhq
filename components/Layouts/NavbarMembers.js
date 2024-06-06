@@ -235,7 +235,7 @@ const MembersNavItem = ({ user, setMenu }) => {
     },
 
     {
-      href: `${PATH}/customizer`,
+      href: `${PATH}/templates`,
       title: "Templates",
       IconComponent: IconColorPicker,
     },

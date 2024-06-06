@@ -49,3 +49,19 @@ export function getContrastColor(hexColor,COLORS={white:'#ffffff',dark:'#111111'
     const colorWithOpacity = tinycolor(color).setAlpha(opacity);
     return colorWithOpacity.toRgbString(); // return the color as an rgba string
   };
+
+
+  // Adjust Data for previewing templates
+ export  const updateUserAccountWithTemplate = (userAccount, template) => {
+    // Clone the userAccount to avoid directly mutating the state
+    const updatedUserAccount = JSON.parse(JSON.stringify(userAccount));
+  
+    const PathToUpdate = updatedUserAccount.attributes.template.data.attributes;
+    const PathWithNewValues = template.attributes;
+    // Update the necessary attributes with the selected template details
+    PathToUpdate.Category = PathWithNewValues.Category;
+    PathToUpdate.TemplateVariation = PathWithNewValues.TemplateVariation;
+    PathToUpdate.bundle_audio = PathWithNewValues.bundle_audio;
+  
+    return updatedUserAccount;
+  };

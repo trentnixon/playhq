@@ -21,6 +21,16 @@ const useStyles = createStyles((theme, _params, getRef) => ({
       transition: "background-color 0.5s, color 0.5s",
     },
   },
+  
+  white: {
+    borderColor: theme.colors.members[0],
+    color: theme.colors.members[0],
+    "&:hover": {
+      backgroundColor: theme.colors.members[0],
+      color: theme.colors.members[2],
+      transition: "background-color 0.5s, color 0.5s",
+    },
+  },
   success: {
     borderColor: theme.colors.members[6],
     color: theme.colors.members[6],
