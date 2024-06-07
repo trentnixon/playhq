@@ -60,6 +60,10 @@ const Design = ({ Response }) => {
   useEffect(() => {
     setPlayerKey(Date.now());
   }, [selectedHeroImage, selectedAsset]);
+
+
+
+
   return (
     <LoadingStateWrapper conditions={[user, userAccount]}>
       <MembersWrapper>
@@ -84,7 +88,7 @@ const Design = ({ Response }) => {
             Response?.attributes.account_media_libraries.data.length
           }
         />
-        <Space h={20} />
+        <Space h={20} /> 
         <PageCopyWrapper>
           <SubHeaders
             Copy={"Bespoken Graphics"}
@@ -106,7 +110,7 @@ const Design = ({ Response }) => {
               LABEL={"Start Your Bespoke Journey"}
             />
           </Group>
-        </PageCopyWrapper>
+        </PageCopyWrapper> 
       </MembersWrapper>
     </LoadingStateWrapper>
   );

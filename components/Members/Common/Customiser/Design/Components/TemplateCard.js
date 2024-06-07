@@ -10,17 +10,20 @@ import {
   BackgroundImage,
 } from "@mantine/core";
 import { BTN_ONCLICK } from "../../../utils/Buttons";
-import { IconLockSquareRounded } from "@tabler/icons-react";
+import { IconLockSquareRounded, IconCheck } from "@tabler/icons-react";
 import { useRouter } from "next/router";
 import { P } from "../../../Type";
+import { IconCheckbox } from "@tabler/icons-react";
 
 const useStyles = createStyles((theme) => ({
   card: {
     backgroundColor:
       theme.colorScheme === "dark" ? theme.colors.dark[7] : theme.white,
+    position: "relative",
   },
   selectedCard: {
     backgroundColor: theme.colors.green[1],
+    position: "relative",
   },
   imageSection: {
     padding: 0,
@@ -60,12 +63,24 @@ const useStyles = createStyles((theme) => ({
     color: theme.white,
     fontWeight: 900,
   },
+
+  selectedIcon: {
+    position: "absolute",
+    top: rem(5),
+    right: rem(5),
+    color: theme.white ,
+    backgroundColor: theme.colors.green[5],
+    borderRadius: "50%",
+    zIndex: 200,
+    padding: rem(2),
+  },
 }));
 
 export function TemplateCard({ template, isSelected, hasMediaItems }) {
   const { classes } = useStyles();
   const router = useRouter();
 
+  console.log("template ", template.attributes.public)
   // Extract new attributes
   const { Name, Category, Variation, FrontEndName } = template.attributes;
   const posterURL =
@@ -84,6 +99,9 @@ export function TemplateCard({ template, isSelected, hasMediaItems }) {
       p={0}
       className={isSelected ? `${classes.selectedCard}` : classes.card}
     >
+      {isSelected && (
+        <IconCheckbox size={50} className={classes.selectedIcon} />
+      )}
       <BackgroundImage
         src={posterURL}
         radius="sm"
@@ -107,11 +125,11 @@ export function TemplateCard({ template, isSelected, hasMediaItems }) {
         <Card.Section className={classes.section}>
           <Group position="right">
             {!requiresMedia ? (
-              <CTABTN FUNC={handleCTAClick} />
+              <CTABTN FUNC={handleCTAClick} isSelected={isSelected} />
             ) : hasMediaItems === 0 ? (
               <Locked />
             ) : (
-              <CTABTN FUNC={handleCTAClick} />
+              <CTABTN FUNC={handleCTAClick} isSelected={isSelected} />
             )}
           </Group>
         </Card.Section>
@@ -133,6 +151,6 @@ const Locked = () => {
   );
 };
 
-const CTABTN = ({ FUNC }) => {
-  return <BTN_ONCLICK HANDLE={FUNC} THEME={"white"} LABEL={"Preview"} />;
+const CTABTN = ({ FUNC, isSelected }) => {
+  return <BTN_ONCLICK HANDLE={FUNC} THEME={"white"} LABEL={isSelected ? "Current" : "Preview"} />;
 };
