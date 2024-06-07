@@ -68,7 +68,7 @@ export const BTN_ONCLICK = ({
     <Button
       type="button"
       variant="outline"
-      onClick={HANDLE}
+      onClick={HANDLE} 
       disabled={idDisabled}
       className={classes[THEME]}
     >

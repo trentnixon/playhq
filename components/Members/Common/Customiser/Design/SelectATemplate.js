@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Container, Paper, SimpleGrid } from "@mantine/core";
+import { Container, SimpleGrid, Select, Group } from "@mantine/core";
 import {
   useAssignDesignElement,
   useGETDesignElement,
@@ -8,12 +8,15 @@ import { useAccountDetails } from "../../../../../lib/userContext";
 import { P } from "../../Type";
 import { FixturaDivider } from "../../Divider";
 import { TemplateCard } from "./Components/TemplateCard";
+import { RoundedSectionContainer } from "../../../../UI/Containers/SectionContainer";
+import { FixturaCustomSelect } from "../../utils/Selects";
 
 export const SelectATemplate = ({ hasMediaItems }) => {
   const { account, ReRender } = useAccountDetails();
   const [userAccount, setuserAccount] = useState(account);
   const [loading, setLoading] = useState(true);
   const [selectedTemplate, setSelectedTemplate] = useState(null);
+  const [selectedCategory, setSelectedCategory] = useState("All");
   const [DesignElement, CreateDesignElement] = useAssignDesignElement();
   const [GetElement, FetchElement] = useGETDesignElement();
 
@@ -21,9 +24,9 @@ export const SelectATemplate = ({ hasMediaItems }) => {
     setSelectedTemplate(template);
   };
 
-/*   const handleBackClick = () => {
+  const handleBackClick = () => {
     setSelectedTemplate(null);
-  }; */
+  };
 
   useEffect(() => {
     FetchElement({ COLLECTIONID: "templates" });
@@ -74,46 +77,66 @@ export const SelectATemplate = ({ hasMediaItems }) => {
     }, {});
   }
 
+  const categoryOptions = ["All", ...Object.keys(groupedTemplates)];
+
+  const filteredCategoryTemplates =
+    selectedCategory === "All"
+      ? groupedTemplates
+      : {
+          [selectedCategory]: groupedTemplates[selectedCategory],
+        };
+
   return (
     <>
-      <Paper
-        radius="md"
-        mt={0}
-        p="0"
-        sx={(theme) => ({ backgroundColor: theme.white })}
-      >
-        {Object.keys(groupedTemplates).map((category) => (
-          <Container key={category} fluid={true} mb={40}>
-            <P size={"xl"} Weight={900} textTransform={"uppercase"}>
-              {category}
-            </P>
-            <SimpleGrid
-              breakpoints={[
-                { minWidth: "xs", cols: 2 },
-                { minWidth: "sm", cols: 2 },
-                { minWidth: "md", cols: 3 },
-              ]}
-            >
-              {groupedTemplates[category].map((item, i) => (
-                <TemplateCard
-                  key={i}
-                  template={item}
-                  isSelected={
-                    userAccount.attributes.template.data.id === item.id
-                  }
-                  onSelect={(selectedTemplate) =>
-                    StoreUSerChange(selectedTemplate)
-                  }
-                  onMoreInfo={(selectedTemplate) =>
-                    handleMoreInfoClick(selectedTemplate)
-                  }
-                  hasMediaItems={hasMediaItems}
-                />
-              ))}
-            </SimpleGrid>
-          </Container>
+      <Container fluid={true} mb={40}>
+        <Group position="right">
+          <FixturaCustomSelect
+            label="Filter by Category"
+            placeholder="All/Clear"
+            data={categoryOptions}
+            value={selectedCategory}
+            onChange={(value) => setSelectedCategory(value)}
+          />
+        </Group>
+
+        {Object.keys(filteredCategoryTemplates).map((category) => (
+          <RoundedSectionContainer
+            key={category}
+            headerContent={""}
+            topContent={
+              <P size={"xl"} Weight={900} textTransform={"uppercase"}>
+                {category}
+              </P>
+            }
+            bottomContent={
+              <SimpleGrid
+                breakpoints={[
+                  { minWidth: "xs", cols: 2 },
+                  { minWidth: "sm", cols: 2 },
+                  { minWidth: "md", cols: 3 },
+                ]}
+              >
+                {filteredCategoryTemplates[category].map((item, i) => (
+                  <TemplateCard
+                    key={i}
+                    template={item}
+                    isSelected={
+                      userAccount.attributes.template.data.id === item.id
+                    }
+                    onSelect={(selectedTemplate) =>
+                      StoreUSerChange(selectedTemplate)
+                    }
+                    onMoreInfo={(selectedTemplate) =>
+                      handleMoreInfoClick(selectedTemplate)
+                    }
+                    hasMediaItems={hasMediaItems}
+                  />
+                ))}
+              </SimpleGrid>
+            }
+          />
         ))}
-      </Paper>
+      </Container>
       <FixturaDivider />
     </>
   );
