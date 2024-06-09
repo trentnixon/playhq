@@ -80,7 +80,6 @@ export function TemplateCard({ template, isSelected, hasMediaItems }) {
   const { classes } = useStyles();
   const router = useRouter();
 
-  console.log("template ", template.attributes.public)
   // Extract new attributes
   const { Name, Category, Variation, FrontEndName } = template.attributes;
   const posterURL =

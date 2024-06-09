@@ -57,9 +57,6 @@ export const updateLadderFirstItem = (data, useLOGO, accountName) => {
 
 // Create the preview object based on the user account
 export const createPreviewObject = (userAccount) => {
-
-  console.log("userAccount.attributes.template.data.attributes.Category", userAccount.attributes.template.data.attributes.Category)
-
   return {
     theme: userAccount.attributes.theme.data.attributes.Theme,
     template: userAccount.attributes.template.data.attributes,

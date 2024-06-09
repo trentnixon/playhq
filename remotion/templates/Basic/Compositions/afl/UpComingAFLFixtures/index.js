@@ -9,9 +9,10 @@ import DynamicFixtureSponsors from '../../../../../structural/Sponsors/body/Upco
 
 export const UpComingAFLFixtures = (props) => {
 	const {FPS_MAIN} = props;
+	
 	const sponsorMatcher = new SponsorMatcherUpcomingFixtures(
 		props.DATA,
-		props.VIDEOMETA.Club.Sponsors,
+		props.VIDEOMETA.Club.Sponsors, 
 
 	);
 	const {groupedFixtures, groupedSponsors} = sponsorMatcher.matchSponsors();

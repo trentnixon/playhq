@@ -32,7 +32,6 @@ const TemplateDetailPageContent = (props) => {
   const { attributes } = template || {};
   const { Poster, Name, FrontEndName, Description } = attributes || {};
 
-  console.log("props ", Poster, Name, FrontEndName, Description)
   const { account, ReRender } = useAccountDetails();
   const [userAccount, setUserAccount] = useState(account || {});
   const [loading, setLoading] = useState(false);
@@ -100,7 +99,7 @@ const TemplateDetailPageContent = (props) => {
               Name={Name}
             />
           }
-          bottomContent={
+          bottomContent={ 
             <>
               <TemplateCTABtns
                 loading={loading}
@@ -109,7 +108,7 @@ const TemplateDetailPageContent = (props) => {
                 isSelectedTemplate={isSelectedTemplate}
                 error={error}
               />
-              <PrefabPlayerGrid />
+              <PrefabPlayerGrid /> 
               <TemplateCTABtns
                 loading={loading}
                 handleBackClick={handleBackClick}

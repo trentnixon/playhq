@@ -1,11 +1,19 @@
 import React, { useEffect, useState } from "react";
-import { Group, Paper, Stack } from "@mantine/core";
+import { Paper, Stack } from "@mantine/core";
 import Adminfetcher from "../../../../lib/Adminfetcher";
 import { getIdFromLocalCookie } from "../../../../lib/auth";
 import { P } from "../../../Members/Common/Type";
 
+import { RenderCount } from "./components/SideBarExtraShell/RenderCount";
+import { DownloadCount } from "./components/SideBarExtraShell/DownloadCount";
+import { UpcomingGames } from "./components/SideBarExtraShell/UpcomingGames";
+import { ResultsGames } from "./components/SideBarExtraShell/ResultsGames";
+import { RecentRenderButton } from "./components/SideBarExtraShell/RecentRenderButton";
+import { DeliveryDay } from "./components/SideBarExtraShell/DeliveryDay";
+
 export const SideBarExtraShell = ({ account }) => {
   const [renders, setRenders] = useState({ renders: [] });
+  const [token, setToken] = useState("");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -23,6 +31,8 @@ export const SideBarExtraShell = ({ account }) => {
     scheduler: account.attributes.scheduler.data.attributes,
   };
 
+  if (renders.renders.length === 0) return false;
+  console.log("renders ", renders.render_token.token);
   return (
     <Paper mt={20}>
       <P marginBottom={0} Weight={800}>
@@ -30,6 +40,11 @@ export const SideBarExtraShell = ({ account }) => {
       </P>
       <Paper shadow="xs" p="md" withBorder mt={5}>
         <Stack>
+          <RecentRenderButton
+            renders={renders.renders}
+            account={account}
+            token={renders.render_token.token}
+          />
           <DeliveryDay scheduler={OBJ.scheduler} />
           <RenderCount renders={renders} />
           <DownloadCount renders={renders} />
@@ -38,90 +53,5 @@ export const SideBarExtraShell = ({ account }) => {
         </Stack>
       </Paper>
     </Paper>
-  );
-};
-
-const DeliveryDay = ({ scheduler }) => {
-  return (
-    <Group position="apart">
-      <Group position="left" spacing="xs" align="center">
-        <P size="sm" fw={500} marginBottom={0}>
-          Bundle Delivery
-        </P>
-      </Group>
-      <P size="sm" c="dimmed" marginBottom={0} Weight={800}>
-        {scheduler.days_of_the_week.data.attributes.Name}
-      </P>
-    </Group>
-  );
-};
-
-const sumProperty = (renders, propName) => {
-  return renders.renders.reduce(
-    (total, current) => total + (current[propName] || 0),
-    0
-  );
-};
-
-const RenderCount = ({ renders }) => {
-  return (
-    <Group position="apart">
-      <Group position="left" spacing="xs" align="center">
-        <P size="sm" fw={500} marginBottom={0}>
-          Bundles
-        </P>
-      </Group>
-      <P size="sm" c="dimmed" marginBottom={0} Weight={800}>
-        {renders.renders.length}
-      </P>
-    </Group>
-  );
-};
-
-const DownloadCount = ({ renders }) => {
-  const totalDownloads = sumProperty(renders, "downloads");
-  return (
-    <Group position="apart">
-      <Group position="left" spacing="xs" align="center">
-        <P size="sm" fw={500} marginBottom={0}>
-          Downloads Created
-        </P>
-      </Group>
-      <P size="sm" c="dimmed" marginBottom={0} Weight={800}>
-        {totalDownloads}
-      </P>
-    </Group>
-  );
-};
-
-const UpcomingGames = ({ renders }) => {
-  const totalUpcoming = sumProperty(renders, "upcoming_games_in_renders");
-  return (
-    <Group position="apart">
-      <Group position="left" spacing="xs" align="center">
-        <P size="sm" fw={500} marginBottom={0}>
-          Upcoming Fixtures Analysed
-        </P>
-      </Group>
-      <P size="sm" c="dimmed" marginBottom={0} Weight={800}>
-        {totalUpcoming}
-      </P>
-    </Group>
-  );
-};
-
-const ResultsGames = ({ renders }) => {
-  const totalResults = sumProperty(renders, "game_results_in_renders");
-  return (
-    <Group position="apart">
-      <Group position="left" spacing="xs" align="center">
-        <P size="sm" fw={500} marginBottom={0}>
-          Fixture Results Analysed
-        </P>
-      </Group>
-      <P size="sm" c="dimmed" marginBottom={0} Weight={800}>
-        {totalResults}
-      </P>
-    </Group>
   );
 };

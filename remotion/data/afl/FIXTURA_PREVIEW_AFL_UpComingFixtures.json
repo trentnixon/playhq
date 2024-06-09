@@ -1,0 +1,113 @@
+[
+    {
+      "gameID": "b7c3560d",
+      "round": "Round 9",
+      "teamHome": "Northern Beaches Suns Reserves",
+      "teamHomeLogo": {
+        "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/logo_77b7e81c08.jpg",
+        "width": 283,
+        "height": 283
+      },
+      "teamAway": "Thuringowa Bulldogs Reserves",
+      "teamAwayLogo": {
+        "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/logo_41_9d95b8a56d.png",
+        "width": 440,
+        "height": 595
+      },
+      "date": "Saturday, 01 June 2024",
+      "time": "12:30 PM, Sat, 01 Jun 24",
+      "ground": "North Shore Oval / North Shore Oval 1",
+      "gender": "Men",
+      "ageGroup": "Senior",
+      "gradeName": "Townsville Reserve Men's Premiership",
+      "prompt": "**Upcoming AFL Match Details:**\n- **Teams:** Northern Beaches Suns Reserves vs Thuringowa Bulldogs Reserves\n- **Date and Time:** Saturday, 1 June 2024, 12:30 PM, Sat, 01 Jun 24\n- **Location:** North Shore Oval / North Shore Oval 1\n- **Round:** Round 9\n- **League:** Townsville Reserve Men's Premiership\n- **Positions in League:** Northern Beaches Suns Reserves is currently at position 5, Thuringowa Bulldogs Reserves is at position 1\n\n**About the Teams:**\n- **Northern Beaches Suns Reserves**: Positioned 5 in the league.\n- **Thuringowa Bulldogs Reserves**: Positioned 1 in the league.\nThis match is part of the Men Senior competition, scheduled to be played on 2024-05-31. Further details can be found [here](https://www.playhq.com/afl/org/afl-townsville/afl-townsville-2024/townsville-reserve-mens-premiership/d6aae62d).",
+      "assignSponsors": {
+        "competition": {
+          "id": 7753,
+          "name": "AFL Townsville"
+        },
+        "grade": {
+          "id": 22823,
+          "name": "Townsville Reserve Men's Premiership"
+        },
+        "Team": {
+          "teamHome": "Northern Beaches Suns Reserves",
+          "teamAway": "Thuringowa Bulldogs Reserves"
+        }
+      }
+    },
+    {
+      "gameID": "4aaa8ce9",
+      "round": "Round 9",
+      "teamHome": "Northern Beaches Suns Senior Men",
+      "teamHomeLogo": {
+        "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/logo_77b7e81c08.jpg",
+        "width": 283,
+        "height": 283
+      },
+      "teamAway": "Thuringowa Bulldogs Senior Men",
+      "teamAwayLogo": {
+        "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/logo_41_9d95b8a56d.png",
+        "width": 440,
+        "height": 595
+      },
+      "date": "Saturday, 01 June 2024",
+      "time": "03:45 PM, Sat, 01 Jun 24",
+      "ground": "North Shore Oval / North Shore Oval 1",
+      "gender": "Men",
+      "ageGroup": "Senior",
+      "gradeName": "Townsville RMS Men's Premiership",
+      "prompt": "**Upcoming AFL Match Details:**\n- **Teams:** Northern Beaches Suns Senior Men vs Thuringowa Bulldogs Senior Men\n- **Date and Time:** Saturday, 1 June 2024, 03:45 PM, Sat, 01 Jun 24\n- **Location:** North Shore Oval / North Shore Oval 1\n- **Round:** Round 9\n- **League:** Townsville RMS Men's Premiership\n- **Positions in League:** Northern Beaches Suns Senior Men is currently at position 5, Thuringowa Bulldogs Senior Men is at position 1\n\n**About the Teams:**\n- **Northern Beaches Suns Senior Men**: Positioned 5 in the league.\n- **Thuringowa Bulldogs Senior Men**: Positioned 1 in the league.\nThis match is part of the Men Senior competition, scheduled to be played on 2024-05-31. Further details can be found [here](https://www.playhq.com/afl/org/afl-townsville/afl-townsville-2024/townsville-rms-mens-premiership/18612fcd).",
+      "assignSponsors": {
+        "competition": {
+          "id": 7753,
+          "name": "AFL Townsville"
+        },
+        "grade": {
+          "id": 22824,
+          "name": "Townsville RMS Men's Premiership"
+        },
+        "Team": {
+          "teamHome": "Northern Beaches Suns Senior Men",
+          "teamAway": "Thuringowa Bulldogs Senior Men"
+        }
+      }
+    },
+    {
+      "gameID": "42e9a352",
+      "round": "Round 9",
+      "teamHome": "Northern Beaches Suns Senior Women",
+      "teamHomeLogo": {
+        "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/logo_77b7e81c08.jpg",
+        "width": 283,
+        "height": 283
+      },
+      "teamAway": "Thuringowa Bulldogs Senior Women",
+      "teamAwayLogo": {
+        "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/logo_41_9d95b8a56d.png",
+        "width": 440,
+        "height": 595
+      },
+      "date": "Saturday, 01 June 2024",
+      "time": "02:15 PM, Sat, 01 Jun 24",
+      "ground": "North Shore Oval / North Shore Oval 1",
+      "gender": "Women",
+      "ageGroup": "Senior",
+      "gradeName": "Townsville KX Pilates Senior Women's Cup",
+      "prompt": "**Upcoming AFL Match Details:**\n- **Teams:** Northern Beaches Suns Senior Women vs Thuringowa Bulldogs Senior Women\n- **Date and Time:** Saturday, 1 June 2024, 02:15 PM, Sat, 01 Jun 24\n- **Location:** North Shore Oval / North Shore Oval 1\n- **Round:** Round 9\n- **League:** Townsville KX Pilates Senior Women's Cup\n- **Positions in League:** Northern Beaches Suns Senior Women is currently at position 5, Thuringowa Bulldogs Senior Women is at position 4\n\n**About the Teams:**\n- **Northern Beaches Suns Senior Women**: Positioned 5 in the league.\n- **Thuringowa Bulldogs Senior Women**: Positioned 4 in the league.\nThis match is part of the Women Senior competition, scheduled to be played on 2024-05-31. Further details can be found [here](https://www.playhq.com/afl/org/afl-townsville/afl-townsville-2024/townsville-kx-pilates-senior-womens-cup/082c3fcb).",
+      "assignSponsors": {
+        "competition": {
+          "id": 7753,
+          "name": "AFL Townsville"
+        },
+        "grade": {
+          "id": 22825,
+          "name": "Townsville KX Pilates Senior Women's Cup"
+        },
+        "Team": {
+          "teamHome": "Northern Beaches Suns Senior Women",
+          "teamAway": "Thuringowa Bulldogs Senior Women"
+        }
+      }
+    }
+  ]

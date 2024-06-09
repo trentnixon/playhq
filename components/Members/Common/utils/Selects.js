@@ -10,7 +10,7 @@ const useStyles = createStyles((theme) => ({
       borderColor: theme.colors.blue[6],
     },
   },
-}));
+})); 
 
 export const FixturaCustomSelect = ({ label, placeholder, data, value, onChange }) => {
   const { classes } = useStyles();

@@ -57,9 +57,6 @@ export const Previewer = ({ account }) => {
                 previewObj.Account.name,
                 DEFAULTLOGO
               );
-
-              console.log("asset.DATA ", updatedData)
-
               return (
                 <Carousel.Slide key={i}>
                   <Thumbnail

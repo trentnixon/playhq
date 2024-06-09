@@ -6,18 +6,16 @@ import {fontFamily, loadFont} from '@remotion/google-fonts/Heebo';
 // Assets
 import {TitleSequenceFrame} from './Components/Intro';
 import {OutroSequenceFrame} from './Components/Outro';
-
-
+import {BGImageAnimation} from './Components/Common/BGImageAnimation';
 import {TEMPLATES_COMPONENTS} from './AssetList';
 import {getStyleConfig} from '../../utils/global/getStyleConfig';
 import {createTemplateProps} from '../../utils/global/createTemplateProps';
 import {AssetFullAudioTrack} from '../../structural/assets/common/audio/AssetBackgroundAudio';
 import {AlternativeOutro} from './Components/Outro/AlternativeOutro';
 import {getPrimarySponsor} from '../../structural/Sponsors/Utils/utils';
-import { BGImageAnimation } from './Components/Common/BGImageAnimation/index';
 // END
 
-/**
+/** 
  * Renders a basic template for a video.
  *
  * @param {Object} props - The properties for the template.
@@ -131,7 +129,7 @@ export const Template_Basic = (props) => {
 				</AbsoluteFill>
 				<BGImageAnimation BuildProps={BuildProps} />
 				<AssetFullAudioTrack
-					useAudio={DATA.VIDEOMETA.Video.audio_option}
+					useAudio={DATA?.VIDEOMETA?.Video?.audio_option}
 					DATA={DATA}
 				/>
 			</AbsoluteFill>

@@ -41,7 +41,7 @@ export function filterAudioOptions(previewObj, ASSET) {
 
 export function createVideo(previewObj, ASSET) {
   const filteredAudioOptions = filterAudioOptions(previewObj, ASSET);
-
+ 
   const HeroImage = findHeroImageForAsset(
     previewObj.account_media_libraries,
     ASSET.CompositionID

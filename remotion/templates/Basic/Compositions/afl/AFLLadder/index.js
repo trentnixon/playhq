@@ -8,6 +8,7 @@ import DynamicLadderSponsors from '../../../../../structural/Sponsors/body/Ladde
 
 export const AFLLadder = (props) => {
 	const {FPS_MAIN} = props;
+	console.log("AFLLadder props ", props, props.DATA)
 	const sponsorMatcher = new SponsorMatcherLadders(
 		props.DATA,
 		props.VIDEOMETA.Club.Sponsors
@@ -24,6 +25,6 @@ export const AFLLadder = (props) => {
 				<LadderMain {...props} />
 				<DynamicLadderSponsors {...props} groupedSponsors={groupedSponsors} />
 			</Series.Sequence>
-		</Series>
+		</Series> 
 	);
 };

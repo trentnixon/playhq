@@ -1,0 +1,102 @@
+[
+    {
+      "name": "Ellen Turner",
+      "goals": 5,
+      "team": "Hermit Park Tigers Senior Women",
+      "teamLogo": "https://fixtura.s3.ap-southeast-2.amazonaws.com/logo_6c1658268b.jpg",
+      "prompt": "**Ellen Turner (Hermit Park Tigers Senior Women)** scored **5 goals** in the match between Thuringowa Bulldogs Senior Women and Hermit Park Tigers Senior Women, which ended with a score of 0 to 147. The game was part of **Round 7** of the **Townsville KX Pilates Senior Women's Cup** and resulted in Hermit Park Tigers Senior Women won by 147 points.",
+      "assignSponsors": {
+        "competition": {
+          "id": 7753,
+          "name": "AFL Townsville"
+        },
+        "grade": {
+          "id": 22825,
+          "name": "Townsville KX Pilates Senior Women's Cup"
+        },
+        "Team": {
+          "name": "Hermit Park Tigers Senior Women"
+        }
+      }
+    },
+    {
+      "name": "Rim Kris",
+      "goals": 4,
+      "team": "Thuringowa Bulldogs Reserves",
+      "teamLogo": "https://fixtura.s3.ap-southeast-2.amazonaws.com/logo_41_9d95b8a56d.png",
+      "prompt": "**Rim Kris (Thuringowa Bulldogs Reserves)** scored **4 goals** in the match between Thuringowa Bulldogs Reserves and Hermit Park Tigers Reserves, which ended with a score of 85 to 18. The game was part of **Round 7** of the **Townsville Reserve Men's Premiership** and resulted in Thuringowa Bulldogs Reserves won by 67 points.",
+      "assignSponsors": {
+        "competition": {
+          "id": 7753,
+          "name": "AFL Townsville"
+        },
+        "grade": {
+          "id": 22823,
+          "name": "Townsville Reserve Men's Premiership"
+        },
+        "Team": {
+          "name": "Thuringowa Bulldogs Reserves"
+        }
+      }
+    },
+    {
+      "name": "Brendan McGrath",
+      "goals": 4,
+      "team": "Thuringowa Bulldogs Reserves",
+      "teamLogo": "https://fixtura.s3.ap-southeast-2.amazonaws.com/logo_41_9d95b8a56d.png",
+      "prompt": "**Brendan McGrath (Thuringowa Bulldogs Reserves)** scored **4 goals** in the match between Thuringowa Bulldogs Reserves and Hermit Park Tigers Reserves, which ended with a score of 85 to 18. The game was part of **Round 7** of the **Townsville Reserve Men's Premiership** and resulted in Thuringowa Bulldogs Reserves won by 67 points.",
+      "assignSponsors": {
+        "competition": {
+          "id": 7753,
+          "name": "AFL Townsville"
+        },
+        "grade": {
+          "id": 22823,
+          "name": "Townsville Reserve Men's Premiership"
+        },
+        "Team": {
+          "name": "Thuringowa Bulldogs Reserves"
+        }
+      }
+    },
+    {
+      "name": "Reegan Mrsich",
+      "goals": 4,
+      "team": "Thuringowa Bulldogs Senior Men",
+      "teamLogo": "https://fixtura.s3.ap-southeast-2.amazonaws.com/logo_41_9d95b8a56d.png",
+      "prompt": "**Reegan Mrsich (Thuringowa Bulldogs Senior Men)** scored **4 goals** in the match between Thuringowa Bulldogs Senior Men and Hermit Park Tigers Senior Men, which ended with a score of 43 to 19. The game was part of **Round 7** of the **Townsville RMS Men's Premiership** and resulted in Thuringowa Bulldogs Senior Men won by 24 points.",
+      "assignSponsors": {
+        "competition": {
+          "id": 7753,
+          "name": "AFL Townsville"
+        },
+        "grade": {
+          "id": 22824,
+          "name": "Townsville RMS Men's Premiership"
+        },
+        "Team": {
+          "name": "Thuringowa Bulldogs Senior Men"
+        }
+      }
+    },
+    {
+      "name": "Maggie Evans",
+      "goals": 4,
+      "team": "Hermit Park Tigers Senior Women",
+      "teamLogo": "https://fixtura.s3.ap-southeast-2.amazonaws.com/logo_6c1658268b.jpg",
+      "prompt": "**Maggie Evans (Hermit Park Tigers Senior Women)** scored **4 goals** in the match between Thuringowa Bulldogs Senior Women and Hermit Park Tigers Senior Women, which ended with a score of 0 to 147. The game was part of **Round 7** of the **Townsville KX Pilates Senior Women's Cup** and resulted in Hermit Park Tigers Senior Women won by 147 points.",
+      "assignSponsors": {
+        "competition": {
+          "id": 7753,
+          "name": "AFL Townsville"
+        },
+        "grade": {
+          "id": 22825,
+          "name": "Townsville KX Pilates Senior Women's Cup"
+        },
+        "Team": {
+          "name": "Hermit Park Tigers Senior Women"
+        }
+      }
+    }
+  ]

@@ -37,20 +37,6 @@ export const prepareMockData = (account) => {
   return Object.keys(ASSETS[sport][category]).map((assetType) => {
     const asset = ASSETS[sport][category][assetType];
 
-    /*
-    updates TODO:
-    revisit this and get the updates to the data to merge with the account correctly
-    at the moment the changes are for the old data format
-  */
-    console.log("asset.ASSET ", asset.ASSET);
-    const updatedData = updateDataBasedOnSelected(
-      { DATA: asset.DATA },
-      assetType,
-      accountCustomDataOBJ.Account.logo,
-      accountCustomDataOBJ.Account.name,
-      DEFAULTLOGO
-    );
-
     const finalData = {
       RENDER: createRender(), // Completed
       ACCOUNT: createAccount(accountCustomDataOBJ.id), // Completed
