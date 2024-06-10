@@ -6418,3 +6418,93 @@ span.new {
     background-color: #28a92b;
     background-image: radial-gradient(circle at 46% 40%, rgba(228, 228, 228,0.06) 0%, rgba(228, 228, 228,0.06) 13%,transparent 13%, transparent 100%),radial-gradient(circle at 11% 41%, rgba(198, 198, 198,0.06) 0%, rgba(198, 198, 198,0.06) 19%,transparent 19%, transparent 100%),radial-gradient(circle at 52% 23%, rgba(14, 14, 14,0.06) 0%, rgba(14, 14, 14,0.06) 69%,transparent 69%, transparent 100%),radial-gradient(circle at 13% 85%, rgba(148, 148, 148,0.06) 0%, rgba(148, 148, 148,0.06) 44%,transparent 44%, transparent 100%),radial-gradient(circle at 57% 74%, rgba(232, 232, 232,0.06) 0%, rgba(232, 232, 232,0.06) 21%,transparent 21%, transparent 100%),radial-gradient(circle at 59% 54%, rgba(39, 39, 39,0.06) 0%, rgba(39, 39, 39,0.06) 49%,transparent 49%, transparent 100%),radial-gradient(circle at 98% 38%, rgba(157, 157, 157,0.06) 0%, rgba(157, 157, 157,0.06) 24%,transparent 24%, transparent 100%),radial-gradient(circle at 8% 6%, rgba(60, 60, 60,0.06) 0%, rgba(60, 60, 60,0.06) 12%,transparent 12%, transparent 100%),linear-gradient(90deg, #28a92b, #10a614);
 }
+
+
+
+
+
+// delete this its a test for gsap
+
+.title-section {
+    text-align: center;
+    margin-bottom: 1em;
+  }
+  
+  .title {
+    font-size: max(2vw, 24px);
+    line-height: 1.1;
+    padding-bottom: 0.4em;
+    color: rgb(255, 255, 255);
+    text-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+  }
+  
+  .optional-image-section {
+    text-align: center;
+    margin-bottom: 1em;
+  }
+  
+  .content-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  
+  .subtitle {
+    font-size: max(1.5vw, 20px);
+    color: rgb(255, 255, 255);
+    margin-bottom: 1em;
+  }
+  
+  .description {
+    font-size: max(1vw, 15px);
+    line-height: 1.4;
+    padding-bottom: 20px;
+    color: rgba(255, 255, 255, 0.7);
+  }
+  
+  .main-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+  }
+  
+  .accordions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 20vh;
+  }
+  
+  .accordion {
+    width: 100%;
+    padding: 25px 30px 10px;
+    margin-bottom: 40px;
+    border: none;
+  }
+  
+  .container {
+    width: 80%;
+    margin: 0 auto;
+  }
+  
+  .spacer {
+    height: 70vh;
+  }
+  
+  @media (max-width: 480px) {
+    .accordion {
+      padding: 15px 20px 8px;
+    }
+    .title {
+      font-size: 20px;
+    }
+    .content-grid {
+      flex-direction: column;
+    }
+    .main-image {
+      margin-left: 0;
+      margin-top: 20px;
+    }
+  }

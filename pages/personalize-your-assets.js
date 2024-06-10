@@ -1,21 +1,11 @@
 import React from "react";
 import PageBanner from "../components/Common/PageBanner";
-import CtaAreaTwo from "../components/Common/CtaAreaTwo";
+import CustomizationCtaArea from "../components/pages/public/index/customization/Cta";
 import { fetcher } from "../lib/api";
-import { H, P } from "../components/Members/Common/Type";
-import {
-  IconCategory2,
-  IconColorSwatch,
-  IconPhotoAi,
-  IconTruckDelivery,
-  IconUpload,
-} from "@tabler/icons-react";
-import { Space } from "@mantine/core";
 import Section from "../components/UI/DefaultSection";
-import CardItem from "../components/UI/Containers/CardItem";
 import Meta from "../components/Layouts/Meta";
 import { CardsCarousel } from "../components/pages/public/index/customization/CardCarousels";
-import CustomizationCtaArea from "../components/pages/public/index/customization/Cta";
+import CustomizationDetails from "../components/pages/public/index/customization/CustomizationDetails"; // Adjust the path as necessary
 
 const qs = require("qs");
 
@@ -90,7 +80,7 @@ const customization = () => {
     title: "Season Preparation Starts Here!",
     paragraphs: [
       "With the new season just around the corner, we want to ensure you're fully prepared with the best and most exciting digital content.",
-      "This season, we're offering the opportunity to work with our design team to create bespoke digital assets for your club, whether it's updating your templates, incorporating your latest branding, or creating something entirely new. ",
+      "This season, we're offering the opportunity to work with our design team to create bespoke digital assets for your club, whether it's updating your templates, incorporating your latest branding, or creating something entirely new.",
     ],
   };
   const WhycustomSectionData = {
@@ -109,11 +99,12 @@ const customization = () => {
       <Section {...customizationSectionData} color="light">
         <CardsCarousel data={data} />
       </Section>
-      {/* 
+
+      <CustomizationCtaArea />
+
       <Section {...WhycustomSectionData} color="dark">
         <CustomizationDetails data={data} />
-      </Section> */}
-
+      </Section>
       <CustomizationCtaArea />
     </>
   );
@@ -139,25 +130,4 @@ export const getServerSideProps = async (context) => {
       CaseStudies: CaseStudies,
     },
   };
-};
-
-const CustomizationDetails = ({ data }) => {
-  return data.map((item, index) => (
-    <div className="cta-area-two ptb-100">
-      <div className="container">
-        <div className="cta-content">
-          <h3>{item.title}</h3>
-          <span>{item.subtitle}</span>
-        </div>
-        <div
-          key={index}
-          className="customization-item"
-          data-aos="fade-up"
-          data-aos-duration="1200"
-        >
-          <p>{item.description}</p>
-        </div>
-      </div>
-    </div>
-  ));
 };

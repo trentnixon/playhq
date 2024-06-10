@@ -7,7 +7,7 @@ import '../styles/tailwind.css';
 import "../styles/bootstrap.min.css";
 import "animate.css";
 import "../styles/animate.min.css";
-import "../styles/all.min.css";
+import "../styles/all.min.css"; 
 import "../styles/pe-icon-7-stroke.css";
 import "react-accessible-accordion/dist/fancy-example.css";
 import "swiper/css";
