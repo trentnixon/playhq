@@ -1,960 +1,960 @@
 [
-    {
+  {
       "id": 2207,
       "round": "Round 7",
       "date": "Saturday, 18 May 2024",
       "time": "01:30 PM",
-      "ground": "Riverway Stadium / Riverway Stadium 1",
+      "ground": "Marvel Stadium",
       "status": "Final",
       "gameID": "764a3cab",
       "teams": {
-        "home": {
-          "name": "Thuringowa Bulldogs Reserves",
-          "logo": {
-            "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/logo_41_9d95b8a56d.png",
-            "width": 440,
-            "height": 595
-          },
-          "scores": "85",
-          "HomeGoalsAndBehinds": "13.7",
-          "quarterScores": {
-            "q1": {
-              "score": 31,
-              "goals": "5.1"
-            },
-            "q2": {
-              "score": 15,
-              "goals": "2.3"
-            },
-            "q3": {
-              "score": 19,
-              "goals": "3.1"
-            },
-            "q4": {
-              "score": 20,
-              "goals": "3.2"
-            }
-          },
-          "playerStats": [
-            {
-              "number": "9",
-              "player": "Nick Payne",
-              "goals": 0
-            },
-            {
-              "number": "14",
-              "player": "Matthew Trende",
-              "goals": 1
-            },
-            {
-              "number": "15",
-              "player": "Rim Kris",
-              "goals": 4
-            },
-            {
-              "number": "16",
-              "player": "Matt Powell",
-              "goals": 0
-            },
-            {
-              "number": "23",
-              "player": "Brendan McGrath",
-              "goals": 4
-            },
-            {
-              "number": "26",
-              "player": "David Carroll",
-              "goals": 0
-            },
-            {
-              "number": "31",
-              "player": "Kyle Buck",
-              "goals": 0
-            },
-            {
-              "number": "32",
-              "player": "bryce goostrey",
-              "goals": 0
-            },
-            {
-              "number": "34",
-              "player": "Jamie Barker",
-              "goals": 0
-            },
-            {
-              "number": "40",
-              "player": "Sean Irwin",
-              "goals": 0
-            },
-            {
-              "number": "41",
-              "player": "Joshua Togni",
-              "goals": 0
-            },
-            {
-              "number": "46",
-              "player": "Andrew Kapernick",
-              "goals": 0
-            },
-            {
-              "number": "47",
-              "player": "Damon Szabo",
-              "goals": 1
-            },
-            {
-              "number": "49",
-              "player": "Cameron Broughton",
-              "goals": 0
-            },
-            {
-              "number": "51",
-              "player": "Liam Wealleans",
-              "goals": 0
-            },
-            {
-              "number": "53",
-              "player": "Ben Alderson",
-              "goals": 0
-            },
-            {
-              "number": "54",
-              "player": "Ethan Kane",
-              "goals": 0
-            },
-            {
-              "number": "55",
-              "player": "Zak Dejong",
-              "goals": 0
-            },
-            {
-              "number": "56",
-              "player": "Matthew Julien",
-              "goals": 0
-            },
-            {
-              "number": "57",
-              "player": "Christian Payne",
-              "goals": 3
-            },
-            {
-              "number": "58",
-              "player": "Marco Basaglia",
-              "goals": 0
-            },
-            {
-              "number": "59",
-              "player": "Ken Mackenzie",
-              "goals": 0
-            }
-          ],
-          "bestPlayers": [
-            "Damon Szabo",
-            "Rim Kris",
-            "Marco Basaglia",
-            "bryce goostrey",
-            "Sean Irwin"
-          ]
-        },
-        "away": {
-          "name": "Hermit Park Tigers Reserves",
-          "logo": {
-            "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/logo_6c1658268b.jpg",
-            "width": 188,
-            "height": 185
-          },
-          "scores": "18",
-          "AwayGoalsAndBehinds": "2.6",
-          "quarterScores": {
-            "q1": {
-              "score": 2,
-              "goals": "0.2"
-            },
-            "q2": {
-              "score": 1,
-              "goals": "0.1"
-            },
-            "q3": {
-              "score": 14,
-              "goals": "2.2"
-            },
-            "q4": {
-              "score": 1,
-              "goals": "0.1"
-            }
-          },
-          "playerStats": [
-            {
-              "number": "9",
-              "player": "James Falkenberg",
-              "goals": 0
-            },
-            {
-              "number": "11",
-              "player": "Jett Mitchell",
-              "goals": 0
-            },
-            {
-              "number": "19",
-              "player": "Marley Merlo",
-              "goals": 0
-            },
-            {
-              "number": "25",
-              "player": "Seth Lamb",
-              "goals": 0
-            },
-            {
-              "number": "28",
-              "player": "Jayden Morrison",
-              "goals": 0
-            },
-            {
-              "number": "31",
-              "player": "Jonathan Kennedy",
-              "goals": 0
-            },
-            {
-              "number": "32",
-              "player": "Harrison Muscat",
-              "goals": 0
-            },
-            {
-              "number": "35",
-              "player": "Michael Tink",
-              "goals": 0
-            },
-            {
-              "number": "37",
-              "player": "Grayson Casley",
-              "goals": 0
-            },
-            {
-              "number": "39",
-              "player": "Dylan Napper",
-              "goals": 0
-            },
-            {
-              "number": "41",
-              "player": "Chas Reinhardt",
-              "goals": 1
-            },
-            {
-              "number": "42",
-              "player": "Jacob Chivers",
-              "goals": 0
-            },
-            {
-              "number": "43",
-              "player": "Tom Booth",
-              "goals": 0
-            },
-            {
-              "number": "45",
-              "player": "Liam Brand",
-              "goals": 0
-            },
-            {
-              "number": "46",
-              "player": "Orlando Parker",
-              "goals": 0
-            },
-            {
-              "number": "48",
-              "player": "William Hall",
-              "goals": 1
-            },
-            {
-              "number": "49",
-              "player": "Xanana Smith",
-              "goals": 0
-            },
-            {
-              "number": "50",
-              "player": "Lukee Wakeham",
-              "goals": 0
-            },
-            {
-              "number": "51",
-              "player": "Liam Frye",
-              "goals": 0
-            },
-            {
-              "number": "52",
-              "player": "Mckye Turner",
-              "goals": 0
-            }
-          ],
-          "bestPlayers": []
-        }
-      },
-      "resultStatement": "Thuringowa Bulldogs Reserves won by 67 points",
-      "grade": {
-        "id": 22823,
-        "gradeName": "Townsville Reserve Men's Premiership",
-        "daysPlayed": "Saturday",
-        "gender": "Men",
-        "ageGroup": "Senior",
-        "gradeId": "d6aae62d"
-      },
-      "assignSponsors": {
-        "competition": {
-          "id": 7753,
-          "name": "AFL Townsville"
-        },
-        "grade": {
-          "id": 22823,
-          "name": "Townsville Reserve Men's Premiership"
-        },
-        "Teams": {
           "home": {
-            "name": "Thuringowa Bulldogs Reserves"
+              "name": "Adelaide Crows Reserves",
+              "logo": {
+                  "url": "https://upload.wikimedia.org/wikipedia/en/thumb/6/62/Adelaide_Crows_FC_logo_2020.svg/1200px-Adelaide_Crows_FC_logo_2020.svg.png",
+                  "width": 440,
+                  "height": 595
+              },
+              "scores": "85",
+              "HomeGoalsAndBehinds": "13.7",
+              "quarterScores": {
+                  "q1": {
+                      "score": 31,
+                      "goals": "5.1"
+                  },
+                  "q2": {
+                      "score": 15,
+                      "goals": "2.3"
+                  },
+                  "q3": {
+                      "score": 19,
+                      "goals": "3.1"
+                  },
+                  "q4": {
+                      "score": 20,
+                      "goals": "3.2"
+                  }
+              },
+              "playerStats": [
+                  {
+                      "number": "9",
+                      "player": "Rory Sloane",
+                      "goals": 0
+                  },
+                  {
+                      "number": "14",
+                      "player": "Paul Seedsman",
+                      "goals": 1
+                  },
+                  {
+                      "number": "15",
+                      "player": "Taylor Walker",
+                      "goals": 4
+                  },
+                  {
+                      "number": "16",
+                      "player": "Riley Thilthorpe",
+                      "goals": 0
+                  },
+                  {
+                      "number": "23",
+                      "player": "Tom Doedee",
+                      "goals": 4
+                  },
+                  {
+                      "number": "26",
+                      "player": "Harry Schoenberg",
+                      "goals": 0
+                  },
+                  {
+                      "number": "31",
+                      "player": "Elliott Himmelberg",
+                      "goals": 0
+                  },
+                  {
+                      "number": "32",
+                      "player": "Ned McHenry",
+                      "goals": 0
+                  },
+                  {
+                      "number": "34",
+                      "player": "Jake Kelly",
+                      "goals": 0
+                  },
+                  {
+                      "number": "40",
+                      "player": "Brodie Smith",
+                      "goals": 0
+                  },
+                  {
+                      "number": "41",
+                      "player": "Lachlan Murphy",
+                      "goals": 0
+                  },
+                  {
+                      "number": "46",
+                      "player": "Sam Berry",
+                      "goals": 0
+                  },
+                  {
+                      "number": "47",
+                      "player": "Josh Worrell",
+                      "goals": 1
+                  },
+                  {
+                      "number": "49",
+                      "player": "Ben Davis",
+                      "goals": 0
+                  },
+                  {
+                      "number": "51",
+                      "player": "Chayce Jones",
+                      "goals": 0
+                  },
+                  {
+                      "number": "53",
+                      "player": "James Rowe",
+                      "goals": 0
+                  },
+                  {
+                      "number": "54",
+                      "player": "Will Hamill",
+                      "goals": 0
+                  },
+                  {
+                      "number": "55",
+                      "player": "Rory Laird",
+                      "goals": 0
+                  },
+                  {
+                      "number": "56",
+                      "player": "Jackson Hately",
+                      "goals": 0
+                  },
+                  {
+                      "number": "57",
+                      "player": "Andrew McPherson",
+                      "goals": 3
+                  },
+                  {
+                      "number": "58",
+                      "player": "Lachlan Sholl",
+                      "goals": 0
+                  },
+                  {
+                      "number": "59",
+                      "player": "Tom Lynch",
+                      "goals": 0
+                  }
+              ],
+              "bestPlayers": [
+                  "Josh Worrell",
+                  "Taylor Walker",
+                  "Andrew McPherson",
+                  "Ned McHenry",
+                  "Brodie Smith"
+              ]
           },
           "away": {
-            "name": "Hermit Park Tigers Reserves"
+              "name": "Carlton Blues Reserves",
+              "logo": {
+                  "url": "https://upload.wikimedia.org/wikipedia/en/thumb/3/32/Carlton_FC_logo_2017.svg/1200px-Carlton_FC_logo_2017.svg.png",
+                  "width": 188,
+                  "height": 185
+              },
+              "scores": "18",
+              "AwayGoalsAndBehinds": "2.6",
+              "quarterScores": {
+                  "q1": {
+                      "score": 2,
+                      "goals": "0.2"
+                  },
+                  "q2": {
+                      "score": 1,
+                      "goals": "0.1"
+                  },
+                  "q3": {
+                      "score": 14,
+                      "goals": "2.2"
+                  },
+                  "q4": {
+                      "score": 1,
+                      "goals": "0.1"
+                  }
+              },
+              "playerStats": [
+                  {
+                      "number": "9",
+                      "player": "Sam Walsh",
+                      "goals": 0
+                  },
+                  {
+                      "number": "11",
+                      "player": "Jack Silvagni",
+                      "goals": 0
+                  },
+                  {
+                      "number": "19",
+                      "player": "Jacob Weitering",
+                      "goals": 0
+                  },
+                  {
+                      "number": "25",
+                      "player": "Zac Williams",
+                      "goals": 0
+                  },
+                  {
+                      "number": "28",
+                      "player": "Liam Jones",
+                      "goals": 0
+                  },
+                  {
+                      "number": "31",
+                      "player": "Harry McKay",
+                      "goals": 0
+                  },
+                  {
+                      "number": "32",
+                      "player": "David Cuningham",
+                      "goals": 0
+                  },
+                  {
+                      "number": "35",
+                      "player": "Ed Curnow",
+                      "goals": 0
+                  },
+                  {
+                      "number": "37",
+                      "player": "Matt Kennedy",
+                      "goals": 0
+                  },
+                  {
+                      "number": "39",
+                      "player": "Will Setterfield",
+                      "goals": 0
+                  },
+                  {
+                      "number": "41",
+                      "player": "Tom Williamson",
+                      "goals": 1
+                  },
+                  {
+                      "number": "42",
+                      "player": "Nic Newman",
+                      "goals": 0
+                  },
+                  {
+                      "number": "43",
+                      "player": "Marc Pittonet",
+                      "goals": 0
+                  },
+                  {
+                      "number": "45",
+                      "player": "Michael Gibbons",
+                      "goals": 0
+                  },
+                  {
+                      "number": "46",
+                      "player": "Oscar McDonald",
+                      "goals": 0
+                  },
+                  {
+                      "number": "48",
+                      "player": "Paddy Dow",
+                      "goals": 1
+                  },
+                  {
+                      "number": "49",
+                      "player": "Brodie Kemp",
+                      "goals": 0
+                  },
+                  {
+                      "number": "50",
+                      "player": "Lachie Fogarty",
+                      "goals": 0
+                  },
+                  {
+                      "number": "51",
+                      "player": "Jack Martin",
+                      "goals": 0
+                  },
+                  {
+                      "number": "52",
+                      "player": "Mitch McGovern",
+                      "goals": 0
+                  }
+              ],
+              "bestPlayers": []
           }
-        }
       },
-      "prompt": "Match Summary for Thuringowa Bulldogs Reserves vs. Hermit Park Tigers Reserves:\n  - Grade: Townsville Reserve Men's Premiership\n  - Date: Saturday, 18 May 2024 at Invalid Date\n  - Venue: Riverway Stadium / Riverway Stadium 1\n  - Round: Round 7\n  - Result: Thuringowa Bulldogs Reserves won by 67 points\n  - Scores: Thuringowa Bulldogs Reserves 13.7 (85), Hermit Park Tigers Reserves 2.6 (18)\n  \n  Player Performances:\n  - Matthew Trende (Thuringowa Bulldogs Reserves): 1 goals\n- Rim Kris (Thuringowa Bulldogs Reserves): 4 goals\n- Brendan McGrath (Thuringowa Bulldogs Reserves): 4 goals\n- Damon Szabo (Thuringowa Bulldogs Reserves): 1 goals\n- Christian Payne (Thuringowa Bulldogs Reserves): 3 goals\n  - Chas Reinhardt (Hermit Park Tigers Reserves): 1 goals\n- William Hall (Hermit Park Tigers Reserves): 1 goals\n  \n  This match was part of the Men Senior competition, played on Saturday."
-    },
-    {
+      "resultStatement": "Adelaide Crows Reserves won by 67 points",
+      "grade": {
+          "id": 22823,
+          "gradeName": "AFL Reserve Men's Premiership",
+          "daysPlayed": "Saturday",
+          "gender": "Men",
+          "ageGroup": "Senior",
+          "gradeId": "d6aae62d"
+      },
+      "assignSponsors": {
+          "competition": {
+              "id": 7753,
+              "name": "AFL"
+          },
+          "grade": {
+              "id": 22823,
+              "name": "AFL Reserve Men's Premiership"
+          },
+          "Teams": {
+              "home": {
+                  "name": "Adelaide Crows Reserves"
+              },
+              "away": {
+                  "name": "Carlton Blues Reserves"
+              }
+          }
+      },
+      "prompt": "Match Summary for Adelaide Crows Reserves vs. Carlton Blues Reserves:\n  - Grade: AFL Reserve Men's Premiership\n  - Date: Saturday, 18 May 2024 at 01:30 PM\n  - Venue: Marvel Stadium\n  - Round: Round 7\n  - Result: Adelaide Crows Reserves won by 67 points\n  - Scores: Adelaide Crows Reserves 13.7 (85), Carlton Blues Reserves 2.6 (18)\n  \n  Player Performances:\n  - Paul Seedsman (Adelaide Crows Reserves): 1 goals\n- Taylor Walker (Adelaide Crows Reserves): 4 goals\n- Tom Doedee (Adelaide Crows Reserves): 4 goals\n- Josh Worrell (Adelaide Crows Reserves): 1 goals\n- Andrew McPherson (Adelaide Crows Reserves): 3 goals\n  - Tom Williamson (Carlton Blues Reserves): 1 goals\n- Paddy Dow (Carlton Blues Reserves): 1 goals\n  \n  This match was part of the Men Senior competition, played on Saturday."
+  },
+  {
       "id": 2223,
       "round": "Round 7",
       "date": "Saturday, 18 May 2024",
       "time": "04:45 PM",
-      "ground": "Riverway Stadium / Riverway Stadium 1",
+      "ground": "MCG",
       "status": "Final",
       "gameID": "2e3b2023",
       "teams": {
-        "home": {
-          "name": "Thuringowa Bulldogs Senior Men",
-          "logo": {
-            "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/logo_41_9d95b8a56d.png",
-            "width": 440,
-            "height": 595
-          },
-          "scores": "43",
-          "HomeGoalsAndBehinds": "5.13",
-          "quarterScores": {
-            "q1": {
-              "score": 3,
-              "goals": "0.3"
-            },
-            "q2": {
-              "score": 15,
-              "goals": "2.3"
-            },
-            "q3": {
-              "score": 11,
-              "goals": "1.5"
-            },
-            "q4": {
-              "score": 14,
-              "goals": "2.2"
-            }
-          },
-          "playerStats": [
-            {
-              "number": "1",
-              "player": "Jack Livingston",
-              "goals": 0
-            },
-            {
-              "number": "2",
-              "player": "Ricky Sullivan",
-              "goals": 0
-            },
-            {
-              "number": "4",
-              "player": "Jack Wynne",
-              "goals": 0
-            },
-            {
-              "number": "5",
-              "player": "Charlie Gaudion",
-              "goals": 0
-            },
-            {
-              "number": "6",
-              "player": "Stuart Guest",
-              "goals": 0
-            },
-            {
-              "number": "8",
-              "player": "Daniel Murtha",
-              "goals": 0
-            },
-            {
-              "number": "11",
-              "player": "Joel Newman",
-              "goals": 0
-            },
-            {
-              "number": "12",
-              "player": "Chris Tidswell",
-              "goals": 0
-            },
-            {
-              "number": "13",
-              "player": "Samuel Chittleborough",
-              "goals": 1
-            },
-            {
-              "number": "17",
-              "player": "Mitchell Wakefield",
-              "goals": 0
-            },
-            {
-              "number": "19",
-              "player": "Brodie Flude",
-              "goals": 0
-            },
-            {
-              "number": "20",
-              "player": "Jacob Magee",
-              "goals": 0
-            },
-            {
-              "number": "21",
-              "player": "Nathan Searle",
-              "goals": 0
-            },
-            {
-              "number": "22",
-              "player": "Brock Wilson",
-              "goals": 0
-            },
-            {
-              "number": "27",
-              "player": "Lachlan O’Dwyer",
-              "goals": 0
-            },
-            {
-              "number": "35",
-              "player": "Liam Lablache",
-              "goals": 0
-            },
-            {
-              "number": "38",
-              "player": "Aiden Johnson",
-              "goals": 0
-            },
-            {
-              "number": "39",
-              "player": "Joel Dwyer",
-              "goals": 0
-            },
-            {
-              "number": "42",
-              "player": "Reegan Mrsich",
-              "goals": 4
-            },
-            {
-              "number": "44",
-              "player": "Jassiah Evans",
-              "goals": 0
-            },
-            {
-              "number": "52",
-              "player": "Max Battel",
-              "goals": 0
-            },
-            {
-              "number": "60",
-              "player": "Kody Karambasis",
-              "goals": 0
-            }
-          ],
-          "bestPlayers": [
-            "Chris Tidswell",
-            "Jack Livingston",
-            "Joel Newman",
-            "Reegan Mrsich",
-            "Liam Lablache"
-          ]
-        },
-        "away": {
-          "name": "Hermit Park Tigers Senior Men",
-          "logo": {
-            "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/logo_6c1658268b.jpg",
-            "width": 188,
-            "height": 185
-          },
-          "scores": "19",
-          "AwayGoalsAndBehinds": "2.7",
-          "quarterScores": {
-            "q1": {
-              "score": 12,
-              "goals": "2.0"
-            },
-            "q2": {
-              "score": 2,
-              "goals": "0.2"
-            },
-            "q3": {
-              "score": 0,
-              "goals": "0.0"
-            },
-            "q4": {
-              "score": 5,
-              "goals": "0.5"
-            }
-          },
-          "playerStats": [
-            {
-              "number": "1",
-              "player": "Tyron Bethune",
-              "goals": 0
-            },
-            {
-              "number": "2",
-              "player": "Callaway Parker",
-              "goals": 0
-            },
-            {
-              "number": "3",
-              "player": "Mitchell Hockaday",
-              "goals": 0
-            },
-            {
-              "number": "4",
-              "player": "Sean Mackereth",
-              "goals": 1
-            },
-            {
-              "number": "6",
-              "player": "Jackson Alderson",
-              "goals": 1
-            },
-            {
-              "number": "7",
-              "player": "Aidan Duncan",
-              "goals": 0
-            },
-            {
-              "number": "8",
-              "player": "Jason Di Betta",
-              "goals": 0
-            },
-            {
-              "number": "10",
-              "player": "Alex Demopoulos",
-              "goals": 0
-            },
-            {
-              "number": "13",
-              "player": "Nicholas Armstrong",
-              "goals": 0
-            },
-            {
-              "number": "14",
-              "player": "Heath Sewer",
-              "goals": 0
-            },
-            {
-              "number": "15",
-              "player": "Jeremy Harding",
-              "goals": 0
-            },
-            {
-              "number": "16",
-              "player": "Darby Vercoe",
-              "goals": 0
-            },
-            {
-              "number": "17",
-              "player": "James Sullivan",
-              "goals": 0
-            },
-            {
-              "number": "18",
-              "player": "Logan Atkins",
-              "goals": 0
-            },
-            {
-              "number": "20",
-              "player": "William Schopp",
-              "goals": 0
-            },
-            {
-              "number": "21",
-              "player": "Dylan Vine",
-              "goals": 0
-            },
-            {
-              "number": "22",
-              "player": "William Ball",
-              "goals": 0
-            },
-            {
-              "number": "23",
-              "player": "Daniel Morgan",
-              "goals": 0
-            },
-            {
-              "number": "26",
-              "player": "Benjamin Pearson",
-              "goals": 0
-            },
-            {
-              "number": "27",
-              "player": "Ashton Leeming",
-              "goals": 0
-            },
-            {
-              "number": "30",
-              "player": "Jai Orlicki",
-              "goals": 0
-            },
-            {
-              "number": "44",
-              "player": "Robert Reeves",
-              "goals": 0
-            }
-          ],
-          "bestPlayers": [
-            "William Schopp",
-            "Callaway Parker",
-            "Jeremy Harding",
-            "Jason Di Betta",
-            "Nicholas Armstrong"
-          ]
-        }
-      },
-      "resultStatement": "Thuringowa Bulldogs Senior Men won by 24 points",
-      "grade": {
-        "id": 22824,
-        "gradeName": "Townsville RMS Men's Premiership",
-        "daysPlayed": "Saturday",
-        "gender": "Men",
-        "ageGroup": "Senior",
-        "gradeId": "18612fcd"
-      },
-      "assignSponsors": {
-        "competition": {
-          "id": 7753,
-          "name": "AFL Townsville"
-        },
-        "grade": {
-          "id": 22824,
-          "name": "Townsville RMS Men's Premiership"
-        },
-        "Teams": {
           "home": {
-            "name": "Thuringowa Bulldogs Senior Men"
+              "name": "Richmond Tigers Senior Men",
+              "logo": {
+                  "url": "https://upload.wikimedia.org/wikipedia/en/thumb/1/1e/Richmond_Tigers_logo_2021.svg/1200px-Richmond_Tigers_logo_2021.svg.png",
+                  "width": 440,
+                  "height": 595
+              },
+              "scores": "43",
+              "HomeGoalsAndBehinds": "5.13",
+              "quarterScores": {
+                  "q1": {
+                      "score": 3,
+                      "goals": "0.3"
+                  },
+                  "q2": {
+                      "score": 15,
+                      "goals": "2.3"
+                  },
+                  "q3": {
+                      "score": 11,
+                      "goals": "1.5"
+                  },
+                  "q4": {
+                      "score": 14,
+                      "goals": "2.2"
+                  }
+              },
+              "playerStats": [
+                  {
+                      "number": "1",
+                      "player": "Dustin Martin",
+                      "goals": 0
+                  },
+                  {
+                      "number": "2",
+                      "player": "Jack Riewoldt",
+                      "goals": 0
+                  },
+                  {
+                      "number": "4",
+                      "player": "Trent Cotchin",
+                      "goals": 0
+                  },
+                  {
+                      "number": "5",
+                      "player": "Tom Lynch",
+                      "goals": 0
+                  },
+                  {
+                      "number": "6",
+                      "player": "Shane Edwards",
+                      "goals": 0
+                  },
+                  {
+                      "number": "8",
+                      "player": "Jack Graham",
+                      "goals": 0
+                  },
+                  {
+                      "number": "11",
+                      "player": "Kane Lambert",
+                      "goals": 0
+                  },
+                  {
+                      "number": "12",
+                      "player": "Liam Baker",
+                      "goals": 0
+                  },
+                  {
+                      "number": "13",
+                      "player": "Noah Balta",
+                      "goals": 1
+                  },
+                  {
+                      "number": "17",
+                      "player": "Daniel Rioli",
+                      "goals": 0
+                  },
+                  {
+                      "number": "19",
+                      "player": "Nick Vlastuin",
+                      "goals": 0
+                  },
+                  {
+                      "number": "20",
+                      "player": "Ivan Soldo",
+                      "goals": 0
+                  },
+                  {
+                      "number": "21",
+                      "player": "Shai Bolton",
+                      "goals": 0
+                  },
+                  {
+                      "number": "22",
+                      "player": "Jayden Short",
+                      "goals": 0
+                  },
+                  {
+                      "number": "27",
+                      "player": "Josh Caddy",
+                      "goals": 0
+                  },
+                  {
+                      "number": "35",
+                      "player": "Marlion Pickett",
+                      "goals": 0
+                  },
+                  {
+                      "number": "38",
+                      "player": "Jack Higgins",
+                      "goals": 0
+                  },
+                  {
+                      "number": "39",
+                      "player": "Nathan Broad",
+                      "goals": 0
+                  },
+                  {
+                      "number": "42",
+                      "player": "Jack Ross",
+                      "goals": 4
+                  },
+                  {
+                      "number": "44",
+                      "player": "Dion Prestia",
+                      "goals": 0
+                  },
+                  {
+                      "number": "52",
+                      "player": "Toby Nankervis",
+                      "goals": 0
+                  },
+                  {
+                      "number": "60",
+                      "player": "Jason Castagna",
+                      "goals": 0
+                  }
+              ],
+              "bestPlayers": [
+                  "Shane Edwards",
+                  "Dustin Martin",
+                  "Kane Lambert",
+                  "Jack Ross",
+                  "Noah Balta"
+              ]
           },
           "away": {
-            "name": "Hermit Park Tigers Senior Men"
+              "name": "West Coast Eagles Senior Men",
+              "logo": {
+                  "url": "https://upload.wikimedia.org/wikipedia/en/thumb/1/1b/West_Coast_Eagles_logo_2018.svg/1200px-West_Coast_Eagles_logo_2018.svg.png",
+                  "width": 188,
+                  "height": 185
+              },
+              "scores": "19",
+              "AwayGoalsAndBehinds": "2.7",
+              "quarterScores": {
+                  "q1": {
+                      "score": 12,
+                      "goals": "2.0"
+                  },
+                  "q2": {
+                      "score": 2,
+                      "goals": "0.2"
+                  },
+                  "q3": {
+                      "score": 0,
+                      "goals": "0.0"
+                  },
+                  "q4": {
+                      "score": 5,
+                      "goals": "0.5"
+                  }
+              },
+              "playerStats": [
+                  {
+                      "number": "1",
+                      "player": "Nic Naitanui",
+                      "goals": 0
+                  },
+                  {
+                      "number": "2",
+                      "player": "Josh Kennedy",
+                      "goals": 0
+                  },
+                  {
+                      "number": "3",
+                      "player": "Andrew Gaff",
+                      "goals": 0
+                  },
+                  {
+                      "number": "4",
+                      "player": "Dom Sheed",
+                      "goals": 1
+                  },
+                  {
+                      "number": "6",
+                      "player": "Jack Darling",
+                      "goals": 1
+                  },
+                  {
+                      "number": "7",
+                      "player": "Tim Kelly",
+                      "goals": 0
+                  },
+                  {
+                      "number": "8",
+                      "player": "Luke Shuey",
+                      "goals": 0
+                  },
+                  {
+                      "number": "10",
+                      "player": "Oscar Allen",
+                      "goals": 0
+                  },
+                  {
+                      "number": "13",
+                      "player": "Shannon Hurn",
+                      "goals": 0
+                  },
+                  {
+                      "number": "14",
+                      "player": "Tom Barrass",
+                      "goals": 0
+                  },
+                  {
+                      "number": "15",
+                      "player": "Brad Sheppard",
+                      "goals": 0
+                  },
+                  {
+                      "number": "16",
+                      "player": "Jarrod Brander",
+                      "goals": 0
+                  },
+                  {
+                      "number": "17",
+                      "player": "Jack Redden",
+                      "goals": 0
+                  },
+                  {
+                      "number": "18",
+                      "player": "Liam Duggan",
+                      "goals": 0
+                  },
+                  {
+                      "number": "20",
+                      "player": "Tom Cole",
+                      "goals": 0
+                  },
+                  {
+                      "number": "21",
+                      "player": "Jamaine Jones",
+                      "goals": 0
+                  },
+                  {
+                      "number": "22",
+                      "player": "Jamie Cripps",
+                      "goals": 0
+                  },
+                  {
+                      "number": "23",
+                      "player": "Liam Ryan",
+                      "goals": 0
+                  },
+                  {
+                      "number": "26",
+                      "player": "Willie Rioli",
+                      "goals": 0
+                  },
+                  {
+                      "number": "27",
+                      "player": "Brendon Ah Chee",
+                      "goals": 0
+                  },
+                  {
+                      "number": "30",
+                      "player": "Luke Edwards",
+                      "goals": 0
+                  },
+                  {
+                      "number": "44",
+                      "player": "Xavier O'Neill",
+                      "goals": 0
+                  }
+              ],
+              "bestPlayers": [
+                  "Jack Redden",
+                  "Tim Kelly",
+                  "Shannon Hurn",
+                  "Oscar Allen",
+                  "Brad Sheppard"
+              ]
           }
-        }
       },
-      "prompt": "Match Summary for Thuringowa Bulldogs Senior Men vs. Hermit Park Tigers Senior Men:\n  - Grade: Townsville RMS Men's Premiership\n  - Date: Saturday, 18 May 2024 at Invalid Date\n  - Venue: Riverway Stadium / Riverway Stadium 1\n  - Round: Round 7\n  - Result: Thuringowa Bulldogs Senior Men won by 24 points\n  - Scores: Thuringowa Bulldogs Senior Men 5.13 (43), Hermit Park Tigers Senior Men 2.7 (19)\n  \n  Player Performances:\n  - Samuel Chittleborough (Thuringowa Bulldogs Senior Men): 1 goals\n- Reegan Mrsich (Thuringowa Bulldogs Senior Men): 4 goals\n  - Sean Mackereth (Hermit Park Tigers Senior Men): 1 goals\n- Jackson Alderson (Hermit Park Tigers Senior Men): 1 goals\n  \n  This match was part of the Men Senior competition, played on Saturday."
-    },
-    {
+      "resultStatement": "Richmond Tigers Senior Men won by 24 points",
+      "grade": {
+          "id": 22824,
+          "gradeName": "AFL Men's Premiership",
+          "daysPlayed": "Saturday",
+          "gender": "Men",
+          "ageGroup": "Senior",
+          "gradeId": "18612fcd"
+      },
+      "assignSponsors": {
+          "competition": {
+              "id": 7753,
+              "name": "AFL"
+          },
+          "grade": {
+              "id": 22824,
+              "name": "AFL Men's Premiership"
+          },
+          "Teams": {
+              "home": {
+                  "name": "Richmond Tigers Senior Men"
+              },
+              "away": {
+                  "name": "West Coast Eagles Senior Men"
+              }
+          }
+      },
+      "prompt": "Match Summary for Richmond Tigers Senior Men vs. West Coast Eagles Senior Men:\n  - Grade: AFL Men's Premiership\n  - Date: Saturday, 18 May 2024 at 04:45 PM\n  - Venue: MCG\n  - Round: Round 7\n  - Result: Richmond Tigers Senior Men won by 24 points\n  - Scores: Richmond Tigers Senior Men 5.13 (43), West Coast Eagles Senior Men 2.7 (19)\n  \n  Player Performances:\n  - Noah Balta (Richmond Tigers Senior Men): 1 goals\n- Jack Ross (Richmond Tigers Senior Men): 4 goals\n  - Dom Sheed (West Coast Eagles Senior Men): 1 goals\n- Jack Darling (West Coast Eagles Senior Men): 1 goals\n  \n  This match was part of the Men Senior competition, played on Saturday."
+  },
+  {
       "id": 2239,
       "round": "Round 7",
       "date": "Saturday, 18 May 2024",
       "time": "03:15 PM",
-      "ground": "Riverway Stadium / Riverway Stadium 1",
+      "ground": "Adelaide Oval",
       "status": "Final",
       "gameID": "6418bcaa",
       "teams": {
-        "home": {
-          "name": "Thuringowa Bulldogs Senior Women",
-          "logo": {
-            "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/logo_41_9d95b8a56d.png",
-            "width": 440,
-            "height": 595
-          },
-          "scores": "0",
-          "HomeGoalsAndBehinds": "0.0",
-          "quarterScores": {
-            "q1": {
-              "score": 0,
-              "goals": "0.0"
-            },
-            "q2": {
-              "score": 0,
-              "goals": "0.0"
-            },
-            "q3": {
-              "score": 0,
-              "goals": "0.0"
-            },
-            "q4": {
-              "score": 0,
-              "goals": "0.0"
-            }
-          },
-          "playerStats": [
-            {
-              "number": "1",
-              "player": "Grace Moneghetti",
-              "goals": 0
-            },
-            {
-              "number": "3",
-              "player": "Jasmine Johnson",
-              "goals": 0
-            },
-            {
-              "number": "5",
-              "player": "Ashley Nelson",
-              "goals": 0
-            },
-            {
-              "number": "7",
-              "player": "Angelique Dobbe",
-              "goals": 0
-            },
-            {
-              "number": "8",
-              "player": "Tilly Kirchner",
-              "goals": 0
-            },
-            {
-              "number": "9",
-              "player": "Lauren Starkey",
-              "goals": 0
-            },
-            {
-              "number": "11",
-              "player": "Allana O’Fee",
-              "goals": 0
-            },
-            {
-              "number": "12",
-              "player": "Abby Frankland",
-              "goals": 0
-            },
-            {
-              "number": "13",
-              "player": "Amy Seymour",
-              "goals": 0
-            },
-            {
-              "number": "14",
-              "player": "Geordon Smith",
-              "goals": 0
-            },
-            {
-              "number": "17",
-              "player": "Ella Tuohy",
-              "goals": 0
-            },
-            {
-              "number": "18",
-              "player": "Ella Harrison",
-              "goals": 0
-            },
-            {
-              "number": "19",
-              "player": "Georgia Reid",
-              "goals": 0
-            },
-            {
-              "number": "23",
-              "player": "Makenzi May",
-              "goals": 0
-            },
-            {
-              "number": "25",
-              "player": "Kos-Faith Tumun",
-              "goals": 0
-            },
-            {
-              "number": "27",
-              "player": "Jessie Isakiewicz",
-              "goals": 0
-            },
-            {
-              "number": "29",
-              "player": "Michela Moffat",
-              "goals": 0
-            }
-          ],
-          "bestPlayers": [
-            "Jessie Isakiewicz",
-            "Jasmine Johnson",
-            "Grace Moneghetti",
-            "Tilly Kirchner",
-            "Angelique Dobbe"
-          ]
-        },
-        "away": {
-          "name": "Hermit Park Tigers Senior Women",
-          "logo": {
-            "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/logo_6c1658268b.jpg",
-            "width": 188,
-            "height": 185
-          },
-          "scores": "147",
-          "AwayGoalsAndBehinds": "22.15",
-          "quarterScores": {
-            "q1": {
-              "score": 40,
-              "goals": "6.4"
-            },
-            "q2": {
-              "score": 35,
-              "goals": "5.5"
-            },
-            "q3": {
-              "score": 31,
-              "goals": "5.1"
-            },
-            "q4": {
-              "score": 41,
-              "goals": "6.5"
-            }
-          },
-          "playerStats": [
-            {
-              "number": "1",
-              "player": "Ellie Farrands",
-              "goals": 0
-            },
-            {
-              "number": "2",
-              "player": "Shaneeka Walsh",
-              "goals": 0
-            },
-            {
-              "number": "3",
-              "player": "Maggie Evans",
-              "goals": 4
-            },
-            {
-              "number": "5",
-              "player": "Jess Kostin",
-              "goals": 0
-            },
-            {
-              "number": "6",
-              "player": "Alex Watson",
-              "goals": 0
-            },
-            {
-              "number": "8",
-              "player": "Clancy Oconnell",
-              "goals": 1
-            },
-            {
-              "number": "9",
-              "player": "Brianne Wilson",
-              "goals": 1
-            },
-            {
-              "number": "10",
-              "player": "Jessica Wastell",
-              "goals": 0
-            },
-            {
-              "number": "11",
-              "player": "Sarah Robinson",
-              "goals": 0
-            },
-            {
-              "number": "12",
-              "player": "Ellen Turner",
-              "goals": 5
-            },
-            {
-              "number": "13",
-              "player": "Peyton Gulliver",
-              "goals": 0
-            },
-            {
-              "number": "14",
-              "player": "Hayley Cornish",
-              "goals": 3
-            },
-            {
-              "number": "15",
-              "player": "Cassie Haines",
-              "goals": 1
-            },
-            {
-              "number": "16",
-              "player": "Gabrielle Dockray",
-              "goals": 3
-            },
-            {
-              "number": "17",
-              "player": "Stephanie Baldwin",
-              "goals": 3
-            },
-            {
-              "number": "19",
-              "player": "Lillian Musu",
-              "goals": 0
-            },
-            {
-              "number": "20",
-              "player": "Chloe Craven",
-              "goals": 1
-            },
-            {
-              "number": "21",
-              "player": "Lesley Hancock",
-              "goals": 0
-            },
-            {
-              "number": "22",
-              "player": "Rebecca Rice",
-              "goals": 0
-            },
-            {
-              "number": "23",
-              "player": "Stephanie Feaver",
-              "goals": 0
-            },
-            {
-              "number": "24",
-              "player": "Kate Laffey",
-              "goals": 0
-            },
-            {
-              "number": "25",
-              "player": "Caitlin Hall",
-              "goals": 0
-            }
-          ],
-          "bestPlayers": [
-            "Stephanie Baldwin",
-            "Ellie Farrands",
-            "Hayley Cornish",
-            "Maggie Evans",
-            "Gabrielle Dockray"
-          ]
-        }
-      },
-      "resultStatement": "Hermit Park Tigers Senior Women won by 147 points",
-      "grade": {
-        "id": 22825,
-        "gradeName": "Townsville KX Pilates Senior Women's Cup",
-        "daysPlayed": "Saturday",
-        "gender": "Women",
-        "ageGroup": "Senior",
-        "gradeId": "082c3fcb"
-      },
-      "assignSponsors": {
-        "competition": {
-          "id": 7753,
-          "name": "AFL Townsville"
-        },
-        "grade": {
-          "id": 22825,
-          "name": "Townsville KX Pilates Senior Women's Cup"
-        },
-        "Teams": {
           "home": {
-            "name": "Thuringowa Bulldogs Senior Women"
+              "name": "Adelaide Crows Senior Women",
+              "logo": {
+                  "url": "https://upload.wikimedia.org/wikipedia/en/thumb/6/62/Adelaide_Crows_FC_logo_2020.svg/1200px-Adelaide_Crows_FC_logo_2020.svg.png",
+                  "width": 440,
+                  "height": 595
+              },
+              "scores": "0",
+              "HomeGoalsAndBehinds": "0.0",
+              "quarterScores": {
+                  "q1": {
+                      "score": 0,
+                      "goals": "0.0"
+                  },
+                  "q2": {
+                      "score": 0,
+                      "goals": "0.0"
+                  },
+                  "q3": {
+                      "score": 0,
+                      "goals": "0.0"
+                  },
+                  "q4": {
+                      "score": 0,
+                      "goals": "0.0"
+                  }
+              },
+              "playerStats": [
+                  {
+                      "number": "1",
+                      "player": "Ebony Marinoff",
+                      "goals": 0
+                  },
+                  {
+                      "number": "3",
+                      "player": "Anne Hatchard",
+                      "goals": 0
+                  },
+                  {
+                      "number": "5",
+                      "player": "Rachelle Martin",
+                      "goals": 0
+                  },
+                  {
+                      "number": "7",
+                      "player": "Sarah Allan",
+                      "goals": 0
+                  },
+                  {
+                      "number": "8",
+                      "player": "Justine Mules",
+                      "goals": 0
+                  },
+                  {
+                      "number": "9",
+                      "player": "Eloise Jones",
+                      "goals": 0
+                  },
+                  {
+                      "number": "11",
+                      "player": "Chelsea Biddell",
+                      "goals": 0
+                  },
+                  {
+                      "number": "12",
+                      "player": "Chelsea Randall",
+                      "goals": 0
+                  },
+                  {
+                      "number": "13",
+                      "player": "Marijana Rajcic",
+                      "goals": 0
+                  },
+                  {
+                      "number": "14",
+                      "player": "Maddison Newman",
+                      "goals": 0
+                  },
+                  {
+                      "number": "17",
+                      "player": "Teah Charlton",
+                      "goals": 0
+                  },
+                  {
+                      "number": "18",
+                      "player": "Hannah Munyard",
+                      "goals": 0
+                  },
+                  {
+                      "number": "19",
+                      "player": "Stevie-Lee Thompson",
+                      "goals": 0
+                  },
+                  {
+                      "number": "23",
+                      "player": "Najwa Allen",
+                      "goals": 0
+                  },
+                  {
+                      "number": "25",
+                      "player": "Montana McKinnon",
+                      "goals": 0
+                  },
+                  {
+                      "number": "27",
+                      "player": "Hannah Button",
+                      "goals": 0
+                  },
+                  {
+                      "number": "29",
+                      "player": "Caitlin Gould",
+                      "goals": 0
+                  }
+              ],
+              "bestPlayers": [
+                  "Ebony Marinoff",
+                  "Anne Hatchard",
+                  "Justine Mules",
+                  "Sarah Allan",
+                  "Eloise Jones"
+              ]
           },
           "away": {
-            "name": "Hermit Park Tigers Senior Women"
+              "name": "Carlton Blues Senior Women",
+              "logo": {
+                  "url": "https://upload.wikimedia.org/wikipedia/en/thumb/3/32/Carlton_FC_logo_2017.svg/1200px-Carlton_FC_logo_2017.svg.png",
+                  "width": 188,
+                  "height": 185
+              },
+              "scores": "147",
+              "AwayGoalsAndBehinds": "22.15",
+              "quarterScores": {
+                  "q1": {
+                      "score": 40,
+                      "goals": "6.4"
+                  },
+                  "q2": {
+                      "score": 35,
+                      "goals": "5.5"
+                  },
+                  "q3": {
+                      "score": 31,
+                      "goals": "5.1"
+                  },
+                  "q4": {
+                      "score": 41,
+                      "goals": "6.5"
+                  }
+              },
+              "playerStats": [
+                  {
+                      "number": "1",
+                      "player": "Darcy Vescio",
+                      "goals": 0
+                  },
+                  {
+                      "number": "2",
+                      "player": "Mimi Hill",
+                      "goals": 0
+                  },
+                  {
+                      "number": "3",
+                      "player": "Lucy McEvoy",
+                      "goals": 4
+                  },
+                  {
+                      "number": "5",
+                      "player": "Nicola Stevens",
+                      "goals": 0
+                  },
+                  {
+                      "number": "6",
+                      "player": "Gab Pound",
+                      "goals": 0
+                  },
+                  {
+                      "number": "8",
+                      "player": "Abbie McKay",
+                      "goals": 1
+                  },
+                  {
+                      "number": "9",
+                      "player": "Jessica Dal Pos",
+                      "goals": 1
+                  },
+                  {
+                      "number": "10",
+                      "player": "Breann Moody",
+                      "goals": 0
+                  },
+                  {
+                      "number": "11",
+                      "player": "Gabriella Pound",
+                      "goals": 0
+                  },
+                  {
+                      "number": "12",
+                      "player": "Nat Plane",
+                      "goals": 5
+                  },
+                  {
+                      "number": "13",
+                      "player": "Elise O'Dea",
+                      "goals": 0
+                  },
+                  {
+                      "number": "14",
+                      "player": "Brooke Walker",
+                      "goals": 3
+                  },
+                  {
+                      "number": "15",
+                      "player": "Katie Loynes",
+                      "goals": 1
+                  },
+                  {
+                      "number": "16",
+                      "player": "Tayla Harris",
+                      "goals": 3
+                  },
+                  {
+                      "number": "17",
+                      "player": "Georgia Gee",
+                      "goals": 3
+                  },
+                  {
+                      "number": "19",
+                      "player": "Serena Gibbs",
+                      "goals": 0
+                  },
+                  {
+                      "number": "20",
+                      "player": "Grace Egan",
+                      "goals": 1
+                  },
+                  {
+                      "number": "21",
+                      "player": "Maddy Guerin",
+                      "goals": 0
+                  },
+                  {
+                      "number": "22",
+                      "player": "Charlotte Wilson",
+                      "goals": 0
+                  },
+                  {
+                      "number": "23",
+                      "player": "Courtney Jones",
+                      "goals": 0
+                  },
+                  {
+                      "number": "24",
+                      "player": "Jessica Hosking",
+                      "goals": 0
+                  },
+                  {
+                      "number": "25",
+                      "player": "Madison Prespakis",
+                      "goals": 0
+                  }
+              ],
+              "bestPlayers": [
+                  "Nat Plane",
+                  "Darcy Vescio",
+                  "Brooke Walker",
+                  "Lucy McEvoy",
+                  "Tayla Harris"
+              ]
           }
-        }
       },
-      "prompt": "Match Summary for Thuringowa Bulldogs Senior Women vs. Hermit Park Tigers Senior Women:\n  - Grade: Townsville KX Pilates Senior Women's Cup\n  - Date: Saturday, 18 May 2024 at Invalid Date\n  - Venue: Riverway Stadium / Riverway Stadium 1\n  - Round: Round 7\n  - Result: Hermit Park Tigers Senior Women won by 147 points\n  - Scores: Thuringowa Bulldogs Senior Women 0.0 (0), Hermit Park Tigers Senior Women 22.15 (147)\n  \n  Player Performances:\n  \n  - Maggie Evans (Hermit Park Tigers Senior Women): 4 goals\n- Clancy Oconnell (Hermit Park Tigers Senior Women): 1 goals\n- Brianne Wilson (Hermit Park Tigers Senior Women): 1 goals\n- Ellen Turner (Hermit Park Tigers Senior Women): 5 goals\n- Hayley Cornish (Hermit Park Tigers Senior Women): 3 goals\n- Cassie Haines (Hermit Park Tigers Senior Women): 1 goals\n- Gabrielle Dockray (Hermit Park Tigers Senior Women): 3 goals\n- Stephanie Baldwin (Hermit Park Tigers Senior Women): 3 goals\n- Chloe Craven (Hermit Park Tigers Senior Women): 1 goals\n  \n  This match was part of the Women Senior competition, played on Saturday."
-    }
-  ]
+      "resultStatement": "Carlton Blues Senior Women won by 147 points",
+      "grade": {
+          "id": 22825,
+          "gradeName": "AFL Women's Senior Cup",
+          "daysPlayed": "Saturday",
+          "gender": "Women",
+          "ageGroup": "Senior",
+          "gradeId": "082c3fcb"
+      },
+      "assignSponsors": {
+          "competition": {
+              "id": 7753,
+              "name": "AFL"
+          },
+          "grade": {
+              "id": 22825,
+              "name": "AFL Women's Senior Cup"
+          },
+          "Teams": {
+              "home": {
+                  "name": "Adelaide Crows Senior Women"
+              },
+              "away": {
+                  "name": "Carlton Blues Senior Women"
+              }
+          }
+      },
+      "prompt": "Match Summary for Adelaide Crows Senior Women vs. Carlton Blues Senior Women:\n  - Grade: AFL Women's Senior Cup\n  - Date: Saturday, 18 May 2024 at 03:15 PM\n  - Venue: Adelaide Oval\n  - Round: Round 7\n  - Result: Carlton Blues Senior Women won by 147 points\n  - Scores: Adelaide Crows Senior Women 0.0 (0), Carlton Blues Senior Women 22.15 (147)\n  \n  Player Performances:\n  - Lucy McEvoy (Carlton Blues Senior Women): 4 goals\n- Abbie McKay (Carlton Blues Senior Women): 1 goals\n- Jessica Dal Pos (Carlton Blues Senior Women): 1 goals\n- Nat Plane (Carlton Blues Senior Women): 5 goals\n- Brooke Walker (Carlton Blues Senior Women): 3 goals\n- Katie Loynes (Carlton Blues Senior Women): 1 goals\n- Tayla Harris (Carlton Blues Senior Women): 3 goals\n- Georgia Gee (Carlton Blues Senior Women): 3 goals\n- Grace Egan (Carlton Blues Senior Women): 1 goals\n  \n  This match was part of the Women Senior competition, played on Saturday."
+  }
+]

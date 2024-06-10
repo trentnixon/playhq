@@ -4,7 +4,7 @@ import { trackButtonClick } from "../../lib/GA";
 
 const CtaAreaTwo = () => {
   return (
-    <>
+    <> 
       <div className="cta-area-two ptb-100">
         <div className="container">
           <div className="cta-content">

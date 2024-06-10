@@ -1,113 +1,113 @@
 [
-    {
+  {
       "gameID": "b7c3560d",
       "round": "Round 9",
-      "teamHome": "Northern Beaches Suns Reserves",
+      "teamHome": "Gold Coast Suns Reserves",
       "teamHomeLogo": {
-        "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/logo_77b7e81c08.jpg",
-        "width": 283,
-        "height": 283
+          "url": "https://upload.wikimedia.org/wikipedia/en/thumb/5/5f/Gold_Coast_Suns_Logo_2021.svg/1200px-Gold_Coast_Suns_Logo_2021.svg.png",
+          "width": 283,
+          "height": 283
       },
-      "teamAway": "Thuringowa Bulldogs Reserves",
+      "teamAway": "Richmond Tigers Reserves",
       "teamAwayLogo": {
-        "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/logo_41_9d95b8a56d.png",
-        "width": 440,
-        "height": 595
+          "url": "https://upload.wikimedia.org/wikipedia/en/thumb/1/1e/Richmond_Tigers_logo_2021.svg/1200px-Richmond_Tigers_logo_2021.svg.png",
+          "width": 440,
+          "height": 595
       },
       "date": "Saturday, 01 June 2024",
       "time": "12:30 PM, Sat, 01 Jun 24",
-      "ground": "North Shore Oval / North Shore Oval 1",
+      "ground": "Metricon Stadium",
       "gender": "Men",
       "ageGroup": "Senior",
-      "gradeName": "Townsville Reserve Men's Premiership",
-      "prompt": "**Upcoming AFL Match Details:**\n- **Teams:** Northern Beaches Suns Reserves vs Thuringowa Bulldogs Reserves\n- **Date and Time:** Saturday, 1 June 2024, 12:30 PM, Sat, 01 Jun 24\n- **Location:** North Shore Oval / North Shore Oval 1\n- **Round:** Round 9\n- **League:** Townsville Reserve Men's Premiership\n- **Positions in League:** Northern Beaches Suns Reserves is currently at position 5, Thuringowa Bulldogs Reserves is at position 1\n\n**About the Teams:**\n- **Northern Beaches Suns Reserves**: Positioned 5 in the league.\n- **Thuringowa Bulldogs Reserves**: Positioned 1 in the league.\nThis match is part of the Men Senior competition, scheduled to be played on 2024-05-31. Further details can be found [here](https://www.playhq.com/afl/org/afl-townsville/afl-townsville-2024/townsville-reserve-mens-premiership/d6aae62d).",
+      "gradeName": "AFL Reserve Men's Premiership",
+      "prompt": "**Upcoming AFL Match Details:**\n- **Teams:** Gold Coast Suns Reserves vs Richmond Tigers Reserves\n- **Date and Time:** Saturday, 1 June 2024, 12:30 PM, Sat, 01 Jun 24\n- **Location:** Metricon Stadium\n- **Round:** Round 9\n- **League:** AFL Reserve Men's Premiership\n- **Positions in League:** Gold Coast Suns Reserves is currently at position 5, Richmond Tigers Reserves is at position 1\n\n**About the Teams:**\n- **Gold Coast Suns Reserves**: Positioned 5 in the league.\n- **Richmond Tigers Reserves**: Positioned 1 in the league.\nThis match is part of the Men Senior competition, scheduled to be played on 2024-06-01. Further details can be found [here](https://www.playhq.com/afl/org/afl-townsville/afl-townsville-2024/townsville-reserve-mens-premiership/d6aae62d).",
       "assignSponsors": {
-        "competition": {
-          "id": 7753,
-          "name": "AFL Townsville"
-        },
-        "grade": {
-          "id": 22823,
-          "name": "Townsville Reserve Men's Premiership"
-        },
-        "Team": {
-          "teamHome": "Northern Beaches Suns Reserves",
-          "teamAway": "Thuringowa Bulldogs Reserves"
-        }
+          "competition": {
+              "id": 7753,
+              "name": "AFL"
+          },
+          "grade": {
+              "id": 22823,
+              "name": "AFL Reserve Men's Premiership"
+          },
+          "Team": {
+              "teamHome": "Gold Coast Suns Reserves",
+              "teamAway": "Richmond Tigers Reserves"
+          }
       }
-    },
-    {
+  },
+  {
       "gameID": "4aaa8ce9",
       "round": "Round 9",
-      "teamHome": "Northern Beaches Suns Senior Men",
+      "teamHome": "Gold Coast Suns Senior Men",
       "teamHomeLogo": {
-        "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/logo_77b7e81c08.jpg",
-        "width": 283,
-        "height": 283
+          "url": "https://upload.wikimedia.org/wikipedia/en/thumb/5/5f/Gold_Coast_Suns_Logo_2021.svg/1200px-Gold_Coast_Suns_Logo_2021.svg.png",
+          "width": 283,
+          "height": 283
       },
-      "teamAway": "Thuringowa Bulldogs Senior Men",
+      "teamAway": "Richmond Tigers Senior Men",
       "teamAwayLogo": {
-        "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/logo_41_9d95b8a56d.png",
-        "width": 440,
-        "height": 595
+          "url": "https://upload.wikimedia.org/wikipedia/en/thumb/1/1e/Richmond_Tigers_logo_2021.svg/1200px-Richmond_Tigers_logo_2021.svg.png",
+          "width": 440,
+          "height": 595
       },
       "date": "Saturday, 01 June 2024",
       "time": "03:45 PM, Sat, 01 Jun 24",
-      "ground": "North Shore Oval / North Shore Oval 1",
+      "ground": "Metricon Stadium",
       "gender": "Men",
       "ageGroup": "Senior",
-      "gradeName": "Townsville RMS Men's Premiership",
-      "prompt": "**Upcoming AFL Match Details:**\n- **Teams:** Northern Beaches Suns Senior Men vs Thuringowa Bulldogs Senior Men\n- **Date and Time:** Saturday, 1 June 2024, 03:45 PM, Sat, 01 Jun 24\n- **Location:** North Shore Oval / North Shore Oval 1\n- **Round:** Round 9\n- **League:** Townsville RMS Men's Premiership\n- **Positions in League:** Northern Beaches Suns Senior Men is currently at position 5, Thuringowa Bulldogs Senior Men is at position 1\n\n**About the Teams:**\n- **Northern Beaches Suns Senior Men**: Positioned 5 in the league.\n- **Thuringowa Bulldogs Senior Men**: Positioned 1 in the league.\nThis match is part of the Men Senior competition, scheduled to be played on 2024-05-31. Further details can be found [here](https://www.playhq.com/afl/org/afl-townsville/afl-townsville-2024/townsville-rms-mens-premiership/18612fcd).",
+      "gradeName": "AFL Men's Premiership",
+      "prompt": "**Upcoming AFL Match Details:**\n- **Teams:** Gold Coast Suns Senior Men vs Richmond Tigers Senior Men\n- **Date and Time:** Saturday, 1 June 2024, 03:45 PM, Sat, 01 Jun 24\n- **Location:** Metricon Stadium\n- **Round:** Round 9\n- **League:** AFL Men's Premiership\n- **Positions in League:** Gold Coast Suns Senior Men is currently at position 5, Richmond Tigers Senior Men is at position 1\n\n**About the Teams:**\n- **Gold Coast Suns Senior Men**: Positioned 5 in the league.\n- **Richmond Tigers Senior Men**: Positioned 1 in the league.\nThis match is part of the Men Senior competition, scheduled to be played on 2024-06-01. Further details can be found [here](https://www.playhq.com/afl/org/afl-townsville/afl-townsville-2024/townsville-rms-mens-premiership/18612fcd).",
       "assignSponsors": {
-        "competition": {
-          "id": 7753,
-          "name": "AFL Townsville"
-        },
-        "grade": {
-          "id": 22824,
-          "name": "Townsville RMS Men's Premiership"
-        },
-        "Team": {
-          "teamHome": "Northern Beaches Suns Senior Men",
-          "teamAway": "Thuringowa Bulldogs Senior Men"
-        }
+          "competition": {
+              "id": 7753,
+              "name": "AFL"
+          },
+          "grade": {
+              "id": 22824,
+              "name": "AFL Men's Premiership"
+          },
+          "Team": {
+              "teamHome": "Gold Coast Suns Senior Men",
+              "teamAway": "Richmond Tigers Senior Men"
+          }
       }
-    },
-    {
+  },
+  {
       "gameID": "42e9a352",
       "round": "Round 9",
-      "teamHome": "Northern Beaches Suns Senior Women",
+      "teamHome": "Gold Coast Suns Senior Women",
       "teamHomeLogo": {
-        "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/logo_77b7e81c08.jpg",
-        "width": 283,
-        "height": 283
+          "url": "https://upload.wikimedia.org/wikipedia/en/thumb/5/5f/Gold_Coast_Suns_Logo_2021.svg/1200px-Gold_Coast_Suns_Logo_2021.svg.png",
+          "width": 283,
+          "height": 283
       },
-      "teamAway": "Thuringowa Bulldogs Senior Women",
+      "teamAway": "Carlton Blues Senior Women",
       "teamAwayLogo": {
-        "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/logo_41_9d95b8a56d.png",
-        "width": 440,
-        "height": 595
+          "url": "https://upload.wikimedia.org/wikipedia/en/thumb/3/32/Carlton_FC_logo_2017.svg/1200px-Carlton_FC_logo_2017.svg.png",
+          "width": 440,
+          "height": 595
       },
       "date": "Saturday, 01 June 2024",
       "time": "02:15 PM, Sat, 01 Jun 24",
-      "ground": "North Shore Oval / North Shore Oval 1",
+      "ground": "Metricon Stadium",
       "gender": "Women",
       "ageGroup": "Senior",
-      "gradeName": "Townsville KX Pilates Senior Women's Cup",
-      "prompt": "**Upcoming AFL Match Details:**\n- **Teams:** Northern Beaches Suns Senior Women vs Thuringowa Bulldogs Senior Women\n- **Date and Time:** Saturday, 1 June 2024, 02:15 PM, Sat, 01 Jun 24\n- **Location:** North Shore Oval / North Shore Oval 1\n- **Round:** Round 9\n- **League:** Townsville KX Pilates Senior Women's Cup\n- **Positions in League:** Northern Beaches Suns Senior Women is currently at position 5, Thuringowa Bulldogs Senior Women is at position 4\n\n**About the Teams:**\n- **Northern Beaches Suns Senior Women**: Positioned 5 in the league.\n- **Thuringowa Bulldogs Senior Women**: Positioned 4 in the league.\nThis match is part of the Women Senior competition, scheduled to be played on 2024-05-31. Further details can be found [here](https://www.playhq.com/afl/org/afl-townsville/afl-townsville-2024/townsville-kx-pilates-senior-womens-cup/082c3fcb).",
+      "gradeName": "AFL Women's Senior Cup",
+      "prompt": "**Upcoming AFL Match Details:**\n- **Teams:** Gold Coast Suns Senior Women vs Carlton Blues Senior Women\n- **Date and Time:** Saturday, 1 June 2024, 02:15 PM, Sat, 01 Jun 24\n- **Location:** Metricon Stadium\n- **Round:** Round 9\n- **League:** AFL Women's Senior Cup\n- **Positions in League:** Gold Coast Suns Senior Women is currently at position 5, Carlton Blues Senior Women is at position 1\n\n**About the Teams:**\n- **Gold Coast Suns Senior Women**: Positioned 5 in the league.\n- **Carlton Blues Senior Women**: Positioned 1 in the league.\nThis match is part of the Women Senior competition, scheduled to be played on 2024-06-01. Further details can be found [here](https://www.playhq.com/afl/org/afl-townsville/afl-townsville-2024/townsville-kx-pilates-senior-womens-cup/082c3fcb).",
       "assignSponsors": {
-        "competition": {
-          "id": 7753,
-          "name": "AFL Townsville"
-        },
-        "grade": {
-          "id": 22825,
-          "name": "Townsville KX Pilates Senior Women's Cup"
-        },
-        "Team": {
-          "teamHome": "Northern Beaches Suns Senior Women",
-          "teamAway": "Thuringowa Bulldogs Senior Women"
-        }
+          "competition": {
+              "id": 7753,
+              "name": "AFL"
+          },
+          "grade": {
+              "id": 22825,
+              "name": "AFL Women's Senior Cup"
+          },
+          "Team": {
+              "teamHome": "Gold Coast Suns Senior Women",
+              "teamAway": "Carlton Blues Senior Women"
+          }
       }
-    }
-  ]
+  }
+]

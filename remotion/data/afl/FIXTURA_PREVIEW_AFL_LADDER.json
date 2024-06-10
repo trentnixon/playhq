@@ -1,353 +1,353 @@
 [
-    {
+  {
       "ID": 22825,
       "gradeStrapiID": 22825,
-      "gradeName": "Townsville KX Pilates Senior Women's Cup",
-      "name": "Townsville KX Pilates Senior Women's Cup",
+      "gradeName": "AFL Women's Senior Cup",
+      "name": "AFL Women's Senior Cup",
       "ageGroup": "Senior",
       "gender": "Women",
       "League": [
-        {
-          "position": "1",
-          "teamName": "Curra Swans Senior Women",
-          "teamHref": "/afl/org/curra-swans-afc/97befb4e/afl-townsville-2024/teams/curra-swans-senior-women/529d65c4",
-          "P": "6",
-          "PTS": "20",
-          "%": "252.08",
-          "W": "5",
-          "L": "1",
-          "D": "0",
-          "BYE": "1",
-          "teamLogo": {
-            "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/logo_857771fb5d.jpg",
-            "width": 178,
-            "height": 141
+          {
+              "position": "1",
+              "teamName": "Adelaide Crows Senior Women",
+              "teamHref": "/afl/org/adelaide-crows/97befb4e/afl-2024/teams/adelaide-crows-senior-women/529d65c4",
+              "P": "6",
+              "PTS": "20",
+              "%": "252.08",
+              "W": "5",
+              "L": "1",
+              "D": "0",
+              "BYE": "1",
+              "teamLogo": {
+                  "url": "https://upload.wikimedia.org/wikipedia/en/thumb/6/62/Adelaide_Crows_FC_logo_2020.svg/1200px-Adelaide_Crows_FC_logo_2020.svg.png",
+                  "width": 178,
+                  "height": 141
+              },
+              "prompt": "Adelaide Crows Senior Women is currently positioned 1 in the AFL Women's Senior Cup, with 5 wins and 1 loss, totaling 20 points."
           },
-          "prompt": "Curra Swans Senior Women is currently positioned 1 in the Townsville KX Pilates Senior Women's Cup, with 5 wins and 1 losses, totaling 20 points."
-        },
-        {
-          "position": "2",
-          "teamName": "Hermit Park Tigers Senior Women",
-          "teamHref": "/afl/org/hermit-park-afc/ce8a191b/afl-townsville-2024/teams/hermit-park-tigers-senior-women/dc53da62",
-          "P": "5",
-          "PTS": "16",
-          "%": "1566.67",
-          "W": "4",
-          "L": "1",
-          "D": "0",
-          "BYE": "2",
-          "teamLogo": {
-            "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/logo_6c1658268b.jpg",
-            "width": 188,
-            "height": 185
+          {
+              "position": "2",
+              "teamName": "Carlton Blues Senior Women",
+              "teamHref": "/afl/org/carlton-blues/ce8a191b/afl-2024/teams/carlton-blues-senior-women/dc53da62",
+              "P": "5",
+              "PTS": "16",
+              "%": "1566.67",
+              "W": "4",
+              "L": "1",
+              "D": "0",
+              "BYE": "2",
+              "teamLogo": {
+                  "url": "https://upload.wikimedia.org/wikipedia/en/thumb/3/32/Carlton_FC_logo_2017.svg/1200px-Carlton_FC_logo_2017.svg.png",
+                  "width": 188,
+                  "height": 185
+              },
+              "prompt": "Carlton Blues Senior Women is currently positioned 2 in the AFL Women's Senior Cup, with 4 wins and 1 loss, totaling 16 points."
           },
-          "prompt": "Hermit Park Tigers Senior Women is currently positioned 2 in the Townsville KX Pilates Senior Women's Cup, with 4 wins and 1 losses, totaling 16 points."
-        },
-        {
-          "position": "3",
-          "teamName": "University Hawks Senior Women",
-          "teamHref": "/afl/org/university-hawks-afc/52f3e303/afl-townsville-2024/teams/university-hawks-senior-women/c3cc8568",
-          "P": "6",
-          "PTS": "8",
-          "%": "77.54",
-          "W": "2",
-          "L": "4",
-          "D": "0",
-          "BYE": "1",
-          "teamLogo": {
-            "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/logo_b0fcf51283.jpg",
-            "width": 180,
-            "height": 200
+          {
+              "position": "3",
+              "teamName": "Collingwood Magpies Senior Women",
+              "teamHref": "/afl/org/collingwood-magpies/52f3e303/afl-2024/teams/collingwood-magpies-senior-women/c3cc8568",
+              "P": "6",
+              "PTS": "8",
+              "%": "77.54",
+              "W": "2",
+              "L": "4",
+              "D": "0",
+              "BYE": "1",
+              "teamLogo": {
+                  "url": "https://upload.wikimedia.org/wikipedia/en/thumb/3/35/Collingwood_FC_logo_2022.svg/1200px-Collingwood_FC_logo_2022.svg.png",
+                  "width": 180,
+                  "height": 200
+              },
+              "prompt": "Collingwood Magpies Senior Women is currently positioned 3 in the AFL Women's Senior Cup, with 2 wins and 4 losses, totaling 8 points."
           },
-          "prompt": "University Hawks Senior Women is currently positioned 3 in the Townsville KX Pilates Senior Women's Cup, with 2 wins and 4 losses, totaling 8 points."
-        },
-        {
-          "position": "4",
-          "teamName": "Thuringowa Bulldogs Senior Women",
-          "teamHref": "/afl/org/thuringowa-bulldogs-afc/1f49554d/afl-townsville-2024/teams/thuringowa-bulldogs-senior-women/063935d2",
-          "P": "6",
-          "PTS": "8",
-          "%": "14.63",
-          "W": "2",
-          "L": "4",
-          "D": "0",
-          "BYE": "1",
-          "teamLogo": {
-            "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/logo_41_9d95b8a56d.png",
-            "width": 440,
-            "height": 595
+          {
+              "position": "4",
+              "teamName": "Geelong Cats Senior Women",
+              "teamHref": "/afl/org/geelong-cats/1f49554d/afl-2024/teams/geelong-cats-senior-women/063935d2",
+              "P": "6",
+              "PTS": "8",
+              "%": "14.63",
+              "W": "2",
+              "L": "4",
+              "D": "0",
+              "BYE": "1",
+              "teamLogo": {
+                  "url": "https://upload.wikimedia.org/wikipedia/en/thumb/f/ff/Geelong_Cats_logo.svg/1200px-Geelong_Cats_logo.svg.png",
+                  "width": 440,
+                  "height": 595
+              },
+              "prompt": "Geelong Cats Senior Women is currently positioned 4 in the AFL Women's Senior Cup, with 2 wins and 4 losses, totaling 8 points."
           },
-          "prompt": "Thuringowa Bulldogs Senior Women is currently positioned 4 in the Townsville KX Pilates Senior Women's Cup, with 2 wins and 4 losses, totaling 8 points."
-        },
-        {
-          "position": "5",
-          "teamName": "Northern Beaches Suns Senior Women",
-          "teamHref": "/afl/org/northern-beaches-suns-afc/4a23cc02/afl-townsville-2024/teams/northern-beaches-suns-senior-women/784c2c67",
-          "P": "5",
-          "PTS": "0",
-          "%": "20.71",
-          "W": "1",
-          "L": "4",
-          "D": "0",
-          "BYE": "2",
-          "teamLogo": {
-            "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/logo_77b7e81c08.jpg",
-            "width": 283,
-            "height": 283
-          },
-          "prompt": "Northern Beaches Suns Senior Women is currently positioned 5 in the Townsville KX Pilates Senior Women's Cup, with 1 wins and 4 losses, totaling 0 points."
-        }
+          {
+              "position": "5",
+              "teamName": "Richmond Tigers Senior Women",
+              "teamHref": "/afl/org/richmond-tigers/4a23cc02/afl-2024/teams/richmond-tigers-senior-women/784c2c67",
+              "P": "5",
+              "PTS": "0",
+              "%": "20.71",
+              "W": "1",
+              "L": "4",
+              "D": "0",
+              "BYE": "2",
+              "teamLogo": {
+                  "url": "https://upload.wikimedia.org/wikipedia/en/thumb/1/1e/Richmond_Tigers_logo_2021.svg/1200px-Richmond_Tigers_logo_2021.svg.png",
+                  "width": 283,
+                  "height": 283
+              },
+              "prompt": "Richmond Tigers Senior Women is currently positioned 5 in the AFL Women's Senior Cup, with 1 win and 4 losses, totaling 0 points."
+          }
       ],
       "gradeId": "082c3fcb",
-      "bias": "Thuringowa Bulldogs Senior Women",
+      "bias": "Geelong Cats Senior Women",
       "competition": "Senior",
-      "prompt": "Thuringowa Bulldogs Senior Women is currently positioned 4 in the Townsville KX Pilates Senior Women's Cup, with 2 wins and 4 losses, totaling 8 points.",
+      "prompt": "Geelong Cats Senior Women is currently positioned 4 in the AFL Women's Senior Cup, with 2 wins and 4 losses, totaling 8 points.",
       "assignSponsors": {
-        "competition": {
-          "id": null,
-          "name": null
-        },
-        "grade": {
-          "id": 22825,
-          "name": "Townsville KX Pilates Senior Women's Cup"
-        },
-        "Team": {
-          "name": "Thuringowa Bulldogs Senior Women"
-        }
+          "competition": {
+              "id": null,
+              "name": null
+          },
+          "grade": {
+              "id": 22825,
+              "name": "AFL Women's Senior Cup"
+          },
+          "Team": {
+              "name": "Geelong Cats Senior Women"
+          }
       }
-    },
-    {
+  },
+  {
       "ID": 22823,
       "gradeStrapiID": 22823,
-      "gradeName": "Townsville Reserve Men's Premiership",
-      "name": "Townsville Reserve Men's Premiership",
+      "gradeName": "AFL Reserve Men's Premiership",
+      "name": "AFL Reserve Men's Premiership",
       "ageGroup": "Senior",
       "gender": "Men",
       "League": [
-        {
-          "position": "1",
-          "teamName": "Thuringowa Bulldogs Reserves",
-          "teamHref": "/afl/org/thuringowa-bulldogs-afc/1f49554d/afl-townsville-2024/teams/thuringowa-bulldogs-reserves/cc5f9f67",
-          "P": "6",
-          "PTS": "20",
-          "%": "297.93",
-          "W": "5",
-          "L": "1",
-          "D": "0",
-          "BYE": "1",
-          "teamLogo": {
-            "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/logo_41_9d95b8a56d.png",
-            "width": 440,
-            "height": 595
+          {
+              "position": "1",
+              "teamName": "Sydney Swans Reserves",
+              "teamHref": "/afl/org/sydney-swans/1f49554d/afl-2024/teams/sydney-swans-reserves/cc5f9f67",
+              "P": "6",
+              "PTS": "20",
+              "%": "297.93",
+              "W": "5",
+              "L": "1",
+              "D": "0",
+              "BYE": "1",
+              "teamLogo": {
+                  "url": "https://upload.wikimedia.org/wikipedia/en/thumb/6/6c/Sydney_Swans_logo.svg/1200px-Sydney_Swans_logo.svg.png",
+                  "width": 440,
+                  "height": 595
+              },
+              "prompt": "Sydney Swans Reserves is currently positioned 1 in the AFL Reserve Men's Premiership, with 5 wins and 1 loss, totaling 20 points."
           },
-          "prompt": "Thuringowa Bulldogs Reserves is currently positioned 1 in the Townsville Reserve Men's Premiership, with 5 wins and 1 losses, totaling 20 points."
-        },
-        {
-          "position": "2",
-          "teamName": "Hermit Park Tigers Reserves",
-          "teamHref": "/afl/org/hermit-park-afc/ce8a191b/afl-townsville-2024/teams/hermit-park-tigers-reserves/abec1412",
-          "P": "5",
-          "PTS": "16",
-          "%": "131.46",
-          "W": "4",
-          "L": "1",
-          "D": "0",
-          "BYE": "2",
-          "teamLogo": {
-            "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/logo_6c1658268b.jpg",
-            "width": 188,
-            "height": 185
+          {
+              "position": "2",
+              "teamName": "Essendon Bombers Reserves",
+              "teamHref": "/afl/org/essendon-bombers/ce8a191b/afl-2024/teams/essendon-bombers-reserves/abec1412",
+              "P": "5",
+              "PTS": "16",
+              "%": "131.46",
+              "W": "4",
+              "L": "1",
+              "D": "0",
+              "BYE": "2",
+              "teamLogo": {
+                  "url": "https://upload.wikimedia.org/wikipedia/en/thumb/3/32/Essendon_FC_logo.svg/1200px-Essendon_FC_logo.svg.png",
+                  "width": 188,
+                  "height": 185
+              },
+              "prompt": "Essendon Bombers Reserves is currently positioned 2 in the AFL Reserve Men's Premiership, with 4 wins and 1 loss, totaling 16 points."
           },
-          "prompt": "Hermit Park Tigers Reserves is currently positioned 2 in the Townsville Reserve Men's Premiership, with 4 wins and 1 losses, totaling 16 points."
-        },
-        {
-          "position": "3",
-          "teamName": "University Hawks Reserves",
-          "teamHref": "/afl/org/university-hawks-afc/52f3e303/afl-townsville-2024/teams/university-hawks-reserves/ad4c2cd8",
-          "P": "6",
-          "PTS": "12",
-          "%": "102.49",
-          "W": "3",
-          "L": "3",
-          "D": "0",
-          "BYE": "1",
-          "teamLogo": {
-            "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/logo_b0fcf51283.jpg",
-            "width": 180,
-            "height": 200
+          {
+              "position": "3",
+              "teamName": "Melbourne Demons Reserves",
+              "teamHref": "/afl/org/melbourne-demons/52f3e303/afl-2024/teams/melbourne-demons-reserves/ad4c2cd8",
+              "P": "6",
+              "PTS": "12",
+              "%": "102.49",
+              "W": "3",
+              "L": "3",
+              "D": "0",
+              "BYE": "1",
+              "teamLogo": {
+                  "url": "https://upload.wikimedia.org/wikipedia/en/thumb/4/42/Melbourne_FC_Logo.svg/1200px-Melbourne_FC_Logo.svg.png",
+                  "width": 180,
+                  "height": 200
+              },
+              "prompt": "Melbourne Demons Reserves is currently positioned 3 in the AFL Reserve Men's Premiership, with 3 wins and 3 losses, totaling 12 points."
           },
-          "prompt": "University Hawks Reserves is currently positioned 3 in the Townsville Reserve Men's Premiership, with 3 wins and 3 losses, totaling 12 points."
-        },
-        {
-          "position": "4",
-          "teamName": "Curra Swans Reserves",
-          "teamHref": "/afl/org/curra-swans-afc/97befb4e/afl-townsville-2024/teams/curra-swans-reserves/627cfb55",
-          "P": "6",
-          "PTS": "8",
-          "%": "84.29",
-          "W": "2",
-          "L": "4",
-          "D": "0",
-          "BYE": "1",
-          "teamLogo": {
-            "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/logo_857771fb5d.jpg",
-            "width": 178,
-            "height": 141
+          {
+              "position": "4",
+              "teamName": "Fremantle Dockers Reserves",
+              "teamHref": "/afl/org/fremantle-dockers/97befb4e/afl-2024/teams/fremantle-dockers-reserves/627cfb55",
+              "P": "6",
+              "PTS": "8",
+              "%": "84.29",
+              "W": "2",
+              "L": "4",
+              "D": "0",
+              "BYE": "1",
+              "teamLogo": {
+                  "url": "https://upload.wikimedia.org/wikipedia/en/thumb/8/80/Fremantle_Dockers_logo.svg/1200px-Fremantle_Dockers_logo.svg.png",
+                  "width": 178,
+                  "height": 141
+              },
+              "prompt": "Fremantle Dockers Reserves is currently positioned 4 in the AFL Reserve Men's Premiership, with 2 wins and 4 losses, totaling 8 points."
           },
-          "prompt": "Curra Swans Reserves is currently positioned 4 in the Townsville Reserve Men's Premiership, with 2 wins and 4 losses, totaling 8 points."
-        },
-        {
-          "position": "5",
-          "teamName": "Northern Beaches Suns Reserves",
-          "teamHref": "/afl/org/northern-beaches-suns-afc/4a23cc02/afl-townsville-2024/teams/northern-beaches-suns-reserves/d1c12c6a",
-          "P": "5",
-          "PTS": "0",
-          "%": "20.25",
-          "W": "0",
-          "L": "5",
-          "D": "0",
-          "BYE": "2",
-          "teamLogo": {
-            "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/logo_77b7e81c08.jpg",
-            "width": 283,
-            "height": 283
-          },
-          "prompt": "Northern Beaches Suns Reserves is currently positioned 5 in the Townsville Reserve Men's Premiership, with 0 wins and 5 losses, totaling 0 points."
-        }
+          {
+              "position": "5",
+              "teamName": "Gold Coast Suns Reserves",
+              "teamHref": "/afl/org/gold-coast-suns/4a23cc02/afl-2024/teams/gold-coast-suns-reserves/d1c12c6a",
+              "P": "5",
+              "PTS": "0",
+              "%": "20.25",
+              "W": "0",
+              "L": "5",
+              "D": "0",
+              "BYE": "2",
+              "teamLogo": {
+                  "url": "https://upload.wikimedia.org/wikipedia/en/thumb/5/5f/Gold_Coast_Suns_Logo_2021.svg/1200px-Gold_Coast_Suns_Logo_2021.svg.png",
+                  "width": 283,
+                  "height": 283
+              },
+              "prompt": "Gold Coast Suns Reserves is currently positioned 5 in the AFL Reserve Men's Premiership, with 0 wins and 5 losses, totaling 0 points."
+          }
       ],
       "gradeId": "d6aae62d",
-      "bias": "Thuringowa Bulldogs Reserves",
+      "bias": "Sydney Swans Reserves",
       "competition": "Senior",
-      "prompt": "Thuringowa Bulldogs Reserves is currently positioned 1 in the Townsville Reserve Men's Premiership, with 5 wins and 1 losses, totaling 20 points.",
+      "prompt": "Sydney Swans Reserves is currently positioned 1 in the AFL Reserve Men's Premiership, with 5 wins and 1 loss, totaling 20 points.",
       "assignSponsors": {
-        "competition": {
-          "id": null,
-          "name": null
-        },
-        "grade": {
-          "id": 22823,
-          "name": "Townsville Reserve Men's Premiership"
-        },
-        "Team": {
-          "name": "Thuringowa Bulldogs Reserves"
-        }
+          "competition": {
+              "id": null,
+              "name": null
+          },
+          "grade": {
+              "id": 22823,
+              "name": "AFL Reserve Men's Premiership"
+          },
+          "Team": {
+              "name": "Sydney Swans Reserves"
+          }
       }
-    },
-    {
+  },
+  {
       "ID": 22824,
       "gradeStrapiID": 22824,
-      "gradeName": "Townsville RMS Men's Premiership",
-      "name": "Townsville RMS Men's Premiership",
+      "gradeName": "AFL Men's Premiership",
+      "name": "AFL Men's Premiership",
       "ageGroup": "Senior",
       "gender": "Men",
       "League": [
-        {
-          "position": "1",
-          "teamName": "Thuringowa Bulldogs Senior Men",
-          "teamHref": "/afl/org/thuringowa-bulldogs-afc/1f49554d/afl-townsville-2024/teams/thuringowa-bulldogs-senior-men/b02728bc",
-          "P": "6",
-          "PTS": "24",
-          "%": "329.45",
-          "W": "6",
-          "L": "0",
-          "D": "0",
-          "BYE": "1",
-          "teamLogo": {
-            "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/logo_41_9d95b8a56d.png",
-            "width": 440,
-            "height": 595
+          {
+              "position": "1",
+              "teamName": "Richmond Tigers Senior Men",
+              "teamHref": "/afl/org/richmond-tigers/1f49554d/afl-2024/teams/richmond-tigers-senior-men/b02728bc",
+              "P": "6",
+              "PTS": "24",
+              "%": "329.45",
+              "W": "6",
+              "L": "0",
+              "D": "0",
+              "BYE": "1",
+              "teamLogo": {
+                  "url": "https://upload.wikimedia.org/wikipedia/en/thumb/1/1e/Richmond_Tigers_logo_2021.svg/1200px-Richmond_Tigers_logo_2021.svg.png",
+                  "width": 440,
+                  "height": 595
+              },
+              "prompt": "Richmond Tigers Senior Men is currently positioned 1 in the AFL Men's Premiership, with 6 wins and 0 losses, totaling 24 points."
           },
-          "prompt": "Thuringowa Bulldogs Senior Men is currently positioned 1 in the Townsville RMS Men's Premiership, with 6 wins and 0 losses, totaling 24 points."
-        },
-        {
-          "position": "2",
-          "teamName": "University Hawks Senior Men",
-          "teamHref": "/afl/org/university-hawks-afc/52f3e303/afl-townsville-2024/teams/university-hawks-senior-men/01990b25",
-          "P": "6",
-          "PTS": "12",
-          "%": "128.67",
-          "W": "3",
-          "L": "3",
-          "D": "0",
-          "BYE": "1",
-          "teamLogo": {
-            "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/logo_b0fcf51283.jpg",
-            "width": 180,
-            "height": 200
+          {
+              "position": "2",
+              "teamName": "West Coast Eagles Senior Men",
+              "teamHref": "/afl/org/west-coast-eagles/52f3e303/afl-2024/teams/west-coast-eagles-senior-men/01990b25",
+              "P": "6",
+              "PTS": "12",
+              "%": "128.67",
+              "W": "3",
+              "L": "3",
+              "D": "0",
+              "BYE": "1",
+              "teamLogo": {
+                  "url": "https://upload.wikimedia.org/wikipedia/en/thumb/1/1b/West_Coast_Eagles_logo_2018.svg/1200px-West_Coast_Eagles_logo_2018.svg.png",
+                  "width": 180,
+                  "height": 200
+              },
+              "prompt": "West Coast Eagles Senior Men is currently positioned 2 in the AFL Men's Premiership, with 3 wins and 3 losses, totaling 12 points."
           },
-          "prompt": "University Hawks Senior Men is currently positioned 2 in the Townsville RMS Men's Premiership, with 3 wins and 3 losses, totaling 12 points."
-        },
-        {
-          "position": "3",
-          "teamName": "Curra Swans Senior Men",
-          "teamHref": "/afl/org/curra-swans-afc/97befb4e/afl-townsville-2024/teams/curra-swans-senior-men/1d48dfa7",
-          "P": "6",
-          "PTS": "12",
-          "%": "95.64",
-          "W": "3",
-          "L": "3",
-          "D": "0",
-          "BYE": "1",
-          "teamLogo": {
-            "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/logo_857771fb5d.jpg",
-            "width": 178,
-            "height": 141
+          {
+              "position": "3",
+              "teamName": "Brisbane Lions Senior Men",
+              "teamHref": "/afl/org/brisbane-lions/97befb4e/afl-2024/teams/brisbane-lions-senior-men/1d48dfa7",
+              "P": "6",
+              "PTS": "12",
+              "%": "95.64",
+              "W": "3",
+              "L": "3",
+              "D": "0",
+              "BYE": "1",
+              "teamLogo": {
+                  "url": "https://upload.wikimedia.org/wikipedia/en/thumb/f/f5/Brisbane_Lions_logo_2010.svg/1200px-Brisbane_Lions_logo_2010.svg.png",
+                  "width": 178,
+                  "height": 141
+              },
+              "prompt": "Brisbane Lions Senior Men is currently positioned 3 in the AFL Men's Premiership, with 3 wins and 3 losses, totaling 12 points."
           },
-          "prompt": "Curra Swans Senior Men is currently positioned 3 in the Townsville RMS Men's Premiership, with 3 wins and 3 losses, totaling 12 points."
-        },
-        {
-          "position": "4",
-          "teamName": "Hermit Park Tigers Senior Men",
-          "teamHref": "/afl/org/hermit-park-afc/ce8a191b/afl-townsville-2024/teams/hermit-park-tigers-senior-men/2163d40b",
-          "P": "5",
-          "PTS": "8",
-          "%": "115.97",
-          "W": "2",
-          "L": "3",
-          "D": "0",
-          "BYE": "2",
-          "teamLogo": {
-            "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/logo_6c1658268b.jpg",
-            "width": 188,
-            "height": 185
+          {
+              "position": "4",
+              "teamName": "St Kilda Saints Senior Men",
+              "teamHref": "/afl/org/st-kilda-saints/ce8a191b/afl-2024/teams/st-kilda-saints-senior-men/2163d40b",
+              "P": "5",
+              "PTS": "8",
+              "%": "115.97",
+              "W": "2",
+              "L": "3",
+              "D": "0",
+              "BYE": "2",
+              "teamLogo": {
+                  "url": "https://upload.wikimedia.org/wikipedia/en/thumb/7/75/St_Kilda_FC_logo.svg/1200px-St_Kilda_FC_logo.svg.png",
+                  "width": 188,
+                  "height": 185
+              },
+              "prompt": "St Kilda Saints Senior Men is currently positioned 4 in the AFL Men's Premiership, with 2 wins and 3 losses, totaling 8 points."
           },
-          "prompt": "Hermit Park Tigers Senior Men is currently positioned 4 in the Townsville RMS Men's Premiership, with 2 wins and 3 losses, totaling 8 points."
-        },
-        {
-          "position": "5",
-          "teamName": "Northern Beaches Suns Senior Men",
-          "teamHref": "/afl/org/northern-beaches-suns-afc/4a23cc02/afl-townsville-2024/teams/northern-beaches-suns-senior-men/0e50f3e1",
-          "P": "5",
-          "PTS": "0",
-          "%": "10.76",
-          "W": "0",
-          "L": "5",
-          "D": "0",
-          "BYE": "2",
-          "teamLogo": {
-            "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/logo_77b7e81c08.jpg",
-            "width": 283,
-            "height": 283
-          },
-          "prompt": "Northern Beaches Suns Senior Men is currently positioned 5 in the Townsville RMS Men's Premiership, with 0 wins and 5 losses, totaling 0 points."
-        }
+          {
+              "position": "5",
+              "teamName": "Port Adelaide Power Senior Men",
+              "teamHref": "/afl/org/port-adelaide-power/4a23cc02/afl-2024/teams/port-adelaide-power-senior-men/0e50f3e1",
+              "P": "5",
+              "PTS": "0",
+              "%": "10.76",
+              "W": "0",
+              "L": "5",
+              "D": "0",
+              "BYE": "2",
+              "teamLogo": {
+                  "url": "https://upload.wikimedia.org/wikipedia/en/thumb/c/c9/Port_Adelaide_Football_Club_logo_2010.svg/1200px-Port_Adelaide_Football_Club_logo_2010.svg.png",
+                  "width": 283,
+                  "height": 283
+              },
+              "prompt": "Port Adelaide Power Senior Men is currently positioned 5 in the AFL Men's Premiership, with 0 wins and 5 losses, totaling 0 points."
+          }
       ],
       "gradeId": "18612fcd",
-      "bias": "Thuringowa Bulldogs Senior Men",
+      "bias": "Richmond Tigers Senior Men",
       "competition": "Senior",
-      "prompt": "Thuringowa Bulldogs Senior Men is currently positioned 1 in the Townsville RMS Men's Premiership, with 6 wins and 0 losses, totaling 24 points.",
+      "prompt": "Richmond Tigers Senior Men is currently positioned 1 in the AFL Men's Premiership, with 6 wins and 0 losses, totaling 24 points.",
       "assignSponsors": {
-        "competition": {
-          "id": null,
-          "name": null
-        },
-        "grade": {
-          "id": 22824,
-          "name": "Townsville RMS Men's Premiership"
-        },
-        "Team": {
-          "name": "Thuringowa Bulldogs Senior Men"
-        }
+          "competition": {
+              "id": null,
+              "name": null
+          },
+          "grade": {
+              "id": 22824,
+              "name": "AFL Men's Premiership"
+          },
+          "Team": {
+              "name": "Richmond Tigers Senior Men"
+          }
       }
-    }
-  ]
+  }
+]

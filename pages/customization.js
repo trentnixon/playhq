@@ -14,12 +14,13 @@ import { Space } from "@mantine/core";
 import Section from "../components/UI/DefaultSection";
 import CardItem from "../components/UI/Containers/CardItem";
 import Meta from "../components/Layouts/Meta";
+import { CardsCarousel } from "../components/pages/public/index/customization/CardCarousels";
 
 const qs = require("qs");
 
 const customization = () => {
   const customizationSectionData = {
-    title: "Elevate Your Club's Brand with Customization",
+    title: "Customize Your Club’s Branding Now with Fixtura",
     paragraphs: [
       "At Fixtura, we believe that your club or association's story is best told through a lens of authenticity.",
       `That's why we've crafted our platform to champion your unique brand identity in every piece of content. Dive into a world where your videos, images, and AI-enhanced write-ups seamlessly mirror your brand ethos.`,
