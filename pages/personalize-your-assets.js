@@ -13,67 +13,117 @@ const data = [
   {
     image:
       "https://fixtura.s3.ap-southeast-2.amazonaws.com/Custom_Data_Display_28b305f5a1.jpg",
-    title: "Custom Data Display",
-    subtitle: "Tailor Your Stats",
+    title: "Customize Your Numbers",
+    subtitle: "Tailor Your Data for Maximum Impact",
     description:
-      "This option allows accounts to decide what data points are used in the videos and what can be left out. For example, a club can exclude the opposition from all videos if they wish. Customize how players' names, stats, and fixtures are displayed.",
+      "Customize what data points are showcased in your videos. Exclude unwanted information and highlight what's important to your club, including player names, stats, and fixtures.",
     category: "Customization",
+    scrollImage:
+      "https://fixtura.s3.ap-southeast-2.amazonaws.com/Custom_Data_27cafed5f6.png",
+    optionalImage: [
+      "https://fixtura.s3.ap-southeast-2.amazonaws.com/Runs_d0ccea1489.png",
+      "https://fixtura.s3.ap-southeast-2.amazonaws.com/Balls_33b9e6669f.png",
+      "https://fixtura.s3.ap-southeast-2.amazonaws.com/wickets_167d44a1d8.png",
+    ],
   },
   {
     image:
       "https://fixtura.s3.ap-southeast-2.amazonaws.com/Position_sponsors_c358bb7455.jpg",
-    title: "Position Your Sponsors",
-    subtitle: "Flexible Sponsor Placement",
+    title: "Boost Your Sponsor Visibility",
+    subtitle: "Flexible Sponsor Placement Options",
     description:
-      "Move away from the free tier option of 2 sponsors on every page. Customization allows users to add as many sponsors as they wish to every page, placing them strategically for maximum impact.",
+      "Move beyond the free tier with limited sponsor spots. Add as many sponsors as you want on every page, placing them strategically for maximum exposure and impact.",
     category: "Customization",
+    scrollImage:
+      "https://fixtura.s3.ap-southeast-2.amazonaws.com/sponsor_Main_f7bbba1423.png",
+    optionalImage: [
+      "https://fixtura.s3.ap-southeast-2.amazonaws.com/Sponsor_f6c71bce6f.png",
+      "https://fixtura.s3.ap-southeast-2.amazonaws.com/Sponsor_f6c71bce6f.png",
+      "https://fixtura.s3.ap-southeast-2.amazonaws.com/Sponsor_f6c71bce6f.png",
+    ],
   },
   {
     image:
       "https://fixtura.s3.ap-southeast-2.amazonaws.com/use_Video_BGS_da917258f0.jpg",
-    title: "Use of Video Backgrounds",
-    subtitle: "Dynamic Visual Appeal",
+    title: "Elevate with Video Backgrounds",
+    subtitle: "Add Dynamic Visual Appeal",
     description:
-      "Add a creative video of your club, ground, or gameplay as a background to your assets, making them more engaging and visually appealing.",
+      "Incorporate creative videos of your club, ground, or gameplay as backgrounds to make your digital assets more engaging and visually appealing.",
     category: "Customization",
+    scrollImage:
+      "https://fixtura.s3.ap-southeast-2.amazonaws.com/background_c0b189bdad.png",
+    optionalImage: [
+      "https://fixtura.s3.ap-southeast-2.amazonaws.com/sound_2bdcabc4d5.png",
+      "https://fixtura.s3.ap-southeast-2.amazonaws.com/sound_2bdcabc4d5.png",
+      "https://fixtura.s3.ap-southeast-2.amazonaws.com/sound_2bdcabc4d5.png",
+    ],
   },
   {
     image:
       "https://fixtura.s3.ap-southeast-2.amazonaws.com/Add_AI_Voice_d44d31442e.jpg",
-    title: "Add Voice Over",
+    title: "Engage with AI Voice-Overs",
     subtitle: "Personalized Audio Narration",
     description:
-      "Add an AI voice-over introduction to every video. These will be limited to just the intro and outros, adding a professional touch to your content.",
+      "Add AI-generated voice-overs to your videos for a professional touch. Perfect for introductions and outros, making your content stand out.",
     category: "Customization",
+    scrollImage:
+      "https://fixtura.s3.ap-southeast-2.amazonaws.com/Custom_Data_27cafed5f6.png",
+    optionalImage: [
+      "https://fixtura.s3.ap-southeast-2.amazonaws.com/sound_2bdcabc4d5.png",
+      "https://fixtura.s3.ap-southeast-2.amazonaws.com/sound_2bdcabc4d5.png",
+      "https://fixtura.s3.ap-southeast-2.amazonaws.com/sound_2bdcabc4d5.png",
+    ],
   },
   {
     image:
       "https://fixtura.s3.ap-southeast-2.amazonaws.com/Fonts_b38221e872.jpg",
-    title: "Choice of Fonts",
-    subtitle: "Expressive Typography",
+    title: "Express Your Brand with Fonts",
+    subtitle: "Hundreds of Google Fonts",
     description:
-      "Select from hundreds of Google fonts to truly make the assets your own. Customize the look and feel of your content with the perfect typography.",
+      "Choose from hundreds of Google fonts to make your content truly yours. Customize the typography to align with your club's unique style and brand.",
     category: "Customization",
+    scrollImage:
+      "https://fixtura.s3.ap-southeast-2.amazonaws.com/Custom_Data_27cafed5f6.png",
+    optionalImage: [
+      "https://fixtura.s3.ap-southeast-2.amazonaws.com/sound_2bdcabc4d5.png",
+      "https://fixtura.s3.ap-southeast-2.amazonaws.com/sound_2bdcabc4d5.png",
+      "https://fixtura.s3.ap-southeast-2.amazonaws.com/sound_2bdcabc4d5.png",
+    ],
   },
   {
     image:
       "https://fixtura.s3.ap-southeast-2.amazonaws.com/Additional_C_Olors_684ad62bec.jpg",
-    title: "Additional Colors",
-    subtitle: "Vibrant and Unique",
+    title: "Add More Colors",
+    subtitle: "Vibrant and Unique Palettes",
     description:
-      "Add more than the two colors we offer in the free tier. Incorporate a 3rd or 4th color to bring your assets to life and make them uniquely yours.",
+      "Expand beyond the basic two-color scheme. Add additional colors to bring your digital assets to life, making them vibrant and unique to your club.",
     category: "Customization",
+    scrollImage:
+      "https://fixtura.s3.ap-southeast-2.amazonaws.com/Custom_Data_27cafed5f6.png",
+    optionalImage: [
+      "https://fixtura.s3.ap-southeast-2.amazonaws.com/sound_2bdcabc4d5.png",
+      "https://fixtura.s3.ap-southeast-2.amazonaws.com/sound_2bdcabc4d5.png",
+      "https://fixtura.s3.ap-southeast-2.amazonaws.com/sound_2bdcabc4d5.png",
+    ],
   },
   {
     image:
       "https://fixtura.s3.ap-southeast-2.amazonaws.com/Custom_Animations_39522e39a1.jpg",
-    title: "Custom Animations",
-    subtitle: "Engaging Movements",
+    title: "Captivate with Custom Animations",
+    subtitle: "Engaging and Dynamic Movements",
     description:
-      "Guide us on the types of animations you would like to see or use. Customize animations in and out to enhance your content's dynamism.",
+      "Guide us on the types of animations you'd like to see. Customize in-and-out animations to make your content more dynamic and engaging.",
     category: "Customization",
+    scrollImage:
+      "https://fixtura.s3.ap-southeast-2.amazonaws.com/Custom_Data_27cafed5f6.png",
+    optionalImage: [
+      "https://fixtura.s3.ap-southeast-2.amazonaws.com/sound_2bdcabc4d5.png",
+      "https://fixtura.s3.ap-southeast-2.amazonaws.com/sound_2bdcabc4d5.png",
+      "https://fixtura.s3.ap-southeast-2.amazonaws.com/sound_2bdcabc4d5.png",
+    ],
   },
 ];
+
 
 const customization = () => {
   const customizationSectionData = {
@@ -102,10 +152,10 @@ const customization = () => {
 
       <CustomizationCtaArea />
 
-      <Section {...WhycustomSectionData} color="dark">
+     {/*  <Section {...WhycustomSectionData} color="dark">
         <CustomizationDetails data={data} />
       </Section>
-      <CustomizationCtaArea />
+      <CustomizationCtaArea /> */}
     </>
   );
 };
