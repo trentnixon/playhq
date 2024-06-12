@@ -1,11 +1,14 @@
 import React from "react";
 import PageBanner from "../components/Common/PageBanner";
-import CustomizationCtaArea from "../components/pages/public/index/customization/Cta";
+import CustomizationCtaArea from "../components/pages/public/personalize-your-assets/customization/Cta";
 import { fetcher } from "../lib/api";
 import Section from "../components/UI/DefaultSection";
 import Meta from "../components/Layouts/Meta";
-import { CardsCarousel } from "../components/pages/public/index/customization/CardCarousels";
-import CustomizationDetails from "../components/pages/public/index/customization/CustomizationDetails"; // Adjust the path as necessary
+import { CardsCarousel } from "../components/pages/public/personalize-your-assets/customization/CardCarousels";
+import CustomizationDetails from "../components/pages/public/personalize-your-assets/customization/CustomizationDetails"; // Adjust the path as necessary
+import PersonalizePoints from "../components/pages/public/personalize-your-assets/AboutContent";
+import { Center, Image } from "@mantine/core";
+import Link from "next/link";
 
 const qs = require("qs");
 
@@ -124,18 +127,19 @@ const data = [
   },
 ];
 
-
 const customization = () => {
   const customizationSectionData = {
     title: "Season Preparation Starts Here!",
     paragraphs: [
-      "With the new season just around the corner, we want to ensure you're fully prepared with the best and most exciting digital content.",
-      "This season, we're offering the opportunity to work with our design team to create bespoke digital assets for your club, whether it's updating your templates, incorporating your latest branding, or creating something entirely new.",
+      "With the new season around the corner, it’s the perfect time to boost your club’s online presence. Fixtura offers an exclusive chance to work directly with our design team to create custom digital assets.",
+      "Whether you need updated templates, refreshed branding, or something entirely new, we’re here to help. Personalize your club’s digital assets and stand out from the crowd!",
     ],
   };
   const WhycustomSectionData = {
-    title: "Why Customise your Assets?",
-    paragraphs: [],
+    title: "Start Your Design Process Today – Special Offer: Only $399!",
+    paragraphs: [
+      `Give your club's digital presence a fresh look with customized assets before the new season kicks off. Normally priced at $599, you can now get started for just $399 until the end of July!`,
+    ],
   };
   return (
     <>
@@ -144,15 +148,20 @@ const customization = () => {
         description="Personalize your club's digital presence with Fixtura's customization options. Tailor videos, images, and articles to your brand."
         keywords="Customize Fixtura, sports club personalization, digital media customization, tailored sports content, club brand identity"
       />
-      <PageBanner pageTitle="Personalize Your Digital Assets for the New Season!" />
+      <PageBanner pageTitle="Transform Your Club's Digital Assets for the Upcoming Season!" />
 
       <Section {...customizationSectionData} color="light">
+      
+        <PersonalizePoints />
+      </Section>
+
+      <Section {...WhycustomSectionData} color="dark">
         <CardsCarousel data={data} />
       </Section>
 
       <CustomizationCtaArea />
 
-     {/*  <Section {...WhycustomSectionData} color="dark">
+      {/*  <Section {...WhycustomSectionData} color="dark">
         <CustomizationDetails data={data} />
       </Section>
       <CustomizationCtaArea /> */}
