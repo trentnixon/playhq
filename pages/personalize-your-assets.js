@@ -132,7 +132,7 @@ const customization = () => {
     title: "Season Preparation Starts Here!",
     paragraphs: [
       "With the new season around the corner, it’s the perfect time to boost your club’s online presence. Fixtura offers an exclusive chance to work directly with our design team to create custom digital assets.",
-      "Whether you need updated templates, refreshed branding, or something entirely new, we’re here to help. Personalize your club’s digital assets and stand out from the crowd!",
+      "This season, why not personalize your club’s digital assets with Fixtura?",
     ],
   };
   const WhycustomSectionData = {
@@ -148,10 +148,9 @@ const customization = () => {
         description="Personalize your club's digital presence with Fixtura's customization options. Tailor videos, images, and articles to your brand."
         keywords="Customize Fixtura, sports club personalization, digital media customization, tailored sports content, club brand identity"
       />
-      <PageBanner pageTitle="Transform Your Club's Digital Assets for the Upcoming Season!" />
+      <PageBanner />
 
       <Section {...customizationSectionData} color="light">
-      
         <PersonalizePoints />
       </Section>
 

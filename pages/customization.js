@@ -14,7 +14,6 @@ import { Space } from "@mantine/core";
 import Section from "../components/UI/DefaultSection";
 import CardItem from "../components/UI/Containers/CardItem";
 import Meta from "../components/Layouts/Meta";
-import { CardsCarousel } from "../components/pages/public/index/customization/CardCarousels";
 
 const qs = require("qs");
 
