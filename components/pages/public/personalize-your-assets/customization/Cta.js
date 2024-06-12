@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import { P } from "../../../../Members/Common/Type";
 
 const CustomizationCtaArea = () => {
   return (
@@ -28,7 +29,9 @@ const CustomizationCtaArea = () => {
             </div>
           </div>
         </div>
+        
       </div>
+      
     </>
   );
 };

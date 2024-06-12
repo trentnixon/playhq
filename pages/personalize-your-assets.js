@@ -9,6 +9,7 @@ import CustomizationDetails from "../components/pages/public/personalize-your-as
 import PersonalizePoints from "../components/pages/public/personalize-your-assets/AboutContent";
 import { Center, Image } from "@mantine/core";
 import Link from "next/link";
+import { P } from "../components/Members/Common/Type";
 
 const qs = require("qs");
 
@@ -156,6 +157,7 @@ const customization = () => {
 
       <Section {...WhycustomSectionData} color="dark">
         <CardsCarousel data={data} />
+        <P color={0} textAlign='center' className="mt-4">**Please note, this is a one-time design and development service and is not included in the season pass cost. The bespoke design service provided by Fixtura is used to give your club a unique look and feel for your assets. Your designs will not be available for other accounts, and will belong solely to your brand.**</P>
       </Section>
 
       <CustomizationCtaArea />
