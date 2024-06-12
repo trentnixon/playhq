@@ -131,7 +131,7 @@ const customization = () => {
   const customizationSectionData = {
     title: "Season Preparation Starts Here!",
     paragraphs: [
-      "With the new season around the corner, it’s the perfect time to boost your club’s online presence. Fixtura offers an exclusive chance to work directly with our design team to create custom digital assets.",
+      "With the new season around the corner, it’s the perfect time to update your club’s online digtial presence. Fixtura offers an exclusive chance to work directly with our design team to create custom digital assets.",
       "This season, why not personalize your club’s digital assets with Fixtura?",
     ],
   };
