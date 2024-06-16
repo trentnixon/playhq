@@ -1,0 +1,26 @@
+@import "../../PAS.module.scss";
+
+.problemStats {
+  text-align: center;
+  padding: 60px 20px;
+
+  h2 {
+    color: $white-copy-color;
+
+    span {
+      color: $highlight-color-1;
+    }
+  }
+
+  p {
+    color: $white-copy-color;
+    span {
+      color: $highlight-color-1;
+    }
+  }
+
+  .statsImage {
+    margin-top: 20px;
+    max-width: 100%;
+  }
+}

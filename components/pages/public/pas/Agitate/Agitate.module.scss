@@ -1,0 +1,53 @@
+@import "../PAS.module.scss";
+
+.agitate {
+  @include gray-gradient;
+  padding: 300px 0 60px 0;
+  color: white;
+  margin-top: -100px;
+  overflow: hidden;
+  .header {
+    text-align: center;
+    margin-bottom: 40px; 
+
+    h1 {
+      color: $highlight-color-1;
+    }
+  }
+
+  .content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  .leftSide,
+  .rightSide {
+    flex: 1;
+    margin: 0 20px;
+
+    h2 {
+      color: $highlight-color-1;
+      margin-bottom: 20px;
+    }
+
+    p {
+      margin-bottom: 20px;
+    }
+
+    .agitateImage {
+      margin-top: 20px;
+      max-width: 100%;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    @media (max-width: 768px) {
+      margin: 20px 0;
+    }
+  }
+}

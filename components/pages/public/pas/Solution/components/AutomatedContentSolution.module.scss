@@ -1,0 +1,46 @@
+@import "../../PAS.module.scss";
+
+.contentSolution {
+  text-align: center;
+  padding: 120px 0 60px 0;
+  background-color: $background-2;
+  color: white;
+
+  h1 {
+    color: $white-copy-color;
+    span {
+      color: $section-gradient-end;
+      font-weight: bold;
+    }
+    
+    @media (max-width: 768px) {
+      font-size: 60px;
+      line-height: .9em;
+    }
+  }
+
+  p {
+    margin-bottom: 40px;
+    color: $white-copy-color;
+  }
+
+  .images {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    @media (max-width: 768px) {
+    }
+
+    img {
+      margin: 0 10px;
+      max-width: 200px;
+      height: auto;
+
+      @media (max-width: 768px) {
+        margin: 0 10px;
+        max-width: 180px;
+      }
+    }
+  }
+}

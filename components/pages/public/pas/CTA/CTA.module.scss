@@ -1,0 +1,63 @@
+@import "../PAS.module.scss";
+
+.cta {
+  padding: 60px 0;
+  background-color: $background-1;
+  text-align: center;
+
+  h1 {
+    color: $dark-copy-color;
+
+    max-width: 800px;
+    margin: 20px auto;
+    text-align: center;
+    @media (max-width: 768px) {
+      max-width: auto;
+     line-height: .97em;
+    }
+  }
+
+  p {
+    color: $dark-copy-color;
+    margin-bottom: 40px;
+
+    &.highlight {
+      color: $highlight-color-1;
+      font-weight: bold;
+    }
+  }
+
+  .getStartedButton {
+    margin-bottom: 40px;
+  }
+
+  h2 {
+    font-size: 24px;
+    color: $dark-copy-color;
+    margin-bottom: 40px;
+  }
+
+  .images {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+    @media (max-width: 768px) {
+      width: 100%;
+      margin: 0 10px;
+      max-width: 150px;
+      flex-wrap: nowrap;
+    }
+    img {
+      margin: 0 10px;
+      max-width: 200px;
+      height: auto;
+    }
+  }
+
+  .joinText {
+    color: $dark-copy-color;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+}

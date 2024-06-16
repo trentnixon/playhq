@@ -1,0 +1,14 @@
+@import "../../PAS.module.scss";
+
+.header {
+  text-align: center;
+  margin-top: 25px;
+
+  h1 {
+    color: $white-copy-color;
+    span {
+      color: $section-gradient-end;
+      font-weight: bold;
+    }
+  }
+}

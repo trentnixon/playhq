@@ -1,0 +1,22 @@
+@import '../PAS.module.scss';
+
+.problem {
+  .whiteSection {
+    background-color: $background-1;
+    padding: 60px 20px;
+  } 
+ 
+  .gradientSection {
+    background: linear-gradient(to bottom, $section-gradient-start, $section-gradient-end);
+    padding: 60px 0;
+  }
+
+  .bottomSection {
+
+    padding: 60px 0;
+  }
+ 
+  .problemSection {
+    padding: 60px 20px;
+  }
+}

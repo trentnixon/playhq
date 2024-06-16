@@ -1,0 +1,42 @@
+@import "../../PAS.module.scss";
+
+.fansExpect {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-items: flex-start;
+  margin-bottom: 40px;
+  margin-top: 100px;
+  .image {
+    flex: 3;
+    max-width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-right: 20px;
+  }
+
+  .text {
+    flex: 7;
+    margin-top: 50px;
+
+    h2 {
+      color: $white-copy-color;
+      margin-bottom: 20px;
+      span {
+        color: $section-gradient-end;
+      }
+    }
+
+    p {
+      color: $white-copy-color;
+    }
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+
+    .image {
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
+  }
+}

@@ -1,0 +1,27 @@
+@import "../../PAS.module.scss";
+
+.customizationOptions {
+  @include section-gradient;
+  color: $white-copy-color;
+  padding: 120px 0 60px 0px;
+  text-align: center;
+  width: 100%;
+  h1 {
+    color: $white-copy-color;
+    margin-bottom: 20px;
+  }
+
+  p {
+    margin-bottom: 20px;
+    color: $white-copy-color;
+    span {
+      color: $highlight-color-1;
+      font-weight: normal;
+    }
+  }
+
+  .image {
+    margin-top: 20px;
+    max-width: 100%;
+  }
+}

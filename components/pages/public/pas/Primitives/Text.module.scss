@@ -1,0 +1,44 @@
+@import "../PAS.module.scss";
+
+.p {
+  font-size: 24px;
+  color: $dark-copy-color;
+  line-height: 1.3em;
+  letter-spacing: -1px;
+  font-weight: normal;
+  &.highlight {
+    color: $highlight-color-2;
+    font-weight: bold;
+  }
+}
+
+.h1 {
+  font-size: 70px;
+  font-weight: black;
+  color: $dark-copy-color;
+  line-height: 1em;
+  letter-spacing: -2px;
+  margin-bottom: 20px;
+
+  @media (max-width: 768px) {
+    font-size: 65px;
+  }
+}
+
+.h2 {
+  font-size: 2.5em;
+  font-weight: normal;
+  color: $dark-copy-color;
+  margin-bottom: 20px;
+  line-height: 1em;
+  letter-spacing: -1px;
+}
+
+.span {
+  color: $dark-copy-color;
+}
+
+.highlightSpan {
+  color: $highlight-color-2;
+  font-weight: bold;
+}

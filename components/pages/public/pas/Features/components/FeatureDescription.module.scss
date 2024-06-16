@@ -1,0 +1,18 @@
+@import "../../PAS.module.scss";
+
+.featureDescription {
+  @include section-gradient;
+  text-align: center;
+  margin-bottom: 0px;
+  padding: 60px;
+  h2 {
+    color: $white-copy-color; /* Changed to highlight-color-3 as per the design */
+    font-weight: normal; /* Ensuring the font weight is bold */
+    margin: 0 auto; /* Centering the text */
+    max-width: 1000px; /* Restricting the width for better readability */
+  
+    span{
+      color: $highlight-color-1;
+    }
+  }
+}
