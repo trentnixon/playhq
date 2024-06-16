@@ -88,7 +88,7 @@ const ProblemContent = () => {
         </P>
         <P>
           This can lead to inconsistent and delayed content, negatively
-          impacting fan engagement and the club’s overall online presence.
+          impacting fan engagement and the club&rsquo;s overall online presence.
         </P>
         <img
           src="https://fixtura.s3.ap-southeast-2.amazonaws.com/Problem_Overview_Image_949c73b027.png"

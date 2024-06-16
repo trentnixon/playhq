@@ -15,11 +15,11 @@ const WhyChooseFixtura = () => {
           className="slide-in-left"
         />
         <P className="fade-in-up">
-          Fixtura revolutionizes your club’s digital presence by automating the
+          Fixtura revolutionizes your club&rsquo;s digital presence by automating the
           creation of various digital assets, including match reports, videos,
           and graphics. Our AI-driven platform aggregates data from PlayHQ and
           uses advanced tools like OpenAI and Remotion to produce high-quality
-          content tailored to your club’s needs.
+          content tailored to your club&rsquo;s needs.
         </P>
       </div>
     </div>

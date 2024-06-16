@@ -8,7 +8,7 @@ const ScheduledAutomation = () => {
       <H1 className="fade-in-up">Scheduled Automation</H1>
       <P className="fade-in-up">
         <HighlightSpan>
-          Set It and Forget It – Automated Content Delivery
+          Set It and Forget It : Automated Content Delivery
         </HighlightSpan>
       </P>
       <P className="fade-in-up">

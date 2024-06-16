@@ -15,7 +15,7 @@ const CustomizationOptions = () => {
         </P>
         <P className="fade-in-up">
           Fixtura offers extensive customization options, allowing you to tailor
-          templates to match your club’s brand. Update logos, colors, images,
+          templates to match your club&rsquo;s brand. Update logos, colors, images,
           and sponsor information with ease to ensure your content is always
           on-brand and professional.
         </P>

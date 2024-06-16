@@ -17,7 +17,7 @@ const AgitateFansExpect = () => {
         </H2>
         <P>
           When content is inconsistent or delayed, fans lose interest. Regular
-          updates keep fans engaged and excited about your club’s activities.
+          updates keep fans engaged and excited about your club&rsquo;s activities.
           Without timely posts, your club risks appearing inactive or less
           professional.
         </P>
