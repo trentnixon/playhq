@@ -133,7 +133,7 @@ export default CTA;
 
 const CTABUTTON = ({ styles }) => {
   return (
-    <Link legacyBehavior href="https://www.fixtura.com.au/sign-up/">
+    <Link legacyBehavior href="/sign-up/">
       <a className={`${styles.getStartedButton} btn btn-secondary`}>
         Get Started with Fixtura
       </a>

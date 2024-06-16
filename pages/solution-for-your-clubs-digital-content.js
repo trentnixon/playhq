@@ -12,7 +12,7 @@ import CTA from "../components/pages/public/pas/CTA/CTA";
 import "../components/pages/public/pas/PAS.module.scss";
 const Index = () => {
   return (
-    <>
+    <div>
       <Meta
         title="Solution for Your Club's Digital Content - Fixtura"
         description="Struggling to keep up with your club's digital content? Discover Fixtura's automated solutions for PlayHQ clubs and associations. Engage fans effortlessly with AI-powered digital assets."
@@ -24,7 +24,7 @@ const Index = () => {
       <Solution />
       <Features />
       <CTA />
-    </>
+    </div>
   );
 };
 
