@@ -89,12 +89,7 @@ const CTA = () => {
           Start your <HighlightSpan>two-week free trial</HighlightSpan> and
           experience the Fixtura advantage today!
         </P>
-        <Link legacyBehavior href="/sign-up/">
-          <a className={`${styles.getStartedButton} btn btn-secondary`}>
-            Get Started with Fixtura
-          </a>
-        </Link>
-
+        <CTABUTTON styles={styles} />
         <H2 className="fade-in-up">Start Your Free Trial Now</H2>
         <div className={styles.images}>
           <img
@@ -135,3 +130,13 @@ const CTA = () => {
 };
 
 export default CTA;
+
+const CTABUTTON = ({ styles }) => {
+  return (
+    <Link legacyBehavior href="https://www.fixtura.com.au/sign-up/">
+      <a className={`${styles.getStartedButton} btn btn-secondary`}>
+        Get Started with Fixtura
+      </a>
+    </Link>
+  );
+};

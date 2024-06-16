@@ -1,15 +1,15 @@
 // Components
-import { fetcher } from "../lib/api";
+
 import Meta from "../components/Layouts/Meta";
 
 import Hero from "../components/pages/public/pas/Hero/Hero";
 import Problem from "../components/pages/public/pas/Problem/Problem";
-import "../components/pages/public/pas/PAS.module.scss";
+
 import Agitate from "../components/pages/public/pas/Agitate/Agitate";
 import Solution from "../components/pages/public/pas/Solution/Solution";
 import Features from "../components/pages/public/pas/Features/Features";
 import CTA from "../components/pages/public/pas/CTA/CTA";
-
+import "../components/pages/public/pas/PAS.module.scss";
 const Index = () => {
   return (
     <>
