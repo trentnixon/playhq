@@ -53,7 +53,7 @@ const AutomatedContentSolution = () => {
         Effortlessly create engaging digital content with our AI-powered
         platform.
       </P>
-      <div className={styles.images}>
+      <div className={styles.images}> 
         <img
           ref={(el) => (imagesRef.current[0] = el)}
           src="https://fixtura.s3.ap-southeast-2.amazonaws.com/Example_Small_7beabce2f8.png"

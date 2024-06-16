@@ -38,8 +38,12 @@
       height: auto;
 
       @media (max-width: 768px) {
-        margin: 0 10px;
+        margin: 0px;
         max-width: 180px;
+      }
+      @media (max-width: 380px) {
+        margin: 0px;
+        max-width: 150px;
       }
     }
   }
