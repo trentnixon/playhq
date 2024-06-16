@@ -1,12 +1,12 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import {  P, HighlightSpan, H1 } from "../../Primitives/Text";
+import { P, HighlightSpan, H1 } from "../../Primitives/Text";
 import { Container } from "../../Primitives/Containers";
 import styles from "./ProblemContent.module.scss";
 
-gsap.registerPlugin(ScrollTrigger);
- 
+gsap.registerPlugin(ScrollTrigger); 
+
 const ProblemContent = () => {
   const contentRef = useRef(null);
   const leftSideRef = useRef(null);
@@ -22,7 +22,6 @@ const ProblemContent = () => {
       { opacity: 1 },
       {
         opacity: 1,
-
         duration: 0,
         scrollTrigger: {
           trigger: contentElement,

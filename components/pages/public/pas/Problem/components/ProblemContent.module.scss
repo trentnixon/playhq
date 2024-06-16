@@ -37,11 +37,14 @@
     text-align: center;
     z-index: 2000;
     position: relative;
+    @media (max-width: 768px) {
+     display: none;
+     }
   }
-
+  
   @media (max-width: 768px) {
     margin-right: 0;
-    margin-top: 30px;
+    margin-top: 30px; 
   }
 }
 
@@ -56,6 +59,6 @@
 
   @media (max-width: 768px) {
     margin-left: 0;
-    margin-top: 40px;
+   
   }
 }
