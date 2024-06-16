@@ -8,7 +8,7 @@ import CtaArea from "../components/Common/CtaAreaTwo";
 import { fetcher } from "../lib/api";
 import Meta from "../components/Layouts/Meta";
 import Feedback from "../components/Common/Feedback";
-
+import Hero from "../components/pages/public/pas/Hero/Hero";
 
 const Index = () => {
   return (
@@ -18,11 +18,11 @@ const Index = () => {
         description="Discover Fixtura's cutting-edge social media content tools for PlayHQ clubs and associations. Engage fans with AI-powered digital assets."
         keywords="Fixtura, PlayHQ clubs, sports content creation, AI-powered social media, cricket digital assets, sports clubs marketing"
       />
+      <Hero />
+      {/* <MainBanner /> */}
 
-      <MainBanner />
-     
       <Services />
-      
+
       <FunFacts />
       <Feedback />
       <PricingStyleOne />
