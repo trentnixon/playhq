@@ -64,7 +64,7 @@ const HeroText = ({ highlightRef }) => {
         <span ref={highlightRef} className={styles.highlight}>
           Club&rsquo;s Digital Content
         </span>{" "}
-        Needs?
+        Schedule?
       </H1>
     </div>
   );
