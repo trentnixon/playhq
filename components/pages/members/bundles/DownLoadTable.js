@@ -18,7 +18,7 @@ import {
   FormattReadableDateFormDownloadTable,
   isBefore2024,
   orderedArray,
-} from "../../../Downloads/helpers";
+} from "../../../../utils/helpers";
 import { useAccountDetails } from "../../../../lib/userContext";
 import { FixturaLoading } from "../../../Members/Common/Loading";
 const useStyles = createStyles((theme) => ({

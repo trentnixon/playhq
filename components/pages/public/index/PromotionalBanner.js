@@ -1,5 +1,5 @@
 import { Box, Image, useMantineTheme } from "@mantine/core";
-import { Gradient } from "../../../utils/Gradient";
+import { Gradient } from "../../../../utils/Gradient";
 import React, { useState, useEffect } from "react";
 import { useMediaQuery } from "@mantine/hooks";
 const PromotionalBanner = () => {

@@ -1,7 +1,6 @@
 // Components
-import MainBanner from "../components/HomePages/PLAYHQ/MainBanner";
-import PricingStyleOne from "../components/FixturaPricingCards/FixturaPricingCards";
-import Services from "../components/HomePages/DefaultHome/Services";
+import MainBanner from "../components/pages/public/index/MainBanner";
+import Services from "../components/pages/public/index/Services";
 import FunFacts from "../components/Common/FunFacts";
 import CtaArea from "../components/Common/CtaAreaTwo";
 
@@ -9,6 +8,7 @@ import { fetcher } from "../lib/api";
 import Meta from "../components/Layouts/Meta";
 import Feedback from "../components/Common/Feedback";
 import Hero from "../components/pages/public/pas/Hero/Hero";
+import FixturaPricingCards from "../components/pages/public/FixturaPricingCards/FixturaPricingCards";
 
 const Index = () => {
   return (
@@ -25,7 +25,7 @@ const Index = () => {
 
       <FunFacts />
       <Feedback />
-      <PricingStyleOne />
+      <FixturaPricingCards />
       <CtaArea />
     </>
   );

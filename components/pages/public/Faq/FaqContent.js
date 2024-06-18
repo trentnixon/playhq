@@ -6,7 +6,7 @@ import {
   AccordionItemButton,
   AccordionItemPanel,
 } from "react-accessible-accordion";
-import Section from "../UI/DefaultSection";
+import Section from "../../../UI/DefaultSection";
 
 const faqs = [
   {

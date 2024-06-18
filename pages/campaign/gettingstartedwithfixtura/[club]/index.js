@@ -3,7 +3,7 @@ import Meta from "../../../../components/Layouts/Meta";
 import Section from "../../../../components/UI/DefaultSection";
 import { Center, Container, Image } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
-import FixturaAndYourClubBanner from "../../../../components/HomePages/PLAYHQ/FixturaAndYourClub";
+import FixturaAndYourClubBanner from "../../../../components/Campaign/components/FixturaAndYourClub";
 
 import { Previewer } from "../../../../components/Campaign/gettingstartedwithfixtura/Previewer";
 import CtaAreaTwo from "../../../../components/Common/CtaAreaTwo";

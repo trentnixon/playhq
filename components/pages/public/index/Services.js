@@ -1,11 +1,11 @@
 import React from "react";
-import { P } from "../../Members/Common/Type";
-import { trackButtonClick, trackCustomEvent } from "../../../lib/GA";
-import Section from "../../UI/DefaultSection";
+import { P } from "../../../Members/Common/Type";
+import { trackButtonClick, trackCustomEvent } from "../../../../lib/GA";
+import Section from "../../../UI/DefaultSection";
 import { Center, Container, Image, Stack } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
 import Link from "next/link";
-import { ExampleGallery } from "../../pages/public/index/ExampleGallery";
+import { ExampleGallery } from "./ExampleGallery";
 // Import GA functions
 
 const Services = () => {

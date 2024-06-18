@@ -3,8 +3,8 @@ import Cookies from "js-cookie";
 import {
   useClubs,
   useAssociations,
-  useSendExpressionOfInterestForm,
-} from "../../Hooks/useExpressionOfInterest";
+  useSendExpressionOfInterestForm, 
+} from "../../../../Hooks/useExpressionOfInterest";
 import { motion, AnimatePresence } from "framer-motion";
 
 export const ExpressionOfInterestForm = ({ setHasSent }) => {

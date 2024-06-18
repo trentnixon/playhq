@@ -8,12 +8,12 @@ import {
   trackPageView,
   trackButtonClick,
   trackCustomEvent,
-} from "../../lib/GA";
-import { useMediaQuery } from "@mantine/hooks";
-import { P } from "../Members/Common/Type";
-import { Gradient } from "../../utils/Gradient";
+} from "../../../../lib/GA";
 
-const LiveDemoBanner = () => {
+import { P } from "../../../Members/Common/Type";
+import { Gradient } from "../../../../utils/Gradient";
+
+const PromoBanner = () => {
   return (
     <>
       <div className="hero-banner video-studio overly-0">
@@ -41,7 +41,7 @@ const LiveDemoBanner = () => {
                       size="xl"
                       color="#1688D0"
                     >
-                      Your Weekly sports Reporting Made Easy with Fixtura!
+                      Your Weekly Sports Reports, Made Easy with Fixtura!
                     </P>
                   </div>
                 </div>
@@ -64,7 +64,8 @@ const LiveDemoBanner = () => {
                         },
                       }}
                     >
-                      Live Demo{" "}
+                      Discover the Ease of Automated Cricket Reporting and Media
+                      Creation with Fixtura!
                     </Text>
 
                     <Text
@@ -81,7 +82,17 @@ const LiveDemoBanner = () => {
                         },
                       }}
                     >
-                      Find your club below to demo Fixtura for your Club
+                      Start Your{" "}
+                      <strong
+                        style={{
+                          color: "#E97830",
+                          fontWeight: 900,
+                          fontSize: "1.5em",
+                        }}
+                      >
+                        Free Two-Week
+                      </strong>{" "}
+                      Trial today!
                     </Text>
                     <Text
                       align="right"
@@ -91,14 +102,14 @@ const LiveDemoBanner = () => {
                         },
                       }}
                     >
-                     {/*  <Link  legacyBehavior  href="/SignUp">
+                      <Link legacyBehavior href="/SignUp">
                         <a
                           className="btn btn-secondary"
                           onClick={() => trackButtonClick("Get Started")} // Track button click
                         >
                           Start Your Free Trial!
                         </a>
-                      </Link> */}
+                      </Link>
                     </Text>
                   </div>
                 </div>
@@ -111,7 +122,7 @@ const LiveDemoBanner = () => {
   );
 };
 
-export default LiveDemoBanner;
+export default PromoBanner;
 
 const MainCSSBanner = () => {
   useEffect(() => {

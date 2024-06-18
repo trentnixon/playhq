@@ -1,5 +1,5 @@
 import dayjs from "dayjs";
-import { H, P } from "../../Members/Common/Type";
+import { H, P } from "../../../../Members/Common/Type";
 import {
   Box,
   Center,

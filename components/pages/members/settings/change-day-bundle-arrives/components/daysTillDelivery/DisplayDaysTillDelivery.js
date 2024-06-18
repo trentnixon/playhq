@@ -1,5 +1,5 @@
 import { useAccountDetails } from "../../../../../../../lib/userContext";
-import { checkDeliveryDate, daysUntil } from "../../../../../../Downloads/helpers";
+import { checkDeliveryDate, daysUntil } from "../../../../../../../utils/helpers";
 import { P } from "../../../../../../Members/Common/Type";
 
 export const DisplayDaysTillDelivery = ({ renders, color = 2 }) => {

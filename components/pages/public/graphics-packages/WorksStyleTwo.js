@@ -1,7 +1,7 @@
 import React from "react";
 import { CardsCarousel } from "./Carousel";
-import Section from "../UI/DefaultSection";
-import { P } from "../Members/Common/Type";
+import Section from "../../../UI/DefaultSection";
+import { P } from "../../../Members/Common/Type";
 import { IconNews, IconPhotoAi, IconVideo } from "@tabler/icons-react";
 
 const WorksStyleTwo = ({ CaseStudies }) => {

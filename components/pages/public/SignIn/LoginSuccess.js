@@ -1,7 +1,7 @@
 import withAuth from "./withAuth";
 import { useEffect } from "react";
 import Router from "next/router";
-import { P } from "../Members/Common/Type";
+import { P } from "../../../Members/Common/Type";
 
 function UserLoggedIn() {
   useEffect(() => {

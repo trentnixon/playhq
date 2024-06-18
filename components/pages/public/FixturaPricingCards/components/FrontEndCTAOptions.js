@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { trackButtonClick } from "../../../lib/GA";
+import { trackButtonClick } from "../../../../../lib/GA";
 import { Center, Group } from "@mantine/core";
 
 export const PricingCTAOptions = (props) => {

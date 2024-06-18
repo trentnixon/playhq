@@ -11,7 +11,6 @@ import { DownloadTable } from "../../components/pages/members/bundles/DownLoadTa
 import { PageTitle } from "../../components/Members/Common/Type";
 import { IconDownload } from "@tabler/icons";
 
-//import AwaitingFirstDownload from "../../components/Downloads/AwaitingFirstDownload";
 import Adminfetcher from "../../lib/Adminfetcher";
 import { DownloadCopy } from "../../components/pages/members/bundles/DownloadCopy";
 

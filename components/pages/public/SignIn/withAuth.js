@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import Router from "next/router";
-import { getAccountFromLocalCookie } from "../../lib/auth";
+import { getAccountFromLocalCookie } from "../../../../lib/auth";
 import Cookies from "js-cookie";
-import { fetcher } from "../../lib/api";
-import { useUser } from "../../lib/authContext";
+import { fetcher } from "../../../../lib/api";
+import { useUser } from "../../../../lib/authContext";
 import { SignInLoading } from "./SignInLoading";
 //import { useAccountDetails } from "../../lib/userContext";
 function withAuth(WrappedComponent) {

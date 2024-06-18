@@ -1,10 +1,11 @@
 import React from "react";
 import PageBanner from "../components/Common/PageBanner";
-import SignUpForm from "../components/SignUp/SignUpForm";
+
 import Section from "../components/UI/DefaultSection";
 import Meta from "../components/Layouts/Meta";
 import { P } from "../components/Members/Common/Type";
 import Link from "next/link";
+import SignUpForm from "../components/pages/public/SignUp/SignUpForm";
 
 const Contact = () => {
   const SectionData = {

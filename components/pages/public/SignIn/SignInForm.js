@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
-import Link from "next/link";
-import { useUser } from "../../lib/authContext";
+import { useUser } from "../../../../lib/authContext";
 import UserLoggedIn from "./LoginSuccess";
-import { useLogUser } from "../../Hooks/useAuthLocal";
+import { useLogUser } from "../../../../Hooks/useAuthLocal";
 import { SignInError } from "./SignInError";
 import { SignInLoading } from "./SignInLoading";
 

@@ -3,7 +3,7 @@ import PageBanner from "../components/Common/PageBanner";
 
 import CtaAreaTwo from "../components/Common/CtaAreaTwo";
 import Meta from "../components/Layouts/Meta";
-import FixturaPricingCards from "../components/FixturaPricingCards/FixturaPricingCards";
+import FixturaPricingCards from "../components/pages/public/FixturaPricingCards/FixturaPricingCards";
 const Pricing = () => {
   return (
     <>
@@ -20,7 +20,7 @@ const Pricing = () => {
       <FixturaPricingCards />
       <CtaAreaTwo />
     </>
-  );
+  ); 
 };
 
 export default Pricing;

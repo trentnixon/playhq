@@ -1,12 +1,12 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { ProductCard } from "./components/ProductCard";
-import { useGetSubscriptionTiers } from "../../Hooks/useSubscriptionTiers";
-import { P } from "../Members/Common/Type";
+import { useGetSubscriptionTiers } from "../../../../Hooks/useSubscriptionTiers";
+import { P } from "../../../Members/Common/Type";
 import { Tabs } from "@mantine/core";
 import { IconUsersGroup, IconShield } from "@tabler/icons-react";
-import { trackButtonClick } from "../../lib/GA";
-import Section from "../UI/DefaultSection";
-import FixturaLoader from "../UI/Loaders/FixturaLoader";
+import { trackButtonClick } from "../../../../lib/GA";
+import Section from "../../../UI/DefaultSection";
+import FixturaLoader from "../../../UI/Loaders/FixturaLoader";
 
 const FixturaPricingCards = () => {
   const [products, setProducts] = useGetSubscriptionTiers();

@@ -1,11 +1,11 @@
 import React from "react";
 import PageBanner from "../components/Common/PageBanner";
-import SignInForm from "../components/SignIn/SignInForm";
 import Section from "../components/UI/DefaultSection";
 import Link from "next/link";
 import { Center, Space, Stack } from "@mantine/core";
 import { P } from "../components/Members/Common/Type";
 import Meta from "../components/Layouts/Meta";
+import SignInForm from "../components/pages/public/SignIn/SignInForm";
 
 const SignIn = () => {
   const SectionData = {

@@ -2,15 +2,15 @@ import React, { useEffect } from "react";
 // Import GA functions
 
 import Link from "next/link";
-import { Gradient } from "../../../utils/Gradient";
+import { Gradient } from "../../../../utils/Gradient";
 import { Image, Text } from "@mantine/core";
 import {
   trackPageView,
   trackButtonClick,
   trackCustomEvent,
-} from "../../../lib/GA";
+} from "../../../../lib/GA";
 import { useMediaQuery } from "@mantine/hooks";
-import { P } from "../../Members/Common/Type";
+import { P } from "../../../Members/Common/Type";
 
 const MainBanner = () => {
   return (

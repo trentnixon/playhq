@@ -3,7 +3,7 @@ import PageBanner from "../components/Common/PageBanner";
 import CtaAreaTwo from "../components/Common/CtaAreaTwo";
 import Section from "../components/UI/DefaultSection";
 import { H, P } from "../components/Members/Common/Type";
-import { CardsCarousel } from "../components/Portfolio/Carousel";
+import { CardsCarousel } from "../components/pages/public/graphics-packages/Carousel";
 import Link from "next/link";
 import { trackButtonClick } from "../lib/GA";
 import { Center } from "@mantine/core";
@@ -121,7 +121,7 @@ const FreeTier = () => {
       video: "",
       MainDescription: "",
     },
-    
+
     {
       image:
         "https://fixtura.s3.ap-southeast-2.amazonaws.com/LDCC_Lindfield_Cricket_SENIORS_Ladder_d4fa6ef4097c_a1fdd02d07_0ac91bba80.png",
@@ -145,7 +145,8 @@ const FreeTier = () => {
       category: "Basic: Soft Hands",
       video: "",
       MainDescription: "",
-    },{
+    },
+    {
       image:
         "https://fixtura.s3.ap-southeast-2.amazonaws.com/Freyberg_CC_Top_5_Senior_d09d77e19e2f_390_19a6018aab.png",
       title: "Example 1",
@@ -153,13 +154,9 @@ const FreeTier = () => {
       video: "",
       MainDescription: "",
     },
-
-
-    
   ];
   return (
     <Section {...freePackageData} color="light">
-      {/*  <PricingComponent /> */}
       <CardsCarousel data={carouselData} />
       <P textAlign={"center"}>
         We're constantly rolling out fresh, new packages.

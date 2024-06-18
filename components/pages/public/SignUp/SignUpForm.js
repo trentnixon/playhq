@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 
-import { fetcher } from "../../lib/api";
+import { fetcher } from "../../../../lib/api";
 import { Center, Container } from "@mantine/core";
-import { P } from "../Members/Common/Type";
+import { P } from "../../../Members/Common/Type";
 import Link from "next/link";
 
 // Form initial state

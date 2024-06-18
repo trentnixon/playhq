@@ -1,7 +1,7 @@
 import React from "react";
-import { P } from "../Members/Common/Type";
-import { trackCustomEvent } from "../../lib/GA";
-import Section from "../UI/DefaultSection";
+import { P } from "../../../Members/Common/Type";
+import { trackCustomEvent } from "../../../../lib/GA";
+import Section from "../../../UI/DefaultSection";
 import { Container, Image, Stack } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
 // Import GA functions

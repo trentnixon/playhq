@@ -1,6 +1,6 @@
 import React from "react";
 import PageBanner from "../components/Common/PageBanner";
-import FaqContent from "../components/Faq/FaqContent";
+import FaqContent from "../components/pages/public/Faq/FaqContent";
 import CtaAreaTwo from "../components/Common/CtaAreaTwo";
 import Section from "../components/UI/DefaultSection";
 import Meta from "../components/Layouts/Meta";

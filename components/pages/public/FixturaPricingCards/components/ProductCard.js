@@ -1,7 +1,6 @@
 import { Stack } from "@mantine/core";
 
 import React from "react";
-import { trackButtonClick } from "../../../lib/GA";
 
 import { SelectedPlan } from "./SelectedPlan";
 import { PricingCTAOptions } from "./FrontEndCTAOptions";
