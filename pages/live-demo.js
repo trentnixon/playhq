@@ -16,7 +16,7 @@ const LiveDemo = () => {
       <SelectClubForLiveDemo />
       <CtaArea />
     </>
-  );
+  ); 
 };
 
 export default LiveDemo;
