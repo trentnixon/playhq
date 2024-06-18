@@ -61,7 +61,7 @@ export const updateUserAccountWithTemplate = (userAccount, template) => {
   PathToUpdate.Category = PathWithNewValues.Category;
   PathToUpdate.TemplateVariation = PathWithNewValues.TemplateVariation;
   PathToUpdate.bundle_audio = PathWithNewValues.bundle_audio;
-
+ 
   return updatedUserAccount;
 };
 

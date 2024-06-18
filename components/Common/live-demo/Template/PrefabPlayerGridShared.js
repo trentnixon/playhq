@@ -1,12 +1,14 @@
+// src/components/Common/PrefabPlayerGridShared.js
 import { useState, useEffect } from "react";
-import { useAccountDetails } from "../../../lib/userContext";
 import { Grid } from "@mantine/core";
+import { useTemplate } from "../../../../lib/TemplateContext";
+
+import { updateUserAccountWithTemplate } from "../../../../utils/actions";
 import { MembersPreviewShell } from "./PreviewShell";
+import { P } from "../../../Members/Common/Type";
+import { Previewer } from "../../../pages/members/index/Dashboard/userPreview/Previewer";
 import { PreviewControls } from "./PreviewControls";
-import { useTemplate } from "../../../lib/TemplateContext";
-import { updateUserAccountWithTemplate } from "../../../utils/actions";
-import { Previewer } from "../../pages/members/index/Dashboard/userPreview/Previewer";
-import { P } from "../Common/Type";
+
 
 const assetOptions = {
   Cricket: [
@@ -19,7 +21,6 @@ const assetOptions = {
   AFL: [
     { value: "UpComingAFLFixtures", label: "Upcoming AFL Fixtures" },
     { value: "WeekendResultsAFL", label: "Weekend AFL Results" },
-
     { value: "Top5AFLScorers", label: "Top 5 AFL Scorers" },
     { value: "AFLLadder", label: "AFL Ladder" },
   ],
@@ -30,14 +31,14 @@ const assetOptions = {
   ],
 };
 
-export const PrefabPlayerGrid = () => {
-  const { account } = useAccountDetails();
+export const PrefabPlayerGridShared = ({ account }) => {
   const { template, setTemplate } = useTemplate();
   const [userAccount, setUserAccount] = useState(null);
   const [selectedAsset, setSelectedAsset] = useState(null);
   const [selectedHeroImage, setHeroImage] = useState(null);
   const [playerKey, setPlayerKey] = useState(Date.now());
   const [updatedUserAccount, setUpdatedUserAccount] = useState(null);
+
 
   useEffect(() => {
     if (account) {
@@ -66,10 +67,7 @@ export const PrefabPlayerGrid = () => {
 
   useEffect(() => {
     if (template && userAccount) {
-      const updatedAccount = updateUserAccountWithTemplate(
-        userAccount,
-        template
-      );
+      const updatedAccount = updateUserAccountWithTemplate(userAccount, template);
       setUpdatedUserAccount(updatedAccount);
     }
   }, [template, userAccount]);
@@ -78,6 +76,7 @@ export const PrefabPlayerGrid = () => {
     return <P>Loading...</P>;
   }
 
+ 
   return (
     <Grid>
       <Grid.Col sm={12} md={6}>
@@ -106,6 +105,7 @@ export const PrefabPlayerGrid = () => {
           selectedHeroImage={selectedHeroImage}
           setHeroImage={setHeroImage}
           assetOptions={assetOptions}
+          requiresMedia={template.attributes.requiresMedia}
         />
       </Grid.Col>
       <Grid.Col sm={12} md={12} mt={50}>

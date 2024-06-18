@@ -8,47 +8,54 @@ import { IconColorPicker } from "@tabler/icons-react";
 import { useAccountDetails } from "../../../../lib/userContext";
 import { useState, useEffect } from "react";
 import { RoundedSectionContainer } from "../../../../components/UI/Containers/SectionContainer";
-import { PrefabPlayerGrid } from "../../../../components/Members/GraphicsPackage/PrefabPlayerGrid";
+import { PrefabPlayerGridMembers } from "../../../../components/Common/live-demo/Template/PrefabPlayerGridMembers";
 import { useAssignDesignElement } from "../../../../Hooks/useCustomizer";
 import TemplateError from "../../../../components/pages/members/templates/TemplateError";
 import TemplateDetails from "../../../../components/pages/members/templates/TemplateDetails";
-import { TemplateProvider, useTemplate } from "../../../../lib/TemplateContext"; // Import the context
-import TemplateCTABtns from "../../../../components/pages/members/templates/TemplateCTABtns";
+import { TemplateProvider, useTemplate } from "../../../../lib/TemplateContext";
+import TemplateCTABtns from "../../../../components/Common/live-demo/Template/TemplateCTABtns";
 
 const qs = require("qs");
 
 const query = qs.stringify(
   {
-    populate: ["Poster", "Gallery", "Video","bundle_audio","bundle_audio.audio_options"],
+    populate: [
+      "Poster",
+      "Gallery",
+      "Video",
+      "bundle_audio",
+      "bundle_audio.audio_options",
+    ],
   },
   {
     encodeValuesOnly: true,
-  } 
+  }
 );
 
-const TemplateDetailPageContent = (props) => {
-  
-  const { template } = props;
+const MetaOBJ = {
+  title: "Member Dashboard - Fixtura: Your Control Center",
+  description:
+    "Access your member dashboard on Fixtura to manage and overview your sports club's digital media activities.",
+  keywords:
+    "Member dashboard, Fixtura control panel, sports media overview, club content management, digital hub",
+};
+
+const TemplateDetailPageContent = ({ template }) => {
   const { attributes } = template || {};
   const { Poster, Name, FrontEndName, Description } = attributes || {};
-
   const { account, ReRender } = useAccountDetails();
   const [userAccount, setUserAccount] = useState(account || {});
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [DesignElement, CreateDesignElement] = useAssignDesignElement();
-  const { setTemplate } = useTemplate(); // Use the context
-
+  const { setTemplate } = useTemplate();
   const router = useRouter();
   const { id } = router.query || {};
 
-  const MetaOBJ = {
-    title: "Member Dashboard - Fixtura: Your Control Center",
-    description:
-      "Access your member dashboard on Fixtura to manage and overview your sports club's digital media activities.",
-    keywords:
-      "Member dashboard, Fixtura control panel, sports media overview, club content management, digital hub",
-  };
+  useEffect(() => {
+    setUserAccount(account);
+    setTemplate(template);
+  }, [account, template, setTemplate]);
 
   const handleBackClick = () => {
     router.push("/members/templates");
@@ -56,7 +63,7 @@ const TemplateDetailPageContent = (props) => {
 
   const handleSelectTemplate = async () => {
     setLoading(true);
-    setError(null); // Clear previous error
+    setError(null);
     try {
       await CreateDesignElement({
         CollectionSaveTo: "accounts",
@@ -72,11 +79,6 @@ const TemplateDetailPageContent = (props) => {
     }
   };
 
-  useEffect(() => {
-    setUserAccount(account);
-    setTemplate(template); // Set the template in the context
-  }, [account, template, setTemplate]);
-
   const isSelectedTemplate =
     userAccount?.attributes?.template?.data?.id === template?.id;
 
@@ -84,42 +86,45 @@ const TemplateDetailPageContent = (props) => {
     return <TemplateError />;
   }
 
+  const renderTemplateDetails = () => (
+    <RoundedSectionContainer
+      headerContent=""
+      topContent={
+        <TemplateDetails
+          FrontEndName={FrontEndName}
+          Description={Description}
+          Poster={Poster}
+          Name={Name}
+        />
+      }
+      bottomContent={
+        <>
+          <CTAButtonGroup
+            loading={loading}
+            handleBackClick={handleBackClick}
+            handleSelectTemplate={handleSelectTemplate}
+            isSelectedTemplate={isSelectedTemplate}
+            error={error}
+          />
+
+          <PrefabPlayerGridMembers />
+          <CTAButtonGroup
+            loading={loading}
+            handleBackClick={handleBackClick}
+            handleSelectTemplate={handleSelectTemplate}
+            isSelectedTemplate={isSelectedTemplate}
+            error={error}
+          />
+        </>
+      }
+    />
+  );
+
   return (
     <SecureRouteHOC conditions={[template, userAccount]}>
       <PageMetaData MetaOBJ={MetaOBJ} />
       {Name && <PageTitle Copy={Name} ICON={<IconColorPicker size={40} />} />}
-      {Description && (
-        <RoundedSectionContainer
-          headerContent=""
-          topContent={
-            <TemplateDetails
-              FrontEndName={FrontEndName}
-              Description={Description}
-              Poster={Poster}
-              Name={Name}
-            />
-          }
-          bottomContent={ 
-            <>
-              <TemplateCTABtns
-                loading={loading}
-                handleBackClick={handleBackClick}
-                handleSelectTemplate={handleSelectTemplate}
-                isSelectedTemplate={isSelectedTemplate}
-                error={error}
-              />
-              <PrefabPlayerGrid /> 
-              <TemplateCTABtns
-                loading={loading}
-                handleBackClick={handleBackClick}
-                handleSelectTemplate={handleSelectTemplate}
-                isSelectedTemplate={isSelectedTemplate}
-                error={error}
-              />
-            </>
-          }
-        />
-      )}
+      {Description && renderTemplateDetails()}
     </SecureRouteHOC>
   );
 };
@@ -134,14 +139,10 @@ export default function TemplateDetailPage(props) {
 
 export async function getServerSideProps(ctx) {
   try {
-    // Parse cookies from the incoming headers
     const parsedCookies = cookie.parse(ctx.req.headers.cookie || "");
-    const jwt = parsedCookies["jwt"]; // Use the actual key you set the JWT cookie with
-
-    // Extract the id from the URL
+    const jwt = parsedCookies["jwt"];
     const { id } = ctx.params;
 
-    // Fetch the template data from the API
     const response = await fetcher(
       `${process.env.NEXT_PUBLIC_STRAPI_URL}/templates/${id}?${query}`,
       {
@@ -156,10 +157,27 @@ export async function getServerSideProps(ctx) {
       throw new Error("Template not found.");
     }
 
-    const template = response.data;
-
-    return { props: { template } }; // Return the template data as props
+    return { props: { template: response.data } };
   } catch (error) {
-    return { props: { error: error.message } }; // Return the error message as a prop
+    return { props: { error: error.message } };
   }
 }
+
+const CTAButtonGroup = (props) => {
+  const {
+    loading,
+    handleBackClick,
+    handleSelectTemplate,
+    isSelectedTemplate,
+    error,
+  } = props;
+  return (
+    <TemplateCTABtns
+      loading={loading}
+      handleBackClick={handleBackClick}
+      handleSelectTemplate={handleSelectTemplate}
+      isSelectedTemplate={isSelectedTemplate}
+      error={error}
+    />
+  );
+};

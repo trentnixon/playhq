@@ -1,5 +1,5 @@
 import { Image } from "@mantine/core";
-import { H, P } from "../Members/Common/Type";
+import { H, P } from "../../../Members/Common/Type";
 
 const AboutContent = () => {
   return (

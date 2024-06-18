@@ -18,13 +18,9 @@ import { LoadingStateWrapper } from "../../../components/Members/Account/HOC/Loa
 import { BTN_TOEXTLINK } from "../../../components/Members/Common/utils/Buttons";
 import Meta from "../../../components/Layouts/Meta";
 
-import {
-  IconColorPicker,
-  IconScissors,
-  IconTemplate,
-} from "@tabler/icons-react";
-import { RoundedSectionContainer } from "../../../components/UI/Containers/SectionContainer";
-import { SelectATemplate } from "../../../components/Members/Common/Customiser/Design/SelectATemplate";
+import { IconScissors, IconTemplate } from "@tabler/icons-react";
+import { SelectATemplateMembers } from "../../../components/pages/members/templates/live-demo/SelectATemplateMembers";
+import { BespokeGraphicsCTA } from "../../../components/Common/live-demo/BespokeGraphicsCTA";
 
 const qs = require("qs");
 
@@ -61,9 +57,6 @@ const Design = ({ Response }) => {
     setPlayerKey(Date.now());
   }, [selectedHeroImage, selectedAsset]);
 
-
-
-
   return (
     <LoadingStateWrapper conditions={[user, userAccount]}>
       <MembersWrapper>
@@ -82,35 +75,12 @@ const Design = ({ Response }) => {
           for every club. New designs are added regularly to keep your content
           fresh and engaging.
         </P>
-        <SelectATemplate
-          userAccount={userAccount}
+        <SelectATemplateMembers
           hasMediaItems={
             Response?.attributes.account_media_libraries.data.length
           }
         />
-        <Space h={20} /> 
-        <PageCopyWrapper>
-          <SubHeaders
-            Copy={"Bespoken Graphics"}
-            ICON={<IconScissors size={30} />}
-          />
-          <P>
-            Already have a design theme in mind or in use? Let's work together
-            to adapt and integrate your vision into our system, ensuring a
-            consistent and authentic online presence.
-          </P>
-
-          <Group position="right" mt={20} mb={20}>
-            <P marginBottom={0}>
-              To learn more or start the design journey, DM us on our Facebook
-              page.
-            </P>
-            <BTN_TOEXTLINK
-              URL="https://www.facebook.com/profile.php?id=100095406210560"
-              LABEL={"Start Your Bespoke Journey"}
-            />
-          </Group>
-        </PageCopyWrapper> 
+        <BespokeGraphicsCTA />
       </MembersWrapper>
     </LoadingStateWrapper>
   );

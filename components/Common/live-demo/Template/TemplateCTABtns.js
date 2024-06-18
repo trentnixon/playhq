@@ -9,20 +9,28 @@ const TemplateCTABtns = ({
   isSelectedTemplate,
   error,
 }) => (
-  <Group position="right" mb="md">
+  <Group position="right" mb="md"> 
     {loading ? (
       <FixturaLoading />
     ) : (
       <>
-        <BTN_ONCLICK THEME="error" LABEL="Back to Templates" HANDLE={handleBackClick} />
+        <BTN_ONCLICK
+          THEME="error"
+          LABEL="Back to Templates"
+          HANDLE={handleBackClick}
+        />
         {!isSelectedTemplate ? (
-          <BTN_ONCLICK THEME="success" LABEL="Select this template" HANDLE={handleSelectTemplate} />
+          <BTN_ONCLICK
+            THEME="success"
+            LABEL="Select this template"
+            HANDLE={handleSelectTemplate}
+          />
         ) : (
           <Button disabled>Selected Template</Button>
         )}
       </>
     )}
-    {error && <div style={{ color: 'red' }}>{error}</div>}
+    {error && <div style={{ color: "red" }}>{error}</div>}
   </Group>
 );
 

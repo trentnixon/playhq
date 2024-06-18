@@ -49,7 +49,7 @@ export function createVideo(previewObj, ASSET) {
 
   return {
     // from FIXTURA
-    Title: ASSET.title || "Title",
+    Title: ASSET.Title || "Title",
     TitleSplit: ASSET.TitleSplit || ["Title"],
     CompositionID: ASSET.CompositionID || false,
     VideoTitle: ASSET.VideoTitle || false,
@@ -86,14 +86,13 @@ export function createTheme(previewObj) {
 
 export function createClub(accountCustomDataOBJ) {
   const { Account, sponsors } = accountCustomDataOBJ;
-
   return {
     Name: Account.name || "International Cricket",
     Sport: "Cricket",
     Logo: Account.logo || {
-      url: "https://fixtura.s3.ap-southeast-2.amazonaws.com/logo_21_4a9066b25c.png",
+      url: "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_Blue_on_transparent_1df3fe6440.png",
       width: 132,
-      height: 176,
+      height: 176, 
     },
     Sponsors: sponsorsFormatted(sponsors),
   };

@@ -1,12 +1,12 @@
 [
   {
     "name": "Pat Cummins",
-    "wickets": 10,
+    "wickets": 7,
     "overs": "31",
     "runs": 80,
     "playedFor": "Australian National Team",
     "teamLogo": {
-      "url": "https://example.com/pat-cummins-logo.png",
+      "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_Blue_on_transparent_0e86187b28.png",
       "width": 512,
       "height": 512
     },
@@ -27,12 +27,12 @@
   },
   {
     "name": "Trent Boult",
-    "wickets": 8,
+    "wickets": 6,
     "overs": "29",
     "runs": 72,
     "playedFor": "New Zealand National Team",
     "teamLogo": {
-      "url": "https://example.com/trent-boult-logo.png",
+      "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_Blue_on_transparent_0e86187b28.png",
       "width": 512,
       "height": 512
     },
@@ -53,12 +53,12 @@
   },
   {
     "name": "Mitchell Starc",
-    "wickets": 7,
+    "wickets": 5,
     "overs": "31",
     "runs": 65,
     "playedFor": "Australian National Team",
     "teamLogo": {
-      "url": "https://example.com/mitchell-starc-logo.jpg",
+      "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_Blue_on_transparent_0e86187b28.png",
       "width": 512,
       "height": 512
     },
@@ -79,12 +79,12 @@
   },
   {
     "name": "Tim Southee",
-    "wickets": 1,
+    "wickets": 3,
     "overs": "3",
     "runs": 15,
     "playedFor": "New Zealand National Team",
     "teamLogo": {
-      "url": "https://example.com/tim-southee-logo.jpg",
+      "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_Blue_on_transparent_0e86187b28.png",
       "width": 512,
       "height": 512
     },
@@ -105,12 +105,12 @@
   },
   {
     "name": "Josh Hazlewood",
-    "wickets": 8,
+    "wickets": 3,
     "overs": "21",
     "runs": 50,
     "playedFor": "Australian National Team",
     "teamLogo": {
-      "url": "https://example.com/josh-hazlewood-logo.jpg",
+      "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_Blue_on_transparent_0e86187b28.png",
       "width": 512,
       "height": 512
     },

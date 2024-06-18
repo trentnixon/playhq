@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import { Paper } from "@mantine/core";
-import { MembersPreviewPlayer } from "./Player";
-import { P } from "../Common/Type";
-import { prepareMockData } from "../../../utils/Remotion/RemotionPrepareMockData";
 
+
+import { prepareMockData } from "../../../../utils/Remotion/RemotionPrepareMockData";
+import { P } from "../../../Members/Common/Type";
+
+import { MembersPreviewPlayer } from "./Player";
 export const MembersPreviewShell = ({
   userAccount,
   selectedAsset,

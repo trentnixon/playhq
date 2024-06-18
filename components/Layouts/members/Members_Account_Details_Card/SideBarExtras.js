@@ -49,7 +49,6 @@ export const SideBarExtraShell = ({ account }) => {
   if (renders.renders.length === 0) return false;
 
   // Log the render token to the console.
-  console.log("renders ", renders.render_token.token);
 
   // Render the SideBarExtras component.
   return (

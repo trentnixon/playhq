@@ -6,7 +6,7 @@
     "SR": 122.82,
     "playedFor": "Australian National Team",
     "teamLogo": {
-      "url": "https://example.com/aaron-finch-logo.png",
+      "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_Blue_on_transparent_0e86187b28.png",
       "width": 512,
       "height": 512
     },
@@ -28,12 +28,12 @@
   },
   {
     "name": "Kane Williamson",
-    "runs": 148,
+    "runs": 86,
     "balls": 274,
     "SR": 54.05,
     "playedFor": "New Zealand National Team",
     "teamLogo": {
-      "url": "https://example.com/kane-williamson-logo.png",
+      "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_Blue_on_transparent_0e86187b28.png",
       "width": 512,
       "height": 512
     },
@@ -60,7 +60,7 @@
     "SR": 124.19,
     "playedFor": "Australian National Team",
     "teamLogo": {
-      "url": "https://example.com/steve-smith-logo.jpg",
+      "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_Blue_on_transparent_0e86187b28.png",
       "width": 512,
       "height": 512
     },
@@ -87,7 +87,7 @@
     "SR": 160.86,
     "playedFor": "New Zealand National Team",
     "teamLogo": {
-      "url": "https://example.com/trent-boult-logo.png",
+      "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_Blue_on_transparent_0e86187b28.png",
       "width": 512,
       "height": 512
     },
@@ -109,12 +109,12 @@
   },
   {
     "name": "David Warner",
-    "runs": 88,
+    "runs": 45,
     "balls": 112,
     "SR": 78.4,
     "playedFor": "Australian National Team",
     "teamLogo": {
-      "url": "https://example.com/david-warner-logo.jpg",
+      "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_Blue_on_transparent_0e86187b28.png",
       "width": 512,
       "height": 512
     },

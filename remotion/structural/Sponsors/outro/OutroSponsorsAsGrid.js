@@ -73,7 +73,6 @@ const OutroSponsorsAsGrid = (props) => {
   const groupedSponsors = groupSponsors(GeneralSponsors);
   const imgSize = calculateImgSize(GeneralSponsors.length);
 
-  console.log("imgSize ", imgSize)
   return ( 
     <SponsorsContainer>
       <SponsorImg  width={`100%`}  height={`${(imgSize*1.5)}px`}>

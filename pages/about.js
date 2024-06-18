@@ -1,7 +1,8 @@
 import React from "react";
 import PageBanner from "../components/Common/PageBanner";
-import AboutContent from "../components/About/AboutContent";
+
 import Meta from "../components/Layouts/Meta";
+import AboutContent from "../components/pages/public/About/AboutContent";
 
 const About = () => {
   return (

@@ -31,7 +31,9 @@ export const useGETDesignElement = () => {
           headers: {
             Accept: "application/json",
             "Content-Type": "application/json",
-            Authorization: `Bearer ${Cookies.get("jwt")}`,
+            // commented out for publis use
+            // if this is required, then the live-demo will need to be amended
+            //Authorization: `Bearer ${Cookies.get("jwt")}`,
           },
         }
       );
