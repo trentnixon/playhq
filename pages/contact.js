@@ -1,6 +1,6 @@
 import React from "react";
 import PageBanner from "../components/Common/PageBanner";
-import ContactForm from "../components/Contact/ContactForm";
+import ContactForm from "../components/pages/public/Contact/ContactForm";
 import Section from "../components/UI/DefaultSection";
 import Meta from "../components/Layouts/Meta";
 
