@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import styles from "./Hero.module.scss";
-import { H1 } from "../Primitives/Text";
+import { H1, P } from "../Primitives/Text";
  
 const Hero = () => {
   const heroRef = useRef(null);
@@ -66,6 +66,7 @@ const HeroText = ({ highlightRef }) => {
         </span>{" "}
         Schedule?
       </H1>
+      <P>Let <span ref={highlightRef} className={styles.highlight}>Fixtura</span> Streamline the Process</P>
     </div>
   );
 };

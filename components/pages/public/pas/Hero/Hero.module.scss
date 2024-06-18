@@ -70,6 +70,25 @@
     
   }
 }
+
+.textContent p {
+  text-align: center;
+  line-height: 1em;
+  letter-spacing: -1px;
+  margin-top: 10px;
+  color: #ffffff;
+  font-size: 30px;
+  .highlight {
+    color: $highlight-color-1;
+    font-weight: bold;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 25px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+}
 .word {
   opacity: 0;
 }
