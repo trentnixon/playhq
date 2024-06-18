@@ -3,8 +3,9 @@ import CtaArea from "../components/Common/CtaAreaTwo";
 import Partner from "../components/Common/Partner";
 import { fetcher } from "../lib/api";
 import Meta from "../components/Layouts/Meta";
-import PromoBanner from "../components/Freetrial/PromoBanner";
-import PromotionalLandingCopy from "../components/Freetrial/LandingCopy";
+
+import PromoBanner from "../components/pages/public/Freetrial/PromoBanner";
+import PromotionalLandingCopy from "../components/pages/public/Freetrial/LandingCopy";
 
 const Index = ({ associations }) => {
   return (

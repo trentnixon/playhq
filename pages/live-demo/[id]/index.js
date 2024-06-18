@@ -8,7 +8,6 @@ import TemplateError from "../../../components/pages/members/templates/TemplateE
 import TemplateDetails from "../../../components/pages/members/templates/TemplateDetails";
 import { TemplateProvider, useTemplate } from "../../../lib/TemplateContext";
 import TemplateCTABtns from "../../../components/Common/live-demo/Template/TemplateCTABtns";
-import LiveDemoBanner from "../../../components/Freetrial/LiveDemoBanner";
 import Section from "../../../components/UI/DefaultSection";
 import { PrefabPlayerGridLiveDemo } from "../../../components/pages/public/templates/template/PrefabPlayerGridLiveDemo";
 import { RoundedSectionContainer } from "../../../components/UI/Containers/SectionContainer";
