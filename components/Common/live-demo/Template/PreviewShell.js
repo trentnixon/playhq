@@ -6,7 +6,7 @@ import { prepareMockData } from "../../../../utils/Remotion/RemotionPrepareMockD
 import { P } from "../../../Members/Common/Type";
 
 import { MembersPreviewPlayer } from "./Player";
-export const MembersPreviewShell = ({
+export const MembersPreviewShell = ({ 
   userAccount,
   selectedAsset,
   selectedHeroImage,
