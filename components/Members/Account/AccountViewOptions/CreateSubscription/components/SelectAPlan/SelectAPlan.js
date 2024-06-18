@@ -4,9 +4,9 @@ import { useGetSubscriptionTiers } from "../../../../../../../Hooks/useSubscript
 import { useAccountDetails } from "../../../../../../../lib/userContext";
 import { FindAccountType } from "../../../../../../../lib/actions";
 import { CreateNewInvoice } from "./components/CreateANewInvoice";
-import { ProductCard } from "../../../../../../FixturaPricingCards/components/ProductCard";
 import dayjs from "dayjs";
 import { FixturaLoading } from "../../../../../Common/Loading";
+import { ProductCard } from "../../../../../../pages/public/FixturaPricingCards/components/ProductCard";
 
 // Custom hook to handle fetching of subscription tiers
 const useFetchSubscriptionTiers = () => {

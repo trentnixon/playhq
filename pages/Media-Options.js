@@ -1,9 +1,10 @@
 import React from "react";
 import PageBanner from "../components/Common/PageBanner";
-import WorksStyleTwo from "../components/Portfolio/WorksStyleTwo";
+
 import CtaAreaTwo from "../components/Common/CtaAreaTwo";
 import { fetcher } from "../lib/api";
 import Meta from "../components/Layouts/Meta";
+import WorksStyleTwo from "../components/pages/public/graphics-packages/WorksStyleTwo";
 
 const qs = require("qs");
 const Portfolio = ({ associations, CaseStudies }) => {

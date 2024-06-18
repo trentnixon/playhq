@@ -3,20 +3,23 @@ import Meta from "../../../../components/Layouts/Meta";
 import Section from "../../../../components/UI/DefaultSection";
 import { Center, Container, Image } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
-//import FixturaAndYourAssociationBanner from "../../../../components/HomePages/PLAYHQ/FixturaAndYourAssociation";
-import FixturaAndYourClubBanner from "../../../../components/HomePages/PLAYHQ/FixturaAndYourClub";
 
 import { Previewer } from "../../../../components/Campaign/Simplify-Your-Social-Media-with-Fixtura/Previewer";
 import CtaAreaTwo from "../../../../components/Common/CtaAreaTwo";
 import Feedback from "../../../../components/Common/Feedback";
+import FixturaAndYourClubBanner from "../../../../components/Campaign/components/FixturaAndYourClub";
 const qs = require("qs");
 
 const AssociationPage = ({ associationData, useAssets }) => {
   const associationName = associationData.attributes.Name; // Adjust based on your data structure
 
-  const DefaultLogo='https://fixtura.s3.ap-southeast-2.amazonaws.com/Default_ICON_171b58a21b.png'
+  const DefaultLogo =
+    "https://fixtura.s3.ap-southeast-2.amazonaws.com/Default_ICON_171b58a21b.png";
   //console.log(associationData.attributes.ParentLogo)
-  associationData.attributes.ParentLogo = associationData.attributes.ParentLogo ==='No Parent Logo'?DefaultLogo:associationData.attributes.ParentLogo
+  associationData.attributes.ParentLogo =
+    associationData.attributes.ParentLogo === "No Parent Logo"
+      ? DefaultLogo
+      : associationData.attributes.ParentLogo;
   const isMobile = useMediaQuery("(max-width: 768px)");
   const padding = isMobile ? 0 : "sm";
   const SectionData = {

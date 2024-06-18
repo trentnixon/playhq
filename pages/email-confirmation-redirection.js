@@ -1,8 +1,8 @@
 import React from "react";
 import PageBanner from "../components/Common/PageBanner";
-import SignInForm from "../components/SignIn/SignInForm";
 import Section from "../components/UI/DefaultSection";
 import Meta from "../components/Layouts/Meta";
+import SignInForm from "../components/pages/public/SignIn/SignInForm";
 const Emailconfirmationredirection = () => {
   const SectionData = {
     title: "Email Confirmed",

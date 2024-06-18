@@ -1,10 +1,10 @@
 import React from "react";
 import FunFacts from "../components/Common/FunFacts";
-import PromotionalBanner from "../components/HomePages/PLAYHQ/PromotionalBanner";
 import LayoutNoNavbar from "../components/Layouts/LayoutNoNavbar";
 import { ExpressionOfInterestForm } from "../components/pages/public/ExpressionOfInterest/Form";
 import { useState } from "react";
 import FunFactsTwo from "../components/Common/FunFactsTwo";
+import PromotionalBanner from "../components/pages/public/index/PromotionalBanner";
 
 const EarlyAccess = () => {
   const [hasSent, setHasSent] = useState(false);
@@ -25,7 +25,7 @@ const EarlyAccess = () => {
           {hasSent ? (
             false
           ) : (
-            <p> 
+            <p>
               Fill out the form below to express your interest in early access
               to Fixtura. We will be in touch with you soon with more
               information on how to become part of our exclusive group of 50
