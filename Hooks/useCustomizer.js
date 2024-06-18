@@ -5,23 +5,48 @@ import { fetcher } from "../lib/api";
 import { getAccountFromLocalCookie } from "../lib/auth";
 const qs = require("qs");
 
-
 // GET
 // Fetch all of the options
 export const useGETDesignElement = () => {
   const [DesignElement, setDesignElement] = useState(null);
-  const query = qs.stringify(
-    {
-      pagination: {
-        pageSize: 1000,
-      },
-      populate:['Poster','Gallery','Video','bundle_audio','bundle_audio.audio_options','bundle_audio.audio_options.asset']
+  const query = qs.stringify({
+    pagination: {
+      pageSize: 1000,
+    },
+    populate: [
+      "Poster",
+      "Gallery",
+      "Video",
+      "bundle_audio",
+      "bundle_audio.audio_options",
+      "bundle_audio.audio_options.asset",
+    ],
+  });
+  const CreateDesignElement = async (OBJ, useAuth = true) => {
+    setDesignElement(true);
+    try {
+      //console.log("CreateDesignElement");
+      const headers = {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      };
+
+      if (useAuth) {
+        headers.Authorization = `Bearer ${Cookies.get("jwt")}`;
+      }
+
+      const response = await fetcher(
+        `${process.env.NEXT_PUBLIC_STRAPI_URL}/${OBJ.COLLECTIONID}?${query}`,
+        {
+          headers,
+        }
+      );
+      setDesignElement(response.data);
+    } catch (err) {
+      setDesignElement(null);
     }
-  );
-  const CreateDesignElement = async (OBJ) => {
-    /*
-          OBJ={COLLECTIONID:COLLECTIONID,}
-          */
+  };
+/*   const CreateDesignElement = async (OBJ,useAuth = true) => {
     setDesignElement(true);
     try {
       //console.log("CreateDesignElement");
@@ -33,7 +58,7 @@ export const useGETDesignElement = () => {
             "Content-Type": "application/json",
             // commented out for publis use
             // if this is required, then the live-demo will need to be amended
-            //Authorization: `Bearer ${Cookies.get("jwt")}`,
+            Authorization: `Bearer ${Cookies.get("jwt")}`,
           },
         }
       );
@@ -41,7 +66,7 @@ export const useGETDesignElement = () => {
     } catch (err) {
       setDesignElement(null);
     }
-  };
+  }; */
 
   return [DesignElement, CreateDesignElement];
 };

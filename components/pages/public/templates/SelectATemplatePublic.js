@@ -25,7 +25,7 @@ export const SelectATemplatePublic = () => {
   const [GetElement, FetchElement] = useGETDesignElement();
 
   const fetchTemplates = async () => {
-    await FetchElement({ COLLECTIONID: "templates" });
+    await FetchElement({ COLLECTIONID: "templates" },false);
   };
 
   useEffect(() => {

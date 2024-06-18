@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Center, Paper } from "@mantine/core";
+import { Center } from "@mantine/core";
 import { IconFileDownload } from "@tabler/icons-react";
 import {
   useAssignDesignElement,
@@ -26,11 +26,11 @@ export const UpdateYourTheme = () => {
   }, []);
 
   useEffect(() => {
-    FetchElement({ COLLECTIONID: "themes" });
+    FetchElement({ COLLECTIONID: "themes" }); 
     setuserAccount(account);
     setLoading(false);
   }, [account]);
-
+ 
   const StoreUSerChange = (item) => {
     const OBJ = {
       CollectionSaveTo: "accounts",
