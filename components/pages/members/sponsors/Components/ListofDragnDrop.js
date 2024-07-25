@@ -19,7 +19,7 @@ import {
 import { EditSponsor } from "./EditSponsor";
 
 import { IconX } from "@tabler/icons-react";
-import { useAccountDetails } from "../../../../../lib/userContext";
+import { useAccountDetails } from "../../../../../context/userContext";
 import { P } from "../../../../Members/Common/Type";
 
 const useStyles = createStyles((theme) => ({

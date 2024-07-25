@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { BTN_ONCLICK } from "../Common/utils/Buttons";
-import { useAccountDetails } from "../../../lib/userContext";
+import { useAccountDetails } from "../../../context/userContext";
 
 export const BTN_ChangePlan = ({ setChangePlan, changePlan }) => {
   const { account, ReRender } = useAccountDetails();
@@ -9,7 +9,7 @@ export const BTN_ChangePlan = ({ setChangePlan, changePlan }) => {
   const [ORDER, setOrder] = useState(
     userAccount?.attributes?.orders?.data?.attributes
   );
- 
+
   // Check if the subscription is active
   const isActive = ORDER?.isActive && ORDER?.Status && !ORDER?.cancel_at_period_end;
     const isPaused = ORDER?.isPaused
@@ -17,7 +17,7 @@ export const BTN_ChangePlan = ({ setChangePlan, changePlan }) => {
   return ORDER === undefined || !isActive ? (
     false
   ) : (
-    <BTN_ONCLICK 
+    <BTN_ONCLICK
       LABEL={changePlan ? 'Close Plans' : "Change Plan"}
       HANDLE={() => {
         setChangePlan(!changePlan);

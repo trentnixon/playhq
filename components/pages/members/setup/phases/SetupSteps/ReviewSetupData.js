@@ -14,7 +14,7 @@ import {
   Stack,
   Center,
 } from "@mantine/core";
-import { useAccountDetails } from "../../../../../../lib/userContext";
+import { useAccountDetails } from "../../../../../../context/userContext";
 import {
   useDeleteAccount,
   useSetAccountTrue,

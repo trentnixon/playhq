@@ -2,8 +2,8 @@ import React, { useEffect } from "react";
 import { PageTitle } from "../../components/Members/Common/Type";
 import { IconLayoutDashboard } from "@tabler/icons-react";
 import { Space } from "@mantine/core";
-import { useAccountDetails } from "../../lib/userContext";
-import { useUser } from "../../lib/authContext";
+import { useAccountDetails } from "../../context/userContext";
+import { useUser } from "../../context/authContext";
 import { IsFreeTrialFeedback } from "../../components/Members/Account/userIsFreeTrial";
 
 import { PreviewGallery } from "../../components/pages/members/index/Dashboard/userPreview/PreviewGallery";
@@ -47,12 +47,12 @@ const DashBoard = () => {
       <PageTitle
         Copy={`Hi ${account.attributes.FirstName || ""}`}
         ICON={<IconLayoutDashboard size={40} />}
-      /> 
+      />
 
       <PreviewGallery />
       <Space h={20} />
       <Cards_Account commonProps={commonProps} />
- 
+
       <Space h={30} />
       <Cards_Branding commonProps={commonProps} />
 

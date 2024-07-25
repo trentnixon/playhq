@@ -1,7 +1,7 @@
 // src/components/Common/PrefabPlayerGridShared.js
 import { useState, useEffect } from "react";
 import { Grid } from "@mantine/core";
-import { useTemplate } from "../../../../lib/TemplateContext";
+import { useTemplate } from "../../../../context/TemplateContext";
 
 import { updateUserAccountWithTemplate } from "../../../../utils/actions";
 import { MembersPreviewShell } from "./PreviewShell";
@@ -76,7 +76,7 @@ export const PrefabPlayerGridShared = ({ account }) => {
     return <P>Loading...</P>;
   }
 
- 
+
   return (
     <Grid>
       <Grid.Col sm={12} md={6}>

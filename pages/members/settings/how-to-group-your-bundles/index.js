@@ -4,7 +4,7 @@ import { Group, Switch } from "@mantine/core";
 import { P, PageTitle } from "../../../../components/Members/Common/Type";
 import { FindAccountType } from "../../../../lib/actions";
 import { useSetGroupAssetsBySetting } from "../../../../Hooks/useAccountSettings";
-import { useAccountDetails } from "../../../../lib/userContext";
+import { useAccountDetails } from "../../../../context/userContext";
 import { DisplayKeys } from "../../../../components/pages/members/settings/how-to-group-your-bundles/_components/DisplayKeys";
 import { IconSettings } from "@tabler/icons";
 import { BackToSettings } from "../../../../components/pages/members/settings/_components/BackToSettings";

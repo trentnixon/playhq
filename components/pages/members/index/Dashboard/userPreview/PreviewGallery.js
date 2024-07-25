@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { RoundedSectionContainer } from "../../../../../UI/Containers/SectionContainer";
 import { Previewer } from "./Previewer";
 import { UserPreviewTitle } from "./UserPreviewTitle";
-import { useAccountDetails } from "../../../../../../lib/userContext";
+import { useAccountDetails } from "../../../../../../context/userContext";
 import { createPreviewObject } from "../../../../../../utils/Remotion/RemotionUtils";
 
 export const PreviewGallery = () => {
@@ -22,16 +22,16 @@ export const PreviewGallery = () => {
 
   if (!previewObj.template) {
     return <Center>Loading...</Center>;
-  } 
+  }
 
   //const templateType = previewObj.template.Category;
   //const assetTypes = Object.keys(ASSETS[templateType]);
 
   return (
-    <RoundedSectionContainer 
+    <RoundedSectionContainer
       headerContent={`Preview`}
       topContent={<UserPreviewTitle />}
       bottomContent={<Previewer account={account} />}
     />
   );
-};  
+};

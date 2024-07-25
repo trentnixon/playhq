@@ -1,0 +1,61 @@
+@import "../../HomePage.module.scss";
+
+.toolsNoNeeded{
+  text-align: center;
+  padding: 80px 20px;
+  position: relative;
+  background-color: #333741;
+}
+
+.contentDelivery {
+  text-align: center;
+  padding: 150px 20px;
+
+  position: relative;
+  background-color: #333741;
+
+  h2 {
+    @include h2;
+    color: $white-copy-color;
+    span {
+      display: block;
+      color: $section-gradient-end;
+      font-size: 1.5em;
+      margin-top: 10px;
+    }
+  }
+
+  p {
+    @include p;
+    color: $white-copy-color;
+    margin-bottom: 10px;
+    font-size: 1.5em;
+    max-width: 800px;
+    margin: 0 auto 20px;
+  }
+
+  .images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+
+    svg {
+      max-width: 150px;
+      height: auto;
+    }
+  }
+
+  .icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+
+    img {
+      max-width: 100px; // Adjusted size for icons
+      height: auto;
+      margin: 0 10px;
+    }
+  }
+}

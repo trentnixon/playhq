@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useAccountDetails } from "../../../../lib/userContext";
+import { useAccountDetails } from "../../../../context/userContext";
 import { P, PageTitle } from "../../Common/Type";
 import { Wrapper } from "../../Common/Containers";
 import {
@@ -69,7 +69,7 @@ const SetupCheck = ({ children }) => {
                 We're actively syncing with PlayHQ to tailor our platform
                 specifically for your club or association. Keep in mind, the
                 size of your organization influences the syncing time – we're
-                ensuring everything is just right for you. 
+                ensuring everything is just right for you.
               </P>
               {account?.attributes?.data_collections?.data[0]?.attributes
                 .processingTracker ? (

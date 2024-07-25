@@ -7,7 +7,7 @@ import {
   Box,
   useMantineTheme,
 } from "@mantine/core";
-import { useAccountDetails } from "../../../../../../lib/userContext";
+import { useAccountDetails } from "../../../../../../context/userContext";
 
 import { BTN_ONCLICK } from "../../../../../Members/Common/utils/Buttons";
 import { P } from "../../../../../Members/Common/Type";
@@ -32,7 +32,7 @@ export const SetupStages = ({ setReview }) => {
     step2: {},
     step3: {},
     step4: {},
-  }); 
+  });
   const [active, setActive] = useState(0);
 
   const updateData = useCallback(() => {
@@ -58,14 +58,14 @@ export const SetupStages = ({ setReview }) => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
 
-  const checkProgress = useCallback(() => { 
-  
+  const checkProgress = useCallback(() => {
+
     if (DATA) {
       setProgress({
         ...progress,
 
         step1: {
-          ...progress.step1, 
+          ...progress.step1,
           account_type: DATA.attributes?.account_type?.data?.attributes,
           associations: DATA.attributes?.associations?.data[0]?.attributes,
           clubs:
@@ -79,7 +79,7 @@ export const SetupStages = ({ setReview }) => {
         step2: {
           // attributes related to About your Brand step
         },
-        
+
         step3: {
           // attributes related to About your Brand step
         },
@@ -127,11 +127,11 @@ export const SetupStages = ({ setReview }) => {
         >
           <Stepper.Step label={mobile ? false : "About the Organisation"}>
             <StepAboutTheCricket user={DATA} setHasUpdated={ReRender} />
-          </Stepper.Step> 
+          </Stepper.Step>
           <Stepper.Step label={mobile ? false : "Upload your Logo"}>
             <StepAboutLogo user={DATA} setHasUpdated={ReRender} />
           </Stepper.Step>
-         
+
           <Stepper.Step label={mobile ? false : "About your Brand"}>
             <StepAboutBranding user={DATA} setHasUpdated={ReRender} />
           </Stepper.Step>

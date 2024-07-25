@@ -5,7 +5,7 @@ import {
   useAssignDesignElement,
   useGETDesignElement,
 } from "../../../../../../Hooks/useCustomizer";
-import { useAccountDetails } from "../../../../../../lib/userContext";
+import { useAccountDetails } from "../../../../../../context/userContext";
 import { SubHeaders } from "../../../../../Members/Common/Type";
 import { FixturaLoading } from "../../../../../Members/Common/Loading";
 import { ColorTable } from "./ColorTable";
@@ -26,11 +26,11 @@ export const UpdateYourTheme = () => {
   }, []);
 
   useEffect(() => {
-    FetchElement({ COLLECTIONID: "themes" }); 
+    FetchElement({ COLLECTIONID: "themes" });
     setuserAccount(account);
     setLoading(false);
   }, [account]);
- 
+
   const StoreUSerChange = (item) => {
     const OBJ = {
       CollectionSaveTo: "accounts",

@@ -7,7 +7,7 @@ import {
   useMantineTheme,
 } from "@mantine/core";
 import { P, SubHeaders } from "../Common/Type";
-import { useAccountDetails } from "../../../lib/userContext";
+import { useAccountDetails } from "../../../context/userContext";
 import { useEffect, useState } from "react";
 import {
   FindAccountLogo,

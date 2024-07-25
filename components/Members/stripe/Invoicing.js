@@ -18,7 +18,7 @@ import {
   IconReceipt2,
   IconStatusChange,
 } from "@tabler/icons-react";
-import { useAccountDetails } from "../../../lib/userContext";
+import { useAccountDetails } from "../../../context/userContext";
 import { LoadingStateWrapper } from "../Account/HOC/LoadingStateWrapper";
 import { convertUnixTimestamp } from "../../../lib/actions";
 

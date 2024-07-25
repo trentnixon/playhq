@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import StrapiImageUploader from "../../../sponsors/Form/ImageUploader";
-import { useAccountDetails } from "../../../../../../lib/userContext";
+import { useAccountDetails } from "../../../../../../context/userContext";
 
 import {
   FindAccountLogo,

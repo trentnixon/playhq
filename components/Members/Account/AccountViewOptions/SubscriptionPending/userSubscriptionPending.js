@@ -1,6 +1,6 @@
 // Import necessary dependencies
 
-import { useAccountDetails } from "../../../../../lib/userContext";
+import { useAccountDetails } from "../../../../../context/userContext";
 import { FixturaDivider } from "../../../Common/Divider";
 import { P, PageTitle } from "../../../Common/Type";
 import { Invoicing } from "../../../stripe/Invoicing";

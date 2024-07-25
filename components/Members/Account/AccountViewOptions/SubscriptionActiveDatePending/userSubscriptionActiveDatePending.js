@@ -1,7 +1,7 @@
 // Import necessary dependencies
 
 import dayjs from "dayjs";
-import { useAccountDetails } from "../../../../../lib/userContext";
+import { useAccountDetails } from "../../../../../context/userContext";
 import { FixturaDivider } from "../../../Common/Divider";
 import { P, PageTitle, SubTitle } from "../../../Common/Type";
 import { Invoicing } from "../../../stripe/Invoicing";
@@ -12,7 +12,7 @@ import { IconFileInvoice, IconCalendarEvent, IconCheck } from "@tabler/icons";
 export const UserSubscriptionActiveDatePending = () => {
   const { account } = useAccountDetails();
   const pendingInvoice = findPendingInvoice(account.attributes.orders.data);
- 
+
   const startDate = dayjs(pendingInvoice.attributes.startOrderAt).format(
     "MMMM D, YYYY"
   );

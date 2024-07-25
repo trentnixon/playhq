@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import { useUser } from "../../lib/authContext";
+import { useUser } from "../../context/authContext";
 
 import Cookies from "js-cookie";
 
@@ -17,7 +17,7 @@ import { Paper, Group, Space, Box } from "@mantine/core";
 import { SwitchAssets } from "../../components/Members/Common/Switch_Assets";
 import { IconHome } from "@tabler/icons";
 import { showNotification } from "@mantine/notifications";
-import { useAccountDetails } from "../../lib/userContext";
+import { useAccountDetails } from "../../context/userContext";
 import { FixturaLoading } from "../../components/Members/Common/Loading";
 import Meta from "../../components/Layouts/Meta";
 const qs = require("qs");

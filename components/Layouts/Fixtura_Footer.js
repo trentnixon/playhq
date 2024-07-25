@@ -36,6 +36,11 @@ const FooterDark = () => {
                     </Link>
                   </li>
                   <li>
+                    <Link legacyBehavior href="/refund-policy">
+                      <a>Refund Policy</a>
+                    </Link>
+                  </li>
+                  <li>
                     <Link legacyBehavior href="/terms-conditions">
                       <a>Terms & Conditions</a>
                     </Link>

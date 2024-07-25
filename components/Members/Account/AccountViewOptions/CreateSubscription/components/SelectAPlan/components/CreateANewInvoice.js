@@ -2,12 +2,14 @@ import { useEffect, useState } from "react";
 import { Group } from "@mantine/core";
 import { useCreateInvoice } from "../../../../../../../../Hooks/useCreateInvoice";
 import { BTN_ONCLICK } from "../../../../../../Common/utils/Buttons";
-import { useAccountDetails } from "../../../../../../../../lib/userContext";
+import { useAccountDetails } from "../../../../../../../../context/userContext";
+import { useCouponContext } from "../../../../../../../../context/CouponContext";
 
 //import { loadStripe } from "@stripe/stripe-js";
 
 export const CreateNewInvoice = (props) => {
   const { productId, onConfirm, startDate, endDate } = props;
+  const { coupon } = useCouponContext();
   const [invoice, createInvoice] = useCreateInvoice();
   const [loading, setLoading] = useState(false);
   const [confirmState, setConfirmState] = useState(false);
@@ -16,8 +18,8 @@ export const CreateNewInvoice = (props) => {
   const handleBuy = async (productId) => {
     setLoading(true);
     //console.log("handleBuy ", productId, startDate, endDate);
-    await createInvoice(productId, startDate, endDate).catch((err) => {
-      console.error(err); 
+    await createInvoice(productId, startDate, endDate,coupon ? coupon.APIID : null).catch((err) => {
+      console.error(err);
     });
   };
 
@@ -46,7 +48,7 @@ export const CreateNewInvoice = (props) => {
     <Group position="apart">
       <BTN_ONCLICK
         LABEL={
-          loading ? "Processing..." : confirmState ? "Confirm" : "Purchase"
+          loading ? "Processing..." : confirmState ? "Confirm" : "Select Plan"
         }
         HANDLE={handleClick}
         THEME="success"
@@ -66,7 +68,7 @@ export const CreateNewInvoice = (props) => {
     const stripe = await stripePromise;
     await stripe.redirectToCheckout({ sessionId: Subscription.id });
   }; */
-/* 
+/*
   useEffect(() => {
     if (Subscription !== null) {
       CreateStripePromise(Subscription)

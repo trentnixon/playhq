@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { useRouter } from "next/router";
-import { useUser } from "../../lib/authContext";
+import { useUser } from "../../context/authContext";
 import {
   MembersWrapper,
   Wrapper,
@@ -17,13 +17,13 @@ const UserVerification = () => {
   useEffect(() => {
     const handleRedirect = async () => {
       if (isRedirecting.current) return;
-    
+
       if (user === null || user === undefined) {
         console.error("User is null or undefined");
         await router.push("/");
         return;
       }
-    
+
       isRedirecting.current = true;
       try {
         if (prev) {

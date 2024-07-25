@@ -2,7 +2,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { useCreateStripePortal } from "../../../Hooks/useSubscription";
 import { BTN_ONCLICK } from "../Common/utils/Buttons";
-import { useAccountDetails } from "../../../lib/userContext";
+import { useAccountDetails } from "../../../context/userContext";
 import { useRouter } from "next/router";
 
 export const BTN_ManageSubscription = ({Label, theme='cta'}) => {
@@ -38,7 +38,7 @@ export const BTN_ManageSubscription = ({Label, theme='cta'}) => {
       LABEL={Label}
       HANDLE={manageSubscription}
       THEME={theme}
-      
+
     />
   );
 };

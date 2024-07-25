@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { useRouter } from 'next/router';
-import { useUser } from '../../../../lib/authContext';
+import { useUser } from '../../../../context/authContext';
 
 export default function withUserAuth(Component) {
   return function WrappedComponent(props) {

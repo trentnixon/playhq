@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import { useUser } from "../../lib/authContext";
-import { useAccountDetails } from "../../lib/userContext";
+import { useUser } from "../../context/authContext";
+import { useAccountDetails } from "../../context/userContext";
 import { PageTitle } from "../../components/Members/Common/Type";
 import { Space } from "@mantine/core";
 

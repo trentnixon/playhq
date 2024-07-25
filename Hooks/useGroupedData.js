@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import { useGetOrganizationDetails } from './useGetOrganizationDetails';
-import { useAccountDetails } from '../lib/userContext';
+import { useAccountDetails } from '../context/userContext';
 
 const useGroupedData = (switchValue) => {
   const { account } = useAccountDetails();

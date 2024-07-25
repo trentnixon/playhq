@@ -1,7 +1,7 @@
 import React, { useEffect, useContext } from "react";
 import Router from "next/router";
-import { useAccountDetails } from "../../../../lib/userContext";
-import { useUser } from "../../../../lib/authContext";
+import { useAccountDetails } from "../../../../context/userContext";
+import { useUser } from "../../../../context/authContext";
 
 const HasCompletedStartSequence = ({ children }) => {
   const { account } = useAccountDetails();

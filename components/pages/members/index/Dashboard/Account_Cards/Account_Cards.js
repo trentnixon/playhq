@@ -1,5 +1,5 @@
 import { IconUserCircle } from "@tabler/icons-react";
-import { useAccountDetails } from "../../../../../../lib/userContext";
+import { useAccountDetails } from "../../../../../../context/userContext";
 import { AccountCardGrid } from "./components/AccountCardGrid";
 import { SubHeaders } from "../../../../../Members/Common/Type";
 

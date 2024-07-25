@@ -1,7 +1,7 @@
 // react
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import { useUser } from "../../lib/authContext";
+import { useUser } from "../../context/authContext";
 // UTILS
 import { fetcher } from "../../lib/api";
 import Cookies from "js-cookie";
@@ -12,7 +12,7 @@ import { MembersWrapper } from "../../components/Members/Common/Containers";
 import { showNotification } from "@mantine/notifications";
 
 import { FixturaLoading } from "../../components/Members/Common/Loading";
-import { useAccountDetails } from "../../lib/userContext";
+import { useAccountDetails } from "../../context/userContext";
 import { FixturaDivider } from "../../components/Members/Common/Divider";
 
 import qs from "qs";

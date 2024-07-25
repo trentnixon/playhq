@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 import { BTN_ONCLICK } from "../../Common/utils/Buttons";
 import { useChangeSubscription } from "../../../../Hooks/useOrder";
-import { useAccountDetails } from "../../../../lib/userContext";
+import { useAccountDetails } from "../../../../context/userContext";
 
 import { Group } from "@mantine/core";
 

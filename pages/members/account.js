@@ -1,7 +1,7 @@
 // react
 import { useEffect, useState } from "react";
 /* import { useRouter } from "next/router"; */
-import { useUser } from "../../lib/authContext";
+import { useUser } from "../../context/authContext";
 // UTILS
 
 // PACK
@@ -14,7 +14,7 @@ import { LoadingStateWrapper } from "../../components/Members/Account/HOC/Loadin
 import SetupCheck from "../../components/Members/Account/HOC/SetupCheck";
 import Adminfetcher from "../../lib/Adminfetcher";
 
-import { useAccountDetails } from "../../lib/userContext";
+import { useAccountDetails } from "../../context/userContext";
 import { FixturaDivider } from "../../components/Members/Common/Divider";
 import { getIdFromLocalCookie } from "../../lib/auth";
 

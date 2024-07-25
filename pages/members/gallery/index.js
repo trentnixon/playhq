@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import cookie from "cookie";
 import { IconPhotoPlus } from "@tabler/icons-react";
-import { useAccountDetails } from "../../../lib/userContext";
-import { useUser } from "../../../lib/authContext";
+import { useAccountDetails } from "../../../context/userContext";
+import { useUser } from "../../../context/authContext";
 import { fetcher } from "../../../lib/api";
 import {
   P,

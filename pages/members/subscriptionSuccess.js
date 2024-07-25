@@ -13,7 +13,7 @@ import {
   BTN_TOEXTLINK,
   BTN_TOINTERALLINK,
 } from "../../components/Members/Common/utils/Buttons";
-import { useAccountDetails } from "../../lib/userContext";
+import { useAccountDetails } from "../../context/userContext";
 import Meta from "../../components/Layouts/Meta";
 
 const StripeSuccess = () => {

@@ -4,7 +4,7 @@ import NavbarMain from "./NavbarMain";
 import NavbarMembers from "./NavbarMembers";
 import Footer from "./Fixtura_Footer";
 import { useRouter } from "next/router";
-import { useUser } from "../../lib/authContext";
+import { useUser } from "../../context/authContext";
 
 import withUserAuth from "../Members/Account/HOC/withUserAuth";
 import { MembersLayout } from "./members/MembersLayout";

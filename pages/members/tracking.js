@@ -1,7 +1,7 @@
 // react
 import { useEffect, useState } from "react";
 /* import { useRouter } from "next/router"; */
-import { useUser } from "../../lib/authContext";
+import { useUser } from "../../context/authContext";
 import { getIdFromLocalCookie } from "../../lib/auth";
 // UTILS
 import Adminfetcher from "../../lib/Adminfetcher";
@@ -18,7 +18,7 @@ import {
 } from "../../components/Members/Common/Containers";
 import { showNotification } from "@mantine/notifications";
 
-import { useAccountDetails } from "../../lib/userContext";
+import { useAccountDetails } from "../../context/userContext";
 import { FixturaDivider } from "../../components/Members/Common/Divider";
 
 import { P, PageTitle } from "../../components/Members/Common/Type";
@@ -126,7 +126,7 @@ const TrackingLayout = (props) => {
           <Tabs.Tab value="clubs" icon={<IconUsersGroup size="1.2rem" />}>
             {accountType === "Association" ? "View Clubs" : "View Teams"}
           </Tabs.Tab>
-        </Tabs.List> 
+        </Tabs.List>
 
         <Tabs.Panel value="fixtures" pt="xs">
           <GamesListing gamesData={gamesData} />

@@ -1,7 +1,7 @@
 // react
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import { useUser } from "../../lib/authContext";
+import { useUser } from "../../context/authContext";
 // UTILS
 import { fetcher } from "../../lib/api";
 import Cookies from "js-cookie";
@@ -23,7 +23,7 @@ import {
 import { MembersWrapper } from "../../components/Members/Common/Containers";
 import { showNotification } from "@mantine/notifications";
 
-import { useAccountDetails } from "../../lib/userContext";
+import { useAccountDetails } from "../../context/userContext";
 import { FixturaDivider } from "../../components/Members/Common/Divider";
 import {
   IconCircleCheck,
@@ -52,7 +52,7 @@ const MyPlan = () => {
   const { user, loading } = useUser();
   /*   const router = useRouter();
   const currentRoute = router.pathname;
-  
+
 
   useEffect(() => {
     if (!user) router.push(`/members/verification/?prev=${currentRoute}`);
@@ -202,7 +202,7 @@ const MyPlan = () => {
 };
 
 /* MyPlan.getInitialProps = async (ctx) => {
-  
+
 };
  */
 export default MyPlan;

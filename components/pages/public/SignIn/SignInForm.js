@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useUser } from "../../../../lib/authContext";
+import { useUser } from "../../../../context/authContext";
 import UserLoggedIn from "./LoginSuccess";
 import { useLogUser } from "../../../../Hooks/useAuthLocal";
 import { SignInError } from "./SignInError";

@@ -1,7 +1,7 @@
 import { Group } from "@mantine/core";
 import { P } from "../../../../Members/Common/Type";
 import { BTN_TOINTERALLINK } from "../../../../Members/Common/utils/Buttons";
-import { useAccountDetails } from "../../../../../lib/userContext";
+import { useAccountDetails } from "../../../../../context/userContext";
 
 import { RoundedSectionContainer } from "../../../../UI/Containers/SectionContainer";
 

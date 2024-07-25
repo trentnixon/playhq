@@ -1,0 +1,17 @@
+@import '../HomePage.module.scss';
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+
+  @media (max-width: 768px) {
+    padding: 0 15px;
+  }
+}
+
+
+.gradientContainer {
+  background: linear-gradient(to bottom, $section-gradient-start, $section-gradient-end);
+  padding: 60px 0;
+}

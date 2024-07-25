@@ -3,8 +3,8 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { Container } from '../../pas/Primitives/Containers';
 import styles from './Solution.module.scss';
-import AutomatedContentSolution from './components/AutomatedContentSolution';
 import WhyChooseFixtura from './components/WhyChooseFixtura';
+import AutomatedContentSolution from './components/AutomatedContentSolution';
 
 gsap.registerPlugin(ScrollTrigger);
 

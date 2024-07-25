@@ -13,9 +13,11 @@ import {
 export const useCreateInvoice = () => {
   const [invoice, setInvoice] = useState(null);
 
-  const createInvoice = async (product_id, startDate, endDate) => {
+  const createInvoice = async (product_id, startDate, endDate, couponId) => {
     const token = Cookies.get("jwt");
     const user = await getUserFromLocalCookie();
+
+    console.log("couponId ", couponId)
     if (user) {
       if (token) {
         try {
@@ -34,6 +36,7 @@ export const useCreateInvoice = () => {
                 product_id,
                 startDate,
                 endDate,
+                couponId,
               }),
             }
           );

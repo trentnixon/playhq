@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { useAccountDetails } from "../../../lib/userContext";
-import { useUser } from "../../../lib/authContext";
+import { useAccountDetails } from "../../../context/userContext";
+import { useUser } from "../../../context/authContext";
 import cookie from "cookie"; // Make sure to import the cookie library
 import { fetcher } from "../../../lib/api";
 import {

@@ -12,7 +12,7 @@ import { Box, Center, Container, Loader, Stack } from "@mantine/core";
 import { BTN_TOINTERALLINK } from "../../components/Members/Common/utils/Buttons";
 import { IconError404 } from "@tabler/icons";
 import { FixturaLoading } from "../../components/Members/Common/Loading";
-import { useAccountDetails } from "../../lib/userContext";
+import { useAccountDetails } from "../../context/userContext";
 import Meta from "../../components/Layouts/Meta";
 
 const StripeError = () => {

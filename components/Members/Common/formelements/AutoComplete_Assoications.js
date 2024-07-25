@@ -7,13 +7,13 @@ import Cookies from "js-cookie";
 import { P } from "../Type";
 import { IconCheck } from "@tabler/icons-react";
 import { FixturaLoading } from "../Loading";
-import { useAccountDetails } from "../../../../lib/userContext";
+import { useAccountDetails } from "../../../../context/userContext";
 
 const ConfirmButtons = ({ handleConfirmClick, handleChangeClick, name }) => {
   const [showFinalConfirm, setShowFinalConfirm] = useState(false);
   return (
     <>
-     
+
       <Group position="right" noWrap={true}>
         {showFinalConfirm ? (
         <>
@@ -47,7 +47,7 @@ const ConfirmButtons = ({ handleConfirmClick, handleChangeClick, name }) => {
         )}
       </Group>
 
-     
+
     </>
   );
 };

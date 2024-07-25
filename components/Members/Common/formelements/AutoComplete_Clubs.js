@@ -6,7 +6,7 @@ import { fetcher } from "../../../../lib/api";
 import Cookies from "js-cookie";
 import { P } from "../Type";
 import { IconCheck } from "@tabler/icons-react";
-import { useAccountDetails } from "../../../../lib/userContext";
+import { useAccountDetails } from "../../../../context/userContext";
 import { FixturaLoading } from "../Loading";
 
 const ConfirmButtons = ({ handleConfirmClick, handleChangeClick, name }) => {

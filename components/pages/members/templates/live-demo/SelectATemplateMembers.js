@@ -3,7 +3,7 @@
 import { useEffect, useState, useMemo } from "react";
 import { Container, SimpleGrid } from "@mantine/core";
 import { useAssignDesignElement } from "../../../../../Hooks/useCustomizer";
-import { useAccountDetails } from "../../../../../lib/userContext";
+import { useAccountDetails } from "../../../../../context/userContext";
 import { P } from "../../../../Members/Common/Type";
 import { FixturaDivider } from "../../../../Members/Common/Divider";
 import { RoundedSectionContainer } from "../../../../UI/Containers/SectionContainer";

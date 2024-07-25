@@ -5,7 +5,7 @@ import {
   Group,
   Paper,
   Table,
-  useMantineTheme, 
+  useMantineTheme,
 } from "@mantine/core";
 import {
   useAssignDesignElement,
@@ -13,14 +13,14 @@ import {
 } from "../../../Hooks/useCustomizer";
 import { BTN_ONCLICK } from "../Common/utils/Buttons";
 import { IconCircleCheck } from "@tabler/icons";
-import { useAccountDetails } from "../../../lib/userContext";
+import { useAccountDetails } from "../../../context/userContext";
 import { P, SubHeaders } from "../Common/Type";
 import { DisplayCustomTheme } from "../Common/Customiser/Design/Components/DisplayCustomTheme";
 import { CreateNewTheme } from "../Common/Customiser/Design/Components/CreateNewTheme";
 import { useMediaQuery } from "@mantine/hooks";
 import { FixturaLoading } from "../Common/Loading";
 import { IconColorSwatch, IconFileDownload } from "@tabler/icons-react";
- 
+
 export const UpdateYourTheme = () => {
   const { account, ReRender } = useAccountDetails();
   const [userAccount, setuserAccount] = useState(account);

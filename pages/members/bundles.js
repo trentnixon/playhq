@@ -1,6 +1,6 @@
 import React from "react";
 import { useEffect } from "react";
-//import { useUser } from "../../lib/authContext";
+//import { useUser } from "../../context/authContext";
 //import Cookies from "js-cookie";
 
 // COmponents
@@ -14,7 +14,7 @@ import { IconDownload } from "@tabler/icons";
 import Adminfetcher from "../../lib/Adminfetcher";
 import { DownloadCopy } from "../../components/pages/members/bundles/DownloadCopy";
 
-import { useAccountDetails } from "../../lib/userContext";
+import { useAccountDetails } from "../../context/userContext";
 import SecureRouteHOC from "../../components/Layouts/members/security/SecureRouteHC";
 import { PageMetaData } from "../../components/Layouts/members/Meta/pageMetaData";
 import { RoundedSectionContainer } from "../../components/UI/Containers/SectionContainer";

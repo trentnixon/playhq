@@ -1,0 +1,76 @@
+/* Color Variables */ 
+$hero-gradient-start: #343A40;
+$hero-gradient-middle: #298DA7;
+$hero-gradient-end: #FDE5C1;
+$section-gradient-start: #2B7F95;
+$section-gradient-end: #49C3E4;
+$white-copy-color: #FFFFFF;
+$dark-copy-color: #000000;
+$highlight-color-1: #FFF934;
+$highlight-color-2: #8D8900;
+$highlight-color-3: #46BBDB;
+$background-1: #FFFFFF;
+$background-2: #434448;
+$background-3: #333741;
+$background-4-start: #2B7F95;
+$background-4-end: #49C3E4; 
+ 
+/* Typography */
+@mixin h1 {
+  font-size: 80px;
+  font-weight: black;
+  line-height: 1.2;
+  letter-spacing: -1px;
+  color: $dark-copy-color;
+}
+
+@mixin h2 {
+  font-size: 40px;
+  font-weight: medium;
+  color: $dark-copy-color;
+}
+
+@mixin p {
+  font-size: 20px;
+  color: $dark-copy-color;
+}
+
+/* Gradients */
+@mixin hero-gradient {
+  background: linear-gradient(125deg, $hero-gradient-start, $hero-gradient-middle, $hero-gradient-end, $hero-gradient-start);
+}
+
+@mixin section-gradient {
+  background: linear-gradient(180deg, $section-gradient-start, $section-gradient-end);
+}
+@mixin gray-gradient {
+  background: linear-gradient(180deg, $background-1 0%, $background-2 15%,);
+}
+
+/* Backgrounds */
+@mixin background-1 {
+  background-color: $background-1;
+}
+
+@mixin background-2 {
+  background-color: $background-2;
+}
+
+@mixin background-3 {
+  background-color: $background-3;
+}
+
+@mixin background-4 {
+  background: linear-gradient(to right, $background-4-start, $background-4-end);
+}
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+
+  @media (max-width: 768px) {
+    padding: 0 15px;
+  }
+}

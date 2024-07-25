@@ -1,5 +1,5 @@
 // Components
-import MainBanner from "../components/pages/public/index/MainBanner";
+//import MainBanner from "../components/pages/public/index/MainBanner";
 import Services from "../components/pages/public/index/Services";
 import FunFacts from "../components/Common/FunFacts";
 import CtaArea from "../components/Common/CtaAreaTwo";
@@ -19,10 +19,7 @@ const Index = () => {
         keywords="Fixtura, PlayHQ clubs, sports content creation, AI-powered social media, cricket digital assets, sports clubs marketing"
       />
       <Hero />
-      {/* <MainBanner /> */}
-
       <Services />
-
       <FunFacts />
       <Feedback />
       <FixturaPricingCards />
@@ -44,3 +41,7 @@ export const getServerSideProps = async (context) => {
     },
   };
 };
+
+{
+  /* <MainBanner /> */
+}

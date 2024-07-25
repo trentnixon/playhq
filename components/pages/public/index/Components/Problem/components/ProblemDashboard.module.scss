@@ -1,0 +1,12 @@
+@import "../../HomePage.module.scss";
+
+.problemDashboard {
+  display: flex;
+  justify-content: center;
+  padding: 0px 20px;
+
+  .dashboardImage {
+    max-width: 100%;
+    margin-top: -120px;
+  }
+}

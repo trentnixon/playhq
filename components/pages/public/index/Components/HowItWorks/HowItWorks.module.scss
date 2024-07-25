@@ -1,0 +1,67 @@
+@import "../HomePage.module.scss";
+
+.howItWorks {
+  padding: 50px 0;
+  background-color: $background-2;
+
+  .stickyTitle {
+    position: sticky;
+    top: 70px;
+    background: #434448;
+    width: 100%;
+    z-index: 200;
+    padding: 30px 0;
+    max-height: 70px;
+    text-transform: uppercase;
+    @media (max-width: 768px) {
+      top: 65px;
+    
+    }
+
+    &.shrink {
+      transition: all 0.3s ease;
+      background: #fff;
+      padding: 10px 0 5px;
+      @media (max-width: 768px) {
+        top: 65px;
+      
+      }
+      h1 {
+        //transition: all 0.3s ease;
+        font-size: 25px;
+        letter-spacing: -1px;
+        color: $background-3;
+        @media (max-width: 768px) {
+          font-size: 20px;
+          max-width: 80%;
+        }
+      }
+    }
+  }
+
+  h1 {
+    @include h1;
+    text-align: center;
+    margin: 0px auto;
+    color: $white-copy-color;
+    font-size: 50px;
+    max-width: 800px;
+    line-height: 1em;
+
+    span {
+      color: $section-gradient-end;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 30px;
+      margin-bottom: 0px;
+    }
+  }
+
+  .trackSeason,
+  .learnFixtura,
+  .dataAggregation,
+  .contentCreation {
+    margin-bottom: 40px; // Add spacing between sections
+  }
+}

@@ -19,7 +19,7 @@ const Index = () => {
         keywords="Fixtura, PlayHQ clubs, sports content creation, AI-powered social media, cricket digital assets, sports clubs marketing, digital content solutions, automated content creation"
       />
       <Hero />
-      <Problem /> 
+      <Problem />  
       <Agitate />
       <Solution />
       <Features />

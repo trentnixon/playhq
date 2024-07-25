@@ -13,7 +13,7 @@ import {
 } from "../../../../../Hooks/useCustomizer";
 import { BTN_ONCLICK } from "../../utils/Buttons";
 import { IconCircleCheck } from "@tabler/icons";
-import { useAccountDetails } from "../../../../../lib/userContext";
+import { useAccountDetails } from "../../../../../context/userContext";
 import { P, SubHeaders } from "../../Type";
 import { DisplayCustomTheme } from "./Components/DisplayCustomTheme";
 import { CreateNewTheme } from "./Components/CreateNewTheme";

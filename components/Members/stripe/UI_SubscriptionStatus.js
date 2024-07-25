@@ -2,7 +2,7 @@ import { ColorSwatch, useMantineTheme, Tooltip } from "@mantine/core";
 import { useState, useEffect } from "react";
 import { FixturaLoading } from "../../../components/Members/Common/Loading";
 import { P } from "../../../components/Members/Common/Type";
-import { useAccountDetails } from "../../../lib/userContext";
+import { useAccountDetails } from "../../../context/userContext";
 
 export const UI_SubscriptionStatus_TEXT = () => {
   const { account } = useAccountDetails();

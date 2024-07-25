@@ -1,5 +1,5 @@
 // src/components/Members/PrefabPlayerGrid.js
-import { useAccountDetails } from "../../../../lib/userContext";
+import { useAccountDetails } from "../../../../context/userContext";
 import { PrefabPlayerGridShared } from "./PrefabPlayerGridShared";
 
 export const PrefabPlayerGridMembers = () => {

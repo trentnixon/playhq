@@ -11,7 +11,7 @@ import { StrapiImageUploader } from "./ImageUploader";
 import { SponsorCreatedConfirm } from "../Components/SponsorCreatedConfirm";
 import { DisplaySponsorsLogo } from "./DisplaySponsorsLogo";
 import { InputFormContainer } from "./InputFormContainer";
-import { useAccountDetails } from "../../../../../lib/userContext";
+import { useAccountDetails } from "../../../../../context/userContext";
 import { FixturaLoading } from "../../../../Members/Common/Loading";
 
 export const CreateaSponsorForm = ({ OBJ }) => {

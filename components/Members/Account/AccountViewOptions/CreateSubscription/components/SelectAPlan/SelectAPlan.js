@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Group } from "@mantine/core";
 import { useGetSubscriptionTiers } from "../../../../../../../Hooks/useSubscriptionTiers";
-import { useAccountDetails } from "../../../../../../../lib/userContext";
+import { useAccountDetails } from "../../../../../../../context/userContext";
 import { FindAccountType } from "../../../../../../../lib/actions";
 import { CreateNewInvoice } from "./components/CreateANewInvoice";
 import dayjs from "dayjs";

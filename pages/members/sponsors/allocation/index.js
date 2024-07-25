@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useAccountDetails } from "../../../../lib/userContext";
+import { useAccountDetails } from "../../../../context/userContext";
 import { IconCheck } from "@tabler/icons";
 import { P, PageTitle } from "../../../../components/Members/Common/Type";
 import { PageMetaData } from "../../../../components/Layouts/members/Meta/pageMetaData";
@@ -111,7 +111,7 @@ const SponsorAllocation = () => {
           "This sponsor will appear whenever this grade is mentioned on a video or a graphic.",
       })),
     },
-    { 
+    {
       title: "Teams",
       description: "Sponsorship options specific to different teams.",
       levels: dynamicEntities.teams.map((team) => ({

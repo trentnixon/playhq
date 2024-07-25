@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { getAccountFromLocalCookie, unsetToken } from "../../lib/auth";
-import { useUser } from "../../lib/authContext";
+import { useUser } from "../../context/authContext";
 import Link from "../../utils/ActiveLink";
 import { useRouter } from "next/router";
 import {
@@ -16,7 +16,7 @@ import {
   IconTrack,
 } from "@tabler/icons-react";
 import { Group, Image, useMantineTheme } from "@mantine/core";
-import { useAccountDetails } from "../../lib/userContext";
+import { useAccountDetails } from "../../context/userContext";
 import { IsFreeTrial } from "../Members/Account/userIsFreeTrial";
 import { IsFreeTrialWelcome } from "../Members/Account/components/isTrialNotifications.js/FreeTrialMessaging";
 

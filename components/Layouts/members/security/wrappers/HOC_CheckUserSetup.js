@@ -11,7 +11,7 @@ import {
 import { useMediaQuery } from "@mantine/hooks";
 import { IconTools, IconEye, IconCreditCard } from "@tabler/icons";
 
-import { useAccountDetails } from "../../../../../lib/userContext";
+import { useAccountDetails } from "../../../../../context/userContext";
 import { P, PageTitle } from "../../../../Members/Common/Type";
 import { Wrapper } from "../../../../Members/Common/Containers";
 import { FixturaLoading } from "../../../../Members/Common/Loading";

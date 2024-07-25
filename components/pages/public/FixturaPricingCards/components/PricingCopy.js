@@ -1,13 +1,10 @@
 import dayjs from "dayjs";
 import { H, P } from "../../../../Members/Common/Type";
-import {
-  Box,
-  Center,
-  Divider,
-  Group,
-  Table,
-  useMantineTheme,
-} from "@mantine/core";
+import { Box, Center, Divider, Group, Table } from "@mantine/core";
+import CouponInput from "./CouponInput";
+import { useCouponContext } from "../../../../../context/CouponContext";
+import { useState } from "react";
+
 export const PricingHeader = ({ product }) => {
   return (
     <div className="pricing-header">
@@ -38,6 +35,19 @@ export const PricingSubtitle = ({ product }) => {
 
 export const PricingDescription = (props) => {
   const { product, selected } = props;
+  const { coupon } = useCouponContext();
+  const [hasCoupon, setHasCoupon] = useState(false);
+
+  let totalCost = product?.price;
+  if (coupon) {
+    if (coupon.DiscountType === "percentage") {
+      totalCost -= (totalCost * coupon.DiscountValue) / 100;
+    } else if (coupon.DiscountType === "fixed_amount") {
+      totalCost -= coupon.DiscountValue;
+    }
+
+    hasCoupon ? false : setHasCoupon(true);
+  }
 
   return (
     <Box
@@ -50,15 +60,19 @@ export const PricingDescription = (props) => {
       <P textAlign="center"> {product?.DaysInPass} Days Covered</P>
       <P>{product.description}</P>
       {selected ? <ShowAdditionalInformation {...props} /> : false}
+      {selected ? <CouponInput /> : false}
+
       <Divider mb={10} />
       <Group position="apart">
-        <P marginBottom={0}>Total Cost: </P>
-
+        <P marginBottom={0}>
+          Total Cost: {hasCoupon ? "(Coupon Applied)" : false}
+        </P>
         <P Weight={900} marginBottom={0}>
           <sup>$</sup>
-          {product?.price}
+          {totalCost.toFixed(2)}
         </P>
       </Group>
+
       <Divider my={10} />
     </Box>
   );

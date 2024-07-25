@@ -1,0 +1,87 @@
+@import "../../HomePage.module.scss";
+
+.dataAggregation {
+  text-align: center;
+  padding: 50px 20px;
+  margin-top: 150px;
+  position: relative;
+
+  h2 {
+    @include h2;
+    color: $white-copy-color;
+    font-weight: 800;
+    span {
+      color: $section-gradient-end;
+    }
+  }
+
+  p {
+    @include p;
+    color: $white-copy-color;
+    margin-bottom: 10px;
+    font-size: 2em;
+  }
+
+  .content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 40%;
+    margin: 0 auto;
+    height: 60vh;
+    position: relative;
+    @media (max-width: 768px) {
+      width: 100%;
+      margin: 0 auto;
+    }
+  }
+
+  .fixtura,
+  .db {
+    margin: 20px;
+    z-index: 200;
+    img {
+      max-width: 150px;
+      height: auto;
+      
+      @media (max-width: 768px) {
+        max-width: 100px;
+      }
+    }
+  }
+
+  .db {
+    img {
+      filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.3));
+    }
+  }
+
+  .scoresContainer {
+    position: absolute;
+    width: 100%;
+    height: 100%; // Adjust height as needed
+    top: 0;
+    left: 0;
+  }
+
+  .scores {
+    position: relative;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%; // Ensure the scores are centered
+    height: 100%; // Full height of the container
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .score {
+    z-index: 100;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 3em; // Adjust size as needed
+    color: $section-gradient-end;
+    font-weight: bold;
+  }
+}

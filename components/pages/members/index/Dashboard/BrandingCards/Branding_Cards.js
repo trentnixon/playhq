@@ -1,5 +1,5 @@
 import { IconColorSwatch, IconUserCircle } from "@tabler/icons-react";
-import { useAccountDetails } from "../../../../../../lib/userContext";
+import { useAccountDetails } from "../../../../../../context/userContext";
 import { SubHeaders } from "../../../../../Members/Common/Type";
 import { BrandingCardGrid } from "./components/BrandingCardGrid";
 

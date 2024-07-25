@@ -1,5 +1,5 @@
 import { Group } from "@mantine/core";
-import { useAccountDetails } from "../../../../../../lib/userContext";
+import { useAccountDetails } from "../../../../../../context/userContext";
 import { P } from "../../../../../Members/Common/Type";
 import { RoundedSectionContainer } from "../../../../../UI/Containers/SectionContainer";
 import { SetUpItemsRequired } from "./SetUpItemsRequired";

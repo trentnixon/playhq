@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 
 import { FixturaLoading } from "../../../components/Members/Common/Loading";
 import { BTN_ONCLICK } from "../../../components/Members/Common/utils/Buttons";
-import { useAccountDetails } from "../../../lib/userContext";
+import { useAccountDetails } from "../../../context/userContext";
 import { Group } from "@mantine/core";
 
 export const BTN_SubscribeToFixtura = () => {

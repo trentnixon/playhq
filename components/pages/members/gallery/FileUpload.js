@@ -4,7 +4,7 @@ import { Group } from "@mantine/core";
 import { DetailsForm } from "./DetailsForm";
 import { BTN_ONCLICK } from "../../../Members/Common/utils/Buttons";
 import { FixturaLoading } from "../../../Members/Common/Loading";
-import { useAccountDetails } from "../../../../lib/userContext";
+import { useAccountDetails } from "../../../../context/userContext";
 import { useSetImage, useUpdateSetImage } from "../../../../Hooks/useGalleryImage";
 
 import StrapiImageUploader from "../sponsors/Form/ImageUploader";

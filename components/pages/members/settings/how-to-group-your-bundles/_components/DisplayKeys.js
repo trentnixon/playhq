@@ -6,7 +6,7 @@ import {
 
 import { P, SectionHeaders } from "../../../../../Members/Common/Type";
 import { useGetOrganizationDetails } from "../../../../../../Hooks/useGetOrganizationDetails";
-import { useAccountDetails } from "../../../../../../lib/userContext";
+import { useAccountDetails } from "../../../../../../context/userContext";
 import {
   categorizeTeamsByAgeGroup,
   categorizeTeamsBySeniorJunior,

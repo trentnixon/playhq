@@ -1,7 +1,7 @@
 import { SimpleGrid } from "@mantine/core";
 
 import { IconBrush } from "@tabler/icons";
-import { useAccountDetails } from "../../../../../../../lib/userContext";
+import { useAccountDetails } from "../../../../../../../context/userContext";
 import { DashBoardGalleryItems } from "../cards/GalleryItems";
 import { IconPhotoPlus } from "@tabler/icons-react";
 import { DashBoardTheme } from "../cards/Theme";

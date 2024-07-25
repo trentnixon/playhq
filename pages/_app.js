@@ -2,12 +2,12 @@ import React, { useEffect } from "react";
 import { Analytics } from "@vercel/analytics/react";
 import AOS from "aos";
 import "../node_modules/aos/dist/aos.css";
-import '../styles/tailwind.css';
+import "../styles/tailwind.css";
 
 import "../styles/bootstrap.min.css";
 import "animate.css";
 import "../styles/animate.min.css";
-import "../styles/all.min.css"; 
+import "../styles/all.min.css";
 import "../styles/pe-icon-7-stroke.css";
 import "react-accessible-accordion/dist/fancy-example.css";
 import "swiper/css";
@@ -24,8 +24,9 @@ import "../styles/responsive.scss";
 import GoTop from "../components/Layouts/GoTop";
 import { MantineProviderWrapper } from "../utils/MantineTheme";
 import { initGA, trackWebVitals } from "../lib/GA";
-import { UserProvider } from "../lib/authContext";
-import { AccountDetailsProvider } from "../lib/userContext";
+import { UserProvider } from "../context/authContext";
+import { AccountDetailsProvider } from "../context/userContext";
+import { CouponProvider } from "../context/CouponContext";
 
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
@@ -42,11 +43,13 @@ function MyApp({ Component, pageProps }) {
   return (
     <UserProvider>
       <AccountDetailsProvider>
-        <MantineProviderWrapper>
-          {getLayout(<Component {...pageProps} />)}
-          <GoTop />
-        </MantineProviderWrapper>
-        <Analytics />
+        <CouponProvider>
+          <MantineProviderWrapper>
+            {getLayout(<Component {...pageProps} />)}
+            <GoTop />
+          </MantineProviderWrapper>
+          <Analytics />
+        </CouponProvider>
       </AccountDetailsProvider>
     </UserProvider>
   );

@@ -1,0 +1,70 @@
+@import "../../HomePage.module.scss";
+
+.trackSeason {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 50px 20px;
+  margin-top: 150px;
+
+  h2 {
+    @include h2;
+    font-weight: 900;
+    color: $white-copy-color; 
+    margin-bottom: 0px;
+
+    span {
+      color: $section-gradient-end;
+    }
+  }
+
+  p {
+    @include p;
+    color: $white-copy-color;
+    margin-bottom: 10px;
+    font-size: 2em;
+  }
+
+  .content {
+    display: flex;
+    flex: 1;
+    width: 50%;
+    @media (max-width: 768px) {
+      flex-direction: column;
+      width: 100%;
+    }
+
+    .copy {
+      margin: 20px 0;
+      width: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      @media (max-width: 768px) {
+        width: 100%;
+        margin: 0;
+      }
+      p {
+        font-size: 2em;
+        text-align: left;
+        @media (max-width: 768px) {
+          text-align: center;
+        }
+      }
+    }
+
+    .calendar {
+      margin: 20px 0;
+      width: 300px;
+      @media (max-width: 768px) {
+        width: 300px;
+        margin: 0 auto;
+      }
+      svg {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+}

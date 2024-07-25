@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-import { useAccountDetails } from "../../../../lib/userContext";
+import { useAccountDetails } from "../../../../context/userContext";
 import { LoadingStateWrapper } from "../HOC/LoadingStateWrapper";
 import { CreateFreeTrial } from "./CreateFreeTrial/userCreateFreeTrial";
 import { UserSubscription } from "./CreateSubscription/userSubscription";
@@ -21,7 +21,7 @@ export const UsersAccountStatusViews = () => {
     subscribed: <UserSubscriptionActive />,
     ended_paid_subscription: <UserSubscription />,
   };
-   
+
   useEffect(() => {}, [account]);
   //console.log("getTrialNotificationStatus(account) ", getTrialNotificationStatus(account))
   const componentToRender = trialStatusObj[getTrialNotificationStatus(account)];
@@ -32,4 +32,3 @@ export const UsersAccountStatusViews = () => {
     </LoadingStateWrapper>
   );
 };
- 

@@ -92,7 +92,7 @@ const CTA = () => {
         <CTABUTTON styles={styles} />
         <H2 className="fade-in-up">Start Your Free Trial Now</H2>
         <div className={styles.images}>
-          <img
+          <img 
             ref={(el) => (imagesRef.current[0] = el)}
             src="https://fixtura.s3.ap-southeast-2.amazonaws.com/Example_Small_5_7e6c0b5c0f.png"
             alt="Image 1"

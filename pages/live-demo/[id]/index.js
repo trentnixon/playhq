@@ -6,7 +6,7 @@ import { PageTitle } from "../../../components/Members/Common/Type";
 import { IconColorPicker } from "@tabler/icons-react";
 import TemplateError from "../../../components/pages/members/templates/TemplateError";
 import TemplateDetails from "../../../components/pages/members/templates/TemplateDetails";
-import { TemplateProvider, useTemplate } from "../../../lib/TemplateContext";
+import { TemplateProvider, useTemplate } from "../../../context/TemplateContext";
 import TemplateCTABtns from "../../../components/Common/live-demo/Template/TemplateCTABtns";
 import Section from "../../../components/UI/DefaultSection";
 import { PrefabPlayerGridLiveDemo } from "../../../components/pages/public/templates/template/PrefabPlayerGridLiveDemo";

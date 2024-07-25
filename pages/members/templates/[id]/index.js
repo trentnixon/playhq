@@ -5,14 +5,14 @@ import SecureRouteHOC from "../../../../components/Layouts/members/security/Secu
 import { PageMetaData } from "../../../../components/Layouts/members/Meta/pageMetaData";
 import { PageTitle } from "../../../../components/Members/Common/Type";
 import { IconColorPicker } from "@tabler/icons-react";
-import { useAccountDetails } from "../../../../lib/userContext";
+import { useAccountDetails } from "../../../../context/userContext";
 import { useState, useEffect } from "react";
 import { RoundedSectionContainer } from "../../../../components/UI/Containers/SectionContainer";
 import { PrefabPlayerGridMembers } from "../../../../components/Common/live-demo/Template/PrefabPlayerGridMembers";
 import { useAssignDesignElement } from "../../../../Hooks/useCustomizer";
 import TemplateError from "../../../../components/pages/members/templates/TemplateError";
 import TemplateDetails from "../../../../components/pages/members/templates/TemplateDetails";
-import { TemplateProvider, useTemplate } from "../../../../lib/TemplateContext";
+import { TemplateProvider, useTemplate } from "../../../../context/TemplateContext";
 import TemplateCTABtns from "../../../../components/Common/live-demo/Template/TemplateCTABtns";
 
 const qs = require("qs");

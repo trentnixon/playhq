@@ -1,7 +1,7 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { useAccount } from "../Hooks/useAccount";
-import { getTrialStatus } from "./actions";
-import { getTrialNotificationStatus } from "./members/getTrialNotificationStatus";
+import { getTrialStatus } from "../lib/actions";
+import { getTrialNotificationStatus } from "../lib/members/getTrialNotificationStatus";
 
 export const AccountDetails = createContext({ account: null });
 export const useAccountDetails = () => useContext(AccountDetails);

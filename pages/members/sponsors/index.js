@@ -3,8 +3,8 @@ import { useState, useEffect } from "react";
 import { MembersWrapper } from "../../../components/Members/Common/Containers";
 import { PageTitle } from "../../../components/Members/Common/Type";
 import { IconCheck } from "@tabler/icons";
-import { useAccountDetails } from "../../../lib/userContext";
-import { useUser } from "../../../lib/authContext";
+import { useAccountDetails } from "../../../context/userContext";
+import { useUser } from "../../../context/authContext";
 import Meta from "../../../components/Layouts/Meta";
 // Existing Component Imports
 import { StatusSection } from "../../../components/pages/members/sponsors/Sections/StatusSection";
@@ -71,7 +71,7 @@ const SPONSORS = () => {
               setIsCreate={setIsCreate}
               userAccount={userAccount}
             />
-            
+
           </>
         }
       />

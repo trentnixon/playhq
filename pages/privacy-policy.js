@@ -166,7 +166,7 @@ const PrivacyPolicy = () => {
           <h2>Contact Us</h2>
           <p>
             For any questions or concerns about this privacy policy or how we
-            handle your data, please contact us at [Insert Contact Information].
+            handle your data, please contact us at admin@fixtura.com.au.
           </p>
         </div>
       </div>

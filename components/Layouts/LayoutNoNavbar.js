@@ -1,12 +1,12 @@
 // Components
 import Meta from "./Meta";
 import Footer from "./Fixtura_Footer";
-import {  UserProvider } from "../../lib/authContext";
-import { AccountDetailsProvider } from "../../lib/userContext";
+import {  UserProvider } from "../../context/authContext";
+import { AccountDetailsProvider } from "../../context/userContext";
 
 const LayoutNoNavbar = ({ children }) => {
    return (
-    <UserProvider> 
+    <UserProvider>
       <AccountDetailsProvider>
         <Meta />
         <div className="Container Main">

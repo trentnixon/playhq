@@ -3,17 +3,17 @@ import Router from "next/router";
 import { getAccountFromLocalCookie } from "../../../../lib/auth";
 import Cookies from "js-cookie";
 import { fetcher } from "../../../../lib/api";
-import { useUser } from "../../../../lib/authContext";
+import { useUser } from "../../../../context/authContext";
 import { SignInLoading } from "./SignInLoading";
-//import { useAccountDetails } from "../../lib/userContext";
+//import { useAccountDetails } from "../../context/userContext";
 function withAuth(WrappedComponent) {
   return function (props) {
-   
+
     const [loading, setLoading] = useState(true);
     const { user: userFromProps } = props;
     const { user: userFromHook } = useUser();
     const actualUser = userFromProps || userFromHook;
-    
+
 
     const Redirect = () => {
       Router.push("/members/setup");
@@ -55,7 +55,7 @@ function withAuth(WrappedComponent) {
     useEffect(() => {
       setLoading(true);
       const check = getAccountFromLocalCookie();
-      
+
       if (check === "undefined") {
         Redirect();
       } else {

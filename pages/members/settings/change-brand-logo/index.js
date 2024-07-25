@@ -1,7 +1,7 @@
 /*   */
 
 import { PageTitle } from "../../../../components/Members/Common/Type";
-import { useAccountDetails } from "../../../../lib/userContext";
+import { useAccountDetails } from "../../../../context/userContext";
 import { IconSettings } from "@tabler/icons";
 import { BackToSettings } from "../../../../components/pages/members/settings/_components/BackToSettings";
 import { RoundedSectionContainer } from "../../../../components/UI/Containers/SectionContainer";
@@ -25,7 +25,7 @@ const ChangeBrandLogo = () => {
     title: "How to Group your Bundles - Fixtura",
     description: "How to Group your Bundles",
     keywords: "How to group your Fixtura Bundles",
-  }; 
+  };
 
   return (
     <SecureRouteHOC conditions={[account]}>

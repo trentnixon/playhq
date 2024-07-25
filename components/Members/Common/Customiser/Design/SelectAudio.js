@@ -23,7 +23,7 @@ import {
   IconEarOff,
   IconSquareX,
 } from "@tabler/icons";
-import { useAccountDetails } from "../../../../../lib/userContext";
+import { useAccountDetails } from "../../../../../context/userContext";
 import { P, SubHeaders } from "../../Type";
 import { FixturaDivider } from "../../Divider";
 import { PreviewAudioPlayer } from "./PreviewAudioPlayer";
@@ -132,7 +132,7 @@ export const SelectAudio = ({ isPlaying }) => {
                   <td>
                     <Group>
                       {isPlaying ? (
-                        <IconEarOff color={theme.colors.green[5]} /> 
+                        <IconEarOff color={theme.colors.green[5]} />
                       ) : (
                         <Center>
                           {item.id === currentSong?.id ? (
