@@ -78,7 +78,7 @@ const Subscriptions = () => {
                   <P
                     size={"lg"}
                     Weight={900}
-                  >{`$${product.attributes.price}/Weekly`}</P>
+                  >{`$${product.attributes.price}`}</P>
                   <P>{product.attributes.description}</P>
                   <Box
                     key={i}
