@@ -3,6 +3,8 @@ import {useCurrentFrame} from 'remotion';
 import {FromRightToLeft} from '../../../../Animation/ClipWipe';
 import {interpolateOpacityByFrame} from '../../../../Animation/interpolate';
 import {LadderHeaderItems} from '../../../../common/components/copy/commonAssetTypes';
+import {useStylesContext} from '../../../../context/StyleContext';
+import {useLayoutContext} from '../../../../context/LayoutContext';
 
 const LadderPositionContainer = styled.div`
 	display: flex;
@@ -22,17 +24,26 @@ const Name = styled.span`
 	font-size: 1.3em;
 	font-weight: 400;
 	color: ${(props) => props.color};
-	width: 80%;
+	width: 60%;
 `;
+const MetaContainer = styled.div`
 
+
+	width: 36%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	align-items: center;
+	padding: 5px 0;
+`;
 export const CreateLadderHeader = (props) => {
-	const {
-		FPS_LADDER,
-		StyleConfig,
-		LadderDataPoints,
-		LadderPositionContainerHeight,
-	} = props;
+	const {LadderDataPoints, LadderPositionContainerHeight} = props;
+
+	const {StyleConfig} = useStylesContext();
+	const {TIMINGS} = useLayoutContext();
+
 	const {Font, Color} = StyleConfig;
+	const {FPS_LADDER} = TIMINGS;
 	const frame = useCurrentFrame();
 
 	const LadderDataPointStyles = {
@@ -62,13 +73,15 @@ export const CreateLadderHeader = (props) => {
 			Height={LadderPositionContainerHeight}
 		>
 			<Name color={Color.Secondary.Darken}>{` `}</Name>
-			{LadderDataPoints.map((item, i) => {
-				return (
-					<LadderHeaderItems key={i} customStyles={LadderDataPointStyles}>
-						{item}
-					</LadderHeaderItems>
-				);
-			})}
+			<MetaContainer>
+				{LadderDataPoints.map((item, i) => {
+					return (
+						<LadderHeaderItems key={i} customStyles={LadderDataPointStyles}>
+							{item}
+						</LadderHeaderItems>
+					);
+				})}
+			</MetaContainer>
 		</LadderPositionContainer>
 	);
 };

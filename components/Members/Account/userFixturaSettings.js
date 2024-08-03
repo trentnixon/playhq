@@ -65,7 +65,7 @@ const useStyles = createStyles((theme) => ({
 }));
 
 export const FixturaSettings = ({ user, setHasUpdated }) => {
- 
+
   const data = [
     {
       title: "Account Type",
@@ -204,7 +204,7 @@ export const SetupInputs = ({ user, setHasUpdated }) => {
         />
 
         <DBCheckbox
-          label="You, being the rights holder, grant Fixtura the authority to use PlayHQ data to produce assets for your organization on a weekly basis."
+          label="By checking this box, you authorize Fixtura to access and utilize PlayHQ data to create digital assets for your organization on a weekly basis. You also grant Fixtura permission to contact PlayHQ on your behalf to retrieve your organization's weekly results, fixtures, and player performances."
           name="isPermissionGiven"
           collectionId={user.id}
           CollectionSaveTo={"accounts"}
@@ -259,7 +259,7 @@ export const FixturaHeaderMeta = ({ user, setHasUpdated }) => {
               setHasUpdated={setHasUpdated}
               COLLECTIONID={user.id}
             />
-<SelectFixturaSetting  
+<SelectFixturaSetting
           CollectionFrom={"associations"}
           CollectionSaveTo={"accounts"}
           RelationProperty={"associations"}
@@ -271,6 +271,6 @@ export const FixturaHeaderMeta = ({ user, setHasUpdated }) => {
           user={user}
           setHasUpdated={setHasUpdated}
           COLLECTIONID={user.id}
-      
+
         />
 */

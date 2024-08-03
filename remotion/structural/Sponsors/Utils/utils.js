@@ -36,7 +36,7 @@ export const getPrimarySponsor = (sponsorList) => {
 
 
 export const getSponsorsForFixture = (sponsorList, fixture) => {
-  //console.log("sponsorList ", sponsorList, fixture)
+  console.log("sponsorList ", sponsorList, fixture)
   if (!sponsorList || !fixture) return [];
   const sponsors = [];
 
@@ -75,7 +75,7 @@ export const groupSponsors = (sponsors, groupSize = 3) => {
  * @returns {number} - Calculated image size.
  */
 export const calculateImgSize = (sponsorCount) => {
-  //console.log("sponsorCount", sponsorCount)
+  console.log("sponsorCount", sponsorCount)
   if (!sponsorCount || typeof sponsorCount !== 'number') {
     throw new Error('Invalid sponsor count. Expected a number.');
   }

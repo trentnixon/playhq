@@ -1,9 +1,8 @@
 import React from 'react';
 import {Sequence} from 'remotion';
 // Components
-import {LogoClubTitleHeaderVersion2} from '../../../Components/Header/LogoClubTitleHeader';
+import {LogoClubTitleHeaderVersion2} from '../../../Components/Header/OLD_LogoClubTitleHeader';
 import {LadderMain} from './LadderMain';
-import {PrincipalBodySponsorVersion2} from '../../../Components/Intro/PrincipalSponsor';
 
 export const NetballLadder = (props) => {
 	const {FPS_MAIN, VIDEOMETA} = props;
@@ -17,7 +16,7 @@ export const NetballLadder = (props) => {
 				}}
 			/>
 			<LadderMain {...props} />
-			<PrincipalBodySponsorVersion2 {...props} />
+			{/* <PrincipalBodySponsorVersion2 {...props} /> */}
 		</Sequence>
 	);
 };
