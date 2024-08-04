@@ -1,6 +1,6 @@
 import React from 'react';
 import {NoiseComp} from './niose3D'; // Adjust the import path as needed
-//import {useStylesContext} from '../../../context/StyleContext';
+// import {useStylesContext} from '../../../context/StyleContext';
 
 const CreateNoiseBackground = () => {
 	//const {BuildProps} = useStylesContext();
