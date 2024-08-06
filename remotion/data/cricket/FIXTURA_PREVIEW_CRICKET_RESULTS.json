@@ -6,7 +6,7 @@
       "name": "India",
       "isHome": true,
       "logo": {
-        "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_Blue_on_transparent_0e86187b28.png",
+        "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
         "width": 128,
         "height": 128
       },
@@ -76,7 +76,7 @@
       "name": "England",
       "isHome": false,
       "logo": {
-        "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_Blue_on_transparent_0e86187b28.png",
+        "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
         "width": 128,
         "height": 128
       },
@@ -143,13 +143,13 @@
       ]
     },
     "teamHomeLogo": {
-      "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_Blue_on_transparent_0e86187b28.png",
+      "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
 
       "width": 128,
       "height": 128
     },
     "teamAwayLogo": {
-      "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_Blue_on_transparent_0e86187b28.png",
+      "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
 
       "width": 128,
       "height": 128
@@ -189,7 +189,7 @@
       "name": "South Africa",
       "isHome": true,
       "logo": {
-        "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_Blue_on_transparent_0e86187b28.png",
+        "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
 
         "width": 128,
         "height": 128
@@ -260,7 +260,7 @@
       "name": "New Zealand",
       "isHome": false,
       "logo": {
-        "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_Blue_on_transparent_0e86187b28.png",
+        "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
         "width": 128,
         "height": 128
       },
@@ -327,12 +327,12 @@
       ]
     },
     "teamHomeLogo": {
-      "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_Blue_on_transparent_0e86187b28.png",
+      "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
       "width": 128,
       "height": 128
     },
     "teamAwayLogo": {
-      "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_Blue_on_transparent_0e86187b28.png",
+      "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
       "width": 128,
       "height": 128
     },
@@ -371,7 +371,7 @@
       "name": "England",
       "isHome": true,
       "logo": {
-        "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_Blue_on_transparent_0e86187b28.png",
+        "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
         "width": 128,
         "height": 128
       },
@@ -441,7 +441,7 @@
       "name": "Pakistan",
       "isHome": false,
       "logo": {
-        "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_Blue_on_transparent_0e86187b28.png",
+        "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
         "width": 128,
         "height": 128
       },
@@ -508,12 +508,12 @@
       ]
     },
     "teamHomeLogo": {
-      "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_Blue_on_transparent_0e86187b28.png",
+      "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
       "width": 128,
       "height": 128
     },
     "teamAwayLogo": {
-      "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_Blue_on_transparent_0e86187b28.png",
+      "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
       "width": 128,
       "height": 128
     },
@@ -552,7 +552,7 @@
       "name": "Australia",
       "isHome": true,
       "logo": {
-        "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_Blue_on_transparent_0e86187b28.png",
+        "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
         "width": 128,
         "height": 128
       },
@@ -622,7 +622,7 @@
       "name": "India",
       "isHome": false,
       "logo": {
-        "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_Blue_on_transparent_0e86187b28.png",
+        "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
         "width": 128,
         "height": 128
       },
@@ -689,12 +689,12 @@
       ]
     },
     "teamHomeLogo": {
-      "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_Blue_on_transparent_0e86187b28.png",
+      "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
       "width": 128,
       "height": 128
     },
     "teamAwayLogo": {
-      "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_Blue_on_transparent_0e86187b28.png",
+      "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
       "width": 128,
       "height": 128
     },

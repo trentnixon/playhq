@@ -18,11 +18,11 @@ import {
   createPrompt,
 } from "./RemotionCreateDataObj";
 export const DEFAULTLOGO =
-  "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_Blue_on_transparent_0e86187b28.png";
+  "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png";
 
 export const prepareMockData = (account) => {
   // Create Basic Account data obj
-  const accountCustomDataOBJ = createPreviewObject(account); 
+  const accountCustomDataOBJ = createPreviewObject(account);
   const { Account } = accountCustomDataOBJ;
   const sport = Account.sport;
   const category = Account.category;
@@ -40,7 +40,7 @@ export const prepareMockData = (account) => {
     const finalData = {
       RENDER: createRender(), // Completed
       ACCOUNT: createAccount(accountCustomDataOBJ.id), // Completed
-      ASSET: createAsset(), // need to do 
+      ASSET: createAsset(), // need to do
       VIDEOMETA: {
         grouping_category: createFixtureCategory(accountCustomDataOBJ), // fine for demo
         Video: createVideo(accountCustomDataOBJ, asset.ASSET),  // Completed

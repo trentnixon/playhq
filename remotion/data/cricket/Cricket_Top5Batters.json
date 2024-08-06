@@ -16,11 +16,9 @@
 	  "grouping_category": "western sydney",
 	  "Video": {
 		"Title": "Top 5",
-		"TitleSplit": [
-		  "Run-Scorers"
-		],
+		"TitleSplit": [""],
 		"CompositionID": "Top5BattingList",
-		"VideoTitle": "Top 5 Run Scorers - undefined",
+		"VideoTitle": "Top 5 Run Scorers",
 		"HeroImage": {
 		  "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/20240525_120954_1ab4d500ab.jpg",
 		  "width": 1696,

@@ -17,11 +17,11 @@ const LiveDemo = () => {
 
       <PageBanner pageTitle="Template Options" />
       <SelectATemplatePublic />
-     
+
       <CtaArea />
     </>
   );
-}; 
+};
 
 export default LiveDemo;
 /* <SelectClubForLiveDemo />  */

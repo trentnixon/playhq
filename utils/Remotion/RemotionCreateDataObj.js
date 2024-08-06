@@ -41,7 +41,7 @@ export function filterAudioOptions(previewObj, ASSET) {
 
 export function createVideo(previewObj, ASSET) {
   const filteredAudioOptions = filterAudioOptions(previewObj, ASSET);
- 
+
   const HeroImage = findHeroImageForAsset(
     previewObj.account_media_libraries,
     ASSET.CompositionID
@@ -90,9 +90,9 @@ export function createClub(accountCustomDataOBJ) {
     Name: Account.name || "International Cricket",
     Sport: "Cricket",
     Logo: Account.logo || {
-      url: "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_Blue_on_transparent_1df3fe6440.png",
+      url: "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
       width: 132,
-      height: 176, 
+      height: 176,
     },
     Sponsors: sponsorsFormatted(sponsors),
   };

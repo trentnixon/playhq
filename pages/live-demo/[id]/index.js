@@ -175,7 +175,7 @@ export async function getServerSideProps(ctx) {
                 publishedAt: "2023-07-01T03:09:50.940Z",
                 PlayHQID: "000000",
                 ParentLogo:
-                  "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_Blue_on_transparent_1df3fe6440.png",
+                  "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
                 hasPlayhqLogoStored: true,
                 Sport: "Cricket",
                 trial_instance: {
@@ -190,7 +190,7 @@ export async function getServerSideProps(ctx) {
                       formats: null,
 
                       size: 5.75,
-                      url: "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_Blue_on_transparent_1df3fe6440.png",
+                      url: "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
                     },
                   },
                 },
@@ -304,8 +304,8 @@ export async function getServerSideProps(ctx) {
               updatedAt: "2024-01-31T03:32:23.350Z",
               publishedAt: "2024-01-31T03:32:23.348Z",
               Theme: {
-                primary: "#1b81cb",
-                secondary: "#ffffff",
+                primary: "#004c3d",
+                secondary: "#f7b718",
                 dark: "#111",
                 white: "#FFF",
               },

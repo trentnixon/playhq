@@ -1,7 +1,7 @@
 {
   "Video":{
     "Title": "Top 5",
-    "TitleSplit": [ "Weekend", "Run-Scorers" ],
+    "TitleSplit": [ "Weekend" ],
     "PlayHQLogo":"https://fixtura.s3.ap-southeast-2.amazonaws.com/Play_HQ_Logo_942f7f18cf.png?updated_at=2023-02-06T06:18:05.861Z",
     "Theme":{
       "dark": "#111",

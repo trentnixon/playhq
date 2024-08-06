@@ -4,6 +4,7 @@ import {SimpleGradientBackground} from '../../../../../structural/Backgrounds/Gr
 import {SimpleBlankColorBackground} from '../../../../../structural/Backgrounds/BlankColorBackground/BlankColorBackground';
 
 import {useStylesContext} from '../../../../../context/StyleContext';
+import { VideoTestBackground } from '../../../../../structural/Backgrounds/VideoBackground/TEST/VideoTestBackground';
 
 export const BGImageAnimation = () => {
 	const {BuildProps} = useStylesContext();
@@ -21,6 +22,8 @@ export const BGImageAnimation = () => {
 				return <CreateNoiseBackground />;
 			case 'Gradient':
 				return <SimpleGradientBackground />;
+			case 'Video':
+				return <VideoTestBackground />;
 			default:
 				return <SimpleBlankColorBackground />;
 		}

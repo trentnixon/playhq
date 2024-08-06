@@ -4,7 +4,7 @@
 		"Video": {
 			"Template": "Sutherland",
 			"Title": "Top 5",
-			"TitleSplit": ["Weekend", "Run-Scorers"],
+			"TitleSplit": ["Weekend", ""],
 			"CompositionID": "Top5BattingList",
 			"includeSponsors": true,
 			"VideoTitle": "Gold Coast Veterans Cricket Top 5",

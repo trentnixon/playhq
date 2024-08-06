@@ -1,39 +1,45 @@
 {
-  "Video":{
+  "Video": {
     "Title": "Top 5",
-    "TitleSplit": [ "Weekend", "Run-Scorers" ],
-    "PlayHQLogo":"https://fixtura.s3.ap-southeast-2.amazonaws.com/Play_HQ_Logo_942f7f18cf.png?updated_at=2023-02-06T06:18:05.861Z",
-    "Theme":{
+    "TitleSplit": ["Weekend", ""],
+    "PlayHQLogo": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Play_HQ_Logo_942f7f18cf.png?updated_at=2023-02-06T06:18:05.861Z",
+    "Theme": {
       "dark": "#111",
       "white": "#FFF",
       "primary": "#271b4d",
       "secondary": "#ed9206"
     }
   },
-  "Club":{
-    "Name":"Runaway Bay Cricket Club",
-    "Logo":"https://res.cloudinary.com/playhq/image/upload/h_128,w_128/v1/production/ca/5e70931e-19e8-4a58-86a2-d431c122e8f1/1656732720632/logo.png",
-    "Sponsors":[{
-      "Name":"Sponsor",
-      "Logo":"https://fixtura.s3.ap-southeast-2.amazonaws.com/328778202_716950503430063_7761782317394639352_n_d0fb2e78c1.jpg",
-      "isPrimary":true
-    },{
-      "Name":"Sponsor",
-      "Logo":"https://fixtura.s3.ap-southeast-2.amazonaws.com/328778202_716950503430063_7761782317394639352_n_d0fb2e78c1.jpg",
-      "isPrimary":false
-    },{
-      "Name":"Sponsor",
-      "Logo":"https://fixtura.s3.ap-southeast-2.amazonaws.com/328778202_716950503430063_7761782317394639352_n_d0fb2e78c1.jpg",
-      "isPrimary":false
-    },{
-      "Name":"Sponsor",
-      "Logo":"https://fixtura.s3.ap-southeast-2.amazonaws.com/328778202_716950503430063_7761782317394639352_n_d0fb2e78c1.jpg",
-      "isPrimary":false
-    },{
-      "Name":"Sponsor",
-      "Logo":"https://fixtura.s3.ap-southeast-2.amazonaws.com/328778202_716950503430063_7761782317394639352_n_d0fb2e78c1.jpg",
-      "isPrimary":false
-    }]
+  "Club": {
+    "Name": "Runaway Bay Cricket Club",
+    "Logo": "https://res.cloudinary.com/playhq/image/upload/h_128,w_128/v1/production/ca/5e70931e-19e8-4a58-86a2-d431c122e8f1/1656732720632/logo.png",
+    "Sponsors": [
+      {
+        "Name": "Sponsor",
+        "Logo": "https://fixtura.s3.ap-southeast-2.amazonaws.com/328778202_716950503430063_7761782317394639352_n_d0fb2e78c1.jpg",
+        "isPrimary": true
+      },
+      {
+        "Name": "Sponsor",
+        "Logo": "https://fixtura.s3.ap-southeast-2.amazonaws.com/328778202_716950503430063_7761782317394639352_n_d0fb2e78c1.jpg",
+        "isPrimary": false
+      },
+      {
+        "Name": "Sponsor",
+        "Logo": "https://fixtura.s3.ap-southeast-2.amazonaws.com/328778202_716950503430063_7761782317394639352_n_d0fb2e78c1.jpg",
+        "isPrimary": false
+      },
+      {
+        "Name": "Sponsor",
+        "Logo": "https://fixtura.s3.ap-southeast-2.amazonaws.com/328778202_716950503430063_7761782317394639352_n_d0fb2e78c1.jpg",
+        "isPrimary": false
+      },
+      {
+        "Name": "Sponsor",
+        "Logo": "https://fixtura.s3.ap-southeast-2.amazonaws.com/328778202_716950503430063_7761782317394639352_n_d0fb2e78c1.jpg",
+        "isPrimary": false
+      }
+    ]
   },
   "DATA": [
     {
