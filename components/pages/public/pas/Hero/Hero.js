@@ -2,15 +2,15 @@ import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import styles from "./Hero.module.scss";
 import { H1, P } from "../Primitives/Text";
- 
+
 const Hero = () => {
   const heroRef = useRef(null);
   const highlightRef = useRef(null);
   const images = [
     {
-      src: "https://fixtura.s3.ap-southeast-2.amazonaws.com/Hero_example_3_2373cda07f.png",
+      src: "https://fixtura.s3.ap-southeast-2.amazonaws.com/POS_Site_Human_010_6ae3f3eee5.png",
       alt: "Header Item 1",
-    },
+    }/* ,
     {
       src: "https://fixtura.s3.ap-southeast-2.amazonaws.com/Hero_example_2_4228e0d1e9.png",
       alt: "Header Item 2",
@@ -19,7 +19,7 @@ const Hero = () => {
       src: "https://fixtura.s3.ap-southeast-2.amazonaws.com/Hero_example_1_f15e1bc128.png",
 
       alt: "Header Item 3",
-    },
+    }, */
   ];
 
   useEffect(() => {

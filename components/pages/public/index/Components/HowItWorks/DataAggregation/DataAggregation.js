@@ -85,13 +85,13 @@ const DataAggregation = () => {
       </H2>
       <P>Transforming your weekend results into insightful stats.</P>
       <div className={styles.content} ref={contentRef}>
-        <div className={styles.fixtura} ref={fixturaLogoRef}>
+        {/* <div className={styles.fixtura} ref={fixturaLogoRef}>
           <img
             src="https://fixtura.s3.ap-southeast-2.amazonaws.com/fixtura_bucket_99ec5b6ace.png"
             alt="Fixtura Logo"
           />
-        </div>
-        <div className={styles.scoresContainer}>
+        </div> */}
+        {/* <div className={styles.scoresContainer}>
           <div className={styles.scores}>
             {scores.map((score, i) => (
               <div
@@ -103,10 +103,10 @@ const DataAggregation = () => {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
         <div className={styles.db} ref={dbLogoRef}>
           <img
-            src="https://fixtura.s3.ap-southeast-2.amazonaws.com/DB_82a595710b.png"
+            src="https://fixtura.s3.ap-southeast-2.amazonaws.com/POS_Site_Human_005_965990cbf4.png"
             alt="Database Icon"
           />
         </div>

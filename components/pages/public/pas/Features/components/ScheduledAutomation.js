@@ -18,7 +18,7 @@ const ScheduledAutomation = () => {
         audience.
       </P>
       <img
-        src="https://fixtura.s3.ap-southeast-2.amazonaws.com/Fixtura_Bundles_27815b6c0d.png"
+        src="https://fixtura.s3.ap-southeast-2.amazonaws.com/POS_Site_Human_002_b68f0ec64f.png"
         alt="Scheduled Automation"
         className={`${styles.image} fade-in-up`}
       />

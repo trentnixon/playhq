@@ -25,7 +25,7 @@ const LearnFixtura = () => {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: sectionElement,
-        start: "top 200px",
+        start: "top 100px",
         end: "bottom -200%",
         scrub: true,
         pin: true,
@@ -59,7 +59,7 @@ const LearnFixtura = () => {
         },
         {
           y: () => contentElement.clientHeight - 200, // End position at the bottom of the container
-          scale: 0.8,
+          scale: 0.5,
           opacity: 1,
           duration: 1.5,
           ease: "power1.inOut",
@@ -109,7 +109,7 @@ const LearnFixtura = () => {
         </div>
         <div className={styles.playhq} ref={playHqLogoRef}>
           <img
-            src="https://fixtura.s3.ap-southeast-2.amazonaws.com/Play_HQ_logo_1_618d6e79cb.png"
+            src="https://fixtura.s3.ap-southeast-2.amazonaws.com/POS_Site_Human_003_342704f205.png"
             alt="PlayHQ Logo"
           />
         </div>
@@ -117,7 +117,7 @@ const LearnFixtura = () => {
         <div className={styles.fixtura}>
           <img
             ref={fixturaLogoRef}
-            src="https://fixtura.s3.ap-southeast-2.amazonaws.com/fixtura_bucket_99ec5b6ace.png"
+            src="https://fixtura.s3.ap-southeast-2.amazonaws.com/POS_Site_Human_004_0fd1dc0f8e.png"
             alt="Fixtura Logo"
           />
         </div>

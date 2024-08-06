@@ -26,7 +26,7 @@
       margin-bottom: 20px;
       text-align: right;
       span {
-        color: $section-gradient-end;
+        color: #FFF934;
       }
       @media (max-width: 768px) {
         text-align: center;
@@ -43,9 +43,9 @@
   }
 
   .image {
-    width: 300px;
+    width: 30%;
     max-width: auto;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+
 
     @media (max-width: 768px) {
       display: none;

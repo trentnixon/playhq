@@ -6,7 +6,7 @@ const AgitateFansExpect = () => {
   return (
     <div className={styles.fansExpect}>
       <img
-        src="https://fixtura.s3.ap-southeast-2.amazonaws.com/Fistura_Downloadable_35d01155c1.png"
+        src="https://fixtura.s3.ap-southeast-2.amazonaws.com/POS_Site_Human_008_822fe03473.png"
         alt="Fans Expect"
         className={`${styles.image} slide-in`}
       />

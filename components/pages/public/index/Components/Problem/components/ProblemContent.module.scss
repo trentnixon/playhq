@@ -16,7 +16,7 @@
   @media (max-width: 768px) {
     text-align: center;
     height: auto;
-    h1{
+    h1 {
       font-size: 45px;
       line-height: 1em;
     }
@@ -108,8 +108,8 @@
 
     img {
       margin: 0 10px;
-      max-width: 200px;
-      height: auto;
+      max-width: auto;
+      height: 400px;
 
       @media (max-width: 768px) {
         margin: 0px;

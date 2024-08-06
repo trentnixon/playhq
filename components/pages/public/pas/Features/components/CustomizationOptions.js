@@ -20,7 +20,7 @@ const CustomizationOptions = () => {
           on-brand and professional.
         </P>
         <img
-          src="https://fixtura.s3.ap-southeast-2.amazonaws.com/Fixtura_Templates_20c0c11830.png"
+          src="https://fixtura.s3.ap-southeast-2.amazonaws.com/POS_Site_Human_009_9f538254e3.png"
           alt="Customization Options"
           className={`${styles.image} fade-in-up`}
         />

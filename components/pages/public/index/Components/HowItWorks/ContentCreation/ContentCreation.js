@@ -21,7 +21,7 @@ const ContentCreation = () => {
     const sectionElement = sectionRef.current;
 
     // Create a timeline for the animation
-    const tl = gsap.timeline({
+  /*   const tl = gsap.timeline({
       scrollTrigger: {
         trigger: sectionElement,
         start: "top 200px",
@@ -72,7 +72,7 @@ const ContentCreation = () => {
           markers: false,
         },
       }
-    );
+    ); */
   }, []);
 
   return (
@@ -82,11 +82,12 @@ const ContentCreation = () => {
       </H2>
       <P>We handle the heavy lifting for you.</P>
       <div className={styles.icons}>
-        <CalendarSVG ref={calendarRef} />
+        <img src="https://fixtura.s3.ap-southeast-2.amazonaws.com/POS_Site_Human_006_71c7fe1070.png" />
+       {/*  <CalendarSVG ref={calendarRef} />
         <ArrowSVG ref={(el) => (arrowRefs.current[0] = el)} />
         <DatabaseSVG ref={databaseRef} />
         <ArrowSVG ref={(el) => (arrowRefs.current[1] = el)} />
-        <AISVG ref={aiRef} />
+        <AISVG ref={aiRef} /> */}
       </div>
       <div className={styles.limitedWidth}>
         <P>
@@ -94,7 +95,7 @@ const ContentCreation = () => {
           aggregated data into a wide range of assets for your club:
         </P>
       </div>
-      <div className={styles.assets}>
+     {/*  <div className={styles.assets}>
         <img
           ref={(el) => (imagesRef.current[0] = el)}
           src="https://fixtura.s3.ap-southeast-2.amazonaws.com/Example_Small_5_7e6c0b5c0f.png"
@@ -119,7 +120,7 @@ const ContentCreation = () => {
           alt="Image 4"
           className="scale-in"
         />
-      </div>
+      </div> */}
     </div>
   );
 };

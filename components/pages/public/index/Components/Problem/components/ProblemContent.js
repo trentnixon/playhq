@@ -69,28 +69,11 @@ const ProblemContent = () => {
         <div className={styles.images}>
           <img
             ref={(el) => (imagesRef.current[0] = el)}
-            src="https://fixtura.s3.ap-southeast-2.amazonaws.com/Example_Small_7beabce2f8.png"
+            src="https://fixtura.s3.ap-southeast-2.amazonaws.com/POS_Site_Human_001_a805230b3d.png"
             alt="Image 1"
             className="scale-in"
           />
-          <img
-            ref={(el) => (imagesRef.current[1] = el)}
-            src="https://fixtura.s3.ap-southeast-2.amazonaws.com/Example_Small_2_cd6378737a.png"
-            alt="Image 2"
-            className="scale-in"
-          />
-          <img
-            ref={(el) => (imagesRef.current[2] = el)}
-            src="https://fixtura.s3.ap-southeast-2.amazonaws.com/Example_Small_3_0daf06a68e.png"
-            alt="Image 3"
-            className="scale-in"
-          />
-          <img
-            ref={(el) => (imagesRef.current[3] = el)}
-            src="https://fixtura.s3.ap-southeast-2.amazonaws.com/Example_Small_4_4964e2eb2e.png"
-            alt="Image 4"
-            className="scale-in"
-          />
+
         </div>
       </div>
 
