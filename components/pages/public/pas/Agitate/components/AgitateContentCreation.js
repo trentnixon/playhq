@@ -17,7 +17,7 @@ const AgitateContentCreation = () => {
         </P>
       </div>
       <img
-        src="https://fixtura.s3.ap-southeast-2.amazonaws.com/POS_Site_Human_007_ead759ee94.png"
+        src="https://fixtura.s3.ap-southeast-2.amazonaws.com/POS_Site_Human_011_e0ddefd759.png"
         alt="Content Creation"
         className={`${styles.image} slide-in-right`}
       />
