@@ -15,6 +15,9 @@
     padding: 140px 20px;
     height: 100vh;
   }
+  @media (max-width: 600px) {
+    height: 1000px;
+  }
 }
 
 .heroContent {
@@ -61,13 +64,13 @@
   }
   @media (max-width: 996px) {
     text-align: center;
+    font-size: 60px;
   }
   @media (max-width: 768px) {
     text-align: center;
-    font-size: 60px;
+    font-size: 50px;
     line-height: 1em;
     letter-spacing: -2px;
-
   }
 }
 
@@ -104,12 +107,13 @@
 
   @media (max-width: 996px) {
     flex: 1;
-    width: 60%;
+    width: 40%;
     margin: 0 auto;
   }
 
   @media (max-width: 768px) {
     align-items: center;
+    width: 60%;
   }
   .imageItem {
     /* position: absolute; */
@@ -139,8 +143,8 @@
       margin: 5px auto;
       &:nth-child(1) {
         top: 0;
-      left: 0px;
-       /*  top: 0;
+        left: 0px;
+        /*  top: 0;
         left: 60%; */
         // transform: translateY(-20px);
       }

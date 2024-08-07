@@ -12,7 +12,14 @@
   p {
     text-align: center;
   }
-
+  @media (max-width: 960px) {
+    text-align: center;
+    height: auto;
+    h1 {
+      font-size: 45px;
+      line-height: 1em;
+    }
+  }
   @media (max-width: 768px) {
     text-align: center;
     height: auto;
@@ -113,12 +120,14 @@
 
       @media (max-width: 768px) {
         margin: 0px;
-        max-width: 180px;
+        height: auto;
+        max-width: 3000px;
       }
 
-      @media (max-width: 380px) {
+      @media (max-width: 400px) {
         margin: 0px;
-        max-width: 150px;
+        height: auto;
+        max-width: 250px;
       }
     }
   }

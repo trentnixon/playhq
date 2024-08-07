@@ -77,7 +77,7 @@ const Agitate = () => {
   return (
     <div className={`${styles.agitate}`} ref={agitateRef}>
       <Container>
-        <AgitateHeader /> 
+        <AgitateHeader />
         <AgitateContentCreation />
         <AgitateFansExpect />
       </Container>

@@ -36,7 +36,6 @@ const Problem = () => {
     <section className={styles.problem} ref={problemRef}>
       <Container className={`${styles.problemSection} ${styles.whiteSection}`}>
         <ProblemContent />
-
       </Container>
       <GradientContainer
         className={`${styles.problemSection} ${styles.gradientSection}`}

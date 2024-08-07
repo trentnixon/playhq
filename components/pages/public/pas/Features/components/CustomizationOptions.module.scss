@@ -9,13 +9,16 @@
   h1 {
     color: $white-copy-color;
     margin-bottom: 20px;
+    @media (max-width: 400px) {
+      font-size: 40px;
+    }
   }
 
   p {
     margin-bottom: 20px;
     color: $white-copy-color;
     span {
-      color:#ffba76;
+      color: #ffba76;
       font-weight: normal;
     }
   }
