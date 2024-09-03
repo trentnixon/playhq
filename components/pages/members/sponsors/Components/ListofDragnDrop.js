@@ -21,6 +21,7 @@ import { EditSponsor } from "./EditSponsor";
 import { IconX } from "@tabler/icons-react";
 import { useAccountDetails } from "../../../../../context/userContext";
 import { P } from "../../../../Members/Common/Type";
+import { SponsorDeleteBtn } from "./SponsorDeleteBtn";
 
 const useStyles = createStyles((theme) => ({
   item: {
@@ -252,7 +253,7 @@ export function DragnDropSponsorList({ SPONSORS, SPONSORLIMIT }) {
                 <th></th>
 
                 <th style={{ textAlign: "center" }}>
-                  {matches ? `Name` : false }
+                  {matches ? `Name` : false}
                 </th>
                 {matches ? (
                   <th style={{ textAlign: "center" }}>Tagline</th>
@@ -261,7 +262,7 @@ export function DragnDropSponsorList({ SPONSORS, SPONSORLIMIT }) {
                 )}
 
                 <th style={{ textAlign: "center" }}>
-                  {matches ? `Primary` :false}
+                  {matches ? `Primary` : false}
                 </th>
                 {matches ? (
                   <th style={{ textAlign: "center" }}>Videos</th>
