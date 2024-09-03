@@ -147,7 +147,7 @@ export function DragnDropSponsorList({ SPONSORS, SPONSORLIMIT }) {
           </td>
           {matches ? <td>{item.attributes.Tagline}</td> : false}
 
-          {matches ? (
+          {/*   {matches ? (
             <td align="center">
               {item.attributes.isPrimary ? (
                 <Avatar color={"green"} size={20} radius={20}>
@@ -159,8 +159,8 @@ export function DragnDropSponsorList({ SPONSORS, SPONSORLIMIT }) {
             </td>
           ) : (
             false
-          )}
-          {matches ? (
+          )} */}
+          {/*  {matches ? (
             <td align="center">
               {item.attributes.isVideo ? (
                 <Avatar color={"green"} size={20} radius={20}>
@@ -174,8 +174,8 @@ export function DragnDropSponsorList({ SPONSORS, SPONSORLIMIT }) {
             </td>
           ) : (
             false
-          )}
-          {matches ? (
+          )} */}
+          {/* {matches ? (
             <td align="center">
               {item.attributes.isArticle ? (
                 <Avatar color={"green"} size={20} radius={20}>
@@ -189,7 +189,7 @@ export function DragnDropSponsorList({ SPONSORS, SPONSORLIMIT }) {
             </td>
           ) : (
             false
-          )}
+          )} */}
           {matches ? (
             <td align="center">
               {item.attributes.isActive ? (
@@ -197,7 +197,7 @@ export function DragnDropSponsorList({ SPONSORS, SPONSORLIMIT }) {
                   <IconCheck size={40} />
                 </Avatar>
               ) : (
-                <SponsorDeleteBtn itemId={item.id} onDelete={onDelete} />
+                false
               )}
             </td>
           ) : (
@@ -212,6 +212,9 @@ export function DragnDropSponsorList({ SPONSORS, SPONSORLIMIT }) {
               }}
               THEME={`cta`}
             />
+          </td>
+          <td>
+            <SponsorDeleteBtn itemId={item.id} onDelete={onDelete} />
           </td>
         </tr>
       )}
@@ -261,25 +264,23 @@ export function DragnDropSponsorList({ SPONSORS, SPONSORLIMIT }) {
                   false
                 )}
 
-                <th style={{ textAlign: "center" }}>
-                  {matches ? `Primary` : false}
-                </th>
-                {matches ? (
+                {/* {matches ? (
                   <th style={{ textAlign: "center" }}>Videos</th>
                 ) : (
                   false
-                )}
-                {matches ? (
+                )} */}
+                {/* {matches ? (
                   <th style={{ textAlign: "center" }}>Articles</th>
                 ) : (
                   false
-                )}
+                )} */}
                 {matches ? (
                   <th style={{ textAlign: "center" }}>Active</th>
                 ) : (
                   false
                 )}
-                <th style={{ textAlign: "center" }}> </th>
+                <th style={{ textAlign: "center" }}></th>
+                <th style={{ textAlign: "center" }}>Remove Sponsor</th>
               </tr>
             </thead>
             <Droppable droppableId="dnd-list" direction="vertical">

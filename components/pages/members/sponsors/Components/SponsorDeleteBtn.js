@@ -29,7 +29,7 @@ export const SponsorDeleteBtn = ({ itemId, onDelete }) => {
     <>
       {isConfirming ? (
         <>
-          <Group position="apart">
+          <Group position="center">
             <BTN_ONCLICK LABEL={"Back"} HANDLE={handleBack} THEME={`error`} />
             <BTN_ONCLICK
               LABEL={"Confirm"}
@@ -39,7 +39,15 @@ export const SponsorDeleteBtn = ({ itemId, onDelete }) => {
           </Group>
         </>
       ) : (
-        <BTN_ONCLICK LABEL={"Delete"} HANDLE={handleDelete} THEME={`error`} />
+        <Group position="center">
+          <BTN_ONCLICK LABEL={"Delete"} HANDLE={handleDelete} THEME={`error`} />
+          <BTN_ONCLICK
+            LABEL={"Confirm"}
+            HANDLE={handleBack}
+            THEME={`error`}
+            idDisabled={true}
+          />
+        </Group>
       )}
     </>
   );
