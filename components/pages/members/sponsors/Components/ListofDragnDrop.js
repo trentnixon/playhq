@@ -194,7 +194,7 @@ export function DragnDropSponsorList({ SPONSORS, SPONSORLIMIT }) {
             <td align="center">
               {item.attributes.isActive ? (
                 <Avatar color={"green"} size={20} radius={20}>
-                  <IconCheck size={40} />
+                  <IconCheck size={40} /> here
                 </Avatar>
               ) : (
                 <SponsorDeleteBtn itemId={item.id} onDelete={onDelete} />
