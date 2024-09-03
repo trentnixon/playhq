@@ -28,6 +28,13 @@ export const prepareMockData = (account) => {
   const category = Account.category;
 
   if (!ASSETS[sport] || !ASSETS[sport][category]) {
+    console.log(
+      "ERROR: It is likely that a template or theme is not set go to  [RemotionAssets] and check for the template you have selected"
+    );
+    console.log("sport ", sport);
+    console.log("category ", category);
+    console.log("ASSETS[sport] ", ASSETS[sport]);
+    console.log("ASSETS[sport][category] ", ASSETS[sport][category]);
     console.error(
       `No assets found for sport: ${sport} and category: ${category}`
     );
@@ -43,7 +50,7 @@ export const prepareMockData = (account) => {
       ASSET: createAsset(), // need to do
       VIDEOMETA: {
         grouping_category: createFixtureCategory(accountCustomDataOBJ), // fine for demo
-        Video: createVideo(accountCustomDataOBJ, asset.ASSET),  // Completed
+        Video: createVideo(accountCustomDataOBJ, asset.ASSET), // Completed
         THEME: createTheme(accountCustomDataOBJ), // Completed
         Club: createClub(accountCustomDataOBJ), // Completed
       },

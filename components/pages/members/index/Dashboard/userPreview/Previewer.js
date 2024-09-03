@@ -10,7 +10,7 @@ import { prepareMockData } from "../../../../../../utils/Remotion/RemotionPrepar
 export const Previewer = ({ account }) => {
   const theme = useMantineTheme();
   const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
-  
+
   const [mockData, setMockData] = useState([]);
 
   useEffect(() => {
@@ -22,7 +22,7 @@ export const Previewer = ({ account }) => {
 
   if (!mockData.length) {
     return <Center>Loading...</Center>;
-  } 
+  }
 
   return (
     <>

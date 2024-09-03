@@ -1,8 +1,4 @@
-import {
-	darkenColor,
-	getContrastColor,
-	lightenColor,
-} from '../../../../../../utils/colors';
+import {darkenColor, getContrastColor} from '../../../../../../utils/colors';
 import {useCurrentFrame} from 'remotion';
 import {interpolateOpacityByFrame} from '../../../../../../Animation/interpolate';
 import {FromLeftToRight} from '../../../../../../Animation/ClipWipe';
@@ -14,7 +10,7 @@ import {useLayoutContext} from '../../../../../../context/LayoutContext';
 const getTeamsLength = (ladder) => ladder.League.length + 1;
 
 const findRowBackgroundColor = (isTeam, Color) => {
-	return isTeam ? Color.Secondary.Main : lightenColor(Color.Primary.Main);
+	return isTeam ? Color.Primary.Main : Color.Secondary.Main;
 };
 
 const getLogoStyles = (teamLogo, ContainerHeight, NumTeams) => {
@@ -29,7 +25,7 @@ const getLogoStyles = (teamLogo, ContainerHeight, NumTeams) => {
 export const LadderPosition = (props) => {
 	const {LadderItem, LadderDataPoints, LADDERINT, isTeam, Ladder} = props;
 
-	const {StyleConfig, BuildProps} = useStylesContext();
+	const {StyleConfig, BuildProps, TextStyles} = useStylesContext();
 	const {TIMINGS} = useLayoutContext();
 	const {TemplateVariation} = BuildProps;
 	const {FPS_LADDER} = TIMINGS;
@@ -65,7 +61,7 @@ export const LadderPosition = (props) => {
 		},
 		Copy: {
 			DataItem: {
-				fontSize: '1.6em',
+				...TextStyles.copyMedium,
 				color: getContrastColor(darkenColor(Color.Primary.Main)),
 				...Font.Copy,
 				textAlign: 'center',
@@ -75,9 +71,8 @@ export const LadderPosition = (props) => {
 			},
 			Item: {
 				...Font.Copy,
+				...TextStyles.copyMedium,
 				color: getContrastColor(darkenColor(useTHEMECOLOR)),
-				fontSize: '1.6em',
-				fontWeight: 400,
 				width: '60%',
 				marginLeft: '10px',
 			},

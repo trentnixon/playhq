@@ -24,7 +24,7 @@ export const AssetTitle = () => {
 const VideoAssetTitle = () => {
 	const frame = useCurrentFrame(); // Get the current frame for animations
 	const {DATA} = useVideoDataContext();
-	const {StyleConfig} = useStylesContext();
+	const {StyleConfig, TextStyles} = useStylesContext();
 	const {TIMINGS} = useLayoutContext();
 
 	const {grouping_category} = DATA.VIDEOMETA;
@@ -33,16 +33,16 @@ const VideoAssetTitle = () => {
 	// Style configuration for the video title
 	const styleObj = {
 		...StyleConfig.Font.Title,
+		...TextStyles.introSubtitle,
 		fontSize: getDynamicFontSize(grouping_category),
 		color: StyleConfig.Color.Primary.BackgroundContractColor,
 		width: '100%',
 		margin: 0,
 		padding: 0,
-		lineHeight: '0.8em',
 		textAlign: 'center',
-		letterSpacing: '-0.02em',
 		textTransform: 'uppercase',
 		zIndex: 2000,
+		fontWeight: 900, // added by me to override settings!
 	};
 
 	// Animation configuration for the video title
@@ -69,24 +69,20 @@ const VideoAssetTitle = () => {
 // Define a functional component to display account titles with animations
 const OrganisationTitle = () => {
 	const frame = useCurrentFrame(); // Get the current frame for animations
-	const {StyleConfig} = useStylesContext();
+	const {StyleConfig, TextStyles} = useStylesContext();
 	const {TIMINGS} = useLayoutContext();
 	const {FPS_INTRO} = TIMINGS;
-
-	console.log('StyleConfig ', StyleConfig);
 
 	// Style configuration for the account title
 	const styleObj = {
 		...StyleConfig.Font.TitleAlt,
-		fontSize: '2em',
+		...TextStyles.introCopy,
 		color: StyleConfig.Color.Background.Contrast,
 		width: '100%',
 		marginTop: '10px',
 		marginBottom: '0',
 		padding: '0',
-		lineHeight: '1em',
 		textAlign: 'center',
-		letterSpacing: '-0.02em',
 		textTransform: 'uppercase',
 		zIndex: 2000,
 	};

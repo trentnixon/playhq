@@ -21,14 +21,10 @@ const LadderPositionContainer = styled.div`
 `;
 
 const Name = styled.span`
-	font-size: 1.3em;
-	font-weight: 400;
 	color: ${(props) => props.color};
 	width: 60%;
 `;
 const MetaContainer = styled.div`
-
-
 	width: 36%;
 	display: flex;
 	flex-direction: row;
@@ -39,7 +35,8 @@ const MetaContainer = styled.div`
 export const CreateLadderHeader = (props) => {
 	const {LadderDataPoints, LadderPositionContainerHeight} = props;
 
-	const {StyleConfig} = useStylesContext();
+	const {StyleConfig, TextStyles} = useStylesContext();
+
 	const {TIMINGS} = useLayoutContext();
 
 	const {Font, Color} = StyleConfig;
@@ -47,9 +44,8 @@ export const CreateLadderHeader = (props) => {
 	const frame = useCurrentFrame();
 
 	const LadderDataPointStyles = {
-		fontSize: '1.3em',
-		fontWeight: 400,
-		color: Color.Secondary.Darken,
+		...TextStyles.copySmall,
+		color: Color.Primary.Contrast,
 		textAlign: 'center',
 		maxWidth: '5%',
 		minWidth: '5%',

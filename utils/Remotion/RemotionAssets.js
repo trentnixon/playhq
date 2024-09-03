@@ -5,7 +5,8 @@ import { Template_Basic } from "../../remotion/templates/Basic/index";
 import { Template_CNSW } from "../../remotion/templates/CNSW/index";
 import { Template_QLDC } from "../../remotion/templates/QLDC/index";
 import { Template_CoastalCricketLeague } from "../../remotion/templates/CoastalCricketLeague/index";
-
+import { Template_CNSWREAL } from "../../remotion/templates/CNSWreal/index";
+import { Template_Sixers } from "../../remotion/templates/Sixers/index";
 // DATA
 // Cricket
 import DATA_CRICKET_UPCOMINGFIXTURES from "../../remotion/data/cricket/FIXTURA_PREVIEW_CRICKET_UPCOMINGFIXTURES.json";
@@ -182,6 +183,16 @@ export const ASSETS = {
     QLDC: createCategoryAssets(Template_QLDC, cricketData, cricketKeyMapping),
     CoastalCricketLeague: createCategoryAssets(
       Template_CoastalCricketLeague,
+      cricketData,
+      cricketKeyMapping
+    ),
+    CNSWREAL: createCategoryAssets(
+      Template_CNSWREAL,
+      cricketData,
+      cricketKeyMapping
+    ),
+    SixersLeague: createCategoryAssets(
+      Template_Sixers,
       cricketData,
       cricketKeyMapping
     ),

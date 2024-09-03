@@ -1,12 +1,10 @@
 import { useEffect, useState } from "react";
 import { Paper } from "@mantine/core";
-
-
 import { prepareMockData } from "../../../../utils/Remotion/RemotionPrepareMockData";
 import { P } from "../../../Members/Common/Type";
-
 import { MembersPreviewPlayer } from "./Player";
-export const MembersPreviewShell = ({ 
+
+export const MembersPreviewShell = ({
   userAccount,
   selectedAsset,
   selectedHeroImage,

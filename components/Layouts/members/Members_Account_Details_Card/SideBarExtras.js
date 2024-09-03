@@ -62,7 +62,7 @@ export const SideBarExtraShell = ({ account }) => {
           <RecentRenderButton
             renders={renders.renders}
             account={account}
-            token={renders.render_token.token}
+            token={renders?.render_token?.token}
           />
           {/* Render the DeliveryDay component with the scheduler as a prop. */}
           <DeliveryDay scheduler={OBJ.scheduler} />

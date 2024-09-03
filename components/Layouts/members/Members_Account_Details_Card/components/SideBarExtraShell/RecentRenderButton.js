@@ -5,7 +5,9 @@ export const RecentRenderButton = ({ renders, account, token }) => {
   if (renders.length === 0) {
     return null;
   }
-
+  if (!token) {
+    return null;
+  }
   const mostRecentRender = renders.reduce((latest, current) => {
     return new Date(latest.createdAt) > new Date(current.createdAt)
       ? latest

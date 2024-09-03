@@ -9,7 +9,7 @@ import DATA_ROSTER from "../../../remotion/utils/RosterPoster.json";
 
 import * as AssetExampleCNSW from "../GLOBAL/Examples/AssetExampleCNSW";
 import * as AssetExamplesBasic from "../GLOBAL/Examples/AssetExamples";
-  
+
 import { AbsoluteFill } from "remotion";
 import { IconPlayerPlayFilled } from "@tabler/icons-react";
 import { Image } from "@mantine/core";
@@ -30,7 +30,7 @@ const templateMapping = {
   CNSW: AssetExampleCNSW,
   Basic: AssetExamplesBasic,
   // Add more mappings as needed
-}; 
+};
 
 export const RemotionPlayer = (props) => {
   const {
@@ -141,7 +141,7 @@ export const RemotionPlayer = (props) => {
 
   if (TYPE === "Player")
     return (
-      <Player 
+      <Player
         component={ASSETS.component}
         durationInFrames={[
           previewData.TIMINGS.FPS_INTRO,

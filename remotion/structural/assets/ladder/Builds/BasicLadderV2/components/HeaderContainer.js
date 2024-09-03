@@ -16,17 +16,14 @@ const HeaderContainerStyles = styled.div`
 	height: 60px;
 	padding: 0 10px;
 	margin-bottom: 15px;
-	border-bottom: 3px solid ${(props) => props.Color.Secondary.Lighten};
-	background-color: ${(props) => props.Color.Primary.Darken};
+	border-bottom: 3px solid ${(props) => props.Color.Primary.Lighten};
+	background-color: ${(props) => props.Color.Primary.Main};
 `;
 
 const HeaderCopy = styled.p`
-	font-style: normal;
 	display: block;
-	letter-spacing: 0.05em;
 	text-transform: uppercase;
 	width: auto;
-	line-height: 2em;
 	width: 100%;
 	margin: 0;
 `;
@@ -35,7 +32,7 @@ export const HeaderContainer = (props) => {
 	const {Ladder} = props;
 	const {name, competition} = Ladder;
 
-	const {StyleConfig, BuildProps} = useStylesContext();
+	const {StyleConfig, BuildProps, TextStyles} = useStylesContext();
 	const {TIMINGS} = useLayoutContext();
 	const {TemplateVariation} = BuildProps;
 	const {FPS_LADDER} = TIMINGS;
@@ -60,7 +57,7 @@ export const HeaderContainer = (props) => {
 			<HeaderCopy
 				style={{
 					...Font.Copy,
-					fontSize: '1.3em',
+					...TextStyles.copyMedium,
 					color: Color.Primary.Contrast,
 					clipPath: FromTopToBottom(30, 'Slow'),
 					opacity: interpolateOpacityByFrame(
@@ -77,7 +74,7 @@ export const HeaderContainer = (props) => {
 			<HeaderCopy
 				style={{
 					...Font.Copy,
-					fontSize: '1.3em',
+					...TextStyles.copyMedium,
 					textAlign: 'right',
 					color: Color.Primary.Contrast,
 					clipPath: FromTopToBottom(30, 'Slow'),

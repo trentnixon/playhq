@@ -37,15 +37,9 @@ const LogoContainer = styled.div`
 `;
 
 const TeamName = styled.h2`
-	font-style: normal;
-	font-weight: 400;
-	font-size: 1.4em;
-	line-height: 1.1em;
-	letter-spacing: -0.015em;
 	text-transform: uppercase;
 	margin: 15px;
 	text-align: center;
-	font-family: ${(props) => props.fontFamily};
 	width: 100%;
 	padding: 0%;
 `;
@@ -67,7 +61,7 @@ export const DisplayRosterData = (props) => {
 	const {teamHome, teamAway, teamAwayLogo, teamHomeLogo, isHomeTeam} =
 		matchData;
 
-	const {StyleConfig, BuildProps} = useStylesContext();
+	const {StyleConfig, BuildProps, TextStyles} = useStylesContext();
 	const {TemplateVariation} = BuildProps;
 
 	const {Font, Color} = StyleConfig;
@@ -110,6 +104,7 @@ export const DisplayRosterData = (props) => {
 						TEAM={isHomeTeam ? teamHome : teamAway}
 						STYLE={{
 							...Font.Copy,
+							...TextStyles.copyMedium,
 							color: Color.Primary.Contrast,
 						}}
 					/>
@@ -117,6 +112,7 @@ export const DisplayRosterData = (props) => {
 						TEAM={isHomeTeam ? teamAway : teamHome}
 						STYLE={{
 							...Font.Copy,
+							...TextStyles.copyMedium,
 							color: Color.Primary.Contrast,
 						}}
 					/>

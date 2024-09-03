@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import {darkenColor} from '../../../../utils/colors';
 import {ImageWithFallback} from '../../../../utils/global/ImageWithFallback';
 import {restrictString} from '../../../../utils/copy';
 import {
@@ -8,7 +7,6 @@ import {
 } from '../../../../common/components/copy/commonAssetTypes';
 import {FromRightToLeft} from '../../../../Animation/ClipWipe';
 import {useStylesContext} from '../../../../context/StyleContext';
-import {useLayoutContext} from '../../../../context/LayoutContext';
 
 const LadderPositionContainer = styled.div`
 	display: flex;
@@ -63,7 +61,7 @@ export const LadderPositionsItemRowV2 = (props) => {
 				{position}. {restrictString(teamName, CharacterLimit)}
 			</LadderTeamName>
 			<MetaContainer
-				bgColor={darkenColor(Color.Primary.Main)}
+				bgColor={Color.Primary.Main}
 				Height={(RowHeight - 4) * 0.75}
 				style={{clipPath: FromRightToLeft(30 + LADDERINT * 5, 'Slow')}}
 				borderRadius={PositionContainerStyles.borderRadius}

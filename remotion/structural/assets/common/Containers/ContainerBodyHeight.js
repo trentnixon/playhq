@@ -27,17 +27,17 @@ export const ContainerBodyHeight = (props) => {
 const SetContainerInnerBodyHeight = styled.div`
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	justify-content: space-evenly;
 	width: 100%;
-	height: ${(props) => props.Height}px;
+	height: -webkit-fill-available;
 	max-width: 100%;
 	margin: 0 auto;
 `;
 export const ContainerInnerBodyHeight = (props) => {
 	const {Heights} = useLayoutContext();
-	const {Body} = Heights;
+	const {AssetHeight} = Heights;
 	return (
-		<SetContainerInnerBodyHeight Height={Body}>
+		<SetContainerInnerBodyHeight Height={AssetHeight}>
 			{props.children}
 		</SetContainerInnerBodyHeight>
 	);
