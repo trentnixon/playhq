@@ -29,7 +29,7 @@ export const CricketSixersLeagueResultsBuild = ({matchData}) => {
 					imgStyles={teamHomeLogoStyles}
 					score={homeScore}
 					overs={homeOvers}
-					firstInnings={homeTeam.HomescoresFirstInnings}
+					firstInnings={homeTeam.homeScoresFirstInnings}
 					name={homeTeam.name}
 					type={matchData.type}
 					battingPerformances={homeTeam.battingPerformances}
@@ -41,7 +41,7 @@ export const CricketSixersLeagueResultsBuild = ({matchData}) => {
 					imgStyles={teamAwayLogoStyles}
 					score={awayScore}
 					overs={awayOvers}
-					firstInnings={awayTeam.AwayscoresFirstInnings}
+					firstInnings={awayTeam.awayScoresFirstInnings}
 					name={awayTeam.name}
 					type={matchData.type}
 					battingPerformances={awayTeam.battingPerformances}
@@ -64,6 +64,7 @@ const MatchContainerStyles = styled.div`
 	height: auto;
 	max-width: 100%;
 	margin: 0 auto;
+
 `;
 
 const TeamsAndScoresContainer = styled.div`

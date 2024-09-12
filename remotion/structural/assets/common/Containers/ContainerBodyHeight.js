@@ -10,7 +10,6 @@ const SetContainerBodyHeight = styled.div`
 	padding: 0 2%;
 	width: 100%;
 	height: ${(props) => props.Height}px;
-	/* background-color: blue; */
 	position: relative;
 `;
 
@@ -18,7 +17,7 @@ export const ContainerBodyHeight = (props) => {
 	const {Heights} = useLayoutContext();
 	const {AssetHeight} = Heights;
 	return (
-		<SetContainerBodyHeight Height={AssetHeight}>
+		<SetContainerBodyHeight Height={AssetHeight} style={{...props.styles}}>
 			{props.children}
 		</SetContainerBodyHeight>
 	);
@@ -37,7 +36,7 @@ export const ContainerInnerBodyHeight = (props) => {
 	const {Heights} = useLayoutContext();
 	const {AssetHeight} = Heights;
 	return (
-		<SetContainerInnerBodyHeight Height={AssetHeight}>
+		<SetContainerInnerBodyHeight Height={AssetHeight} style={{...props.styles}}>
 			{props.children}
 		</SetContainerInnerBodyHeight>
 	);

@@ -7,7 +7,7 @@ import {PresentationalAssetType} from '../../../../../../common/components/prese
 import {SpringToFrom} from '../../../../../../Animation/RemotionSpring';
 
 export const ThunderAssetTitle = () => {
-	const {StyleConfig} = useStylesContext();
+	const {StyleConfig, TextStyles} = useStylesContext();
 	const {TIMINGS} = useLayoutContext();
 	const {Font} = StyleConfig;
 
@@ -16,9 +16,9 @@ export const ThunderAssetTitle = () => {
 
 	const styleObj = {
 		...Font?.Copy,
+		...TextStyles.introSubtitle,
 		color: 'black',
 		height: 'auto',
-		fontWeight: '400',
 		textAlign: 'center',
 		textTransform: 'uppercase',
 	};

@@ -1,10 +1,7 @@
 // prepareMockData.js
 
 import { ASSETS } from "./RemotionAssets";
-import {
-  createPreviewObject,
-  updateDataBasedOnSelected,
-} from "./RemotionUtils";
+import { createPreviewObject } from "./RemotionUtils";
 import {
   createRender,
   createAccount,

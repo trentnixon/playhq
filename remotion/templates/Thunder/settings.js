@@ -1,12 +1,15 @@
 import fonts from '../../utils/global/init/fonts';
+import _ from 'lodash';
+
+// Set font specific to Basic
 const test = false; // '0em';
 export const settings = {
-	fontConfig: fonts.Gloss_And_Bloom,
-	defaultCopyFontFamily: fonts.MonumentExtended,
+	fontConfig: fonts.MonumentExtended,
+	defaultCopyFontFamily: fonts.Tungsten,
 	fontSizing: {
 		Title: {
 			L: test || '7em',
-			M: test || '5.5em',
+			M: test || '6.5em',
 			S: test || '4em',
 		},
 		TitleAlt: {
@@ -16,16 +19,16 @@ export const settings = {
 			S: test || '2em',
 		},
 		Copy: {
-			XL: test || '2.5em',
-			L: test || '2.3em',
-			M: test || '1.25em',
-			S: test || '1.05em',
+			XL: test || '3.5em',
+			L: test || '3.5em',
+			M: test || '2.5em',
+			S: test || '1.5em',
 			XS: test || '0.7em',
 		},
 	},
 	letterSpacing: {
 		Title: '1px',
-		Copy: '0px',
+		Copy: '1px',
 		TitleAlt: '1px',
 	},
 	lineHeight: {
@@ -57,4 +60,44 @@ export const settings = {
 		animationType: 'FromTop',
 		alignSponsors: 'right',
 	},
+};
+
+// ******************** Development Settings ********************
+// Set variant specific to Basic
+
+
+const commonOptions = {
+	Video: {
+		Theme: {
+			dark: '#111',
+			white: '#FFF',
+			primary: '#84FF19',
+			secondary: '#009300',
+		},
+/* 		HeroImage: {
+			url: 'https://fixtura.s3.ap-southeast-2.amazonaws.com/8ffe9be9_0ac3_4325_851b_5e15672aad9c_061fe22535.jpeg',
+			ratio: 'landscape',
+			width: 3680,
+			height: 2453,
+		}, */
+
+		TemplateVariation: {
+			useBackground:
+				'https://fixtura.s3.ap-southeast-2.amazonaws.com/Thunder_Gradient_BG_with_Lighting_8b729f26d1.png',
+		},
+	},
+};
+
+const gradientVariant = {
+	Video: {
+		TemplateVariation: {
+			Background: 'Gradient',
+		},
+	},
+};
+
+
+export const thunderTypes = ['Gradient']
+export const thunderVariants = {
+	Gradient: _.merge({}, _.cloneDeep(commonOptions), gradientVariant),
 };

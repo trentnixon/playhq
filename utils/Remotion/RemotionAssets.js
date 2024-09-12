@@ -1,12 +1,13 @@
 // RemotionAssets.js
 
 // Templates
-import { Template_Basic } from "../../remotion/templates/Basic/index";
-import { Template_CNSW } from "../../remotion/templates/CNSW/index";
-import { Template_QLDC } from "../../remotion/templates/QLDC/index";
-import { Template_CoastalCricketLeague } from "../../remotion/templates/CoastalCricketLeague/index";
-import { Template_CNSWREAL } from "../../remotion/templates/CNSWreal/index";
-import { Template_Sixers } from "../../remotion/templates/Sixers/index";
+import { Basic } from "../../remotion/templates/Basic/index";
+import { CNSW } from "../../remotion/templates/CNSW/index";
+import { QLDC } from "../../remotion/templates/QLDC/index";
+import { CoastalCricketLeague } from "../../remotion/templates/CoastalCricketLeague/index";
+import { CNSWREAL } from "../../remotion/templates/CNSWreal/index";
+import { Sixers } from "../../remotion/templates/Sixers/index";
+import { Thunder } from "../../remotion/templates/Thunder/index";
 // DATA
 // Cricket
 import DATA_CRICKET_UPCOMINGFIXTURES from "../../remotion/data/cricket/FIXTURA_PREVIEW_CRICKET_UPCOMINGFIXTURES.json";
@@ -178,33 +179,38 @@ const netballData = {
 // Exported assets for different sports and templates
 export const ASSETS = {
   Cricket: {
-    Basic: createCategoryAssets(Template_Basic, cricketData, cricketKeyMapping),
-    CNSW: createCategoryAssets(Template_CNSW, cricketData, cricketKeyMapping),
-    QLDC: createCategoryAssets(Template_QLDC, cricketData, cricketKeyMapping),
+    Basic: createCategoryAssets(Basic, cricketData, cricketKeyMapping),
+    CNSW: createCategoryAssets(CNSW, cricketData, cricketKeyMapping),
+    QLDC: createCategoryAssets(QLDC, cricketData, cricketKeyMapping),
     CoastalCricketLeague: createCategoryAssets(
-      Template_CoastalCricketLeague,
+      CoastalCricketLeague,
       cricketData,
       cricketKeyMapping
     ),
     CNSWREAL: createCategoryAssets(
-      Template_CNSWREAL,
+      CNSWREAL,
       cricketData,
       cricketKeyMapping
     ),
     SixersLeague: createCategoryAssets(
-      Template_Sixers,
+      Sixers,
+      cricketData,
+      cricketKeyMapping
+    ),
+    ThunderLeague: createCategoryAssets(
+      Thunder,
       cricketData,
       cricketKeyMapping
     ),
   },
   AFL: {
-    Basic: createCategoryAssets(Template_Basic, aflData, aflKeyMapping),
-    CNSW: createCategoryAssets(Template_CNSW, aflData, aflKeyMapping),
-    QLDC: createCategoryAssets(Template_QLDC, aflData, aflKeyMapping),
+    Basic: createCategoryAssets(Basic, aflData, aflKeyMapping),
+    CNSW: createCategoryAssets(CNSW, aflData, aflKeyMapping),
+    QLDC: createCategoryAssets(QLDC, aflData, aflKeyMapping),
   },
   Netball: {
-    Basic: createCategoryAssets(Template_Basic, netballData, netballKeyMapping),
-    CNSW: createCategoryAssets(Template_CNSW, netballData, netballKeyMapping),
-    QLDC: createCategoryAssets(Template_QLDC, netballData, netballKeyMapping),
+    Basic: createCategoryAssets(Basic, netballData, netballKeyMapping),
+    CNSW: createCategoryAssets(CNSW, netballData, netballKeyMapping),
+    QLDC: createCategoryAssets(QLDC, netballData, netballKeyMapping),
   },
 };
