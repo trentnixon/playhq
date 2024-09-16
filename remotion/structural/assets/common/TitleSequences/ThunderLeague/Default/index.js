@@ -14,6 +14,11 @@ const Row = styled.div`
 	align-items: center;
 	justify-content: flex-center;
 	width: 96%;
+	background-image: url(${(props) => props.backgroundImage});
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	margin-top: 10px;
 `;
 const InnerContainer = styled.div`
 	display: flex;
@@ -30,17 +35,18 @@ const InnerContainer = styled.div`
 
 export const ThunderLeagueDefaultTitle = () => {
 	const {Heights} = useLayoutContext();
-
+	const thunderHoop =
+		'https://fixtura.s3.ap-southeast-2.amazonaws.com/Thunder_Paint_Stroke_Oval_Wide_Heavy_Mono_Black_21aa15ffcf.png';
 	return (
 		<ContainerHeaderHeight SectionHeights={Heights}>
-			<Row>
+			<Row backgroundImage={thunderHoop}>
 				<InnerContainer
 					style={{
 						clipPath: FromLeftToRight(10, 'Wobbly'),
 					}}
 				>
 					<ThunderAssetTitle />
-					<ThunderBundleTitle />
+					{/* <ThunderBundleTitle /> */}
 				</InnerContainer>
 			</Row>
 		</ContainerHeaderHeight>

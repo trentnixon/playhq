@@ -12,17 +12,13 @@ const InningsScore = styled.div`
 
 const Runs = styled.h3`
 	color: ${(props) => props.color};
-	font-weight: 400;
 	margin: 0;
 	text-transform: uppercase;
-	font-family: ${(props) => props.fontFamily};
 `;
 
 const Overs = styled.h3`
-	font-weight: 400;
 	margin: 0;
 	text-transform: uppercase;
-	font-family: ${(props) => props.fontFamily};
 	color: ${(props) => props.color};
 `;
 
@@ -37,7 +33,7 @@ export const DisplayInningsScore = (props) => {
 					color={getContrastColor(Color.Primary.Darken)}
 					style={{
 						...Font.Copy,
-						...TextStyles.copySmall,
+						...TextStyles.copyMediumBold,
 					}}
 				>
 					<FirstInningsScore Type={Type} FirstInnings={FirstInnings} /> {score}

@@ -37,7 +37,7 @@ export const SelectATemplateMembers = ({ hasMediaItems }) => {
     fetchTemplates();
   }, []);
 
-  const filterFn = (template) => {
+  const filterFn = template => {
     const isPublic = template.attributes.public;
     const isTemplateUserTemplate =
       userAccount.attributes.template.data.id === template.id;
@@ -67,13 +67,16 @@ export const SelectATemplateMembers = ({ hasMediaItems }) => {
     return {};
   }, [GetElement, userAccount]);
 
-  const categoryOptions = useMemo(() => generateCategoryOptions(templates), [templates]);
+  const categoryOptions = useMemo(
+    () => generateCategoryOptions(templates),
+    [templates]
+  );
 
-  const handleMoreInfoClick = (template) => {
+  const handleMoreInfoClick = template => {
     setSelectedTemplate(template);
   };
 
-  const StoreUserChange = (item) => {
+  const StoreUserChange = item => {
     setLoading(true);
     CreateDesignElement({
       CollectionSaveTo: "accounts",
@@ -92,6 +95,7 @@ export const SelectATemplateMembers = ({ hasMediaItems }) => {
     return <div>Loading...</div>; // Or any loading spinner/component
   }
 
+  console.log("filteredCategoryTemplates", filteredCategoryTemplates);
   return (
     <>
       <Container fluid={true} mb={40}>
@@ -100,12 +104,16 @@ export const SelectATemplateMembers = ({ hasMediaItems }) => {
           selectedCategory={selectedCategory}
           onSelectCategory={setSelectedCategory}
         />
-        {Object.keys(filteredCategoryTemplates).map((category) => (
+        {Object.keys(filteredCategoryTemplates).map(category => (
           <RoundedSectionContainer
             key={category}
             headerContent={""}
             topContent={
-              <P size={"xl"} Weight={900} textTransform={"uppercase"}>
+              <P
+                size={"xl"}
+                marginBottom={0}
+                Weight={900}
+                textTransform={"uppercase"}>
                 {category}
               </P>
             }
@@ -115,8 +123,7 @@ export const SelectATemplateMembers = ({ hasMediaItems }) => {
                   { minWidth: "xs", cols: 2 },
                   { minWidth: "sm", cols: 2 },
                   { minWidth: "md", cols: 3 },
-                ]}
-              >
+                ]}>
                 {filteredCategoryTemplates[category].map((item, i) => (
                   <TemplateCardMembers
                     key={i}
@@ -124,10 +131,10 @@ export const SelectATemplateMembers = ({ hasMediaItems }) => {
                     isSelected={
                       userAccount.attributes.template.data.id === item.id
                     }
-                    onSelect={(selectedTemplate) =>
+                    onSelect={selectedTemplate =>
                       StoreUserChange(selectedTemplate)
                     }
-                    onMoreInfo={(selectedTemplate) =>
+                    onMoreInfo={selectedTemplate =>
                       handleMoreInfoClick(selectedTemplate)
                     }
                     hasMediaItems={hasMediaItems}
