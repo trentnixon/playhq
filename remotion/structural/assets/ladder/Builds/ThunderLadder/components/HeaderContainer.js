@@ -68,7 +68,7 @@ export const HeaderContainer = (props) => {
 					),
 				}}
 			>
-				{restrictString(name, 25)}
+				{name}
 			</HeaderCopy>
 		</HeaderContainerStyles>
 	);
