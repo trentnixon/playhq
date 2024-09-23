@@ -28,12 +28,6 @@ const Home = () => {
       <HomePageProblem />
       <OrangisatonAlreadyUsingFixtura />
       <CTA />
-      {/*  <HowItWorks /> */}
-      {/* <Services />  */}
-      {/*
-      <Feedback />
-      <FixturaPricingCards />
-      <CtaArea /> */}
     </>
   );
 };
