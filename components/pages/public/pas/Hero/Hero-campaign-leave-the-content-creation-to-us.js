@@ -8,7 +8,7 @@ const Hero = () => {
   const highlightRef = useRef(null);
   const images = [
     {
-      src: "https://fixtura.s3.ap-southeast-2.amazonaws.com/POS_Site_Human_010_6ae3f3eee5.png",
+      src: "https://fixtura.s3.ap-southeast-2.amazonaws.com/Leave_The_Content_To_Us_2c9344ad4f.png",
       alt: "Header Item 1",
     },
   ];
@@ -20,7 +20,7 @@ const Hero = () => {
     const images = heroElement.querySelectorAll(".imageItem");
     gsap.fromTo(
       images,
-      { x: 450, opacity: 0 },
+      { x: 550, opacity: 0 },
       { x: 0, opacity: 1, duration: 0.9, stagger: 0.2, ease: "power1.out" }
     );
 
@@ -51,18 +51,18 @@ const HeroText = ({ highlightRef }) => {
   return (
     <div className={styles.textContent}>
       <H1>
-        Struggling to Keep Up with Your{" "}
+        This Summer, Leave the{" "}
         <span ref={highlightRef} className={styles.highlight}>
-          Club&rsquo;s Digital Content
+          Digital Content Creation
         </span>{" "}
-        Schedule?
+        to Us!
       </H1>
       <P>
-        Let{" "}
+        You can{" "}
         <span ref={highlightRef} className={styles.highlight}>
-          Fixtura
+          focus
         </span>{" "}
-        Streamline the Process
+        on your game
       </P>
     </div>
   );

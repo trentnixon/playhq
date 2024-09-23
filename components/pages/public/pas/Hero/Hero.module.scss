@@ -103,7 +103,6 @@
   align-items: flex-end;
   justify-content: flex-start;
   position: relative;
-  height: 500px; /* Ensuring the height to arrange the images within it */
 
   @media (max-width: 996px) {
     flex: 1;

@@ -36,7 +36,7 @@ const Home = () => {
 
 export default Home;
 
-export const getServerSideProps = async (context) => {
+export const getServerSideProps = async context => {
   const response = await fetcher(
     `${process.env.NEXT_PUBLIC_STRAPI_URL}/associations`
   );
