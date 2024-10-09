@@ -81,7 +81,7 @@ const HeroText = ({ highlightRefs }) => {
         to Us!
       </H1>
       <P>
-        You can{" "}
+        So you can{" "}
         <span ref={el => setHighlightRef(el, 1)} className={styles.highlight}>
           focus
         </span>{" "}

@@ -14,6 +14,7 @@ import { SponsorLimitMessage } from "../../../components/pages/members/sponsors/
 
 import { DescriptionSection } from "../../../components/pages/members/sponsors/Sections/DescriptionSection";
 import { RoundedSectionContainer } from "../../../components/UI/Containers/SectionContainer";
+import { PreviewSponsorsGallery } from "../../../components/pages/members/index/Dashboard/userPreview/PreviewSponsorsGallery";
 
 const SPONSORS = () => {
   const SPONSORLIMIT = 30;
@@ -59,7 +60,7 @@ const SPONSORS = () => {
         }
         bottomContent={
           <>
-          <SponsorLimitMessage
+            <SponsorLimitMessage
               Sponsors={Sponsors}
               SPONSORLIMIT={SPONSORLIMIT}
               isCreate={isCreate}
@@ -71,10 +72,10 @@ const SPONSORS = () => {
               setIsCreate={setIsCreate}
               userAccount={userAccount}
             />
-
           </>
         }
       />
+      <PreviewSponsorsGallery />
     </MembersWrapper>
   );
 };
