@@ -14,7 +14,7 @@ export const RecentRenderButton = ({ renders, account, token }) => {
       : current;
   });
 
-  const renderUrl = `https://content.fixtura.com.au/${
+  const renderUrl = `https://contentv2.fixtura.com.au/${
     account.id
   }/${account.attributes.Sport.toLowerCase()}/${
     mostRecentRender.id

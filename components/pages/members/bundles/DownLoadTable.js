@@ -21,11 +21,11 @@ import {
 } from "../../../../utils/helpers";
 import { useAccountDetails } from "../../../../context/userContext";
 import { FixturaLoading } from "../../../Members/Common/Loading";
-const useStyles = createStyles((theme) => ({
+const useStyles = createStyles(theme => ({
   header: {
     position: "sticky",
     top: 0,
-    textAlign:'center',
+    textAlign: "center",
     backgroundColor:
       theme.colorScheme === "dark" ? theme.colors.dark[7] : theme.white,
     transition: "box-shadow 150ms ease",
@@ -43,8 +43,8 @@ const useStyles = createStyles((theme) => ({
       }`,
     },
   },
-  row:{
-    textAlign:'left',
+  row: {
+    textAlign: "left",
   },
   scrolled: {
     boxShadow: theme.shadows.sm,
@@ -64,20 +64,17 @@ export function DownloadTable({ data, Token }) {
     <>
       <ScrollArea
         sx={{ minheight: 1000 }}
-        onScrollPositionChange={({ y }) => setScrolled(y !== 0)}
-      >
+        onScrollPositionChange={({ y }) => setScrolled(y !== 0)}>
         <Table sx={{ minWidth: 700 }}>
           <thead
-            className={cx(classes.header, { [classes.scrolled]: scrolled })}
-          >
-            <tr className={cx(classes.row)} >
+            className={cx(classes.header, { [classes.scrolled]: scrolled })}>
+            <tr className={cx(classes.row)}>
               <th className={cx(classes.row)}>
                 <Tooltip
                   label="Render ID"
                   color={theme.colors.cyan[3]}
                   position="bottom-start"
-                  withArrow
-                >
+                  withArrow>
                   <IconIdBadge2 size="1.5rem" color={theme.colors.cyan[5]} />
                 </Tooltip>
               </th>
@@ -86,8 +83,7 @@ export function DownloadTable({ data, Token }) {
                   label="Date Created"
                   color={theme.colors.cyan[3]}
                   position="bottom-start"
-                  withArrow
-                >
+                  withArrow>
                   <IconCalendarStats
                     size="1.5rem"
                     color={theme.colors.cyan[5]}
@@ -99,8 +95,7 @@ export function DownloadTable({ data, Token }) {
                   label="Media Downloads"
                   color={theme.colors.cyan[3]}
                   position="bottom-start"
-                  withArrow
-                >
+                  withArrow>
                   <IconDownload size="1.5rem" color={theme.colors.cyan[5]} />
                 </Tooltip>
               </th>
@@ -109,8 +104,7 @@ export function DownloadTable({ data, Token }) {
                   label="Fixture Results"
                   color={theme.colors.cyan[3]}
                   position="bottom-start"
-                  withArrow
-                >
+                  withArrow>
                   <IconScoreboard size="1.5rem" color={theme.colors.cyan[5]} />
                 </Tooltip>
               </th>
@@ -119,8 +113,7 @@ export function DownloadTable({ data, Token }) {
                   label="Upcoming Fixture"
                   color={theme.colors.cyan[3]}
                   position="bottom-start"
-                  withArrow
-                >
+                  withArrow>
                   <IconCalendarDue size="1.5rem" color={theme.colors.cyan[5]} />
                 </Tooltip>
               </th>
@@ -149,7 +142,7 @@ const TableRow = ({ row, Token }) => {
         {row.Complete && !disableLink ? (
           <BTN_TOEXTLINK
             LABEL="Download"
-            URL={`https://content.fixtura.com.au/${
+            URL={`https://contentv2.fixtura.com.au/${
               account.id
             }/${account.attributes.Sport.toLowerCase()}/${
               row.id
