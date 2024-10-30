@@ -4,7 +4,6 @@ import {useLayoutContext} from '../../../../../../context/LayoutContext';
 import {SpringToFrom} from '../../../../../../Animation/RemotionSpring';
 import {EraseToMiddleFromTop} from '../../../../../../Animation/ClipWipe';
 import {ImageWithFallback} from '../../../../../../utils/global/ImageWithFallback';
-import PropTypes from 'prop-types'; // Optional: For prop type validation
 
 // Utility function to determine image orientation
 const getOrientation = (width, height) => {
@@ -101,8 +100,3 @@ const StyledImage = styled(ImageWithFallback)`
 	height: 100%;
 	object-fit: contain; /* Maintains aspect ratio */
 `;
-
-// Optional: Define PropTypes if you plan to pass props to BasicDefaultTitleLogo
-BasicDefaultTitleLogo.propTypes = {
-	// No props currently, but can define if needed
-};

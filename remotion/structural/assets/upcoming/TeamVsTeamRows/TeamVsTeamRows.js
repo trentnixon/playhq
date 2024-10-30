@@ -87,9 +87,14 @@ export const TeamVsTeamRows = (props) => {
 };
 
 const BYEContainer = (props) => {
-	const {matchData, FPS_SCORECARD, TemplateVariation, StyleConfig} = props;
-	const {Font, Color} = StyleConfig;
+	const {matchData} = props;
+	const {StyleConfig, BuildProps} = useStylesContext();
+	const {TIMINGS} = useLayoutContext();
+
 	const {teamHome, teamAway} = matchData;
+	const {Font, Color} = StyleConfig;
+	const {FPS_SCORECARD} = TIMINGS;
+	const {TemplateVariation} = BuildProps;
 	const frame = useCurrentFrame();
 
 	const gradeNameCustom = {
@@ -98,8 +103,8 @@ const BYEContainer = (props) => {
 		clipPath: FromTopToBottom(35, 'Slow'),
 		opacity: interpolateOpacityByFrame(
 			frame,
-			props.FPS_SCORECARD - 30,
-			props.FPS_SCORECARD,
+			FPS_SCORECARD - 30,
+			FPS_SCORECARD,
 			1,
 			0
 		),

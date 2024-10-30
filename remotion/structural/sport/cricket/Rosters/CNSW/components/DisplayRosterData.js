@@ -9,11 +9,12 @@ import {DisplayRoster} from './DisplayRoster';
 const FixtureData = styled.div`
 	display: flex;
 	flex-direction: column;
-	justify-content: start; /* Distributes space evenly */
+	justify-content: start;
 	padding: 0px;
 	margin: 270px 0 0 0;
-	width: 100%;
+	width: 70%;
 	position: relative;
+	height: 100vh;
 `;
 const FixtureDataInner = styled.div`
 	display: flex;
@@ -43,6 +44,13 @@ const TeamName = styled.h2`
 	width: 100%;
 	padding: 0%;
 `;
+const GradeName = styled.h2`
+	text-transform: uppercase;
+	margin: 0 0 35px;
+	text-align: center;
+	width: 100%;
+	padding: 0%;
+`;
 
 const LogoHolder = styled.div`
 	z-index: 1000;
@@ -61,6 +69,7 @@ export const DisplayRosterData = (props) => {
 	const {teamHome, teamAway, teamAwayLogo, teamHomeLogo, isHomeTeam} =
 		matchData;
 
+	console.log('[matchData]', matchData.gradeName);
 	const {StyleConfig, BuildProps, TextStyles} = useStylesContext();
 	const {TemplateVariation} = BuildProps;
 
@@ -80,6 +89,14 @@ export const DisplayRosterData = (props) => {
 	return (
 		<FixtureData>
 			<FixtureDataInner>
+				<DisplayGradeName
+					TEAM={matchData.gradeName}
+					STYLE={{
+						...Font.Copy,
+						...TextStyles.copyLargeBold,
+						color: Color.Primary.Contrast,
+					}}
+				/>
 				<LogoContainer>
 					<DisplayLogo
 						LOGO={isHomeTeam ? teamHomeLogo : teamAwayLogo}
@@ -99,6 +116,7 @@ export const DisplayRosterData = (props) => {
 						}}
 					/>
 				</LogoContainer>
+
 				<LogoContainer>
 					<DisplayTeamName
 						TEAM={isHomeTeam ? teamHome : teamAway}
@@ -130,6 +148,15 @@ const DisplayTeamName = (props) => {
 		<TeamName fontFamily={fontFamily} style={STYLE} THEME={THEME}>
 			{restrictString(TEAM, 50)}
 		</TeamName>
+	);
+};
+
+const DisplayGradeName = (props) => {
+	const {fontFamily, TEAM, STYLE, THEME} = props;
+	return (
+		<GradeName fontFamily={fontFamily} style={STYLE} THEME={THEME}>
+			{TEAM}
+		</GradeName>
 	);
 };
 

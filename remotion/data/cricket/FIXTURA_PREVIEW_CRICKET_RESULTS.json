@@ -5,6 +5,7 @@
     "homeTeam": {
       "name": "India",
       "isHome": true,
+      "isClubTeam": true,
       "logo": {
         "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
         "width": 128,
@@ -75,6 +76,7 @@
     "awayTeam": {
       "name": "England",
       "isHome": false,
+      "isClubTeam": false,
       "logo": {
         "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
         "width": 128,
@@ -188,6 +190,7 @@
     "homeTeam": {
       "name": "South Africa",
       "isHome": true,
+      "isClubTeam": true,
       "logo": {
         "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
 
@@ -259,6 +262,7 @@
     "awayTeam": {
       "name": "New Zealand",
       "isHome": false,
+      "isClubTeam": false,
       "logo": {
         "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
         "width": 128,
@@ -370,6 +374,7 @@
     "homeTeam": {
       "name": "England",
       "isHome": true,
+      "isClubTeam": true,
       "logo": {
         "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
         "width": 128,
@@ -440,6 +445,7 @@
     "awayTeam": {
       "name": "Pakistan",
       "isHome": false,
+      "isClubTeam": false,
       "logo": {
         "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
         "width": 128,
@@ -551,6 +557,7 @@
     "homeTeam": {
       "name": "Australia",
       "isHome": true,
+      "isClubTeam": true,
       "logo": {
         "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
         "width": 128,
@@ -621,6 +628,7 @@
     "awayTeam": {
       "name": "India",
       "isHome": false,
+      "isClubTeam": false,
       "logo": {
         "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
         "width": 128,

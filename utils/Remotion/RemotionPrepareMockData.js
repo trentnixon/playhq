@@ -17,7 +17,7 @@ import {
 export const DEFAULTLOGO =
   "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png";
 
-export const prepareMockData = (account) => {
+export const prepareMockData = account => {
   // Create Basic Account data obj
   const accountCustomDataOBJ = createPreviewObject(account);
   const { Account } = accountCustomDataOBJ;
@@ -38,7 +38,7 @@ export const prepareMockData = (account) => {
     return [];
   }
 
-  return Object.keys(ASSETS[sport][category]).map((assetType) => {
+  return Object.keys(ASSETS[sport][category]).map(assetType => {
     const asset = ASSETS[sport][category][assetType];
 
     const finalData = {

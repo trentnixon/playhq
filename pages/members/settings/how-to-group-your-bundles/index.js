@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { Group, Switch } from "@mantine/core";
+import { Divider, Group, Switch } from "@mantine/core";
 import { P, PageTitle } from "../../../../components/Members/Common/Type";
 import { FindAccountType } from "../../../../lib/actions";
 import { useSetGroupAssetsBySetting } from "../../../../Hooks/useAccountSettings";
@@ -11,6 +11,7 @@ import { BackToSettings } from "../../../../components/pages/members/settings/_c
 import { RoundedSectionContainer } from "../../../../components/UI/Containers/SectionContainer";
 import SecureRouteHOC from "../../../../components/Layouts/members/security/SecureRouteHC";
 import { PageMetaData } from "../../../../components/Layouts/members/Meta/pageMetaData";
+import HandleJuniorSurnames from "./components/handleJuniorSurnames";
 
 const GroupBySwitch = () => {
   const { account } = useAccountDetails();
@@ -51,7 +52,7 @@ const GroupBySwitch = () => {
 
   // create use hook for ass and club data to show the grouped by labels
 
-  const handleSwitchChange = (newValue) => {
+  const handleSwitchChange = newValue => {
     setSwitchValue(newValue);
     putGroupAssetsBy(newValue);
   };
@@ -67,11 +68,13 @@ const GroupBySwitch = () => {
       <PageMetaData MetaOBJ={MetaOBJ} />
 
       <PageTitle
-        Copy={`Settings - Bundle Grouping `}
+        Copy={`Settings - Bundle Settings `}
         ICON={<IconSettings size={40} />}
       />
       <BackToSettings />
 
+      <HandleJuniorSurnames />
+      <Divider my="xl" />
       <RoundedSectionContainer
         headerContent="Bundle Groupings"
         topContent={
@@ -112,7 +115,7 @@ const ContainerTopSection = ({ setting, handleSwitchChange, switchValue }) => {
       </P>
       <Switch
         checked={switchValue}
-        onChange={(event) => handleSwitchChange(event.currentTarget.checked)}
+        onChange={event => handleSwitchChange(event.currentTarget.checked)}
         onLabel={setting.onLabel}
         offLabel={setting.offLabel}
         size="xl"

@@ -8,6 +8,7 @@ import { CoastalCricketLeague } from "../../remotion/templates/CoastalCricketLea
 import { CNSWREAL } from "../../remotion/templates/CNSWreal/index";
 import { Sixers } from "../../remotion/templates/Sixers/index";
 import { Thunder } from "../../remotion/templates/Thunder/index";
+import { Muted } from "../../remotion/templates/Muted/index";
 // DATA
 // Cricket
 import DATA_CRICKET_UPCOMINGFIXTURES from "../../remotion/data/cricket/FIXTURA_PREVIEW_CRICKET_UPCOMINGFIXTURES.json";
@@ -187,21 +188,14 @@ export const ASSETS = {
       cricketData,
       cricketKeyMapping
     ),
-    CNSWREAL: createCategoryAssets(
-      CNSWREAL,
-      cricketData,
-      cricketKeyMapping
-    ),
-    SixersLeague: createCategoryAssets(
-      Sixers,
-      cricketData,
-      cricketKeyMapping
-    ),
+    CNSWREAL: createCategoryAssets(CNSWREAL, cricketData, cricketKeyMapping),
+    SixersLeague: createCategoryAssets(Sixers, cricketData, cricketKeyMapping),
     ThunderLeague: createCategoryAssets(
       Thunder,
       cricketData,
       cricketKeyMapping
     ),
+    Muted: createCategoryAssets(Muted, cricketData, cricketKeyMapping),
   },
   AFL: {
     Basic: createCategoryAssets(Basic, aflData, aflKeyMapping),

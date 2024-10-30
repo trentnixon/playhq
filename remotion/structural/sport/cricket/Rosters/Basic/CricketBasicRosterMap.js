@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import {Series} from 'remotion';
-
 import {CricketBasicRosterBuild} from './CricketBasicRosterBuild';
 import {RosterContainer} from './components/RosterContainer';
 import {useLayoutContext} from '../../../../../context/LayoutContext';
@@ -12,6 +11,7 @@ export const CricketBasicRosterMap = () => {
 	const {DATA} = useVideoDataContext();
 	const {FPS_SCORECARD} = TIMINGS;
 	const groupsOfTwo = splitIntoGroupsOfTwo(DATA.DATA);
+
 	return (
 		<ResultsContainer>
 			<Series>
@@ -24,7 +24,6 @@ export const CricketBasicRosterMap = () => {
 										key={`${index}_${i}`}
 										INT={i}
 										matchData={game}
-
 									/>
 								))}
 							</RosterContainer>

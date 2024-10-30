@@ -38,7 +38,7 @@ export const DisplayKeys = ({ switchValue }) => {
 
   const currentDate = new Date();
   const filteredComps = useComps.filter(
-    (comp) => new Date(comp.attributes.endDate) > currentDate
+    comp => new Date(comp.attributes.endDate) > currentDate
   );
 
   let groupedComps;
@@ -57,7 +57,7 @@ export const DisplayKeys = ({ switchValue }) => {
 
   return (
     <RoundedSectionContainer
-      headerContent="Expected Grouping"
+      headerContent="Expected Bundle Grouping"
       topContent={<ContainerTopSection keys={keys} />}
       bottomContent={<ContainerBottomSection keys={keys} />}
     />
@@ -67,10 +67,8 @@ export const DisplayKeys = ({ switchValue }) => {
 const ContainerTopSection = ({ keys }) => {
   return (
     <>
-      <P marginBottom={0}>
-        How your Bundle will be grouped {keys.length} Bundle Categories
-      </P>
-      <BundleGroupingWarning NumItems={keys.length} />
+      <P marginBottom={0}>{keys.length} Categories Found</P>
+      {/*  <BundleGroupingWarning NumItems={keys.length} /> */}
     </>
   );
 };

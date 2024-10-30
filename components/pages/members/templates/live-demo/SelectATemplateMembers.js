@@ -11,6 +11,7 @@ import CategoryFilter from "../../../../Common/live-demo/CategoryFilter";
 import { TemplateCardMembers } from "./Components/TemplateCardMembers";
 import { generateCategoryOptions } from "../../../../../utils/templateUtils";
 import { useGETDesignElement } from "../../../../../Hooks/useCustomizer";
+import { FindAccountType } from "../../../../../lib/actions";
 
 export const SelectATemplateMembers = ({ hasMediaItems }) => {
   const { account, ReRender } = useAccountDetails();
@@ -20,6 +21,7 @@ export const SelectATemplateMembers = ({ hasMediaItems }) => {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [DesignElement, CreateDesignElement] = useAssignDesignElement();
   const [GetElement, FetchElement] = useGETDesignElement();
+  const accountType = FindAccountType(account);
 
   useEffect(() => {
     setUserAccount(account);
@@ -48,9 +50,30 @@ export const SelectATemplateMembers = ({ hasMediaItems }) => {
 
   const templates = useMemo(() => {
     if (Array.isArray(GetElement)) {
+      // Update filter function to account for `onlyClub` and `accountType`
+      const filterFn = template => {
+        const isPublic = template.attributes.public;
+        const isTemplateUserTemplate =
+          userAccount.attributes.template.data.id === template.id;
+        const onlyClub = template.attributes.onlyClub;
+        const accountType = userAccount.attributes.accountType;
+
+        // New condition: If `onlyClub` is true, the accountType must be 'Club'
+        if (onlyClub && accountType !== "Club") {
+          return false;
+        }
+
+        // Existing logic for user template or public template
+        return userAccount.attributes.hasCustomTemplate
+          ? isTemplateUserTemplate
+          : isPublic;
+      };
+
+      // Apply filtering and grouping based on categories
       const filteredTemplates = GetElement.filter(filterFn);
       const grouped = filteredTemplates.reduce((acc, template) => {
         const category = template.attributes?.Category;
+
         if (!category) {
           console.error("Template has no category:", template);
           return acc;
@@ -61,6 +84,7 @@ export const SelectATemplateMembers = ({ hasMediaItems }) => {
         acc[category].push(template);
         return acc;
       }, {});
+
       setLoading(false);
       return grouped;
     }

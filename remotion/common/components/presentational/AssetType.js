@@ -17,6 +17,8 @@ export const PresentationalAssetType = ({
 	const {DATA} = useVideoDataContext();
 	const {Video} = DATA.VIDEOMETA;
 
+	console.log('[Video]', Video);
+
 	const combinedStyles = {
 		...defaultStyleObj,
 		...styleObj,
@@ -28,9 +30,11 @@ export const PresentationalAssetType = ({
 			{as === 'p' ? (
 				<P {...combinedStyles}>{Video.Title}</P>
 			) : (
-				<H level={level} {...combinedStyles}>
-					{Video.Title}&nbsp;
-				</H>
+				<>
+					<H level={level} {...combinedStyles}>
+						{Video.Title}&nbsp;
+					</H>
+				</>
 			)}
 		</>
 	);

@@ -28,52 +28,52 @@ const Settings = () => {
       description: "Select a day you would like your bundles to arrive.",
       link: "/members/settings/change-day-bundle-arrives/",
       label: "Set Delivery Day",
-      icon: <IconBrandDaysCounter size={40} stroke={1.5} />
+      icon: <IconBrandDaysCounter size={40} stroke={1.5} />,
     },
     {
-      title: "Grouping Bundles",
-      description: "Configure how your bundles are grouped.",
+      title: "Bundle Setting",
+      description: "Configure your bundles.",
       link: "/members/settings/how-to-group-your-bundles/",
-      label: "Group Bundles",
-      icon: <IconStack size={40} stroke={1.5} />
+      label: "Bundle Settings",
+      icon: <IconStack size={40} stroke={1.5} />,
     },
     {
       title: "Brand Logo",
       description: "Update your club's brand logo.",
       link: "/members/settings/change-brand-logo/",
       label: "Update Logo",
-      icon: <IconPhoto size={40} stroke={1.5} />
+      icon: <IconPhoto size={40} stroke={1.5} />,
     },
     {
       title: "Brand Colors",
       description: "Customize your brand's primary and secondary colors.",
       link: "/members/settings/change-brand-colors/",
       label: "Customize Colors",
-      icon: <IconColorSwatch size={40} stroke={1.5} />
+      icon: <IconColorSwatch size={40} stroke={1.5} />,
     },
     {
       title: "Sponsors",
       description: "Add or update your club's sponsors.",
       link: "/members/sponsors/",
       label: "Manage Sponsors",
-      icon: <IconUsers size={40} stroke={1.5} />
+      icon: <IconUsers size={40} stroke={1.5} />,
     },
     {
       title: "Media/Images",
       description: "Manage your club's media and image libraries.",
       link: "/members/gallery/",
       label: "Update Media",
-      icon: <IconPhoto size={40} stroke={1.5} />
+      icon: <IconPhoto size={40} stroke={1.5} />,
     },
     {
       title: "Template Customization",
-      description: "Customize templates for your digital assets and communications.",
+      description:
+        "Customize templates for your digital assets and communications.",
       link: "/members/settings/template-customization/",
       label: "Customize Templates",
-      icon: <IconTools size={40} stroke={1.5} />
-    }
+      icon: <IconTools size={40} stroke={1.5} />,
+    },
   ];
-  
 
   return (
     <SecureRouteHOC>
@@ -91,8 +91,7 @@ const Settings = () => {
           { maxWidth: "62rem", cols: 3, spacing: "md" },
           { maxWidth: "48rem", cols: 2, spacing: "sm" },
           { maxWidth: "36rem", cols: 1, spacing: "sm" },
-        ]}
-      >
+        ]}>
         {settingsComponents.map((item, index) => (
           <SettingsCard key={index} item={item} />
         ))}
@@ -114,23 +113,21 @@ const SettingsCard = ({ item }) => {
       withBorder
       shadow="md"
       className={classes.card}
-      style={{ marginTop: `calc(${ICON_SIZE} / 3)` }}
-    >
+      style={{ marginTop: `calc(${ICON_SIZE} / 3)` }}>
       <ThemeIcon
         color="blue.5"
         className={classes.icon}
         size={ICON_SIZE}
-        radius={ICON_SIZE}
-      >
+        radius={ICON_SIZE}>
         {icon}
       </ThemeIcon>
       <P Weight={700} textAlign="center">
         {title}
       </P>
 
-      <P Weight={400} textAlign="center" size={'sm'} color='6'>
+      <P Weight={400} textAlign="center" size={"sm"} color="6">
         {description}
-        </P>
+      </P>
       <Group position="center" my="md">
         <BTN_TOINTERALLINK LABEL={label} URL={link} />
       </Group>
