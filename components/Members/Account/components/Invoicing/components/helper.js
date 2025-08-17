@@ -1,8 +1,8 @@
-import { P } from "../../../../Common/Type";
-import { Group, Paper } from "@mantine/core";
+import { P } from '../../../../Common/Type';
+import { Group, Paper } from '@mantine/core';
 
-export const DisplayItem = (props) => {
-  const { icon, label, position = "left" } = props;
+export const DisplayItem = props => {
+  const { icon, label, position = 'left' } = props;
   return (
     <Group position={position}>
       <P marginBottom={0} color={7}>
@@ -16,9 +16,9 @@ export const DisplayItem = (props) => {
 export const StyledPaper = ({ children }) => (
   <Paper
     sx={{
-      backgroundColor: "#fbfbfb",
+      backgroundColor: '#fbfbfb',
     }}
-    shadow="md"
+    shadow='md'
     my={30}
     mx={100}
   >

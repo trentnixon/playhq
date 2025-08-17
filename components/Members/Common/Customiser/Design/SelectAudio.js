@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState } from "react";
-import { FixturaLoading } from "../../Loading";
+import { useEffect, useRef, useState } from 'react';
+import { FixturaLoading } from '../../Loading';
 
 import {
   ActionIcon,
@@ -10,23 +10,23 @@ import {
   Table,
   Tooltip,
   useMantineTheme,
-} from "@mantine/core";
+} from '@mantine/core';
 import {
   useAssignDesignElement,
   useGETDesignElement,
-} from "../../../../../Hooks/useCustomizer";
-import { BTN_ONCLICK } from "../../utils/Buttons";
+} from '../../../../../Hooks/useCustomizer';
+import { BTN_ONCLICK } from '../../utils/Buttons';
 import {
   IconCircleCheck,
   IconVolume,
   IconEar,
   IconEarOff,
   IconSquareX,
-} from "@tabler/icons";
-import { useAccountDetails } from "../../../../../context/userContext";
-import { P, SubHeaders } from "../../Type";
-import { FixturaDivider } from "../../Divider";
-import { PreviewAudioPlayer } from "./PreviewAudioPlayer";
+} from '@tabler/icons';
+import { useAccountDetails } from '../../../../../context/userContext';
+import { P, SubHeaders } from '../../Type';
+import { FixturaDivider } from '../../Divider';
+import { PreviewAudioPlayer } from './PreviewAudioPlayer';
 
 export const SelectAudio = ({ isPlaying }) => {
   const { account, ReRender } = useAccountDetails();
@@ -44,7 +44,7 @@ export const SelectAudio = ({ isPlaying }) => {
   Audio
 */
 
-  const SelectAudio = (URL) => {
+  const SelectAudio = URL => {
     setCurrentSong(URL);
     setIsPlayer(true);
   };
@@ -61,7 +61,7 @@ export const SelectAudio = ({ isPlaying }) => {
 
   // Fetch Design Element
   useEffect(() => {
-    FetchElement({ COLLECTIONID: "audio-options" });
+    FetchElement({ COLLECTIONID: 'audio-options' });
   }, []);
 
   // Set SET ACCOUNT DATA
@@ -71,12 +71,12 @@ export const SelectAudio = ({ isPlaying }) => {
   }, [account]);
 
   // Fire HOOK to sotre new Design Element to user
-  const StoreUSerChange = (item) => {
+  const StoreUSerChange = item => {
     const OBJ = {
-      CollectionSaveTo: "accounts",
+      CollectionSaveTo: 'accounts',
       Body: [item.id],
       COLLECTIONID: userAccount.id,
-      RelationProperty: "audio_option",
+      RelationProperty: 'audio_option',
     };
     setLoading(true);
     CreateDesignElement(OBJ);
@@ -116,11 +116,11 @@ export const SelectAudio = ({ isPlaying }) => {
         false
       )}
       <Paper
-        radius="md"
-        shadow="md"
-        p="xs"
+        radius='md'
+        shadow='md'
+        p='xs'
         mt={30}
-        sx={(theme) => ({
+        sx={theme => ({
           backgroundColor: theme.white,
         })}
       >
@@ -138,16 +138,20 @@ export const SelectAudio = ({ isPlaying }) => {
                           {item.id === currentSong?.id ? (
                             <IconVolume color={theme.colors.blue[9]} />
                           ) : (
-                            <Tooltip label="Click to Preview" color="cyan.5" withArrow>
-                            <ActionIcon
-                              color="gray.5"
-                              size="lg"
-                              onClick={() => {
-                                SelectAudio(item);
-                              }}
+                            <Tooltip
+                              label='Click to Preview'
+                              color='cyan.5'
+                              withArrow
                             >
-                              <IconEar />
-                            </ActionIcon>
+                              <ActionIcon
+                                color='gray.5'
+                                size='lg'
+                                onClick={() => {
+                                  SelectAudio(item);
+                                }}
+                              >
+                                <IconEar />
+                              </ActionIcon>
                             </Tooltip>
                           )}
                         </Center>
@@ -166,7 +170,7 @@ export const SelectAudio = ({ isPlaying }) => {
                     </Group>
                   </td>
 
-                  <td style={{ textAlign: "right" }}>
+                  <td style={{ textAlign: 'right' }}>
                     {userAccount.attributes.audio_option.data.id === item.id ? (
                       <IconCircleCheck color={theme.colors.green[5]} />
                     ) : (
@@ -201,22 +205,22 @@ const Player = ({ currentSong, DeSelectAudio }) => {
 
   return (
     <Paper
-      radius="md"
-      shadow="md"
+      radius='md'
+      shadow='md'
       withBorder
       my={20}
-      p="lg"
-      sx={(theme) => ({
+      p='lg'
+      sx={theme => ({
         backgroundColor: theme.colors.dark[5],
       })}
     >
-      <Group position="apart" my={10} sx={(theme) => ({})}>
+      <Group position='apart' my={10} sx={theme => ({})}>
         <P
           marginBottom={0}
-          size="lg"
-          textTransform="uppercase"
+          size='lg'
+          textTransform='uppercase'
           color={6}
-          fontStyle="italic"
+          fontStyle='italic'
         >{`Preview  : ${currentSong.attributes.Name}`}</P>
 
         <ActionIcon

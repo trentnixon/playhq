@@ -1,4 +1,4 @@
-@import "../../PAS.module.scss";
+@import '../../PAS.module.scss';
 
 .contentSolution {
   text-align: center;
@@ -15,15 +15,13 @@
 
     @media (max-width: 768px) {
       font-size: 60px;
-      line-height: .9em;
+      line-height: 0.9em;
     }
     @media (max-width: 768px) {
       font-size: 60px;
-
     }
     @media (max-width: 400px) {
       font-size: 50px;
-
     }
   }
 

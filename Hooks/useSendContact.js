@@ -1,6 +1,5 @@
-import { useState } from "react";
-import { fetcher } from "../lib/api";
-
+import { useState } from 'react';
+import { fetcher } from '../lib/api';
 
 export const useContactForm = () => {
   const [contactStatus, setContactStatus] = useState({
@@ -9,19 +8,19 @@ export const useContactForm = () => {
     success: null,
   });
 
-  const handleContactForm = async (contactDetails) => {
+  const handleContactForm = async contactDetails => {
     setContactStatus({ loading: true, error: null, success: null });
     try {
       const response = await fetcher(
         `${process.env.NEXT_PUBLIC_STRAPI_URL}/contact-forms`,
         {
-          method: "POST",
+          method: 'POST',
           headers: {
-            Accept: "application/json",
-            "Content-Type": "application/json",
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
             //Authorization: `Bearer ${process.env.CONTACTJWT}`, // You can create a specific JWT for contact form
           },
-          body: JSON.stringify({data:contactDetails}),
+          body: JSON.stringify({ data: contactDetails }),
         }
       );
 
@@ -32,8 +31,8 @@ export const useContactForm = () => {
         throw new Error('Invalid response structure');
       }
     } catch (err) {
-        setContactStatus({ success: false, error: error.message });
-        return { success: false, error: error.message };
+      setContactStatus({ success: false, error: error.message });
+      return { success: false, error: error.message };
     }
   };
 

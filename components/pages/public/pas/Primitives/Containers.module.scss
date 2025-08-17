@@ -10,8 +10,11 @@
   }
 }
 
-
 .gradientContainer {
-  background: linear-gradient(to bottom, $section-gradient-start, $section-gradient-end);
+  background: linear-gradient(
+    to bottom,
+    $section-gradient-start,
+    $section-gradient-end
+  );
   padding: 60px 0;
 }

@@ -1,19 +1,19 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from 'react';
 import {
   useCreateSponsorshipAllocation,
   useUpdateSponsorshipAllocation,
   useDeleteSponsorshipAllocation,
-} from "../../../../../Hooks/useSponsorshipAllocations";
-import { P } from "../../../../Members/Common/Type";
-import { FixturaLoading } from "../../../../Members/Common/Loading";
-import SponsorSelection from "./SponsorSelection";
-import SponsorDisplay from "./SponsorDisplay";
-import ActionButtons from "./ActionButtons";
-import { SponsorLabel } from "./SponsorLabel";
+} from '../../../../../Hooks/useSponsorshipAllocations';
+import { P } from '../../../../Members/Common/Type';
+import { FixturaLoading } from '../../../../Members/Common/Loading';
+import SponsorSelection from './SponsorSelection';
+import SponsorDisplay from './SponsorDisplay';
+import ActionButtons from './ActionButtons';
+import { SponsorLabel } from './SponsorLabel';
 
 // Main component for managing sponsorship allocation
 const SponsorshipForm = ({ level, sponsors, accountType }) => {
-  const [selectedSponsor, setSelectedSponsor] = useState("");
+  const [selectedSponsor, setSelectedSponsor] = useState('');
   const [selectedSponsorObj, setSelectedSponsorObj] = useState(null);
   const [allocationId, setAllocationId] = useState(null);
   const [createSponsorshipAllocation, isLoadingCreate, errorCreate] =
@@ -26,9 +26,9 @@ const SponsorshipForm = ({ level, sponsors, accountType }) => {
   // Effect to initialize existing allocation
   useEffect(() => {
     const existingAllocation = sponsors
-      .flatMap((sponsor) => sponsor.attributes.sponsorship_allocations.data)
+      .flatMap(sponsor => sponsor.attributes.sponsorship_allocations.data)
       .find(
-        (allocation) =>
+        allocation =>
           allocation.attributes.Allocation?.accountGroup?.id === level.id
       );
 
@@ -36,7 +36,7 @@ const SponsorshipForm = ({ level, sponsors, accountType }) => {
       setAllocationId(existingAllocation.id);
       setSelectedSponsor(existingAllocation.attributes.Allocation.sponsor.id);
       const sponsorObj = sponsors.find(
-        (sponsor) =>
+        sponsor =>
           sponsor.id === existingAllocation.attributes.Allocation.sponsor.id
       );
       setSelectedSponsorObj(sponsorObj);
@@ -44,14 +44,14 @@ const SponsorshipForm = ({ level, sponsors, accountType }) => {
   }, [sponsors, level]);
 
   // Handles sponsor change and updates or creates allocation
-  const handleSponsorChange = async (sponsorId) => {
+  const handleSponsorChange = async sponsorId => {
     setSelectedSponsor(sponsorId);
 
-    const sponsorObj = sponsors.find((sponsor) => sponsor.id === sponsorId);
+    const sponsorObj = sponsors.find(sponsor => sponsor.id === sponsorId);
     setSelectedSponsorObj(sponsorObj);
 
     if (!sponsorObj) {
-      console.error("Selected sponsor not found");
+      console.error('Selected sponsor not found');
       return;
     }
 
@@ -61,13 +61,13 @@ const SponsorshipForm = ({ level, sponsors, accountType }) => {
         sponsor: {
           id: sponsorId,
           name: sponsorObj.attributes.Name,
-          logo: sponsorObj.attributes.Logo?.data?.attributes?.url || "",
+          logo: sponsorObj.attributes.Logo?.data?.attributes?.url || '',
         },
         accountGroup: {
           level: level.level,
           id: level.id,
           category: level.category,
-          name: level?.name || "",
+          name: level?.name || '',
         },
       },
       sponsor: { id: sponsorId },
@@ -81,7 +81,7 @@ const SponsorshipForm = ({ level, sponsors, accountType }) => {
         setAllocationId(newAllocation.id);
       }
     } catch (error) {
-      console.error("Error in handleSponsorChange:", error);
+      console.error('Error in handleSponsorChange:', error);
     }
   };
 
@@ -90,11 +90,11 @@ const SponsorshipForm = ({ level, sponsors, accountType }) => {
     if (allocationId) {
       try {
         await deleteSponsorshipAllocation(allocationId);
-        setSelectedSponsor("");
+        setSelectedSponsor('');
         setSelectedSponsorObj(null);
         setAllocationId(null);
       } catch (error) {
-        console.error("Error in handleDelete:", error);
+        console.error('Error in handleDelete:', error);
       }
     }
   };
@@ -135,7 +135,7 @@ const SponsorshipForm = ({ level, sponsors, accountType }) => {
           />
         )}
         {(errorCreate || errorUpdate || errorDelete) && (
-          <P color="red">{errorCreate || errorUpdate || errorDelete}</P>
+          <P color='red'>{errorCreate || errorUpdate || errorDelete}</P>
         )}
       </td>
     </tr>

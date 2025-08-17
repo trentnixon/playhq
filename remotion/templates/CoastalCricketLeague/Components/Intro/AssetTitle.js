@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { getContrastColor } from '../../../../utils/colors';
 import { SpringToFrom } from '../../../../Animation/RemotionSpring';
 
-export const AssetTitle = (props) => {
+export const AssetTitle = props => {
   const { FPS_INTRO, VIDEOMETA } = props;
   const { Font, Color } = props.StyleConfig;
 
@@ -18,12 +18,7 @@ export const AssetTitle = (props) => {
             1,
             'Wobbly'
           )}px) translateY(${SpringToFrom(FPS_INTRO - 12, 0, 1000, 'Slow')}px)`,
-          textShadow: `0px 0px ${SpringToFrom(
-            15,
-            0,
-            30,
-            'Slow'
-          )}px #298da7`, // Animate the text-shadow
+          textShadow: `0px 0px ${SpringToFrom(15, 0, 30, 'Slow')}px #298da7`, // Animate the text-shadow
         }}
       >
         {VIDEOMETA.Club.Name}
@@ -38,12 +33,7 @@ export const AssetTitle = (props) => {
             1,
             'Wobbly'
           )}px) translateY(${SpringToFrom(FPS_INTRO - 15, 0, 1000, 'Slow')}px)`,
-          textShadow: `0px 0px ${SpringToFrom(
-            25,
-            0,
-            30,
-            'Wobbly'
-          )}px #298da7`, // Animate the text-shadow
+          textShadow: `0px 0px ${SpringToFrom(25, 0, 30, 'Wobbly')}px #298da7`, // Animate the text-shadow
         }}
       >
         {VIDEOMETA.Video.Title}
@@ -65,7 +55,6 @@ const VideoTitle = styled.h1`
   z-index: 2000;
   color: #ffffff;
   -webkit-text-stroke: 1px #298da7; /* Clean stroke around the letters */
- 
 `;
 
 const AccountTitle = styled.h3`
@@ -81,5 +70,4 @@ const AccountTitle = styled.h3`
   z-index: 2000;
   color: #ffffff; // Set the text color to white
   -webkit-text-stroke: 1px #298da7; /* Clean stroke around the letters */
-
 `;

@@ -1,25 +1,25 @@
 import React from 'react';
-import {useStylesContext} from '../../../../../context/StyleContext';
-import {useLayoutContext} from '../../../../../context/LayoutContext';
+import { useStylesContext } from '../../../../../context/StyleContext';
+import { useLayoutContext } from '../../../../../context/LayoutContext';
 import styled from 'styled-components';
 import FirstInningsScore from './FirstInningsScore';
-import {generateTeamStyle} from './utils';
+import { generateTeamStyle } from './utils';
 
 const TeamScoreContainer = styled.div`
-	display: flex;
-	flex-direction: row;
-	justify-content: space-around;
-	align-items: center;
-	width: 100%;
-	padding: 20px 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  padding: 20px 0;
 `;
 
 const TeamScore = styled.h3`
-	line-height: 1em;
-	margin: 0;
-	text-align: right;
-	letter-spacing: 0em;
-	text-transform: uppercase;
+  line-height: 1em;
+  margin: 0;
+  text-align: right;
+  letter-spacing: 0em;
+  text-transform: uppercase;
 `;
 
 const Runs = styled(TeamScore)``;
@@ -31,53 +31,53 @@ const Overs = styled(TeamScore)``;
 const YetToBat = styled(TeamScore)``;
 
 const TeamDetail = ({
-	score,
-	overs,
-	direction,
-	justifyContent,
-	firstInnings,
-	Type,
-	Name,
-	textAlign,
+  score,
+  overs,
+  direction,
+  justifyContent,
+  firstInnings,
+  Type,
+  Name,
+  textAlign,
 }) => {
-	const {StyleConfig, TextStyles} = useStylesContext();
-	const {TIMINGS} = useLayoutContext();
-	const {Font, Color} = StyleConfig;
-	const {FPS_SCORECARD} = TIMINGS;
+  const { StyleConfig, TextStyles } = useStylesContext();
+  const { TIMINGS } = useLayoutContext();
+  const { Font, Color } = StyleConfig;
+  const { FPS_SCORECARD } = TIMINGS;
 
-	const createStyle = generateTeamStyle(
-		FPS_SCORECARD,
-		textAlign,
-		Font.Title,
-		Color.Primary.Contrast
-	);
+  const createStyle = generateTeamStyle(
+    FPS_SCORECARD,
+    textAlign,
+    Font.Title,
+    Color.Primary.Contrast
+  );
 
-	return (
-		<TeamScoreContainer style={{flexDirection: direction, justifyContent}}>
-			<div>
-				{score === 'Yet to Bat' ? (
-					<YetToBat style={{...createStyle, ...TextStyles.copyMedium}}>
-						{score}
-					</YetToBat>
-				) : (
-					<>
-						<FirstInningsScore
-							firstInnings={firstInnings}
-							Type={Type}
-							textAlign={textAlign}
-						/>
-						<Runs style={{...createStyle, ...TextStyles.copyLargeBold}}>
-							{score}
-						</Runs>
-					</>
-				)}
-				{overs && <Overs style={createStyle}>{`(${overs})`}</Overs>}
-				<TeamName style={{...createStyle, ...TextStyles.copySmallBold}}>
-					{Name}
-				</TeamName>
-			</div>
-		</TeamScoreContainer>
-	);
+  return (
+    <TeamScoreContainer style={{ flexDirection: direction, justifyContent }}>
+      <div>
+        {score === 'Yet to Bat' ? (
+          <YetToBat style={{ ...createStyle, ...TextStyles.copyMedium }}>
+            {score}
+          </YetToBat>
+        ) : (
+          <>
+            <FirstInningsScore
+              firstInnings={firstInnings}
+              Type={Type}
+              textAlign={textAlign}
+            />
+            <Runs style={{ ...createStyle, ...TextStyles.copyLargeBold }}>
+              {score}
+            </Runs>
+          </>
+        )}
+        {overs && <Overs style={createStyle}>{`(${overs})`}</Overs>}
+        <TeamName style={{ ...createStyle, ...TextStyles.copySmallBold }}>
+          {Name}
+        </TeamName>
+      </div>
+    </TeamScoreContainer>
+  );
 };
 
 export default TeamDetail;

@@ -1,14 +1,14 @@
 //
-import Cookies from "js-cookie";
-import { useState } from "react";
-import { fetcher } from "../lib/api";
-import { getAccountFromLocalCookie } from "../lib/auth";
-const qs = require("qs");
+import Cookies from 'js-cookie';
+import { useState } from 'react';
+import { fetcher } from '../lib/api';
+import { getAccountFromLocalCookie } from '../lib/auth';
+const qs = require('qs');
 
 export const useGetSchedulerDetails = () => {
   const query = qs.stringify(
     {
-      populate: ["days_of_the_week", "renders"],
+      populate: ['days_of_the_week', 'renders'],
     },
     {
       encodeValuesOnly: true,
@@ -17,7 +17,7 @@ export const useGetSchedulerDetails = () => {
   const [schedulerDetails, setSchedulerDetails] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
-  const fetchSchedulerDetails = async (schedulerId) => {
+  const fetchSchedulerDetails = async schedulerId => {
     const user = await getAccountFromLocalCookie();
 
     if (user && schedulerId) {
@@ -27,14 +27,14 @@ export const useGetSchedulerDetails = () => {
           `${process.env.NEXT_PUBLIC_STRAPI_URL}/schedulers/${schedulerId}?${query}`,
           {
             headers: {
-              "Content-Type": "application/json",
-              Authorization: `Bearer ${Cookies.get("jwt")}`,
+              'Content-Type': 'application/json',
+              Authorization: `Bearer ${Cookies.get('jwt')}`,
             },
           }
         );
         setSchedulerDetails(response.data);
       } catch (error) {
-        console.error("Failed to fetch scheduler details:", error);
+        console.error('Failed to fetch scheduler details:', error);
         setSchedulerDetails(null);
       } finally {
         setIsLoading(false);
@@ -45,14 +45,10 @@ export const useGetSchedulerDetails = () => {
   return [schedulerDetails, isLoading, fetchSchedulerDetails];
 };
 
-
-
-
-
 export const useGetGalleryItems = () => {
   const query = qs.stringify(
     {
-      populate: ["account_media_libraries"],
+      populate: ['account_media_libraries'],
     },
     {
       encodeValuesOnly: true,
@@ -63,7 +59,7 @@ export const useGetGalleryItems = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  const fetchGalleryItems = async (AccountId) => {
+  const fetchGalleryItems = async AccountId => {
     const user = await getAccountFromLocalCookie();
 
     if (user && AccountId) {
@@ -73,15 +69,15 @@ export const useGetGalleryItems = () => {
           `${process.env.NEXT_PUBLIC_STRAPI_URL}/accounts/${AccountId}?${query}`,
           {
             headers: {
-              "Content-Type": "application/json",
-              Authorization: `Bearer ${Cookies.get("jwt")}`,
+              'Content-Type': 'application/json',
+              Authorization: `Bearer ${Cookies.get('jwt')}`,
             },
           }
         );
         setGalleryItems(response.data);
         setError(null); // Reset error state if the request is successful
       } catch (fetchError) {
-        console.error("Failed to fetch gallery items:", fetchError);
+        console.error('Failed to fetch gallery items:', fetchError);
         setError(fetchError.message);
         setGalleryItems(null);
       } finally {

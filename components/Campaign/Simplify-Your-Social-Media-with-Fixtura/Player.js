@@ -1,24 +1,24 @@
-import { useState, useEffect, useCallback } from "react";
-import { Player, Thumbnail } from "@remotion/player";
+import { useState, useEffect, useCallback } from 'react';
+import { Player, Thumbnail } from '@remotion/player';
 /* import DATA_FIXTURES from "../../../remotion/utils/upcoming_v2.json";
 import DATA_RESULTS from "../../../remotion/utils/WeekendResultsV2.json";
 import DATA_TOP5RUNS from "../../../remotion/utils/Top5RunsV2.json";
 import DATA_TOP5WICKETS from "../../../remotion/utils/Top5WicketsV2.json";
 import DATA_LADDER from "../../../remotion/utils/LadderV2.json";
 import DATA_ROSTER from "../../../remotion/utils/RosterPoster.json"; */
-import { getDominantColors } from "../../../remotion/utils/colors";
+import { getDominantColors } from '../../../remotion/utils/colors';
 import {
-  UpComingFixtures, 
+  UpComingFixtures,
   WeekendResults,
   Top5BattingList,
   Top5BowlingList,
   Ladder,
   WeekendSingleGameResult,
   RosterPoster,
-} from "../GLOBAL/Examples/AssetExamples";
-import { AbsoluteFill } from "remotion";
-import { IconPlayBasketball, IconPlayerPlayFilled } from "@tabler/icons-react";
-import { Image } from "@mantine/core";
+} from '../GLOBAL/Examples/AssetExamples';
+import { AbsoluteFill } from 'remotion';
+import { IconPlayBasketball, IconPlayerPlayFilled } from '@tabler/icons-react';
+import { Image } from '@mantine/core';
 
 export const RemotionPlayer = ({
   AccountData,
@@ -30,7 +30,7 @@ export const RemotionPlayer = ({
   const [isMounted, setIsMounted] = useState(false);
   const [data, setData] = useState({});
   const DEFAULTLOGO =
-    "https://fixtura.s3.ap-southeast-2.amazonaws.com/Default_ICON_171b58a21b.png";
+    'https://fixtura.s3.ap-southeast-2.amazonaws.com/Default_ICON_171b58a21b.png';
 
   //console.log("selectedMedia", selectedMedia);
   /* const ASSETS = {
@@ -69,24 +69,24 @@ export const RemotionPlayer = ({
       return (
         <AbsoluteFill
           style={{
-            backgroundColor: "white",
+            backgroundColor: 'white',
             opacity: 0.8,
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            flexDirection: "column",
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            flexDirection: 'column',
           }}
         >
           {useLOGO && (
             <Image
               height={200}
-              width={"auto"}
+              width={'auto'}
               src={useLOGO}
               alt={`${accountName} logo`}
-              style={{ marginBottom: "10px" }}
+              style={{ marginBottom: '10px' }}
             />
           )}
-          <IconPlayerPlayFilled size={60} style={{ marginRight: "10px" }} />
+          <IconPlayerPlayFilled size={60} style={{ marginRight: '10px' }} />
           <p>Click to play to preview</p>
         </AbsoluteFill>
       );
@@ -110,14 +110,14 @@ export const RemotionPlayer = ({
         DEFAULTLOGO
       );
       switch (selectedMedia.CompositionID) {
-        case "UpComingFixtures":
+        case 'UpComingFixtures':
           updatedData = updateUpComingFixtures(
             currentAsset.DATA,
             useLOGO,
             accountName
           );
           break;
-        case "WeekendResults":
+        case 'WeekendResults':
           updatedData = updateWeekendResults(
             currentAsset.DATA,
             useLOGO,
@@ -125,21 +125,21 @@ export const RemotionPlayer = ({
             accountName
           );
           break;
-        case "Top5BattingList":
+        case 'Top5BattingList':
           updatedData = updateTop5RunScorers(
             currentAsset.DATA,
             useLOGO,
             accountName
           );
           break;
-        case "Top5BowlingList":
+        case 'Top5BowlingList':
           updatedData = updateTop5Bowlers(
             currentAsset.DATA,
             useLOGO,
             accountName
           );
           break;
-        case "Ladder":
+        case 'Ladder':
           updatedData = updateLadderFirstItem(
             currentAsset.DATA,
             useLOGO,
@@ -170,7 +170,7 @@ export const RemotionPlayer = ({
   };
 
   const updateTop5RunScorers = (data, useLOGO, accountName) => {
-    data.DATA.forEach((player) => {
+    data.DATA.forEach(player => {
       player.teamLogo = useLOGO;
       player.playedFor = accountName;
     });
@@ -178,7 +178,7 @@ export const RemotionPlayer = ({
   };
 
   const updateUpComingFixtures = (data, useLOGO, NAME) => {
-    data.DATA.forEach((game) => {
+    data.DATA.forEach(game => {
       game.teamHomeLogo = game.teamHomeLogo || useLOGO;
       game.teamAwayLogo = game.teamAwayLogo || useLOGO;
 
@@ -189,7 +189,7 @@ export const RemotionPlayer = ({
   };
 
   const updateWeekendResults = (data, useLOGO, DEFUALT, NAME) => {
-    data.DATA.forEach((game) => {
+    data.DATA.forEach(game => {
       game.teamHomeLogo = useLOGO;
       game.teamAwayLogo = DEFUALT;
       game.homeTeam.name = NAME;
@@ -197,7 +197,7 @@ export const RemotionPlayer = ({
     return data;
   };
   const updateTop5Bowlers = (data, useLOGO, accountName) => {
-    data.DATA.forEach((player) => {
+    data.DATA.forEach(player => {
       player.teamLogo = useLOGO;
       player.playedFor = accountName;
     });
@@ -220,7 +220,7 @@ export const RemotionPlayer = ({
       AccountData.attributes.Logo.data || AccountData.attributes.ParentLogo;
     if (logoUrl) {
       getDominantColors(logoUrl)
-        .then((colors) => {
+        .then(colors => {
           if (colors && colors.length >= 2) {
             updatedData.VIDEOMETA.Video.Theme.primary = userColors[0]
               ? userColors[0]
@@ -231,8 +231,8 @@ export const RemotionPlayer = ({
           }
           setData(updatedData);
         })
-        .catch((error) => {
-          console.error("Error fetching dominant colors:", error);
+        .catch(error => {
+          console.error('Error fetching dominant colors:', error);
           setData(updatedData); // Set data even if color fetching fails
         });
     } else {
@@ -267,7 +267,7 @@ export const RemotionPlayer = ({
   }
 
   const AssetComponent = ASSETS[selectedMedia.CompositionID].component;
-  if (TYPE === "Player")
+  if (TYPE === 'Player')
     return (
       <Player
         component={AssetComponent}
@@ -281,7 +281,7 @@ export const RemotionPlayer = ({
         fps={30}
         controls
         inputProps={{ DATA: data }}
-        style={{ width: "100%" }}
+        style={{ width: '100%' }}
         renderPoster={({ height, width }) =>
           renderPoster({
             height,
@@ -294,7 +294,7 @@ export const RemotionPlayer = ({
         showPosterWhenUnplayed
       />
     );
-  if (TYPE === "Thumbnail")
+  if (TYPE === 'Thumbnail')
     return (
       <Thumbnail
         component={AssetComponent}
@@ -308,7 +308,7 @@ export const RemotionPlayer = ({
         fps={30}
         frameToDisplay={data.VIDEOMETA.Video.FRAMES[1]}
         inputProps={{ DATA: data }}
-        style={{ width: "100%" }}
+        style={{ width: '100%' }}
       />
     );
 };

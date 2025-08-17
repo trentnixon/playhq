@@ -1,4 +1,4 @@
-import { P } from "../../../../../Members/Common/Type";
+import { P } from '../../../../../Members/Common/Type';
 
 export const UploadFirstImageInstructions = () => {
   return (

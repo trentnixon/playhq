@@ -5,7 +5,7 @@
 is the file you need to edit to change the look of the
 tepmlate.
 
-This files table contents are outlined below >>>>> 
+This files table contents are outlined below >>>>>
 
 *******************************************
 *******************************************
@@ -43,13 +43,13 @@ This files table contents are outlined below >>>>>
 */
 /* Default CSS */
 
-@tailwind base;
-@tailwind components;
+/* @tailwind base;
+@tailwind components; */
 @tailwind utilities;
 body {
   padding: 0;
   margin: 0;
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 15px;
   color: #646464;
 }
@@ -60,7 +60,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Saira", sans-serif;
+  font-family: 'Saira', sans-serif;
   color: #18181b;
   font-weight: bold;
 }
@@ -222,7 +222,7 @@ a:focus {
 
 .btn-primary::before {
   border-radius: 5px;
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   top: 0;
@@ -292,7 +292,7 @@ a:focus {
 
 .btn-secondary::before {
   border-radius: 5px;
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   top: 0;
@@ -569,7 +569,7 @@ Navbar CSS
   -webkit-transition: all 0.5s ease;
   transition: all 0.5s ease;
   left: 1px;
-  content: "";
+  content: '';
   position: absolute;
 }
 
@@ -965,7 +965,7 @@ Main Banner CSS
 }
 
 .main-banner.gradient-banner::before {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   top: 0;
@@ -1079,7 +1079,7 @@ Main Banner CSS
 }
 
 .hero-banner.overly::before {
-  content: "";
+  content: '';
   background-color: #18181b;
   opacity: 0.85;
   position: absolute;
@@ -1090,7 +1090,7 @@ Main Banner CSS
 }
 
 .hero-banner.overly-6::before {
-  content: "";
+  content: '';
   background-color: #18181b;
   opacity: 0.6;
   position: absolute;
@@ -1614,7 +1614,7 @@ Main Banner CSS
 }
 
 .slider-area ul li::before {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   top: 0;
@@ -1628,12 +1628,12 @@ Main Banner CSS
 
 .slider-area ul li .tp-caption.NotGeneric-Title,
 .slider-area ul li .NotGeneric-Title {
-  font-family: "Saira", sans-serif !important;
+  font-family: 'Saira', sans-serif !important;
 }
 
 .slider-area ul li .tp-caption.NotGeneric-SubTitle,
 .slider-area ul li .NotGeneric-SubTitle {
-  font-family: "Open Sans", sans-serif !important;
+  font-family: 'Open Sans', sans-serif !important;
   font-size: 15px !important;
   font-weight: 500 !important;
   letter-spacing: 0 !important;
@@ -1823,7 +1823,7 @@ Featured Services CSS
 }
 
 .featured-services-box::before {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   top: 0;
@@ -1930,7 +1930,7 @@ Featured Services CSS
 }
 
 .read-more-btn::before {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   top: 60%;
@@ -2099,7 +2099,7 @@ About CSS
 
 .video-box .video-btn::after,
 .video-box .video-btn::before {
-  content: "";
+  content: '';
   display: block;
   position: absolute;
   top: 0;
@@ -2343,7 +2343,7 @@ Case Studies CSS
 }
 
 .case-studies-tabs .react-tabs .react-tabs__tab-list li::before {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   bottom: -12px;
@@ -2414,7 +2414,7 @@ Case Studies CSS
 }
 
 .work-card::before {
-  content: "";
+  content: '';
   background-color: rgba(0, 0, 0, 0.5);
   width: 100%;
   height: 100%;
@@ -2586,11 +2586,11 @@ Quotes CSS
   position: relative;
   font-size: 32px;
   font-weight: 700;
-  font-family: "Saira", sans-serif;
+  font-family: 'Saira', sans-serif;
 }
 
 .quotes-content p::before {
-  content: "";
+  content: '';
   width: 211px;
   height: 154px;
   display: inline-block;
@@ -2718,7 +2718,7 @@ Services CSS
   background: #2b2929;
   opacity: 0.2;
   z-index: -1;
-  content: "";
+  content: '';
 }
 
 .services-list .single-services {
@@ -2733,7 +2733,7 @@ Services CSS
 }
 
 .single-services::before {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   top: 0;
@@ -2775,7 +2775,7 @@ Services CSS
 }
 
 .single-services .content .icon::before {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   top: 0;
@@ -3115,7 +3115,7 @@ Portfolio Details CSS
 }
 
 .services-details-info ul li::before {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   top: 11px;
@@ -3378,7 +3378,7 @@ Portfolio CSS
   width: 100%;
   height: 100%;
   background: #18181b;
-  content: "";
+  content: '';
   opacity: 0;
   visibility: hidden;
   -webkit-transition: all 0.5s ease;
@@ -3484,7 +3484,7 @@ Team CSS
 }
 
 .team-area::before {
-  content: "";
+  content: '';
   position: absolute;
   bottom: 0;
   left: 0;
@@ -3506,7 +3506,7 @@ Team CSS
 }
 
 .single-team .team-img::before {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   bottom: 0;
@@ -3576,7 +3576,7 @@ Team CSS
 }
 
 .single-team .team-img .overlay ul li a::before {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   top: 50%;
@@ -3852,7 +3852,7 @@ Pricing CSS
 }
 
 .pricing-table .pricing-header::before {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   top: 0;
@@ -4246,7 +4246,7 @@ Our Work Process CSS
 }
 
 .single-work-process .icon::before {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   top: 0;
@@ -4382,7 +4382,7 @@ CTA CSS
 }
 
 .cta-area-two {
-  background-image: url("/images/cta-bg.jpg");
+  background-image: url('/images/cta-bg.jpg');
   background-position: center center;
   background-size: cover;
   text-align: center;
@@ -4414,7 +4414,7 @@ CTA CSS
   width: 100%;
   top: 0;
   left: 0;
-  content: "";
+  content: '';
   opacity: 0.95;
 }
 
@@ -4467,7 +4467,7 @@ CTA CSS
   width: 100%;
   top: 0;
   left: 0;
-  content: "";
+  content: '';
   opacity: 0.95;
 }
 
@@ -4663,7 +4663,7 @@ Subscribe CSS
 }
 
 .newsletter-inner-area::before {
-  content: "";
+  content: '';
   position: absolute;
   width: 100%;
   height: 100%;
@@ -4777,7 +4777,7 @@ Blog CSS
 
 .single-blog-post .post-image::before,
 .single-blog-post .post-image::after {
-  content: "";
+  content: '';
   background: #ffffff;
   height: 0;
   right: 0;
@@ -4836,7 +4836,7 @@ Blog CSS
 }
 
 .single-blog-post .post-content .post-meta li::before {
-  content: "";
+  content: '';
   position: absolute;
   right: -10px;
   top: 50%;
@@ -4942,7 +4942,7 @@ Blog CSS
 }
 
 .blog-item-box .blog-item .post-content .post-meta li::before {
-  content: "";
+  content: '';
   position: absolute;
   right: -8px;
   top: 50%;
@@ -4990,7 +4990,7 @@ Blog CSS
 
 .blog-item-box .blog-item .post-image::before,
 .blog-item-box .blog-item .post-image::after {
-  content: "";
+  content: '';
   background: #ffffff;
   height: 0;
   right: 0;
@@ -5223,7 +5223,7 @@ Blog Details CSS
 
 .blog-details .article-content .category li a::before {
   position: absolute;
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   top: 0;
@@ -5276,8 +5276,8 @@ blockquote {
 }
 
 blockquote::before {
-  font-family: "Font Awesome 5 Free";
-  content: "\f10d";
+  font-family: 'Font Awesome 5 Free';
+  content: '\f10d';
   position: absolute;
   left: 30px;
   top: 35px;
@@ -5293,12 +5293,12 @@ blockquote p {
 blockquote cite {
   position: relative;
   padding-left: 17px;
-  font-family: "Saira", sans-serif;
+  font-family: 'Saira', sans-serif;
   font-weight: 600;
 }
 
 blockquote cite::before {
-  content: "";
+  content: '';
   position: absolute;
   top: 50%;
   -webkit-transform: translateY(-50%);
@@ -5355,7 +5355,7 @@ blockquote cite::before {
 
 .post-controls-buttons div a::before {
   position: absolute;
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   top: 0;
@@ -5448,7 +5448,7 @@ blockquote cite::before {
 }
 
 .comments-area .comment-body .reply a::before {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   top: 0;
@@ -5509,7 +5509,7 @@ blockquote cite::before {
 
 .comments-area .comment-author .fn {
   font-weight: 600;
-  font-family: "Saira", sans-serif;
+  font-family: 'Saira', sans-serif;
 }
 
 .comments-area .comment-author .says {
@@ -5581,18 +5581,18 @@ blockquote cite::before {
   color: #18181b;
 }
 
-.comments-area .comment-respond input[type="date"],
-.comments-area .comment-respond input[type="time"],
-.comments-area .comment-respond input[type="datetime-local"],
-.comments-area .comment-respond input[type="week"],
-.comments-area .comment-respond input[type="month"],
-.comments-area .comment-respond input[type="text"],
-.comments-area .comment-respond input[type="email"],
-.comments-area .comment-respond input[type="url"],
-.comments-area .comment-respond input[type="password"],
-.comments-area .comment-respond input[type="search"],
-.comments-area .comment-respond input[type="tel"],
-.comments-area .comment-respond input[type="number"],
+.comments-area .comment-respond input[type='date'],
+.comments-area .comment-respond input[type='time'],
+.comments-area .comment-respond input[type='datetime-local'],
+.comments-area .comment-respond input[type='week'],
+.comments-area .comment-respond input[type='month'],
+.comments-area .comment-respond input[type='text'],
+.comments-area .comment-respond input[type='email'],
+.comments-area .comment-respond input[type='url'],
+.comments-area .comment-respond input[type='password'],
+.comments-area .comment-respond input[type='search'],
+.comments-area .comment-respond input[type='tel'],
+.comments-area .comment-respond input[type='number'],
 .comments-area .comment-respond textarea {
   display: block;
   width: 100%;
@@ -5604,18 +5604,18 @@ blockquote cite::before {
   transition: all 0.5s ease;
 }
 
-.comments-area .comment-respond input[type="date"]:focus,
-.comments-area .comment-respond input[type="time"]:focus,
-.comments-area .comment-respond input[type="datetime-local"]:focus,
-.comments-area .comment-respond input[type="week"]:focus,
-.comments-area .comment-respond input[type="month"]:focus,
-.comments-area .comment-respond input[type="text"]:focus,
-.comments-area .comment-respond input[type="email"]:focus,
-.comments-area .comment-respond input[type="url"]:focus,
-.comments-area .comment-respond input[type="password"]:focus,
-.comments-area .comment-respond input[type="search"]:focus,
-.comments-area .comment-respond input[type="tel"]:focus,
-.comments-area .comment-respond input[type="number"]:focus,
+.comments-area .comment-respond input[type='date']:focus,
+.comments-area .comment-respond input[type='time']:focus,
+.comments-area .comment-respond input[type='datetime-local']:focus,
+.comments-area .comment-respond input[type='week']:focus,
+.comments-area .comment-respond input[type='month']:focus,
+.comments-area .comment-respond input[type='text']:focus,
+.comments-area .comment-respond input[type='email']:focus,
+.comments-area .comment-respond input[type='url']:focus,
+.comments-area .comment-respond input[type='password']:focus,
+.comments-area .comment-respond input[type='search']:focus,
+.comments-area .comment-respond input[type='tel']:focus,
+.comments-area .comment-respond input[type='number']:focus,
 .comments-area .comment-respond textarea:focus {
   border-color: #339af0;
 }
@@ -5748,7 +5748,7 @@ Page Title CSS
 }
 
 .page-title-area::before {
-  content: "";
+  content: '';
   background-color: #18181b;
   position: absolute;
   top: 0;
@@ -6102,7 +6102,7 @@ textarea.form-control {
 
 .contact-sidebar .contact-item span {
   font-size: 18px;
-  font-family: "Saira", sans-serif;
+  font-family: 'Saira', sans-serif;
   font-weight: 600;
   display: block;
   margin-bottom: 10px;
@@ -6270,7 +6270,7 @@ Sidebar CSS
   );
   height: 7px;
   width: 7px;
-  content: "";
+  content: '';
   left: 0;
   top: 8px;
   position: absolute;
@@ -6536,7 +6536,7 @@ Case Studies Details CSS
 .case-studies-information ul li span {
   font-size: 16px;
   font-weight: 700;
-  font-family: "Saira", sans-serif;
+  font-family: 'Saira', sans-serif;
   color: #18181b;
   display: inline-block;
   margin-right: 4px;
@@ -6650,7 +6650,7 @@ Portfolio Details CSS
 .portfolio-information ul li span {
   font-size: 16px;
   font-weight: 700;
-  font-family: "Saira", sans-serif;
+  font-family: 'Saira', sans-serif;
   color: #18181b;
   display: inline-block;
   margin-right: 4px;
@@ -6799,7 +6799,7 @@ FAQ CSS
   color: #18181b;
   font-size: 18px;
   font-weight: 700;
-  font-family: "Saira", sans-serif;
+  font-family: 'Saira', sans-serif;
 }
 
 .faq-accordion .accordion .accordion__item .accordion__button:hover,
@@ -6840,7 +6840,7 @@ FAQ CSS
 .faq-contact h3 {
   margin-bottom: 35px;
   font-size: 24px;
-  font-family: "Saira", sans-serif;
+  font-family: 'Saira', sans-serif;
 }
 
 .faq-contact form .btn {
@@ -6893,7 +6893,7 @@ Footer CSS
 }
 
 .single-footer-widget .social-links li a::before {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   top: 50%;
@@ -6947,7 +6947,7 @@ Footer CSS
 }
 
 .single-footer-widget h3::before {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   bottom: -2px;
@@ -6974,7 +6974,7 @@ Footer CSS
 }
 
 .single-footer-widget h3::after {
-  content: "";
+  content: '';
   position: absolute;
   left: 35px;
   bottom: -2px;
@@ -6999,7 +6999,7 @@ Footer CSS
 }
 
 .single-footer-widget ul.list li a::before {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   top: 50%;

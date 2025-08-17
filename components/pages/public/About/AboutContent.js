@@ -1,37 +1,36 @@
-import { Image } from "@mantine/core";
-import { H, P } from "../../../Members/Common/Type";
+import { Image } from '@mantine/core';
+import { H, P } from '../../../Members/Common/Type';
 
 const AboutContent = () => {
   return (
     <>
-      <div className="about-area ptb-100">
-        <div className="container">
-          <div className="row align-items-center">
-            <div className="col-lg-5 col-md-12">
-              <div className="about-image">
+      <div className='about-area ptb-100'>
+        <div className='container'>
+          <div className='row align-items-center'>
+            <div className='col-lg-5 col-md-12'>
+              <div className='about-image'>
                 <Image
-                  src={
-                    "https://fixtura.s3.ap-southeast-2.amazonaws.com/Mudgeeraba_Nerang_and_Districts_Cricket_Club_Weekend_Result_Senior_5bcf4b2f61df_1cf23f4392.png"
-                  }
-                  className="rounded-10"
+                  src='https://fixtura.s3.ap-southeast-2.amazonaws.com/Mudgeeraba_Nerang_and_Districts_Cricket_Club_Weekend_Result_Senior_5bcf4b2f61df_1cf23f4392.png'
+                  className='rounded-10'
+                  alt='Fixtura sports content example'
                 />
               </div>
             </div>
 
-            <div className="col-lg-7 col-md-12">
-              <div className="about-content about-content-two">
-                <div className="section-title">
+            <div className='col-lg-7 col-md-12'>
+              <div className='about-content about-content-two'>
+                <div className='section-title'>
                   <H>
                     Introducing Fixtura: Elevating Sports' Digital Landscape
                   </H>
                   <P>
-                    At Fixtura, we're more than just a platform; we're your
-                    digital ally across Cricket, AFL, and Netball. We amplify
-                    your sports journey, celebrate your achievements, and
-                    enhance your connection with fans in a digital age where
+                    At Fixtura, we&apos;re more than just a platform; we&apos;re
+                    your digital ally across Cricket, AFL, and Netball. We
+                    amplify your sports journey, celebrate your achievements,
+                    and enhance your connection with fans in a digital age where
                     standing out is paramount.
                   </P>
-                  <H align="left" size="h3" mb={10}>
+                  <H align='left' size='h3' mb={10}>
                     Why Fixtura?
                   </H>
                   <P>
@@ -44,8 +43,8 @@ const AboutContent = () => {
                   </P>
                   <P>
                     <strong>Crafted for You:</strong> Every club and association
-                    has a story. We're dedicated to ensuring that your story is
-                    told in a way that's as unique as your team.
+                    has a story. We&apos;re dedicated to ensuring that your
+                    story is told in a way that&apos;s as unique as your team.
                   </P>
                   <P>
                     <strong>Your Partner in Success:</strong> With Fixtura, you
@@ -55,13 +54,13 @@ const AboutContent = () => {
                   </P>
                 </div>
 
-                <div className="about-text"></div>
+                <div className='about-text'></div>
 
-                <div className="about-text">
+                <div className='about-text'>
                   <h4>Our Mission</h4>
                   <ul>
                     <li>
-                      <i className="fa-solid fa-circle-check"></i>
+                      <i className='fa-solid fa-circle-check'></i>
                       <P>
                         <strong>Celebrate Sports:</strong> Craft world-class
                         digital assets that highlight the essence of Cricket,
@@ -69,7 +68,7 @@ const AboutContent = () => {
                       </P>
                     </li>
                     <li>
-                      <i className="fa-solid fa-circle-check"></i>
+                      <i className='fa-solid fa-circle-check'></i>
                       <P>
                         <strong>Connect & Engage:</strong> Build lasting
                         connections with fans across all sports, igniting their
@@ -77,7 +76,7 @@ const AboutContent = () => {
                       </P>
                     </li>
                     <li>
-                      <i className="fa-solid fa-circle-check"></i>
+                      <i className='fa-solid fa-circle-check'></i>
                       <P>
                         <strong>Innovative Excellence:</strong> Seamlessly
                         integrate sports media expertise, AI-driven insights,
@@ -86,7 +85,7 @@ const AboutContent = () => {
                       </P>
                     </li>
                     <li>
-                      <i className="fa-solid fa-circle-check"></i>
+                      <i className='fa-solid fa-circle-check'></i>
                       <P>
                         <strong>Your Story, Your Way:</strong> Prioritize
                         customization, ensuring every piece of content is a true
@@ -94,7 +93,7 @@ const AboutContent = () => {
                       </P>
                     </li>
                     <li>
-                      <i className="fa-solid fa-circle-check"></i>
+                      <i className='fa-solid fa-circle-check'></i>
                       <P>
                         <strong>Beyond Business:</strong> With Fixtura, you gain
                         more than a service—you gain a teammate, a confidant,

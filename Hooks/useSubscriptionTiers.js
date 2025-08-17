@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { fetcher } from "../lib/api";
+import { useState } from 'react';
+import { fetcher } from '../lib/api';
 
 export const useGetSubscriptionTiers = () => {
   const [SubscriptionTiers, setSubscriptionTiers] = useState(null);
@@ -9,7 +9,7 @@ export const useGetSubscriptionTiers = () => {
       const response = await fetcher(
         `${process.env.NEXT_PUBLIC_STRAPI_URL}/subscription-tiers`,
         {
-          method: "GET",
+          method: 'GET',
         }
       );
       setSubscriptionTiers(response.data);

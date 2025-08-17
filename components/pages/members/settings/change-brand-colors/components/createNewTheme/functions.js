@@ -1,18 +1,18 @@
-export const UseBaseColor = (SetColor) => {
+export const UseBaseColor = SetColor => {
   const OBJ = SetColor
     ? SetColor
     : {
-        r: "0",
-        g: "0",
-        b: "0",
-        a: "1",
+        r: '0',
+        g: '0',
+        b: '0',
+        a: '1',
       };
 
   return OBJ;
 };
 
 function rgbaToHex({ r, g, b, a }) {
-  return "#" + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+  return '#' + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
 }
 
 export const CreateANewTheme = (userInfo, Colors) => {
@@ -20,8 +20,8 @@ export const CreateANewTheme = (userInfo, Colors) => {
     Theme: {
       primary: rgbaToHex(Colors.Primary),
       secondary: rgbaToHex(Colors.Secondary),
-      dark: "#111",
-      white: "#FFF",
+      dark: '#111',
+      white: '#FFF',
     },
     CreatedBy: userInfo.id,
     isPublic: false,

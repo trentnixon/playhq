@@ -1,7 +1,7 @@
-import Cookies from "js-cookie";
-import { useState } from "react";
-import { fetcher } from "../lib/api";
-import { getAccountIDFromServer } from "../lib/auth";
+import Cookies from 'js-cookie';
+import { useState } from 'react';
+import { fetcher } from '../lib/api';
+import { getAccountIDFromServer } from '../lib/auth';
 
 export const useSetGroupAssetsBySetting = () => {
   const [GroupAssetsBy, setGroupAssetsBy] = useState(null);
@@ -12,11 +12,11 @@ export const useSetGroupAssetsBySetting = () => {
       const response = await fetcher(
         `${process.env.NEXT_PUBLIC_STRAPI_URL}/accounts/${accountInfo.account.id}`,
         {
-          method: "PUT",
+          method: 'PUT',
           headers: {
-            Accept: "application/json",
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${Cookies.get("jwt")}`,
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${Cookies.get('jwt')}`,
           },
           body: JSON.stringify({ data: { group_assets_by: value } }),
         }
@@ -37,11 +37,11 @@ export const useSetIncludeJuniorSurnames = () => {
       const response = await fetcher(
         `${process.env.NEXT_PUBLIC_STRAPI_URL}/accounts/${accountInfo.account.id}`,
         {
-          method: "PUT",
+          method: 'PUT',
           headers: {
-            Accept: "application/json",
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${Cookies.get("jwt")}`,
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${Cookies.get('jwt')}`,
           },
           body: JSON.stringify({ data: { include_junior_surnames: value } }),
         }

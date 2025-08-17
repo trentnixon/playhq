@@ -1,21 +1,21 @@
-import { Table } from "@mantine/core";
+import { Table } from '@mantine/core';
 import {
   FindAccountType,
   FindAccountTypeOBJ,
-} from "../../../../../../lib/actions";
+} from '../../../../../../lib/actions';
 
-import { P, SectionHeaders } from "../../../../../Members/Common/Type";
-import { useGetOrganizationDetails } from "../../../../../../Hooks/useGetOrganizationDetails";
-import { useAccountDetails } from "../../../../../../context/userContext";
+import { P, SectionHeaders } from '../../../../../Members/Common/Type';
+import { useGetOrganizationDetails } from '../../../../../../Hooks/useGetOrganizationDetails';
+import { useAccountDetails } from '../../../../../../context/userContext';
 import {
   categorizeTeamsByAgeGroup,
   categorizeTeamsBySeniorJunior,
   groupByCompetitionAndGrade,
   groupByCompetitionName,
-} from "../../../../../../utils/group_assets_by";
-import { BundleGroupingWarning } from "./BundleGroupingWarning";
-import { Wrapper } from "../../../../../Members/Common/Containers";
-import { RoundedSectionContainer } from "../../../../../UI/Containers/SectionContainer";
+} from '../../../../../../utils/group_assets_by';
+import { BundleGroupingWarning } from './BundleGroupingWarning';
+import { Wrapper } from '../../../../../Members/Common/Containers';
+import { RoundedSectionContainer } from '../../../../../UI/Containers/SectionContainer';
 
 export const DisplayKeys = ({ switchValue }) => {
   const { account } = useAccountDetails();
@@ -42,7 +42,7 @@ export const DisplayKeys = ({ switchValue }) => {
   );
 
   let groupedComps;
-  if (AccType === "Club") {
+  if (AccType === 'Club') {
     groupedComps = switchValue
       ? categorizeTeamsByAgeGroup(useTeams)
       : categorizeTeamsBySeniorJunior(useTeams);
@@ -57,7 +57,7 @@ export const DisplayKeys = ({ switchValue }) => {
 
   return (
     <RoundedSectionContainer
-      headerContent="Expected Bundle Grouping"
+      headerContent='Expected Bundle Grouping'
       topContent={<ContainerTopSection keys={keys} />}
       bottomContent={<ContainerBottomSection keys={keys} />}
     />
@@ -75,13 +75,13 @@ const ContainerTopSection = ({ keys }) => {
 
 const ContainerBottomSection = ({ keys }) => {
   return (
-    <Wrapper px="xl">
+    <Wrapper px='xl'>
       <Table my={0}>
         <tbody>
           {keys.map((key, index) => (
             <tr key={index}>
               <td>
-                <P textAlign="left" marginBottom={0}>
+                <P textAlign='left' marginBottom={0}>
                   {decodeURIComponent(key)}
                 </P>
               </td>

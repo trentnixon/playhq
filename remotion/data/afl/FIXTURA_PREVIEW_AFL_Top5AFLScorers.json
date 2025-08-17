@@ -1,102 +1,102 @@
 [
   {
-      "name": "Madison Prespakis",
-      "goals": 5,
-      "team": "Carlton Blues Senior Women",
-      "teamLogo": "https://upload.wikimedia.org/wikipedia/en/thumb/3/32/Carlton_FC_logo_2017.svg/1200px-Carlton_FC_logo_2017.svg.png",
-      "prompt": "**Madison Prespakis (Carlton Blues Senior Women)** scored **5 goals** in the match between Adelaide Crows Senior Women and Carlton Blues Senior Women, which ended with a score of 0 to 147. The game was part of **Round 7** of the **AFL Women's Senior Cup** and resulted in Carlton Blues Senior Women winning by 147 points.",
-      "assignSponsors": {
-          "competition": {
-              "id": 7753,
-              "name": "AFL"
-          },
-          "grade": {
-              "id": 22825,
-              "name": "AFL Women's Senior Cup"
-          },
-          "Team": {
-              "name": "Carlton Blues Senior Women"
-          }
+    "name": "Madison Prespakis",
+    "goals": 5,
+    "team": "Carlton Blues Senior Women",
+    "teamLogo": "https://upload.wikimedia.org/wikipedia/en/thumb/3/32/Carlton_FC_logo_2017.svg/1200px-Carlton_FC_logo_2017.svg.png",
+    "prompt": "**Madison Prespakis (Carlton Blues Senior Women)** scored **5 goals** in the match between Adelaide Crows Senior Women and Carlton Blues Senior Women, which ended with a score of 0 to 147. The game was part of **Round 7** of the **AFL Women's Senior Cup** and resulted in Carlton Blues Senior Women winning by 147 points.",
+    "assignSponsors": {
+      "competition": {
+        "id": 7753,
+        "name": "AFL"
+      },
+      "grade": {
+        "id": 22825,
+        "name": "AFL Women's Senior Cup"
+      },
+      "Team": {
+        "name": "Carlton Blues Senior Women"
       }
+    }
   },
   {
-      "name": "Jack Ross",
-      "goals": 4,
-      "team": "Richmond Tigers Reserves",
-      "teamLogo": "https://upload.wikimedia.org/wikipedia/en/thumb/1/1e/Richmond_Tigers_logo_2021.svg/1200px-Richmond_Tigers_logo_2021.svg.png",
-      "prompt": "**Jack Ross (Richmond Tigers Reserves)** scored **4 goals** in the match between Richmond Tigers Reserves and West Coast Eagles Reserves, which ended with a score of 85 to 18. The game was part of **Round 7** of the **AFL Reserve Men's Premiership** and resulted in Richmond Tigers Reserves winning by 67 points.",
-      "assignSponsors": {
-          "competition": {
-              "id": 7753,
-              "name": "AFL"
-          },
-          "grade": {
-              "id": 22823,
-              "name": "AFL Reserve Men's Premiership"
-          },
-          "Team": {
-              "name": "Richmond Tigers Reserves"
-          }
+    "name": "Jack Ross",
+    "goals": 4,
+    "team": "Richmond Tigers Reserves",
+    "teamLogo": "https://upload.wikimedia.org/wikipedia/en/thumb/1/1e/Richmond_Tigers_logo_2021.svg/1200px-Richmond_Tigers_logo_2021.svg.png",
+    "prompt": "**Jack Ross (Richmond Tigers Reserves)** scored **4 goals** in the match between Richmond Tigers Reserves and West Coast Eagles Reserves, which ended with a score of 85 to 18. The game was part of **Round 7** of the **AFL Reserve Men's Premiership** and resulted in Richmond Tigers Reserves winning by 67 points.",
+    "assignSponsors": {
+      "competition": {
+        "id": 7753,
+        "name": "AFL"
+      },
+      "grade": {
+        "id": 22823,
+        "name": "AFL Reserve Men's Premiership"
+      },
+      "Team": {
+        "name": "Richmond Tigers Reserves"
       }
+    }
   },
   {
-      "name": "Tom Doedee",
-      "goals": 4,
-      "team": "Adelaide Crows Reserves",
-      "teamLogo": "https://upload.wikimedia.org/wikipedia/en/thumb/6/62/Adelaide_Crows_FC_logo_2020.svg/1200px-Adelaide_Crows_FC_logo_2020.svg.png",
-      "prompt": "**Tom Doedee (Adelaide Crows Reserves)** scored **4 goals** in the match between Adelaide Crows Reserves and Carlton Blues Reserves, which ended with a score of 85 to 18. The game was part of **Round 7** of the **AFL Reserve Men's Premiership** and resulted in Adelaide Crows Reserves winning by 67 points.",
-      "assignSponsors": {
-          "competition": {
-              "id": 7753,
-              "name": "AFL"
-          },
-          "grade": {
-              "id": 22823,
-              "name": "AFL Reserve Men's Premiership"
-          },
-          "Team": {
-              "name": "Adelaide Crows Reserves"
-          }
+    "name": "Tom Doedee",
+    "goals": 4,
+    "team": "Adelaide Crows Reserves",
+    "teamLogo": "https://upload.wikimedia.org/wikipedia/en/thumb/6/62/Adelaide_Crows_FC_logo_2020.svg/1200px-Adelaide_Crows_FC_logo_2020.svg.png",
+    "prompt": "**Tom Doedee (Adelaide Crows Reserves)** scored **4 goals** in the match between Adelaide Crows Reserves and Carlton Blues Reserves, which ended with a score of 85 to 18. The game was part of **Round 7** of the **AFL Reserve Men's Premiership** and resulted in Adelaide Crows Reserves winning by 67 points.",
+    "assignSponsors": {
+      "competition": {
+        "id": 7753,
+        "name": "AFL"
+      },
+      "grade": {
+        "id": 22823,
+        "name": "AFL Reserve Men's Premiership"
+      },
+      "Team": {
+        "name": "Adelaide Crows Reserves"
       }
+    }
   },
   {
-      "name": "Noah Balta",
-      "goals": 4,
-      "team": "Richmond Tigers Senior Men",
-      "teamLogo": "https://upload.wikimedia.org/wikipedia/en/thumb/1/1e/Richmond_Tigers_logo_2021.svg/1200px-Richmond_Tigers_logo_2021.svg.png",
-      "prompt": "**Noah Balta (Richmond Tigers Senior Men)** scored **4 goals** in the match between Richmond Tigers Senior Men and West Coast Eagles Senior Men, which ended with a score of 43 to 19. The game was part of **Round 7** of the **AFL Men's Premiership** and resulted in Richmond Tigers Senior Men winning by 24 points.",
-      "assignSponsors": {
-          "competition": {
-              "id": 7753,
-              "name": "AFL"
-          },
-          "grade": {
-              "id": 22824,
-              "name": "AFL Men's Premiership"
-          },
-          "Team": {
-              "name": "Richmond Tigers Senior Men"
-          }
+    "name": "Noah Balta",
+    "goals": 4,
+    "team": "Richmond Tigers Senior Men",
+    "teamLogo": "https://upload.wikimedia.org/wikipedia/en/thumb/1/1e/Richmond_Tigers_logo_2021.svg/1200px-Richmond_Tigers_logo_2021.svg.png",
+    "prompt": "**Noah Balta (Richmond Tigers Senior Men)** scored **4 goals** in the match between Richmond Tigers Senior Men and West Coast Eagles Senior Men, which ended with a score of 43 to 19. The game was part of **Round 7** of the **AFL Men's Premiership** and resulted in Richmond Tigers Senior Men winning by 24 points.",
+    "assignSponsors": {
+      "competition": {
+        "id": 7753,
+        "name": "AFL"
+      },
+      "grade": {
+        "id": 22824,
+        "name": "AFL Men's Premiership"
+      },
+      "Team": {
+        "name": "Richmond Tigers Senior Men"
       }
+    }
   },
   {
-      "name": "Lucy McEvoy",
-      "goals": 4,
-      "team": "Carlton Blues Senior Women",
-      "teamLogo": "https://upload.wikimedia.org/wikipedia/en/thumb/3/32/Carlton_FC_logo_2017.svg/1200px-Carlton_FC_logo_2017.svg.png",
-      "prompt": "**Lucy McEvoy (Carlton Blues Senior Women)** scored **4 goals** in the match between Adelaide Crows Senior Women and Carlton Blues Senior Women, which ended with a score of 0 to 147. The game was part of **Round 7** of the **AFL Women's Senior Cup** and resulted in Carlton Blues Senior Women winning by 147 points.",
-      "assignSponsors": {
-          "competition": {
-              "id": 7753,
-              "name": "AFL"
-          },
-          "grade": {
-              "id": 22825,
-              "name": "AFL Women's Senior Cup"
-          },
-          "Team": {
-              "name": "Carlton Blues Senior Women"
-          }
+    "name": "Lucy McEvoy",
+    "goals": 4,
+    "team": "Carlton Blues Senior Women",
+    "teamLogo": "https://upload.wikimedia.org/wikipedia/en/thumb/3/32/Carlton_FC_logo_2017.svg/1200px-Carlton_FC_logo_2017.svg.png",
+    "prompt": "**Lucy McEvoy (Carlton Blues Senior Women)** scored **4 goals** in the match between Adelaide Crows Senior Women and Carlton Blues Senior Women, which ended with a score of 0 to 147. The game was part of **Round 7** of the **AFL Women's Senior Cup** and resulted in Carlton Blues Senior Women winning by 147 points.",
+    "assignSponsors": {
+      "competition": {
+        "id": 7753,
+        "name": "AFL"
+      },
+      "grade": {
+        "id": 22825,
+        "name": "AFL Women's Senior Cup"
+      },
+      "Team": {
+        "name": "Carlton Blues Senior Women"
       }
+    }
   }
 ]

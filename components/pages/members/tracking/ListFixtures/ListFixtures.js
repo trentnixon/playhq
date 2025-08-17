@@ -1,14 +1,14 @@
-import React from "react";
-import { Container, Grid, useMantineTheme } from "@mantine/core";
-import { P, SectionHeaders } from "../../../../Members/Common/Type";
-import { ListMonth } from "./ListMonth";
-import { FixtureTable } from "./FixturesTable";
-import { RoundedSectionContainer } from "../../../../UI/Containers/SectionContainer";
+import React from 'react';
+import { Container, Grid, useMantineTheme } from '@mantine/core';
+import { P, SectionHeaders } from '../../../../Members/Common/Type';
+import { ListMonth } from './ListMonth';
+import { FixtureTable } from './FixturesTable';
+import { RoundedSectionContainer } from '../../../../UI/Containers/SectionContainer';
 
 // Helper to group games by month
-const groupByMonth = (gamesData) => {
+const groupByMonth = gamesData => {
   return gamesData.reduce((acc, gameDay) => {
-    const month = gameDay.date.toLocaleDateString(undefined, { month: "long" });
+    const month = gameDay.date.toLocaleDateString(undefined, { month: 'long' });
     acc[month] = acc[month] ? [...acc[month], gameDay] : [gameDay];
     return acc;
   }, {});
@@ -56,7 +56,7 @@ export const GamesListing = ({ gamesData }) => {
           {entries.map(([month, gameDays], monthIndex) => (
             <RoundedSectionContainer
               key={month}
-              headerContent={""}
+              headerContent={''}
               topContent={<ListMonth month={month} />}
               bottomContent={
                 <FixtureTable
@@ -73,7 +73,7 @@ export const GamesListing = ({ gamesData }) => {
 
   return (
     <Container>
-      {renderGamesList(upcomingGamesGroupedByMonth, "Upcoming Fixtures")}
+      {renderGamesList(upcomingGamesGroupedByMonth, 'Upcoming Fixtures')}
     </Container>
   );
 };

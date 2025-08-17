@@ -1,23 +1,23 @@
-import React from "react";
-import PageBanner from "../components/Common/PageBanner";
-import Meta from "../components/Layouts/Meta";
+import React from 'react';
+import PageBanner from '../components/Common/PageBanner';
+import Meta from '../components/Layouts/Meta';
 
 const PrivacyPolicy = () => {
   return (
     <>
       <Meta
-        title="Privacy Policy - Fixtura: Protecting Your Data"
+        title='Privacy Policy - Fixtura: Protecting Your Data'
         description="Read Fixtura's privacy policy to understand how we protect and manage your data while you use our digital media tools for sports clubs."
-        keywords="Privacy policy, Fixtura data protection, sports club privacy, digital media security, user data safety"
+        keywords='Privacy policy, Fixtura data protection, sports club privacy, digital media security, user data safety'
       />
       <PageBanner
-        pageTitle="Privacy Policy"
-        BGImage="/images/BG-Images/f180918696.jpg"
+        pageTitle='Privacy Policy'
+        BGImage='/images/BG-Images/f180918696.jpg'
         position={`center center`}
       />
 
-      <div className="text-container ptb-100">
-        <div className="container">
+      <div className='text-container ptb-100'>
+        <div className='container'>
           <h1>Privacy Policy</h1>
 
           <h2>Introduction</h2>

@@ -8,12 +8,17 @@ const defaultStyleObj = {
   padding: '0',
 };
 
-export const PresentationalOrganisationName = ({ as = 'h1', level = 1, styleObj = {}, animationObj = {} }) => {
+export const PresentationalOrganisationName = ({
+  as = 'h1',
+  level = 1,
+  styleObj = {},
+  animationObj = {},
+}) => {
   const { DATA } = useVideoDataContext();
   const { Club } = DATA.VIDEOMETA;
 
   const combinedStyles = {
-    ...defaultStyleObj, 
+    ...defaultStyleObj,
     ...styleObj,
     ...animationObj,
   };

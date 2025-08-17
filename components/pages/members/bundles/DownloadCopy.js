@@ -1,5 +1,5 @@
-import { PageCopyWrapper, Wrapper } from "../../../Members/Common/Containers";
-import { P } from "../../../Members/Common/Type";
+import { PageCopyWrapper, Wrapper } from '../../../Members/Common/Containers';
+import { P } from '../../../Members/Common/Type';
 
 export const DownloadCopy = () => {
   return (

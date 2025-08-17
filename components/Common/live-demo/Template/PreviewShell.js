@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
-import { Paper } from "@mantine/core";
-import { prepareMockData } from "../../../../utils/Remotion/RemotionPrepareMockData";
-import { P } from "../../../Members/Common/Type";
-import { MembersPreviewPlayer } from "./Player";
+import { useEffect, useState } from 'react';
+import { Paper } from '@mantine/core';
+import { prepareMockData } from '../../../../utils/Remotion/RemotionPrepareMockData';
+import { P } from '../../../Members/Common/Type';
+import { MembersPreviewPlayer } from './Player';
 
 export const MembersPreviewShell = ({
   userAccount,
@@ -14,7 +14,7 @@ export const MembersPreviewShell = ({
   useEffect(() => {
     const data = prepareMockData(userAccount);
     let filtered = data.find(
-      (item) => item.data.VIDEOMETA.Video.CompositionID === selectedAsset
+      item => item.data.VIDEOMETA.Video.CompositionID === selectedAsset
     );
 
     if (filtered && selectedHeroImage) {
@@ -45,7 +45,7 @@ export const MembersPreviewShell = ({
   }
 
   return (
-    <Paper shadow="md" w={"100%"} p={0} withBorder>
+    <Paper shadow='md' w={'100%'} p={0} withBorder>
       <MembersPreviewPlayer Data={filteredData} />
     </Paper>
   );

@@ -1,9 +1,10 @@
 //
-import Cookies from "js-cookie";
-import { useState } from "react";
-import { fetcher } from "../lib/api";
-import { getAccountFromLocalCookie } from "../lib/auth";
-const qs = require("qs");
+import Cookies from 'js-cookie';
+import { useState } from 'react';
+import { fetcher } from '../lib/api';
+import { getAccountFromLocalCookie } from '../lib/auth';
+import { useAccountDetails } from '@/context/userContext';
+const qs = require('qs');
 
 // GET
 // Fetch all of the options
@@ -14,12 +15,12 @@ export const useGETDesignElement = () => {
       pageSize: 1000,
     },
     populate: [
-      "Poster",
-      "Gallery",
-      "Video",
-      "bundle_audio",
-      "bundle_audio.audio_options",
-      "bundle_audio.audio_options.asset",
+      'Poster',
+      'Gallery',
+      'Video',
+      'bundle_audio',
+      'bundle_audio.audio_options',
+      'bundle_audio.audio_options.asset',
     ],
   });
   const CreateDesignElement = async (OBJ, useAuth = true) => {
@@ -27,12 +28,12 @@ export const useGETDesignElement = () => {
     try {
       //console.log("CreateDesignElement");
       const headers = {
-        Accept: "application/json",
-        "Content-Type": "application/json",
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
       };
 
       if (useAuth) {
-        headers.Authorization = `Bearer ${Cookies.get("jwt")}`;
+        headers.Authorization = `Bearer ${Cookies.get('jwt')}`;
       }
 
       const response = await fetcher(
@@ -46,27 +47,6 @@ export const useGETDesignElement = () => {
       setDesignElement(null);
     }
   };
-/*   const CreateDesignElement = async (OBJ,useAuth = true) => {
-    setDesignElement(true);
-    try {
-      //console.log("CreateDesignElement");
-      const response = await fetcher(
-        `${process.env.NEXT_PUBLIC_STRAPI_URL}/${OBJ.COLLECTIONID}?${query}`,
-        {
-          headers: {
-            Accept: "application/json",
-            "Content-Type": "application/json",
-            // commented out for publis use
-            // if this is required, then the live-demo will need to be amended
-            Authorization: `Bearer ${Cookies.get("jwt")}`,
-          },
-        }
-      );
-      setDesignElement(response.data);
-    } catch (err) {
-      setDesignElement(null);
-    }
-  }; */
 
   return [DesignElement, CreateDesignElement];
 };
@@ -76,27 +56,19 @@ export const useGETDesignElement = () => {
 
 export const useAssignDesignElement = () => {
   const [DesignElement, setDesignElement] = useState(null);
-
-  const CreateDesignElement = async (OBJ) => {
-    /*
-        OBJ={
-            CollectionSaveTo:'',
-            Body:'',
-            COLLECTIONID:COLLECTIONID,
-            RelationProperty:RelationProperty
-        }
-        */
+  const { forceRefresh } = useAccountDetails();
+  const CreateDesignElement = async OBJ => {
     setDesignElement(true);
     try {
       //console.log("CreateDesignElement");
       const response = await fetcher(
         `${process.env.NEXT_PUBLIC_STRAPI_URL}/${OBJ.CollectionSaveTo}/${OBJ.COLLECTIONID}`,
         {
-          method: "PUT",
+          method: 'PUT',
           headers: {
-            Accept: "application/json",
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${Cookies.get("jwt")}`,
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${Cookies.get('jwt')}`,
           },
           body: JSON.stringify({
             data: {
@@ -105,6 +77,7 @@ export const useAssignDesignElement = () => {
           }),
         }
       );
+      forceRefresh();
       setDesignElement(response);
     } catch (err) {
       setDesignElement(null);
@@ -112,6 +85,42 @@ export const useAssignDesignElement = () => {
   };
 
   return [DesignElement, CreateDesignElement];
+};
+
+export const useAssignTemplateOptionsToUserAccount = () => {
+  const [status, setStatus] = useState('idle'); // idle | loading | success | error
+  const [error, setError] = useState(null);
+  const [response, setResponse] = useState(null);
+
+  const CreateDesignElement = async OBJ => {
+    setStatus('loading');
+    setError(null);
+    try {
+      console.log('[OBJ]', OBJ);
+      const res = await fetcher(
+        `${process.env.NEXT_PUBLIC_STRAPI_URL}/${OBJ.collectionSaveTo}/${OBJ.accountId}`,
+        {
+          method: 'PUT',
+          headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${Cookies.get('jwt')}`,
+          },
+          body: JSON.stringify({
+            data: OBJ.Body,
+          }),
+        }
+      );
+      console.log('[response]', res);
+      setResponse(res);
+      setStatus('success');
+    } catch (err) {
+      setError(err);
+      setStatus('error');
+    }
+  };
+
+  return { status, error, response, CreateDesignElement };
 };
 
 /* ***************************************** */
@@ -122,7 +131,7 @@ export const useAssignDesignElement = () => {
 export const UserCreateTheme = () => {
   const [THEME, setTHEME] = useState(false);
 
-  const CreateTHEME = async (OBJ) => {
+  const CreateTHEME = async OBJ => {
     const user = await getAccountFromLocalCookie();
 
     //console.log(user);
@@ -133,11 +142,11 @@ export const UserCreateTheme = () => {
         const response = await fetcher(
           `${process.env.NEXT_PUBLIC_STRAPI_URL}/themes`,
           {
-            method: "POST",
+            method: 'POST',
             headers: {
-              Accept: "application/json",
-              "Content-Type": "application/json",
-              Authorization: `Bearer ${Cookies.get("jwt")}`,
+              Accept: 'application/json',
+              'Content-Type': 'application/json',
+              Authorization: `Bearer ${Cookies.get('jwt')}`,
             },
             body: JSON.stringify({ data: OBJ }),
           }
@@ -167,11 +176,11 @@ export const UserUpdateTheme = () => {
         const response = await fetcher(
           `${process.env.NEXT_PUBLIC_STRAPI_URL}/themes/${ID}`,
           {
-            method: "PUT",
+            method: 'PUT',
             headers: {
-              Accept: "application/json",
-              "Content-Type": "application/json",
-              Authorization: `Bearer ${Cookies.get("jwt")}`,
+              Accept: 'application/json',
+              'Content-Type': 'application/json',
+              Authorization: `Bearer ${Cookies.get('jwt')}`,
             },
             body: JSON.stringify({ data: OBJ }),
           }
@@ -185,4 +194,189 @@ export const UserUpdateTheme = () => {
   };
 
   return [UPDATE, UpdateTHEME];
+};
+
+// GET Template Palettes
+export const useGetTemplatePalettes = () => {
+  const [templatePalettes, setTemplatePalettes] = useState(null);
+
+  const fetchTemplatePalettes = async (useAuth = true) => {
+    try {
+      const headers = {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      };
+      if (useAuth) {
+        headers.Authorization = `Bearer ${Cookies.get('jwt')}`;
+      }
+      const response = await fetcher(
+        `${process.env.NEXT_PUBLIC_STRAPI_URL}/template-palettes?populate=*`,
+        { headers }
+      );
+      setTemplatePalettes(response);
+    } catch (err) {
+      setTemplatePalettes(null);
+    }
+  };
+
+  return [templatePalettes, fetchTemplatePalettes];
+};
+
+// GET Template Categories
+export const useGetTemplateCategories = () => {
+  const [templateCategories, setTemplateCategories] = useState(null);
+
+  const fetchTemplateCategories = async (useAuth = true) => {
+    try {
+      const headers = {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      };
+      if (useAuth) {
+        headers.Authorization = `Bearer ${Cookies.get('jwt')}`;
+      }
+      const response = await fetcher(
+        `${process.env.NEXT_PUBLIC_STRAPI_URL}/template-categories?populate=*`,
+        { headers }
+      );
+      setTemplateCategories(response);
+    } catch (err) {
+      setTemplateCategories(null);
+    }
+  };
+
+  return [templateCategories, fetchTemplateCategories];
+};
+
+// Filters
+// GET Template Categories
+export const useGetTemplateImageOptions = () => {
+  const [templateImageOptions, setTemplateImageOptions] = useState(null);
+
+  const fetchTemplateImageOptions = async (useAuth = true) => {
+    try {
+      const headers = {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      };
+      if (useAuth) {
+        headers.Authorization = `Bearer ${Cookies.get('jwt')}`;
+      }
+      const response = await fetcher(
+        `${process.env.NEXT_PUBLIC_STRAPI_URL}/template-images?populate=*`,
+        { headers }
+      );
+      console.log('[response]', response);
+      setTemplateImageOptions(response);
+    } catch (err) {
+      setTemplateImageOptions(null);
+    }
+  };
+
+  return [templateImageOptions, fetchTemplateImageOptions];
+};
+
+// GET Template Graphics
+export const useGetTemplateNoises = () => {
+  const [templateNoises, setTemplateNoises] = useState(null);
+
+  const fetchTemplateNoises = async (useAuth = true) => {
+    try {
+      const headers = {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      };
+      if (useAuth) {
+        headers.Authorization = `Bearer ${Cookies.get('jwt')}`;
+      }
+      const response = await fetcher(
+        `${process.env.NEXT_PUBLIC_STRAPI_URL}/template-noises?populate=*`,
+        { headers }
+      );
+      setTemplateNoises(response);
+    } catch (err) {
+      setTemplateNoises(null);
+    }
+  };
+
+  return [templateNoises, fetchTemplateNoises];
+};
+
+// Get Template Gradients
+export const useGetTemplateGradients = () => {
+  const [templateGradients, setTemplateGradients] = useState(null);
+
+  const fetchTemplateGradients = async (useAuth = true) => {
+    try {
+      const headers = {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      };
+      if (useAuth) {
+        headers.Authorization = `Bearer ${Cookies.get('jwt')}`;
+      }
+      const response = await fetcher(
+        `${process.env.NEXT_PUBLIC_STRAPI_URL}/template-gradients?populate=*`,
+        { headers }
+      );
+      setTemplateGradients(response);
+    } catch (err) {
+      setTemplateGradients(null);
+    }
+  };
+
+  return [templateGradients, fetchTemplateGradients];
+};
+
+// Get Template Patterns
+export const useGetTemplatePatterns = () => {
+  const [templatePatterns, setTemplatePatterns] = useState(null);
+
+  const fetchTemplatePatterns = async (useAuth = true) => {
+    try {
+      const headers = {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      };
+      if (useAuth) {
+        headers.Authorization = `Bearer ${Cookies.get('jwt')}`;
+      }
+      const response = await fetcher(
+        `${process.env.NEXT_PUBLIC_STRAPI_URL}/template-patterns?populate=*`,
+        { headers }
+      );
+      setTemplatePatterns(response);
+    } catch (err) {
+      setTemplatePatterns(null);
+    }
+  };
+
+  return [templatePatterns, fetchTemplatePatterns];
+};
+
+// Get Template Particles
+
+export const useGetTemplateParticles = () => {
+  const [templateParticles, setTemplateParticles] = useState(null);
+
+  const fetchTemplateParticles = async (useAuth = true) => {
+    try {
+      const headers = {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      };
+      if (useAuth) {
+        headers.Authorization = `Bearer ${Cookies.get('jwt')}`;
+      }
+      const response = await fetcher(
+        `${process.env.NEXT_PUBLIC_STRAPI_URL}/template-particles?populate=*`,
+        { headers }
+      );
+      setTemplateParticles(response);
+    } catch (err) {
+      setTemplateParticles(null);
+    }
+  };
+
+  return [templateParticles, fetchTemplateParticles];
 };

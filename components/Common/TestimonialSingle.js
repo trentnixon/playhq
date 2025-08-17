@@ -1,21 +1,19 @@
-import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper";
-import Link from "next/link";
-import { trackButtonClick } from "../../lib/GA";
-import Section from "../UI/DefaultSection";
+import React from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination } from 'swiper';
+import Link from 'next/link';
+import { trackButtonClick } from '../../lib/GA';
+import Section from '../UI/DefaultSection';
 
 const TestimonialSingle = () => {
   const SectionCaseStudies = {
-    title: "How Fixtura is Helping",
+    title: 'How Fixtura is Helping',
     paragraphs: [``],
   };
   return (
-    <div className="feedback-area ptb-100">
-      <div className="container">
-        <div className="feedback-list">
-
-
+    <div className='feedback-area ptb-100'>
+      <div className='container'>
+        <div className='feedback-list'>
           <Swiper
             pagination={{
               clickable: true,
@@ -23,18 +21,18 @@ const TestimonialSingle = () => {
             spaceBetween={30}
             slidesPerView={1}
             modules={[Pagination]}
-            className="feedback-slides"
+            className='feedback-slides'
           >
             <SwiperSlide>
-              <div className="single-feedback">
+              <div className='single-feedback'>
                 <img
-                  style={{ width: "100px" }}
-                  src="https://fixtura.s3.ap-southeast-2.amazonaws.com/logo_092281d6e5.png"
-                  className="client5"
-                  alt="client"
-                  data-aos="zoom-in"
-                  data-aos-duration="1200"
-                  data-aos-delay="600"
+                  style={{ width: '100px' }}
+                  src='https://fixtura.s3.ap-southeast-2.amazonaws.com/logo_092281d6e5.png'
+                  className='client5'
+                  alt='client'
+                  data-aos='zoom-in'
+                  data-aos-duration='1200'
+                  data-aos-delay='600'
                 />
                 <p>
                   CNSW Sydney Shires rekindled their online engagement after a
@@ -45,16 +43,19 @@ const TestimonialSingle = () => {
                   clubs.
                 </p>
 
-                <div className="bar"></div>
+                <div className='bar'></div>
 
                 <h3>Trav Harker | President</h3>
-                <Link legacyBehavior  href="https://www.instagram.com/runawaybaycc/">
+                <Link
+                  legacyBehavior
+                  href='https://www.instagram.com/runawaybaycc/'
+                >
                   <a
-                    className="custom-btn"
-                    target="_blank"
+                    className='custom-btn'
+                    target='_blank'
                     onClick={() =>
                       trackButtonClick(
-                        "How Fixtura is Helping Sydney Shires Instagram"
+                        'How Fixtura is Helping Sydney Shires Instagram'
                       )
                     }
                   >

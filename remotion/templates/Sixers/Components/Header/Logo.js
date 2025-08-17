@@ -1,80 +1,80 @@
 // Refactored version with error handling, optimization, and adherence to SOLID principles.
 
 import styled from 'styled-components';
-import {SpringToFrom} from '../../../../Animation/RemotionSpring';
-import {EraseToMiddleFromTop} from '../../../../Animation/ClipWipe';
-import {Img} from 'remotion';
+import { SpringToFrom } from '../../../../Animation/RemotionSpring';
+import { EraseToMiddleFromTop } from '../../../../Animation/ClipWipe';
+import { Img } from 'remotion';
 import PropTypes from 'prop-types'; // For prop type validation
 import {
-	calculateAspectRatio,
-	calculateImageDimensions,
+  calculateAspectRatio,
+  calculateImageDimensions,
 } from '../../../../utils/global/calculateImageDimensions';
-import {ImageWithFallback} from '../../../../utils/global/ImageWithFallback';
+import { ImageWithFallback } from '../../../../utils/global/ImageWithFallback';
 
 // Logo Component - A reusable component for rendering logos with specific animations
-const LogoComponent = ({FPS_MAIN, LOGO, isCircle = false}) => {
-	console.log('LOGO ', LOGO.height, LOGO.width, calculateImageDimensions(LOGO));
-	// Validate inputs
-	if (!FPS_MAIN || !LOGO) {
-		console.error(
-			'LogoComponent requires FPS_MAIN and LOGO to function properly.'
-		);
-		return null;
-	}
+const LogoComponent = ({ FPS_MAIN, LOGO, isCircle = false }) => {
+  console.log('LOGO ', LOGO.height, LOGO.width, calculateImageDimensions(LOGO));
+  // Validate inputs
+  if (!FPS_MAIN || !LOGO) {
+    console.error(
+      'LogoComponent requires FPS_MAIN and LOGO to function properly.'
+    );
+    return null;
+  }
 
-	// Dynamic styles based on props
-	const logoStyles = {
-		marginTop: '0px',
-		transform: `translateY(${SpringToFrom(0, 100, 0, 'Springy100')}px)`,
-		clipPath: EraseToMiddleFromTop(FPS_MAIN - 30, 'Wobbly'),
-		borderRadius: isCircle ? '100%' : '0%',
-	};
+  // Dynamic styles based on props
+  const logoStyles = {
+    marginTop: '0px',
+    transform: `translateY(${SpringToFrom(0, 100, 0, 'Springy100')}px)`,
+    clipPath: EraseToMiddleFromTop(FPS_MAIN - 30, 'Wobbly'),
+    borderRadius: isCircle ? '100%' : '0%',
+  };
 
-	return (
-		<StyledLogo
-			isCircle={isCircle}
-			style={{
-				...logoStyles,
-				...calculateImageDimensions(LOGO, [100, 200, 90]),
-				aspectRatio: calculateAspectRatio(LOGO),
-			}}
-		>
-			<ImageWithFallback
-				src={LOGO}
-				width="100%"
-				style={{
-					borderRadius: '10%',
-				}}
-			/>
-		</StyledLogo>
-	);
+  return (
+    <StyledLogo
+      isCircle={isCircle}
+      style={{
+        ...logoStyles,
+        ...calculateImageDimensions(LOGO, [100, 200, 90]),
+        aspectRatio: calculateAspectRatio(LOGO),
+      }}
+    >
+      <ImageWithFallback
+        src={LOGO}
+        width='100%'
+        style={{
+          borderRadius: '10%',
+        }}
+      />
+    </StyledLogo>
+  );
 };
 
 // PropTypes for LogoComponent for better type checking
 LogoComponent.propTypes = {
-	FPS_MAIN: PropTypes.number.isRequired,
-	LOGO: PropTypes.string.isRequired,
-	isCircle: PropTypes.bool,
+  FPS_MAIN: PropTypes.number.isRequired,
+  LOGO: PropTypes.string.isRequired,
+  isCircle: PropTypes.bool,
 };
 
 // Styled components
 const StyledLogo = styled.div`
-	width: ${({isCircle}) => (isCircle ? '50px' : '50px')};
-	height: ${({isCircle}) => (isCircle ? 'auto' : 'auto')};
-	border-radius: ${({isCircle}) => (isCircle ? '100%' : '0')};
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	margin-top: 40px;
+  width: ${({ isCircle }) => (isCircle ? '50px' : '50px')};
+  height: ${({ isCircle }) => (isCircle ? 'auto' : 'auto')};
+  border-radius: ${({ isCircle }) => (isCircle ? '100%' : '0')};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 40px;
 `;
 
 // Exported specific components utilizing the LogoComponent for specific use cases
-export const HeaderLogo = ({FPS_MAIN, LOGO}) => {
-	return <LogoComponent FPS_MAIN={FPS_MAIN} LOGO={LOGO} isCircle={false} />;
+export const HeaderLogo = ({ FPS_MAIN, LOGO }) => {
+  return <LogoComponent FPS_MAIN={FPS_MAIN} LOGO={LOGO} isCircle={false} />;
 };
 
-export const SingleResultHeaderLogo = ({FPS_MAIN, LOGO}) => {
-	return <LogoComponent isCircle FPS_MAIN={FPS_MAIN} LOGO={LOGO} />;
+export const SingleResultHeaderLogo = ({ FPS_MAIN, LOGO }) => {
+  return <LogoComponent isCircle FPS_MAIN={FPS_MAIN} LOGO={LOGO} />;
 };
 
 // Dev notes:

@@ -1,0 +1,923 @@
+{
+  "data": [
+    {
+      "gameID": "25101",
+      "status": "Completed",
+      "homeTeam": {
+        "name": "India",
+        "isHome": true,
+        "isClubTeam": true,
+        "logo": {
+          "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
+          "width": 128,
+          "height": 128
+        },
+        "score": "8/272",
+        "overs": null,
+        "homeScoresFirstInnings": null,
+        "battingPerformances": [
+          {
+            "player": "Virat Kohli",
+            "runs": 102,
+            "balls": 88,
+            "fours": 14,
+            "sixes": 2,
+            "SR": 115.9,
+            "team": "India",
+            "notOut": false
+          },
+          {
+            "player": "Rohit Sharma",
+            "runs": 81,
+            "balls": 70,
+            "fours": 10,
+            "sixes": 3,
+            "SR": 115.7,
+            "team": "India",
+            "notOut": false
+          },
+          {
+            "player": "KL Rahul",
+            "runs": 65,
+            "balls": 58,
+            "fours": 8,
+            "sixes": 2,
+            "SR": 112.1,
+            "team": "India",
+            "notOut": false
+          }
+        ],
+        "bowlingPerformances": [
+          {
+            "player": "Jofra Archer",
+            "overs": 10,
+            "maidens": 1,
+            "runs": 50,
+            "wickets": 3,
+            "economy": 5.0,
+            "team": "England"
+          },
+          {
+            "player": "Chris Woakes",
+            "overs": 10,
+            "maidens": 1,
+            "runs": 48,
+            "wickets": 3,
+            "economy": 4.8,
+            "team": "England"
+          },
+          {
+            "player": "Mark Wood",
+            "overs": 10,
+            "maidens": 0,
+            "runs": 60,
+            "wickets": 2,
+            "economy": 6.0,
+            "team": "England"
+          }
+        ]
+      },
+      "awayTeam": {
+        "name": "England",
+        "isHome": false,
+        "isClubTeam": false,
+        "logo": {
+          "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
+          "width": 128,
+          "height": 128
+        },
+        "score": "7/268",
+        "overs": null,
+        "awayScoresFirstInnings": null,
+        "battingPerformances": [
+          {
+            "player": "Joe Root",
+            "runs": 95,
+            "balls": 90,
+            "fours": 8,
+            "sixes": 1,
+            "SR": 105.5,
+            "team": "England",
+            "notOut": false
+          },
+          {
+            "player": "Eoin Morgan",
+            "runs": 60,
+            "balls": 65,
+            "fours": 5,
+            "sixes": 2,
+            "SR": 92.3,
+            "team": "England",
+            "notOut": false
+          },
+          {
+            "player": "Jos Buttler",
+            "runs": 50,
+            "balls": 45,
+            "fours": 7,
+            "sixes": 1,
+            "SR": 111.1,
+            "team": "England",
+            "notOut": false
+          }
+        ],
+        "bowlingPerformances": [
+          {
+            "player": "Jasprit Bumrah",
+            "overs": 10,
+            "maidens": 0,
+            "runs": 45,
+            "wickets": 4,
+            "economy": 4.5,
+            "team": "India"
+          },
+          {
+            "player": "Ravindra Jadeja",
+            "overs": 10,
+            "maidens": 2,
+            "runs": 40,
+            "wickets": 2,
+            "economy": 4.0,
+            "team": "India"
+          },
+          {
+            "player": "Mohammed Shami",
+            "overs": 10,
+            "maidens": 0,
+            "runs": 55,
+            "wickets": 2,
+            "economy": 5.5,
+            "team": "India"
+          }
+        ]
+      },
+      "teamHomeLogo": {
+        "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
+        "width": 128,
+        "height": 128
+      },
+      "teamAwayLogo": {
+        "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
+        "width": 128,
+        "height": 128
+      },
+      "date": "Saturday, 18 November 2023",
+      "type": "One Day",
+      "ground": "Wankhede Stadium, Mumbai",
+      "round": "Round 1",
+      "gender": "Men",
+      "ageGroup": "Senior/Open",
+      "gradeName": "International ODI",
+      "assignSponsors": {
+        "competition": [],
+        "grade": [],
+        "team": [
+          {
+            "id": 151,
+            "isPrimary": true,
+            "isActive": true,
+            "isArticle": true,
+            "isVideo": true,
+            "url": "test",
+            "tagline": "test",
+            "description": null,
+            "name": "test",
+            "logo": {
+              "id": 12784,
+              "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Sponsor2_39eebf9c1b.png"
+            }
+          },
+          {
+            "id": 152,
+            "isPrimary": false,
+            "isActive": true,
+            "isArticle": true,
+            "isVideo": true,
+            "url": "test",
+            "tagline": "test",
+            "description": null,
+            "name": "test",
+            "logo": {
+              "id": 12785,
+              "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Sponsor3_d65a61808c.png"
+            }
+          }
+        ]
+      },
+      "result": "India won by 4 runs",
+      "prompt": "Match Summary: India vs. England: India won with a score of 8/272 against England's 7/268. Virat Kohli scored 102 runs for India, and Joe Root scored 95 runs for England."
+    },
+    {
+      "gameID": "25105",
+      "status": "Completed",
+      "homeTeam": {
+        "name": "South Africa",
+        "isHome": true,
+        "isClubTeam": true,
+        "logo": {
+          "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
+          "width": 128,
+          "height": 128
+        },
+        "score": "5/290",
+        "overs": null,
+        "homeScoresFirstInnings": null,
+        "battingPerformances": [
+          {
+            "player": "Quinton de Kock",
+            "runs": 105,
+            "balls": 90,
+            "fours": 11,
+            "sixes": 3,
+            "SR": 116.67,
+            "team": "South Africa",
+            "notOut": false
+          },
+          {
+            "player": "Faf du Plessis",
+            "runs": 80,
+            "balls": 65,
+            "fours": 8,
+            "sixes": 1,
+            "SR": 123.08,
+            "team": "South Africa",
+            "notOut": false
+          },
+          {
+            "player": "AB de Villiers",
+            "runs": 50,
+            "balls": 40,
+            "fours": 5,
+            "sixes": 2,
+            "SR": 125.0,
+            "team": "South Africa",
+            "notOut": false
+          }
+        ],
+        "bowlingPerformances": [
+          {
+            "player": "Trent Boult",
+            "overs": 10,
+            "maidens": 0,
+            "runs": 52,
+            "wickets": 3,
+            "economy": 5.2,
+            "team": "New Zealand"
+          },
+          {
+            "player": "Tim Southee",
+            "overs": 10,
+            "maidens": 1,
+            "runs": 46,
+            "wickets": 2,
+            "economy": 4.6,
+            "team": "New Zealand"
+          },
+          {
+            "player": "Mitchell Santner",
+            "overs": 10,
+            "maidens": 0,
+            "runs": 50,
+            "wickets": 2,
+            "economy": 5.0,
+            "team": "New Zealand"
+          }
+        ]
+      },
+      "awayTeam": {
+        "name": "New Zealand",
+        "isHome": false,
+        "isClubTeam": false,
+        "logo": {
+          "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
+          "width": 128,
+          "height": 128
+        },
+        "score": "6/294",
+        "overs": null,
+        "awayScoresFirstInnings": null,
+        "battingPerformances": [
+          {
+            "player": "Kane Williamson",
+            "runs": 120,
+            "balls": 100,
+            "fours": 14,
+            "sixes": 2,
+            "SR": 120.0,
+            "team": "New Zealand",
+            "notOut": false
+          },
+          {
+            "player": "Ross Taylor",
+            "runs": 75,
+            "balls": 58,
+            "fours": 9,
+            "sixes": 1,
+            "SR": 129.31,
+            "team": "New Zealand",
+            "notOut": false
+          },
+          {
+            "player": "Martin Guptill",
+            "runs": 55,
+            "balls": 45,
+            "fours": 7,
+            "sixes": 2,
+            "SR": 122.22,
+            "team": "New Zealand",
+            "notOut": false
+          }
+        ],
+        "bowlingPerformances": [
+          {
+            "player": "Kagiso Rabada",
+            "overs": 10,
+            "maidens": 2,
+            "runs": 42,
+            "wickets": 4,
+            "economy": 4.2,
+            "team": "South Africa"
+          },
+          {
+            "player": "Anrich Nortje",
+            "overs": 10,
+            "maidens": 1,
+            "runs": 48,
+            "wickets": 3,
+            "economy": 4.8,
+            "team": "South Africa"
+          },
+          {
+            "player": "Dale Steyn",
+            "overs": 10,
+            "maidens": 0,
+            "runs": 48,
+            "wickets": 2,
+            "economy": 4.8,
+            "team": "South Africa"
+          }
+        ]
+      },
+      "teamHomeLogo": {
+        "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
+        "width": 128,
+        "height": 128
+      },
+      "teamAwayLogo": {
+        "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
+        "width": 128,
+        "height": 128
+      },
+      "date": "Sunday, 26 November 2023",
+      "type": "One Day",
+      "ground": "Newlands Cricket Ground",
+      "round": "Round 1",
+      "gender": "Men",
+      "ageGroup": "Senior/Open",
+      "gradeName": "International ODI",
+      "assignSponsors": {
+        "competition": [],
+        "grade": [],
+        "team": [
+          {
+            "id": 152,
+            "isPrimary": false,
+            "isActive": true,
+            "isArticle": true,
+            "isVideo": true,
+            "url": "test",
+            "tagline": "test",
+            "description": null,
+            "name": "test",
+            "logo": {
+              "id": 12785,
+              "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Sponsor1_a6752b0a5f.png"
+            }
+          }
+        ]
+      },
+      "result": "New Zealand won by 4 runs",
+      "prompt": "Match Summary: South Africa vs. New Zealand: New Zealand won with a score of 6/294 against South Africa's 5/290. Kane Williamson scored 120 runs for New Zealand, and Quinton de Kock scored 105 runs for South Africa."
+    },
+    {
+      "gameID": "25103",
+      "status": "Completed",
+      "homeTeam": {
+        "name": "England",
+        "isHome": true,
+        "isClubTeam": true,
+        "logo": {
+          "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
+          "width": 128,
+          "height": 128
+        },
+        "score": "7/280",
+        "overs": null,
+        "homeScoresFirstInnings": null,
+        "battingPerformances": [
+          {
+            "player": "Joe Root",
+            "runs": 95,
+            "balls": 80,
+            "fours": 10,
+            "sixes": 2,
+            "SR": 118.75,
+            "team": "England",
+            "notOut": false
+          },
+          {
+            "player": "Ben Stokes",
+            "runs": 60,
+            "balls": 50,
+            "fours": 8,
+            "sixes": 1,
+            "SR": 120.0,
+            "team": "England",
+            "notOut": false
+          },
+          {
+            "player": "Eoin Morgan",
+            "runs": 45,
+            "balls": 40,
+            "fours": 5,
+            "sixes": 2,
+            "SR": 112.5,
+            "team": "England",
+            "notOut": false
+          }
+        ],
+        "bowlingPerformances": [
+          {
+            "player": "Jofra Archer",
+            "overs": 10,
+            "maidens": 1,
+            "runs": 45,
+            "wickets": 4,
+            "economy": 4.5,
+            "team": "England"
+          },
+          {
+            "player": "Chris Woakes",
+            "overs": 10,
+            "maidens": 1,
+            "runs": 45,
+            "wickets": 2,
+            "economy": 4.5,
+            "team": "England"
+          },
+          {
+            "player": "Adil Rashid",
+            "overs": 10,
+            "maidens": 0,
+            "runs": 48,
+            "wickets": 2,
+            "economy": 4.8,
+            "team": "England"
+          }
+        ]
+      },
+      "awayTeam": {
+        "name": "Pakistan",
+        "isHome": false,
+        "isClubTeam": false,
+        "logo": {
+          "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
+          "width": 128,
+          "height": 128
+        },
+        "score": "5/281",
+        "overs": null,
+        "awayScoresFirstInnings": null,
+        "battingPerformances": [
+          {
+            "player": "Babar Azam",
+            "runs": 125,
+            "balls": 100,
+            "fours": 15,
+            "sixes": 3,
+            "SR": 125.0,
+            "team": "Pakistan",
+            "notOut": false
+          },
+          {
+            "player": "Mohammad Rizwan",
+            "runs": 70,
+            "balls": 60,
+            "fours": 7,
+            "sixes": 2,
+            "SR": 116.67,
+            "team": "Pakistan",
+            "notOut": false
+          },
+          {
+            "player": "Fakhar Zaman",
+            "runs": 55,
+            "balls": 45,
+            "fours": 6,
+            "sixes": 1,
+            "SR": 122.22,
+            "team": "Pakistan",
+            "notOut": false
+          }
+        ],
+        "bowlingPerformances": [
+          {
+            "player": "Shaheen Afridi",
+            "overs": 10,
+            "maidens": 0,
+            "runs": 50,
+            "wickets": 3,
+            "economy": 5.0,
+            "team": "Pakistan"
+          },
+          {
+            "player": "Hasan Ali",
+            "overs": 10,
+            "maidens": 0,
+            "runs": 55,
+            "wickets": 2,
+            "economy": 5.5,
+            "team": "Pakistan"
+          },
+          {
+            "player": "Shadab Khan",
+            "overs": 10,
+            "maidens": 0,
+            "runs": 48,
+            "wickets": 2,
+            "economy": 4.8,
+            "team": "Pakistan"
+          }
+        ]
+      },
+      "teamHomeLogo": {
+        "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
+        "width": 128,
+        "height": 128
+      },
+      "teamAwayLogo": {
+        "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
+        "width": 128,
+        "height": 128
+      },
+      "date": "Friday, 24 November 2023",
+      "type": "One Day",
+      "ground": "Lord's Cricket Ground",
+      "round": "Round 1",
+      "gender": "Men",
+      "ageGroup": "Senior/Open",
+      "gradeName": "International ODI",
+      "assignSponsors": {
+        "competition": [],
+        "grade": [],
+        "team": [
+          {
+            "id": 151,
+            "isPrimary": true,
+            "isActive": true,
+            "isArticle": true,
+            "isVideo": true,
+            "url": "test",
+            "tagline": "test",
+            "description": null,
+            "name": "test",
+            "logo": {
+              "id": 12784,
+              "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Sponsor1_a6752b0a5f.png"
+            }
+          }
+        ]
+      },
+      "result": "Pakistan won by 1 run",
+      "prompt": "Match Summary: England vs. Pakistan: Pakistan won with a score of 5/281 against England's 7/280. Babar Azam scored 125 runs for Pakistan, and Joe Root scored 95 runs for England."
+    },
+    {
+      "gameID": "25104",
+      "status": "Abandoned",
+      "homeTeam": {
+        "name": "Australia",
+        "score": "N/A",
+        "overs": "N/A"
+      },
+      "awayTeam": {
+        "name": "West Indies",
+        "score": "N/A",
+        "overs": "N/A"
+      },
+      "teamHomeLogo": {
+        "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
+        "width": 128,
+        "height": 128
+      },
+      "teamAwayLogo": {
+        "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
+        "width": 128,
+        "height": 128
+      },
+      "date": "Saturday, 25 November 2023",
+      "type": "One Day",
+      "ground": "Melbourne Cricket Ground",
+      "round": "Round 1",
+      "gender": "Men",
+      "ageGroup": "Senior/Open",
+      "gradeName": "International ODI",
+      "assignSponsors": {
+        "competition": [],
+        "grade": [],
+        "team": [
+          {
+            "id": 152,
+            "isPrimary": false,
+            "isActive": true,
+            "isArticle": true,
+            "isVideo": true,
+            "url": "test",
+            "tagline": "test",
+            "description": null,
+            "name": "test",
+            "logo": {
+              "id": 12785,
+              "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Sponsor1_a6752b0a5f.png"
+            }
+          }
+        ]
+      },
+      "result": "Abandoned Match",
+      "prompt": "Match Summary: Game was Abandoned: Australia vs. West Indies"
+    }
+  ],
+  "asset": {
+    "assetID": 13,
+    "assetTypeID": 2,
+    "assetCategoryID": 2,
+    "assetsLinkID": "e35cb8379f5f3586da46d8fa76a49248bbd76c9b6b721d0794f852015fca105a"
+  },
+  "render": {
+    "schedulerId": 207,
+    "renderId": 8265
+  },
+  "account": {
+    "accountId": 319
+  },
+  "timings": {
+    "FPS_MAIN": 405,
+    "FPS_INTRO": 90,
+    "FPS_OUTRO": 90,
+    "FPS_LADDER": 0,
+    "FPS_SCORECARD": 210
+  },
+  "frames": [45, 195, 390, 550],
+  "videoMeta": {
+    "club": {
+      "logo": {
+        "hasLogo": true,
+        "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
+        "width": 379,
+        "height": 303
+      },
+      "name": "Gold Coast Veterans Cricket",
+      "sport": "Cricket",
+      "sponsors": {
+        "primary": [
+          {
+            "id": 151,
+            "isPrimary": true,
+            "isActive": true,
+            "isArticle": true,
+            "isVideo": true,
+            "url": "test",
+            "tagline": "test",
+            "description": null,
+            "name": "test",
+            "logo": {
+              "id": 12784,
+              "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Sponsor1_a6752b0a5f.png"
+            }
+          }
+        ],
+        "default": {
+          "primary_sponsor": [
+            {
+              "id": 151,
+              "isPrimary": true,
+              "isActive": true,
+              "isArticle": true,
+              "isVideo": true,
+              "url": "test",
+              "tagline": "test",
+              "description": null,
+              "name": "test",
+              "logo": {
+                "id": 12784,
+                "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Sponsor1_a6752b0a5f.png"
+              }
+            }
+          ],
+          "general_sponsor_1": [
+            {
+              "id": 152,
+              "isPrimary": false,
+              "isActive": true,
+              "isArticle": true,
+              "isVideo": true,
+              "url": "test",
+              "tagline": "test",
+              "description": null,
+              "name": "test",
+              "logo": {
+                "id": 12785,
+                "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Sponsor2_39eebf9c1b.png"
+              }
+            }
+          ],
+          "general_sponsor_2": [
+            {
+              "id": 153,
+              "isPrimary": false,
+              "isActive": true,
+              "isArticle": true,
+              "isVideo": true,
+              "url": "test",
+              "tagline": "test",
+              "description": null,
+              "name": "test",
+              "logo": {
+                "id": 12786,
+                "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Sponsor3_d65a61808c.png"
+              }
+            }
+          ],
+          "general_sponsor_3": [
+            {
+              "id": 167,
+              "isPrimary": false,
+              "isActive": true,
+              "isArticle": true,
+              "isVideo": true,
+              "url": "4",
+              "tagline": "4",
+              "description": null,
+              "name": "4",
+              "logo": {
+                "id": 13159,
+                "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Sponsor4_2e99a89b64.png"
+              }
+            }
+          ],
+          "general_sponsor_4": [
+            {
+              "id": 168,
+              "isPrimary": false,
+              "isActive": true,
+              "isArticle": true,
+              "isVideo": true,
+              "url": "5",
+              "tagline": "5",
+              "description": null,
+              "name": "5",
+              "logo": {
+                "id": 13160,
+                "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Sponsor5_5830015159.png"
+              }
+            }
+          ],
+          "general_sponsor_5": [
+            {
+              "id": 169,
+              "isPrimary": false,
+              "isActive": true,
+              "isArticle": true,
+              "isVideo": true,
+              "url": "6",
+              "tagline": "6",
+              "description": null,
+              "name": "6",
+              "logo": {
+                "id": 13161,
+                "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Sponsor6_ffce411e69.png"
+              }
+            }
+          ],
+          "general_sponsor_6": [
+            {
+              "id": 170,
+              "isPrimary": false,
+              "isActive": true,
+              "isArticle": true,
+              "isVideo": true,
+              "url": "7",
+              "tagline": "7",
+              "description": null,
+              "name": "7",
+              "logo": {
+                "id": 13162,
+                "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Sponsor7_6d12274c46.png"
+              }
+            }
+          ]
+        }
+      }
+    },
+    "video": {
+      "fixtureCategory": "MASTERS",
+      "groupingCategory": "MASTERS",
+      "metadata": {
+        "title": "Results",
+        "titleSplit": ["Results"],
+        "videoTitle": "Weekend Results",
+        "compositionId": "CricketResults",
+        "assetId": 13,
+        "assetTypeId": 2,
+        "frames": [],
+        "includeSponsors": true
+      },
+      "appearance": {
+        "theme": {
+          "dark": "#FFF",
+          "white": "#111",
+          "primary": "#800000",
+          "secondary": "#eeba2b"
+        },
+        "template": "Basic"
+      },
+      "media": {
+        "HeroImage": {
+          "url": "",
+          "ratio": "",
+          "width": 0,
+          "height": 0,
+          "AgeGroup": "",
+          "AssetType": "",
+          "markerPosition": ""
+        },
+        "audio": {
+          "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Audiio_Marscott_Wild_Neon_Get_The_Gains_inst_3251aaa9af.mp3",
+          "audioOption": "https://lmssocialmediamanager.s3.ap-southeast-2.amazonaws.com/assets/Saltine_1.mp3"
+        }
+      },
+      "contentLayout": {
+        "divideFixturesBy": {
+          "CricketLadder": 1,
+          "CricketRoster": 1,
+          "CricketResults": 2,
+          "CricketUpcoming": 3,
+          "CricketResultSingle": 1
+        }
+      },
+      "templateVariation": {
+        "useBackground": "Graphics",
+        "video": {
+          "url": null,
+          "fallbackUrl": null,
+          "position": "left",
+          "size": "cover",
+          "loop": null,
+          "muted": true,
+          "overlay": {
+            "color": "rgba(0,0,0,0.5)",
+            "opacity": 0.7
+          },
+          "useOffthreadVideo": null,
+          "volume": 0.8,
+          "playbackRate": null
+        },
+        "image": {
+          "url": null,
+          "ratio": null,
+          "width": null,
+          "height": null,
+          "type": "focusblur",
+          "direction": "in",
+          "overlayStyle": "duotone",
+          "gradientType": "linear",
+          "overlayOpacity": 0.7
+        },
+        "palette": "secondary",
+        "gradient": {
+          "type": "primaryRadial",
+          "direction": "DEFAULT"
+        },
+        "noise": {
+          "type": "floatingParticles"
+        },
+        "pattern": {
+          "type": "dots",
+          "animation": "up",
+          "scale": 0.5,
+          "rotation": null,
+          "opacity": 0.3,
+          "animationDuration": 1500,
+          "animationSpeed": 0.5
+        },
+        "particle": {
+          "type": "snow",
+          "particleCount": "150",
+          "speed": 1,
+          "direction": "down",
+          "animation": "fade"
+        }
+      }
+    }
+  },
+  "errors": []
+}

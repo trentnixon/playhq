@@ -1,4 +1,4 @@
-import {useState, useEffect} from 'react';
+import { useState, useEffect } from 'react';
 
 // Default dimensions if the image fails to load
 //const defaultDimensions = {width: 100, height: 100};
@@ -11,26 +11,26 @@ import {useState, useEffect} from 'react';
  * @returns {Promise<object>} A promise that resolves with the calculated dimensions.
  */
 export const calculateDimensions = async (
-	src,
-	dimensions = [150, 250, 150]
+  src,
+  dimensions = [150, 250, 150]
 ) => {
-	try {
-		console.log('src ', src);
-		const [portraitDimension, landscapeDimension, squareDimension] = dimensions;
-		const {width, height} = src;
-		const aspectRatio = width / height;
+  try {
+    console.log('src ', src);
+    const [portraitDimension, landscapeDimension, squareDimension] = dimensions;
+    const { width, height } = src;
+    const aspectRatio = width / height;
 
-		if (aspectRatio > 1) {
-			return {width: `${landscapeDimension}px`, height: 'auto'};
-		} else if (aspectRatio < 1) {
-			return {width: 'auto', height: `${portraitDimension}px`};
-		} else {
-			return {width: `${squareDimension}px`, height: `${squareDimension}px`};
-		}
-	} catch (error) {
-		console.error('Failed to calculate image dimensions:', error);
-		return {width: 'auto', height: 'auto'}; // Fallback dimensions in case of error
-	}
+    if (aspectRatio > 1) {
+      return { width: `${landscapeDimension}px`, height: 'auto' };
+    } else if (aspectRatio < 1) {
+      return { width: 'auto', height: `${portraitDimension}px` };
+    } else {
+      return { width: `${squareDimension}px`, height: `${squareDimension}px` };
+    }
+  } catch (error) {
+    console.error('Failed to calculate image dimensions:', error);
+    return { width: 'auto', height: 'auto' }; // Fallback dimensions in case of error
+  }
 };
 
 /**

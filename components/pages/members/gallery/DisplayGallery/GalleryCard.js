@@ -1,6 +1,6 @@
-import { useState } from "react";
-import { useRouter } from "next/router";
-import { IconEdit, IconTrashXFilled } from "@tabler/icons-react";
+import { useState } from 'react';
+import { useRouter } from 'next/router';
+import { IconEdit, IconTrashXFilled } from '@tabler/icons-react';
 import {
   createStyles,
   rem,
@@ -14,15 +14,15 @@ import {
   Center,
   ColorSwatch,
   Box,
-} from "@mantine/core";
-import { useDisclosure } from "@mantine/hooks";
-import { findBestImage } from "../../../../../utils/actions";
-import { ConfirmDeleteModal } from "../ConfirmDeleteModal";
-import { ImageDetailsModal } from "../ImageDetailsModal";
-import { useDeleteMediaItem } from "../../../../../Hooks/useGalleryImage";
-import { FixturaLoading } from "../../../../Members/Common/Loading";
+} from '@mantine/core';
+import { useDisclosure } from '@mantine/hooks';
+import { findBestImage } from '../../../../../utils/actions';
+import { ConfirmDeleteModal } from '../ConfirmDeleteModal';
+import { ImageDetailsModal } from '../ImageDetailsModal';
+import { useDeleteMediaItem } from '../../../../../Hooks/useGalleryImage';
+import { FixturaLoading } from '../../../../Members/Common/Loading';
 
-const useStyles = createStyles((theme) => ({
+const useStyles = createStyles(theme => ({
   card: {
     backgroundColor: theme.colors.gray[0],
   },
@@ -44,20 +44,20 @@ export function GalleryItemCard({ item }) {
 
   // Null checks
 
-  const thumbnailUrl = findBestImage(item?.attributes?.imageId, "med");
+  const thumbnailUrl = findBestImage(item?.attributes?.imageId, 'med');
   const title = item?.attributes?.title;
   const tags = item?.attributes?.tags || [];
   const isActive = item?.attributes?.isActive;
-  const fullImageUrl = findBestImage(item?.attributes?.imageId, "large");
+  const fullImageUrl = findBestImage(item?.attributes?.imageId, 'large');
 
-  const AgeGroup = item?.attributes?.AgeGroup || "Not specified";
-  const AssetType = item?.attributes?.AssetType || "Not specified";
+  const AgeGroup = item?.attributes?.AgeGroup || 'Not specified';
+  const AssetType = item?.attributes?.AssetType || 'Not specified';
 
   if (!thumbnailUrl) {
     return <div>Error: Incomplete item data.</div>;
   }
 
-  const handleDelete = async (id) => {
+  const handleDelete = async id => {
     setConfirmModal(false);
     await deleteMediaItem(id);
     if (!deleteError) {
@@ -66,7 +66,7 @@ export function GalleryItemCard({ item }) {
     setDeletingItemId(null);
   };
 
-  const handleConfirmDelete = (id) => {
+  const handleConfirmDelete = id => {
     setDeletingItemId(id); // Set the ID of the item to be deleted
     setConfirmModal(true); // Open the confirmation modal
   };
@@ -99,8 +99,8 @@ export function GalleryItemCard({ item }) {
 
       <Card
         withBorder
-        radius="md"
-        p="md"
+        radius='md'
+        p='md'
         className={classes.card}
         style={{ opacity: deletingItemId === item.id ? 0.5 : 1 }}
       >
@@ -127,11 +127,11 @@ export function GalleryItemCard({ item }) {
 
         {/* Add new badges for AgeGroup and AssetType */}
         <Card.Section className={classes.section}>
-          <Group spacing={7} position="apart" mt={10}>
-            <Badge color="green.8" variant="filled">
+          <Group spacing={7} position='apart' mt={10}>
+            <Badge color='green.8' variant='filled'>
               {AgeGroup}
             </Badge>
-            <Badge color="blue.8" variant="filled">
+            <Badge color='blue.8' variant='filled'>
               {AssetType}
             </Badge>
           </Group>
@@ -147,53 +147,53 @@ export function ImageThumbnail({ thumbnailUrl, isActive }) {
       <Box
         p={5}
         style={{
-          position: "absolute",
-          top: "0",
-          left: "0",
-          zIndex: "200",
+          position: 'absolute',
+          top: '0',
+          left: '0',
+          zIndex: '200',
         }}
       >
         <Tooltip
-          label={isActive ? "Active" : "Inactive"}
+          label={isActive ? 'Active' : 'Inactive'}
           withArrow
-          color={isActive ? "green.5" : "red.5"}
+          color={isActive ? 'green.5' : 'red.5'}
         >
-          <ColorSwatch color={isActive ? "green" : "red"} size={10} />
+          <ColorSwatch color={isActive ? 'green' : 'red'} size={10} />
         </Tooltip>
       </Box>
-      <Image src={thumbnailUrl} alt="Thumbnail" height={180} />
+      <Image src={thumbnailUrl} alt='Thumbnail' height={180} />
     </>
   );
 }
 
 export function CardActions({ itemId, handleConfirmDelete, open, title }) {
   return (
-    <Group mt="xs" spacing={5} position="right">
-      <Text fz="xs" fw={500}>
+    <Group mt='xs' spacing={5} position='right'>
+      <Text fz='xs' fw={500}>
         {title}
       </Text>
 
-      <Tooltip label="Edit Image" withArrow color="blue.5">
+      <Tooltip label='Edit Image' withArrow color='blue.5'>
         <ActionIcon
           onClick={open}
-          color="blue.5"
-          size="sm"
-          radius="xl"
-          variant="filled"
+          color='blue.5'
+          size='sm'
+          radius='xl'
+          variant='filled'
         >
-          <IconEdit size=".8rem" />
+          <IconEdit size='.8rem' />
         </ActionIcon>
       </Tooltip>
 
-      <Tooltip label="Delete Image" withArrow color="red.5">
+      <Tooltip label='Delete Image' withArrow color='red.5'>
         <ActionIcon
           onClick={() => handleConfirmDelete(itemId)}
-          color="red.5"
-          size="sm"
-          radius="xl"
-          variant="filled"
+          color='red.5'
+          size='sm'
+          radius='xl'
+          variant='filled'
         >
-          <IconTrashXFilled size=".8rem" />
+          <IconTrashXFilled size='.8rem' />
         </ActionIcon>
       </Tooltip>
     </Group>

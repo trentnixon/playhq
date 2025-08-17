@@ -1,8 +1,7 @@
-import Cookies from "js-cookie";
-import { useState } from "react";
-import { fetcher } from "../lib/api";
-import { getUserFromLocalCookie, getAccountFromLocalCookie } from "../lib/auth";
-
+import Cookies from 'js-cookie';
+import { useState } from 'react';
+import { fetcher } from '../lib/api';
+import { getUserFromLocalCookie, getAccountFromLocalCookie } from '../lib/auth';
 
 //orders/invoicing
 
@@ -11,19 +10,19 @@ export const useGetInvoice = () => {
   const [loading, setLoading] = useState(false);
 
   const Getinvoice = async () => {
-    const user = await getAccountFromLocalCookie();  
+    const user = await getAccountFromLocalCookie();
     //console.log("getAccountFromLocalCookie user ", user)
     setLoading(true);
     if (user) {
       try {
         const response = await fetcher(
-          `${process.env.NEXT_PUBLIC_STRAPI_URL}/orders/invoicing`, 
+          `${process.env.NEXT_PUBLIC_STRAPI_URL}/orders/invoicing`,
           {
-            method: "POST",
+            method: 'POST',
             headers: {
-              Accept: "application/json",
-              "Content-Type": "application/json",
-              Authorization: `Bearer ${Cookies.get("jwt")}`,
+              Accept: 'application/json',
+              'Content-Type': 'application/json',
+              Authorization: `Bearer ${Cookies.get('jwt')}`,
             },
             body: JSON.stringify({ user: user }),
           }
@@ -44,18 +43,18 @@ export const useGetUpcomingInvoice = () => {
   const [loading, setLoading] = useState(false);
 
   const Getinvoice = async () => {
-    const user = await getAccountFromLocalCookie();  
+    const user = await getAccountFromLocalCookie();
     setLoading(true);
     if (user) {
       try {
         const response = await fetcher(
           `${process.env.NEXT_PUBLIC_STRAPI_URL}/orders/upcomingInvoice`,
           {
-            method: "POST",
+            method: 'POST',
             headers: {
-              Accept: "application/json",
-              "Content-Type": "application/json",
-              Authorization: `Bearer ${Cookies.get("jwt")}`,
+              Accept: 'application/json',
+              'Content-Type': 'application/json',
+              Authorization: `Bearer ${Cookies.get('jwt')}`,
             },
             body: JSON.stringify({ user: user }),
           }

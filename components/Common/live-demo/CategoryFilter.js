@@ -1,18 +1,18 @@
-import { Group } from "@mantine/core";
-import { FixturaCustomSelect } from "../../Members/Common/utils/Selects";
+import { Group } from '@mantine/core';
+import { FixturaCustomSelect } from '../../Members/Common/utils/Selects';
 
 const CategoryFilter = ({
   categoryOptions,
   selectedCategory,
   onSelectCategory,
 }) => (
-  <Group position="right">
+  <Group position='right'>
     <FixturaCustomSelect
-      label="Filter by Category"
-      placeholder="All/Clear"
+      label='Filter by Template'
+      placeholder='All/Clear'
       data={categoryOptions}
       value={selectedCategory}
-      onChange={(value) => onSelectCategory(value)}
+      onChange={value => onSelectCategory(value)}
     />
   </Group>
 );

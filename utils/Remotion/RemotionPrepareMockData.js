@@ -1,7 +1,10 @@
 // prepareMockData.js
 
-import { ASSETS } from "./RemotionAssets";
-import { createPreviewObject } from "./RemotionUtils";
+import { ASSETS } from './RemotionAssets';
+import { createPreviewObject } from './RemotionUtils';
+
+// Import JSDoc types
+import './types.js';
 import {
   createRender,
   createAccount,
@@ -13,10 +16,15 @@ import {
   createTimings,
   createData,
   createPrompt,
-} from "./RemotionCreateDataObj";
+} from './RemotionCreateDataObj';
 export const DEFAULTLOGO =
-  "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png";
+  'https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png';
 
+/**
+ * Prepare mock data for video previews based on account information
+ * @param {any} account - The user account object
+ * @returns {Array<any>} Array of mock data items for different asset types
+ */
 export const prepareMockData = account => {
   // Create Basic Account data obj
   const accountCustomDataOBJ = createPreviewObject(account);
@@ -24,14 +32,18 @@ export const prepareMockData = account => {
   const sport = Account.sport;
   const category = Account.category;
 
+  if (ASSETS[sport]) {
+    console.log(
+      '[prepareMockData] ASSETS[sport] keys:',
+      Object.keys(ASSETS[sport])
+    );
+  }
+
   if (!ASSETS[sport] || !ASSETS[sport][category]) {
     console.log(
-      "ERROR: It is likely that a template or theme is not set go to  [RemotionAssets] and check for the template you have selected"
+      'ERROR: It is likely that a template or theme is not set go to  [RemotionAssets] and check for the template you have selected'
     );
-    console.log("sport ", sport);
-    console.log("category ", category);
-    console.log("ASSETS[sport] ", ASSETS[sport]);
-    console.log("ASSETS[sport][category] ", ASSETS[sport][category]);
+
     console.error(
       `No assets found for sport: ${sport} and category: ${category}`
     );
@@ -46,7 +58,7 @@ export const prepareMockData = account => {
       ACCOUNT: createAccount(accountCustomDataOBJ.id), // Completed
       ASSET: createAsset(), // need to do
       VIDEOMETA: {
-        grouping_category: createFixtureCategory(accountCustomDataOBJ), // fine for demo
+        grouping_category: createFixtureCategory(), // fine for demo
         Video: createVideo(accountCustomDataOBJ, asset.ASSET), // Completed
         THEME: createTheme(accountCustomDataOBJ), // Completed
         Club: createClub(accountCustomDataOBJ), // Completed

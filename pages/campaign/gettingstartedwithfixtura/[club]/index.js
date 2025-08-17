@@ -1,20 +1,20 @@
-import { fetcher } from "../../../../lib/api";
-import Meta from "../../../../components/Layouts/Meta";
-import Section from "../../../../components/UI/DefaultSection";
-import { Center, Container, Image } from "@mantine/core";
-import { useMediaQuery } from "@mantine/hooks";
-import FixturaAndYourClubBanner from "../../../../components/Campaign/components/FixturaAndYourClub";
+import { fetcher } from '../../../../lib/api';
+import Meta from '../../../../components/Layouts/Meta';
+import Section from '../../../../components/UI/DefaultSection';
+import { Center, Container, Image } from '@mantine/core';
+import { useMediaQuery } from '@mantine/hooks';
+import FixturaAndYourClubBanner from '../../../../components/Campaign/components/FixturaAndYourClub';
 
-import { Previewer } from "../../../../components/Campaign/gettingstartedwithfixtura/Previewer";
-import CtaAreaTwo from "../../../../components/Common/CtaAreaTwo";
-import Feedback from "../../../../components/Common/Feedback";
-const qs = require("qs");
+import { Previewer } from '../../../../components/Campaign/gettingstartedwithfixtura/Previewer';
+import CtaAreaTwo from '../../../../components/Common/CtaAreaTwo';
+import Feedback from '../../../../components/Common/Feedback';
+const qs = require('qs');
 
 const ClubPage = ({ clubData, useAssets }) => {
   const clubName = clubData.attributes.Name; // Adjust based on your data structure
 
-  const isMobile = useMediaQuery("(max-width: 768px)");
-  const padding = isMobile ? 0 : "sm";
+  const isMobile = useMediaQuery('(max-width: 768px)');
+  const padding = isMobile ? 0 : 'sm';
   const SectionData = {
     title: `PlayHQ Integration = Instant Digital Assets`,
     paragraphs: [
@@ -39,16 +39,16 @@ const ClubPage = ({ clubData, useAssets }) => {
       <FixturaAndYourClubBanner AccountData={clubData.attributes} />
 
       <>
-        <Section {...SectionPlayer} color="light">
+        <Section {...SectionPlayer} color='light'>
           <Container p={padding}>
             <Previewer AccountData={clubData} useAssets={useAssets} />
           </Container>
         </Section>
-        <Section {...SectionData} color="grey">
+        <Section {...SectionData} color='grey'>
           <Center>
             <Image
-              height={"400px"}
-              width={"auto"}
+              height={'400px'}
+              width={'auto'}
               src={`https://fixtura.s3.ap-southeast-2.amazonaws.com/Asset_Examples_With_Labels_6796528404.png`}
             />
           </Center>
@@ -63,7 +63,7 @@ const ClubPage = ({ clubData, useAssets }) => {
 export default ClubPage;
 
 export const getServerSideProps = async ({ params }) => {
-  const qs = require("qs");
+  const qs = require('qs');
 
   // Fetch club data just like you did in getStaticProps
   const clubQuery = qs.stringify(
@@ -71,14 +71,14 @@ export const getServerSideProps = async ({ params }) => {
       filters: {
         PlayHQID: { $eq: params.club },
       },
-      populate: ["Logo"],
+      populate: ['Logo'],
     },
     { encodeValuesOnly: true }
   );
 
   const assetQuery = qs.stringify(
     {
-      populate: ["asset_type", "asset_category"],
+      populate: ['asset_type', 'asset_category'],
     },
     { encodeValuesOnly: true }
   );

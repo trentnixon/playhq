@@ -1,20 +1,20 @@
-import React from "react";
-import PageBanner from "../components/Common/PageBanner";
-import { P } from "../components/Members/Common/Type";
-import Meta from "../components/Layouts/Meta";
+import React from 'react';
+import PageBanner from '../components/Common/PageBanner';
+import { P } from '../components/Members/Common/Type';
+import Meta from '../components/Layouts/Meta';
 
 const TermsConditions = () => {
   return (
     <>
       <Meta
-        title="Terms and Conditions - Fixtura: Understand Our Policies"
+        title='Terms and Conditions - Fixtura: Understand Our Policies'
         description="Review the terms and conditions of using Fixtura's digital media tools for sports clubs. Stay informed about our policies and guidelines."
-        keywords="Terms and conditions, Fixtura policies, sports media terms, club content guidelines, user agreement"
+        keywords='Terms and conditions, Fixtura policies, sports media terms, club content guidelines, user agreement'
       />
-      <PageBanner pageTitle="Terms and Conditions" position={`center center`} />
+      <PageBanner pageTitle='Terms and Conditions' position={`center center`} />
 
-      <div className="text-container ptb-100">
-        <div className="container">
+      <div className='text-container ptb-100'>
+        <div className='container'>
           <h1>Introduction</h1>
           <P>
             By using the Fixtura website, accessible at Fixtura.com, you accept
@@ -132,8 +132,8 @@ const TermsConditions = () => {
             Fixtura uses GPT-3 and PlayHQ data for generating digital assets.
             While we strive for accuracy, we are not liable for misleading or
             false narratives created by AI. By using Fixtura's services, you
-            give Fixtura rights to contact your sports governing body and PlayHQ on your
-            behalf to obtain data for digital asset creation.
+            give Fixtura rights to contact your sports governing body and PlayHQ
+            on your behalf to obtain data for digital asset creation.
           </P>
           <h1>Data Usages</h1>
           <P>
@@ -144,7 +144,7 @@ const TermsConditions = () => {
           <h1>Data Handling</h1>
           <P>
             No user data will be shared with third parties. For more details,
-            please refer to our <a href="privacy-policy-link">Privacy Policy</a>
+            please refer to our <a href='privacy-policy-link'>Privacy Policy</a>
             .
           </P>
           <h1>Accessibility</h1>
@@ -329,7 +329,7 @@ const TermsConditions = () => {
           <P>
             If any provision of this website disclaimer is, or is found to be
             unenforceable under applicable law, that will not affect the
-            enforceability of the other provisions of this website disclaimer.{" "}
+            enforceability of the other provisions of this website disclaimer.{' '}
           </P>
           <h1>Indemnity</h1>
           <P>

@@ -1,10 +1,10 @@
 // react
-import { useEffect, useState } from "react";
-import { useRouter } from "next/router";
-import { useUser } from "../../context/authContext";
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
+import { useUser } from '../../context/authContext';
 // UTILS
-import { fetcher } from "../../lib/api";
-import Cookies from "js-cookie";
+import { fetcher } from '../../lib/api';
+import Cookies from 'js-cookie';
 // PACK
 import {
   ActionIcon,
@@ -18,13 +18,13 @@ import {
   Title,
   Tooltip,
   useMantineTheme,
-} from "@mantine/core";
+} from '@mantine/core';
 // Components
-import { MembersWrapper } from "../../components/Members/Common/Containers";
-import { showNotification } from "@mantine/notifications";
+import { MembersWrapper } from '../../components/Members/Common/Containers';
+import { showNotification } from '@mantine/notifications';
 
-import { useAccountDetails } from "../../context/userContext";
-import { FixturaDivider } from "../../components/Members/Common/Divider";
+import { useAccountDetails } from '../../context/userContext';
+import { FixturaDivider } from '../../components/Members/Common/Divider';
 import {
   IconCircleCheck,
   IconCircleX,
@@ -34,12 +34,12 @@ import {
   IconNews,
   IconCurrencyDollar,
   IconUserCheck,
-} from "@tabler/icons-react";
-import qs from "qs";
-import { P, PageTitle, SubHeaders } from "../../components/Members/Common/Type";
-import { IconAddressBook } from "@tabler/icons-react";
-import { LoadingStateWrapper } from "../../components/Members/Account/HOC/LoadingStateWrapper";
-import Meta from "../../components/Layouts/Meta";
+} from '@tabler/icons-react';
+import qs from 'qs';
+import { P, PageTitle, SubHeaders } from '../../components/Members/Common/Type';
+import { IconAddressBook } from '@tabler/icons-react';
+import { LoadingStateWrapper } from '../../components/Members/Account/HOC/LoadingStateWrapper';
+import Meta from '../../components/Layouts/Meta';
 
 const MyPlan = () => {
   const { account, ReRender } = useAccountDetails();
@@ -62,24 +62,24 @@ const MyPlan = () => {
     if (account) {
       setUserAccount(account);
       showNotification({
-        title: "Action Completed",
-        message: "Your account details have been successfully saved",
+        title: 'Action Completed',
+        message: 'Your account details have been successfully saved',
       });
     }
   }, [account]);
   const ICONS = {
     IconPhotoAi: (
-      <IconPhotoAi size="1.7rem" stroke={1} color={theme.colors.gray[6]} />
+      <IconPhotoAi size='1.7rem' stroke={1} color={theme.colors.gray[6]} />
     ),
     IconVideo: (
-      <IconVideo size="1.7rem" stroke={1} color={theme.colors.gray[6]} />
+      <IconVideo size='1.7rem' stroke={1} color={theme.colors.gray[6]} />
     ),
     IconNews: (
-      <IconNews size="1.7rem" stroke={1} color={theme.colors.gray[6]} />
+      <IconNews size='1.7rem' stroke={1} color={theme.colors.gray[6]} />
     ),
     IconCurrencyDollar: (
       <IconCurrencyDollar
-        size="1.7rem"
+        size='1.7rem'
         stroke={1}
         color={theme.colors.gray[6]}
       />
@@ -89,9 +89,9 @@ const MyPlan = () => {
     <LoadingStateWrapper conditions={[user, userAccount, subscriptionTier]}>
       <MembersWrapper>
         <Meta
-          title="Member Plan - Fixtura: Review Your Subscription"
+          title='Member Plan - Fixtura: Review Your Subscription'
           description="Review and manage your subscription plan as a Fixtura member. Tailor your sports club's digital media services to your needs."
-          keywords="Member plan, Fixtura subscription, sports media services, club content plan, digital media package"
+          keywords='Member plan, Fixtura subscription, sports media services, club content plan, digital media package'
         />
         <PageTitle
           Copy={`My Plan : ${subscriptionTier?.Name}`}
@@ -102,30 +102,30 @@ const MyPlan = () => {
         <Container fluid>
           <Paper
             withBorder
-            p="lg"
-            sx={(theme) => ({
+            p='lg'
+            sx={theme => ({
               backgroundColor: theme.white,
             })}
           >
-            {subscriptionTier?.subscription_items.items.map((category) => (
+            {subscriptionTier?.subscription_items.items.map(category => (
               <Box
                 key={category.category}
-                sx={(theme) => ({
+                sx={theme => ({
                   backgroundColor: theme.colors.gray[0],
                   padding: theme.spacing.xs,
                   borderBottom: `1px solid ${theme.colors.gray[2]}`,
-                  cursor: "pointer",
+                  cursor: 'pointer',
 
-                  "&:hover": {
+                  '&:hover': {
                     backgroundColor: theme.colors.gray[2],
                   },
                 })}
               >
-                <Group position="center">
+                <Group position='center'>
                   {ICONS[category.icon]}
                   <Title
                     order={2}
-                    align="left"
+                    align='left'
                     c={theme.colors.gray[8]}
                     my={20}
                     mx={5}
@@ -143,20 +143,20 @@ const MyPlan = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    {category.details.map((detail) => (
+                    {category.details.map(detail => (
                       <tr
                         key={detail.type}
-                        style={{ width: "100%", marginBottom: "10px" }}
+                        style={{ width: '100%', marginBottom: '10px' }}
                       >
                         <td>
                           {detail.hasOption ? (
                             <IconCircleCheck
-                              size="1.3rem"
+                              size='1.3rem'
                               color={theme.colors.green[5]}
                             />
                           ) : (
                             <IconCircleX
-                              size="1.3rem"
+                              size='1.3rem'
                               color={theme.colors.red[5]}
                             />
                           )}
@@ -164,9 +164,9 @@ const MyPlan = () => {
 
                         <td>
                           <Text
-                            align="left"
-                            c={detail.hasOption ? "black" : "dimmed"}
-                            fz={"sm"}
+                            align='left'
+                            c={detail.hasOption ? 'black' : 'dimmed'}
+                            fz={'sm'}
                           >
                             {detail.type}
                           </Text>
@@ -181,7 +181,7 @@ const MyPlan = () => {
                           >
                             <ActionIcon>
                               <IconHelpHexagon
-                                size="1.125rem"
+                                size='1.125rem'
                                 color={theme.colors.blue[5]}
                               />
                             </ActionIcon>

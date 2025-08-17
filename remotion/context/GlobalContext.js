@@ -1,5 +1,9 @@
 import React, { createContext, useContext } from 'react';
-import { loadFonts, createStyleProps, getStyleConfig } from '../utils/global/init/initialize';
+import {
+  loadFonts,
+  createStyleProps,
+  getStyleConfig,
+} from '../utils/global/init/initialize';
 import { getPrimarySponsor } from '../structural/Sponsors/Utils/utils';
 import fonts from '../utils/global/init/fonts';
 
@@ -16,7 +20,12 @@ export const GlobalProvider = ({ children, settings, DATA }) => {
 
   // Create style config
   const StyleConfig = getStyleConfig(
-    createStyleProps(THEME, defaultFontFamily, settings.defaultCopyFontFamily, settings.gradientDegree)
+    createStyleProps(
+      THEME,
+      defaultFontFamily,
+      settings.defaultCopyFontFamily,
+      settings.gradientDegree
+    )
   );
 
   const BuildProps = {
@@ -41,7 +50,7 @@ export const GlobalProvider = ({ children, settings, DATA }) => {
     Heights,
     BuildProps,
     hasPrimarySponsor,
-    DATA
+    DATA,
   };
 
   return (

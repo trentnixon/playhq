@@ -1,8 +1,8 @@
-import { RoundedSectionContainer } from "../../../../UI/Containers/SectionContainer";
-import { ClubName } from "./ClubName";
-import { ClubTeamList } from "./ClubTeamList";
+import { RoundedSectionContainer } from '../../../../UI/Containers/SectionContainer';
+import { ClubName } from './ClubName';
+import { ClubTeamList } from './ClubTeamList';
 
-export const ClubList = (props) => {
+export const ClubList = props => {
   const { organizationDetails } = props;
 
   if (!organizationDetails || !organizationDetails.data.attributes.clubs.data) {
@@ -13,10 +13,10 @@ export const ClubList = (props) => {
 
   return (
     <>
-      {clubs.map((club) => (
+      {clubs.map(club => (
         <RoundedSectionContainer
           key={club.id}
-          headerContent={"Club List"}
+          headerContent={'Club List'}
           topContent={<ClubName ClubName={club.attributes.Name} />}
           bottomContent={<ClubTeamList club={club} />}
         />

@@ -10,7 +10,7 @@ export const useCoupon = () => {
   const [error, setError] = useState(null);
   const [status, setStatus] = useState('neutral'); // neutral, positive, expired, invalid
 
-  const validateCoupon = async (code) => {
+  const validateCoupon = async code => {
     setLoading(true);
     setError(null);
     setStatus('neutral');
@@ -41,7 +41,7 @@ export const useCoupon = () => {
           }
         );
 
-        console.log("response ", response)
+        console.log('response ', response);
 
         if (response.data && response.data.length > 0) {
           const coupon = response.data[0].attributes;

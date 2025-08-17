@@ -1,8 +1,8 @@
 /* eslint-disable camelcase */
 
-import { loadFont } from "@remotion/google-fonts/Heebo";
-import { WeekendResults } from "../Compositions/WeekendResults";
-export const Example_Video_WEEKENDRESULTS = (props) => {
+import { loadFont } from '@remotion/google-fonts/Heebo';
+import { WeekendResults } from '../Compositions/WeekendResults';
+export const Example_Video_WEEKENDRESULTS = props => {
   const { DATA } = props;
   const { fontFamily } = loadFont();
   const { TIMINGS } = DATA;

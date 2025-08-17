@@ -1,11 +1,11 @@
-import { useEffect, useState } from "react"; // Added for potential future use and error handling
-import { getTrialStatus } from "../../../../../lib/actions";
-import { P, PageTitle } from "../../../Common/Type";
-import { IconCircleCheck } from "@tabler/icons-react";
-import { ShadowWrapper } from "../../../Common/Containers";
+import { useEffect, useState } from 'react'; // Added for potential future use and error handling
+import { getTrialStatus } from '../../../../../lib/actions';
+import { P, PageTitle } from '../../../Common/Type';
+import { IconCircleCheck } from '@tabler/icons-react';
+import { ShadowWrapper } from '../../../Common/Containers';
 
 // Calculates the number of days remaining in the trial
-const calculateDaysRemaining = (endDate) => {
+const calculateDaysRemaining = endDate => {
   const today = new Date();
   const diffInMilliseconds = endDate.getTime() - today.getTime();
   return Math.ceil(diffInMilliseconds / (1000 * 60 * 60 * 24));
@@ -22,7 +22,7 @@ export const FreeTrialActive = ({ account }) => {
       );
       setDaysRemaining(calculateDaysRemaining(endDate));
     } catch (error) {
-      console.error("Failed to fetch trial status:", error);
+      console.error('Failed to fetch trial status:', error);
       // Optional: Implement error handling state and display a message to the user
     }
   }, [account]);
@@ -30,10 +30,10 @@ export const FreeTrialActive = ({ account }) => {
   return (
     <>
       <PageTitle
-        Copy="Your Trial is Active"
+        Copy='Your Trial is Active'
         ICON={<IconCircleCheck size={40} />}
       />
-      <P size="xl" weight={600}>
+      <P size='xl' weight={600}>
         You have {daysRemaining} days remaining. Enjoy all the features!
       </P>
       <ShadowWrapper mb={200}>

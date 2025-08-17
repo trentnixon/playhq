@@ -1,12 +1,12 @@
-import { Player, PlayerProps, PlayerRef } from "@remotion/player";
-import React, { forwardRef, useEffect, useRef, useState } from "react";
-import ReactDOM from "react-dom";
+import { Player, PlayerProps, PlayerRef } from '@remotion/player';
+import React, { forwardRef, useEffect, useRef, useState } from 'react';
+import ReactDOM from 'react-dom';
 
-const className = "__player";
+const className = '__player';
 const borderNone = {
-  border: "none",
-  width: "100%",
-  height: "100%",
+  border: 'none',
+  width: '100%',
+  height: '100%',
 };
 
 const IframePlayerWithoutRef = (props, ref) => {
@@ -17,13 +17,13 @@ const IframePlayerWithoutRef = (props, ref) => {
   useEffect(() => {
     if (!contentRef || !contentRef.contentDocument) return;
 
-    contentRef.contentDocument.body.style.margin = "0";
-    contentRef.contentDocument.body.style.padding = "0";
-    contentRef.contentDocument.body.style.display = "flex";
-    contentRef.contentDocument.body.style.justifyContent = "center";
-    contentRef.contentDocument.body.style.alignItems = "center";
-    contentRef.style.width = "100%";
-    contentRef.style.height = "100%";
+    contentRef.contentDocument.body.style.margin = '0';
+    contentRef.contentDocument.body.style.padding = '0';
+    contentRef.contentDocument.body.style.display = 'flex';
+    contentRef.contentDocument.body.style.justifyContent = 'center';
+    contentRef.contentDocument.body.style.alignItems = 'center';
+    contentRef.style.width = '100%';
+    contentRef.style.height = '100%';
 
     const playerElement = contentRef.contentDocument.querySelector(
       `.${className}`
@@ -49,7 +49,7 @@ const IframePlayerWithoutRef = (props, ref) => {
     };
   }, [contentRef]);
 
-  const combinedClassName = `${className} ${props.className ?? ""}`.trim();
+  const combinedClassName = `${className} ${props.className ?? ''}`.trim();
 
   return (
     <iframe ref={setContentRef} style={borderNone}>

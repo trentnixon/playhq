@@ -1,6 +1,6 @@
-import { List, Paper } from "@mantine/core";
-import { P } from "../../../../../Members/Common/Type";
-import { useMediaQuery } from "@mantine/hooks";
+import { List, Paper } from '@mantine/core';
+import { P } from '../../../../../Members/Common/Type';
+import { useMediaQuery } from '@mantine/hooks';
 import {
   IconMail,
   IconUser,
@@ -9,15 +9,15 @@ import {
   IconBrandStripe,
   IconShield,
   IconUsers,
-} from "@tabler/icons-react";
+} from '@tabler/icons-react';
 
 export const SetUpItemsRequired = () => {
-  const matches = useMediaQuery("(min-width: 48em)");
+  const matches = useMediaQuery('(min-width: 48em)');
   return (
-    <Paper  p="0">
-      <List spacing="xs" size="sm" center>
+    <Paper p='0'>
+      <List spacing='xs' size='sm' center>
         <List.Item
-          icon={<IconMail stroke={1.5} size="2rem" color={"#6699CC"} />}
+          icon={<IconMail stroke={1.5} size='2rem' color={'#6699CC'} />}
         >
           <P Weight={600} marginBottom={0} color={7}>
             Email Delivery
@@ -29,10 +29,10 @@ export const SetUpItemsRequired = () => {
           )}
         </List.Item>
         <List.Item
-          icon={<IconUser stroke={1.5} size="2rem" color={"#6699CC"} />}
+          icon={<IconUser stroke={1.5} size='2rem' color={'#6699CC'} />}
         >
           <P Weight={600} marginBottom={0} color={7}>
-            Recipient's Name
+            Recipient&apos;s Name
           </P>
           {matches ? (
             <P>Name of the person the email should be addressed to.</P>
@@ -41,7 +41,7 @@ export const SetUpItemsRequired = () => {
           )}
         </List.Item>
         <List.Item
-          icon={<IconBuilding stroke={1.5} size="2rem" color={"#6699CC"} />}
+          icon={<IconBuilding stroke={1.5} size='2rem' color={'#6699CC'} />}
         >
           <P Weight={600} marginBottom={0} color={7}>
             Organization Type
@@ -53,7 +53,7 @@ export const SetUpItemsRequired = () => {
           )}
         </List.Item>
         <List.Item
-          icon={<IconUsers stroke={1.5} size="2rem" color={"#6699CC"} />}
+          icon={<IconUsers stroke={1.5} size='2rem' color={'#6699CC'} />}
         >
           <P Weight={600} marginBottom={0} color={7}>
             Association
@@ -67,7 +67,7 @@ export const SetUpItemsRequired = () => {
           )}
         </List.Item>
         <List.Item
-          icon={<IconShield stroke={1.5} size="2rem" color={"#6699CC"} />}
+          icon={<IconShield stroke={1.5} size='2rem' color={'#6699CC'} />}
         >
           <P Weight={600} marginBottom={0} color={7}>
             Club Name
@@ -79,7 +79,7 @@ export const SetUpItemsRequired = () => {
           )}
         </List.Item>
         <List.Item
-          icon={<IconBrandStripe stroke={1.5} size="2rem" color={"#6699CC"} />}
+          icon={<IconBrandStripe stroke={1.5} size='2rem' color={'#6699CC'} />}
         >
           <P Weight={600} marginBottom={0} color={7}>
             Organization Logo
@@ -91,14 +91,14 @@ export const SetUpItemsRequired = () => {
           )}
         </List.Item>
         <List.Item
-          icon={<IconPalette stroke={1.5} size="2rem" color={"#6699CC"} />}
+          icon={<IconPalette stroke={1.5} size='2rem' color={'#6699CC'} />}
         >
           <P Weight={600} marginBottom={0} color={7}>
             Brand Colors
           </P>
           {matches ? (
             <P>
-              Select the color scheme that aligns with your organization's
+              Select the color scheme that aligns with your organization&apos;s
               branding.
             </P>
           ) : (
@@ -109,4 +109,3 @@ export const SetUpItemsRequired = () => {
     </Paper>
   );
 };
- 

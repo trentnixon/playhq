@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 import {
   createStyles,
   Table,
@@ -6,38 +6,38 @@ import {
   Avatar,
   Box,
   Container,
-} from "@mantine/core";
-import { useListState, useMediaQuery } from "@mantine/hooks";
-import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
-import { IconCheck, IconGripVertical } from "@tabler/icons";
-import { BTN_ONCLICK } from "../../../../Members/Common/utils/Buttons";
+} from '@mantine/core';
+import { useListState, useMediaQuery } from '@mantine/hooks';
+import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
+import { IconCheck, IconGripVertical } from '@tabler/icons';
+import { BTN_ONCLICK } from '../../../../Members/Common/utils/Buttons';
 
 import {
   useUpdateSponsor,
   useDeleteSponsor,
-} from "../../../../../Hooks/useSponsorships";
-import { EditSponsor } from "./EditSponsor";
+} from '../../../../../Hooks/useSponsorships';
+import { EditSponsor } from './EditSponsor';
 
-import { IconX } from "@tabler/icons-react";
-import { useAccountDetails } from "../../../../../context/userContext";
-import { P } from "../../../../Members/Common/Type";
-import { SponsorDeleteBtn } from "./SponsorDeleteBtn";
+import { IconX } from '@tabler/icons-react';
+import { useAccountDetails } from '../../../../../context/userContext';
+import { P } from '../../../../Members/Common/Type';
+import { SponsorDeleteBtn } from './SponsorDeleteBtn';
 
-const useStyles = createStyles((theme) => ({
+const useStyles = createStyles(theme => ({
   item: {
     backgroundColor:
-      theme.colorScheme === "dark" ? theme.colors.dark[7] : theme.white,
+      theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.white,
   },
 
   dragHandle: {
     ...theme.fn.focusStyles(),
     width: 40,
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    height: "100%",
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    height: '100%',
     color:
-      theme.colorScheme === "dark"
+      theme.colorScheme === 'dark'
         ? theme.colors.dark[1]
         : theme.colors.gray[6],
   },
@@ -49,7 +49,7 @@ export function DragnDropSponsorList({ SPONSORS, SPONSORLIMIT }) {
   // HOOKS
   const [UpdatedSponsor, UpdateSponsor] = useUpdateSponsor();
   const [DeleteSponsor, ConfirmDeleteSponsor] = useDeleteSponsor();
-  const matches = useMediaQuery("(min-width: 48em)");
+  const matches = useMediaQuery('(min-width: 48em)');
   const { ReRender } = useAccountDetails();
   const [state, handlers] = useListState(
     SPONSORS.sort((a, b) => a.attributes.Order - b.attributes.Order)
@@ -58,7 +58,7 @@ export function DragnDropSponsorList({ SPONSORS, SPONSORLIMIT }) {
   const [Order, setOrder] = useState(100);
   const [isRerendering, setrerendering] = useState(false);
 
-  const onDelete = (ID) => {
+  const onDelete = ID => {
     //console.log("onDelete", ID);
     ConfirmDeleteSponsor(ID);
     return true;
@@ -112,7 +112,7 @@ export function DragnDropSponsorList({ SPONSORS, SPONSORLIMIT }) {
       key={`${index}_${item.attributes.Name}`}
       draggableId={`${index}_${item.attributes.Name}`}
     >
-      {(provided) => (
+      {provided => (
         <tr
           className={classes.item}
           ref={provided.innerRef}
@@ -126,7 +126,7 @@ export function DragnDropSponsorList({ SPONSORS, SPONSORLIMIT }) {
           <td>
             {item?.attributes?.Logo?.data?.attributes?.formats?.thumbnail
               ?.url === undefined ? (
-              "Error"
+              'Error'
             ) : (
               <Image
                 src={
@@ -141,59 +141,16 @@ export function DragnDropSponsorList({ SPONSORS, SPONSORLIMIT }) {
           </td>
 
           <td>
-            <P marginBottom={0} size={matches ? "sm" : "sm"}>
+            <P marginBottom={0} size={matches ? 'sm' : 'sm'}>
               {item.attributes.Name}
             </P>
           </td>
           {matches ? <td>{item.attributes.Tagline}</td> : false}
 
-          {/*   {matches ? (
-            <td align="center">
-              {item.attributes.isPrimary ? (
-                <Avatar color={"green"} size={20} radius={20}>
-                  <IconCheck size={40} />
-                </Avatar>
-              ) : (
-                false
-              )}
-            </td>
-          ) : (
-            false
-          )} */}
-          {/*  {matches ? (
-            <td align="center">
-              {item.attributes.isVideo ? (
-                <Avatar color={"green"} size={20} radius={20}>
-                  <IconCheck size={40} />
-                </Avatar>
-              ) : (
-                <Avatar color={"red"} size={20} radius={20}>
-                  <IconX size={40} />
-                </Avatar>
-              )}
-            </td>
-          ) : (
-            false
-          )} */}
-          {/* {matches ? (
-            <td align="center">
-              {item.attributes.isArticle ? (
-                <Avatar color={"green"} size={20} radius={20}>
-                  <IconCheck size={40} />
-                </Avatar>
-              ) : (
-                <Avatar color={"red"} size={20} radius={20}>
-                  <IconX size={40} />
-                </Avatar>
-              )}
-            </td>
-          ) : (
-            false
-          )} */}
           {matches ? (
-            <td align="center">
+            <td align='center'>
               {item.attributes.isActive ? (
-                <Avatar color={"green"} size={20} radius={20}>
+                <Avatar color={'green'} size={20} radius={20}>
                   <IconCheck size={40} />
                 </Avatar>
               ) : (
@@ -230,8 +187,8 @@ export function DragnDropSponsorList({ SPONSORS, SPONSORLIMIT }) {
     <Container fluid px={0}>
       <Box
         mt={50}
-        sx={(theme) => ({
-          padding: "10px 0px",
+        sx={theme => ({
+          padding: '10px 0px',
         })}
       >
         <DragDropContext
@@ -245,9 +202,9 @@ export function DragnDropSponsorList({ SPONSORS, SPONSORLIMIT }) {
         >
           <Table
             sx={{
-              textAlign: "center",
-              minWidth: "auto",
-              "& tbody tr td": { borderBottom: 0 },
+              textAlign: 'center',
+              minWidth: 'auto',
+              '& tbody tr td': { borderBottom: 0 },
             }}
           >
             <thead>
@@ -255,36 +212,26 @@ export function DragnDropSponsorList({ SPONSORS, SPONSORLIMIT }) {
                 <th></th>
                 <th></th>
 
-                <th style={{ textAlign: "center" }}>
+                <th style={{ textAlign: 'center' }}>
                   {matches ? `Name` : false}
                 </th>
                 {matches ? (
-                  <th style={{ textAlign: "center" }}>Tagline</th>
+                  <th style={{ textAlign: 'center' }}>Tagline</th>
                 ) : (
                   false
                 )}
 
-                {/* {matches ? (
-                  <th style={{ textAlign: "center" }}>Videos</th>
-                ) : (
-                  false
-                )} */}
-                {/* {matches ? (
-                  <th style={{ textAlign: "center" }}>Articles</th>
-                ) : (
-                  false
-                )} */}
                 {matches ? (
-                  <th style={{ textAlign: "center" }}>Active</th>
+                  <th style={{ textAlign: 'center' }}>Active</th>
                 ) : (
                   false
                 )}
-                <th style={{ textAlign: "center" }}></th>
-                <th style={{ textAlign: "center" }}>Remove Sponsor</th>
+                <th style={{ textAlign: 'center' }}></th>
+                <th style={{ textAlign: 'center' }}>Remove Sponsor</th>
               </tr>
             </thead>
-            <Droppable droppableId="dnd-list" direction="vertical">
-              {(provided) => (
+            <Droppable droppableId='dnd-list' direction='vertical'>
+              {provided => (
                 <tbody {...provided.droppableProps} ref={provided.innerRef}>
                   {items}
                   {provided.placeholder}

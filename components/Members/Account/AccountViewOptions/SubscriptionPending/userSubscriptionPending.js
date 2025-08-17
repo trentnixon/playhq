@@ -1,12 +1,12 @@
 // Import necessary dependencies
 
-import { useAccountDetails } from "../../../../../context/userContext";
-import { FixturaDivider } from "../../../Common/Divider";
-import { P, PageTitle } from "../../../Common/Type";
-import { Invoicing } from "../../../stripe/Invoicing";
-import { Space } from "@mantine/core";
-import { IconFileInvoice } from "@tabler/icons";
-import { InvoiceDisplay } from "../../components/Invoicing/InvoiceTemplate";
+import { useAccountDetails } from '../../../../../context/userContext';
+import { FixturaDivider } from '../../../Common/Divider';
+import { P, PageTitle } from '../../../Common/Type';
+import { Invoicing } from '../../../stripe/Invoicing';
+import { Space } from '@mantine/core';
+import { IconFileInvoice } from '@tabler/icons';
+import { InvoiceDisplay } from '../../components/Invoicing/InvoiceTemplate';
 
 // Main component for handling the subscription pending state
 export const UserSubscriptionPending = () => {
@@ -18,7 +18,7 @@ export const UserSubscriptionPending = () => {
     return (
       <>
         <PageTitle
-          Copy={"No Pending Order"}
+          Copy={'No Pending Order'}
           ICON={<IconFileInvoice size={40} />}
         />
         <P>There are no pending invoices to display at this time.</P>
@@ -29,7 +29,7 @@ export const UserSubscriptionPending = () => {
   return (
     <>
       <PageTitle
-        Copy={"You are Almost Ready!"}
+        Copy={'You are Almost Ready!'}
         ICON={<IconFileInvoice size={40} />}
       />
 
@@ -40,19 +40,19 @@ export const UserSubscriptionPending = () => {
       <InvoiceDisplay order={pendingInvoice} />
       <FixturaDivider />
       <Invoicing />
-      <Space h="lg" />
+      <Space h='lg' />
     </>
   );
 };
 
 // Enhanced error handling in utility function
-const findPendingInvoice = (orders) => {
+const findPendingInvoice = orders => {
   if (!Array.isArray(orders) || orders.length === 0) {
-    console.error("No orders available");
+    console.error('No orders available');
     return null;
   }
   const pendingInvoice = orders.find(
-    (order) =>
+    order =>
       order.attributes.Status === true && order.attributes.isActive === false
   );
   return pendingInvoice || null; // Return null if no pending invoice is found

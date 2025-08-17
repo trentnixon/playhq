@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
 import {
   ColorSwatch,
@@ -6,20 +6,20 @@ import {
   Paper,
   Table,
   useMantineTheme,
-} from "@mantine/core";
+} from '@mantine/core';
 import {
   useAssignDesignElement,
   useGETDesignElement,
-} from "../../../Hooks/useCustomizer";
-import { BTN_ONCLICK } from "../Common/utils/Buttons";
-import { IconCircleCheck } from "@tabler/icons";
-import { useAccountDetails } from "../../../context/userContext";
-import { P, SubHeaders } from "../Common/Type";
-import { DisplayCustomTheme } from "../Common/Customiser/Design/Components/DisplayCustomTheme";
-import { CreateNewTheme } from "../Common/Customiser/Design/Components/CreateNewTheme";
-import { useMediaQuery } from "@mantine/hooks";
-import { FixturaLoading } from "../Common/Loading";
-import { IconColorSwatch, IconFileDownload } from "@tabler/icons-react";
+} from '../../../Hooks/useCustomizer';
+import { BTN_ONCLICK } from '../Common/utils/Buttons';
+import { IconCircleCheck } from '@tabler/icons';
+import { useAccountDetails } from '../../../context/userContext';
+import { P, SubHeaders } from '../Common/Type';
+import { DisplayCustomTheme } from '../Common/Customiser/Design/Components/DisplayCustomTheme';
+import { CreateNewTheme } from '../Common/Customiser/Design/Components/CreateNewTheme';
+import { useMediaQuery } from '@mantine/hooks';
+import { FixturaLoading } from '../Common/Loading';
+import { IconColorSwatch, IconFileDownload } from '@tabler/icons-react';
 
 export const UpdateYourTheme = () => {
   const { account, ReRender } = useAccountDetails();
@@ -33,21 +33,21 @@ export const UpdateYourTheme = () => {
   // BUG THAT NEEDS FIXING
   // SELECT ONLY PUBLIC THEMES AND THE CUSTOM ONE!!
   useEffect(() => {
-    FetchElement({ COLLECTIONID: "themes" });
+    FetchElement({ COLLECTIONID: 'themes' });
   }, []);
 
   useEffect(() => {
-    FetchElement({ COLLECTIONID: "themes" });
+    FetchElement({ COLLECTIONID: 'themes' });
     setuserAccount(account);
     setLoading(false);
   }, [account]);
 
-  const StoreUSerChange = (item) => {
+  const StoreUSerChange = item => {
     const OBJ = {
-      CollectionSaveTo: "accounts",
+      CollectionSaveTo: 'accounts',
       Body: [item.id],
       COLLECTIONID: userAccount.id,
-      RelationProperty: "theme",
+      RelationProperty: 'theme',
     };
     setLoading(true);
     CreateDesignElement(OBJ);
@@ -69,13 +69,16 @@ export const UpdateYourTheme = () => {
   ) {
     return (
       <>
-        <SubHeaders Copy={`Storing New Theme`} ICON={<IconFileDownload size={30} />}/>
+        <SubHeaders
+          Copy={`Storing New Theme`}
+          ICON={<IconFileDownload size={30} />}
+        />
         <Paper
-          radius="md"
-          shadow="md"
+          radius='md'
+          shadow='md'
           mb={20}
-          p="xs"
-          sx={(theme) => ({ backgroundColor: theme.white })}
+          p='xs'
+          sx={theme => ({ backgroundColor: theme.white })}
         >
           <FixturaLoading />
         </Paper>
@@ -107,12 +110,12 @@ export const UpdateYourTheme = () => {
 const Swatches = ({ colors }) => {
   const theme = useMantineTheme();
   const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
-  return colors.map((color) => (
+  return colors.map(color => (
     <ColorSwatch
       key={color}
       color={color}
       size={mobile ? 14 : 25}
-      radius="xl"
+      radius='xl'
     />
   ));
 };
@@ -134,12 +137,16 @@ const TableRow = ({ item, userAccount, StoreUSerChange }) => {
   return (
     <tr>
       <td>
-        <P marginBottom={3} color={isSelected ? 9 : 6} Weight={isSelected ? 900 : 400}>
+        <P
+          marginBottom={3}
+          color={isSelected ? 9 : 6}
+          Weight={isSelected ? 900 : 400}
+        >
           {item.attributes.Name}
         </P>
       </td>
       <td>
-        <Group position="center" spacing="xs">
+        <Group position='center' spacing='xs'>
           <Swatches
             colors={[
               item.attributes.Theme.primary,
@@ -148,18 +155,18 @@ const TableRow = ({ item, userAccount, StoreUSerChange }) => {
           />
         </Group>
       </td>
-      <td style={{ textAlign: "right" }}>
+      <td style={{ textAlign: 'right' }}>
         <SelectButton
           isSelected={isSelected}
           onClick={() => StoreUSerChange(item)}
-          label="Select"
+          label='Select'
         />
       </td>
     </tr>
   );
 };
 
-const ColorTable = (props) => {
+const ColorTable = props => {
   const { GetElement, userAccount, StoreUSerChange } = props;
   const theme = useMantineTheme();
   const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
@@ -167,7 +174,7 @@ const ColorTable = (props) => {
     <>
       <DisplayCustomTheme {...props} />
 
-      <SubHeaders Copy={`Public Themes`} ICON={<IconColorSwatch size={30} />}/>
+      <SubHeaders Copy={`Public Themes`} ICON={<IconColorSwatch size={30} />} />
 
       <Table>
         <tbody>

@@ -1,9 +1,9 @@
-import { Group } from "@mantine/core";
-import { P } from "../../../../Members/Common/Type";
-import { BTN_TOINTERALLINK } from "../../../../Members/Common/utils/Buttons";
-import { useAccountDetails } from "../../../../../context/userContext";
+import { Group } from '@mantine/core';
+import { P } from '../../../../Members/Common/Type';
+import { BTN_TOINTERALLINK } from '../../../../Members/Common/utils/Buttons';
+import { useAccountDetails } from '../../../../../context/userContext';
 
-import { RoundedSectionContainer } from "../../../../UI/Containers/SectionContainer";
+import { RoundedSectionContainer } from '../../../../UI/Containers/SectionContainer';
 
 export const Setting_change_brand_logo = () => {
   const { account } = useAccountDetails();
@@ -12,7 +12,7 @@ export const Setting_change_brand_logo = () => {
 
   return (
     <RoundedSectionContainer
-      headerContent="Update your Logo"
+      headerContent='Update your Logo'
       topContent={<ContainerTopSection />}
       bottomContent={<ContainerBottomSection />}
     />
@@ -21,13 +21,13 @@ export const Setting_change_brand_logo = () => {
 
 const ContainerTopSection = () => {
   return (
-    <Group position="apart">
+    <Group position='apart'>
       <P Weight={600} marginBottom={0}>
         Update Your Logo
       </P>
       <BTN_TOINTERALLINK
-        LABEL={"Update Logo"}
-        URL={"/members/settings/change-brand-logo/"}
+        LABEL={'Update Logo'}
+        URL={'/members/settings/change-brand-logo/'}
       />
     </Group>
   );

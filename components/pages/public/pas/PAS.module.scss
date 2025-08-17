@@ -1,20 +1,20 @@
-/* Color Variables */ 
-$hero-gradient-start: #343A40;
-$hero-gradient-middle: #298DA7;
-$hero-gradient-end: #FDE5C1;
-$section-gradient-start: #2B7F95;
-$section-gradient-end: #49C3E4;
-$white-copy-color: #FFFFFF;
+/* Color Variables */
+$hero-gradient-start: #343a40;
+$hero-gradient-middle: #298da7;
+$hero-gradient-end: #fde5c1;
+$section-gradient-start: #2b7f95;
+$section-gradient-end: #49c3e4;
+$white-copy-color: #ffffff;
 $dark-copy-color: #000000;
-$highlight-color-1: #FFF934;
-$highlight-color-2: #8D8900;
-$highlight-color-3: #46BBDB;
-$background-1: #FFFFFF;
+$highlight-color-1: #fff934;
+$highlight-color-2: #8d8900;
+$highlight-color-3: #46bbdb;
+$background-1: #ffffff;
 $background-2: #434448;
 $background-3: #333741;
-$background-4-start: #2B7F95;
-$background-4-end: #49C3E4; 
- 
+$background-4-start: #2b7f95;
+$background-4-end: #49c3e4;
+
 /* Typography */
 @mixin h1 {
   font-size: 80px;
@@ -37,14 +37,24 @@ $background-4-end: #49C3E4;
 
 /* Gradients */
 @mixin hero-gradient {
-  background: linear-gradient(125deg, $hero-gradient-start, $hero-gradient-middle, $hero-gradient-end, $hero-gradient-start);
+  background: linear-gradient(
+    125deg,
+    $hero-gradient-start,
+    $hero-gradient-middle,
+    $hero-gradient-end,
+    $hero-gradient-start
+  );
 }
 
 @mixin section-gradient {
-  background: linear-gradient(180deg, $section-gradient-start, $section-gradient-end);
+  background: linear-gradient(
+    180deg,
+    $section-gradient-start,
+    $section-gradient-end
+  );
 }
 @mixin gray-gradient {
-  background: linear-gradient(180deg, $background-1 0%, $background-2 15%,);
+  background: linear-gradient(180deg, $background-1 0%, $background-2 15%);
 }
 
 /* Backgrounds */

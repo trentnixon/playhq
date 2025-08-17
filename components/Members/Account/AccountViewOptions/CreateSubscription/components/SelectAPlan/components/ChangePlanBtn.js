@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 
-import { BTN_ONCLICK } from "../../Common/utils/Buttons";
-import { useChangeSubscription } from "../../../../Hooks/useOrder";
-import { useAccountDetails } from "../../../../context/userContext";
+import { BTN_ONCLICK } from '../../Common/utils/Buttons';
+import { useChangeSubscription } from '../../../../Hooks/useOrder';
+import { useAccountDetails } from '../../../../context/userContext';
 
-import { Group } from "@mantine/core";
+import { Group } from '@mantine/core';
 
 export const ChangePlanBtn = ({
   productId,
@@ -17,7 +17,7 @@ export const ChangePlanBtn = ({
   const [confirmState, setConfirmState] = useState(false);
   // check if this works
   const { account, ReRender } = useAccountDetails();
-  const changeSubscriptionPlan = async (PlanID) => {
+  const changeSubscriptionPlan = async PlanID => {
     setLoading(true);
     await confirmPlan(PlanID);
   };
@@ -43,21 +43,21 @@ export const ChangePlanBtn = ({
   }, [plan]);
 
   return (
-    <Group position="center" px={10}>
+    <Group position='center' px={10}>
       <BTN_ONCLICK
         LABEL={
           loading
-            ? "Processing..."
+            ? 'Processing...'
             : confirmState
-            ? "Confirm Switch"
-            : "Switch Plan"
+            ? 'Confirm Switch'
+            : 'Switch Plan'
         }
         HANDLE={handleClick}
-        THEME="success"
+        THEME='success'
         DISABLED={loading || !selected}
       />
       {confirmState && (
-        <BTN_ONCLICK LABEL="Cancel" HANDLE={resetConfirmState} THEME="error" />
+        <BTN_ONCLICK LABEL='Cancel' HANDLE={resetConfirmState} THEME='error' />
       )}
     </Group>
   );

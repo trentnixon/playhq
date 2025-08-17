@@ -1,8 +1,12 @@
-import React, { createContext, useContext, useEffect, useState } from "react";
-import { getUserFromLocalCookie } from "../lib/auth";
+import React, { createContext, useContext, useEffect, useState } from 'react';
+import { getUserFromLocalCookie } from '../lib/auth';
 
 // Create a User context
-const UserContext = createContext({ user: null, loading: false });
+const UserContext = createContext({
+  user: null,
+  loading: false,
+  ReRender: () => {},
+});
 // Hook to use the User context
 export const useUser = () => useContext(UserContext);
 
@@ -12,16 +16,16 @@ export const UserProvider = ({ children }) => {
   const [shouldReFetch, setShouldReFetch] = useState(false); // State to trigger re-fetching user
 
   const ReRender = () => {
-    setShouldReFetch((prev) => !prev); // Toggle the state to trigger re-fetch
+    setShouldReFetch(prev => !prev); // Toggle the state to trigger re-fetch
   };
 
   useEffect(() => {
-    console.log("Attempting to fetch user...");
+    console.log('Attempting to fetch user...');
 
     const fetchUser = async () => {
       // Attempt to get the user from a local cookie
       const fetchedUser = await getUserFromLocalCookie();
-
+      //console.log('[UserProvider] fetchedUser:', fetchedUser);
       // Set the fetched user into state
       setUserState(fetchedUser);
       setLoading(false);
@@ -56,7 +60,7 @@ export const UserProvider = ({ value, children }) => {
   return <User.Provider value={value}>{children}</User.Provider>;
 };
 
-export const useUser = () => useContext(User); 
+export const useUser = () => useContext(User);
 
 export const useFetchUser = () => {
   const [data, setUser] = useState({

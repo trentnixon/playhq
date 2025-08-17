@@ -1,14 +1,14 @@
-import { useState } from "react";
-import { Group, Text, Dialog } from "@mantine/core";
+import { useState } from 'react';
+import { Group, Text, Dialog } from '@mantine/core';
 import {
   BTN_ONCLICK,
   BTN_TOINTERALLINK,
-} from "../../../../Common/utils/Buttons";
-import useCancelInvoice from "../../../../../../Hooks/useCancelInvoice";
-import { FixturaLoading } from "../../../../Common/Loading";
-import { useRouter } from "next/navigation";
-import { useAccountDetails } from "../../../../../../context/userContext";
-export const InvoiceActions = (props) => {
+} from '../../../../Common/utils/Buttons';
+import useCancelInvoice from '../../../../../../Hooks/useCancelInvoice';
+import { FixturaLoading } from '../../../../Common/Loading';
+import { useRouter } from 'next/navigation';
+import { useAccountDetails } from '../../../../../../context/userContext';
+export const InvoiceActions = props => {
   const { invoice_pdf, hosted_invoice_url, orderID } = props;
   const [confirmOpen, setConfirmOpen] = useState(false);
   const [pendingPayment, setPendingPayment] = useState(false);
@@ -16,7 +16,7 @@ export const InvoiceActions = (props) => {
   const router = useRouter();
   const handlePaymentRedirect = () => {
     setPendingPayment(true);
-    window.open(hosted_invoice_url, "_blank");
+    window.open(hosted_invoice_url, '_blank');
   };
 
   const confirmPayment = () => {
@@ -24,28 +24,28 @@ export const InvoiceActions = (props) => {
   };
 
   return (
-    <Group position="center">
+    <Group position='center'>
       {confirmOpen ? (
         false
       ) : (
         <>
           {pendingPayment ? (
             <BTN_ONCLICK
-              LABEL="Confirm Payment"
+              LABEL='Confirm Payment'
               HANDLE={confirmPayment}
-              THEME="success"
+              THEME='success'
             />
           ) : (
             <>
               <BTN_TOINTERALLINK
-                LABEL="Download Invoice"
+                LABEL='Download Invoice'
                 URL={invoice_pdf}
                 idDisabled={confirmOpen}
               />
               <BTN_ONCLICK
-                LABEL="Pay Online"
+                LABEL='Pay Online'
                 HANDLE={handlePaymentRedirect}
-                THEME="primary"
+                THEME='primary'
               />
             </>
           )}
@@ -68,7 +68,7 @@ export const InvoiceActions = (props) => {
 const CancelInvoiceButton = ({ orderID, confirmOpen, setConfirmOpen }) => {
   const { loading, cancelInvoice } = useCancelInvoice();
   const [dialogOpen, setDialogOpen] = useState(false);
-  const [dialogMessage, setDialogMessage] = useState("");
+  const [dialogMessage, setDialogMessage] = useState('');
   const [countdown, setCountdown] = useState(3);
   const { ReRender } = useAccountDetails();
 
@@ -78,7 +78,7 @@ const CancelInvoiceButton = ({ orderID, confirmOpen, setConfirmOpen }) => {
       setDialogMessage(result.message);
       setDialogOpen(true);
       const interval = setInterval(() => {
-        setCountdown((prevCount) => {
+        setCountdown(prevCount => {
           if (prevCount <= 1) {
             clearInterval(interval);
             ReRender(); // Or navigate, etc.
@@ -104,30 +104,30 @@ const CancelInvoiceButton = ({ orderID, confirmOpen, setConfirmOpen }) => {
         <FixturaLoading />
       ) : confirmOpen ? (
         <>
-          <BTN_ONCLICK LABEL="Back" HANDLE={undoCancel} THEME="success" />
+          <BTN_ONCLICK LABEL='Back' HANDLE={undoCancel} THEME='success' />
           <BTN_ONCLICK
-            LABEL="Confirm Cancellation"
+            LABEL='Confirm Cancellation'
             HANDLE={handleCancel}
-            THEME="error"
+            THEME='error'
           />
         </>
       ) : (
         <BTN_ONCLICK
-          LABEL="Cancel Invoice"
+          LABEL='Cancel Invoice'
           HANDLE={() => setConfirmOpen(true)}
-          THEME="error"
+          THEME='error'
         />
       )}
       <Dialog
         opened={dialogOpen}
         onClose={() => setDialogOpen(false)}
-        title="Cancellation Status"
-        shadow="xl"
-        radius="sm"
-        sx={(theme) => ({
+        title='Cancellation Status'
+        shadow='xl'
+        radius='sm'
+        sx={theme => ({
           backgroundColor: theme.colors.dark[5],
           padding: theme.spacing.sm,
-          color: "white",
+          color: 'white',
           borderBottom: `3px solid ${theme.colors.blue[7]}`,
         })}
       >

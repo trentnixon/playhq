@@ -1,7 +1,6 @@
-import { Modal, Group } from "@mantine/core";
-import { BTN_ONCLICK } from "../../../Members/Common/utils/Buttons";
-import { P } from "../../../Members/Common/Type";
-
+import { Modal, Group } from '@mantine/core';
+import { BTN_ONCLICK } from '../../../Members/Common/utils/Buttons';
+import { P } from '../../../Members/Common/Type';
 
 export const ConfirmDeleteModal = ({
   isOpen,
@@ -15,22 +14,22 @@ export const ConfirmDeleteModal = ({
       onClose={() => {
         onClose();
       }}
-      title="Confirm Deletion"
+      title='Confirm Deletion'
     >
-      <P textAlign={"center"}>Are you sure you want to delete this item?</P>
-      <Group mt="xs" position="apart">
+      <P textAlign={'center'}>Are you sure you want to delete this item?</P>
+      <Group mt='xs' position='apart'>
         <BTN_ONCLICK
           HANDLE={() => handleDelete(deletingItemId)}
-          LABEL={" Yes, Delete"}
-          THEME="error"
+          LABEL={' Yes, Delete'}
+          THEME='error'
         />
 
         <BTN_ONCLICK
           HANDLE={() => {
             onClose();
           }}
-          LABEL={"Cancel"}
-          THEME="success"
+          LABEL={'Cancel'}
+          THEME='success'
         />
       </Group>
     </Modal>

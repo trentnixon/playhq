@@ -1,21 +1,21 @@
-import React from "react";
-import PageBanner from "../components/Common/PageBanner";
+import React from 'react';
+import PageBanner from '../components/Common/PageBanner';
 
-import CtaAreaTwo from "../components/Common/CtaAreaTwo";
-import { fetcher } from "../lib/api";
-import Meta from "../components/Layouts/Meta";
-import WorksStyleTwo from "../components/pages/public/graphics-packages/WorksStyleTwo";
+import CtaAreaTwo from '../components/Common/CtaAreaTwo';
+import { fetcher } from '../lib/api';
+import Meta from '../components/Layouts/Meta';
+import WorksStyleTwo from '../components/pages/public/graphics-packages/WorksStyleTwo';
 
-const qs = require("qs");
+const qs = require('qs');
 const Portfolio = ({ associations, CaseStudies }) => {
   return (
     <>
       <Meta
-        title="Our Services - Fixtura: Transforming Club Media"
-        description="Explore the diverse digital media offerings of Fixtura. From AI-generated content to bespoke videos and images for sports clubs."
-        keywords="Fixtura services, AI-generated sports content, club media solutions, digital asset creation, sports graphics, custom sports videos"
+        title='Our Services - Fixtura: Transforming Club Media'
+        description='Explore the diverse digital media offerings of Fixtura. From AI-generated content to bespoke videos and images for sports clubs.'
+        keywords='Fixtura services, AI-generated sports content, club media solutions, digital asset creation, sports graphics, custom sports videos'
       />
-      <PageBanner pageTitle="" BGImage="/images/BG-Images/0D5A3099.jpg" />
+      <PageBanner pageTitle='' BGImage='/images/BG-Images/0D5A3099.jpg' />
       <WorksStyleTwo CaseStudies={CaseStudies} />
       <CtaAreaTwo />
     </>
@@ -24,10 +24,10 @@ const Portfolio = ({ associations, CaseStudies }) => {
 
 export default Portfolio;
 
-export const getServerSideProps = async (context) => {
+export const getServerSideProps = async context => {
   const query = qs.stringify(
     {
-      populate: ["Cover", "asset_category", "VideoExample", "MainDescription"],
+      populate: ['Cover', 'asset_category', 'VideoExample', 'MainDescription'],
     },
     {
       encodeValuesOnly: true,

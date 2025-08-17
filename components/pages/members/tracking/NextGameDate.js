@@ -1,10 +1,10 @@
-import { Group } from "@mantine/core";
-import { P } from "../../../Members/Common/Type";
+import { Group } from '@mantine/core';
+import { P } from '../../../Members/Common/Type';
 
 export const NextGameDate = ({ gamesData }) => {
   const nextGame = getNextDate(gamesData);
   return (
-    <Group position="apart">
+    <Group position='apart'>
       <P>{`Upcoming Fixture: ${nextGame?.date}`}</P>
       <P>{`Games Listed ${nextGame?.obj?.length}`}</P>
     </Group>
@@ -39,37 +39,37 @@ function getNextDate(data) {
     let daySuffix;
 
     // Determine the suffix for the day
-    if (day > 3 && day < 21) daySuffix = "th";
+    if (day > 3 && day < 21) daySuffix = 'th';
     else
       switch (day % 10) {
         case 1:
-          daySuffix = "st";
+          daySuffix = 'st';
           break;
         case 2:
-          daySuffix = "nd";
+          daySuffix = 'nd';
           break;
         case 3:
-          daySuffix = "rd";
+          daySuffix = 'rd';
           break;
         default:
-          daySuffix = "th";
+          daySuffix = 'th';
           break;
       }
 
     // Get the month
     const monthNames = [
-      "January",
-      "February",
-      "March",
-      "April",
-      "May",
-      "June",
-      "July",
-      "August",
-      "September",
-      "October",
-      "November",
-      "December",
+      'January',
+      'February',
+      'March',
+      'April',
+      'May',
+      'June',
+      'July',
+      'August',
+      'September',
+      'October',
+      'November',
+      'December',
     ];
     const monthName = monthNames[closestDate.getMonth()];
 

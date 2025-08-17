@@ -1,12 +1,12 @@
-import { loadStripe } from "@stripe/stripe-js";
-import { Wrapper } from "../../../components/Members/Common/Containers";
-import { useCreateNewInstanceOfSubscription } from "../../../Hooks/useOrder";
-import { useEffect, useState } from "react";
+import { loadStripe } from '@stripe/stripe-js';
+import { Wrapper } from '../../../components/Members/Common/Containers';
+import { useCreateNewInstanceOfSubscription } from '../../../Hooks/useOrder';
+import { useEffect, useState } from 'react';
 
-import { FixturaLoading } from "../../../components/Members/Common/Loading";
-import { BTN_ONCLICK } from "../../../components/Members/Common/utils/Buttons";
-import { useAccountDetails } from "../../../context/userContext";
-import { Group } from "@mantine/core";
+import { FixturaLoading } from '../../../components/Members/Common/Loading';
+import { BTN_ONCLICK } from '../../../components/Members/Common/utils/Buttons';
+import { useAccountDetails } from '../../../context/userContext';
+import { Group } from '@mantine/core';
 
 export const BTN_SubscribeToFixtura = () => {
   const { account, ReRender } = useAccountDetails();
@@ -17,12 +17,12 @@ export const BTN_SubscribeToFixtura = () => {
     useCreateNewInstanceOfSubscription();
   const [loading, setLoading] = useState(false);
 
-  const handleBuy = async (productId) => {
+  const handleBuy = async productId => {
     setLoading(true);
     CreateSubscription(productId);
   };
 
-  const CreateStripePromise = async (Subscription) => {
+  const CreateStripePromise = async Subscription => {
     const stripe = await stripePromise;
     await stripe.redirectToCheckout({ sessionId: Subscription.id });
   };
@@ -45,25 +45,25 @@ export const BTN_SubscribeToFixtura = () => {
         ) : ORDER === null ? (
           <Group>
             <BTN_ONCLICK
-              LABEL={"Purchase Pinch Hitter"}
+              LABEL={'Purchase Pinch Hitter'}
               HANDLE={() => {
                 handleBuy(2);
               }}
-              THEME="success"
+              THEME='success'
             />
             <BTN_ONCLICK
-              LABEL={"Purchase Opening Batsman"}
+              LABEL={'Purchase Opening Batsman'}
               HANDLE={() => {
                 handleBuy(3);
               }}
-              THEME="success"
+              THEME='success'
             />
             <BTN_ONCLICK
-              LABEL={"Purchase Club Captain"}
+              LABEL={'Purchase Club Captain'}
               HANDLE={() => {
                 handleBuy(4);
               }}
-              THEME="success"
+              THEME='success'
             />
           </Group>
         ) : (

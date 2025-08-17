@@ -1,7 +1,7 @@
-import { useAccountDetails } from "../../../../../../context/userContext";
-import { FixturaLoading } from "../../../../../Members/Common/Loading";
-import { SELECT_DeliveryDay } from "./SelectDeliveryDay/SELECT_DeliveryDay";
-import { SelectDayPaperWrapper } from "./SelectDeliveryDay/SelectDayPaperWrapper";
+import { useAccountDetails } from '../../../../../../context/userContext';
+import { FixturaLoading } from '../../../../../Members/Common/Loading';
+import { SELECT_DeliveryDay } from './SelectDeliveryDay/SELECT_DeliveryDay';
+import { SelectDayPaperWrapper } from './SelectDeliveryDay/SelectDayPaperWrapper';
 
 export const SelectDeliveryDayClean = () => {
   const { account } = useAccountDetails();

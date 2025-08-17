@@ -1,21 +1,20 @@
-import React, { useEffect, useState } from "react";
-import { ThemeIcon, Progress, Text, Group, Paper, rem } from "@mantine/core";
-import { IconUpload } from "@tabler/icons-react";
+import React, { useEffect, useState } from 'react';
+import { ThemeIcon, Progress, Text, Group, Paper, rem } from '@mantine/core';
+import { IconUpload } from '@tabler/icons-react';
 
-import { useGetGalleryItems } from "../../../../../../../Hooks/useDashBoard";
-import { FixturaLoading } from "../../../../../../Members/Common/Loading";
-import { BTN_TOINTERALLINK } from "../../../../../../Members/Common/utils/Buttons";
-import { useStyles } from "../../DashboardCardStyles";
-
+import { useGetGalleryItems } from '../../../../../../../Hooks/useDashBoard';
+import { FixturaLoading } from '../../../../../../Members/Common/Loading';
+import { BTN_TOINTERALLINK } from '../../../../../../Members/Common/utils/Buttons';
+import { useStyles } from '../../DashboardCardStyles';
 
 const ICON_SIZE = rem(60);
 
 // Extracted the zero-item state into its own component for readability
 const ZeroItemsState = ({ classes, Theme }) => (
-  <Paper 
-    radius="md"
+  <Paper
+    radius='md'
     withBorder
-    shadow="md"
+    shadow='md'
     className={classes.card}
     mt={`calc(${ICON_SIZE} / 3)`}
   >
@@ -25,19 +24,19 @@ const ZeroItemsState = ({ classes, Theme }) => (
       size={ICON_SIZE}
       radius={ICON_SIZE}
     >
-      <IconUpload size="2rem" stroke={1.5} color={`white`} />
+      <IconUpload size='2rem' stroke={1.5} color={`white`} />
     </ThemeIcon>
-    <Text ta="center" fw={700} className={classes.title}>
+    <Text ta='center' fw={700} className={classes.title}>
       {0}
     </Text>
-    <Text c="dimmed" ta="center" fz="sm">
+    <Text c='dimmed' ta='center' fz='sm'>
       Media Items
     </Text>
-    <Text c="dimmed" ta="center" fz="sm">
+    <Text c='dimmed' ta='center' fz='sm'>
       Upload items to add your club's unique personality to every asset.
     </Text>
-    <Group position="center" mt="md">
-      <BTN_TOINTERALLINK LABEL={"Upload"} URL={"members/gallery/"} />
+    <Group position='center' mt='md'>
+      <BTN_TOINTERALLINK LABEL={'Upload'} URL={'members/gallery/'} />
     </Group>
   </Paper>
 );
@@ -77,49 +76,49 @@ export const DashBoardGalleryItems = ({ IconComponent, AccountID, Theme }) => {
 
   return (
     <Paper
-      radius="md"
+      radius='md'
       withBorder
-      shadow="md"
+      shadow='md'
       className={classes.card}
       mt={`calc(${ICON_SIZE} / 3)`}
     >
       <ThemeIcon
-        color={"green.5"}
+        color={'green.5'}
         className={classes.icon}
         size={ICON_SIZE}
         radius={ICON_SIZE}
       >
         <IconComponent
-          size="2rem"
+          size='2rem'
           stroke={1.5}
-          color={"white"} // Add your contrast color function
+          color={'white'} // Add your contrast color function
         />
       </ThemeIcon>
 
-      <Text ta="center" fw={700} className={classes.title}>
+      <Text ta='center' fw={700} className={classes.title}>
         {stats.mediaItems}
       </Text>
-      <Text c="dimmed" ta="center" fz="sm">
+      <Text c='dimmed' ta='center' fz='sm'>
         Media Items
       </Text>
 
-      <Group position="apart" mt="xs">
-        <Text fz="sm" color="dimmed">
+      <Group position='apart' mt='xs'>
+        <Text fz='sm' color='dimmed'>
           Image
         </Text>
-        <Text fz="sm" color="dimmed">
+        <Text fz='sm' color='dimmed'>
           {((stats.mediaItems / 15) * 100).toFixed(0)}%
         </Text>
       </Group>
 
-      <Progress value={(stats.mediaItems / 15) * 100} mt={5} color="cyan.5" />
+      <Progress value={(stats.mediaItems / 15) * 100} mt={5} color='cyan.5' />
 
-      <Group position="apart" mt="md">
-        <Text fz="sm">{`${stats.mediaItems} / 15`}</Text>
+      <Group position='apart' mt='md'>
+        <Text fz='sm'>{`${stats.mediaItems} / 15`}</Text>
       </Group>
 
-      <Group position="right" mt="md">
-        <BTN_TOINTERALLINK LABEL={"Upload"} URL={"members/gallery/"} />
+      <Group position='right' mt='md'>
+        <BTN_TOINTERALLINK LABEL={'Upload'} URL={'members/gallery/'} />
       </Group>
     </Paper>
   );

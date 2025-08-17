@@ -1,8 +1,8 @@
-import { ColorSwatch, useMantineTheme, Tooltip } from "@mantine/core";
-import { useState, useEffect } from "react";
-import { FixturaLoading } from "../../../components/Members/Common/Loading";
-import { P } from "../../../components/Members/Common/Type";
-import { useAccountDetails } from "../../../context/userContext";
+import { ColorSwatch, useMantineTheme, Tooltip } from '@mantine/core';
+import { useState, useEffect } from 'react';
+import { FixturaLoading } from '../../../components/Members/Common/Loading';
+import { P } from '../../../components/Members/Common/Type';
+import { useAccountDetails } from '../../../context/userContext';
 
 export const UI_SubscriptionStatus_TEXT = () => {
   const { account } = useAccountDetails();
@@ -20,12 +20,12 @@ export const UI_SubscriptionStatus_TEXT = () => {
   return (
     <>
       <P
-        textTransform="uppercase"
+        textTransform='uppercase'
         color={userAccount.attributes.orders?.data?.attributes.Status ? 6 : 8}
         Copy={`Subscription : ${
           userAccount.attributes.orders?.data?.attributes.Status
-            ? "Active"
-            : "InActive"
+            ? 'Active'
+            : 'InActive'
         }`}
       />
     </>
@@ -59,9 +59,9 @@ export const UI_SubscriptionStatus_Light = () => {
   return (
     <>
       {userAccount.attributes.orders?.data?.attributes.Status
-        ? CreateSwatch(theme.colors.members[6], "Active")
-        : CreateSwatch(theme.colors.members[8], "InActive")}
+        ? CreateSwatch(theme.colors.members[6], 'Active')
+        : CreateSwatch(theme.colors.members[8], 'InActive')}
     </>
   );
 };
-export default UI_SubscriptionStatus_TEXT
+export default UI_SubscriptionStatus_TEXT;

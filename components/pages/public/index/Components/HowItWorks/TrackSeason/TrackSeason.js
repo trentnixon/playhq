@@ -1,8 +1,8 @@
-import React, { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { H2, P } from "../../Primitives/Text";
-import styles from "./TrackSeason.module.scss";
+import React, { useEffect, useRef } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { H2, P } from '../../Primitives/Text';
+import styles from './TrackSeason.module.scss';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -22,8 +22,8 @@ const TrackSeason = () => {
       <div className={styles.content}>
         <div className={styles.calendar}>
           <img
-            src="https://fixtura.s3.ap-southeast-2.amazonaws.com/POS_Site_Human_002_b68f0ec64f.png"
-            alt="Calendar"
+            src='https://fixtura.s3.ap-southeast-2.amazonaws.com/POS_Site_Human_002_b68f0ec64f.png'
+            alt='Calendar'
           />
         </div>
         <div className={styles.copy}>

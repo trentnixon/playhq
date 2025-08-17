@@ -1,4 +1,3 @@
-
 import styled from 'styled-components';
 const MatchContainerStyles = styled.div`
   display: flex;
@@ -7,9 +6,8 @@ const MatchContainerStyles = styled.div`
   height: auto;
   max-width: 100%;
   margin: 0 auto;
- 
 `;
 
-export const MatchContainer = (props)=>{
-  return(<MatchContainerStyles>{props.children}</MatchContainerStyles>)
-}
+export const MatchContainer = props => {
+  return <MatchContainerStyles>{props.children}</MatchContainerStyles>;
+};

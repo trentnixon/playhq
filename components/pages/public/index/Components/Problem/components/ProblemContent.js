@@ -1,14 +1,14 @@
 // ProblemContent.jsx
-import React from "react";
-import { P, HighlightSpan, H1 } from "../../Primitives/Text";
-import { Container } from "../../Primitives/Containers";
-import styles from "./ProblemContent.module.scss";
+import React from 'react';
+import { P, HighlightSpan, H1 } from '../../Primitives/Text';
+import { Container } from '../../Primitives/Containers';
+import styles from './ProblemContent.module.scss';
 
 const ProblemContent = () => {
   return (
     <Container className={styles.problemContent}>
       <H1>
-        Manual content creation is <HighlightSpan>time-consuming</HighlightSpan>{" "}
+        Manual content creation is <HighlightSpan>time-consuming</HighlightSpan>{' '}
         and often <HighlightSpan>inconsistent.</HighlightSpan>
       </H1>
       <P>
@@ -19,9 +19,9 @@ const ProblemContent = () => {
       <div className={styles.contentSolution}>
         <div className={styles.images}>
           <img
-            src="https://fixtura.s3.ap-southeast-2.amazonaws.com/POS_Site_Human_001_a805230b3d.png"
-            alt="Image 1"
-            className="scale-in"
+            src='https://fixtura.s3.ap-southeast-2.amazonaws.com/POS_Site_Human_001_a805230b3d.png'
+            alt='Image 1'
+            className='scale-in'
           />
           {/* If you have more images, add them here without refs */}
           {/* Example:

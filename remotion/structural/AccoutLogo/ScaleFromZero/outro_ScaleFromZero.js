@@ -32,7 +32,12 @@ export const OutroScaleFromZero = () => {
     <ClubNameContainer>
       <LogoContainer
         style={{
-          transform: `scale(${SpringToFrom(25, 0, 1, 'Wobbly')}) scale(${SpringToFrom(FPS_OUTRO - 15, 1, 0, 'Slow')})`,
+          transform: `scale(${SpringToFrom(
+            25,
+            0,
+            1,
+            'Wobbly'
+          )}) scale(${SpringToFrom(FPS_OUTRO - 15, 1, 0, 'Slow')})`,
         }}
       >
         <ImageWithFallback src={logoSrc} style={{ width: '120px' }} />

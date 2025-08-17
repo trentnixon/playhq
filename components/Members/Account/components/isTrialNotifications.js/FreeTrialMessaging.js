@@ -1,20 +1,20 @@
-import { Group, useMantineTheme, Paper, Container } from "@mantine/core";
-import { IconAlertTriangleFilled } from "@tabler/icons-react";
+import { Group, useMantineTheme, Paper, Container } from '@mantine/core';
+import { IconAlertTriangleFilled } from '@tabler/icons-react';
 
-import { P } from "../../../Common/Type";
-import { getTrialNotificationStatus } from "../../../../../lib/members/getTrialNotificationStatus";
+import { P } from '../../../Common/Type';
+import { getTrialNotificationStatus } from '../../../../../lib/members/getTrialNotificationStatus';
 
 export const IsFreeTrialWelcome = ({ user }) => {
   const theme = useMantineTheme();
   const trialNotificationStatus = getTrialNotificationStatus(user);
 
-  if (trialNotificationStatus === "subscribed") {
+  if (trialNotificationStatus === 'subscribed') {
     return null; // If the user has an active subscription, no need to show the welcome message.
   }
 
   const welcomeConfig = {
     active_trial: {
-      headerText: "Free Trial Active!",
+      headerText: 'Free Trial Active!',
       message:
         "The trial gives full access and lasts for 14 days. After which, you'll need to SUBSCRIBE to continue receiving weekly digital assets to your inbox.",
       bgColor: theme.colors.green[0],
@@ -22,17 +22,17 @@ export const IsFreeTrialWelcome = ({ user }) => {
       textColor: 1,
     },
     ended_trial: {
-      headerText: "Trial Ended!",
+      headerText: 'Trial Ended!',
       message:
-        "Your trial has ended. Go to your account page to subscribe and continue receiving weekly assets to your inbox.",
+        'Your trial has ended. Go to your account page to subscribe and continue receiving weekly assets to your inbox.',
       bgColor: theme.colors.red[0],
       iconColor: theme.colors.red[5],
       textColor: 8,
     },
     available_trial: {
-      headerText: "Free Trial Available!",
+      headerText: 'Free Trial Available!',
       message:
-        "You have a free trial available! To activate, visit your account page and click the activate button.",
+        'You have a free trial available! To activate, visit your account page and click the activate button.',
       bgColor: theme.colors.blue[0],
       iconColor: theme.colors.blue[5],
       textColor: 4,
@@ -43,13 +43,11 @@ export const IsFreeTrialWelcome = ({ user }) => {
 
   if (!config) return false;
   return (
-    <Container fluid={true}>
-      <Group position="right">
-        <IconAlertTriangleFilled style={{ color: config?.iconColor }} />
-        <P Weight={400} marginBottom={0} color={"5"}>
-          {config?.headerText}
-        </P>
-      </Group>
-    </Container>
+    <Group position='left'>
+      <IconAlertTriangleFilled style={{ color: config?.iconColor }} />
+      <P Weight={400} marginBottom={0} color={'5'}>
+        {config?.headerText}
+      </P>
+    </Group>
   );
 };

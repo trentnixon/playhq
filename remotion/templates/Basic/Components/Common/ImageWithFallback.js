@@ -33,7 +33,6 @@ export const ImageWithFallback = ({
   return <Img src={imageSrc} {...rest} />;
 };
 
-
 /* import { useState, useEffect } from 'react';
 import { Img, delayRender, continueRender } from "remotion";
 

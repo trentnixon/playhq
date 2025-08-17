@@ -1,56 +1,56 @@
-import {SpringToFrom} from '../../../Animation/RemotionSpring';
-import {useStylesContext} from '../../../context/StyleContext';
+import { SpringToFrom } from '../../../Animation/RemotionSpring';
+import { useStylesContext } from '../../../context/StyleContext';
 
-export const BlankColorBackground = ({backgroundColor, FPS_MAIN}) => {
-	const BlankColorBackgroundStyles = {
-		backgroundColor,
-		width: `${SpringToFrom(90 - 15, 45, 70, 'Wobbly')}%`,
-		height: '100%',
-		zIndex: 1,
-		position: 'absolute',
-		opacity: 0.8,
-		right: 0,
-		transform: `translateX(${SpringToFrom(0, 1000, 0, 'Wobbly')}px)
+export const BlankColorBackground = ({ backgroundColor, FPS_MAIN }) => {
+  const BlankColorBackgroundStyles = {
+    backgroundColor,
+    width: `${SpringToFrom(90 - 15, 45, 70, 'Wobbly')}%`,
+    height: '100%',
+    zIndex: 1,
+    position: 'absolute',
+    opacity: 0.8,
+    right: 0,
+    transform: `translateX(${SpringToFrom(0, 1000, 0, 'Wobbly')}px)
 		scale(${SpringToFrom(FPS_MAIN + 90, 100, 200, 'Slow')}%)
         `,
-	};
+  };
 
-	return <div style={BlankColorBackgroundStyles} />;
+  return <div style={BlankColorBackgroundStyles} />;
 };
 
 export const SimpleBlankColorBackground = () => {
-	const {BuildProps} = useStylesContext();
-	const {BackgroundStyles} = BuildProps ?? {};
+  const { BuildProps } = useStylesContext();
+  const { BackgroundStyles } = BuildProps ?? {};
 
-	return (
-		<div
-			style={{
-				backgroundColor: BackgroundStyles.Color,
-				width: '100%',
-				height: '100%',
-				zIndex: 1,
-				position: 'absolute',
-				opacity: 1,
-			}}
-		/>
-	);
+  return (
+    <div
+      style={{
+        backgroundColor: BackgroundStyles.Color,
+        width: '100%',
+        height: '100%',
+        zIndex: 1,
+        position: 'absolute',
+        opacity: 1,
+      }}
+    />
+  );
 };
 
 export const DedicatedBlankColorBackground = () => {
-	const {BuildProps} = useStylesContext();
+  const { BuildProps } = useStylesContext();
 
-	const {BackgroundStyles, TemplateVariation} = BuildProps ?? {};
-	console.log('BackgroundStyles.Color, ', BackgroundStyles);
-	return (
-		<div
-			style={{
-				backgroundColor: TemplateVariation.useForcedColor,
-				width: '100%',
-				height: '100%',
-				zIndex: 1,
-				position: 'absolute',
-				opacity: 1,
-			}}
-		/>
-	);
+  const { BackgroundStyles, TemplateVariation } = BuildProps ?? {};
+  console.log('BackgroundStyles.Color, ', BackgroundStyles);
+  return (
+    <div
+      style={{
+        backgroundColor: TemplateVariation.useForcedColor,
+        width: '100%',
+        height: '100%',
+        zIndex: 1,
+        position: 'absolute',
+        opacity: 1,
+      }}
+    />
+  );
 };

@@ -1,8 +1,8 @@
 // ManageSubscriptionCTA.js
-import { useMantineTheme, Group } from "@mantine/core";
-import { useMediaQuery } from "@mantine/hooks";
-import BTN_ManageSubscription from "../../../../stripe/BTN_ManageAccount";
-import BTN_ChangePlan from "../../../../stripe/BTN_ChangePlan";
+import { useMantineTheme, Group } from '@mantine/core';
+import { useMediaQuery } from '@mantine/hooks';
+import BTN_ManageSubscription from '../../../../stripe/BTN_ManageAccount';
+import BTN_ChangePlan from '../../../../stripe/BTN_ChangePlan';
 
 const ManageSubscriptionCTA = ({ ORDER, setChangePlan, changePlan }) => {
   const theme = useMantineTheme();
@@ -15,18 +15,18 @@ const ManageSubscriptionCTA = ({ ORDER, setChangePlan, changePlan }) => {
   const isPaused = ORDER?.isPaused;
 
   return (
-    <Group position={mobile ? "center" : "right"} my={10}>
+    <Group position={mobile ? 'center' : 'right'} my={10}>
       {isActive && (
         <>
           <BTN_ChangePlan
             setChangePlan={setChangePlan}
             changePlan={changePlan}
           />
-          {!isPaused && <BTN_ManageSubscription Label="Manage" />}
-          <BTN_ManageSubscription Label="Cancel" theme="error" />
+          {!isPaused && <BTN_ManageSubscription Label='Manage' />}
+          <BTN_ManageSubscription Label='Cancel' theme='error' />
         </>
       )}
-      {isCancelling && <BTN_ManageSubscription Label="Renew" theme="cta" />}
+      {isCancelling && <BTN_ManageSubscription Label='Renew' theme='cta' />}
       {isCancelled && <></>}
     </Group>
   );

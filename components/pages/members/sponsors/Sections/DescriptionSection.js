@@ -1,8 +1,8 @@
-import { Group } from "@mantine/core";
-import { P } from "../../../../Members/Common/Type";
-import { PageCopyWrapper } from "../../../../Members/Common/Containers";
+import { Group } from '@mantine/core';
+import { P } from '../../../../Members/Common/Type';
+import { PageCopyWrapper } from '../../../../Members/Common/Containers';
 export const DescriptionSection = () => (
-  <Group position="apart">
+  <Group position='apart'>
     <PageCopyWrapper>
       <P>
         Centralize and manage all your sponsors here. Add up to 50 sponsors,

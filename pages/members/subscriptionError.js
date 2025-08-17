@@ -1,19 +1,19 @@
-import { useEffect } from "react";
-import { useRouter } from "next/router";
+import { useEffect } from 'react';
+import { useRouter } from 'next/router';
 
-import { useCancelCreateOrder } from "../../Hooks/useOrder";
+import { useCancelCreateOrder } from '../../Hooks/useOrder';
 import {
   MembersWrapper,
   ShadowWrapper,
   Wrapper,
-} from "../../components/Members/Common/Containers";
-import { PageTitle, P } from "../../components/Members/Common/Type";
-import { Box, Center, Container, Loader, Stack } from "@mantine/core";
-import { BTN_TOINTERALLINK } from "../../components/Members/Common/utils/Buttons";
-import { IconError404 } from "@tabler/icons";
-import { FixturaLoading } from "../../components/Members/Common/Loading";
-import { useAccountDetails } from "../../context/userContext";
-import Meta from "../../components/Layouts/Meta";
+} from '../../components/Members/Common/Containers';
+import { PageTitle, P } from '../../components/Members/Common/Type';
+import { Box, Center, Container, Loader, Stack } from '@mantine/core';
+import { BTN_TOINTERALLINK } from '../../components/Members/Common/utils/Buttons';
+import { IconError404 } from '@tabler/icons';
+import { FixturaLoading } from '../../components/Members/Common/Loading';
+import { useAccountDetails } from '../../context/userContext';
+import Meta from '../../components/Layouts/Meta';
 
 const StripeError = () => {
   const router = useRouter();
@@ -32,17 +32,17 @@ const StripeError = () => {
     if (order !== null) {
       ReRender(); // call the ReRender function when the order is cancelled
     }
-  }, [order]);
+  }, [order, ReRender]);
 
   if (isLoading) {
     return (
       <MembersWrapper>
         <Meta
-          title="Subscription Error - Fixtura: Resolve Issues"
+          title='Subscription Error - Fixtura: Resolve Issues'
           description="Address any subscription issues you encounter as a Fixtura member. Ensure your sports club's digital media services run smoothly."
-          keywords="Subscription error, Fixtura issues, sports media troubleshooting, club content problems, digital service resolution"
+          keywords='Subscription error, Fixtura issues, sports media troubleshooting, club content problems, digital service resolution'
         />
-        <Stack align="center">
+        <Stack align='center'>
           <FixturaLoading />
           <P>"Processing..."</P>
         </Stack>
@@ -54,11 +54,11 @@ const StripeError = () => {
     return (
       <MembersWrapper>
         <Meta
-          title="Subscription Error - Fixtura: Resolve Issues"
+          title='Subscription Error - Fixtura: Resolve Issues'
           description="Address any subscription issues you encounter as a Fixtura member. Ensure your sports club's digital media services run smoothly."
-          keywords="Subscription error, Fixtura issues, sports media troubleshooting, club content problems, digital service resolution"
+          keywords='Subscription error, Fixtura issues, sports media troubleshooting, club content problems, digital service resolution'
         />
-        <Stack align="center">
+        <Stack align='center'>
           <P color={8} Weight={900}>
             Error
           </P>
@@ -71,12 +71,12 @@ const StripeError = () => {
   return (
     <MembersWrapper>
       <Meta
-        title="Subscription Error - Fixtura: Resolve Issues"
+        title='Subscription Error - Fixtura: Resolve Issues'
         description="Address any subscription issues you encounter as a Fixtura member. Ensure your sports club's digital media services run smoothly."
-        keywords="Subscription error, Fixtura issues, sports media troubleshooting, club content problems, digital service resolution"
+        keywords='Subscription error, Fixtura issues, sports media troubleshooting, club content problems, digital service resolution'
       />
       <PageTitle
-        Copy={"SUBSCRIPTION CANCELLATION CONFIRMED"}
+        Copy={'SUBSCRIPTION CANCELLATION CONFIRMED'}
         ICON={<IconError404 />}
       />
       <Container>
@@ -95,9 +95,9 @@ const StripeError = () => {
         <ShadowWrapper>
           <Center>
             <BTN_TOINTERALLINK
-              LABEL="Go To Account"
-              URL="/members/"
-              THEME="cta"
+              LABEL='Go To Account'
+              URL='/members/'
+              THEME='cta'
             />
           </Center>
         </ShadowWrapper>

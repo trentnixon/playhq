@@ -1,10 +1,10 @@
-import React, { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { Container } from "../../pas/Primitives/Containers";
-import styles from "./Features.module.scss";
-import FeatureDescription from "./components/FeatureDescription";
-import FeatureDetails from "./components/FeatureDetails";
+import React, { useEffect, useRef } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { Container } from '../../pas/Primitives/Containers';
+import styles from './Features.module.scss';
+import FeatureDescription from './components/FeatureDescription';
+import FeatureDetails from './components/FeatureDetails';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -14,7 +14,7 @@ const Features = () => {
   useEffect(() => {
     const elements = featuresRef.current.querySelectorAll('.fade-in-up');
 
-    elements.forEach((el) => {
+    elements.forEach(el => {
       gsap.fromTo(
         el,
         { opacity: 0, y: 50 },

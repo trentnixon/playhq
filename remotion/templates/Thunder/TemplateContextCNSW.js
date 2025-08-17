@@ -1,5 +1,8 @@
 import React, { createContext, useContext } from 'react';
-import { loadFonts, createStyleProps } from '../../utils/global/init/initialize';
+import {
+  loadFonts,
+  createStyleProps,
+} from '../../utils/global/init/initialize';
 import { getPrimarySponsor } from '../../structural/Sponsors/Utils/utils';
 import { getStyleConfig } from '../../utils/global/init/getStyleConfig';
 
@@ -16,10 +19,15 @@ export const TemplateProvider = ({ children, settings, DATA }) => {
 
   // Create style config
   const StyleConfig = getStyleConfig(
-    createStyleProps(THEME, defaultFontFamily, settings.defaultCopyFontFamily, settings.gradientDegree)
+    createStyleProps(
+      THEME,
+      defaultFontFamily,
+      settings.defaultCopyFontFamily,
+      settings.gradientDegree
+    )
   );
 
-  console.log("StyleConfig ", StyleConfig)
+  console.log('StyleConfig ', StyleConfig);
 
   const BuildProps = {
     HeroImage: Video.HeroImage,
@@ -43,7 +51,7 @@ export const TemplateProvider = ({ children, settings, DATA }) => {
     Heights,
     BuildProps,
     hasPrimarySponsor,
-    DATA
+    DATA,
   };
 
   return (

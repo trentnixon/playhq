@@ -1,9 +1,8 @@
-import { useEffect, useState } from "react";
-import { loadStripe } from "@stripe/stripe-js";
-import { BTN_ONCLICK } from "../../../../../../Common/utils/Buttons";
-import { useCreateNewInstanceOfSubscription } from "../../../../../../../../Hooks/useCreateInvoice";
-import { Group } from "@mantine/core";
-
+import { useEffect, useState } from 'react';
+import { loadStripe } from '@stripe/stripe-js';
+import { BTN_ONCLICK } from '../../../../../../Common/utils/Buttons';
+import { useCreateNewInstanceOfSubscription } from '../../../../../../../../Hooks/useCreateInvoice';
+import { Group } from '@mantine/core';
 
 export const CreateNewSubscriber = ({ productId, selected, onConfirm }) => {
   const stripePromise = loadStripe(process.env.NEXT_PUBLIC_STRIPE_PK);
@@ -12,17 +11,17 @@ export const CreateNewSubscriber = ({ productId, selected, onConfirm }) => {
   const [loading, setLoading] = useState(false);
   const [confirmState, setConfirmState] = useState(false);
 
-  const handleBuy = async (productId) => {
+  const handleBuy = async productId => {
     setLoading(true);
     await CreateSubscription(productId)
       .then(() => setLoading(false))
-      .catch((err) => {
+      .catch(err => {
         console.error(err);
         setLoading(false);
       });
   };
 
-  const CreateStripePromise = async (Subscription) => {
+  const CreateStripePromise = async Subscription => {
     //console.log(Subscription);
     const stripe = await stripePromise;
     await stripe.redirectToCheckout({ sessionId: Subscription.id });
@@ -32,7 +31,7 @@ export const CreateNewSubscriber = ({ productId, selected, onConfirm }) => {
     if (Subscription !== null) {
       CreateStripePromise(Subscription)
         .then(() => setLoading(false))
-        .catch((err) => {
+        .catch(err => {
           console.error(err);
           setLoading(false);
         });
@@ -54,20 +53,18 @@ export const CreateNewSubscriber = ({ productId, selected, onConfirm }) => {
   };
 
   return (
-    <Group position="apart">
-     
+    <Group position='apart'>
       <BTN_ONCLICK
         LABEL={
-          loading ? "Processing..." : confirmState ? "Confirm" : "Purchase"
+          loading ? 'Processing...' : confirmState ? 'Confirm' : 'Purchase'
         }
         HANDLE={handleClick}
-        THEME="success"
+        THEME='success'
         DISABLED={loading || !selected}
       />
       {confirmState && (
-        <BTN_ONCLICK LABEL="Cancel" HANDLE={resetConfirmState} THEME="error" />
+        <BTN_ONCLICK LABEL='Cancel' HANDLE={resetConfirmState} THEME='error' />
       )}
     </Group>
   );
 };
-

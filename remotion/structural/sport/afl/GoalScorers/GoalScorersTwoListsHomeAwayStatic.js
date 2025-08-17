@@ -1,138 +1,140 @@
 // Importing necessary libraries and functions
 import styled from 'styled-components';
-import {GetBackgroundContractColorForText} from '../../../../utils/colors';
+import { GetBackgroundContractColorForText } from '../../../../utils/colors';
 import { restrictName } from '../../../../utils/copy';
 
 // Styled components for player performances
 const PlayerPerformanceContainer = styled.div`
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	width: 100%;
-	padding: 0 10px;
-	margin: 30px 0 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 10px;
+  margin: 30px 0 20px;
 `;
 
 const PerformancesContainer = styled.div`
-	display: flex;
-	flex-direction: column; // Players are listed vertically within each team's column
-	width: 50%; // Each team's performances take up half the container width
+  display: flex;
+  flex-direction: column; // Players are listed vertically within each team's column
+  width: 50%; // Each team's performances take up half the container width
 `;
 
 const PlayerList = styled.ul`
-	margin: 0;
-	padding: 0;
-	list-style: none;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 `;
 
 const PlayerItem = styled.li`
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	background-color: ${(props) => props.bgColor};
-	border-radius: ${(props) => props.borderRadius};
-	padding: 7px 10px;
-	margin: 2px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: ${props => props.bgColor};
+  border-radius: ${props => props.borderRadius};
+  padding: 7px 10px;
+  margin: 2px;
 `;
 
 const PlayerName = styled.span`
-	font-size: 2em;
-	color: ${(props) => props.color};
-	flex: 3; // Name takes up more space to accommodate longer names
+  font-size: 2em;
+  color: ${props => props.color};
+  flex: 3; // Name takes up more space to accommodate longer names
 `;
 
 const GoalsScored = styled.span`
-	font-size: 1.8em;
-	color: ${(props) => props.color};
-	flex: 1; // Score takes up less space
-	text-align: right;
+  font-size: 1.8em;
+  color: ${props => props.color};
+  flex: 1; // Score takes up less space
+  text-align: right;
 `;
 const SmallCopy = styled.span`
-	font-size: 1.5em;
-	color: ${(props) => props.color};
-	text-align: ${(props) => props.textAlign};
-	flex: 3; // Name takes up more space to accommodate longer names
+  font-size: 1.5em;
+  color: ${props => props.color};
+  text-align: ${props => props.textAlign};
+  flex: 3; // Name takes up more space to accommodate longer names
 `;
 // Main component updated to handle AFL player stats, separated into home and away
 export const GoalScorersTwoListsHomeAwayStatic = ({
-	matchData,
-	TemplateVariation,
-	StyleConfig,
+  matchData,
+  TemplateVariation,
+  StyleConfig,
 }) => {
-	const {Font, Color} = StyleConfig;
+  const { Font, Color } = StyleConfig;
 
-	// Function to sort and render top 5 player performance items for each team
-	const renderTopPerformers = (players, teamColor, FontColor) => {
-		const topPerformers = [...players]
-			.sort((a, b) => b.goals - a.goals)
-			.slice(0, 5);
+  // Function to sort and render top 5 player performance items for each team
+  const renderTopPerformers = (players, teamColor, FontColor) => {
+    const topPerformers = [...players]
+      .sort((a, b) => b.goals - a.goals)
+      .slice(0, 5);
 
-		return (
-			<>
-				<PlayerItem
-					style={{
-						...Font.Copy, // Apply the same font styling as other items
-					}}
-				>
-					<SmallCopy
-						color={GetBackgroundContractColorForText(
-							Color.Primary.Main,
-							Color.Secondary.Main
-						)}
-						textAlign="left"
-					>
-						{' '}
-					</SmallCopy>
+    return (
+      <>
+        <PlayerItem
+          style={{
+            ...Font.Copy, // Apply the same font styling as other items
+          }}
+        >
+          <SmallCopy
+            color={GetBackgroundContractColorForText(
+              Color.Primary.Main,
+              Color.Secondary.Main
+            )}
+            textAlign='left'
+          >
+            {' '}
+          </SmallCopy>
 
-					<SmallCopy
-						color={GetBackgroundContractColorForText(
-							Color.Primary.Main,
-							Color.Secondary.Main
-						)}
-						textAlign="right"
-					>
-						Goals
-					</SmallCopy>
-				</PlayerItem>
-				{topPerformers.map((player, index) => (
-					<PlayerItem
-						key={`${player.number}-${index}`}
-						bgColor={teamColor}
-						borderRadius={TemplateVariation.borderRadius}
-						style={{
-							...Font.Copy,
-						}}
-					>
-						<PlayerName color={FontColor}>{restrictName(player.player,25) }</PlayerName>
-						<GoalsScored color={FontColor}>{player.goals}</GoalsScored>
-					</PlayerItem>
-				))}
-			</>
-		);
-	};
+          <SmallCopy
+            color={GetBackgroundContractColorForText(
+              Color.Primary.Main,
+              Color.Secondary.Main
+            )}
+            textAlign='right'
+          >
+            Goals
+          </SmallCopy>
+        </PlayerItem>
+        {topPerformers.map((player, index) => (
+          <PlayerItem
+            key={`${player.number}-${index}`}
+            bgColor={teamColor}
+            borderRadius={TemplateVariation.borderRadius}
+            style={{
+              ...Font.Copy,
+            }}
+          >
+            <PlayerName color={FontColor}>
+              {restrictName(player.player, 25)}
+            </PlayerName>
+            <GoalsScored color={FontColor}>{player.goals}</GoalsScored>
+          </PlayerItem>
+        ))}
+      </>
+    );
+  };
 
-	return (
-		<PlayerPerformanceContainer>
-			<PerformancesContainer>
-				<PlayerList>
-					{renderTopPerformers(
-						matchData.teams.home.playerStats,
-						Color.Primary.Main,
-						Color.Primary.Contrast
-					)}
-				</PlayerList>
-			</PerformancesContainer>
-			<PerformancesContainer>
-				<PlayerList>
-					{renderTopPerformers(
-						matchData.teams.away.playerStats,
-						Color.Secondary.Main,
-						Color.Secondary.Contrast
-					)}
-				</PlayerList>
-			</PerformancesContainer>
-		</PlayerPerformanceContainer>
-	);
+  return (
+    <PlayerPerformanceContainer>
+      <PerformancesContainer>
+        <PlayerList>
+          {renderTopPerformers(
+            matchData.teams.home.playerStats,
+            Color.Primary.Main,
+            Color.Primary.Contrast
+          )}
+        </PlayerList>
+      </PerformancesContainer>
+      <PerformancesContainer>
+        <PlayerList>
+          {renderTopPerformers(
+            matchData.teams.away.playerStats,
+            Color.Secondary.Main,
+            Color.Secondary.Contrast
+          )}
+        </PlayerList>
+      </PerformancesContainer>
+    </PlayerPerformanceContainer>
+  );
 };
 
 // Dev Notes:

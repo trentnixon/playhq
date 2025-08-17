@@ -1,10 +1,10 @@
-import React from "react";
-import FunFacts from "../components/Common/FunFacts";
-import LayoutNoNavbar from "../components/Layouts/LayoutNoNavbar";
-import { ExpressionOfInterestForm } from "../components/pages/public/ExpressionOfInterest/Form";
-import { useState } from "react";
-import FunFactsTwo from "../components/Common/FunFactsTwo";
-import PromotionalBanner from "../components/pages/public/index/PromotionalBanner";
+import React from 'react';
+import FunFacts from '../components/Common/FunFacts';
+import LayoutNoNavbar from '../components/Layouts/LayoutNoNavbar';
+import { ExpressionOfInterestForm } from '../components/pages/public/ExpressionOfInterest/Form';
+import { useState } from 'react';
+import FunFactsTwo from '../components/Common/FunFactsTwo';
+import PromotionalBanner from '../components/pages/public/index/PromotionalBanner';
 
 const EarlyAccess = () => {
   const [hasSent, setHasSent] = useState(false);
@@ -15,11 +15,11 @@ const EarlyAccess = () => {
       <Benefits />
 
       <SectionContainers BG={`bg-f9f9f9`}>
-        <div className="container mt-5 col-lg-8 offset-lg-2">
+        <div className='container mt-5 col-lg-8 offset-lg-2'>
           {hasSent ? (
             false
           ) : (
-            <h1 className="mb-3 ">SIGN UP FOR EARLY ACCESS</h1>
+            <h1 className='mb-3 '>SIGN UP FOR EARLY ACCESS</h1>
           )}
 
           {hasSent ? (
@@ -44,42 +44,42 @@ const EarlyAccess = () => {
   );
 };
 
-EarlyAccess.getLayout = (page) => <LayoutNoNavbar>{page}</LayoutNoNavbar>;
+EarlyAccess.getLayout = page => <LayoutNoNavbar>{page}</LayoutNoNavbar>;
 
 export default EarlyAccess;
 
-const SectionContainers = (props) => {
-  const { BG = "bg-fcfbfb" } = props;
+const SectionContainers = props => {
+  const { BG = 'bg-fcfbfb' } = props;
   return (
     <div className={`${BG} pt-100 pb-70`}>
-      <div className="container">{props.children}</div>
+      <div className='container'>{props.children}</div>
     </div>
   );
 };
 
 const videoContainerStyles = {
-  position: "relative",
-  paddingBottom: "56.25%", // Aspect ratio for 16:9
-  height: "0",
-  overflow: "hidden",
+  position: 'relative',
+  paddingBottom: '56.25%', // Aspect ratio for 16:9
+  height: '0',
+  overflow: 'hidden',
 };
 
 const iframeStyles = {
-  position: "absolute",
-  top: "0",
-  left: "0",
-  width: "100%",
-  height: "100%",
+  position: 'absolute',
+  top: '0',
+  left: '0',
+  width: '100%',
+  height: '100%',
 };
 const YouTubeVideo = ({ videoId }) => (
-  <div className="container mt-5 col-lg-8 offset-lg-2">
+  <div className='container mt-5 col-lg-8 offset-lg-2'>
     <div style={videoContainerStyles}>
       <iframe
         style={iframeStyles}
         src={`https://www.youtube.com/embed/${videoId}`}
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
         allowFullScreen
-        title="YouTube video player"
+        title='YouTube video player'
       ></iframe>
     </div>
   </div>
@@ -87,11 +87,11 @@ const YouTubeVideo = ({ videoId }) => (
 
 const Benefits = () => {
   return (
-    <div className="">
-      <div className="container">
-        <div className="section-title">
+    <div className=''>
+      <div className='container'>
+        <div className='section-title'>
           <h2>Join Our Early Access Program</h2>
-          <h3 className="text-center mb-4">
+          <h3 className='text-center mb-4'>
             Be Among the First to Try Our Revolutionary AI-Powered Content
             Creation Platform for Cricket Clubs and Associations
           </h3>
@@ -104,18 +104,18 @@ const Benefits = () => {
             first-hand.
           </p>
         </div>
-        <YouTubeVideo videoId="k7ps0D5Pma8" />
-        <div className="row align-items-center">
-          <div className="col-lg-6 col-md-12">
-            <div className="saas-how-it-works-content white-color">
+        <YouTubeVideo videoId='k7ps0D5Pma8' />
+        <div className='row align-items-center'>
+          <div className='col-lg-6 col-md-12'>
+            <div className='saas-how-it-works-content white-color'>
               <ul>
                 <li
-                  data-aos="fade-in"
-                  data-aos-duration="1200"
+                  data-aos='fade-in'
+                  data-aos-duration='1200'
                   data-aos-delay={100}
-                  className="aos-init aos-animate"
+                  className='aos-init aos-animate'
                 >
-                  <i className="fa-solid fa-clock"></i>
+                  <i className='fa-solid fa-clock'></i>
                   <h3>Save Time and Resources</h3>
                   <p>
                     Let Fixtura handle the creation of fixture and results
@@ -123,12 +123,12 @@ const Benefits = () => {
                   </p>
                 </li>
                 <li
-                  data-aos="fade-in"
-                  data-aos-duration="1200"
+                  data-aos='fade-in'
+                  data-aos-duration='1200'
                   data-aos-delay={200}
-                  className="aos-init aos-animate"
+                  className='aos-init aos-animate'
                 >
-                  <i className="icon fa-solid fa-pencil-alt"></i>
+                  <i className='icon fa-solid fa-pencil-alt'></i>
                   <h3>Create High-Quality Content</h3>
                   <p>
                     Engage your members with dynamic and eye-catching videos,
@@ -137,30 +137,30 @@ const Benefits = () => {
                   </p>
                 </li>
                 <li
-                  data-aos="fade-in"
-                  data-aos-duration="1200"
+                  data-aos='fade-in'
+                  data-aos-duration='1200'
                   data-aos-delay={300}
-                  className="aos-init aos-animate"
+                  className='aos-init aos-animate'
                 >
-                  <i className="icon fa-solid fa-users"></i>
+                  <i className='icon fa-solid fa-users'></i>
                   <h3>Engage your members</h3>
                   <p>
                     Keep your members informed and engaged with dynamic and
                     eye-catching videos, images, and written content
-                  </p>{" "}
+                  </p>{' '}
                 </li>
               </ul>
             </div>
           </div>
-          <div className="col-lg-6 col-md-12">
+          <div className='col-lg-6 col-md-12'>
             <div
-              className="saas-how-it-works-image aos-init aos-animate"
-              data-aos="fade-up"
-              data-aos-duration="1200"
+              className='saas-how-it-works-image aos-init aos-animate'
+              data-aos='fade-up'
+              data-aos-duration='1200'
             >
               <img
-                src="/images/Moss_Vale_Cricket_Club_Ladder_3d3a441b8864.png"
-                alt="image"
+                src='/images/Moss_Vale_Cricket_Club_Ladder_3d3a441b8864.png'
+                alt='image'
               />
             </div>
           </div>

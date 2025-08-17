@@ -1,9 +1,9 @@
 /* eslint-disable camelcase */
 
-import { loadFont } from "@remotion/google-fonts/Heebo";
-import { WeekendSingleGameResult } from "../Compositions/WeekendSingleGameResult";
-import { AbsoluteFill } from "remotion";
-export const Example_Video_WeekendSingleGameResult = (props) => {
+import { loadFont } from '@remotion/google-fonts/Heebo';
+import { WeekendSingleGameResult } from '../Compositions/WeekendSingleGameResult';
+import { AbsoluteFill } from 'remotion';
+export const Example_Video_WeekendSingleGameResult = props => {
   const { DATA } = props;
   const { fontFamily } = loadFont();
   const { TIMINGS } = DATA;

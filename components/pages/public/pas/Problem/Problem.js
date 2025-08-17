@@ -1,12 +1,12 @@
-import React, { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import React, { useEffect, useRef } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
-import ProblemStats from "./components/ProblemStats";
-import ProblemDashboard from "./components/ProblemDashboard";
-import { Container, GradientContainer } from "../../pas/Primitives/Containers";
-import styles from "./Problem.module.scss";
-import ProblemContent from "../../index/Components/Problem/components/ProblemContent";
+import ProblemStats from './components/ProblemStats';
+import ProblemDashboard from './components/ProblemDashboard';
+import { Container, GradientContainer } from '../../pas/Primitives/Containers';
+import styles from './Problem.module.scss';
+import ProblemContent from '../../index/Components/Problem/components/ProblemContent';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -22,8 +22,8 @@ const Problem = () => {
       .timeline({
         scrollTrigger: {
           trigger: problemRef.current,
-          start: "top 100px",
-          end: "bottom bottom",
+          start: 'top 100px',
+          end: 'bottom bottom',
           scrub: true,
           pin: true,
           markers: false,

@@ -7,7 +7,7 @@ export const useLogUser = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null); // Add this line
 
-  const CreateLogUser = async (INFO) => {
+  const CreateLogUser = async INFO => {
     setLoading(true);
     setError(null); // Reset error before new request
     try {
@@ -20,13 +20,13 @@ export const useLogUser = () => {
             'Content-Type': 'application/json',
           },
           body: JSON.stringify(INFO),
-        } 
+        }
       );
 
       if (response.error) {
         setError(response.error); // Update this line
       } else {
-        await setToken(response);   
+        await setToken(response);
         setLogUser(response.user);
       }
     } catch (err) {

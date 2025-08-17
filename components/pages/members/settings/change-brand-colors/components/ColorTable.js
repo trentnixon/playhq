@@ -1,12 +1,12 @@
-import { useMantineTheme } from "@mantine/styles";
-import { DisplayCustomTheme } from "../../../../../Members/Common/Customiser/Design/Components/DisplayCustomTheme";
-import { P } from "../../../../../Members/Common/Type";
+import { useMantineTheme } from '@mantine/styles';
+import { DisplayCustomTheme } from '../../../../../Members/Common/Customiser/Design/Components/DisplayCustomTheme';
+import { P } from '../../../../../Members/Common/Type';
 
-import { Group, Table } from "@mantine/core";
-import { Swatches } from "./Swatches";
-import { SelectButton } from "./SelectButton";
+import { Group, Table } from '@mantine/core';
+import { Swatches } from './Swatches';
+import { SelectButton } from './SelectButton';
 
-export const ColorTable = (props) => {
+export const ColorTable = props => {
   const { GetElement, userAccount, StoreUSerChange } = props;
   const theme = useMantineTheme();
   return (
@@ -45,7 +45,7 @@ const TableRow = ({ item, userAccount, StoreUSerChange }) => {
         </P>
       </td>
       <td>
-        <Group position="center" spacing="xs">
+        <Group position='center' spacing='xs'>
           <Swatches
             colors={[
               item.attributes.Theme.primary,
@@ -54,11 +54,11 @@ const TableRow = ({ item, userAccount, StoreUSerChange }) => {
           />
         </Group>
       </td>
-      <td style={{ textAlign: "right" }}>
+      <td style={{ textAlign: 'right' }}>
         <SelectButton
           isSelected={isSelected}
           onClick={() => StoreUSerChange(item)}
-          label="Select"
+          label='Select'
         />
       </td>
     </tr>

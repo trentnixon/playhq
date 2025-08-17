@@ -1,5 +1,5 @@
-import { Paper, ScrollArea } from "@mantine/core";
-import ReactMarkdown from "react-markdown";
+import { Paper, ScrollArea } from '@mantine/core';
+import ReactMarkdown from 'react-markdown';
 export const DisplayWriteups = ({ selectedMedia }) => {
   //console.log(selectedMedia);
 
@@ -70,7 +70,7 @@ Player Name 5's explosive batting display for Team 5 against Opponent Team 5 was
 
 These top 5 run scorers showcased their exceptional batting skills and played crucial roles in their respective teams' performances. Their ability to adapt to match situations, maintain a high strike rate, and deliver impactful innings make them valuable assets in the game of cricket.`,
     },
-    "Up Coming Fixtures (abstract)": {
+    'Up Coming Fixtures (abstract)': {
       COPY: `# Easts U15  vs RJCC U14 
 Coastal U15 vs Mountain U14
 Get ready for an enthralling battle as the Coastal U15 Waves take on the Mountain U14 Challengers in a highly anticipated T20 cricket match. This clash of strategy and skill is scheduled for Friday, December 1, 2023, at the picturesque Seaside Park's Oval 2. Prepare yourself for an intense display of talent and competition.
@@ -83,7 +83,7 @@ As the stage is set for the Coastal U15 Waves and the Mountain U14 Challengers t
       
 So mark your calendars, cricket enthusiasts, as the Coastal U15 Waves and the Mountain U14 Challengers gear up to deliver a captivating display of cricketing prowess. Prepare yourself for astonishing shots, wicket-taking deliveries, and tactical maneuvers that will keep you on the edge of your seat. Witness a clash of titans that will leave a lasting impact on the Friday PM U15 Spring competition.`,
     },
-    "Weekend Results": {
+    'Weekend Results': {
       COPY: `# **Lakeside 2nd Grade Clinch Thrilling Victory Against Hilltop Burrawang 2nd Grade**
 In an intense cricket showdown, Lakeside 2nd Grade claimed a thrilling victory over Hilltop Burrawang 2nd Grade.
 
@@ -108,9 +108,9 @@ Lakeside's victory was a testament to their all-round performance. Jordan Patter
   if (WRITEUPOBJ[selectedMedia?.CompositionID] === undefined) return false;
   return (
     <>
-      <Paper p={10} withBorder shadow="md" mb={20} w={"100%"}>
+      <Paper p={10} withBorder shadow='md' mb={20} w={'100%'}>
         <ScrollArea h={700}>
-          <ReactMarkdown className="markdown">
+          <ReactMarkdown className='markdown'>
             {WRITEUPOBJ[selectedMedia.CompositionID].COPY}
           </ReactMarkdown>
         </ScrollArea>

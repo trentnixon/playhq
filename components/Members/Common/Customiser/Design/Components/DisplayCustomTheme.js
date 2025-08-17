@@ -8,48 +8,53 @@ import {
   Table,
   Tooltip,
   useMantineTheme,
-} from "@mantine/core";
+} from '@mantine/core';
 
-import { BTN_ONCLICK } from "../../../utils/Buttons";
-import { IconCircleCheck, IconEditCircle } from "@tabler/icons";
+import { BTN_ONCLICK } from '../../../utils/Buttons';
+import { IconCircleCheck, IconEditCircle } from '@tabler/icons';
 
-import { P } from "../../../Type";
-import { IconEdit } from "@tabler/icons-react";
-import { FindAccountLabel } from "../../../../../../lib/actions";
-import { useMediaQuery } from "@mantine/hooks";
+import { P } from '../../../Type';
+import { IconEdit } from '@tabler/icons-react';
+import { FindAccountLabel } from '../../../../../../lib/actions';
+import { useMediaQuery } from '@mantine/hooks';
 
-export const DisplayCustomTheme = (props) => {
+export const DisplayCustomTheme = props => {
   const { GetElement, userAccount, StoreUSerChange, setCreateNew } = props;
 
   //useEffect(()=>{},[userAccount])
- 
+
   const CTHEME = GetElement.filter(
-    (item) => item.attributes.CreatedBy === userAccount.id
+    item => item.attributes.CreatedBy === userAccount.id
   );
 
   const theme = useMantineTheme();
   const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
-  const swatches = (ARR) => {
-    return ARR.map((color) => (
-      <ColorSwatch key={color} color={color} size={mobile?14:25} radius='xl' />
+  const swatches = ARR => {
+    return ARR.map(color => (
+      <ColorSwatch
+        key={color}
+        color={color}
+        size={mobile ? 14 : 25}
+        radius='xl'
+      />
     ));
   };
   if (CTHEME.length === 0)
     return (
       <Paper
-        radius="md"
+        radius='md'
         withBorder
-        p="sm"
+        p='sm'
         mb={20}
-        sx={(theme) => ({
+        sx={theme => ({
           backgroundColor: theme.white,
         })}
       >
-        <Group position="apart">
+        <Group position='apart'>
           <P marginBottom={0}>Create your own Theme!</P>
           <BTN_ONCLICK
-            LABEL={"Create New"}
-            THEME={"success"}
+            LABEL={'Create New'}
+            THEME={'success'}
             HANDLE={() => {
               setCreateNew(true);
             }}
@@ -65,7 +70,7 @@ export const DisplayCustomTheme = (props) => {
             return (
               <tr key={i} style={{}}>
                 <td>
-                  <Group position="center" spacing="xs">
+                  <Group position='center' spacing='xs'>
                     {swatches([
                       item.attributes.Theme.primary,
                       item.attributes.Theme.secondary,
@@ -90,7 +95,7 @@ export const DisplayCustomTheme = (props) => {
                     )}
                   </Group>
                 </td>
-                <td style={{ textAlign: "right" }}>
+                <td style={{ textAlign: 'right' }}>
                   {userAccount.attributes.theme.data.id === item.id ? (
                     <BTN_ONCLICK
                       HANDLE={() => {

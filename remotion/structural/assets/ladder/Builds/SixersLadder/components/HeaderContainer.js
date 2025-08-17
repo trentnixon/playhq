@@ -1,77 +1,77 @@
 import styled from 'styled-components';
-import {useCurrentFrame} from 'remotion';
+import { useCurrentFrame } from 'remotion';
 import {
-	FromMiddle,
-	FromTopToBottom,
+  FromMiddle,
+  FromTopToBottom,
 } from '../../../../../../Animation/ClipWipe';
-import {interpolateOpacityByFrame} from '../../../../../../Animation/interpolate';
-import {restrictString} from '../../../../../../utils/copy';
-import {useStylesContext} from '../../../../../../context/StyleContext';
-import {useLayoutContext} from '../../../../../../context/LayoutContext';
+import { interpolateOpacityByFrame } from '../../../../../../Animation/interpolate';
+import { restrictString } from '../../../../../../utils/copy';
+import { useStylesContext } from '../../../../../../context/StyleContext';
+import { useLayoutContext } from '../../../../../../context/LayoutContext';
 
 const HeaderContainerStyles = styled.div`
-	display: flex;
-	justify-content: space-between;
-	align-items: flex-end;
-	height: 60px;
-	padding: 0 10px;
-	margin-bottom: 0px;
-	border-bottom: 3px solid white;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  height: 60px;
+  padding: 0 10px;
+  margin-bottom: 0px;
+  border-bottom: 3px solid white;
 `;
 
 const HeaderCopy = styled.p`
-	display: block;
-	text-transform: uppercase;
-	width: auto;
-	width: 100%;
-	margin: 0;
+  display: block;
+  text-transform: uppercase;
+  width: auto;
+  width: 100%;
+  margin: 0;
 `;
 
-export const HeaderContainer = (props) => {
-	const {Ladder} = props;
-	const {name} = Ladder;
+export const HeaderContainer = props => {
+  const { Ladder } = props;
+  const { name } = Ladder;
 
-	const {StyleConfig, BuildProps, TextStyles} = useStylesContext();
-	const {TIMINGS} = useLayoutContext();
-	const {TemplateVariation} = BuildProps;
-	const {FPS_LADDER} = TIMINGS;
-	const {Font, Color} = StyleConfig;
+  const { StyleConfig, BuildProps, TextStyles } = useStylesContext();
+  const { TIMINGS } = useLayoutContext();
+  const { TemplateVariation } = BuildProps;
+  const { FPS_LADDER } = TIMINGS;
+  const { Font, Color } = StyleConfig;
 
-	const frame = useCurrentFrame();
-	return (
-		<HeaderContainerStyles
-			Color={Color}
-			style={{
-				clipPath: FromMiddle(7, 'Wobbly'),
-				borderRadius: TemplateVariation.borderRadius,
-				opacity: interpolateOpacityByFrame(
-					frame,
-					FPS_LADDER - 30,
-					FPS_LADDER,
-					1,
-					0
-				),
-			}}
-		>
-			<HeaderCopy
-				style={{
-					...Font.Copy,
-					...TextStyles.copyMedium,
-					textAlign: 'right',
-					color: Color.Primary.Contrast,
-					clipPath: FromTopToBottom(30, 'Slow'),
-					opacity: interpolateOpacityByFrame(
-						frame,
-						FPS_LADDER - 30,
-						FPS_LADDER,
-						1,
-						0
-					),
-				}}
-			>
-				{restrictString(name, 30)}
-			</HeaderCopy>
-			{/* <HeaderCopy
+  const frame = useCurrentFrame();
+  return (
+    <HeaderContainerStyles
+      Color={Color}
+      style={{
+        clipPath: FromMiddle(7, 'Wobbly'),
+        borderRadius: TemplateVariation.borderRadius,
+        opacity: interpolateOpacityByFrame(
+          frame,
+          FPS_LADDER - 30,
+          FPS_LADDER,
+          1,
+          0
+        ),
+      }}
+    >
+      <HeaderCopy
+        style={{
+          ...Font.Copy,
+          ...TextStyles.copyMedium,
+          textAlign: 'right',
+          color: Color.Primary.Contrast,
+          clipPath: FromTopToBottom(30, 'Slow'),
+          opacity: interpolateOpacityByFrame(
+            frame,
+            FPS_LADDER - 30,
+            FPS_LADDER,
+            1,
+            0
+          ),
+        }}
+      >
+        {restrictString(name, 30)}
+      </HeaderCopy>
+      {/* <HeaderCopy
 				style={{
 					...Font.Copy,
 					...TextStyles.copyMedium,
@@ -89,6 +89,6 @@ export const HeaderContainer = (props) => {
 			>
 				{restrictString(competition, 25)}
 			</HeaderCopy> */}
-		</HeaderContainerStyles>
-	);
+    </HeaderContainerStyles>
+  );
 };

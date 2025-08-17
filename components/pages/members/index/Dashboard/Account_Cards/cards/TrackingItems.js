@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
-import { ThemeIcon, Text, Group, Paper, rem, Space } from "@mantine/core";
-import { BTN_TOINTERALLINK } from "../../../../../../Members/Common/utils/Buttons";
-import { useStyles } from "../../DashboardCardStyles";
-import { IconTrack, IconUpload } from "@tabler/icons-react";
-import Adminfetcher from "../../../../../../../lib/Adminfetcher";
-import { getIdFromLocalCookie } from "../../../../../../../lib/auth";
+import React, { useEffect, useState } from 'react';
+import { ThemeIcon, Text, Group, Paper, rem, Space } from '@mantine/core';
+import { BTN_TOINTERALLINK } from '../../../../../../Members/Common/utils/Buttons';
+import { useStyles } from '../../DashboardCardStyles';
+import { IconTrack, IconUpload } from '@tabler/icons-react';
+import Adminfetcher from '../../../../../../../lib/Adminfetcher';
+import { getIdFromLocalCookie } from '../../../../../../../lib/auth';
 
 const ICON_SIZE = rem(60);
 async function GetTracking() {
@@ -15,7 +15,7 @@ async function GetTracking() {
 // Extracted the zero-item state into its own component for readability
 const ZeroItemsState = ({ classes, Theme }) => (
   <Paper
-    radius="md"
+    radius='md'
     withBorder
     className={classes.card}
     mt={`calc(${ICON_SIZE} / 3)`}
@@ -27,22 +27,22 @@ const ZeroItemsState = ({ classes, Theme }) => (
       radius={ICON_SIZE}
     >
       <IconTrack
-        size="2rem"
+        size='2rem'
         stroke={1.5}
-        color={"white"} // Add your contrast color function
+        color={'white'} // Add your contrast color function
       />
     </ThemeIcon>
-    <Text ta="center" fw={700} className={classes.title}>
+    <Text ta='center' fw={700} className={classes.title}>
       {0}
     </Text>
-    <Text c="dimmed" ta="center" fz="sm">
+    <Text c='dimmed' ta='center' fz='sm'>
       No Games Tracked
     </Text>
-    <Text c="dimmed" ta="center" fz="sm">
+    <Text c='dimmed' ta='center' fz='sm'>
       Fixtura will update these numbers when games are found on PlayHQ.
     </Text>
-    <Group position="center" mt="md">
-      <BTN_TOINTERALLINK LABEL={"Start Tracking"} URL={"members/tracking/"} />
+    <Group position='center' mt='md'>
+      <BTN_TOINTERALLINK LABEL={'Start Tracking'} URL={'members/tracking/'} />
     </Group>
   </Paper>
 );
@@ -86,40 +86,40 @@ export const DashBoardTrackingItems = ({ IconComponent, AccountID, Theme }) => {
   }
   return (
     <Paper
-      radius="md"
+      radius='md'
       withBorder
-      shadow="md"
+      shadow='md'
       className={classes.card}
       mt={`calc(${ICON_SIZE} / 3)`}
     >
       <ThemeIcon
-        color={"green.5"}
+        color={'green.5'}
         className={classes.icon}
         size={ICON_SIZE}
         radius={ICON_SIZE}
       >
         <IconTrack
-          size="2rem"
+          size='2rem'
           stroke={1.5}
-          color={"white"} // Add your contrast color function
+          color={'white'} // Add your contrast color function
         />
       </ThemeIcon>
-      <Text ta="center" fw={700} className={classes.title}>
+      <Text ta='center' fw={700} className={classes.title}>
         Tracking {totalGames}
       </Text>
-      <Text c="dimmed" ta="center" fz="sm">
+      <Text c='dimmed' ta='center' fz='sm'>
         Games
       </Text>
       <Space h={10} />
-      <Text ta="center" fw={700} className={classes.title}>
+      <Text ta='center' fw={700} className={classes.title}>
         Over {totalDates}
       </Text>
-      <Text c="dimmed" ta="center" fz="sm">
+      <Text c='dimmed' ta='center' fz='sm'>
         Dates
       </Text>
 
-      <Group position="center" mt="md">
-        <BTN_TOINTERALLINK LABEL={"View Games"} URL={"members/tracking/"} />
+      <Group position='center' mt='md'>
+        <BTN_TOINTERALLINK LABEL={'View Games'} URL={'members/tracking/'} />
       </Group>
     </Paper>
   );

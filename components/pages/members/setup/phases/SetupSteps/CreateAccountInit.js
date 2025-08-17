@@ -1,25 +1,23 @@
-import { Box } from "@mantine/core";
-import { useState } from "react";
-import Cookies from "js-cookie";
+import { Box } from '@mantine/core';
+import { useState } from 'react';
+import Cookies from 'js-cookie';
 
-import { getIdFromLocalCookie } from "../../../../../../lib/auth";
-import { fetcher } from "../../../../../../lib/api";
-import { BTN_ONCLICK } from "../../../../../Members/Common/utils/Buttons";
-import { FixturaLoading } from "../../../../../Members/Common/Loading";
-import { useCreateScheduler } from "../../../../../../Hooks/useScheduler";
+import { getIdFromLocalCookie } from '../../../../../../lib/auth';
+import { fetcher } from '../../../../../../lib/api';
+import { BTN_ONCLICK } from '../../../../../Members/Common/utils/Buttons';
+import { FixturaLoading } from '../../../../../Members/Common/Loading';
 
 export const CreateAccountInit = ({ setAccountsetup }) => {
   const [ACCOUNTID, setACCOUNTID] = useState(false);
-  const [data, CreateData] = useCreateScheduler();
+  /*   const [data, CreateData] = useCreateScheduler(); */
   const [loading, setLoading] = useState(false);
 
-  const createAccount = async (ID) => {
+  const createAccount = async ID => {
     if (!ACCOUNTID) {
       try {
         const data = await postAccountData(ID);
         setAccountsetup(data);
         setACCOUNTID(true);
-        CreateData(data.data.id);
       } catch (error) {
         console.error(error);
       } finally {
@@ -28,23 +26,26 @@ export const CreateAccountInit = ({ setAccountsetup }) => {
     }
   };
 
-  const postAccountData = (ID) => {
-    return fetcher(`${process.env.NEXT_PUBLIC_STRAPI_URL}/accounts`, {
-      method: "POST",
-      body: JSON.stringify({
-        data: {
-          user: [ID],
-          theme: [7],
-          template: [1],
-          audio_option: [1],
+  const postAccountData = ID => {
+    return fetcher(
+      `${process.env.NEXT_PUBLIC_STRAPI_URL}/account/createAccount`,
+      {
+        method: 'POST',
+        body: JSON.stringify({
+          data: {
+            user: [ID],
+            theme: [7],
+            template: [1],
+            audio_option: [1],
+          },
+        }),
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${Cookies.get('jwt')}`,
         },
-      }),
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${Cookies.get("jwt")}`,
-      },
-    });
+      }
+    );
   };
 
   const fetchData = async () => {
@@ -61,7 +62,7 @@ export const CreateAccountInit = ({ setAccountsetup }) => {
         <BTN_ONCLICK
           LABEL={"Let's Get Started"}
           HANDLE={fetchData}
-          THEME="success"
+          THEME='success'
         />
       )}
     </Box>

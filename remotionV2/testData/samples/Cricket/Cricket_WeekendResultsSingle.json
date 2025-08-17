@@ -1,0 +1,785 @@
+{
+  "data": [
+    {
+      "gameID": "d4adc2eb",
+      "status": "Final",
+      "homeTeam": {
+        "name": "Australia",
+        "isHome": true,
+        "logo": {
+          "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/logo_51_6b9fe4b2b0.png",
+          "width": 379,
+          "height": 303
+        },
+        "score": "8/272",
+        "overs": "(50.0)",
+        "homeScoresFirstInnings": "1",
+        "battingPerformances": [
+          {
+            "player": "Steve Smith",
+            "runs": 102,
+            "balls": 88,
+            "fours": 14,
+            "sixes": 2,
+            "SR": 115.9,
+            "team": "Australia",
+            "notOut": false
+          },
+          {
+            "player": "Marnus Labuschagne",
+            "runs": 85,
+            "balls": 90,
+            "fours": 8,
+            "sixes": 1,
+            "SR": 94.4,
+            "team": "Australia",
+            "notOut": false
+          },
+          {
+            "player": "Travis Head",
+            "runs": 45,
+            "balls": 52,
+            "fours": 4,
+            "sixes": 0,
+            "SR": 86.5,
+            "team": "Australia",
+            "notOut": false
+          }
+        ],
+        "bowlingPerformances": [
+          {
+            "player": "Mitchell Starc",
+            "overs": 10,
+            "maidens": 1,
+            "runs": 45,
+            "wickets": 3,
+            "economy": "4.50",
+            "team": "India"
+          },
+          {
+            "player": "Jasprit Bumrah",
+            "overs": 10,
+            "maidens": 0,
+            "runs": 52,
+            "wickets": 2,
+            "economy": "5.20",
+            "team": "India"
+          },
+          {
+            "player": "Ravindra Jadeja",
+            "overs": 10,
+            "maidens": 0,
+            "runs": 48,
+            "wickets": 2,
+            "economy": "4.80",
+            "team": "India"
+          }
+        ],
+        "isClubTeam": false
+      },
+      "awayTeam": {
+        "name": "India",
+        "isHome": false,
+        "logo": {
+          "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
+          "width": 128,
+          "height": 128
+        },
+        "score": "7/268",
+        "overs": "(50.0)",
+        "awayScoresFirstInnings": "1",
+        "battingPerformances": [
+          {
+            "player": "Virat Kohli",
+            "runs": 95,
+            "balls": 90,
+            "fours": 12,
+            "sixes": 1,
+            "SR": 105.5,
+            "team": "India",
+            "notOut": false
+          },
+          {
+            "player": "Rohit Sharma",
+            "runs": 67,
+            "balls": 75,
+            "fours": 8,
+            "sixes": 0,
+            "SR": 89.3,
+            "team": "India",
+            "notOut": false
+          },
+          {
+            "player": "KL Rahul",
+            "runs": 45,
+            "balls": 50,
+            "fours": 4,
+            "sixes": 0,
+            "SR": 90.0,
+            "team": "India",
+            "notOut": false
+          }
+        ],
+        "bowlingPerformances": [
+          {
+            "player": "Pat Cummins",
+            "overs": 10,
+            "maidens": 0,
+            "runs": 55,
+            "wickets": 3,
+            "economy": "5.50",
+            "team": "Australia"
+          },
+          {
+            "player": "Josh Hazlewood",
+            "overs": 10,
+            "maidens": 1,
+            "runs": 42,
+            "wickets": 2,
+            "economy": "4.20",
+            "team": "Australia"
+          },
+          {
+            "player": "Adam Zampa",
+            "overs": 10,
+            "maidens": 0,
+            "runs": 58,
+            "wickets": 2,
+            "economy": "5.80",
+            "team": "Australia"
+          }
+        ],
+        "isClubTeam": false
+      },
+      "teamHomeLogo": {
+        "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/logo_51_6b9fe4b2b0.png",
+        "width": 379,
+        "height": 303
+      },
+      "teamAwayLogo": {
+        "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
+        "width": 128,
+        "height": 128
+      },
+      "date": "21 June 2025",
+      "type": "One Day",
+      "ground": "Melbourne Cricket Ground",
+      "round": "Round 5",
+      "gender": "Men",
+      "ageGroup": "Seniors",
+      "gradeName": "ICC World Championship",
+      "assignSponsors": {
+        "competition": [],
+        "grade": [],
+        "team": [
+          {
+            "id": 151,
+            "isPrimary": true,
+            "isActive": true,
+            "isArticle": true,
+            "isVideo": true,
+            "url": "test",
+            "tagline": "test",
+            "description": null,
+            "name": "test",
+            "logo": {
+              "id": 12784,
+              "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/HBLOGO_ea96695cc9.png"
+            }
+          },
+          {
+            "id": 152,
+            "isPrimary": false,
+            "isActive": true,
+            "isArticle": true,
+            "isVideo": true,
+            "url": "test",
+            "tagline": "test",
+            "description": null,
+            "name": "test",
+            "logo": {
+              "id": 12785,
+              "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/coffslogo_aedba58c84.png"
+            }
+          }
+        ]
+      },
+      "result": "Australia won by 4 runs",
+      "prompt": "Match Summary: Australia vs. India:\n  - This ICC World Championship game is a One Day, played in Round: Round 5 at Melbourne Cricket Ground.\n  - Scores: Australia 8/272 in (50.0) overs, India 7/268 in (50.0) overs\n  - Result: Australia won by 4 runs\n  Player Performances:\n  - Australia\n    - Batting: Steve Smith 102 (88), Marnus Labuschagne 85 (90), Travis Head 45 (52)\n    - Bowling: Pat Cummins 3/55, Josh Hazlewood 2/42, Adam Zampa 2/58\n    - FOW: Wicket 1: 15 (David Warner), Wicket 2: 45 (Usman Khawaja), Wicket 3: 120 (Steve Smith), Wicket 4: 165 (Marnus Labuschagne), Wicket 5: 200 (Travis Head), Wicket 6: 245 (Glenn Maxwell), Wicket 7: 260 (Alex Carey), Wicket 8: 272 (Mitchell Marsh)\n    - Fielding: \n  Focus on highlighted team performances."
+    },
+    {
+      "gameID": "a98f8529",
+      "status": "Final",
+      "homeTeam": {
+        "name": "England",
+        "isHome": true,
+        "logo": {
+          "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
+          "width": 128,
+          "height": 128
+        },
+        "score": "6/245",
+        "overs": "(50.0)",
+        "homeScoresFirstInnings": "1",
+        "battingPerformances": [
+          {
+            "player": "Joe Root",
+            "runs": 89,
+            "balls": 95,
+            "fours": 10,
+            "sixes": 1,
+            "SR": 93.7,
+            "team": "England",
+            "notOut": false
+          },
+          {
+            "player": "Jonny Bairstow",
+            "runs": 67,
+            "balls": 78,
+            "fours": 8,
+            "sixes": 0,
+            "SR": 85.9,
+            "team": "England",
+            "notOut": false
+          },
+          {
+            "player": "Ben Stokes",
+            "runs": 45,
+            "balls": 52,
+            "fours": 4,
+            "sixes": 1,
+            "SR": 86.5,
+            "team": "England",
+            "notOut": false
+          }
+        ],
+        "bowlingPerformances": [
+          {
+            "player": "Kagiso Rabada",
+            "overs": 10,
+            "maidens": 0,
+            "runs": 48,
+            "wickets": 3,
+            "economy": "4.80",
+            "team": "South Africa"
+          },
+          {
+            "player": "Lungi Ngidi",
+            "overs": 10,
+            "maidens": 1,
+            "runs": 52,
+            "wickets": 2,
+            "economy": "5.20",
+            "team": "South Africa"
+          },
+          {
+            "player": "Keshav Maharaj",
+            "overs": 10,
+            "maidens": 0,
+            "runs": 55,
+            "wickets": 1,
+            "economy": "5.50",
+            "team": "South Africa"
+          }
+        ],
+        "isClubTeam": false
+      },
+      "awayTeam": {
+        "name": "South Africa",
+        "isHome": false,
+        "logo": {
+          "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/logo_51_6b9fe4b2b0.png",
+          "width": 379,
+          "height": 303
+        },
+        "score": "10/218",
+        "overs": "(45.2)",
+        "awayScoresFirstInnings": "1",
+        "battingPerformances": [
+          {
+            "player": "Quinton de Kock",
+            "runs": 78,
+            "balls": 85,
+            "fours": 9,
+            "sixes": 1,
+            "SR": 91.8,
+            "team": "South Africa",
+            "notOut": false
+          },
+          {
+            "player": "Temba Bavuma",
+            "runs": 45,
+            "balls": 60,
+            "fours": 4,
+            "sixes": 0,
+            "SR": 75.0,
+            "team": "South Africa",
+            "notOut": false
+          },
+          {
+            "player": "Aiden Markram",
+            "runs": 38,
+            "balls": 45,
+            "fours": 3,
+            "sixes": 0,
+            "SR": 84.4,
+            "team": "South Africa",
+            "notOut": false
+          }
+        ],
+        "bowlingPerformances": [
+          {
+            "player": "Sam Curran",
+            "overs": 10,
+            "maidens": 0,
+            "runs": 45,
+            "wickets": 3,
+            "economy": "4.50",
+            "team": "England"
+          },
+          {
+            "player": "Chris Woakes",
+            "overs": 10,
+            "maidens": 1,
+            "runs": 48,
+            "wickets": 2,
+            "economy": "4.80",
+            "team": "England"
+          },
+          {
+            "player": "Adil Rashid",
+            "overs": 10,
+            "maidens": 0,
+            "runs": 52,
+            "wickets": 2,
+            "economy": "5.20",
+            "team": "England"
+          }
+        ],
+        "isClubTeam": false
+      },
+      "teamHomeLogo": {
+        "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
+        "width": 128,
+        "height": 128
+      },
+      "teamAwayLogo": {
+        "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/logo_51_6b9fe4b2b0.png",
+        "width": 379,
+        "height": 303
+      },
+      "date": "21 June 2025",
+      "type": "One Day",
+      "ground": "Lord's Cricket Ground",
+      "round": "Round 6",
+      "gender": "Men",
+      "ageGroup": "Seniors",
+      "gradeName": "ICC Test Series",
+      "assignSponsors": {
+        "competition": [],
+        "grade": [],
+        "team": [
+          {
+            "id": 152,
+            "isPrimary": false,
+            "isActive": true,
+            "isArticle": true,
+            "isVideo": true,
+            "url": "test",
+            "tagline": "test",
+            "description": null,
+            "name": "test",
+            "logo": {
+              "id": 12785,
+              "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/coffslogo_aedba58c84.png"
+            }
+          }
+        ]
+      },
+      "result": "England won by 27 runs",
+      "prompt": "Match Summary: England vs. South Africa:\n  - This ICC Test Series game is a One Day, played in Round: Round 6 at Lord's Cricket Ground.\n  - Scores: England 6/245 in (50.0) overs, South Africa 10/218 in (45.2) overs\n  - Result: England won by 27 runs\n  Player Performances:\n  - England\n    - Batting: Joe Root 89 (95), Jonny Bairstow 67 (78), Ben Stokes 45 (52)\n    - Bowling: Sam Curran 3/45, Chris Woakes 2/48, Adil Rashid 2/52\n    - FOW: Wicket 1: 25 (Jos Buttler), Wicket 2: 78 (Harry Brook), Wicket 3: 120 (Joe Root), Wicket 4: 165 (Jonny Bairstow), Wicket 5: 200 (Ben Stokes), Wicket 6: 245 (Liam Livingstone)\n    - Fielding: \n  Focus on highlighted team performances."
+    },
+    {
+      "gameID": "ba1c0f25",
+      "status": "Abandoned",
+      "homeTeam": {
+        "name": "New Zealand",
+        "score": "N/A",
+        "overs": "N/A"
+      },
+      "awayTeam": {
+        "name": "West Indies",
+        "score": "N/A",
+        "overs": "N/A"
+      },
+      "teamHomeLogo": {
+        "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
+        "width": 128,
+        "height": 128
+      },
+      "teamAwayLogo": {
+        "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/logo_51_6b9fe4b2b0.png",
+        "width": 379,
+        "height": 303
+      },
+      "date": "22 June 2025",
+      "type": "One Day",
+      "ground": "Eden Park",
+      "round": "Round 7",
+      "gender": "Men",
+      "ageGroup": "Seniors",
+      "gradeName": "ICC T20 Series",
+      "assignSponsors": {
+        "competition": [],
+        "grade": [],
+        "team": [
+          {
+            "id": 151,
+            "isPrimary": true,
+            "isActive": true,
+            "isArticle": true,
+            "isVideo": true,
+            "url": "test",
+            "tagline": "test",
+            "description": null,
+            "name": "test",
+            "logo": {
+              "id": 12784,
+              "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/HBLOGO_ea96695cc9.png"
+            }
+          }
+        ]
+      },
+      "result": "Abandoned Match",
+      "prompt": "Match Summary: Game was Abandoned: New Zealand vs. West Indies"
+    },
+    {
+      "gameID": "c19127d6",
+      "status": "Abandoned",
+      "homeTeam": {
+        "name": "Pakistan",
+        "score": "N/A",
+        "overs": "N/A"
+      },
+      "awayTeam": {
+        "name": "Sri Lanka",
+        "score": "N/A",
+        "overs": "N/A"
+      },
+      "teamHomeLogo": {
+        "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
+        "width": 128,
+        "height": 128
+      },
+      "teamAwayLogo": {
+        "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/logo_51_6b9fe4b2b0.png",
+        "width": 379,
+        "height": 303
+      },
+      "date": "22 June 2025",
+      "type": "One Day",
+      "ground": "Gaddafi Stadium",
+      "round": "Round 7",
+      "gender": "Men",
+      "ageGroup": "Seniors",
+      "gradeName": "ICC World Championship",
+      "assignSponsors": {
+        "competition": [],
+        "grade": [],
+        "team": [
+          {
+            "id": 152,
+            "isPrimary": false,
+            "isActive": true,
+            "isArticle": true,
+            "isVideo": true,
+            "url": "test",
+            "tagline": "test",
+            "description": null,
+            "name": "test",
+            "logo": {
+              "id": 12785,
+              "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/coffslogo_aedba58c84.png"
+            }
+          }
+        ]
+      },
+      "result": "Abandoned Match",
+      "prompt": "Match Summary: Game was Abandoned: Pakistan vs. Sri Lanka"
+    }
+  ],
+  "asset": {
+    "assetID": 29,
+    "assetTypeID": 2,
+    "assetCategoryID": 2,
+    "assetsLinkID": "5e859076e6600450891d756536e5e112d9ea75a6c27415bf45eecdf5bd0c1a04"
+  },
+  "render": {
+    "schedulerId": 207,
+    "renderId": 8265
+  },
+  "account": {
+    "accountId": 319
+  },
+  "timings": {
+    "FPS_MAIN": 10000,
+    "FPS_INTRO": 90,
+    "FPS_OUTRO": 90,
+    "FPS_LADDER": 0,
+    "FPS_SCORECARD": 210
+  },
+  "frames": [195, 390, 585, 780],
+  "videoMeta": {
+    "club": {
+      "logo": {
+        "hasLogo": true,
+        "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/logo_51_6b9fe4b2b0.png",
+        "width": 379,
+        "height": 303
+      },
+      "name": "Gold Coast Veterans Cricket",
+      "sport": "Cricket",
+      "sponsors": {
+        "primary": [
+          {
+            "id": 151,
+            "isPrimary": true,
+            "isActive": true,
+            "isArticle": true,
+            "isVideo": true,
+            "url": "test",
+            "tagline": "test",
+            "description": null,
+            "name": "test",
+            "logo": {
+              "id": 12784,
+              "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Sponsor1_a6752b0a5f.png"
+            }
+          }
+        ],
+        "default": {
+          "primary_sponsor": [
+            {
+              "id": 151,
+              "isPrimary": true,
+              "isActive": true,
+              "isArticle": true,
+              "isVideo": true,
+              "url": "test",
+              "tagline": "test",
+              "description": null,
+              "name": "test",
+              "logo": {
+                "id": 12784,
+                "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Sponsor1_a6752b0a5f.png"
+              }
+            }
+          ],
+          "general_sponsor_1": [
+            {
+              "id": 152,
+              "isPrimary": false,
+              "isActive": true,
+              "isArticle": true,
+              "isVideo": true,
+              "url": "test",
+              "tagline": "test",
+              "description": null,
+              "name": "test",
+              "logo": {
+                "id": 12785,
+                "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Sponsor2_39eebf9c1b.png"
+              }
+            }
+          ],
+          "general_sponsor_2": [
+            {
+              "id": 153,
+              "isPrimary": false,
+              "isActive": true,
+              "isArticle": true,
+              "isVideo": true,
+              "url": "test",
+              "tagline": "test",
+              "description": null,
+              "name": "test",
+              "logo": {
+                "id": 12786,
+                "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Sponsor3_d65a61808c.png"
+              }
+            }
+          ],
+          "general_sponsor_3": [
+            {
+              "id": 167,
+              "isPrimary": false,
+              "isActive": true,
+              "isArticle": true,
+              "isVideo": true,
+              "url": "4",
+              "tagline": "4",
+              "description": null,
+              "name": "4",
+              "logo": {
+                "id": 13159,
+                "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Sponsor4_2e99a89b64.png"
+              }
+            }
+          ],
+          "general_sponsor_4": [
+            {
+              "id": 168,
+              "isPrimary": false,
+              "isActive": true,
+              "isArticle": true,
+              "isVideo": true,
+              "url": "5",
+              "tagline": "5",
+              "description": null,
+              "name": "5",
+              "logo": {
+                "id": 13160,
+                "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Sponsor5_5830015159.png"
+              }
+            }
+          ],
+          "general_sponsor_5": [
+            {
+              "id": 169,
+              "isPrimary": false,
+              "isActive": true,
+              "isArticle": true,
+              "isVideo": true,
+              "url": "6",
+              "tagline": "6",
+              "description": null,
+              "name": "6",
+              "logo": {
+                "id": 13161,
+                "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Sponsor6_ffce411e69.png"
+              }
+            }
+          ],
+          "general_sponsor_6": [
+            {
+              "id": 170,
+              "isPrimary": false,
+              "isActive": true,
+              "isArticle": true,
+              "isVideo": true,
+              "url": "7",
+              "tagline": "7",
+              "description": null,
+              "name": "7",
+              "logo": {
+                "id": 13162,
+                "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Sponsor7_6d12274c46.png"
+              }
+            }
+          ]
+        }
+      }
+    },
+    "video": {
+      "fixtureCategory": "MASTERS",
+      "groupingCategory": "MASTERS",
+      "metadata": {
+        "title": "Weekend Result",
+        "titleSplit": ["Weekend", "Result"],
+        "videoTitle": "Weekend Result Single Game",
+        "compositionId": "CricketResultSingle",
+        "assetId": 29,
+        "assetTypeId": 2,
+        "frames": [],
+        "includeSponsors": true
+      },
+      "appearance": {
+        "theme": {
+          "dark": "#FFF",
+          "white": "#111",
+          "primary": "#00843d",
+          "secondary": "#ffcd00"
+        },
+        "template": "Basic"
+      },
+      "media": {
+        "HeroImage": {
+          "url": "",
+          "ratio": "",
+          "width": 0,
+          "height": 0,
+          "AgeGroup": "",
+          "AssetType": "",
+          "markerPosition": ""
+        },
+        "audio": {
+          "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Audiio_Marscott_Wild_Neon_Get_The_Gains_inst_3251aaa9af.mp3",
+          "audioOption": "https://lmssocialmediamanager.s3.ap-southeast-2.amazonaws.com/assets/Saltine_1.mp3"
+        }
+      },
+      "contentLayout": {
+        "divideFixturesBy": {
+          "CricketLadder": 1,
+          "CricketRoster": 1,
+          "CricketResults": 2,
+          "CricketUpcoming": 3,
+          "CricketResultSingle": 1
+        }
+      },
+      "templateVariation": {
+        "useBackground": "Graphics",
+        "video": {
+          "url": null,
+          "fallbackUrl": null,
+          "position": "left",
+          "size": "cover",
+          "loop": null,
+          "muted": true,
+          "overlay": {
+            "color": "rgba(0,0,0,0.5)",
+            "opacity": 0.7
+          },
+          "useOffthreadVideo": null,
+          "volume": 0.8,
+          "playbackRate": null
+        },
+        "image": {
+          "url": null,
+          "ratio": null,
+          "width": null,
+          "height": null,
+          "type": "focusblur",
+          "direction": "in",
+          "overlayStyle": "duotone",
+          "gradientType": "linear",
+          "overlayOpacity": 0.7
+        },
+        "palette": "complementary",
+        "gradient": {
+          "type": "primaryRadial",
+          "direction": "DEFAULT"
+        },
+        "noise": {
+          "type": "floatingParticles"
+        },
+        "pattern": {
+          "type": "dots",
+          "animation": "rotate",
+          "scale": 0.5,
+          "rotation": null,
+          "opacity": 0.3,
+          "animationDuration": 1500,
+          "animationSpeed": 0.5
+        },
+        "particle": {
+          "type": "snow",
+          "particleCount": "150",
+          "speed": 1,
+          "direction": "down",
+          "animation": "fade"
+        }
+      }
+    }
+  },
+  "errors": []
+}

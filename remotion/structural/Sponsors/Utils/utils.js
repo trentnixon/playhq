@@ -7,18 +7,18 @@
  * @returns {Object} - Object containing calculated width and height.
  */
 export const calculateImageDimensions = (
-	logo,
-	[baseWidth, baseHeight, maxHeight]
+  logo,
+  [baseWidth, baseHeight, maxHeight]
 ) => {
-	const aspectRatio = logo.width / logo.height;
-	let width = baseWidth;
-	let height = baseHeight;
-	if (logo.height > maxHeight) {
-		height = maxHeight;
-		width = height * aspectRatio;
-	}
+  const aspectRatio = logo.width / logo.height;
+  let width = baseWidth;
+  let height = baseHeight;
+  if (logo.height > maxHeight) {
+    height = maxHeight;
+    width = height * aspectRatio;
+  }
 
-	return {width, height};
+  return { width, height };
 };
 
 /**
@@ -26,56 +26,56 @@ export const calculateImageDimensions = (
  * @param {Object} sponsorList - Sponsor list object.
  * @returns {Object|null} - Primary sponsor object or null if not found.
  */
-export const hasSponsors = (sponsorList) => {
-	if (!sponsorList || !sponsorList.default) {
-		return false;
-	}
-	const hasGeneral = Boolean(sponsorList.default.general_sponsors?.length);
-	const hasPrimary = Boolean(sponsorList.default.primary_sponsor);
-	// Return true if either hasGeneral or hasPrimary is true
-	if (hasGeneral || hasPrimary) {
-		return true;
-	}
-	// Return null if both are false
-	return false;
+export const hasSponsors = sponsorList => {
+  if (!sponsorList || !sponsorList.default) {
+    return false;
+  }
+  const hasGeneral = Boolean(sponsorList.default.general_sponsors?.length);
+  const hasPrimary = Boolean(sponsorList.default.primary_sponsor);
+  // Return true if either hasGeneral or hasPrimary is true
+  if (hasGeneral || hasPrimary) {
+    return true;
+  }
+  // Return null if both are false
+  return false;
 };
-export const getPrimarySponsor = (sponsorList) => {
-	if (
-		!sponsorList ||
-		!sponsorList.default ||
-		!sponsorList.default.primary_sponsor
-	) {
-		// Console.error("Primary sponsor not found");
-		return null;
-	}
-	return sponsorList.default.primary_sponsor;
+export const getPrimarySponsor = sponsorList => {
+  if (
+    !sponsorList ||
+    !sponsorList.default ||
+    !sponsorList.default.primary_sponsor
+  ) {
+    // Console.error("Primary sponsor not found");
+    return null;
+  }
+  return sponsorList.default.primary_sponsor;
 };
 
 export const getSponsorsForFixture = (sponsorList, fixture) => {
-	console.log('sponsorList ', sponsorList, fixture);
-	if (!sponsorList || !fixture) return [];
-	const sponsors = [];
+  console.log('sponsorList ', sponsorList, fixture);
+  if (!sponsorList || !fixture) return [];
+  const sponsors = [];
 
-	// Add logic to get sponsors based on the fixture details (team, league, grade)
-	if (fixture.gradeName) {
-		sponsors.push(
-			...sponsorList.grade.filter((s) => s.level === fixture.gradeName)
-		);
-	}
-	if (fixture.teamHome || fixture.teamAway) {
-		sponsors.push(
-			...sponsorList.team.filter(
-				(s) => s.level === fixture.teamHome || s.level === fixture.teamAway
-			)
-		);
-	}
-	if (fixture.league) {
-		sponsors.push(
-			...sponsorList.league.filter((s) => s.level === fixture.league)
-		);
-	}
+  // Add logic to get sponsors based on the fixture details (team, league, grade)
+  if (fixture.gradeName) {
+    sponsors.push(
+      ...sponsorList.grade.filter(s => s.level === fixture.gradeName)
+    );
+  }
+  if (fixture.teamHome || fixture.teamAway) {
+    sponsors.push(
+      ...sponsorList.team.filter(
+        s => s.level === fixture.teamHome || s.level === fixture.teamAway
+      )
+    );
+  }
+  if (fixture.league) {
+    sponsors.push(
+      ...sponsorList.league.filter(s => s.level === fixture.league)
+    );
+  }
 
-	return sponsors;
+  return sponsors;
 };
 
 /**
@@ -85,11 +85,11 @@ export const getSponsorsForFixture = (sponsorList, fixture) => {
  * @returns {Array} - Array of grouped sponsor arrays.
  */
 export const groupSponsors = (sponsors, groupSize = 3) => {
-	const groupedSponsors = [];
-	for (let i = 0; i < sponsors.length; i += groupSize) {
-		groupedSponsors.push(sponsors.slice(i, i + groupSize));
-	}
-	return groupedSponsors;
+  const groupedSponsors = [];
+  for (let i = 0; i < sponsors.length; i += groupSize) {
+    groupedSponsors.push(sponsors.slice(i, i + groupSize));
+  }
+  return groupedSponsors;
 };
 
 /**
@@ -97,17 +97,17 @@ export const groupSponsors = (sponsors, groupSize = 3) => {
  * @param {number} sponsorCount - Number of sponsors.
  * @returns {number} - Calculated image size.
  */
-export const calculateImgSize = (sponsorCount) => {
-	if (!sponsorCount || typeof sponsorCount !== 'number') {
-		throw new Error('Invalid sponsor count. Expected a number.');
-	}
+export const calculateImgSize = sponsorCount => {
+  if (!sponsorCount || typeof sponsorCount !== 'number') {
+    throw new Error('Invalid sponsor count. Expected a number.');
+  }
 
-	const baseSize = 250; // Base size for up to 3 sponsors
-	if (sponsorCount <= 3) {
-		return baseSize;
-	}
-	if (sponsorCount <= 6) {
-		return baseSize * 0.95; // Reduce size by 5% for 4-6 sponsors
-	}
-	return baseSize * 0.8; // Reduce size by 20% for 7-9 sponsors
+  const baseSize = 250; // Base size for up to 3 sponsors
+  if (sponsorCount <= 3) {
+    return baseSize;
+  }
+  if (sponsorCount <= 6) {
+    return baseSize * 0.95; // Reduce size by 5% for 4-6 sponsors
+  }
+  return baseSize * 0.8; // Reduce size by 20% for 7-9 sponsors
 };

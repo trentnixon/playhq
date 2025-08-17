@@ -1,15 +1,15 @@
-import { useEffect, useState } from "react";
-import { Center } from "@mantine/core";
-import { IconFileDownload } from "@tabler/icons-react";
+import { useEffect, useState } from 'react';
+import { Center } from '@mantine/core';
+import { IconFileDownload } from '@tabler/icons-react';
 import {
   useAssignDesignElement,
   useGETDesignElement,
-} from "../../../../../../Hooks/useCustomizer";
-import { useAccountDetails } from "../../../../../../context/userContext";
-import { SubHeaders } from "../../../../../Members/Common/Type";
-import { FixturaLoading } from "../../../../../Members/Common/Loading";
-import { ColorTable } from "./ColorTable";
-import { CreateNewTheme } from "./createNewTheme/CreateNewTheme";
+} from '../../../../../../Hooks/useCustomizer';
+import { useAccountDetails } from '../../../../../../context/userContext';
+import { SubHeaders } from '../../../../../Members/Common/Type';
+import { FixturaLoading } from '../../../../../Members/Common/Loading';
+import { ColorTable } from './ColorTable';
+import { CreateNewTheme } from './createNewTheme/CreateNewTheme';
 
 export const UpdateYourTheme = () => {
   const { account, ReRender } = useAccountDetails();
@@ -22,21 +22,21 @@ export const UpdateYourTheme = () => {
   // BUG THAT NEEDS FIXING
   // SELECT ONLY PUBLIC THEMES AND THE CUSTOM ONE!!
   useEffect(() => {
-    FetchElement({ COLLECTIONID: "themes" });
+    FetchElement({ COLLECTIONID: 'themes' });
   }, []);
 
   useEffect(() => {
-    FetchElement({ COLLECTIONID: "themes" });
+    FetchElement({ COLLECTIONID: 'themes' });
     setuserAccount(account);
     setLoading(false);
   }, [account]);
 
-  const StoreUSerChange = (item) => {
+  const StoreUSerChange = item => {
     const OBJ = {
-      CollectionSaveTo: "accounts",
+      CollectionSaveTo: 'accounts',
       Body: [item.id],
       COLLECTIONID: userAccount.id,
-      RelationProperty: "theme",
+      RelationProperty: 'theme',
     };
     setLoading(true);
     CreateDesignElement(OBJ);

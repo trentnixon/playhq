@@ -1,12 +1,12 @@
-import { Container, Group } from "@mantine/core";
-import { P } from "../../../../Members/Common/Type";
+import { Container, Group } from '@mantine/core';
+import { P } from '../../../../Members/Common/Type';
 
-export const CreateFirstSponsor = (props) => {
+export const CreateFirstSponsor = props => {
   return (
-    <Container size={"md"} p={40}>
+    <Container size={'md'} p={40}>
       <P
         Weight={400}
-        size={"md"}
+        size={'md'}
         textTransform={`uppercase`}
         color={6}
         Copy={`0 Sponsors found...`}

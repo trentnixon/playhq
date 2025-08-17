@@ -13,8 +13,8 @@ export const VideoDataProvider = ({ children, Video, DATA }) => {
       {children}
     </VideoDataContext.Provider>
   );
-}; 
+};
 
 export const useVideoDataContext = () => {
   return useContext(VideoDataContext);
-}; 
+};

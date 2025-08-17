@@ -1,14 +1,14 @@
-import { useEffect } from "react";
+import { useEffect } from 'react';
 
-import { useAccountDetails } from "../../../../context/userContext";
-import { LoadingStateWrapper } from "../HOC/LoadingStateWrapper";
-import { CreateFreeTrial } from "./CreateFreeTrial/userCreateFreeTrial";
-import { UserSubscription } from "./CreateSubscription/userSubscription";
-import { FreeTrialActive } from "./FreeTrialActive/userFreeTrialActive";
-import { UserSubscriptionActive } from "./SubscriptionActive/userSubscriptionActive";
-import { UserSubscriptionPending } from "./SubscriptionPending/userSubscriptionPending";
-import { getTrialNotificationStatus } from "../../../../lib/members/getTrialNotificationStatus";
-import { UserSubscriptionActiveDatePending } from "./SubscriptionActiveDatePending/userSubscriptionActiveDatePending";
+import { useAccountDetails } from '../../../../context/userContext';
+import { LoadingStateWrapper } from '../HOC/LoadingStateWrapper';
+import { CreateFreeTrial } from './CreateFreeTrial/userCreateFreeTrial';
+import { UserSubscription } from './CreateSubscription/userSubscription';
+import { FreeTrialActive } from './FreeTrialActive/userFreeTrialActive';
+import { UserSubscriptionActive } from './SubscriptionActive/userSubscriptionActive';
+import { UserSubscriptionPending } from './SubscriptionPending/userSubscriptionPending';
+import { getTrialNotificationStatus } from '../../../../lib/members/getTrialNotificationStatus';
+import { UserSubscriptionActiveDatePending } from './SubscriptionActiveDatePending/userSubscriptionActiveDatePending';
 
 export const UsersAccountStatusViews = () => {
   const { account } = useAccountDetails();

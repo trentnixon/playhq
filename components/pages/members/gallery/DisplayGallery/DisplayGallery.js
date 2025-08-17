@@ -1,14 +1,14 @@
-import { Paper } from "@mantine/core";
+import { Paper } from '@mantine/core';
 
-import { RoundedSectionContainer } from "../../../../UI/Containers/SectionContainer";
-import { CategorisedGroup } from "./CategorisedGroup";
-import { DisplayUploads } from "./DisplayUploads";
-import { UploadFirstImageTitle } from "./uploadFirstImage/UploadFirstImageTitle";
-import { UploadFirstImageInstructions } from "./uploadFirstImage/UploadFirstImageInstructions";
+import { RoundedSectionContainer } from '../../../../UI/Containers/SectionContainer';
+import { CategorisedGroup } from './CategorisedGroup';
+import { DisplayUploads } from './DisplayUploads';
+import { UploadFirstImageTitle } from './uploadFirstImage/UploadFirstImageTitle';
+import { UploadFirstImageInstructions } from './uploadFirstImage/UploadFirstImageInstructions';
 
-const groupByAgeGroup = (items) => {
+const groupByAgeGroup = items => {
   return items.reduce((groups, item) => {
-    const ageGroup = item.attributes.AgeGroup || "Unknown";
+    const ageGroup = item.attributes.AgeGroup || 'Unknown';
     if (!groups[ageGroup]) {
       groups[ageGroup] = [];
     }

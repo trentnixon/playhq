@@ -1,18 +1,18 @@
-import { useState, useEffect, useCallback } from "react";
-import { Player, Thumbnail } from "@remotion/player";
-import DATA_FIXTURES from "../../../remotion/utils/upcoming_v2.json";
-import DATA_RESULTS from "../../../remotion/utils/WeekendResultsV2.json";
-import DATA_TOP5RUNS from "../../../remotion/utils/Top5RunsV2.json";
-import DATA_TOP5WICKETS from "../../../remotion/utils/Top5WicketsV2.json";
-import DATA_LADDER from "../../../remotion/utils/LadderV2.json";
-import DATA_ROSTER from "../../../remotion/utils/RosterPoster.json";
+import { useState, useEffect, useCallback } from 'react';
+import { Player, Thumbnail } from '@remotion/player';
+import DATA_FIXTURES from '../../../remotion/utils/upcoming_v2.json';
+import DATA_RESULTS from '../../../remotion/utils/WeekendResultsV2.json';
+import DATA_TOP5RUNS from '../../../remotion/utils/Top5RunsV2.json';
+import DATA_TOP5WICKETS from '../../../remotion/utils/Top5WicketsV2.json';
+import DATA_LADDER from '../../../remotion/utils/LadderV2.json';
+import DATA_ROSTER from '../../../remotion/utils/RosterPoster.json';
 
-import * as AssetExampleCNSW from "../GLOBAL/Examples/AssetExampleCNSW";
-import * as AssetExamplesBasic from "../GLOBAL/Examples/AssetExamples";
+import * as AssetExampleCNSW from '../GLOBAL/Examples/AssetExampleCNSW';
+import * as AssetExamplesBasic from '../GLOBAL/Examples/AssetExamples';
 
-import { AbsoluteFill } from "remotion";
-import { IconPlayerPlayFilled } from "@tabler/icons-react";
-import { Image } from "@mantine/core";
+import { AbsoluteFill } from 'remotion';
+import { IconPlayerPlayFilled } from '@tabler/icons-react';
+import { Image } from '@mantine/core';
 import {
   defineLogo,
   updateColorTheme,
@@ -22,7 +22,7 @@ import {
   updateTop5RunScorers,
   updateUpComingFixtures,
   updateWeekendResults,
-} from "../../../lib/LiveDemo";
+} from '../../../lib/LiveDemo';
 
 // UTILS
 
@@ -32,7 +32,7 @@ const templateMapping = {
   // Add more mappings as needed
 };
 
-export const RemotionPlayer = (props) => {
+export const RemotionPlayer = props => {
   const {
     AccountData,
     selectedMedia,
@@ -48,8 +48,6 @@ export const RemotionPlayer = (props) => {
   const [isMounted, setIsMounted] = useState(false);
   const [previewData, setPreviewData] = useState({});
   const ASSETS = SelectTemplate(selectedTemplate, selectedMedia);
-
-  if (!ASSETS) return <></>;
 
   useEffect(() => {
     const fetchData = async () => {
@@ -67,7 +65,7 @@ export const RemotionPlayer = (props) => {
       const logoUrl =
         AccountData.attributes.Logo?.data?.url ||
         AccountData.attributes?.ParentLogo;
-        //console.log(updatedData);
+      //console.log(updatedData);
       if (logoUrl || userColors.length !== 0) {
         // Apply color theme updates
         updatedData = await updateColorTheme(logoUrl, userColors, updatedData);
@@ -92,6 +90,8 @@ export const RemotionPlayer = (props) => {
     userColors,
     selectedTemplate,
     BackgroundImageUrl,
+    ASSETS,
+    selectedMedia,
   ]);
 
   const renderPoster = useCallback(
@@ -99,37 +99,39 @@ export const RemotionPlayer = (props) => {
       return (
         <AbsoluteFill
           style={{
-            backgroundColor: "white",
+            backgroundColor: 'white',
             opacity: 0.8,
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            flexDirection: "column",
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            flexDirection: 'column',
           }}
         >
           {useLOGO && (
             <Image
               height={200}
-              width={"auto"}
+              width={'auto'}
               src={useLOGO}
               alt={`${accountName} logo`}
-              style={{ marginBottom: "10px" }}
+              style={{ marginBottom: '10px' }}
             />
           )}
-          <IconPlayerPlayFilled size={60} style={{ marginRight: "10px" }} />
+          <IconPlayerPlayFilled size={60} style={{ marginRight: '10px' }} />
           <p>Click to play to preview</p>
         </AbsoluteFill>
       );
     },
     []
   );
-  const isPreviewDataEmpty = (data) => {
+  const isPreviewDataEmpty = data => {
     return Object.keys(data).length === 0;
   };
 
   useEffect(() => {
     setIsMounted(true);
   }, []);
+
+  if (!ASSETS) return <></>;
 
   if (
     !isMounted ||
@@ -139,7 +141,7 @@ export const RemotionPlayer = (props) => {
     return false;
   }
 
-  if (TYPE === "Player")
+  if (TYPE === 'Player')
     return (
       <Player
         component={ASSETS.component}
@@ -153,7 +155,7 @@ export const RemotionPlayer = (props) => {
         fps={30}
         controls
         inputProps={{ DATA: previewData }}
-        style={{ width: "100%" }}
+        style={{ width: '100%' }}
         renderPoster={({ height, width }) =>
           renderPoster({
             height,
@@ -166,7 +168,7 @@ export const RemotionPlayer = (props) => {
         showPosterWhenUnplayed
       />
     );
-  if (TYPE === "Thumbnail")
+  if (TYPE === 'Thumbnail')
     return (
       <Thumbnail
         component={ASSETS.component}
@@ -180,7 +182,7 @@ export const RemotionPlayer = (props) => {
         fps={30}
         frameToDisplay={previewData.VIDEOMETA.Video.FRAMES[0]}
         inputProps={{ DATA: previewData }}
-        style={{ width: "100%" }}
+        style={{ width: '100%' }}
       />
     );
 };
@@ -189,7 +191,7 @@ const SelectTemplate = (selectedTemplate, selectedMedia) => {
   if (selectedMedia === null) return false;
 
   const TemplateComponents =
-    templateMapping[selectedTemplate.Template || "Basic"];
+    templateMapping[selectedTemplate.Template || 'Basic'];
 
   const ASSETS = {
     UpComingFixtures: {
@@ -225,7 +227,7 @@ const SelectTemplate = (selectedTemplate, selectedMedia) => {
   return ASSETS[selectedMedia.CompositionID];
 };
 
-const updateData = async (params) => {
+const updateData = async params => {
   const { AccountData, selectedMedia, ASSETS, userlogoUrl } = params;
   let CreateUpdatedData;
 
@@ -234,7 +236,7 @@ const updateData = async (params) => {
     const accountName = AccountData.attributes.Name;
     const useLOGO = defineLogo(AccountData, userlogoUrl);
     const DEFAULTLOGO =
-      "https://fixtura.s3.ap-southeast-2.amazonaws.com/Default_ICON_171b58a21b.png";
+      'https://fixtura.s3.ap-southeast-2.amazonaws.com/Default_ICON_171b58a21b.png';
     CreateUpdatedData = updateDataWithClubInfo(
       AccountData,
       currentAsset.DATA,
@@ -242,11 +244,11 @@ const updateData = async (params) => {
     );
 
     switch (selectedMedia.CompositionID) {
-      case "UpComingFixtures":
+      case 'UpComingFixtures':
         return updateUpComingFixtures(CreateUpdatedData, useLOGO, accountName);
         break;
 
-      case "WeekendResults":
+      case 'WeekendResults':
         return updateWeekendResults(
           CreateUpdatedData,
           useLOGO,
@@ -254,7 +256,7 @@ const updateData = async (params) => {
           accountName
         );
         break;
-      case "WeekendSingleGameResult":
+      case 'WeekendSingleGameResult':
         return updateWeekendResults(
           CreateUpdatedData,
           useLOGO,
@@ -262,13 +264,13 @@ const updateData = async (params) => {
           accountName
         );
         break;
-      case "Top5BattingList":
+      case 'Top5BattingList':
         return updateTop5RunScorers(CreateUpdatedData, useLOGO, accountName);
         break;
-      case "Top5BowlingList":
+      case 'Top5BowlingList':
         return updateTop5Bowlers(CreateUpdatedData, useLOGO, accountName);
         break;
-      case "Ladder":
+      case 'Ladder':
         return updateLadderFirstItem(CreateUpdatedData, useLOGO, accountName);
     }
   }

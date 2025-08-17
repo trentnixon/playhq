@@ -1,14 +1,14 @@
 // Components
 //import MainBanner from "../components/pages/public/index/MainBanner";
-import Services from "../components/pages/public/index/Services";
-import FunFacts from "../components/Common/FunFacts";
-import CtaArea from "../components/Common/CtaAreaTwo";
+import Services from '../components/pages/public/index/Services';
+import FunFacts from '../components/Common/FunFacts';
+import CtaArea from '../components/Common/CtaAreaTwo';
 
-import { fetcher } from "../lib/api";
-import Meta from "../components/Layouts/Meta";
-import Feedback from "../components/Common/Feedback";
-import Hero from "../components/pages/public/pas/Hero/Hero";
-import FixturaPricingCards from "../components/pages/public/FixturaPricingCards/FixturaPricingCards";
+import { fetcher } from '../lib/api';
+import Meta from '../components/Layouts/Meta';
+import Feedback from '../components/Common/Feedback';
+import Hero from '../components/pages/public/pas/Hero/Hero';
+import FixturaPricingCards from '../components/pages/public/FixturaPricingCards/FixturaPricingCards';
 
 const Index = () => {
   return (
@@ -16,7 +16,7 @@ const Index = () => {
       <Meta
         title="Home - Fixtura: Elevate Your Club's Digital Presence"
         description="Discover Fixtura's cutting-edge social media content tools for PlayHQ clubs and associations. Engage fans with AI-powered digital assets."
-        keywords="Fixtura, PlayHQ clubs, sports content creation, AI-powered social media, cricket digital assets, sports clubs marketing"
+        keywords='Fixtura, PlayHQ clubs, sports content creation, AI-powered social media, cricket digital assets, sports clubs marketing'
       />
       <Hero />
       <Services />
@@ -30,7 +30,7 @@ const Index = () => {
 
 export default Index;
 
-export const getServerSideProps = async (context) => {
+export const getServerSideProps = async context => {
   const response = await fetcher(
     `${process.env.NEXT_PUBLIC_STRAPI_URL}/associations`
   );

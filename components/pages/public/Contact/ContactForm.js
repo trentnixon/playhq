@@ -1,26 +1,26 @@
-import React, { useState } from "react";
-import * as Yup from "yup";
-import { useContactForm } from "../../../../Hooks/useSendContact";
+import React, { useState } from 'react';
+import * as Yup from 'yup';
+import { useContactForm } from '../../../../Hooks/useSendContact';
 
 // Validation Schema using Yup
 const validationSchema = Yup.object({
-  name: Yup.string().required("Name is required"),
+  name: Yup.string().required('Name is required'),
   email: Yup.string()
-    .email("Invalid email format")
-    .required("Email is required"),
-  subject: Yup.string().required("Subject is required"),
-  text: Yup.string().required("Message is required"),
+    .email('Invalid email format')
+    .required('Email is required'),
+  subject: Yup.string().required('Subject is required'),
+  text: Yup.string().required('Message is required'),
 });
 
 const INITIAL_STATE = {
-  name: "",
-  email: "",
-  subject: "",
-  text: "", 
-  Timestamp: null, 
+  name: '',
+  email: '',
+  subject: '',
+  text: '',
+  Timestamp: null,
   IP: null,
   UserAgent: null,
-  Status: "New",
+  Status: 'New',
 };
 
 const ContactForm = () => {
@@ -31,13 +31,13 @@ const ContactForm = () => {
   const [formError, setFormError] = useState(null);
   const [errors, setErrors] = useState({});
 
-  const handleChange = (e) => {
+  const handleChange = e => {
     const { name, value } = e.target;
-    setContact((prevState) => ({ ...prevState, [name]: value }));
-    setErrors((prevState) => ({ ...prevState, [name]: "" }));
+    setContact(prevState => ({ ...prevState, [name]: value }));
+    setErrors(prevState => ({ ...prevState, [name]: '' }));
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async e => {
     e.preventDefault();
     try {
       // Validate contact using Yup
@@ -50,13 +50,13 @@ const ContactForm = () => {
         setConfirmed(true);
       } else if (result.error) {
         setFormError(
-          "An error occurred while sending your message. Please try again."
+          'An error occurred while sending your message. Please try again.'
         );
       }
     } catch (err) {
       if (err instanceof Yup.ValidationError) {
         const errorMessages = {};
-        err.inner.forEach((error) => {
+        err.inner.forEach(error => {
           errorMessages[error.path] = error.message;
         });
         setErrors(errorMessages);
@@ -66,16 +66,16 @@ const ContactForm = () => {
 
   if (loading) {
     return (
-      <div className="contact-form ptb-100">
-        <div className="contact-title">Loading...</div>
+      <div className='contact-form ptb-100'>
+        <div className='contact-title'>Loading...</div>
       </div>
     );
   }
 
   if (confirmed) {
     return (
-      <div className="contact-form ptb-100">
-        <div className="contact-title">
+      <div className='contact-form ptb-100'>
+        <div className='contact-title'>
           Your message was successfully sent. We will get back to you soon!
         </div>
       </div>
@@ -84,12 +84,12 @@ const ContactForm = () => {
 
   if (formError) {
     return (
-      <div className="contact-form ptb-100">
-        <div className="contact-title">
+      <div className='contact-form ptb-100'>
+        <div className='contact-title'>
           <p>{formError}</p>
           <button
             onClick={() => setFormError(null)}
-            className="btn btn-primary"
+            className='btn btn-primary'
           >
             Try again
           </button>
@@ -100,30 +100,30 @@ const ContactForm = () => {
 
   return (
     <>
-      <div className="contact-form ptb-100">
+      <div className='contact-form ptb-100'>
         <form onSubmit={handleSubmit}>
-          <div className="container">
-            <div className="row">
-              <div className="col-lg-6">
-                <div className="form-group">
+          <div className='container'>
+            <div className='row'>
+              <div className='col-lg-6'>
+                <div className='form-group'>
                   <input
-                    type="text"
-                    name="name"
-                    placeholder="Name"
-                    className="form-control-343a40"
+                    type='text'
+                    name='name'
+                    placeholder='Name'
+                    className='form-control-343a40'
                     value={contact.name}
                     onChange={handleChange}
                     required
                   />
                 </div>
               </div>
-              <div className="col-lg-6">
-                <div className="form-group">
+              <div className='col-lg-6'>
+                <div className='form-group'>
                   <input
-                    type="email"
-                    name="email"
-                    placeholder="Email"
-                    className="form-control-343a40"
+                    type='email'
+                    name='email'
+                    placeholder='Email'
+                    className='form-control-343a40'
                     value={contact.email}
                     onChange={handleChange}
                     required
@@ -131,35 +131,35 @@ const ContactForm = () => {
                 </div>
               </div>
 
-              <div className="col-lg-12">
-                <div className="form-group">
+              <div className='col-lg-12'>
+                <div className='form-group'>
                   <input
-                    type="text"
-                    name="subject"
-                    placeholder="Subject"
-                    className="form-control-343a40"
+                    type='text'
+                    name='subject'
+                    placeholder='Subject'
+                    className='form-control-343a40'
                     value={contact.subject}
                     onChange={handleChange}
                     required
                   />
                 </div>
               </div>
-              <div className="col-lg-12 col-md-12">
-                <div className="form-group">
+              <div className='col-lg-12 col-md-12'>
+                <div className='form-group'>
                   <textarea
-                    name="text"
-                    cols="30"
-                    rows="6"
-                    placeholder="Write your message..."
-                    className="form-control-343a40"
+                    name='text'
+                    cols='30'
+                    rows='6'
+                    placeholder='Write your message...'
+                    className='form-control-343a40'
                     value={contact.text}
                     onChange={handleChange}
                     required
                   />
                 </div>
               </div>
-              <div className="col-lg-12 col-sm-12">
-                <button type="submit" className="btn btn-primary">
+              <div className='col-lg-12 col-sm-12'>
+                <button type='submit' className='btn btn-primary'>
                   Send Message
                 </button>
               </div>

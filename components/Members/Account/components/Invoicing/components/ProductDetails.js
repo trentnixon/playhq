@@ -1,11 +1,11 @@
-import { P } from "../../../../Common/Type";
-import { Table } from "@mantine/core";
-import { IconArticle, IconCalendar } from "@tabler/icons";
-import { IconBarcode } from "@tabler/icons-react";
-import { DisplayItem } from "./helper";
+import { P } from '../../../../Common/Type';
+import { Table } from '@mantine/core';
+import { IconArticle, IconCalendar } from '@tabler/icons';
+import { IconBarcode } from '@tabler/icons-react';
+import { DisplayItem } from './helper';
 
-import { FormatReadableDateMDY } from "../../../../../../lib/actions";
-export const ProductDetails = (props) => {
+import { FormatReadableDateMDY } from '../../../../../../lib/actions';
+export const ProductDetails = props => {
   const { order } = props;
   const { endOrderAt, startOrderAt, subscription_tier } = order.attributes;
   const { Title, SubTitle, DaysInPass, PriceByWeekInPass } =
@@ -14,7 +14,7 @@ export const ProductDetails = (props) => {
   return (
     <tr>
       <td>
-        <P marginBottom={0} color={7} textAlign="left">
+        <P marginBottom={0} color={7} textAlign='left'>
           Product Details:
         </P>
       </td>
@@ -24,8 +24,8 @@ export const ProductDetails = (props) => {
           highlightOnHover
           my={10}
           withBorder
-          horizontalSpacing="xl"
-          verticalSpacing="xs"
+          horizontalSpacing='xl'
+          verticalSpacing='xs'
           withColumnBorders
         >
           <tbody>
@@ -34,7 +34,7 @@ export const ProductDetails = (props) => {
                 <DisplayItem
                   icon={<IconBarcode size={20} stroke={1} />}
                   label={`${Title}`}
-                  position="right"
+                  position='right'
                 />
               </td>
             </tr>
@@ -43,7 +43,7 @@ export const ProductDetails = (props) => {
                 <DisplayItem
                   icon={<IconArticle size={20} stroke={1} />}
                   label={`${SubTitle}`}
-                  position="right"
+                  position='right'
                 />
               </td>
             </tr>
@@ -53,7 +53,7 @@ export const ProductDetails = (props) => {
                 <DisplayItem
                   icon={<IconCalendar size={20} stroke={1} />}
                   label={`Starting : ${FormatReadableDateMDY(startOrderAt)}`}
-                  position="right"
+                  position='right'
                 />
               </td>
             </tr>
@@ -62,7 +62,7 @@ export const ProductDetails = (props) => {
                 <DisplayItem
                   icon={<IconCalendar size={20} stroke={1} />}
                   label={`Finishing : ${FormatReadableDateMDY(endOrderAt)}`}
-                  position="right"
+                  position='right'
                 />
               </td>
             </tr>
@@ -71,7 +71,7 @@ export const ProductDetails = (props) => {
                 <DisplayItem
                   icon={<IconCalendar size={20} stroke={1} />}
                   label={`Covering ${DaysInPass} days`}
-                  position="right"
+                  position='right'
                 />
               </td>
             </tr>
@@ -81,7 +81,7 @@ export const ProductDetails = (props) => {
                 <DisplayItem
                   icon={<IconCalendar size={20} stroke={1} />}
                   label={`$${PriceByWeekInPass} / week`}
-                  position="right"
+                  position='right'
                 />
               </td>
             </tr>

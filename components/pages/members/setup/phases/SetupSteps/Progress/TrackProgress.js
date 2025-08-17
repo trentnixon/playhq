@@ -1,5 +1,5 @@
-import { Progress, Table, Loader, useMantineTheme, Paper } from "@mantine/core";
-import { P } from "../../../../../../Members/Common/Type";
+import { Progress, Table, Loader, useMantineTheme, Paper } from '@mantine/core';
+import { P } from '../../../../../../Members/Common/Type';
 
 function SyncProgress({ processingTracker }) {
   const { currentStage, completedStages, pendingStages, ...stages } =
@@ -35,7 +35,7 @@ function SyncProgress({ processingTracker }) {
 
   // Generating table data
   const rows = Object.entries(stages)
-    .filter(([stage]) => stage !== "totalStages")
+    .filter(([stage]) => stage !== 'totalStages')
     .map(([stage, data]) => {
       const stageName = stage.charAt(0).toUpperCase() + stage.slice(1);
       const isCurrentStage =
@@ -49,9 +49,9 @@ function SyncProgress({ processingTracker }) {
 
           <td>
             {isCurrentStage ? (
-              <Loader size="md" variant="dots" color="blue" />
+              <Loader size='md' variant='dots' color='blue' />
             ) : (
-              <P marginBottom={0} textAlign="right">
+              <P marginBottom={0} textAlign='right'>
                 {data.itemsFound}
               </P>
             )}
@@ -62,20 +62,20 @@ function SyncProgress({ processingTracker }) {
 
   return (
     <>
-      <Paper shadow="sm" p="md" mx={"xl"} withBorder>
+      <Paper shadow='sm' p='md' mx={'xl'} withBorder>
         <Progress
           value={completedCount * progressPerStage}
           label={
             currentStage
               ? `Currently processing: ${currentStage}`
-              : "Processing complete"
+              : 'Processing complete'
           }
-          size="xl"
-          radius="xl"
+          size='xl'
+          radius='xl'
           sections={progressSections}
         />
       </Paper>
-      <Paper shadow="sm" p="md" m={20} mx={"xl"} withBorder>
+      <Paper shadow='sm' p='md' m={20} mx={'xl'} withBorder>
         <Table striped>
           <thead>
             <tr>

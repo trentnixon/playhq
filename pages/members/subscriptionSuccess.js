@@ -1,20 +1,20 @@
-import { useEffect } from "react";
-import { useRouter } from "next/router";
-import { useConfirmOrder } from "../../Hooks/useOrder";
+import { useEffect } from 'react';
+import { useRouter } from 'next/router';
+import { useConfirmOrder } from '../../Hooks/useOrder';
 import {
   MembersWrapper,
   ShadowWrapper,
   Wrapper,
-} from "../../components/Members/Common/Containers";
-import { PageTitle, P } from "../../components/Members/Common/Type";
-import { Box, Center, Container, Group } from "@mantine/core";
-import { IconCheck } from "@tabler/icons";
+} from '../../components/Members/Common/Containers';
+import { PageTitle, P } from '../../components/Members/Common/Type';
+import { Box, Center, Container, Group } from '@mantine/core';
+import { IconCheck } from '@tabler/icons';
 import {
   BTN_TOEXTLINK,
   BTN_TOINTERALLINK,
-} from "../../components/Members/Common/utils/Buttons";
-import { useAccountDetails } from "../../context/userContext";
-import Meta from "../../components/Layouts/Meta";
+} from '../../components/Members/Common/utils/Buttons';
+import { useAccountDetails } from '../../context/userContext';
+import Meta from '../../components/Layouts/Meta';
 
 const StripeSuccess = () => {
   const router = useRouter();
@@ -26,29 +26,29 @@ const StripeSuccess = () => {
     if (order === null && session_id !== undefined) {
       confirmOrder(session_id);
     }
-  }, [session_id]);
+  }, [session_id, order, confirmOrder]);
 
   useEffect(() => {
     if (order !== null) {
       ReRender();
     }
-  }, [order]);
+  }, [order, ReRender]);
 
   return (
     <MembersWrapper>
       <Meta
-        title="Subscription Success - Fixtura: Welcome Aboard"
+        title='Subscription Success - Fixtura: Welcome Aboard'
         description="Celebrate your successful subscription to Fixtura. Begin your journey in enhancing your sports club's digital media presence."
-        keywords="Subscription success, Fixtura welcome, sports media journey, club content services, digital media access"
+        keywords='Subscription success, Fixtura welcome, sports media journey, club content services, digital media access'
       />
       <PageTitle
-        Copy={"Thankyou for your Subscription"}
+        Copy={'Thankyou for your Subscription'}
         ICON={<IconCheck size={40} />}
       />
 
       <Container>
         <Wrapper>
-          <Group position="apart">
+          <Group position='apart'>
             <Box>
               <P>Thank you for subscribing to Fixtura!</P>
               <P>
@@ -68,10 +68,10 @@ const StripeSuccess = () => {
         <ShadowWrapper>
           <Center>
             <BTN_TOEXTLINK
-              LABEL="Go To Account"
-              URL="/members/account/"
-              THEME="cta"
-              target="_self"
+              LABEL='Go To Account'
+              URL='/members/account/'
+              THEME='cta'
+              target='_self'
             />
           </Center>
         </ShadowWrapper>

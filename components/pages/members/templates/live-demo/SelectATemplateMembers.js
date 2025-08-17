@@ -1,24 +1,24 @@
 // src/Components/Templates/SelectATemplateMembers.js
 
-import { useEffect, useState, useMemo } from "react";
-import { Container, SimpleGrid } from "@mantine/core";
-import { useAssignDesignElement } from "../../../../../Hooks/useCustomizer";
-import { useAccountDetails } from "../../../../../context/userContext";
-import { P } from "../../../../Members/Common/Type";
-import { FixturaDivider } from "../../../../Members/Common/Divider";
-import { RoundedSectionContainer } from "../../../../UI/Containers/SectionContainer";
-import CategoryFilter from "../../../../Common/live-demo/CategoryFilter";
-import { TemplateCardMembers } from "./Components/TemplateCardMembers";
-import { generateCategoryOptions } from "../../../../../utils/templateUtils";
-import { useGETDesignElement } from "../../../../../Hooks/useCustomizer";
-import { FindAccountType } from "../../../../../lib/actions";
+import { useEffect, useState, useMemo } from 'react';
+import { Container, SimpleGrid, Modal } from '@mantine/core';
+import { useAssignDesignElement } from '../../../../../Hooks/useCustomizer';
+import { useAccountDetails } from '../../../../../context/userContext';
+import { P } from '../../../../Members/Common/Type';
+import { FixturaDivider } from '../../../../Members/Common/Divider';
+import { RoundedSectionContainer } from '../../../../UI/Containers/SectionContainer';
+import CategoryFilter from '../../../../Common/live-demo/CategoryFilter';
+import { TemplateCardMembers } from './Components/TemplateCardMembers';
+import { generateCategoryOptions } from '../../../../../utils/templateUtils';
+import { useGETDesignElement } from '../../../../../Hooks/useCustomizer';
+import { FindAccountType } from '../../../../../lib/actions';
 
 export const SelectATemplateMembers = ({ hasMediaItems }) => {
   const { account, ReRender } = useAccountDetails();
   const [userAccount, setUserAccount] = useState(account);
   const [loading, setLoading] = useState(true);
   const [selectedTemplate, setSelectedTemplate] = useState(null);
-  const [selectedCategory, setSelectedCategory] = useState("All");
+  const [selectedCategory, setSelectedCategory] = useState('All');
   const [DesignElement, CreateDesignElement] = useAssignDesignElement();
   const [GetElement, FetchElement] = useGETDesignElement();
   const accountType = FindAccountType(account);
@@ -32,7 +32,7 @@ export const SelectATemplateMembers = ({ hasMediaItems }) => {
   }, [DesignElement]);
 
   const fetchTemplates = async () => {
-    await FetchElement({ COLLECTIONID: "templates" });
+    await FetchElement({ COLLECTIONID: 'templates' });
   };
 
   useEffect(() => {
@@ -42,7 +42,7 @@ export const SelectATemplateMembers = ({ hasMediaItems }) => {
   const filterFn = template => {
     const isPublic = template.attributes.public;
     const isTemplateUserTemplate =
-      userAccount.attributes.template.data.id === template.id;
+      userAccount.attributes.template_option?.data?.id === template.id;
     return userAccount.attributes.hasCustomTemplate
       ? isTemplateUserTemplate
       : isPublic;
@@ -50,33 +50,24 @@ export const SelectATemplateMembers = ({ hasMediaItems }) => {
 
   const templates = useMemo(() => {
     if (Array.isArray(GetElement)) {
-      // Update filter function to account for `onlyClub` and `accountType`
       const filterFn = template => {
         const isPublic = template.attributes.public;
         const isTemplateUserTemplate =
-          userAccount.attributes.template.data.id === template.id;
+          userAccount.attributes.template_option?.data?.id === template.id;
         const onlyClub = template.attributes.onlyClub;
         const accountType = userAccount.attributes.accountType;
-
-        // New condition: If `onlyClub` is true, the accountType must be 'Club'
-        if (onlyClub && accountType !== "Club") {
+        if (onlyClub && accountType !== 'Club') {
           return false;
         }
-
-        // Existing logic for user template or public template
         return userAccount.attributes.hasCustomTemplate
           ? isTemplateUserTemplate
           : isPublic;
       };
-
-      // Apply filtering and grouping based on categories
       const filteredTemplates = GetElement.filter(filterFn);
       const grouped = filteredTemplates.reduce((acc, template) => {
-        const category = template.attributes?.Category;
-
+        let category = template.attributes?.Category;
         if (!category) {
-          console.error("Template has no category:", template);
-          return acc;
+          category = 'Uncategorized';
         }
         if (!acc[category]) {
           acc[category] = [];
@@ -84,12 +75,27 @@ export const SelectATemplateMembers = ({ hasMediaItems }) => {
         acc[category].push(template);
         return acc;
       }, {});
-
-      setLoading(false);
       return grouped;
     }
     return {};
   }, [GetElement, userAccount]);
+
+  useEffect(() => {
+    console.log('[SelectATemplateMembers] GetElement value:', GetElement);
+    if (Array.isArray(GetElement)) {
+      setLoading(false);
+    }
+  }, [GetElement]);
+
+  useEffect(() => {
+    // Fallback: if loading takes too long, stop loading after 5 seconds
+    if (loading) {
+      const timeout = setTimeout(() => {
+        setLoading(false);
+      }, 5000);
+      return () => clearTimeout(timeout);
+    }
+  }, [loading]);
 
   const categoryOptions = useMemo(
     () => generateCategoryOptions(templates),
@@ -100,26 +106,42 @@ export const SelectATemplateMembers = ({ hasMediaItems }) => {
     setSelectedTemplate(template);
   };
 
+  const handleCloseModal = () => {
+    setSelectedTemplate(null);
+  };
+
   const StoreUserChange = item => {
     setLoading(true);
     CreateDesignElement({
-      CollectionSaveTo: "accounts",
+      CollectionSaveTo: 'accounts',
       Body: [item.id],
       COLLECTIONID: userAccount.id,
-      RelationProperty: "template",
+      RelationProperty: 'template',
     }).finally(() => setLoading(false));
   };
 
   const filteredCategoryTemplates =
-    selectedCategory === "All"
+    selectedCategory === 'All'
       ? templates
-      : { [selectedCategory]: templates[selectedCategory] };
+      : { [selectedCategory]: templates[selectedCategory] || [] };
 
   if (loading) {
     return <div>Loading...</div>; // Or any loading spinner/component
   }
 
-  console.log("filteredCategoryTemplates", filteredCategoryTemplates);
+  // User-friendly error/empty state
+  if (!Array.isArray(GetElement) || Object.keys(templates).length === 0) {
+    return (
+      <div style={{ padding: 40, textAlign: 'center', color: '#888' }}>
+        <p>Failed to load templates or no templates available.</p>
+        <p>
+          Please try refreshing the page or contact support if the problem
+          persists.
+        </p>
+      </div>
+    );
+  }
+
   return (
     <>
       <Container fluid={true} mb={40}>
@@ -131,35 +153,32 @@ export const SelectATemplateMembers = ({ hasMediaItems }) => {
         {Object.keys(filteredCategoryTemplates).map(category => (
           <RoundedSectionContainer
             key={category}
-            headerContent={""}
+            headerContent={''}
             topContent={
               <P
-                size={"xl"}
+                size={'xl'}
                 marginBottom={0}
                 Weight={900}
-                textTransform={"uppercase"}>
+                textTransform={'uppercase'}
+              >
                 {category}
               </P>
             }
             bottomContent={
               <SimpleGrid
                 breakpoints={[
-                  { minWidth: "xs", cols: 2 },
-                  { minWidth: "sm", cols: 2 },
-                  { minWidth: "md", cols: 3 },
-                ]}>
-                {filteredCategoryTemplates[category].map((item, i) => (
+                  { minWidth: 'xs', cols: 2 },
+                  { minWidth: 'sm', cols: 2 },
+                  { minWidth: 'md', cols: 3 },
+                ]}
+              >
+                {(filteredCategoryTemplates[category] || []).map(item => (
                   <TemplateCardMembers
-                    key={i}
+                    key={item.id}
                     template={item}
                     isSelected={
-                      userAccount.attributes.template.data.id === item.id
-                    }
-                    onSelect={selectedTemplate =>
-                      StoreUserChange(selectedTemplate)
-                    }
-                    onMoreInfo={selectedTemplate =>
-                      handleMoreInfoClick(selectedTemplate)
+                      userAccount.attributes.template_option?.data?.id ===
+                      item.id
                     }
                     hasMediaItems={hasMediaItems}
                   />
@@ -169,6 +188,29 @@ export const SelectATemplateMembers = ({ hasMediaItems }) => {
           />
         ))}
       </Container>
+      <Modal
+        opened={!!selectedTemplate}
+        onClose={handleCloseModal}
+        title={selectedTemplate?.attributes?.name || 'Template Info'}
+        size='lg'
+      >
+        {selectedTemplate && (
+          <div>
+            <p>
+              <strong>Name:</strong> {selectedTemplate.attributes?.name}
+            </p>
+            <p>
+              <strong>Category:</strong>{' '}
+              {selectedTemplate.attributes?.Category || 'Uncategorized'}
+            </p>
+            <p>
+              <strong>Description:</strong>{' '}
+              {selectedTemplate.attributes?.description ||
+                'No description provided.'}
+            </p>
+          </div>
+        )}
+      </Modal>
       <FixturaDivider />
     </>
   );

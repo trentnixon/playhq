@@ -1,9 +1,9 @@
-import { Modal, Image } from "@mantine/core";
-import { useRouter } from "next/router";
+import { Modal, Image } from '@mantine/core';
+import { useRouter } from 'next/router';
 
-import { EditDetailsForm } from "./DetailsForm";
-import { useUpdateSetImage } from "../../../../Hooks/useGalleryImage";
-import { FixturaLoading } from "../../../Members/Common/Loading";
+import { EditDetailsForm } from './DetailsForm';
+import { useUpdateSetImage } from '../../../../Hooks/useGalleryImage';
+import { FixturaLoading } from '../../../Members/Common/Loading';
 
 export const ImageDetailsModal = ({
   isOpen,
@@ -33,7 +33,7 @@ export const ImageDetailsModal = ({
   };
 
   return (
-    <Modal opened={isOpen} onClose={onClose} title="Image Details">
+    <Modal opened={isOpen} onClose={onClose} title='Image Details'>
       {updateLoading ? (
         <FixturaLoading />
       ) : (

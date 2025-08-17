@@ -4,14 +4,14 @@ import { CNSWDefaultTitle } from '../../assets/common/TitleSequences/CNSWAssetTi
 import { CNSWSingleFixtureResultMap } from '../../sport/cricket/SingleFixtureResult/CNSWSingleFixtureResult/CNSWSingleFixtureResultMap';
 
 export const CricketCNSWSingleFixtureResultBuild = ({
-	groupedFixtures,
-	groupedSponsors,
+  groupedFixtures,
+  groupedSponsors,
 }) => {
-	return (
-		<>
-			<CNSWDefaultTitle />
-			<CNSWSingleFixtureResultMap groupedFixtures={groupedFixtures} />
-			<DynamicSingleResultSponsors groupedSponsors={groupedSponsors} />
-		</>
-	);
+  return (
+    <>
+      <CNSWDefaultTitle />
+      <CNSWSingleFixtureResultMap groupedFixtures={groupedFixtures} />
+      <DynamicSingleResultSponsors groupedSponsors={groupedSponsors} />
+    </>
+  );
 };

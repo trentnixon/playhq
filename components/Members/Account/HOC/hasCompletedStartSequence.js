@@ -1,7 +1,7 @@
-import React, { useEffect, useContext } from "react";
-import Router from "next/router";
-import { useAccountDetails } from "../../../../context/userContext";
-import { useUser } from "../../../../context/authContext";
+import React, { useEffect, useContext } from 'react';
+import Router from 'next/router';
+import { useAccountDetails } from '../../../../context/userContext';
+import { useUser } from '../../../../context/authContext';
 
 const HasCompletedStartSequence = ({ children }) => {
   const { account } = useAccountDetails();
@@ -10,19 +10,19 @@ const HasCompletedStartSequence = ({ children }) => {
   useEffect(() => {
     if (!loading) {
       // Check if setup check has already been performed in this session
-      const checkPerformed = sessionStorage.getItem("setupCheckPerformed");
+      const checkPerformed = sessionStorage.getItem('setupCheckPerformed');
 
       if (!checkPerformed) {
         if (account === null) return;
 
         if (!user || account?.attributes?.hasCompletedStartSequence === false) {
           // Setup check has not been performed, redirect to setup page and mark check as performed
-          sessionStorage.setItem("setupCheckPerformed", "true");
-          Router.push("/members/setup/");
+          sessionStorage.setItem('setupCheckPerformed', 'true');
+          Router.push('/members/setup/');
         } else {
           // Setup check has been performed and setup is complete, redirect to account page and mark check as performed
-          sessionStorage.setItem("setupCheckPerformed", "true");
-          Router.push("/members/");
+          sessionStorage.setItem('setupCheckPerformed', 'true');
+          Router.push('/members/');
         }
       }
     }

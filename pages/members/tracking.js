@@ -1,37 +1,36 @@
 // react
-import { useEffect, useState } from "react";
+import { useEffect, useState } from 'react';
 /* import { useRouter } from "next/router"; */
-import { useUser } from "../../context/authContext";
-import { getIdFromLocalCookie } from "../../lib/auth";
+import { useUser } from '../../context/authContext';
+import { getIdFromLocalCookie } from '../../lib/auth';
 // UTILS
-import Adminfetcher from "../../lib/Adminfetcher";
+import Adminfetcher from '../../lib/Adminfetcher';
 import {
   IconCalendarEvent,
   IconTrack,
   IconUsersGroup,
-} from "@tabler/icons-react";
+} from '@tabler/icons-react';
 // Components
 import {
   MembersWrapper,
   PageCopyWrapper,
   ShadowWrapper,
-} from "../../components/Members/Common/Containers";
-import { showNotification } from "@mantine/notifications";
+} from '../../components/Members/Common/Containers';
+import { showNotification } from '@mantine/notifications';
 
-import { useAccountDetails } from "../../context/userContext";
-import { FixturaDivider } from "../../components/Members/Common/Divider";
+import { useAccountDetails } from '../../context/userContext';
+import { FixturaDivider } from '../../components/Members/Common/Divider';
 
-import { P, PageTitle } from "../../components/Members/Common/Type";
-import SetupCheck from "../../components/Members/Account/HOC/SetupCheck";
-import { LoadingStateWrapper } from "../../components/Members/Account/HOC/LoadingStateWrapper";
-import { GamesListing } from "../../components/pages/members/tracking/ListFixtures/ListFixtures";
-import { TeamList } from "../../components/pages/members/tracking/ListTeams/Teams";
-import { FindAccountType, FindAccountTypeOBJ } from "../../lib/actions";
-import { useGetOrganizationDetails } from "../../Hooks/useGetOrganizationDetails";
-import { ClubList } from "../../components/pages/members/tracking/ListClubs/Clubs";
-import Meta from "../../components/Layouts/Meta";
-import { Tabs } from "@mantine/core";
-
+import { P, PageTitle } from '../../components/Members/Common/Type';
+import SetupCheck from '../../components/Members/Account/HOC/SetupCheck';
+import { LoadingStateWrapper } from '../../components/Members/Account/HOC/LoadingStateWrapper';
+import { GamesListing } from '../../components/pages/members/tracking/ListFixtures/ListFixtures';
+import { TeamList } from '../../components/pages/members/tracking/ListTeams/Teams';
+import { FindAccountType, FindAccountTypeOBJ } from '../../lib/actions';
+import { useGetOrganizationDetails } from '../../Hooks/useGetOrganizationDetails';
+import { ClubList } from '../../components/pages/members/tracking/ListClubs/Clubs';
+import Meta from '../../components/Layouts/Meta';
+import { Tabs } from '@mantine/core';
 
 const Tracking = ({ DATA }) => {
   const { account } = useAccountDetails();
@@ -47,17 +46,17 @@ const Tracking = ({ DATA }) => {
     if (account) {
       setUserAccount(account);
       showNotification({
-        title: "Action Completed",
-        message: "Your account details have been successfully saved",
+        title: 'Action Completed',
+        message: 'Your account details have been successfully saved',
       });
     }
   }, [account]);
   return (
     <MembersWrapper>
       <Meta
-        title="Season Tracking - Fixtura: Stay Updated with Your Games"
+        title='Season Tracking - Fixtura: Stay Updated with Your Games'
         description="Track your sports club's season fixtures and performances on Fixtura. Stay informed and organized throughout the season."
-        keywords="Season tracking, Fixtura games update, sports club fixtures, digital media schedule, club game tracking"
+        keywords='Season tracking, Fixtura games update, sports club fixtures, digital media schedule, club game tracking'
       />
       <SetupCheck>
         <LoadingStateWrapper conditions={[user, userAccount, DATA]}>
@@ -71,10 +70,10 @@ const Tracking = ({ DATA }) => {
 
           {Object.keys(DATA).length === 0 ? (
             <ShadowWrapper>
-              <P textAlign="center" Weight={900} color={8}>
+              <P textAlign='center' Weight={900} color={8}>
                 No fixtures registered at the moment.
               </P>
-              <P textAlign="center" color={8}>
+              <P textAlign='center' color={8}>
                 Fixtura is currently tracking 0 fixtures. If you believe this is
                 incorrect, please contact us here.
               </P>
@@ -100,7 +99,7 @@ const Tracking = ({ DATA }) => {
 
 export default Tracking;
 
-Tracking.getInitialProps = async (ctx) => {
+Tracking.getInitialProps = async ctx => {
   const ID = await getIdFromLocalCookie();
 
   if (ID === undefined) {
@@ -113,27 +112,27 @@ Tracking.getInitialProps = async (ctx) => {
   return { DATA };
 };
 
-const TrackingLayout = (props) => {
+const TrackingLayout = props => {
   const { gamesData, organizationDetails, accountType } = props;
 
   return (
     <>
-      <Tabs defaultValue="fixtures" variant="pills" color="blue">
-        <Tabs.List position="right">
-          <Tabs.Tab value="fixtures" icon={<IconCalendarEvent size="1.2rem" />}>
+      <Tabs defaultValue='fixtures' variant='pills' color='blue'>
+        <Tabs.List position='right'>
+          <Tabs.Tab value='fixtures' icon={<IconCalendarEvent size='1.2rem' />}>
             View Fixtures
           </Tabs.Tab>
-          <Tabs.Tab value="clubs" icon={<IconUsersGroup size="1.2rem" />}>
-            {accountType === "Association" ? "View Clubs" : "View Teams"}
+          <Tabs.Tab value='clubs' icon={<IconUsersGroup size='1.2rem' />}>
+            {accountType === 'Association' ? 'View Clubs' : 'View Teams'}
           </Tabs.Tab>
         </Tabs.List>
 
-        <Tabs.Panel value="fixtures" pt="xs">
+        <Tabs.Panel value='fixtures' pt='xs'>
           <GamesListing gamesData={gamesData} />
         </Tabs.Panel>
 
-        <Tabs.Panel value="clubs" pt="xs">
-          {accountType === "Association" ? (
+        <Tabs.Panel value='clubs' pt='xs'>
+          {accountType === 'Association' ? (
             <ClubList {...props} />
           ) : (
             <TeamList {...props} />

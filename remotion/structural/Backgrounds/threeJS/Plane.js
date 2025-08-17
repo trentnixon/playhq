@@ -14,20 +14,27 @@ const Plane = ({ conf, mousePosition }) => {
     const gArray = planeRef.current.geometry.attributes.position.array;
 
     for (let i = 0; i < gArray.length; i += 3) {
-      gArray[i + 2] = simplex.noise4D(
-        gArray[i] / conf.xyCoef,
-        gArray[i + 1] / conf.xyCoef,
-        time,
-        mousePosition.current.x + mousePosition.current.y
-      ) * conf.zCoef;
+      gArray[i + 2] =
+        simplex.noise4D(
+          gArray[i] / conf.xyCoef,
+          gArray[i + 1] / conf.xyCoef,
+          time,
+          mousePosition.current.x + mousePosition.current.y
+        ) * conf.zCoef;
     }
 
     planeRef.current.geometry.attributes.position.needsUpdate = true;
   });
 
   return (
-    <mesh ref={planeRef} rotation={[-Math.PI / 2 - 0.2, 0, 0]} position={[0, -25, 0]}>
-      <planeBufferGeometry args={[conf.width, conf.height, conf.width / 2, conf.height / 2]} />
+    <mesh
+      ref={planeRef}
+      rotation={[-Math.PI / 2 - 0.2, 0, 0]}
+      position={[0, -25, 0]}
+    >
+      <planeBufferGeometry
+        args={[conf.width, conf.height, conf.width / 2, conf.height / 2]}
+      />
       <meshLambertMaterial color={0xffffff} side={'double'} />
     </mesh>
   );

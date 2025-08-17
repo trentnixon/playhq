@@ -1,14 +1,14 @@
-import { P } from "../../../../../../Members/Common/Type";
-import { UserDetailsForSetup } from "../../../../../../Members/UserDetails";
-import { RoundedSectionContainer } from "../../../../../../UI/Containers/SectionContainer";
+import { P } from '../../../../../../Members/Common/Type';
+import { UserDetailsForSetup } from '../../../../../../Members/UserDetails';
+import { RoundedSectionContainer } from '../../../../../../UI/Containers/SectionContainer';
 
-import { StepHeaderandDescription } from "./StepHeaderandDescription";
+import { StepHeaderandDescription } from './StepHeaderandDescription';
 
-export const StepAboutUser = ({ user, setHasUpdated }) => {
+export const StepAboutUser = ({ user, setHasUpdated, updateLocalProgress }) => {
   return (
     <>
       <RoundedSectionContainer
-        headerContent={""}
+        headerContent={''}
         topContent={
           <StepHeaderandDescription
             Header={"Let's Get Started with Your Weekly Content Delivery!"}
@@ -17,9 +17,13 @@ export const StepAboutUser = ({ user, setHasUpdated }) => {
         }
         bottomContent={
           <>
-            <UserDetailsForSetup user={user} setHasUpdated={setHasUpdated} />
+            <UserDetailsForSetup
+              user={user}
+              setHasUpdated={setHasUpdated}
+              updateLocalProgress={updateLocalProgress}
+            />
 
-            <P color={6} size={"xs"} textAlign="right">
+            <P color={6} size={'xs'} textAlign='right'>
               *These settings can be changed in your admin panel
             </P>
           </>

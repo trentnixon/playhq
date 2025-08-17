@@ -11,9 +11,7 @@ const defaultStyleObj = {
   margin: '0',
   padding: '0',
   textTransform: 'uppercase',
-  
 };
-
 
 export const VideoHeader = ({ styleObj = {}, animationObj = {}, value }) => {
   // Merge default styles with the incoming styleObj
@@ -28,4 +26,4 @@ export const VideoHeader = ({ styleObj = {}, animationObj = {}, value }) => {
       {value}
     </P>
   );
-}; 
+};

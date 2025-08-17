@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
-import { useAccountDetails } from "../../../../context/userContext";
-import { P, PageTitle } from "../../Common/Type";
-import { Wrapper } from "../../Common/Containers";
+import { useEffect, useState } from 'react';
+import { useAccountDetails } from '../../../../context/userContext';
+import { P, PageTitle } from '../../Common/Type';
+import { Wrapper } from '../../Common/Containers';
 import {
   Box,
   Divider,
@@ -9,14 +9,13 @@ import {
   List,
   Paper,
   useMantineTheme,
-} from "@mantine/core";
-import { FixturaLoading } from "../../Common/Loading";
-import { IconTools, IconEye, IconCreditCard } from "@tabler/icons";
-import { FindAccountLabel } from "../../../../lib/actions";
-import { useMediaQuery } from "@mantine/hooks";
-import { BTN_TOINTERALLINK } from "../../Common/utils/Buttons";
-import SyncProgress from "../../../pages/members/setup/phases/SetupSteps/Progress/TrackProgress";
-
+} from '@mantine/core';
+import { FixturaLoading } from '../../Common/Loading';
+import { IconTools, IconEye, IconCreditCard } from '@tabler/icons';
+import { FindAccountLabel } from '../../../../lib/actions';
+import { useMediaQuery } from '@mantine/hooks';
+import { BTN_TOINTERALLINK } from '../../Common/utils/Buttons';
+import SyncProgress from '../../../pages/members/setup/phases/SetupSteps/Progress/TrackProgress';
 
 const SetupCheck = ({ children }) => {
   const { account, ReRender } = useAccountDetails();
@@ -49,27 +48,27 @@ const SetupCheck = ({ children }) => {
       <div>
         <PageTitle Copy={`Setting up your account`} ICON={<FixturaLoading />} />
         <Wrapper>
-          <Group position="apart">
+          <Group position='apart'>
             <Box
-              sx={(theme) => ({
-                width: "100%",
+              sx={theme => ({
+                width: '100%',
               })}
             >
               <P
                 Weight={600}
-                textAlign={"center"}
-                size={"xl"}
-                textTransform={"uppercase"}
+                textAlign={'center'}
+                size={'xl'}
+                textTransform={'uppercase'}
                 marginBottom={20}
-                color={"blue.8"}
+                color={'blue.8'}
               >
-                Syncing in Progress with PlayHQ:
+                Syncing in Progress:
               </P>
-              <P textAlign={"center"} size={"md"} marginBottom={25} color={8}>
-                We're actively syncing with PlayHQ to tailor our platform
+              <P textAlign={'center'} size={'md'} marginBottom={25} color={8}>
+                We&apos;re actively syncing with PlayHQ to tailor our platform
                 specifically for your club or association. Keep in mind, the
-                size of your organization influences the syncing time – we're
-                ensuring everything is just right for you.
+                size of your organization influences the syncing time –
+                we&apos;re ensuring everything is just right for you.
               </P>
               {account?.attributes?.data_collections?.data[0]?.attributes
                 .processingTracker ? (
@@ -83,79 +82,79 @@ const SetupCheck = ({ children }) => {
                 false
               )}
               <Divider
-                my="xl"
+                my='xl'
                 label="In the meantime, let's continue setting up your profile:"
-                labelPosition="center"
+                labelPosition='center'
               />
-              <Paper shadow="sm" p="md" mx={"xl"} withBorder>
-                <List spacing="xs" size="sm" center>
+              <Paper shadow='sm' p='md' mx={'xl'} withBorder>
+                <List spacing='xs' size='sm' center>
                   <List.Item
                     icon={
-                      <IconTools stroke={1.5} size="2rem" color={"#6699CC"} />
+                      <IconTools stroke={1.5} size='2rem' color={'#6699CC'} />
                     }
                   >
-                    <Group position="apart" mb={20}>
+                    <Group position='apart' mb={20}>
                       <P Weight={600} color={8} marginBottom={0}>
-                      Templates
+                        Templates
                       </P>
                       <BTN_TOINTERALLINK
-                        URL={`/members/templates/`}
-                        LABEL={"Templates"}
+                        URL={`/members/templateBuilder/`}
+                        LABEL={'Templates'}
                       />
                     </Group>
                     <P>
-                      Step into a world of visual diversity with Fixtura's
-                      Graphics Packages. Choose the style that resonates with{" "}
-                      {FindAccountLabel(account)}'s identity, whether you're
-                      looking for dynamic match summaries or elegant player
-                      profiles. Our wide range ensures there's a perfect fit for
-                      every club's personality.
+                      Step into a world of visual diversity with Fixtura&apos;s
+                      Graphics Packages. Choose the style that resonates with{' '}
+                      {FindAccountLabel(account)}&apos;s identity, whether
+                      you&apos;re looking for dynamic match summaries or elegant
+                      player profiles. Our wide range ensures there&apos;s a
+                      perfect fit for every club&apos;s personality.
                     </P>
                   </List.Item>
 
                   <List.Item
                     icon={
-                      <IconEye stroke={1.5} size="2rem" color={"#6699CC"} />
+                      <IconEye stroke={1.5} size='2rem' color={'#6699CC'} />
                     }
                   >
-                    <Group position="apart" mb={20}>
+                    <Group position='apart' mb={20}>
                       <P Weight={600} color={8} marginBottom={0}>
                         Gallery Items
                       </P>
                       <BTN_TOINTERALLINK
                         URL={`/members/gallery/`}
-                        LABEL={"Media Gallery"}
+                        LABEL={'Media Gallery'}
                       />
                     </Group>
                     <P>
                       Elevate your visual storytelling with Fixtura’s Gallery
                       Items. These images are not just static displays; they
                       become the backbone of your videos and graphics. Whether
-                      it's for impactful background visuals or striking hero
-                      images, the photos you upload set the stage for each
+                      it&apos;s for impactful background visuals or striking
+                      hero images, the photos you upload set the stage for each
                       digital creation. Tailor your {FindAccountLabel(account)}
-                      's narrative by choosing images that resonate with your
-                      team’s spirit and triumphs. With each upload, you're not
-                      just adding a picture; you're crafting the visual essence
-                      of your club's story.
+                      &apos;s narrative by choosing images that resonate with
+                      team&apos;s spirit and triumphs. With each upload,
+                      you&apos;re not just adding a picture; you&apos;re
+                      crafting the visual essence of your club&apos;s story.
                     </P>
                   </List.Item>
                   <List.Item
                     icon={
                       <IconCreditCard
                         stroke={1.5}
-                        size="2rem"
-                        color={"#6699CC"}
+                        size='2rem'
+                        color={'#6699CC'}
                       />
                     }
                   >
-                    <Group position="apart" mb={20}>
+                    <Group position='apart' mb={20}>
                       <P Weight={600} color={8} marginBottom={0}>
                         Sponsorships
                       </P>
                       <BTN_TOINTERALLINK
                         URL={`/members/sponsors/`}
-                        LABEL={"Add Sponsors"}
+                        LABEL={'Add Sponsors'}
                       />
                     </Group>
                     <P>
@@ -163,7 +162,7 @@ const SetupCheck = ({ children }) => {
                       with ease and impact. Fixtura simplifies the creation and
                       display of sponsor profiles, ensuring your partners
                       receive the recognition they deserve, while elevating your
-                      club's digital footprint.
+                      club&apos;s digital footprint.
                     </P>
                   </List.Item>
                 </List>

@@ -1,18 +1,18 @@
-import { useEffect, useState } from "react";
-import StrapiImageUploader from "../../../sponsors/Form/ImageUploader";
-import { useAccountDetails } from "../../../../../../context/userContext";
+import { useEffect, useState } from 'react';
+import StrapiImageUploader from '../../../sponsors/Form/ImageUploader';
+import { useAccountDetails } from '../../../../../../context/userContext';
 
 import {
   FindAccountLogo,
   FindAccountTypeOBJ,
   FindAccountLabel,
   FindAccountTypeAPI,
-} from "../../../../../../lib/actions";
-import { useSetLogo } from "../../../../../../Hooks/useOrganisationLogo";
-import { BTN_Upload_CLose } from "./BTN_Upload_CLose";
-import { NewLogoImageAndStore } from "./NewLogoImageAndStore";
-import { CurrentLogo } from "./CurrentLogo";
-import { NewLogoCopy } from "./NewLogoCopy";
+} from '../../../../../../lib/actions';
+import { useSetLogo } from '../../../../../../Hooks/useOrganisationLogo';
+import { BTN_Upload_CLose } from './BTN_Upload_CLose';
+import { NewLogoImageAndStore } from './NewLogoImageAndStore';
+import { CurrentLogo } from './CurrentLogo';
+import { NewLogoCopy } from './NewLogoCopy';
 
 export const UpdateBrandLogo = () => {
   const { account, ReRender } = useAccountDetails();

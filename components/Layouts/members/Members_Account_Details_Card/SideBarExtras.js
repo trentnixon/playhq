@@ -1,15 +1,15 @@
-import React, { useEffect, useState } from "react";
-import { Paper, Stack } from "@mantine/core";
-import Adminfetcher from "../../../../lib/Adminfetcher";
-import { getIdFromLocalCookie } from "../../../../lib/auth";
-import { P } from "../../../Members/Common/Type";
+import React, { useEffect, useState, useRef } from 'react';
+import { Paper, Stack } from '@mantine/core';
+import Adminfetcher from '../../../../lib/Adminfetcher';
+import { getIdFromLocalCookie } from '../../../../lib/auth';
+import { P } from '../../../Members/Common/Type';
 
-import { RenderCount } from "./components/SideBarExtraShell/RenderCount";
-import { DownloadCount } from "./components/SideBarExtraShell/DownloadCount";
-import { UpcomingGames } from "./components/SideBarExtraShell/UpcomingGames";
-import { ResultsGames } from "./components/SideBarExtraShell/ResultsGames";
-import { RecentRenderButton } from "./components/SideBarExtraShell/RecentRenderButton";
-import { DeliveryDay } from "./components/SideBarExtraShell/DeliveryDay";
+import { RenderCount } from './components/SideBarExtraShell/RenderCount';
+import { DownloadCount } from './components/SideBarExtraShell/DownloadCount';
+import { UpcomingGames } from './components/SideBarExtraShell/UpcomingGames';
+import { ResultsGames } from './components/SideBarExtraShell/ResultsGames';
+import { RecentRenderButton } from './components/SideBarExtraShell/RecentRenderButton';
+import { DeliveryDay } from './components/SideBarExtraShell/DeliveryDay';
 
 /**
  * This component fetches renders data based on the account id from cookies
@@ -20,33 +20,46 @@ import { DeliveryDay } from "./components/SideBarExtraShell/DeliveryDay";
  */
 export const SideBarExtraShell = ({ account }) => {
   // State hook to store the renders data.
-  const [renders, setRenders] = useState({ renders: [] });
+  const [renders, setRenders] = useState({ renders: [], render_token: null });
+  const lastAccountIdRef = useRef(null);
 
   // Effect hook to fetch the renders data when the component mounts or when the account changes.
   useEffect(() => {
+    // Only fetch if account exists and the ID has actually changed
+    if (!account || !account.id) return;
+
+    // Check if we've already fetched data for this account ID
+    if (lastAccountIdRef.current === account.id) return;
+
     // Asynchronous function to fetch the renders data based on the account id from cookies.
     const fetchData = async () => {
-      // Get the account id from cookies.
-      const ID = await getIdFromLocalCookie();
-      // Fetch the renders data from the server.
-      const fetchedRenders = await Adminfetcher(
-        `/scheduler/getDownloads/${ID}`
-      );
-      // Update the renders state with the fetched data or an empty array if the fetch fails.
-      setRenders(fetchedRenders || { renders: [] });
+      try {
+        // Get the account id from cookies.
+        const ID = await getIdFromLocalCookie();
+        // Fetch the renders data from the server.
+        const fetchedRenders = await Adminfetcher(
+          `/scheduler/getDownloads/${ID}`
+        );
+        // Update the renders state with the fetched data or an empty array if the fetch fails.
+        setRenders(fetchedRenders || { renders: [], render_token: null });
+        lastAccountIdRef.current = account.id;
+      } catch (error) {
+        console.error('Error fetching renders data:', error);
+        setRenders({ renders: [], render_token: null });
+      }
     };
 
     // Call the fetchData function to fetch the renders data.
     fetchData();
-  }, [account]);
+  }, [account?.id]); // Only depend on account.id, not the entire account object
 
   // Extract the scheduler object from the account object.
   const OBJ = {
-    scheduler: account.attributes.scheduler.data.attributes,
+    scheduler: account?.attributes?.scheduler?.data?.attributes,
   };
 
   // If there are no renders, return false to hide the component.
-  if (renders.renders.length === 0) return false;
+  if (renders.renders.length === 0) return null;
 
   // Log the render token to the console.
 
@@ -56,7 +69,7 @@ export const SideBarExtraShell = ({ account }) => {
       <P marginBottom={0} Weight={800}>
         Overview
       </P>
-      <Paper shadow="xs" p="md" withBorder mt={5}>
+      <Paper shadow='xs' p='md' withBorder mt={5}>
         <Stack>
           {/* Render the RecentRenderButton component with the renders, account, and render token as props. */}
           <RecentRenderButton

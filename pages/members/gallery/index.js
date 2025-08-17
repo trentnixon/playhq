@@ -1,26 +1,26 @@
-import React, { useEffect, useState } from "react";
-import cookie from "cookie";
-import { IconPhotoPlus } from "@tabler/icons-react";
-import { useAccountDetails } from "../../../context/userContext";
-import { useUser } from "../../../context/authContext";
-import { fetcher } from "../../../lib/api";
+import React, { useEffect, useState } from 'react';
+import cookie from 'cookie';
+import { IconPhotoPlus } from '@tabler/icons-react';
+import { useAccountDetails } from '../../../context/userContext';
+import { useUser } from '../../../context/authContext';
+import { fetcher } from '../../../lib/api';
 import {
   P,
   PageTitle,
   SubHeaders,
-} from "../../../components/Members/Common/Type";
-import { PageCopyWrapper } from "../../../components/Members/Common/Containers";
-import { FixturaLoading } from "../../../components/Members/Common/Loading";
+} from '../../../components/Members/Common/Type';
+import { PageCopyWrapper } from '../../../components/Members/Common/Containers';
+import { FixturaLoading } from '../../../components/Members/Common/Loading';
 
-import { MediaGalleryFileUpload } from "../../../components/pages/members/gallery/FileUpload";
-import SecureRouteHOC from "../../../components/Layouts/members/security/SecureRouteHC";
-import { DisplayGallery } from "../../../components/pages/members/gallery/DisplayGallery/DisplayGallery";
-import { PageMetaData } from "../../../components/Layouts/members/Meta/pageMetaData";
-const qs = require("qs");
+import { MediaGalleryFileUpload } from '../../../components/pages/members/gallery/FileUpload';
+import SecureRouteHOC from '../../../components/Layouts/members/security/SecureRouteHC';
+import { DisplayGallery } from '../../../components/pages/members/gallery/DisplayGallery/DisplayGallery';
+import { PageMetaData } from '../../../components/Layouts/members/Meta/pageMetaData';
+const qs = require('qs');
 
 const query = qs.stringify(
   {
-    populate: ["account_media_libraries", "account_media_libraries.imageId"],
+    populate: ['account_media_libraries', 'account_media_libraries.imageId'],
   },
   {
     encodeValuesOnly: true,
@@ -39,18 +39,18 @@ export default function MediaGallery({ Response }) {
   const [error, setError] = useState(null); // New state for error
 
   const MetaOBJ = {
-    title: "Member Gallery - Fixtura: Showcase Your Media",
+    title: 'Member Gallery - Fixtura: Showcase Your Media',
     description:
       "View and manage your club's digital media gallery on Fixtura. Display your sports content creatively and attractively.",
     keywords:
-      "Member gallery, Fixtura media showcase, sports club gallery, digital content display, club visuals",
+      'Member gallery, Fixtura media showcase, sports club gallery, digital content display, club visuals',
   };
 
   useEffect(() => {
     if (Response?.attributes) {
       setIsLoading(false);
     } else {
-      setError("Failed to load data");
+      setError('Failed to load data');
     }
   }, [Response, userAccount]); // Consolidated useEffect
 
@@ -64,7 +64,7 @@ export default function MediaGallery({ Response }) {
   return (
     <SecureRouteHOC conditions={[user, userAccount]}>
       <PageMetaData MetaOBJ={MetaOBJ} />
-      <PageTitle Copy={"Media Gallery"} ICON={<IconPhotoPlus size={40} />} />
+      <PageTitle Copy={'Media Gallery'} ICON={<IconPhotoPlus size={40} />} />
       <SubHeaders
         Copy={"Manage Your Club's Media Assets"}
         ICON={<IconPhotoPlus size={30} />}
@@ -83,13 +83,13 @@ export default function MediaGallery({ Response }) {
 }
 
 export async function getServerSideProps(ctx) {
-  const parsedCookies = cookie.parse(ctx.req.headers.cookie || "");
-  const jwt = parsedCookies["jwt"];
-  const linkedAccount = parsedCookies["LinkedAccount"];
+  const parsedCookies = cookie.parse(ctx.req.headers.cookie || '');
+  const jwt = parsedCookies['jwt'];
+  const linkedAccount = parsedCookies['LinkedAccount'];
 
   if (!jwt || !linkedAccount) {
     // Redirect to login or show a relevant message if cookies are missing
-    return { redirect: { destination: "/", permanent: false } };
+    return { redirect: { destination: '/', permanent: false } };
   }
 
   try {
@@ -97,14 +97,14 @@ export async function getServerSideProps(ctx) {
       `${process.env.NEXT_PUBLIC_STRAPI_URL}/accounts/${linkedAccount}?${query}`,
       {
         headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
           Authorization: `Bearer ${jwt}`,
         },
       }
     );
     return { props: { Response: response.data } };
   } catch (error) {
-    console.error("Failed to fetch data:", error);
+    console.error('Failed to fetch data:', error);
     return { props: { Response: null } }; // Handle error accordingly
   }
 }

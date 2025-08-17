@@ -1,13 +1,13 @@
 //
-import Cookies from "js-cookie";
-import { useState } from "react";
-import { fetcher } from "../lib/api";
-import { getUserFromLocalCookie, getAccountFromLocalCookie } from "../lib/auth";
+import Cookies from 'js-cookie';
+import { useState } from 'react';
+import { fetcher } from '../lib/api';
+import { getUserFromLocalCookie, getAccountFromLocalCookie } from '../lib/auth';
 
 export const useCreateSponsor = () => {
   const [Sponsor, setSponsor] = useState(null);
 
-  const CreateSponsor = async (OBJ) => {
+  const CreateSponsor = async OBJ => {
     const user = await getAccountFromLocalCookie();
     setSponsor(true);
     if (user) {
@@ -15,11 +15,11 @@ export const useCreateSponsor = () => {
         const response = await fetcher(
           `${process.env.NEXT_PUBLIC_STRAPI_URL}/sponsors`,
           {
-            method: "POST",
+            method: 'POST',
             headers: {
-              Accept: "application/json",
-              "Content-Type": "application/json",
-              Authorization: `Bearer ${Cookies.get("jwt")}`,
+              Accept: 'application/json',
+              'Content-Type': 'application/json',
+              Authorization: `Bearer ${Cookies.get('jwt')}`,
             },
             body: JSON.stringify({ data: OBJ }),
           }
@@ -45,11 +45,11 @@ export const useUpdateSponsor = () => {
         const response = await fetcher(
           `${process.env.NEXT_PUBLIC_STRAPI_URL}/sponsors/${_ID}`,
           {
-            method: "PUT",
+            method: 'PUT',
             headers: {
-              Accept: "application/json",
-              "Content-Type": "application/json",
-              Authorization: `Bearer ${Cookies.get("jwt")}`,
+              Accept: 'application/json',
+              'Content-Type': 'application/json',
+              Authorization: `Bearer ${Cookies.get('jwt')}`,
             },
             body: JSON.stringify({ data: OBJ }),
           }
@@ -67,7 +67,7 @@ export const useUpdateSponsor = () => {
 export const useDeleteSponsor = () => {
   const [DeleteSponsor, setDeleteSponsor] = useState(null);
 
-  const ConfirmDeleteSponsor = async (_ID) => {
+  const ConfirmDeleteSponsor = async _ID => {
     const user = await getAccountFromLocalCookie();
     setDeleteSponsor(true);
     if (user) {
@@ -75,11 +75,11 @@ export const useDeleteSponsor = () => {
         const response = await fetcher(
           `${process.env.NEXT_PUBLIC_STRAPI_URL}/sponsors/${_ID}`,
           {
-            method: "DELETE",
+            method: 'DELETE',
             headers: {
-              Accept: "application/json",
-              "Content-Type": "application/json",
-              Authorization: `Bearer ${Cookies.get("jwt")}`,
+              Accept: 'application/json',
+              'Content-Type': 'application/json',
+              Authorization: `Bearer ${Cookies.get('jwt')}`,
             },
           }
         );

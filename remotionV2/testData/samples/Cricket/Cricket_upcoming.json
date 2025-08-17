@@ -1,0 +1,638 @@
+{
+  "data": [
+    {
+      "date": "Sun, 29 June",
+      "time": "09:30 AM",
+      "type": "One Day",
+      "round": "Round 6",
+      "gameID": "c373dc6c",
+      "gender": "Men",
+      "ground": "Melbourne Cricket Ground",
+      "prompt": "Upcoming cricket match details:\n- Teams: Australia vs India, Date and Time: Sunday, 29 June 2025, 09:30 AM, Location: Melbourne Cricket Ground\n- Round: Round 6, Match Type: One Day\n- League: ICC World Championship",
+      "ageGroup": "Seniors",
+      "teamAway": "India",
+      "teamHome": "Australia",
+      "gradeName": "ICC World Championship",
+      "teamAwayLogo": {
+        "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
+        "width": 128,
+        "height": 128
+      },
+      "teamHomeLogo": {
+        "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
+        "width": 379,
+        "height": 303
+      },
+      "assignSponsors": {
+        "competition": [],
+        "grade": [],
+        "team": [
+          {
+            "id": 152,
+            "isPrimary": false,
+            "isActive": true,
+            "isArticle": true,
+            "isVideo": true,
+            "url": "test",
+            "tagline": "test",
+            "description": null,
+            "name": "test",
+            "logo": {
+              "id": 12785,
+              "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Sponsor1_a6752b0a5f.png"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sat, 28 June",
+      "time": "10:00 AM",
+      "type": "One Day",
+      "round": "Round 6",
+      "gameID": "31813cba",
+      "gender": "Men",
+      "ground": "Lord's Cricket Ground",
+      "prompt": "Upcoming cricket match details:\n- Teams: England vs South Africa, Date and Time: Saturday, 28 June 2025, 10:00 AM, Location: Lord's Cricket Ground\n- Round: Round 6, Match Type: One Day\n- League: ICC Test Series",
+      "ageGroup": "Seniors",
+      "teamAway": "South Africa",
+      "teamHome": "England",
+      "gradeName": "ICC Test Series",
+      "teamAwayLogo": {
+        "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
+        "width": 379,
+        "height": 303
+      },
+      "teamHomeLogo": {
+        "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
+        "width": 128,
+        "height": 128
+      },
+      "assignSponsors": {
+        "competition": [],
+        "grade": [],
+        "team": [
+          {
+            "id": 153,
+            "isPrimary": false,
+            "isActive": true,
+            "isArticle": true,
+            "isVideo": true,
+            "url": "test",
+            "tagline": "test",
+            "description": null,
+            "name": "test",
+            "logo": {
+              "id": 12786,
+              "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Sponsor1_a6752b0a5f.png"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sun, 29 June",
+      "time": "10:00 AM",
+      "type": "One Day",
+      "round": "Round 6",
+      "gameID": "2538f10f",
+      "gender": "Men",
+      "ground": "Eden Park",
+      "prompt": "Upcoming cricket match details:\n- Teams: New Zealand vs West Indies, Date and Time: Sunday, 29 June 2025, 10:00 AM, Location: Eden Park\n- Round: Round 6, Match Type: One Day\n- League: ICC T20 Series",
+      "ageGroup": "Seniors",
+      "teamAway": "West Indies",
+      "teamHome": "New Zealand",
+      "gradeName": "ICC T20 Series",
+      "teamAwayLogo": {
+        "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
+        "width": 379,
+        "height": 303
+      },
+      "teamHomeLogo": {
+        "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
+        "width": 128,
+        "height": 128
+      },
+      "assignSponsors": {
+        "competition": [],
+        "grade": [],
+        "team": [
+          {
+            "id": 151,
+            "isPrimary": true,
+            "isActive": true,
+            "isArticle": true,
+            "isVideo": true,
+            "url": "test",
+            "tagline": "test",
+            "description": null,
+            "name": "test",
+            "logo": {
+              "id": 12784,
+              "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Sponsor1_a6752b0a5f.png"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sat, 28 June",
+      "time": "10:00 AM",
+      "type": "One Day",
+      "round": "Round 5",
+      "gameID": "85f7a9f1",
+      "gender": "Men",
+      "ground": "Gaddafi Stadium",
+      "prompt": "Upcoming cricket match details:\n- Teams: Pakistan vs Sri Lanka, Date and Time: Saturday, 28 June 2025, 10:00 AM, Location: Gaddafi Stadium\n- Round: Round 5, Match Type: One Day\n- League: ICC World Championship",
+      "ageGroup": "Seniors",
+      "teamAway": "Sri Lanka",
+      "teamHome": "Pakistan",
+      "gradeName": "ICC World Championship",
+      "teamAwayLogo": {
+        "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
+        "width": 379,
+        "height": 303
+      },
+      "teamHomeLogo": {
+        "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
+        "width": 128,
+        "height": 128
+      },
+      "assignSponsors": {
+        "competition": [],
+        "grade": [],
+        "team": [
+          {
+            "id": 152,
+            "isPrimary": false,
+            "isActive": true,
+            "isArticle": true,
+            "isVideo": true,
+            "url": "test",
+            "tagline": "test",
+            "description": null,
+            "name": "test",
+            "logo": {
+              "id": 12785,
+              "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Sponsor1_a6752b0a5f.png"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sat, 28 June",
+      "time": "10:00 AM",
+      "type": "One Day",
+      "round": "Round 5",
+      "gameID": "dd790621",
+      "gender": "Men",
+      "ground": "Sher-e-Bangla National Cricket Stadium",
+      "prompt": "Upcoming cricket match details:\n- Teams: Bangladesh vs Afghanistan, Date and Time: Saturday, 28 June 2025, 10:00 AM, Location: Sher-e-Bangla National Cricket Stadium\n- Round: Round 5, Match Type: One Day\n- League: ICC World Championship",
+      "ageGroup": "Seniors",
+      "teamAway": "Afghanistan",
+      "teamHome": "Bangladesh",
+      "gradeName": "ICC World Championship",
+      "teamAwayLogo": {
+        "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
+        "width": 128,
+        "height": 128
+      },
+      "teamHomeLogo": {
+        "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
+        "width": 379,
+        "height": 303
+      },
+      "assignSponsors": {
+        "competition": [],
+        "grade": [],
+        "team": [
+          {
+            "id": 153,
+            "isPrimary": false,
+            "isActive": true,
+            "isArticle": true,
+            "isVideo": true,
+            "url": "test",
+            "tagline": "test",
+            "description": null,
+            "name": "test",
+            "logo": {
+              "id": 12786,
+              "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Sponsor1_a6752b0a5f.png"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sat, 28 June",
+      "time": "10:00 AM",
+      "type": "One Day",
+      "round": "Round 7",
+      "gameID": "513e6973",
+      "gender": "Men",
+      "ground": "Wankhede Stadium",
+      "prompt": "Upcoming cricket match details:\n- Teams: India vs New Zealand, Date and Time: Saturday, 28 June 2025, 10:00 AM, Location: Wankhede Stadium\n- Round: Round 7, Match Type: One Day\n- League: ICC World Championship",
+      "ageGroup": "Seniors",
+      "teamAway": "New Zealand",
+      "teamHome": "India",
+      "gradeName": "ICC World Championship",
+      "teamAwayLogo": {
+        "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
+        "width": 379,
+        "height": 303
+      },
+      "teamHomeLogo": {
+        "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
+        "width": 128,
+        "height": 128
+      },
+      "assignSponsors": {
+        "competition": [],
+        "grade": [],
+        "team": [
+          {
+            "id": 151,
+            "isPrimary": true,
+            "isActive": true,
+            "isArticle": true,
+            "isVideo": true,
+            "url": "test",
+            "tagline": "test",
+            "description": null,
+            "name": "test",
+            "logo": {
+              "id": 12784,
+              "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Sponsor1_a6752b0a5f.png"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sun, 29 June",
+      "time": "10:00 AM",
+      "type": "One Day",
+      "round": "Round 6",
+      "gameID": "6f7f1921",
+      "gender": "Men",
+      "ground": "The Oval",
+      "prompt": "Upcoming cricket match details:\n- Teams: England vs Australia, Date and Time: Sunday, 29 June 2025, 10:00 AM, Location: The Oval\n- Round: Round 6, Match Type: One Day\n- League: ICC Test Series",
+      "ageGroup": "Seniors",
+      "teamAway": "Australia",
+      "teamHome": "England",
+      "gradeName": "ICC Test Series",
+      "teamAwayLogo": {
+        "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
+        "width": 379,
+        "height": 303
+      },
+      "teamHomeLogo": {
+        "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
+        "width": 128,
+        "height": 128
+      },
+      "assignSponsors": {
+        "competition": [],
+        "grade": [],
+        "team": [
+          {
+            "id": 152,
+            "isPrimary": false,
+            "isActive": true,
+            "isArticle": true,
+            "isVideo": true,
+            "url": "test",
+            "tagline": "test",
+            "description": null,
+            "name": "test",
+            "logo": {
+              "id": 12785,
+              "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Sponsor1_a6752b0a5f.png"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "date": "Sun, 29 June",
+      "time": "10:00 AM",
+      "type": "One Day",
+      "round": "Round 6",
+      "gameID": "fd2af090",
+      "gender": "Men",
+      "ground": "Kensington Oval",
+      "prompt": "Upcoming cricket match details:\n- Teams: West Indies vs South Africa, Date and Time: Sunday, 29 June 2025, 10:00 AM, Location: Kensington Oval\n- Round: Round 6, Match Type: One Day\n- League: ICC T20 Series",
+      "ageGroup": "Seniors",
+      "teamAway": "South Africa",
+      "teamHome": "West Indies",
+      "gradeName": "ICC T20 Series",
+      "teamAwayLogo": {
+        "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
+        "width": 379,
+        "height": 303
+      },
+      "teamHomeLogo": {
+        "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
+        "width": 128,
+        "height": 128
+      },
+      "assignSponsors": {
+        "competition": [],
+        "grade": [],
+        "team": [
+          {
+            "id": 153,
+            "isPrimary": false,
+            "isActive": true,
+            "isArticle": true,
+            "isVideo": true,
+            "url": "test",
+            "tagline": "test",
+            "description": null,
+            "name": "test",
+            "logo": {
+              "id": 12786,
+              "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Sponsor1_a6752b0a5f.png"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "asset": {
+    "assetID": 1,
+    "assetTypeID": 1,
+    "assetCategoryID": 1,
+    "assetsLinkID": "de30b802bce4898274c301c63db322fc0d5991b5be67bead347234c3cb0a3100"
+  },
+  "render": {
+    "schedulerId": 207,
+    "renderId": 8265
+  },
+  "account": {
+    "accountId": 319
+  },
+  "timings": {
+    "FPS_MAIN": 780,
+    "FPS_INTRO": 90,
+    "FPS_OUTRO": 90,
+    "FPS_LADDER": 0,
+    "FPS_SCORECARD": 270
+  },
+  "frames": [45, 225, 480, 735, 900],
+  "videoMeta": {
+    "club": {
+      "logo": {
+        "hasLogo": true,
+        "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
+        "width": 379,
+        "height": 303
+      },
+      "name": "Gold Coast Veterans Cricket",
+      "sport": "Cricket",
+      "sponsors": {
+        "primary": [
+          {
+            "id": 151,
+            "isPrimary": true,
+            "isActive": true,
+            "isArticle": true,
+            "isVideo": true,
+            "url": "test",
+            "tagline": "test",
+            "description": null,
+            "name": "test",
+            "logo": {
+              "id": 12784,
+              "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Sponsor1_a6752b0a5f.png"
+            }
+          }
+        ],
+        "default": {
+          "primary_sponsor": [
+            {
+              "id": 151,
+              "isPrimary": true,
+              "isActive": true,
+              "isArticle": true,
+              "isVideo": true,
+              "url": "test",
+              "tagline": "test",
+              "description": null,
+              "name": "test",
+              "logo": {
+                "id": 12784,
+                "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Sponsor1_a6752b0a5f.png"
+              }
+            }
+          ],
+          "general_sponsor_1": [
+            {
+              "id": 152,
+              "isPrimary": false,
+              "isActive": true,
+              "isArticle": true,
+              "isVideo": true,
+              "url": "test",
+              "tagline": "test",
+              "description": null,
+              "name": "test",
+              "logo": {
+                "id": 12785,
+                "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Sponsor2_39eebf9c1b.png"
+              }
+            }
+          ],
+          "general_sponsor_2": [
+            {
+              "id": 153,
+              "isPrimary": false,
+              "isActive": true,
+              "isArticle": true,
+              "isVideo": true,
+              "url": "test",
+              "tagline": "test",
+              "description": null,
+              "name": "test",
+              "logo": {
+                "id": 12786,
+                "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Sponsor3_d65a61808c.png"
+              }
+            }
+          ],
+          "general_sponsor_3": [
+            {
+              "id": 167,
+              "isPrimary": false,
+              "isActive": true,
+              "isArticle": true,
+              "isVideo": true,
+              "url": "4",
+              "tagline": "4",
+              "description": null,
+              "name": "4",
+              "logo": {
+                "id": 13159,
+                "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Sponsor4_2e99a89b64.png"
+              }
+            }
+          ],
+          "general_sponsor_4": [
+            {
+              "id": 168,
+              "isPrimary": false,
+              "isActive": true,
+              "isArticle": true,
+              "isVideo": true,
+              "url": "5",
+              "tagline": "5",
+              "description": null,
+              "name": "5",
+              "logo": {
+                "id": 13160,
+                "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Sponsor5_5830015159.png"
+              }
+            }
+          ],
+          "general_sponsor_5": [
+            {
+              "id": 169,
+              "isPrimary": false,
+              "isActive": true,
+              "isArticle": true,
+              "isVideo": true,
+              "url": "6",
+              "tagline": "6",
+              "description": null,
+              "name": "6",
+              "logo": {
+                "id": 13161,
+                "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Sponsor6_ffce411e69.png"
+              }
+            }
+          ],
+          "general_sponsor_6": [
+            {
+              "id": 170,
+              "isPrimary": false,
+              "isActive": true,
+              "isArticle": true,
+              "isVideo": true,
+              "url": "7",
+              "tagline": "7",
+              "description": null,
+              "name": "7",
+              "logo": {
+                "id": 13162,
+                "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Sponsor7_6d12274c46.png"
+              }
+            }
+          ]
+        }
+      }
+    },
+    "video": {
+      "fixtureCategory": "MASTERS",
+      "groupingCategory": "MASTERS",
+      "metadata": {
+        "title": "Fixtures",
+        "titleSplit": ["Fixtures", ""],
+        "videoTitle": "Up Coming Fixtures",
+        "compositionId": "CricketUpcoming",
+        "assetId": 1,
+        "assetTypeId": 1,
+        "frames": [],
+        "includeSponsors": true
+      },
+      "appearance": {
+        "theme": {
+          "dark": "#FFF",
+          "white": "#111",
+          "primary": "#00843d",
+          "secondary": "#ffcd00"
+        },
+        "template": "basic"
+      },
+      "media": {
+        "HeroImage": {
+          "url": "",
+          "ratio": "",
+          "width": 0,
+          "height": 0,
+          "AgeGroup": "",
+          "AssetType": "",
+          "markerPosition": ""
+        },
+        "audio": {
+          "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Audiio_Marscott_Wild_Neon_Get_The_Gains_inst_3251aaa9af.mp3",
+          "audioOption": "https://lmssocialmediamanager.s3.ap-southeast-2.amazonaws.com/assets/Fifteen%20on%20Me.mp3"
+        }
+      },
+      "contentLayout": {
+        "divideFixturesBy": {
+          "CricketLadder": 1,
+          "CricketRoster": 1,
+          "CricketResults": 2,
+          "CricketUpcoming": 3,
+          "CricketResultSingle": 1
+        }
+      },
+      "templateVariation": {
+        "useBackground": "Graphics",
+        "video": {
+          "url": null,
+          "fallbackUrl": null,
+          "position": "left",
+          "size": "cover",
+          "loop": null,
+          "muted": true,
+          "overlay": {
+            "color": "rgba(0,0,0,0.5)",
+            "opacity": 0.7
+          },
+          "useOffthreadVideo": null,
+          "volume": 0.8,
+          "playbackRate": null
+        },
+        "image": {
+          "url": null,
+          "ratio": null,
+          "width": null,
+          "height": null,
+          "type": "focusblur",
+          "direction": "in",
+          "overlayStyle": "duotone",
+          "gradientType": "linear",
+          "overlayOpacity": 0.7
+        },
+        "palette": "complementary",
+        "gradient": {
+          "type": "primaryRadial",
+          "direction": "DEFAULT"
+        },
+        "noise": {
+          "type": "floatingParticles"
+        },
+        "pattern": {
+          "type": "dots",
+          "animation": "rotate",
+          "scale": 0.5,
+          "rotation": null,
+          "opacity": 0.3,
+          "animationDuration": 1500,
+          "animationSpeed": 0.5
+        },
+        "particle": {
+          "type": "snow",
+          "particleCount": "150",
+          "speed": 1,
+          "direction": "down",
+          "animation": "fade"
+        }
+      }
+    }
+  },
+  "errors": []
+}

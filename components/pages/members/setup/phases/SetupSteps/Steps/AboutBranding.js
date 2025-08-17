@@ -1,4 +1,4 @@
-import { SelectATheme } from "../../../../../../Members/Common/Customiser/Design/SelectATheme";
+import { SelectATheme } from '../../../../../../Members/Common/Customiser/Design/SelectATheme';
 
 export const StepAboutBranding = () => {
   return <SelectATheme />;

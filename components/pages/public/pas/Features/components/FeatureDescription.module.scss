@@ -1,4 +1,4 @@
-@import "../../PAS.module.scss";
+@import '../../PAS.module.scss';
 
 .featureDescription {
   @include section-gradient;
@@ -10,8 +10,8 @@
     font-weight: normal; /* Ensuring the font weight is bold */
     margin: 0 auto; /* Centering the text */
     max-width: 1000px; /* Restricting the width for better readability */
-  
-    span{
+
+    span {
       color: $highlight-color-1;
     }
   }

@@ -1,0 +1,412 @@
+{
+  "data": [
+    {
+      "ageGroup": "Seniors",
+      "gameId": "d4adc2eb",
+      "teamHome": "Australia",
+      "teamAway": "India",
+      "isHomeTeam": true,
+      "teamRoster": [
+        "Pat Cummins (c)",
+        "Steve Smith",
+        "Marnus Labuschagne",
+        "Travis Head",
+        "Glenn Maxwell",
+        "Mitchell Marsh",
+        "Alex Carey (wk)",
+        "Mitchell Starc",
+        "Josh Hazlewood",
+        "Nathan Lyon",
+        "Adam Zampa",
+        "Cameron Green"
+      ],
+      "type": "One Day",
+      "ground": "Melbourne Cricket Ground",
+      "round": "Round 5",
+      "date": "Saturday, 21 June 2025",
+      "teamHomeLogo": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
+      "teamAwayLogo": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
+      "gender": "Men",
+      "gradeName": "ICC World Championship",
+      "sponsors": [
+        {
+          "id": 151,
+          "isPrimary": true,
+          "isActive": true,
+          "isArticle": true,
+          "isVideo": true,
+          "url": "test",
+          "tagline": "test",
+          "description": null,
+          "name": "test",
+          "logo": {
+            "id": 12784,
+            "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Sponsor1_a6752b0a5f.png"
+          }
+        }
+      ]
+    },
+    {
+      "ageGroup": "Seniors",
+      "gameId": "da1a8bad",
+      "teamHome": "England",
+      "teamAway": "South Africa",
+      "isHomeTeam": true,
+      "teamRoster": [
+        "Jos Buttler (c)",
+        "Ben Stokes",
+        "Joe Root",
+        "Jonny Bairstow",
+        "Harry Brook",
+        "Liam Livingstone",
+        "Moeen Ali",
+        "Sam Curran",
+        "Chris Woakes",
+        "Mark Wood",
+        "Adil Rashid",
+        "Reece Topley"
+      ],
+      "type": "One Day",
+      "ground": "Lord's Cricket Ground",
+      "round": "Round 6",
+      "date": "Saturday, 21 June 2025",
+      "teamHomeLogo": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
+      "teamAwayLogo": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
+      "gender": "Men",
+      "gradeName": "ICC Test Series",
+      "sponsors": [
+        {
+          "id": 151,
+          "isPrimary": true,
+          "isActive": true,
+          "isArticle": true,
+          "isVideo": true,
+          "url": "test",
+          "tagline": "test",
+          "description": null,
+          "name": "test",
+          "logo": {
+            "id": 12784,
+            "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Sponsor1_a6752b0a5f.png"
+          }
+        }
+      ]
+    },
+    {
+      "ageGroup": "Seniors",
+      "gameId": "a98f8529",
+      "teamHome": "New Zealand",
+      "teamAway": "West Indies",
+      "isHomeTeam": true,
+      "teamRoster": [
+        "Kane Williamson (c)",
+        "Tom Latham",
+        "Devon Conway",
+        "Daryl Mitchell",
+        "Glenn Phillips",
+        "James Neesham",
+        "Mitchell Santner",
+        "Trent Boult",
+        "Tim Southee",
+        "Lockie Ferguson",
+        "Ish Sodhi",
+        "Finn Allen"
+      ],
+      "type": "One Day",
+      "ground": "Eden Park",
+      "round": "Round 6",
+      "date": "Saturday, 21 June 2025",
+      "teamHomeLogo": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
+      "teamAwayLogo": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
+      "gender": "Men",
+      "gradeName": "ICC T20 Series",
+      "sponsors": [
+        {
+          "id": 152,
+          "isPrimary": false,
+          "isActive": true,
+          "isArticle": true,
+          "isVideo": true,
+          "url": "test",
+          "tagline": "test",
+          "description": null,
+          "name": "test",
+          "logo": {
+            "id": 12785,
+            "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Sponsor1_a6752b0a5f.png"
+          }
+        }
+      ]
+    },
+    {
+      "ageGroup": "Seniors",
+      "gameId": "d7f8d89e",
+      "teamHome": "Pakistan",
+      "teamAway": "Sri Lanka",
+      "isHomeTeam": true,
+      "teamRoster": [
+        "Babar Azam (c)",
+        "Mohammad Rizwan",
+        "Fakhar Zaman",
+        "Imam-ul-Haq",
+        "Haris Sohail",
+        "Iftikhar Ahmed",
+        "Shadab Khan",
+        "Shaheen Afridi",
+        "Haris Rauf",
+        "Naseem Shah",
+        "Usama Mir",
+        "Mohammad Nawaz"
+      ],
+      "type": "One Day",
+      "ground": "Gaddafi Stadium",
+      "round": "Round 5",
+      "date": "Sunday, 22 June 2025",
+      "teamHomeLogo": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
+      "teamAwayLogo": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
+      "gender": "Men",
+      "gradeName": "ICC World Championship",
+      "sponsors": [
+        {
+          "id": 153,
+          "isPrimary": false,
+          "isActive": true,
+          "isArticle": true,
+          "isVideo": true,
+          "url": "test",
+          "tagline": "test",
+          "description": null,
+          "name": "test",
+          "logo": {
+            "id": 12786,
+            "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Sponsor1_a6752b0a5f.png"
+          }
+        }
+      ]
+    },
+    {
+      "ageGroup": "Seniors",
+      "gameId": "ba1c0f25",
+      "teamHome": "Bangladesh",
+      "teamAway": "Afghanistan",
+      "isHomeTeam": true,
+      "teamRoster": [
+        "Shakib Al Hasan (c)",
+        "Litton Das",
+        "Najmul Hossain Shanto",
+        "Mushfiqur Rahim",
+        "Mahmudullah",
+        "Afif Hossain",
+        "Mehidy Hasan",
+        "Taskin Ahmed",
+        "Mustafizur Rahman",
+        "Shoriful Islam",
+        "Nasum Ahmed",
+        "Towhid Hridoy"
+      ],
+      "type": "One Day",
+      "ground": "Sher-e-Bangla National Cricket Stadium",
+      "round": "Round 7",
+      "date": "Sunday, 22 June 2025",
+      "teamHomeLogo": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
+      "teamAwayLogo": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
+      "gender": "Men",
+      "gradeName": "ICC World Championship",
+      "sponsors": [
+        {
+          "id": 151,
+          "isPrimary": true,
+          "isActive": true,
+          "isArticle": true,
+          "isVideo": true,
+          "url": "test",
+          "tagline": "test",
+          "description": null,
+          "name": "test",
+          "logo": {
+            "id": 12784,
+            "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Sponsor1_a6752b0a5f.png"
+          }
+        }
+      ]
+    },
+    {
+      "ageGroup": "Seniors",
+      "gameId": "c19127d6",
+      "teamHome": "West Indies",
+      "teamAway": "South Africa",
+      "isHomeTeam": true,
+      "teamRoster": [
+        "Kraigg Brathwaite (c)",
+        "Shai Hope",
+        "Brandon King",
+        "Shamarh Brooks",
+        "Rovman Powell",
+        "Jason Holder",
+        "Andre Russell",
+        "Alzarri Joseph",
+        "Kemar Roach",
+        "Akeal Hosein",
+        "Gudakesh Motie",
+        "Nicholas Pooran"
+      ],
+      "type": "One Day",
+      "ground": "Kensington Oval",
+      "round": "Round 7",
+      "date": "Sunday, 22 June 2025",
+      "teamHomeLogo": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
+      "teamAwayLogo": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
+      "gender": "Men",
+      "gradeName": "ICC T20 Series",
+      "sponsors": [
+        {
+          "id": 152,
+          "isPrimary": false,
+          "isActive": true,
+          "isArticle": true,
+          "isVideo": true,
+          "url": "test",
+          "tagline": "test",
+          "description": null,
+          "name": "test",
+          "logo": {
+            "id": 12785,
+            "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Sponsor1_a6752b0a5f.png"
+          }
+        }
+      ]
+    }
+  ],
+  "asset": {
+    "assetID": 32,
+    "assetTypeID": 1,
+    "assetCategoryID": 2,
+    "assetsLinkID": ""
+  },
+  "render": {
+    "renderId": 8251,
+    "schedulerId": 207
+  },
+  "account": {
+    "accountId": 319
+  },
+  "timings": {
+    "FPS_INTRO": 90,
+    "FPS_OUTRO": 180,
+    "FPS_SCORECARD": 60,
+    "FPS_MAIN": 360,
+    "FPS_LADDER": 0
+  },
+  "frames": [120, 180, 240, 300, 360, 420],
+  "videoMeta": {
+    "club": {
+      "logo": {
+        "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
+        "width": 379,
+        "height": 303
+      },
+      "name": "Gold Coast Veterans Cricket",
+      "sport": "Cricket"
+    },
+    "video": {
+      "metadata": {
+        "title": "Team List",
+        "titleSplit": ["Team", "List"],
+        "videoTitle": "Gold Coast Veterans Cricket CricketRoster",
+        "compositionId": "CricketRoster",
+        "assetId": 32,
+        "assetTypeId": 1,
+        "frames": [120, 180, 240, 300, 360, 420],
+        "includeSponsors": false
+      },
+      "appearance": {
+        "theme": {
+          "primary": "#00843d",
+          "secondary": "#ffcd00",
+          "dark": "#FFF",
+          "white": "#111"
+        },
+        "template": "Basic"
+      },
+      "media": {
+        "HeroImage": {
+          "url": "",
+          "ratio": "",
+          "width": 0,
+          "height": 0,
+          "AgeGroup": "MASTERS",
+          "AssetType": "CricketRoster",
+          "markerPosition": ""
+        },
+        "audio": {
+          "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Audiio_Kidpenny_Single_Better_Start_Now_Inst_53b898d9ef.mp3"
+        }
+      },
+      "contentLayout": {
+        "divideFixturesBy": {
+          "CricketLadder": 1,
+          "CricketRoster": 1,
+          "CricketResults": 2,
+          "CricketUpcoming": 3,
+          "CricketResultSingle": 1
+        }
+      },
+      "templateVariation": {
+        "useBackground": "Pattern",
+        "palette": "primaryOnWhite",
+        "gradient": {
+          "type": "primaryToSecondary",
+          "direction": "VERTICAL"
+        },
+        "image": {
+          "url": null,
+          "ratio": null,
+          "width": null,
+          "height": null,
+          "type": "pan",
+          "direction": "left",
+          "overlayStyle": "vignette",
+          "gradientType": "linear",
+          "overlayOpacity": 0.7
+        },
+        "noise": {
+          "type": "Subtle"
+        },
+        "particle": {
+          "type": "lines",
+          "particleCount": "300",
+          "speed": 0.8,
+          "direction": "up",
+          "animation": "scale"
+        },
+        "pattern": {
+          "type": "dots",
+          "animation": "panDown",
+          "scale": 0.75,
+          "rotation": null,
+          "opacity": 0.35,
+          "animationDuration": 300,
+          "animationSpeed": 0.8
+        },
+        "video": {
+          "url": null,
+          "fallbackUrl": null,
+          "position": "left",
+          "size": "cover",
+          "loop": null,
+          "muted": true,
+          "overlay": {
+            "color": "rgba(0,0,0,0.5)",
+            "opacity": 0.7
+          },
+          "useOffthreadVideo": null,
+          "volume": 0.8,
+          "playbackRate": null
+        }
+      },
+      "fixtureCategory": "MASTERS",
+      "groupingCategory": "MASTERS"
+    }
+  },
+  "errors": []
+}

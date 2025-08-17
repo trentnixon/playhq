@@ -1,11 +1,11 @@
-import React from "react";
-import { Sequence } from "remotion";
+import React from 'react';
+import { Sequence } from 'remotion';
 
 // Components
-import { LogoClubTitleHeaderLimited } from "../../Components/Header/LogoClubTitleHeader";
-import { Results } from "./Results";
+import { LogoClubTitleHeaderLimited } from '../../Components/Header/LogoClubTitleHeader';
+import { Results } from './Results';
 
-export const WeekendSingleGameResult = (props) => {
+export const WeekendSingleGameResult = props => {
   const { FPS_MAIN } = props;
   return (
     <>

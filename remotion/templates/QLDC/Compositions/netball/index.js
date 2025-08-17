@@ -1,7 +1,7 @@
 // Netball
-import {UpComingNetBallFixtures} from './UpComingNetBallFixtures';
-import {NetballLadder} from './NetballLadder';
-import {WeekendResultsNetball} from './WeekendResultsNetball';
+import { UpComingNetBallFixtures } from './UpComingNetBallFixtures';
+import { NetballLadder } from './NetballLadder';
+import { WeekendResultsNetball } from './WeekendResultsNetball';
 /*
 
 import {WeekendSingleGameResultNetball} from './WeekendSingleGameResultNetball';
@@ -11,9 +11,9 @@ import {Top5List} from './Top5List';
  */
 
 export const NETBALL_TEMPLATES_COMPONENTS = {
-	UpComingNetBallFixtures,
-	NetballLadder,
-	WeekendResultsNetball,
-	/*
+  UpComingNetBallFixtures,
+  NetballLadder,
+  WeekendResultsNetball,
+  /*
 	WeekendSingleGameResultNetball, */
 };

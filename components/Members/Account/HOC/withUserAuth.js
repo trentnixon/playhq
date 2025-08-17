@@ -12,7 +12,8 @@ export default function withUserAuth(Component) {
     useEffect(() => {
       if (!user && !isRedirecting.current) {
         isRedirecting.current = true;
-        router.push(`/members/verification/?prev=${currentRoute}`)
+        router
+          .push(`/members/verification/?prev=${currentRoute}`)
           .then(() => {
             isRedirecting.current = false;
           })

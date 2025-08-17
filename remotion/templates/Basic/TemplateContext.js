@@ -1,7 +1,10 @@
 import React, { createContext, useContext } from 'react';
-import { createStyleProps, loadFonts } from '../../utils/global/init/initialize';
+import {
+  createStyleProps,
+  loadFonts,
+} from '../../utils/global/init/initialize';
 import { getStyleConfig } from '../../utils/global/init/getStyleConfig';
-import {getPrimarySponsor} from '../../structural/Sponsors/Utils/utils';
+import { getPrimarySponsor } from '../../structural/Sponsors/Utils/utils';
 const TemplateContext = createContext();
 
 export const TemplateProvider = ({ children, settings, DATA }) => {
@@ -15,7 +18,12 @@ export const TemplateProvider = ({ children, settings, DATA }) => {
 
   // Create style config
   const StyleConfig = getStyleConfig(
-    createStyleProps(THEME, defaultFontFamily, settings.defaultCopyFontFamily, settings.gradientDegree)
+    createStyleProps(
+      THEME,
+      defaultFontFamily,
+      settings.defaultCopyFontFamily,
+      settings.gradientDegree
+    )
   );
 
   const BuildProps = {
@@ -40,7 +48,7 @@ export const TemplateProvider = ({ children, settings, DATA }) => {
     Heights,
     BuildProps,
     hasPrimarySponsor,
-    DATA
+    DATA,
   };
 
   return (

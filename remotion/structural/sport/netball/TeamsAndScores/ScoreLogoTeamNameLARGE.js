@@ -13,8 +13,8 @@ const TeamsAndScoresContainer = styled.div`
   justify-content: space-between;
   align-items: stretch;
   padding: 0px;
-  margin-top:40px;
-  margin-bottom:20px;
+  margin-top: 40px;
+  margin-bottom: 20px;
 `;
 
 const TeamScoreContainer = styled.div`
@@ -23,7 +23,7 @@ const TeamScoreContainer = styled.div`
   justify-content: space-around;
   align-items: center;
   width: 100%;
-  padding:0;
+  padding: 0;
 `;
 
 // Utilized template literal for consistent styling & to facilitate potential theme integration.
@@ -43,7 +43,7 @@ const TeamName = styled.h3`
 const Points = styled.h3`
   ${teamScoreStyles}
   font-size: 8em;
-  letter-spacing:-5px;
+  letter-spacing: -5px;
   font-weight: 800;
 `;
 
@@ -57,14 +57,26 @@ const generateTeamStyle = (FPS_SCORECARD, textAlign, Font, Color, frame) => ({
   textAlign,
   color: Color,
   clipPath: FromTopToBottom(15, 'Slow'),
-  opacity: interpolateOpacityByFrame(frame, FPS_SCORECARD - 15, FPS_SCORECARD, 1, 0),
+  opacity: interpolateOpacityByFrame(
+    frame,
+    FPS_SCORECARD - 15,
+    FPS_SCORECARD,
+    1,
+    0
+  ),
 });
 
 const generateLogoStyle = (FPS_SCORECARD, frame) => ({
   left: 0,
   top: 0,
   clipPath: FromTopToBottom(10, 'Slow'),
-  opacity: interpolateOpacityByFrame(frame, FPS_SCORECARD - 15, FPS_SCORECARD, 1, 0),
+  opacity: interpolateOpacityByFrame(
+    frame,
+    FPS_SCORECARD - 15,
+    FPS_SCORECARD,
+    1,
+    0
+  ),
 });
 
 // Future improvement: Consider extracting inline styles into styled components for better performance and cleaner code.
@@ -102,13 +114,12 @@ const TeamDetail = ({
     StyleConfig: PropTypes.object.isRequired,
   };
 
-
-  const isScoreANumber=()=>{
-    if(isNaN(score)){
+  const isScoreANumber = () => {
+    if (isNaN(score)) {
       return 0;
     }
     return score;
-  }
+  };
 
   return (
     <TeamScoreContainer style={{ flexDirection: direction, justifyContent }}>
@@ -133,7 +144,11 @@ const TeamDetail = ({
 };
 
 // Enhance error handling by validating props to ensure required data is present.
-export const ScoreLogoTeamNameLARGE = ({ matchData, FPS_SCORECARD, StyleConfig }) => {
+export const ScoreLogoTeamNameLARGE = ({
+  matchData,
+  FPS_SCORECARD,
+  StyleConfig,
+}) => {
   const { teams } = matchData;
   const { home, away } = teams;
   const IMGSIZING = [80, 80, 80]; // Consider moving this to a constants file if used across multiple components.
@@ -151,7 +166,7 @@ export const ScoreLogoTeamNameLARGE = ({ matchData, FPS_SCORECARD, StyleConfig }
   };
 
   return (
-    <TeamsAndScoresContainer> 
+    <TeamsAndScoresContainer>
       <TeamDetail
         StyleConfig={StyleConfig}
         team={{ logo: home.logo }}
@@ -159,9 +174,9 @@ export const ScoreLogoTeamNameLARGE = ({ matchData, FPS_SCORECARD, StyleConfig }
         score={homeScore}
         Name={home.name}
         FPS_SCORECARD={FPS_SCORECARD}
-        direction="row"
-        justifyContent="flex-end"
-        textAlign="right"
+        direction='row'
+        justifyContent='flex-end'
+        textAlign='right'
       />
       <TeamDetail
         StyleConfig={StyleConfig}
@@ -170,9 +185,9 @@ export const ScoreLogoTeamNameLARGE = ({ matchData, FPS_SCORECARD, StyleConfig }
         score={awayScore}
         Name={away.name}
         FPS_SCORECARD={FPS_SCORECARD}
-        direction="row-reverse"
-        justifyContent="flex-end"
-        textAlign="left"
+        direction='row-reverse'
+        justifyContent='flex-end'
+        textAlign='left'
       />
     </TeamsAndScoresContainer>
   );

@@ -1,20 +1,20 @@
-import { useEffect, useState } from "react";
-import { Grid, Button, Paper, Space, Group, Tooltip, Box } from "@mantine/core";
-import { MediaTabs } from "./MediaTabs";
-import { GradientTitle, H, P } from "../../Members/Common/Type";
-import { IconCircle, IconCircleCheck, IconQuestionCircle } from "@tabler/icons";
-import ColorPickerComponent from "../GLOBAL/ColorPickerComponent";
-import ImageUploader from "../GLOBAL/ImageUploader";
-import { IconAlertCircle, IconShieldOff } from "@tabler/icons-react";
+import { useEffect, useState } from 'react';
+import { Grid, Button, Paper, Space, Group, Tooltip, Box } from '@mantine/core';
+import { MediaTabs } from './MediaTabs';
+import { GradientTitle, H, P } from '../../Members/Common/Type';
+import { IconCircle, IconCircleCheck, IconQuestionCircle } from '@tabler/icons';
+import ColorPickerComponent from '../GLOBAL/ColorPickerComponent';
+import ImageUploader from '../GLOBAL/ImageUploader';
+import { IconAlertCircle, IconShieldOff } from '@tabler/icons-react';
 function groupAssetsByCategory(assets) {
   // Define the list of CompositionIDs to exclude
   const excludeTerms = [
-    "RosterPoster",
-    "Up Coming Fixtures (Twitter)",
-    "Weekend Results (Long Form)",
-    "Weekend Results (Twitter)",
-    "Stumps Review (Twitter)",
-    "Stumps Review (Article)",
+    'RosterPoster',
+    'Up Coming Fixtures (Twitter)',
+    'Weekend Results (Long Form)',
+    'Weekend Results (Twitter)',
+    'Stumps Review (Twitter)',
+    'Stumps Review (Article)',
   ];
 
   return assets.reduce((groupedAssets, asset) => {
@@ -41,14 +41,14 @@ function groupAssetsByCategory(assets) {
 
 export const Previewer = ({ AccountData, useAssets }) => {
   const groupedAssets = groupAssetsByCategory(useAssets);
-  const [selectedTab, setSelectedTab] = useState("VIDEO");
+  const [selectedTab, setSelectedTab] = useState('VIDEO');
   const [selectedMedia, setSelectedMedia] = useState(null);
   const [playerKey, setPlayerKey] = useState(Date.now()); // Unique key for the player component
   const [selectedButton, setSelectedButton] = useState(null); // New state for selected button
   const [userColors, setUserColors] = useState([]);
   const [logoUrl, setLogoUrl] = useState(false);
 
-  const handleImageSelect = (url) => {
+  const handleImageSelect = url => {
     setLogoUrl(url);
     setPlayerKey(Date.now());
   };
@@ -62,7 +62,7 @@ export const Previewer = ({ AccountData, useAssets }) => {
     }
   }, [selectedTab, useAssets]);
 
-  const handleButtonClick = (asset) => {
+  const handleButtonClick = asset => {
     setSelectedMedia(asset.attributes);
     setSelectedButton(asset.id); // Update the selected button state
     setPlayerKey(Date.now()); // Reset the playerKey to force re-render of the player
@@ -73,15 +73,15 @@ export const Previewer = ({ AccountData, useAssets }) => {
   };
   const buttonStyles = {
     inner: {
-      justifyContent: "space-between", // Aligns text to left and icon to right
+      justifyContent: 'space-between', // Aligns text to left and icon to right
     },
   };
-  const buttons = groupedAssets[selectedTab]?.map((asset) => (
+  const buttons = groupedAssets[selectedTab]?.map(asset => (
     <Button
       key={asset.id}
-      variant={selectedButton === asset.id ? "filled" : "filled"}
+      variant={selectedButton === asset.id ? 'filled' : 'filled'}
       onClick={() => handleButtonClick(asset)}
-      color={selectedButton === asset.id ? "blue" : "gray.5"}
+      color={selectedButton === asset.id ? 'blue' : 'gray.5'}
       rightIcon={
         selectedButton === asset.id ? (
           <IconCircleCheck size={24} />
@@ -113,13 +113,13 @@ export const Previewer = ({ AccountData, useAssets }) => {
           my={10}
           withBorder
           style={{
-            backgroundColor: "#dee2e6",
-            display: "flex",
-            alignItems: "center",
+            backgroundColor: '#dee2e6',
+            display: 'flex',
+            alignItems: 'center',
           }}
         >
-          <IconShieldOff size={"4em"} style={{ marginRight: "10px" }} />
-          <P size={"xs"} marginBottom={0} style={{ flex: 1 }}>
+          <IconShieldOff size={'4em'} style={{ marginRight: '10px' }} />
+          <P size={'xs'} marginBottom={0} style={{ flex: 1 }}>
             All demo content is for illustration. See how your association’s
             data can be visually transformed with Fixtura.
           </P>
@@ -127,86 +127,90 @@ export const Previewer = ({ AccountData, useAssets }) => {
       </Grid.Col>
 
       <Grid.Col md={1} lg={5}>
-        <GradientTitle size={"h2"} title={"Tailor Fixtura to Your Association"} />
+        <GradientTitle
+          size={'h2'}
+          title={'Tailor Fixtura to Your Association'}
+        />
         <P>
-        Select from our asset list to preview them in your association’s colors and logo. It’s simple and quick!
-
+          Select from our asset list to preview them in your association’s
+          colors and logo. It’s simple and quick!
         </P>
 
-        <Group position="apart">
-          <GradientTitle size={"h3"} title={"Select an Asset"} />
+        <Group position='apart'>
+          <GradientTitle size={'h3'} title={'Select an Asset'} />
           <Tooltip
             multiline
             width={220}
-            label="Pick an asset type to see how your association’s data transforms into engaging content."
-            color="blue"
+            label='Pick an asset type to see how your association’s data transforms into engaging content.'
+            color='blue'
             withArrow
-            arrowPosition="center"
+            arrowPosition='center'
           >
             <Box>
-              <IconQuestionCircle color="gray" />
+              <IconQuestionCircle color='gray' />
             </Box>
           </Tooltip>
         </Group>
         <Paper
           p={0}
           withBorder
-          shadow="lg"
-          style={{ backgroundColor: "#dee2e6" }}
+          shadow='lg'
+          style={{ backgroundColor: '#dee2e6' }}
         >
-          <Button.Group orientation="vertical">{buttons}</Button.Group>
+          <Button.Group orientation='vertical'>{buttons}</Button.Group>
         </Paper>
         <Space h={20} />
-        <Group position="apart">
-          <GradientTitle size={"h3"} title={"Upload Your Logo"} />
+        <Group position='apart'>
+          <GradientTitle size={'h3'} title={'Upload Your Logo'} />
           <Tooltip
             multiline
             width={220}
-            label="Add your logo to see it featured in your custom content."
-            color="blue"
+            label='Add your logo to see it featured in your custom content.'
+            color='blue'
             withArrow
-            arrowPosition="center"
+            arrowPosition='center'
           >
             <Box>
-              <IconQuestionCircle color="gray" />
+              <IconQuestionCircle color='gray' />
             </Box>
           </Tooltip>
         </Group>
         <Paper
           p={10}
           withBorder
-          shadow="lg"
-          style={{ backgroundColor: "#adb5bd" }}
+          shadow='lg'
+          style={{ backgroundColor: '#adb5bd' }}
         >
           <ImageUploader onImageSelect={handleImageSelect} />
         </Paper>
         <Space h={20} />
 
-        <Group position="apart">
-          <GradientTitle size={"h3"} title={"Customize Your Colors"} />
+        <Group position='apart'>
+          <GradientTitle size={'h3'} title={'Customize Your Colors'} />
           <Tooltip
             multiline
             width={220}
-            label="Fine-tune the colors to match your association’s branding."
-            color="blue"
+            label='Fine-tune the colors to match your association’s branding.'
+            color='blue'
             withArrow
-            arrowPosition="center"
+            arrowPosition='center'
           >
             <Box>
-              <IconQuestionCircle color="gray" />
+              <IconQuestionCircle color='gray' />
             </Box>
           </Tooltip>
         </Group>
 
         <P>
-        Easily adjust the theme colors to align perfectly with your association’s identity.
+          Easily adjust the theme colors to align perfectly with your
+          association’s identity.
         </P>
         <Paper
           p={10}
           withBorder
-          shadow="md"
+          shadow='md'
           mb={20}
-          style={{ backgroundColor: "#adb5bd" }}
+          style={{ backgroundColor: '#adb5bd' }}
         >
           <ColorPickerComponent onColorChange={handleColorChange} />
         </Paper>
@@ -216,14 +220,15 @@ export const Previewer = ({ AccountData, useAssets }) => {
           my={10}
           withBorder
           style={{
-            backgroundColor: "#dee2e6",
-            display: "flex",
-            alignItems: "center",
+            backgroundColor: '#dee2e6',
+            display: 'flex',
+            alignItems: 'center',
           }}
         >
-          <IconAlertCircle size={"4em"} style={{ marginRight: "10px" }} />
+          <IconAlertCircle size={'4em'} style={{ marginRight: '10px' }} />
           <P marginBottom={0} style={{ flex: 1 }}>
-          Want more customization? Reach out to us for personalized designs that make your association stand out.
+            Want more customization? Reach out to us for personalized designs
+            that make your association stand out.
           </P>
         </Paper>
       </Grid.Col>

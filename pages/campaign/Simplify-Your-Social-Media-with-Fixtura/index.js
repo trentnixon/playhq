@@ -1,16 +1,16 @@
-import Link from "next/link";
-import { fetcher } from "../../../lib/api";
+import Link from 'next/link';
+import { fetcher } from '../../../lib/api';
 
 const AssociationsList = ({ associations }) => {
   return (
     <div>
       <h1>Associations List</h1>
       <ul>
-        {associations.data.map((association) => {
+        {associations.data.map(association => {
           return (
             <li key={association.id}>
               <Link
-               legacyBehavior 
+                legacyBehavior
                 href={`/campaign/Simplify-Your-Social-Media-with-Fixtura/${association.attributes.PlayHQID}`}
               >
                 <a>{association.attributes.Name}</a>

@@ -1,13 +1,13 @@
-import React from "react";
-import { H2, HighlightSpan, P } from "../../Primitives/Text";
-import styles from "./AgitateContentCreation.module.scss";
+import React from 'react';
+import { H2, HighlightSpan, P } from '../../Primitives/Text';
+import styles from './AgitateContentCreation.module.scss';
 
 const AgitateContentCreation = () => {
   return (
     <div className={styles.contentCreation}>
       <div className={`${styles.text} fade-in-up`}>
         <H2>
-          Content Creation{" "}
+          Content Creation{' '}
           <HighlightSpan>Takes Time Away from Core Activities</HighlightSpan>
         </H2>
         <P>
@@ -17,8 +17,8 @@ const AgitateContentCreation = () => {
         </P>
       </div>
       <img
-        src="https://fixtura.s3.ap-southeast-2.amazonaws.com/POS_Site_Human_011_e0ddefd759.png"
-        alt="Content Creation"
+        src='https://fixtura.s3.ap-southeast-2.amazonaws.com/POS_Site_Human_011_e0ddefd759.png'
+        alt='Content Creation'
         className={`${styles.image} slide-in-right`}
       />
     </div>

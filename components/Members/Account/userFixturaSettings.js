@@ -1,20 +1,20 @@
-import { Avatar, Group, Paper, Space } from "@mantine/core";
-import { PaperWithBorder, ShadowWrapper, Wrapper } from "../Common/Containers";
-import { SelectFixturaSetting } from "../Common/formelements/Select_FixturaSettings";
-import { P } from "../Common/Type";
-import { createStyles } from "@mantine/core";
-import { IconSelect, IconUsers, IconTrophy } from "@tabler/icons";
-import { FixturaDivider } from "../Common/Divider";
-import { AutoCompleteSelectAssociation } from "../Common/formelements/AutoComplete_Assoications";
-import { AutoCompleteSelectClub } from "../Common/formelements/AutoComplete_Clubs";
-import { useEffect, useState } from "react";
-import DBCheckbox from "../Common/formelements/CheckBox_FixturaSettings";
-
+import { Avatar, Group, Paper, Space } from '@mantine/core';
+import { PaperWithBorder, ShadowWrapper, Wrapper } from '../Common/Containers';
+import { SelectFixturaSetting } from '../Common/formelements/Select_FixturaSettings';
+import { P } from '../Common/Type';
+import { createStyles } from '@mantine/core';
+import { IconSelect, IconUsers, IconTrophy } from '@tabler/icons';
+import { FixturaDivider } from '../Common/Divider';
+import { AutoCompleteSelectAssociation } from '../Common/formelements/AutoComplete_Assoications';
+import { AutoCompleteSelectClub } from '../Common/formelements/AutoComplete_Clubs';
+import { useEffect, useState } from 'react';
+import DBCheckbox from '../Common/formelements/CheckBox_FixturaSettings';
+/*
 const useStyles = createStyles((theme) => ({
   root: {
     display: "flex",
     backgroundImage: theme.colors.gradients[0],
-    padding: theme.spacing.xl * 1.5,
+    padding: `${theme.spacing.xl * 1.5}px`,
     borderRadius: theme.radius.md,
 
     [theme.fn.smallerThan("sm")]: {
@@ -62,27 +62,26 @@ const useStyles = createStyles((theme) => ({
       },
     },
   },
-}));
+})); */
 
 export const FixturaSettings = ({ user, setHasUpdated }) => {
-
   const data = [
     {
-      title: "Account Type",
+      title: 'Account Type',
       stats: user.attributes.account_type.data.attributes.Name,
-      description: "",
+      description: '',
       icon: IconSelect,
     },
     {
-      title: "My Association",
+      title: 'My Association',
       stats: user.attributes.associations.data[0].attributes.Name,
-      description: "",
+      description: '',
       icon: IconUsers,
     },
     {
-      title: "My Club",
+      title: 'My Club',
       stats: user.attributes?.clubs?.data[0]?.attributes.Name,
-      description: "",
+      description: '',
       icon: IconTrophy,
     },
   ];
@@ -90,18 +89,17 @@ export const FixturaSettings = ({ user, setHasUpdated }) => {
   const stats = data.map((stat, index) => (
     <Paper
       key={`${stat.title}_${index}`}
-      radius="md"
-      shadow="lg"
+      radius='md'
+      shadow='lg'
       withBorder
-      p="sm"
-      sx={(theme) => ({
-        backgroundColor: theme.white,
-        minHeight: "11em",
+      p='sm'
+      sx={theme => ({
         backgroundColor: theme.colors.members[1],
+        minHeight: '11em',
       })}
     >
-      <Group position="right">
-        <Avatar color={"gray"} size={50} radius={"md"}>
+      <Group position='right'>
+        <Avatar color={'gray'} size={50} radius={'md'}>
           <stat.icon size={25} stroke={1} />
         </Avatar>
       </Group>
@@ -117,7 +115,7 @@ export const FixturaSettings = ({ user, setHasUpdated }) => {
   return (
     <>
       <Wrapper>
-        <Group position="apart" grow>
+        <Group position='apart' grow>
           {stats}
         </Group>
       </Wrapper>
@@ -126,37 +124,68 @@ export const FixturaSettings = ({ user, setHasUpdated }) => {
   );
 };
 
-export const SetupInputs = ({ user, setHasUpdated }) => {
-  //console.log(user.attributes?.account_type?.data?.attributes.Name)
+export const SetupInputs = ({ user, setHasUpdated, updateLocalProgress }) => {
+  console.log('SetupInputs - user data:', {
+    isRightsHolder: user.attributes?.isRightsHolder,
+    isPermissionGiven: user.attributes?.isPermissionGiven,
+    userAttributes: user.attributes,
+  });
+
   const [AssociationID, setAssociationID] = useState(
     user.attributes?.associations?.data[0]?.id || false
   );
-  const [isRightsHolderChecked, setIsRightsHolderChecked] = useState(false);
-  const [isPermissionGivenChecked, setIsPermissionGivenChecked] =
-    useState(false);
 
-  useEffect(() => {}, [AssociationID]);
+  // Function to handle local progress updates
+  const handleLocalProgressUpdate = (field, value) => {
+    console.log(`handleLocalProgressUpdate - ${field}:`, value);
+    if (updateLocalProgress) {
+      let mappedData = {};
+      switch (field) {
+        case 'account_type':
+          mappedData = { account_type: value };
+          break;
+        case 'associations':
+          mappedData = { associations: value };
+          break;
+        case 'clubs':
+          mappedData = { clubs: value };
+          break;
+        case 'isRightsHolder':
+          mappedData = { isRightsHolder: value };
+          break;
+        case 'isPermissionGiven':
+          mappedData = { isPermissionGiven: value };
+          break;
+        default:
+          mappedData = { [field]: value };
+      }
+      updateLocalProgress(mappedData);
+    }
+  };
 
   return (
     <>
-      <LabelMe label="We are a ..." />
+      <LabelMe label='We are a ...' />
       <PaperWithBorder>
         <SelectFixturaSetting
-          RelationProperty={"account_type"}
+          RelationProperty={'account_type'}
           setHasUpdated={setHasUpdated}
-          CollectionFrom={"account-types"}
-          CollectionSaveTo={"accounts"}
+          CollectionFrom={'account-types'}
+          CollectionSaveTo={'accounts'}
           SelectedBaseValueObject={
             user.attributes?.account_type?.data?.attributes
           }
-          SelectLabel={"Select Account Type"}
-          SelectPlaceholder={"Select Account Type"}
+          SelectLabel={'Select Account Type'}
+          SelectPlaceholder={'Select Account Type'}
           COLLECTIONID={user.id}
           showSelectInit={true}
+          onSelectionChange={value =>
+            handleLocalProgressUpdate('account_type', value)
+          }
         />
       </PaperWithBorder>
-      <Space h="lg" />
-      <LabelMe label="Select Your Association" />
+      <Space h='lg' />
+      <LabelMe label='Select Your Association' />
       <PaperWithBorder>
         <AutoCompleteSelectAssociation
           COLLECTIONID={user.id}
@@ -164,62 +193,72 @@ export const SetupInputs = ({ user, setHasUpdated }) => {
             user.attributes?.associations?.data[0]?.attributes
           }
           setAssociationID={setAssociationID}
-          setHasUpdated={setHasUpdated}
+          onSelectionChange={value =>
+            handleLocalProgressUpdate('associations', value)
+          }
         />
       </PaperWithBorder>
 
-      <Space h="lg" />
+      <Space h='lg' />
       {user.attributes?.account_type?.data?.attributes.Name ===
-      "Association" ? (
+      'Association' ? (
         false
       ) : (
         <>
-          <LabelMe label="Select Your Club" />
+          <LabelMe label='Select Your Club' />
           <PaperWithBorder>
             {AssociationID === false ? (
-              "Awaiting Association Selection"
+              'Awaiting Association Selection'
             ) : (
               <AutoCompleteSelectClub
                 COLLECTIONID={user.id}
                 SelectedBaseValueObject={
                   user.attributes?.clubs?.data[0]?.attributes
                 }
-                user={user}
                 AssociationID={AssociationID}
-                setHasUpdated={setHasUpdated}
+                onSelectionChange={value =>
+                  handleLocalProgressUpdate('clubs', value)
+                }
               />
             )}
           </PaperWithBorder>
         </>
       )}
-      <Space h="lg" />
-      <LabelMe label="Permissions" />
+      <Space h='lg' />
+      <LabelMe label='Permissions' />
       <PaperWithBorder>
         <DBCheckbox
-          label="You hold the rights or have permission from the rights holder for the specified organization."
-          name="isRightsHolder"
+          label='You hold the rights or have permission from the rights holder for the specified organization.'
+          name='isRightsHolder'
           collectionId={user.id}
-          CollectionSaveTo={"accounts"}
+          CollectionSaveTo={'accounts'}
           setHasUpdated={setHasUpdated}
+          currentValue={user.attributes?.isRightsHolder ?? null}
+          onSelectionChange={value =>
+            handleLocalProgressUpdate('isRightsHolder', value)
+          }
         />
 
         <DBCheckbox
           label="By checking this box, you authorize Fixtura to access and utilize PlayHQ data to create digital assets for your organization on a weekly basis. You also grant Fixtura permission to contact PlayHQ on your behalf to retrieve your organization's weekly results, fixtures, and player performances."
-          name="isPermissionGiven"
+          name='isPermissionGiven'
           collectionId={user.id}
-          CollectionSaveTo={"accounts"}
+          CollectionSaveTo={'accounts'}
           setHasUpdated={setHasUpdated}
+          currentValue={user.attributes?.isPermissionGiven ?? null}
+          onSelectionChange={value =>
+            handleLocalProgressUpdate('isPermissionGiven', value)
+          }
         />
       </PaperWithBorder>
     </>
   );
 };
 
-
 const LabelMe = ({ label }) => {
   return (
     <Wrapper>
-      <P color={6} Weight={900} marginBottom={0} textTransform={"uppercase"}>
+      <P color={6} Weight={900} marginBottom={0} textTransform={'uppercase'}>
         {label}
       </P>
     </Wrapper>
@@ -229,10 +268,10 @@ const LabelMe = ({ label }) => {
 export const FixturaHeaderMeta = ({ user, setHasUpdated }) => {
   return (
     <Group
-      position="apart"
+      position='apart'
       grow
-      py={3}
-      sx={(theme) => ({
+      py={1}
+      sx={theme => ({
         background: theme.fn.linearGradient(
           45,
           theme.colors.blue[5],
@@ -242,8 +281,6 @@ export const FixturaHeaderMeta = ({ user, setHasUpdated }) => {
     ></Group>
   );
 };
-
-
 
 /*
  <SelectFixturaSetting

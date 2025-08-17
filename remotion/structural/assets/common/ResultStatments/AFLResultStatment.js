@@ -4,7 +4,6 @@ import { FromTopToBottom } from '../../../../Animation/ClipWipe';
 import { interpolateOpacityByFrame } from '../../../../Animation/interpolate';
 import { restrictString } from '../../../../utils/copy';
 
-
 // Dev note: Styled-components used for dynamic styling based on props
 const HeaderContainerStyles = styled.div`
   display: flex;
@@ -14,7 +13,7 @@ const HeaderContainerStyles = styled.div`
 `;
 
 const HeaderCopy = styled.p`
-  font-family: ${(props) => props.fontFamily};
+  font-family: ${props => props.fontFamily};
   font-style: normal;
   display: block;
   letter-spacing: -0.025em;
@@ -40,17 +39,32 @@ const HeaderItem = ({
     ...Font.Copy,
     color,
     clipPath: FromTopToBottom(15, 'Slow'),
-    opacity: interpolateOpacityByFrame(frame, FPS_SCORECARD - 15, FPS_SCORECARD, 1, 0),
+    opacity: interpolateOpacityByFrame(
+      frame,
+      FPS_SCORECARD - 15,
+      FPS_SCORECARD,
+      1,
+      0
+    ),
     textAlign,
     fontWeight: 800,
   };
 
   // Dev note: Limit string length for UI consistency and avoid text overflow.
-  return <HeaderCopy style={{ ...commonStyles, width }}>{restrictString(label, 80)}</HeaderCopy>;
+  return (
+    <HeaderCopy style={{ ...commonStyles, width }}>
+      {restrictString(label, 80)}
+    </HeaderCopy>
+  );
 };
 
 // Dev note: Component to display the result statement within a styled container.
-export const AFLResultStatment = ({ matchData, fontFamily, FPS_SCORECARD, StyleConfig }) => {
+export const AFLResultStatment = ({
+  matchData,
+  fontFamily,
+  FPS_SCORECARD,
+  StyleConfig,
+}) => {
   const { Color } = StyleConfig;
   const { resultStatement } = matchData;
 
@@ -61,23 +75,18 @@ export const AFLResultStatment = ({ matchData, fontFamily, FPS_SCORECARD, StyleC
       <HeaderItem
         StyleConfig={StyleConfig}
         label={`${resultStatement}`}
-        width="100%"
+        width='100%'
         fontFamily={fontFamily}
         color={Color.Primary.BackgroundContractColor}
         FPS_SCORECARD={FPS_SCORECARD}
         frame={frame}
-        textAlign="center"
+        textAlign='center'
       />
     </HeaderContainerStyles>
   );
 };
 
-
-
-
-
-
-// Future improvements: 
+// Future improvements:
 // - Consider extracting common styled-component styles into a separate file for reusability across components.
 // - Evaluate the performance impact of dynamically styled components in high-frequency render scenarios and consider optimization techniques if necessary.
 

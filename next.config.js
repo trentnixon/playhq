@@ -1,5 +1,5 @@
 /** @type {import('next').NextConfig} */
-const path = require('path')
+const path = require('path');
 const nextConfig = {
   async redirects() {
     return [
@@ -23,7 +23,7 @@ const nextConfig = {
         destination: '/login',
         permanent: false,
       },
-    ]
+    ];
   },
   reactStrictMode: false,
   swcMinify: true,
@@ -49,6 +49,6 @@ const nextConfig = {
     ],
   },
   transpilePackages: ['gsap'],
-}
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

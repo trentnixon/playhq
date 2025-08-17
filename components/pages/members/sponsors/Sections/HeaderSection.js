@@ -1,7 +1,7 @@
-import { Box, Group } from "@mantine/core";
-import { P } from "../../../../Members/Common/Type";
-import { SPONSOR_CTABTN } from "../Components/SPONSOR_CTABTN";
-import { BTN_TOINTERALLINK } from "../../../../Members/Common/utils/Buttons";
+import { Box, Group } from '@mantine/core';
+import { P } from '../../../../Members/Common/Type';
+import { SPONSOR_CTABTN } from '../Components/SPONSOR_CTABTN';
+import { BTN_TOINTERALLINK } from '../../../../Members/Common/utils/Buttons';
 
 export const HeaderSection = ({
   Sponsors,
@@ -9,18 +9,22 @@ export const HeaderSection = ({
   setIsCreate,
   isCreate,
 }) => (
-  <Group position="apart">
+  <Group position='apart'>
     <Box
-      sx={(theme) => ({
-        width: "40%",
+      sx={theme => ({
+        width: '40%',
       })}
     >
-      <P Weight={800} marginBottom={0}>Manage your Sponsors.</P>
-      <P size="xs" marginBottom={0}>Add, Edit, Allocate your sponsors</P>
+      <P Weight={800} marginBottom={0}>
+        Manage your Sponsors.
+      </P>
+      <P size='xs' marginBottom={0}>
+        Add, Edit, Allocate your sponsors
+      </P>
     </Box>
-    <Group position="right">
+    <Group position='right'>
       {Sponsors.length < SPONSORLIMIT ? (
-        <Group position="right">
+        <Group position='right'>
           <SPONSOR_CTABTN setIsCreate={setIsCreate} isCreate={isCreate} />
         </Group>
       ) : (
@@ -29,20 +33,20 @@ export const HeaderSection = ({
         </P>
       )}
       <BTN_TOINTERALLINK
-        LABEL=" Allocate Sponsors"
-        URL="/members/sponsors/allocation/"
-        THEME="success"
+        LABEL=' Allocate Sponsors'
+        URL='/members/sponsors/allocation/'
+        THEME='success'
       />
     </Group>
   </Group>
 );
 
 export const AllocationHeaderSection = () => (
-  <Group position="right">
+  <Group position='right'>
     <BTN_TOINTERALLINK
-      LABEL="Manage Sponsors"
-      URL="/members/sponsors/"
-      THEME="success"
+      LABEL='Manage Sponsors'
+      URL='/members/sponsors/'
+      THEME='success'
     />
   </Group>
 );

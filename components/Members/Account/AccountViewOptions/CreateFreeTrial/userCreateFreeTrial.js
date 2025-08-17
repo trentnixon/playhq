@@ -1,15 +1,15 @@
 // Importing necessary libraries and components
-import { useEffect, useState } from "react";
-import { useCreateTrial } from "../../../../../Hooks/useTrial";
-import { constructTrialInstanceObj } from "../../../../../lib/actions";
-import { PageTitle } from "../../../Common/Type";
-import { IconFreeRights } from "@tabler/icons";
+import { useEffect, useState } from 'react';
+import { useCreateTrial } from '../../../../../Hooks/useTrial';
+import { constructTrialInstanceObj } from '../../../../../lib/actions';
+import { PageTitle } from '../../../Common/Type';
+import { IconFreeRights } from '@tabler/icons';
 import {
   ErrorMessage,
   LoadingMessage,
   SuccessMessage,
   TrialActivation,
-} from "./FreeTrialMessages";
+} from './FreeTrialMessages';
 
 // Main component definition
 export const CreateFreeTrial = ({ account }) => {
@@ -20,7 +20,7 @@ export const CreateFreeTrial = ({ account }) => {
   const handleClick = () => {
     const trialInstanceObj = constructTrialInstanceObj(account);
 
-    createTrial(trialInstanceObj); 
+    createTrial(trialInstanceObj);
   };
 
   // Effect to handle side effects post-trial creation
@@ -37,7 +37,7 @@ export const CreateFreeTrial = ({ account }) => {
   return (
     <>
       <PageTitle
-        Copy="Activate Your Free Trial!"
+        Copy='Activate Your Free Trial!'
         ICON={<IconFreeRights size={40} />}
       />
       {loading ? (

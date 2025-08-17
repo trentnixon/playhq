@@ -1,12 +1,12 @@
-import { Paper, Tabs } from "@mantine/core";
+import { Paper, Tabs } from '@mantine/core';
 
 import {
   IconVideo,
   IconPictureInPicture,
   IconFileText,
-} from "@tabler/icons-react";
+} from '@tabler/icons-react';
 /* import { RemotionPlayer } from "./Player"; */
-import { DisplayWriteups } from "./DisplayWriteups";
+import { DisplayWriteups } from './DisplayWriteups';
 
 export const MediaTabs = ({
   AccountData,
@@ -20,26 +20,26 @@ export const MediaTabs = ({
   return (
     <>
       <Tabs
-        variant="pills"
+        variant='pills'
         value={selectedTab}
         onTabChange={setSelectedTab}
-        color="blue"
+        color='blue'
       >
-        <Tabs.List grow position="center">
-          <Tabs.Tab value="VIDEO" icon={<IconVideo size="30px" />}>
+        <Tabs.List grow position='center'>
+          <Tabs.Tab value='VIDEO' icon={<IconVideo size='30px' />}>
             VIDEOS
           </Tabs.Tab>
-          <Tabs.Tab value="IMAGE" icon={<IconPictureInPicture size="30px" />}>
+          <Tabs.Tab value='IMAGE' icon={<IconPictureInPicture size='30px' />}>
             Graphics
           </Tabs.Tab>
-          <Tabs.Tab value="WRITEUP" icon={<IconFileText size="30px" />}>
+          <Tabs.Tab value='WRITEUP' icon={<IconFileText size='30px' />}>
             Write ups
           </Tabs.Tab>
         </Tabs.List>
 
-        <Tabs.Panel value="VIDEO" pt="xs">
-          <Paper shadow="md" p={0} withBorder>
-           {/*  <RemotionPlayer
+        <Tabs.Panel value='VIDEO' pt='xs'>
+          <Paper shadow='md' p={0} withBorder>
+            {/*  <RemotionPlayer
               AccountData={AccountData}
               selectedMedia={selectedMedia} 
               TYPE={"Player"}
@@ -49,9 +49,9 @@ export const MediaTabs = ({
           </Paper>
         </Tabs.Panel>
 
-        <Tabs.Panel value="IMAGE" pt="xs">
-          <Paper shadow="md" p={0} withBorder>
-           {/*  <RemotionPlayer
+        <Tabs.Panel value='IMAGE' pt='xs'>
+          <Paper shadow='md' p={0} withBorder>
+            {/*  <RemotionPlayer
               AccountData={AccountData}
               selectedMedia={selectedMedia}
               TYPE={"Thumbnail"}
@@ -61,7 +61,7 @@ export const MediaTabs = ({
           </Paper>
         </Tabs.Panel>
 
-        <Tabs.Panel value="WRITEUP" pt="xs">
+        <Tabs.Panel value='WRITEUP' pt='xs'>
           <DisplayWriteups selectedMedia={selectedMedia} />
         </Tabs.Panel>
       </Tabs>

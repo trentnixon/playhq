@@ -1,32 +1,32 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
 
-import { useAccountDetails } from "../../context/userContext";
-import { useUser } from "../../context/authContext";
-import Cookies from "js-cookie";
-import { fetcher } from "../../lib/api";
-import { P, PageTitle, SubHeaders } from "../../components/Members/Common/Type";
+import { useAccountDetails } from '../../context/userContext';
+import { useUser } from '../../context/authContext';
+import Cookies from 'js-cookie';
+import { fetcher } from '../../lib/api';
+import { P, PageTitle, SubHeaders } from '../../components/Members/Common/Type';
 import {
   MembersWrapper,
   PageCopyWrapper,
-} from "../../components/Members/Common/Containers";
-import { Space } from "@mantine/core";
+} from '../../components/Members/Common/Containers';
+import { Space } from '@mantine/core';
 
-import { AccountLogo } from "../../components/Members/Design/AddLogo";
-import { SelectATheme } from "../../components/Members/Common/Customiser/Design/SelectATheme";
-import { LoadingStateWrapper } from "../../components/Members/Account/HOC/LoadingStateWrapper";
-import { IconBadgeTm } from "@tabler/icons-react";
-import Meta from "../../components/Layouts/Meta";
-const qs = require("qs");
+import { AccountLogo } from '../../components/Members/Design/AddLogo';
+import { SelectATheme } from '../../components/Members/Common/Customiser/Design/SelectATheme';
+import { LoadingStateWrapper } from '../../components/Members/Account/HOC/LoadingStateWrapper';
+import { IconBadgeTm } from '@tabler/icons-react';
+import Meta from '../../components/Layouts/Meta';
+const qs = require('qs');
 
 const query = qs.stringify(
   {
     populate: [
-      "template",
-      "theme",
-      "audio_option",
-      "ai_publication",
-      "ai_writting_tone",
-      "ai_writting_style",
+      'template',
+      'theme',
+      'audio_option',
+      'ai_publication',
+      'ai_writting_tone',
+      'ai_writting_style',
     ],
   },
   {
@@ -54,12 +54,12 @@ const OurBrand = () => {
     <LoadingStateWrapper conditions={[user, userAccount]}>
       <MembersWrapper>
         <Meta
-          title="Member Branding - Fixtura: Customize Your Identity"
+          title='Member Branding - Fixtura: Customize Your Identity'
           description="Tailor the branding of your sports club using Fixtura's customization options. Create a unique and consistent club identity."
-          keywords="Member branding, Fixtura customization, sports club identity, digital media branding, club visuals"
+          keywords='Member branding, Fixtura customization, sports club identity, digital media branding, club visuals'
         />
-        <PageTitle Copy={"Your Brand"} ICON={<IconBadgeTm size={40} />} />
-        <SubHeaders Copy={"Brand Settings"} />
+        <PageTitle Copy={'Your Brand'} ICON={<IconBadgeTm size={40} />} />
+        <SubHeaders Copy={'Brand Settings'} />
 
         <PageCopyWrapper>
           <P
@@ -76,15 +76,15 @@ const OurBrand = () => {
   );
 };
 
-OurBrand.getInitialProps = async (ctx) => {
+OurBrand.getInitialProps = async ctx => {
   const response = await fetcher(
     `${process.env.NEXT_PUBLIC_STRAPI_URL}/accounts/${Cookies.get(
-      "LinkedAccount"
+      'LinkedAccount'
     )}?${query}`,
     {
       headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${Cookies.get("jwt")}`,
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${Cookies.get('jwt')}`,
       },
     }
   );

@@ -1,4 +1,4 @@
-import { P } from "../../../../Members/Common/Type";
+import { P } from '../../../../Members/Common/Type';
 
 export const TipsAndWarnings = () => {
   return (
@@ -13,7 +13,7 @@ export const TipsAndWarnings = () => {
         reserved for the majority of fixtures. If you need weekend delivery,
         please contact our support team.
       </P>
-      <P fontStyle="italic">
+      <P fontStyle='italic'>
         Note: We do not currently support bi-weekly renders; however, this
         feature may be available in the future.
       </P>

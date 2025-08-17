@@ -1,387 +1,382 @@
 {
-	"RENDER": {
-	  "SchedulerID": 5,
-	  "RenderID": 6740
-	},
-	"ACCOUNT": {
-	  "accountId": 117
-	},
-	"ASSET": {
-	  "ASSETID": 7,
-	  "ASSETTYPEID": 3,
-	  "ASSETCATEGORYID": 1,
-	  "ASSETSLINKID": "92471d360d43282d4d6ab11d2cf236bfc81a7fbd64541eb3a5624b1452890d98"
-	},
-	"VIDEOMETA": {
-	  "grouping_category": "western sydney",
-	  "Video": {
-		"Title": "Top 5",
-		"TitleSplit": [
-		  "Bowlers",
-		  ""
-		],
-		"CompositionID": "Top5BowlingList",
-		"VideoTitle": "Top 5 Bowlers - undefined",
-		"HeroImage": {
-		  "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/pro_Mjo_T_Gq_MD_ab725cdbc6.jpeg",
-		  "width": 2494,
-		  "height": 3325,
-		  "ratio": "portrait",
-		  "AgeGroup": "Both",
-		  "AssetType": "ALL",
-		  "markerPosition": []
-		},
-		"Template": "QLDC",
-		"TemplateVariation": {
-		  "Background": null
-		},
-		"Theme": {
-		  "primary": "#1b81cb",
-		  "secondary": "#ffffff",
-		  "dark": "#111",
-		  "white": "#FFF"
-		},
-		"includeSponsors": true,
-		"audio_option": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Audiio_Jared_Marc_Watch_This_INST_01_a3ad1074bc.mp3",
-		"DiviedFixturesBy": {
-		  "UpComingFixtures": 2,
-		  "WeekendResults": 2,
-		  "WeekendSingleGameResult": 1,
-		  "Ladder": 1,
-		  "RosterPoster": 1
-		},
-		"ASSETID": 7,
-		"ASSETTYPEID": 3,
-		"FRAMES": [
-		  390
-		]
-	  },
-	  "THEME": {
-		"Template": "QLDC",
-		"TemplateVariation": {
-		  "Background": null
-		},
-		"Theme": {
-		  "primary": "#1b81cb",
-		  "secondary": "#ffffff",
-		  "dark": "#111",
-		  "white": "#FFF"
-		}
-	  },
-	  "Club": {
-		"Name": "Sydney Junior Winter Cricket Association",
-		"Sport": "Cricket",
-		"Logo": {
-		  "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/SJWCA_Logo_Fixtura_c1e61e6b81.png",
-		  "width": 279,
-		  "height": 279
-		},
-		"Sponsors": {
-		  "default": {
-			"primary_sponsor": {
-			  "sponsorId": 93,
-			  "name": "CNSW",
-			  "logo": {
-				"url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/CNSW_Logo_c611e98b19.png",
-				"width": 545,
-				"height": 721
-			  }
-			},
-			"general_sponsors": [
-			  {
-				"position": 1,
-				"sponsorId": 94,
-				"name": "SJWCA",
-				"logo": {
-				  "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/SJWCA_Logo_White_BG_Circle_0fe9de04bb.png",
-				  "width": 694,
-				  "height": 694
-				}
-			  },
-			  {
-				"position": 2,
-				"sponsorId": 95,
-				"name": "test",
-				"logo": {
-				  "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/3_Month_Pass_777c25a8bd.png",
-				  "width": 500,
-				  "height": 500
-				}
-			  },
-			  {
-				"position": 3,
-				"sponsorId": 93,
-				"name": "CNSW",
-				"logo": {
-				  "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/CNSW_Logo_c611e98b19.png",
-				  "width": 545,
-				  "height": 721
-				}
-			  },
-			  {
-				"position": 4,
-				"sponsorId": 94,
-				"name": "SJWCA",
-				"logo": {
-				  "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/SJWCA_Logo_White_BG_Circle_0fe9de04bb.png",
-				  "width": 694,
-				  "height": 694
-				}
-			  },
-			  {
-				"position": 5,
-				"sponsorId": 95,
-				"name": "test",
-				"logo": {
-				  "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/3_Month_Pass_777c25a8bd.png",
-				  "width": 500,
-				  "height": 500
-				}
-			  },
-			  {
-				"position": 6,
-				"sponsorId": 93,
-				"name": "CNSW",
-				"logo": {
-				  "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/CNSW_Logo_c611e98b19.png",
-				  "width": 545,
-				  "height": 721
-				}
-			  },
-			  {
-				"position": 7,
-				"sponsorId": 94,
-				"name": "SJWCA",
-				"logo": {
-				  "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/SJWCA_Logo_White_BG_Circle_0fe9de04bb.png",
-				  "width": 694,
-				  "height": 694
-				}
-			  },
-			  {
-				"position": 8,
-				"sponsorId": 95,
-				"name": "test",
-				"logo": {
-				  "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/3_Month_Pass_777c25a8bd.png",
-				  "width": 500,
-				  "height": 500
-				}
-			  },
-			  {
-				"position": 9,
-				"sponsorId": 93,
-				"name": "CNSW",
-				"logo": {
-				  "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/CNSW_Logo_c611e98b19.png",
-				  "width": 545,
-				  "height": 721
-				}
-			  }
-			]
-		  },
-		  "league": [
-			{
-			  "level": "league_9891",
-			  "id": 9891,
-			  "allocationName": "Western Sydney",
-			  "sponsorId": 94,
-			  "name": "SJWCA",
-			  "logo": {
-				"url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/SJWCA_Logo_White_BG_Circle_0fe9de04bb.png",
-				"width": 694,
-				"height": 694
-			  }
-			},
-			{
-			  "level": "league_9888",
-			  "id": 9888,
-			  "allocationName": "Central Coast",
-			  "sponsorId": 94,
-			  "name": "SJWCA",
-			  "logo": {
-				"url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/SJWCA_Logo_White_BG_Circle_0fe9de04bb.png",
-				"width": 694,
-				"height": 694
-			  }
-			},
-			{
-			  "level": "league_9890",
-			  "id": 9890,
-			  "allocationName": "Inner West & Canterbury-Bankstown",
-			  "sponsorId": 94,
-			  "name": "SJWCA",
-			  "logo": {
-				"url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/SJWCA_Logo_White_BG_Circle_0fe9de04bb.png",
-				"width": 694,
-				"height": 694
-			  }
-			},
-			{
-			  "level": "league_9889",
-			  "id": 9889,
-			  "allocationName": "East & Northern Sydney",
-			  "sponsorId": 95,
-			  "name": "test",
-			  "logo": {
-				"url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/3_Month_Pass_777c25a8bd.png",
-				"width": 500,
-				"height": 500
-			  }
-			},
-			{
-			  "level": "league_10183",
-			  "id": 10183,
-			  "allocationName": "South West Sydney",
-			  "sponsorId": 95,
-			  "name": "test",
-			  "logo": {
-				"url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/3_Month_Pass_777c25a8bd.png",
-				"width": 500,
-				"height": 500
-			  }
-			}
-		  ]
-		}
-	  },
-	  "FixtureCategory": "western sydney"
-	},
-	"TIMINGS": {
-	  "FPS_INTRO": 90,
-	  "FPS_OUTRO": 180,
-	  "FPS_MAIN": 360
-	},
-	"DATA": [
-	  {
-		"name": "Akshat Thakkar",
-		"wickets": 1,
-		"overs": "2",
-		"runs": 5,
-		"playedFor": "WSCA Scorchers Bowling",
-		"teamLogo": {
-		  "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Default_ICON_171b58a21b.png",
-		  "width": 1211,
-		  "height": 1211
-		},
-		"assignSponsors": {
-		  "competition": {
-			"id": 9891,
-			"name": "Western Sydney"
-		  },
-		  "grade": {
-			"id": 23675,
-			"name": "Western Sydney U12 Mixed Div 2.1"
-		  },
-		  "Team": {
-			"name": "WSCA Scorchers Bowling"
-		  }
-		},
-		"prompt": "Akshat Thakkar played for WSCA Scorchers Bowling, taking 1 wickets from 2 overs, conceding 5 runs. Game details: This was a T20 in the Western Sydney U12 Mixed Div 2.1 grade, and the current match status is Match Completed . WSCA Scorchers, (3/73) vs JSCC Strikers (4/74), the match result was JSCC Strikers won by 6 wickets."
-	  },
-	  {
-		"name": "Vir Mohini",
-		"wickets": 1,
-		"overs": "2",
-		"runs": 6,
-		"playedFor": "WSCA Scorchers Bowling",
-		"teamLogo": {
-		  "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Default_ICON_171b58a21b.png",
-		  "width": 1211,
-		  "height": 1211
-		},
-		"assignSponsors": {
-		  "competition": {
-			"id": 9891,
-			"name": "Western Sydney"
-		  },
-		  "grade": {
-			"id": 23675,
-			"name": "Western Sydney U12 Mixed Div 2.1"
-		  },
-		  "Team": {
-			"name": "WSCA Scorchers Bowling"
-		  }
-		},
-		"prompt": "Vir Mohini played for WSCA Scorchers Bowling, taking 1 wickets from 2 overs, conceding 6 runs. Game details: This was a T20 in the Western Sydney U12 Mixed Div 2.1 grade, and the current match status is Match Completed . WSCA Scorchers, (3/73) vs JSCC Strikers (4/74), the match result was JSCC Strikers won by 6 wickets."
-	  },
-	  {
-		"name": "Nevin Aji",
-		"wickets": 1,
-		"overs": "4",
-		"runs": 9,
-		"playedFor": "JSCC Strikers Bowling",
-		"teamLogo": {
-		  "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Default_ICON_171b58a21b.png",
-		  "width": 1211,
-		  "height": 1211
-		},
-		"assignSponsors": {
-		  "competition": {
-			"id": 9891,
-			"name": "Western Sydney"
-		  },
-		  "grade": {
-			"id": 23675,
-			"name": "Western Sydney U12 Mixed Div 2.1"
-		  },
-		  "Team": {
-			"name": "JSCC Strikers Bowling"
-		  }
-		},
-		"prompt": "Nevin Aji played for JSCC Strikers Bowling, taking 1 wickets from 4 overs, conceding 9 runs. Game details: This was a T20 in the Western Sydney U12 Mixed Div 2.1 grade, and the current match status is Match Completed . WSCA Scorchers, (3/73) vs JSCC Strikers (4/74), the match result was JSCC Strikers won by 6 wickets."
-	  },
-	  {
-		"name": "Shlok Soni",
-		"wickets": 1,
-		"overs": "2",
-		"runs": 9,
-		"playedFor": "WSCA Scorchers Bowling",
-		"teamLogo": {
-		  "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Default_ICON_171b58a21b.png",
-		  "width": 1211,
-		  "height": 1211
-		},
-		"assignSponsors": {
-		  "competition": {
-			"id": 9891,
-			"name": "Western Sydney"
-		  },
-		  "grade": {
-			"id": 23675,
-			"name": "Western Sydney U12 Mixed Div 2.1"
-		  },
-		  "Team": {
-			"name": "WSCA Scorchers Bowling"
-		  }
-		},
-		"prompt": "Shlok Soni played for WSCA Scorchers Bowling, taking 1 wickets from 2 overs, conceding 9 runs. Game details: This was a T20 in the Western Sydney U12 Mixed Div 2.1 grade, and the current match status is Match Completed . WSCA Scorchers, (3/73) vs JSCC Strikers (4/74), the match result was JSCC Strikers won by 6 wickets."
-	  },
-	  {
-		"name": "Austin Vashisth",
-		"wickets": 1,
-		"overs": "3",
-		"runs": 15,
-		"playedFor": "JSCC Strikers Bowling",
-		"teamLogo": {
-		  "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Default_ICON_171b58a21b.png",
-		  "width": 1211,
-		  "height": 1211
-		},
-		"assignSponsors": {
-		  "competition": {
-			"id": 9891,
-			"name": "Western Sydney"
-		  },
-		  "grade": {
-			"id": 23675,
-			"name": "Western Sydney U12 Mixed Div 2.1"
-		  },
-		  "Team": {
-			"name": "JSCC Strikers Bowling"
-		  }
-		},
-		"prompt": "Austin Vashisth played for JSCC Strikers Bowling, taking 1 wickets from 3 overs, conceding 15 runs. Game details: This was a T20 in the Western Sydney U12 Mixed Div 2.1 grade, and the current match status is Match Completed . WSCA Scorchers, (3/73) vs JSCC Strikers (4/74), the match result was JSCC Strikers won by 6 wickets."
-	  }
-	],
-	"PROMPT": []
-  }
+  "RENDER": {
+    "SchedulerID": 5,
+    "RenderID": 6740
+  },
+  "ACCOUNT": {
+    "accountId": 117
+  },
+  "ASSET": {
+    "ASSETID": 7,
+    "ASSETTYPEID": 3,
+    "ASSETCATEGORYID": 1,
+    "ASSETSLINKID": "92471d360d43282d4d6ab11d2cf236bfc81a7fbd64541eb3a5624b1452890d98"
+  },
+  "VIDEOMETA": {
+    "grouping_category": "western sydney",
+    "Video": {
+      "Title": "Top 5",
+      "TitleSplit": ["Bowlers", ""],
+      "CompositionID": "Top5BowlingList",
+      "VideoTitle": "Top 5 Bowlers - undefined",
+      "HeroImage": {
+        "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/pro_Mjo_T_Gq_MD_ab725cdbc6.jpeg",
+        "width": 2494,
+        "height": 3325,
+        "ratio": "portrait",
+        "AgeGroup": "Both",
+        "AssetType": "ALL",
+        "markerPosition": []
+      },
+      "Template": "QLDC",
+      "TemplateVariation": {
+        "Background": null
+      },
+      "Theme": {
+        "primary": "#1b81cb",
+        "secondary": "#ffffff",
+        "dark": "#111",
+        "white": "#FFF"
+      },
+      "includeSponsors": true,
+      "audio_option": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Audiio_Jared_Marc_Watch_This_INST_01_a3ad1074bc.mp3",
+      "DiviedFixturesBy": {
+        "UpComingFixtures": 2,
+        "WeekendResults": 2,
+        "WeekendSingleGameResult": 1,
+        "Ladder": 1,
+        "RosterPoster": 1
+      },
+      "ASSETID": 7,
+      "ASSETTYPEID": 3,
+      "FRAMES": [390]
+    },
+    "THEME": {
+      "Template": "QLDC",
+      "TemplateVariation": {
+        "Background": null
+      },
+      "Theme": {
+        "primary": "#1b81cb",
+        "secondary": "#ffffff",
+        "dark": "#111",
+        "white": "#FFF"
+      }
+    },
+    "Club": {
+      "Name": "Sydney Junior Winter Cricket Association",
+      "Sport": "Cricket",
+      "Logo": {
+        "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/SJWCA_Logo_Fixtura_c1e61e6b81.png",
+        "width": 279,
+        "height": 279
+      },
+      "Sponsors": {
+        "default": {
+          "primary_sponsor": {
+            "sponsorId": 93,
+            "name": "CNSW",
+            "logo": {
+              "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/CNSW_Logo_c611e98b19.png",
+              "width": 545,
+              "height": 721
+            }
+          },
+          "general_sponsors": [
+            {
+              "position": 1,
+              "sponsorId": 94,
+              "name": "SJWCA",
+              "logo": {
+                "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/SJWCA_Logo_White_BG_Circle_0fe9de04bb.png",
+                "width": 694,
+                "height": 694
+              }
+            },
+            {
+              "position": 2,
+              "sponsorId": 95,
+              "name": "test",
+              "logo": {
+                "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/3_Month_Pass_777c25a8bd.png",
+                "width": 500,
+                "height": 500
+              }
+            },
+            {
+              "position": 3,
+              "sponsorId": 93,
+              "name": "CNSW",
+              "logo": {
+                "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/CNSW_Logo_c611e98b19.png",
+                "width": 545,
+                "height": 721
+              }
+            },
+            {
+              "position": 4,
+              "sponsorId": 94,
+              "name": "SJWCA",
+              "logo": {
+                "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/SJWCA_Logo_White_BG_Circle_0fe9de04bb.png",
+                "width": 694,
+                "height": 694
+              }
+            },
+            {
+              "position": 5,
+              "sponsorId": 95,
+              "name": "test",
+              "logo": {
+                "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/3_Month_Pass_777c25a8bd.png",
+                "width": 500,
+                "height": 500
+              }
+            },
+            {
+              "position": 6,
+              "sponsorId": 93,
+              "name": "CNSW",
+              "logo": {
+                "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/CNSW_Logo_c611e98b19.png",
+                "width": 545,
+                "height": 721
+              }
+            },
+            {
+              "position": 7,
+              "sponsorId": 94,
+              "name": "SJWCA",
+              "logo": {
+                "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/SJWCA_Logo_White_BG_Circle_0fe9de04bb.png",
+                "width": 694,
+                "height": 694
+              }
+            },
+            {
+              "position": 8,
+              "sponsorId": 95,
+              "name": "test",
+              "logo": {
+                "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/3_Month_Pass_777c25a8bd.png",
+                "width": 500,
+                "height": 500
+              }
+            },
+            {
+              "position": 9,
+              "sponsorId": 93,
+              "name": "CNSW",
+              "logo": {
+                "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/CNSW_Logo_c611e98b19.png",
+                "width": 545,
+                "height": 721
+              }
+            }
+          ]
+        },
+        "league": [
+          {
+            "level": "league_9891",
+            "id": 9891,
+            "allocationName": "Western Sydney",
+            "sponsorId": 94,
+            "name": "SJWCA",
+            "logo": {
+              "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/SJWCA_Logo_White_BG_Circle_0fe9de04bb.png",
+              "width": 694,
+              "height": 694
+            }
+          },
+          {
+            "level": "league_9888",
+            "id": 9888,
+            "allocationName": "Central Coast",
+            "sponsorId": 94,
+            "name": "SJWCA",
+            "logo": {
+              "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/SJWCA_Logo_White_BG_Circle_0fe9de04bb.png",
+              "width": 694,
+              "height": 694
+            }
+          },
+          {
+            "level": "league_9890",
+            "id": 9890,
+            "allocationName": "Inner West & Canterbury-Bankstown",
+            "sponsorId": 94,
+            "name": "SJWCA",
+            "logo": {
+              "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/SJWCA_Logo_White_BG_Circle_0fe9de04bb.png",
+              "width": 694,
+              "height": 694
+            }
+          },
+          {
+            "level": "league_9889",
+            "id": 9889,
+            "allocationName": "East & Northern Sydney",
+            "sponsorId": 95,
+            "name": "test",
+            "logo": {
+              "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/3_Month_Pass_777c25a8bd.png",
+              "width": 500,
+              "height": 500
+            }
+          },
+          {
+            "level": "league_10183",
+            "id": 10183,
+            "allocationName": "South West Sydney",
+            "sponsorId": 95,
+            "name": "test",
+            "logo": {
+              "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/3_Month_Pass_777c25a8bd.png",
+              "width": 500,
+              "height": 500
+            }
+          }
+        ]
+      }
+    },
+    "FixtureCategory": "western sydney"
+  },
+  "TIMINGS": {
+    "FPS_INTRO": 90,
+    "FPS_OUTRO": 180,
+    "FPS_MAIN": 360
+  },
+  "DATA": [
+    {
+      "name": "Akshat Thakkar",
+      "wickets": 1,
+      "overs": "2",
+      "runs": 5,
+      "playedFor": "WSCA Scorchers Bowling",
+      "teamLogo": {
+        "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Default_ICON_171b58a21b.png",
+        "width": 1211,
+        "height": 1211
+      },
+      "assignSponsors": {
+        "competition": {
+          "id": 9891,
+          "name": "Western Sydney"
+        },
+        "grade": {
+          "id": 23675,
+          "name": "Western Sydney U12 Mixed Div 2.1"
+        },
+        "Team": {
+          "name": "WSCA Scorchers Bowling"
+        }
+      },
+      "prompt": "Akshat Thakkar played for WSCA Scorchers Bowling, taking 1 wickets from 2 overs, conceding 5 runs. Game details: This was a T20 in the Western Sydney U12 Mixed Div 2.1 grade, and the current match status is Match Completed . WSCA Scorchers, (3/73) vs JSCC Strikers (4/74), the match result was JSCC Strikers won by 6 wickets."
+    },
+    {
+      "name": "Vir Mohini",
+      "wickets": 1,
+      "overs": "2",
+      "runs": 6,
+      "playedFor": "WSCA Scorchers Bowling",
+      "teamLogo": {
+        "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Default_ICON_171b58a21b.png",
+        "width": 1211,
+        "height": 1211
+      },
+      "assignSponsors": {
+        "competition": {
+          "id": 9891,
+          "name": "Western Sydney"
+        },
+        "grade": {
+          "id": 23675,
+          "name": "Western Sydney U12 Mixed Div 2.1"
+        },
+        "Team": {
+          "name": "WSCA Scorchers Bowling"
+        }
+      },
+      "prompt": "Vir Mohini played for WSCA Scorchers Bowling, taking 1 wickets from 2 overs, conceding 6 runs. Game details: This was a T20 in the Western Sydney U12 Mixed Div 2.1 grade, and the current match status is Match Completed . WSCA Scorchers, (3/73) vs JSCC Strikers (4/74), the match result was JSCC Strikers won by 6 wickets."
+    },
+    {
+      "name": "Nevin Aji",
+      "wickets": 1,
+      "overs": "4",
+      "runs": 9,
+      "playedFor": "JSCC Strikers Bowling",
+      "teamLogo": {
+        "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Default_ICON_171b58a21b.png",
+        "width": 1211,
+        "height": 1211
+      },
+      "assignSponsors": {
+        "competition": {
+          "id": 9891,
+          "name": "Western Sydney"
+        },
+        "grade": {
+          "id": 23675,
+          "name": "Western Sydney U12 Mixed Div 2.1"
+        },
+        "Team": {
+          "name": "JSCC Strikers Bowling"
+        }
+      },
+      "prompt": "Nevin Aji played for JSCC Strikers Bowling, taking 1 wickets from 4 overs, conceding 9 runs. Game details: This was a T20 in the Western Sydney U12 Mixed Div 2.1 grade, and the current match status is Match Completed . WSCA Scorchers, (3/73) vs JSCC Strikers (4/74), the match result was JSCC Strikers won by 6 wickets."
+    },
+    {
+      "name": "Shlok Soni",
+      "wickets": 1,
+      "overs": "2",
+      "runs": 9,
+      "playedFor": "WSCA Scorchers Bowling",
+      "teamLogo": {
+        "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Default_ICON_171b58a21b.png",
+        "width": 1211,
+        "height": 1211
+      },
+      "assignSponsors": {
+        "competition": {
+          "id": 9891,
+          "name": "Western Sydney"
+        },
+        "grade": {
+          "id": 23675,
+          "name": "Western Sydney U12 Mixed Div 2.1"
+        },
+        "Team": {
+          "name": "WSCA Scorchers Bowling"
+        }
+      },
+      "prompt": "Shlok Soni played for WSCA Scorchers Bowling, taking 1 wickets from 2 overs, conceding 9 runs. Game details: This was a T20 in the Western Sydney U12 Mixed Div 2.1 grade, and the current match status is Match Completed . WSCA Scorchers, (3/73) vs JSCC Strikers (4/74), the match result was JSCC Strikers won by 6 wickets."
+    },
+    {
+      "name": "Austin Vashisth",
+      "wickets": 1,
+      "overs": "3",
+      "runs": 15,
+      "playedFor": "JSCC Strikers Bowling",
+      "teamLogo": {
+        "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Default_ICON_171b58a21b.png",
+        "width": 1211,
+        "height": 1211
+      },
+      "assignSponsors": {
+        "competition": {
+          "id": 9891,
+          "name": "Western Sydney"
+        },
+        "grade": {
+          "id": 23675,
+          "name": "Western Sydney U12 Mixed Div 2.1"
+        },
+        "Team": {
+          "name": "JSCC Strikers Bowling"
+        }
+      },
+      "prompt": "Austin Vashisth played for JSCC Strikers Bowling, taking 1 wickets from 3 overs, conceding 15 runs. Game details: This was a T20 in the Western Sydney U12 Mixed Div 2.1 grade, and the current match status is Match Completed . WSCA Scorchers, (3/73) vs JSCC Strikers (4/74), the match result was JSCC Strikers won by 6 wickets."
+    }
+  ],
+  "PROMPT": []
+}

@@ -1,6 +1,6 @@
-import { Carousel } from "@mantine/carousel";
-import { useMediaQuery } from "@mantine/hooks";
-import FsLightbox from "fslightbox-react";
+import { Carousel } from '@mantine/carousel';
+import { useMediaQuery } from '@mantine/hooks';
+import FsLightbox from 'fslightbox-react';
 import {
   createStyles,
   Paper,
@@ -9,18 +9,18 @@ import {
   rem,
   ScrollArea,
   Box,
-} from "@mantine/core";
-import { useState } from "react";
-import { Modal } from "@mantine/core";
-import { ReactMarkdown } from "react-markdown/lib/react-markdown";
-const useStyles = createStyles((theme) => ({
+} from '@mantine/core';
+import { useState } from 'react';
+import { Modal } from '@mantine/core';
+import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
+const useStyles = createStyles(theme => ({
   card: {
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "space-between",
-    alignItems: "flex-start",
-    backgroundSize: "cover",
-    backgroundPosition: "center",
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-between',
+    alignItems: 'flex-start',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
   },
 
   title: {
@@ -36,7 +36,7 @@ const useStyles = createStyles((theme) => ({
     color: theme.colors.dark[1],
     opacity: 0.7,
     fontWeight: 700,
-    textTransform: "uppercase",
+    textTransform: 'uppercase',
   },
 }));
 
@@ -65,54 +65,54 @@ function Card(props) {
 
   return (
     <Paper
-      shadow="md"
-      w={"100%"}
-      p="sm"
-      radius="md"
+      shadow='md'
+      w={'100%'}
+      p='sm'
+      radius='md'
       sx={{
         backgroundImage: `url(${image})`,
 
-        height: "500px",
-        width: "400px",
-        "@media (max-width: 48em)": {
-          height: "400px",
-          width: "320px",
+        height: '500px',
+        width: '400px',
+        '@media (max-width: 48em)': {
+          height: '400px',
+          width: '320px',
         },
       }}
       className={classes.card}
     >
       <div>
         {video ? (
-          <div className="video-box">
-            <div className="video-btn" onClick={handlePlayClick}>
-              <i className="fa-solid fa-play"></i>
+          <div className='video-box'>
+            <div className='video-btn' onClick={handlePlayClick}>
+              <i className='fa-solid fa-play'></i>
             </div>
           </div>
         ) : (
           false
         )}
-        {category === "WRITEUP" ? (
-          <div className="video-box">
-            <div className="video-btn" onClick={handleArticleClick}>
-              <i className="fa-solid fa-book"></i>
+        {category === 'WRITEUP' ? (
+          <div className='video-box'>
+            <div className='video-btn' onClick={handleArticleClick}>
+              <i className='fa-solid fa-book'></i>
             </div>
           </div>
         ) : (
           false
         )}
         <Box
-          sx={(theme) => ({
+          sx={theme => ({
             backgroundColor: theme.colors.gray[9],
             padding: theme.spacing.sm,
             borderRadius: theme.radius.md,
-            cursor: "pointer",
+            cursor: 'pointer',
 
-            "&:hover": {
+            '&:hover': {
               backgroundColor: theme.colors.blue[9],
             },
           })}
         >
-          <Text className={classes.category} size="xs" color="dark">
+          <Text className={classes.category} size='xs' color='dark'>
             {category}
           </Text>
         </Box>
@@ -121,12 +121,12 @@ function Card(props) {
         opened={articleModalOpen}
         onClose={() => setArticleModalOpen(false)}
         title={title}
-        size="xl"
+        size='xl'
         scrollAreaComponent={ScrollArea.Autosize}
         transitionProps={{
-          transition: "fade",
+          transition: 'fade',
           duration: 600,
-          timingFunction: "linear",
+          timingFunction: 'linear',
         }}
         centered
         overlayProps={{
@@ -140,13 +140,13 @@ function Card(props) {
           },
           header: {
             backgroundColor: theme.colors.gray[9],
-            padding: "7px 10px",
-            marginBottom: "14px",
+            padding: '7px 10px',
+            marginBottom: '14px',
           },
           content: { backgroundColor: theme.colors.gray[1] },
         }}
       >
-        <ReactMarkdown className="markdown">{MainDescription}</ReactMarkdown>
+        <ReactMarkdown className='markdown'>{MainDescription}</ReactMarkdown>
       </Modal>
     </Paper>
   );
@@ -157,7 +157,7 @@ export function CardsCarousel({ data }) {
   const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
   const [toggler, setToggler] = useState(false);
   const [videoUrl, setVideoUrl] = useState(null);
-  const slides = data.map((item) => (
+  const slides = data.map(item => (
     <Carousel.Slide key={item.title}>
       <Card {...item} setToggler={setToggler} setVideoUrl={setVideoUrl} />
     </Carousel.Slide>
@@ -171,10 +171,10 @@ export function CardsCarousel({ data }) {
         onClose={() => setToggler(false)}
       />
       <Carousel
-        slideSize="33.33333%"
-        breakpoints={[{ maxWidth: "xs", slideSize: "100%", slideGap: 0 }]}
-        slideGap="xl"
-        align="start"
+        slideSize='33.33333%'
+        breakpoints={[{ maxWidth: 'xs', slideSize: '100%', slideGap: 0 }]}
+        slideGap='xl'
+        align='start'
         loop
         sx={{ flex: 1 }}
         slidesToScroll={mobile ? 1 : 2}

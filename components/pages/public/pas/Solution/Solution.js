@@ -12,9 +12,11 @@ const Solution = () => {
   const solutionRef = useRef(null);
 
   useEffect(() => {
-    const elements = solutionRef.current.querySelectorAll('.fade-in-up, .slide-in-left');
+    const elements = solutionRef.current.querySelectorAll(
+      '.fade-in-up, .slide-in-left'
+    );
 
-    elements.forEach((el) => {
+    elements.forEach(el => {
       if (el.classList.contains('fade-in-up')) {
         gsap.fromTo(
           el,
@@ -55,7 +57,7 @@ const Solution = () => {
     <section className={styles.solution} ref={solutionRef}>
       <Container>
         <AutomatedContentSolution />
-        <WhyChooseFixtura /> 
+        <WhyChooseFixtura />
       </Container>
     </section>
   );

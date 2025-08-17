@@ -1,8 +1,11 @@
-import { useAccountDetails } from "../../../../../../../context/userContext";
-import { checkDeliveryDate, daysUntil } from "../../../../../../../utils/helpers";
-import { P } from "../../../../../../Members/Common/Type";
+import { useAccountDetails } from '../../../../../../../context/userContext';
+import {
+  checkDeliveryDate,
+  daysUntil,
+} from '../../../../../../../utils/helpers';
+import { P } from '../../../../../../Members/Common/Type';
 
-export const DisplayDaysTillDelivery = ({ renders, color = 2 }) => {
+export const DisplayDaysTillDelivery = ({ renders, color = 6 }) => {
   const { account } = useAccountDetails();
   const days_of_the_week =
     account.attributes.scheduler.data.attributes.days_of_the_week.data

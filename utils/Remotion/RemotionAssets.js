@@ -1,26 +1,27 @@
 // RemotionAssets.js
 
 // Templates
-import { Basic } from "../../remotion/templates/Basic/index";
-import { CNSW } from "../../remotion/templates/CNSW/index";
-import { QLDC } from "../../remotion/templates/QLDC/index";
-import { CoastalCricketLeague } from "../../remotion/templates/CoastalCricketLeague/index";
-import { CNSWREAL } from "../../remotion/templates/CNSWreal/index";
-import { Sixers } from "../../remotion/templates/Sixers/index";
-import { Thunder } from "../../remotion/templates/Thunder/index";
-import { Muted } from "../../remotion/templates/Muted/index";
+import { Basic } from '../../remotion/templates/Basic/index';
+import { CNSW } from '../../remotion/templates/CNSW/index';
+import { QLDC } from '../../remotion/templates/QLDC/index';
+import { CoastalCricketLeague } from '../../remotion/templates/CoastalCricketLeague/index';
+import { CNSWREAL } from '../../remotion/templates/CNSWreal/index';
+import { Sixers } from '../../remotion/templates/Sixers/index';
+import { Thunder } from '../../remotion/templates/Thunder/index';
+import { Muted } from '../../remotion/templates/Muted/index';
+
 // DATA
 // Cricket
-import DATA_CRICKET_UPCOMINGFIXTURES from "../../remotion/data/cricket/FIXTURA_PREVIEW_CRICKET_UPCOMINGFIXTURES.json";
-import DATA_CRICKET_RESULTS from "../../remotion/data/cricket/FIXTURA_PREVIEW_CRICKET_RESULTS.json";
-import DATA_CRICKET_TOP5RUNS from "../../remotion/data/cricket/FIXTURA_PREVIEW_CRICKET_TOP5RUNS.json";
-import DATA_CRICKET_TOP5WICKETS from "../../remotion/data/cricket/FIXTURA_PREVIEW_CRICKET_TOP5WICKETS.json";
-import DATA_CRICKET_LADDER from "../../remotion/data/cricket/FIXTURA_PREVIEW_CRICKET_LADDER.json";
+import DATA_CRICKET_UPCOMINGFIXTURES from '../../remotion/data/cricket/FIXTURA_PREVIEW_CRICKET_UPCOMINGFIXTURES.json';
+import DATA_CRICKET_RESULTS from '../../remotion/data/cricket/FIXTURA_PREVIEW_CRICKET_RESULTS.json';
+import DATA_CRICKET_TOP5RUNS from '../../remotion/data/cricket/FIXTURA_PREVIEW_CRICKET_TOP5RUNS.json';
+import DATA_CRICKET_TOP5WICKETS from '../../remotion/data/cricket/FIXTURA_PREVIEW_CRICKET_TOP5WICKETS.json';
+import DATA_CRICKET_LADDER from '../../remotion/data/cricket/FIXTURA_PREVIEW_CRICKET_LADDER.json';
 // AFL
-import DATA_AFL_LADDER from "../../remotion/data/afl/FIXTURA_PREVIEW_AFL_LADDER.json";
-import DATA_AFL_UPCOMINGFIXTURES from "../../remotion/data/afl/FIXTURA_PREVIEW_AFL_UpComingFixtures.json";
-import DATA_AFL_RESULTS from "../../remotion/data/afl/FIXTURA_PREVIEW_AFL_Results.json";
-import DATA_AFL_TOP5 from "../../remotion/data/afl/FIXTURA_PREVIEW_AFL_Top5AFLScorers.json";
+import DATA_AFL_LADDER from '../../remotion/data/afl/FIXTURA_PREVIEW_AFL_LADDER.json';
+import DATA_AFL_UPCOMINGFIXTURES from '../../remotion/data/afl/FIXTURA_PREVIEW_AFL_UpComingFixtures.json';
+import DATA_AFL_RESULTS from '../../remotion/data/afl/FIXTURA_PREVIEW_AFL_Results.json';
+import DATA_AFL_TOP5 from '../../remotion/data/afl/FIXTURA_PREVIEW_AFL_Top5AFLScorers.json';
 
 // Utility function to create category structure
 const createCategoryAssets = (template, data, keyMapping) => {
@@ -51,106 +52,106 @@ const createCategoryAssets = (template, data, keyMapping) => {
 // Key mappings for different sports
 const cricketKeyMapping = {
   UpComingFixtures: {
-    componentKey: "UpComingFixtures",
-    dataKey: "UpComingFixtures",
-    title: "Fixtures",
-    titleSplit: ["Fixtures"],
-    compositionID: "UpComingFixtures",
-    videoTitle: "Upcoming Fixtures",
+    componentKey: 'UpComingFixtures',
+    dataKey: 'UpComingFixtures',
+    title: 'Fixtures',
+    titleSplit: ['Fixtures'],
+    compositionID: 'UpComingFixtures',
+    videoTitle: 'Upcoming Fixtures',
   },
   WeekendResults: {
-    componentKey: "WeekendResults",
-    dataKey: "WeekendResults",
-    title: "Results",
-    titleSplit: ["Results"],
-    compositionID: "WeekendResults",
-    videoTitle: "Weekend Results",
+    componentKey: 'WeekendResults',
+    dataKey: 'WeekendResults',
+    title: 'Results',
+    titleSplit: ['Results'],
+    compositionID: 'WeekendResults',
+    videoTitle: 'Weekend Results',
   },
   Top5BattingList: {
-    componentKey: "Top5BattingList",
-    dataKey: "Top5BattingList",
-    title: "Top 5",
-    titleSplit: ["Top 5"],
-    compositionID: "Top5BattingList",
-    videoTitle: "Top 5 Run Scorers",
+    componentKey: 'Top5BattingList',
+    dataKey: 'Top5BattingList',
+    title: 'Top 5',
+    titleSplit: ['Top 5'],
+    compositionID: 'Top5BattingList',
+    videoTitle: 'Top 5 Run Scorers',
   },
   Top5BowlingList: {
-    componentKey: "Top5BowlingList",
-    dataKey: "Top5BowlingList",
-    title: "Top 5",
-    titleSplit: ["Top 5", ""],
-    compositionID: "Top5BowlingList",
-    videoTitle: "Top 5 Bowlers",
+    componentKey: 'Top5BowlingList',
+    dataKey: 'Top5BowlingList',
+    title: 'Top 5',
+    titleSplit: ['Top 5', ''],
+    compositionID: 'Top5BowlingList',
+    videoTitle: 'Top 5 Bowlers',
   },
   Ladder: {
-    componentKey: "Ladder",
-    dataKey: "Ladder",
-    title: "Ladder",
-    titleSplit: ["Ladder"],
-    compositionID: "Ladder",
-    videoTitle: "League Tables",
+    componentKey: 'Ladder',
+    dataKey: 'Ladder',
+    title: 'Ladder',
+    titleSplit: ['Ladder'],
+    compositionID: 'Ladder',
+    videoTitle: 'League Tables',
   },
 };
 
 const aflKeyMapping = {
   AFLLadder: {
-    componentKey: "AFLLadder",
-    dataKey: "Ladder",
-    title: "Ladder",
-    titleSplit: ["Ladder"],
-    compositionID: "AFLLadder",
-    videoTitle: "AFL Ladder",
+    componentKey: 'AFLLadder',
+    dataKey: 'Ladder',
+    title: 'Ladder',
+    titleSplit: ['Ladder'],
+    compositionID: 'AFLLadder',
+    videoTitle: 'AFL Ladder',
   },
   UpComingAFLFixtures: {
-    componentKey: "UpComingAFLFixtures",
-    dataKey: "UpComingFixtures",
-    title: "Fixtures",
-    titleSplit: ["Fixtures"],
-    compositionID: "UpComingAFLFixtures",
-    videoTitle: "Upcoming AFL Fixtures",
+    componentKey: 'UpComingAFLFixtures',
+    dataKey: 'UpComingFixtures',
+    title: 'Fixtures',
+    titleSplit: ['Fixtures'],
+    compositionID: 'UpComingAFLFixtures',
+    videoTitle: 'Upcoming AFL Fixtures',
   },
   WeekendResultsAFL: {
-    componentKey: "WeekendResultsAFL",
-    dataKey: "WeekendResults",
-    title: "Results",
-    titleSplit: ["Results"],
-    compositionID: "WeekendResultsAFL",
-    videoTitle: "Weekend AFL Results",
+    componentKey: 'WeekendResultsAFL',
+    dataKey: 'WeekendResults',
+    title: 'Results',
+    titleSplit: ['Results'],
+    compositionID: 'WeekendResultsAFL',
+    videoTitle: 'Weekend AFL Results',
   },
   Top5AFLScorers: {
-    componentKey: "Top5AFLScorers",
-    dataKey: "Top5",
-    title: "Top 5 Scorers",
-    titleSplit: ["Top 5", "Scorers"],
-    compositionID: "Top5AFLScorers",
-    videoTitle: "Top 5 AFL Scorers",
+    componentKey: 'Top5AFLScorers',
+    dataKey: 'Top5',
+    title: 'Top 5 Scorers',
+    titleSplit: ['Top 5', 'Scorers'],
+    compositionID: 'Top5AFLScorers',
+    videoTitle: 'Top 5 AFL Scorers',
   },
 };
 
 const netballKeyMapping = {
   NetballLadder: {
-    componentKey: "Ladder",
-    dataKey: "Ladder",
-    title: "Ladder",
-    titleSplit: ["Ladder"],
-    compositionID: "NetballLadder",
-    videoTitle: "Netball Ladder",
+    componentKey: 'Ladder',
+    dataKey: 'Ladder',
+    title: 'Ladder',
+    titleSplit: ['Ladder'],
+    compositionID: 'NetballLadder',
+    videoTitle: 'Netball Ladder',
   },
   UpComingNetBallFixtures: {
-    componentKey: "UpComingFixtures",
-    dataKey: "UpComingFixtures",
-    title: "Fixtures",
-    titleSplit: ["Fixtures"],
-    compositionID: "UpComingNetBallFixtures",
-    videoTitle: "Upcoming Netball Fixtures",
+    componentKey: 'UpComingFixtures',
+    dataKey: 'UpComingFixtures',
+    title: 'Fixtures',
+    titleSplit: ['Fixtures'],
+    compositionID: 'UpComingNetBallFixtures',
+    videoTitle: 'Upcoming Netball Fixtures',
   },
   WeekendResultsNetball: {
-    componentKey: "WeekendResults",
-    dataKey: "WeekendResults",
-    title: "Results",
-    titleSplit: ["Results"],
-    compositionID: "WeekendResultsNetball",
-    videoTitle: "Weekend Netball Results",
+    componentKey: 'WeekendResults',
+    dataKey: 'WeekendResults',
+    title: 'Results',
+    titleSplit: ['Results'],
+    compositionID: 'WeekendResultsNetball',
+    videoTitle: 'Weekend Netball Results',
   },
 };
 

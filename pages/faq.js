@@ -1,17 +1,17 @@
-import React from "react";
-import PageBanner from "../components/Common/PageBanner";
-import FaqContent from "../components/pages/public/Faq/FaqContent";
-import CtaAreaTwo from "../components/Common/CtaAreaTwo";
-import Section from "../components/UI/DefaultSection";
-import Meta from "../components/Layouts/Meta";
+import React from 'react';
+import PageBanner from '../components/Common/PageBanner';
+import FaqContent from '../components/pages/public/Faq/FaqContent';
+import CtaAreaTwo from '../components/Common/CtaAreaTwo';
+import Section from '../components/UI/DefaultSection';
+import Meta from '../components/Layouts/Meta';
 /* import FAQ_AccessandUsage from "../components/Faq/FAQ_AccessandUsage";
 import FAQ_SubscriptionManagement from "../components/Faq/FAQ_SubscriptionManagement";
 import FAQ_PrivacyandSecurity from "../components/Faq/FAQ_PrivacyandSecurity";
 import FAQ_ContentandCustomization from "../components/Faq/FAQ_ContentandCustomization";
 import FAQ_General from "../components/Faq/FAQ_General"; */
-import { Center } from "@mantine/core";
-import Link from "next/link";
-import { trackButtonClick } from "../lib/GA";
+import { Center } from '@mantine/core';
+import Link from 'next/link';
+import { trackButtonClick } from '../lib/GA';
 const Faq = () => {
   const SectionData = {
     title: "Got Questions? Let's Connect!",
@@ -24,21 +24,24 @@ const Faq = () => {
   return (
     <>
       <Meta
-        title="FAQs - Fixtura: Your Questions Answered"
+        title='FAQs - Fixtura: Your Questions Answered'
         description="Find answers to frequently asked questions about Fixtura's digital media solutions for sports clubs. Get insights and help quickly."
-        keywords="FAQ Fixtura, sports media questions, digital content FAQs, club media solutions help, sports club queries"
+        keywords='FAQ Fixtura, sports media questions, digital content FAQs, club media solutions help, sports club queries'
       />
       <PageBanner
-        pageTitle="FAQS"
-        BGImage="/images/BG-Images/0D5A3369.jpg"
+        pageTitle='FAQS'
+        BGImage='/images/BG-Images/0D5A3369.jpg'
         position={`top center`}
       />
-      <Section {...SectionData} color="light">
+      <Section {...SectionData} color='light'>
         <Center>
-          <Link legacyBehavior  href="https://www.facebook.com/profile.php?id=100095406210560">
+          <Link
+            legacyBehavior
+            href='https://www.facebook.com/profile.php?id=100095406210560'
+          >
             <a
-              className="btn btn-secondary"
-              onClick={() => trackButtonClick("Facebook FAQ Chat")} // Track button click
+              className='btn btn-secondary'
+              onClick={() => trackButtonClick('Facebook FAQ Chat')} // Track button click
             >
               Contact Us on Facebook
             </a>

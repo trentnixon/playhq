@@ -1,15 +1,15 @@
-import Cookies from "js-cookie";
-import { useState } from "react";
-import { fetcher } from "../lib/api"; // Adjust the import path as necessary
-import { getAccountFromLocalCookie } from "../lib/auth";
-const qs = require("qs");
+import Cookies from 'js-cookie';
+import { useState } from 'react';
+import { fetcher } from '../lib/api'; // Adjust the import path as necessary
+import { getAccountFromLocalCookie } from '../lib/auth';
+const qs = require('qs');
 
 // Create Sponsorship Allocation
 export const useCreateSponsorshipAllocation = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  const createSponsorshipAllocation = async (allocationData) => {
+  const createSponsorshipAllocation = async allocationData => {
     const user = await getAccountFromLocalCookie();
     if (user) {
       setIsLoading(true);
@@ -17,10 +17,10 @@ export const useCreateSponsorshipAllocation = () => {
         const response = await fetcher(
           `${process.env.NEXT_PUBLIC_STRAPI_URL}/sponsorship-allocations`,
           {
-            method: "POST",
+            method: 'POST',
             headers: {
-              "Content-Type": "application/json",
-              Authorization: `Bearer ${Cookies.get("jwt")}`,
+              'Content-Type': 'application/json',
+              Authorization: `Bearer ${Cookies.get('jwt')}`,
             },
             body: JSON.stringify({ data: allocationData }),
           }
@@ -28,7 +28,7 @@ export const useCreateSponsorshipAllocation = () => {
         setError(null);
         return response.data;
       } catch (fetchError) {
-        console.error("Failed to create sponsorship allocation:", fetchError);
+        console.error('Failed to create sponsorship allocation:', fetchError);
         setError(fetchError.message);
       } finally {
         setIsLoading(false);
@@ -52,10 +52,10 @@ export const useUpdateSponsorshipAllocation = () => {
         const response = await fetcher(
           `${process.env.NEXT_PUBLIC_STRAPI_URL}/sponsorship-allocations/${allocationId}`,
           {
-            method: "PUT",
+            method: 'PUT',
             headers: {
-              "Content-Type": "application/json",
-              Authorization: `Bearer ${Cookies.get("jwt")}`,
+              'Content-Type': 'application/json',
+              Authorization: `Bearer ${Cookies.get('jwt')}`,
             },
             body: JSON.stringify({ data: allocationData }),
           }
@@ -63,7 +63,7 @@ export const useUpdateSponsorshipAllocation = () => {
         setError(null);
         return response.data;
       } catch (fetchError) {
-        console.error("Failed to update sponsorship allocation:", fetchError);
+        console.error('Failed to update sponsorship allocation:', fetchError);
         setError(fetchError.message);
       } finally {
         setIsLoading(false);
@@ -79,7 +79,7 @@ export const useDeleteSponsorshipAllocation = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  const deleteSponsorshipAllocation = async (allocationId) => {
+  const deleteSponsorshipAllocation = async allocationId => {
     const user = await getAccountFromLocalCookie();
     if (user) {
       setIsLoading(true);
@@ -87,17 +87,17 @@ export const useDeleteSponsorshipAllocation = () => {
         const response = await fetcher(
           `${process.env.NEXT_PUBLIC_STRAPI_URL}/sponsorship-allocations/${allocationId}`,
           {
-            method: "DELETE",
+            method: 'DELETE',
             headers: {
-              "Content-Type": "application/json",
-              Authorization: `Bearer ${Cookies.get("jwt")}`,
-            }
+              'Content-Type': 'application/json',
+              Authorization: `Bearer ${Cookies.get('jwt')}`,
+            },
           }
         );
         setError(null);
         return response.data;
       } catch (fetchError) {
-        console.error("Failed to delete sponsorship allocation:", fetchError);
+        console.error('Failed to delete sponsorship allocation:', fetchError);
         setError(fetchError.message);
       } finally {
         setIsLoading(false);

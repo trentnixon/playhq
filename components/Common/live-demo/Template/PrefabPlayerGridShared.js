@@ -1,33 +1,32 @@
 // src/components/Common/PrefabPlayerGridShared.js
-import { useState, useEffect } from "react";
-import { Grid } from "@mantine/core";
-import { useTemplate } from "../../../../context/TemplateContext";
+import { useState, useEffect } from 'react';
+import { Grid } from '@mantine/core';
+import { useTemplate } from '../../../../context/TemplateContext';
 
-import { updateUserAccountWithTemplate } from "../../../../utils/actions";
-import { MembersPreviewShell } from "./PreviewShell";
-import { P } from "../../../Members/Common/Type";
-import { Previewer } from "../../../pages/members/index/Dashboard/userPreview/Previewer";
-import { PreviewControls } from "./PreviewControls";
-
+import { updateUserAccountWithTemplate } from '../../../../utils/actions';
+import { MembersPreviewShell } from './PreviewShell';
+import { P } from '../../../Members/Common/Type';
+import { Previewer } from '../../../pages/members/index/Dashboard/userPreview/Previewer';
+import { PreviewControls } from './PreviewControls';
 
 const assetOptions = {
   Cricket: [
-    { value: "UpComingFixtures", label: "Upcoming Fixtures" },
-    { value: "WeekendResults", label: "Weekend Results" },
-    { value: "Top5BattingList", label: "Top 5 Batting" },
-    { value: "Top5BowlingList", label: "Top 5 Bowling" },
-    { value: "Ladder", label: "Ladder" },
+    { value: 'UpComingFixtures', label: 'Upcoming Fixtures' },
+    { value: 'WeekendResults', label: 'Weekend Results' },
+    { value: 'Top5BattingList', label: 'Top 5 Batting' },
+    { value: 'Top5BowlingList', label: 'Top 5 Bowling' },
+    { value: 'Ladder', label: 'Ladder' },
   ],
   AFL: [
-    { value: "UpComingAFLFixtures", label: "Upcoming AFL Fixtures" },
-    { value: "WeekendResultsAFL", label: "Weekend AFL Results" },
-    { value: "Top5AFLScorers", label: "Top 5 AFL Scorers" },
-    { value: "AFLLadder", label: "AFL Ladder" },
+    { value: 'UpComingAFLFixtures', label: 'Upcoming AFL Fixtures' },
+    { value: 'WeekendResultsAFL', label: 'Weekend AFL Results' },
+    { value: 'Top5AFLScorers', label: 'Top 5 AFL Scorers' },
+    { value: 'AFLLadder', label: 'AFL Ladder' },
   ],
   Netball: [
-    { value: "UpComingNetBallFixtures", label: "Upcoming Netball Fixtures" },
-    { value: "WeekendResultsNetball", label: "Weekend Netball Results" },
-    { value: "NetballLadder", label: "Netball Ladder" },
+    { value: 'UpComingNetBallFixtures', label: 'Upcoming Netball Fixtures' },
+    { value: 'WeekendResultsNetball', label: 'Weekend Netball Results' },
+    { value: 'NetballLadder', label: 'Netball Ladder' },
   ],
 };
 
@@ -38,7 +37,6 @@ export const PrefabPlayerGridShared = ({ account }) => {
   const [selectedHeroImage, setHeroImage] = useState(null);
   const [playerKey, setPlayerKey] = useState(Date.now());
   const [updatedUserAccount, setUpdatedUserAccount] = useState(null);
-
 
   useEffect(() => {
     if (account) {
@@ -53,13 +51,13 @@ export const PrefabPlayerGridShared = ({ account }) => {
         setSelectedAsset(assetOptions[sport][0].value);
       }
     }
-  }, [userAccount]);
+  }, [userAccount, selectedAsset, assetOptions]);
 
   useEffect(() => {
     if (!template && userAccount) {
-      const userTemplateId = userAccount.attributes.template.data.id;
+      const userTemplateId = userAccount.attributes.template_option?.data?.id;
       const userTemplate = userAccount.attributes.templates.find(
-        (template) => template.id === userTemplateId
+        template => template.id === userTemplateId
       );
       setTemplate(userTemplate);
     }
@@ -67,22 +65,24 @@ export const PrefabPlayerGridShared = ({ account }) => {
 
   useEffect(() => {
     if (template && userAccount) {
-      const updatedAccount = updateUserAccountWithTemplate(userAccount, template);
+      const updatedAccount = updateUserAccountWithTemplate(
+        userAccount,
+        template
+      );
       setUpdatedUserAccount(updatedAccount);
     }
-  }, [template, userAccount]);
+  }, [template, userAccount, updateUserAccountWithTemplate]);
 
   if (!userAccount) {
     return <P>Loading...</P>;
   }
-
 
   return (
     <Grid>
       <Grid.Col sm={12} md={6}>
         {updatedUserAccount && (
           <>
-            <P Weight="900" marginBottom={0} color={6}>
+            <P Weight='900' marginBottom={0} color={6}>
               Video Preview
             </P>
             <MembersPreviewShell
@@ -95,7 +95,7 @@ export const PrefabPlayerGridShared = ({ account }) => {
         )}
       </Grid.Col>
       <Grid.Col sm={12} md={6}>
-        <P Weight="900" marginBottom={0} color={6}>
+        <P Weight='900' marginBottom={0} color={6}>
           Filters
         </P>
         <PreviewControls
@@ -109,7 +109,7 @@ export const PrefabPlayerGridShared = ({ account }) => {
         />
       </Grid.Col>
       <Grid.Col sm={12} md={12} mt={50}>
-        <P Weight="900" marginBottom={0} color={6}>
+        <P Weight='900' marginBottom={0} color={6}>
           Image Preview
         </P>
         <Previewer account={updatedUserAccount} />

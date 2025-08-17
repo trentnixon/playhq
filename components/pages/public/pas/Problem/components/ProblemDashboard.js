@@ -33,8 +33,8 @@ const ProblemDashboard = () => {
   return (
     <div className={styles.problemDashboard} ref={dashboardRef}>
       <img
-        src="https://fixtura.s3.ap-southeast-2.amazonaws.com/Problem_Dashboard_Image_62bd5708e0.png"
-        alt="Problem Dashboard"
+        src='https://fixtura.s3.ap-southeast-2.amazonaws.com/Problem_Dashboard_Image_62bd5708e0.png'
+        alt='Problem Dashboard'
         className={styles.dashboardImage}
       />
     </div>

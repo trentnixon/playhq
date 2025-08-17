@@ -1,16 +1,16 @@
-import { Stack } from "@mantine/core";
+import { Stack } from '@mantine/core';
 
-import React from "react";
+import React from 'react';
 
-import { SelectedPlan } from "./SelectedPlan";
-import { PricingCTAOptions } from "./FrontEndCTAOptions";
+import { SelectedPlan } from './SelectedPlan';
+import { PricingCTAOptions } from './FrontEndCTAOptions';
 import {
   PricingDescription,
   PricingHeader,
   PricingSubtitle,
-} from "./PricingCopy";
+} from './PricingCopy';
 
-export const ProductCard = (props) => {
+export const ProductCard = props => {
   const { product, signUp, BTN = null, isActive, selected } = props;
 
   return (
@@ -19,7 +19,7 @@ export const ProductCard = (props) => {
         <PricingHeader product={product} />
         <PricingSubtitle product={product} />
 
-        <Stack align="center" justify="flex-start" spacing={0} mb={10}>
+        <Stack align='center' justify='flex-start' spacing={0} mb={10}>
           <PricingDescription {...props} />
 
           {isActive ? (
@@ -33,7 +33,7 @@ export const ProductCard = (props) => {
   );
 };
 
-const ProductCardContainer = (props) => {
+const ProductCardContainer = props => {
   return (
     <div className={`${props.className} col-lg-4 col-md-12`}>
       {props.children}
@@ -41,14 +41,14 @@ const ProductCardContainer = (props) => {
   );
 };
 
-const ProductCardInnerContainer = (props) => {
+const ProductCardInnerContainer = props => {
   const { timing } = props;
 
   return (
     <div
-      className="pricing-table active-plan"
-      data-aos="fade-up"
-      data-aos-duration="1500"
+      className='pricing-table active-plan'
+      data-aos='fade-up'
+      data-aos-duration='1500'
       data-aos-delay={timing ? timing * 100 : 0 * 100}
     >
       {props.children}

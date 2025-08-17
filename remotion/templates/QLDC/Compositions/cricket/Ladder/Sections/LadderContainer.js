@@ -1,4 +1,3 @@
-
 import styled from 'styled-components';
 const LadderContainerStyles = styled.div`
   display: flex;
@@ -6,8 +5,9 @@ const LadderContainerStyles = styled.div`
   width: 100%;
   height: 1040px;
   max-width: 100%;
-  margin: 0 auto;`;
+  margin: 0 auto;
+`;
 
-export const LadderContainer = (props)=>{
-  return(<LadderContainerStyles>{props.children}</LadderContainerStyles>)
-}
+export const LadderContainer = props => {
+  return <LadderContainerStyles>{props.children}</LadderContainerStyles>;
+};

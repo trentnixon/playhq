@@ -6,7 +6,7 @@ export function daysUntil(targetDay) {
     Tuesday: 2,
     Wednesday: 3,
     Thursday: 4,
-    Friday: 5, 
+    Friday: 5,
     Saturday: 6,
   };
 
@@ -30,7 +30,7 @@ export function daysUntil(targetDay) {
   return daysUntil;
 }
 
-export const orderedArray = (array) => {
+export const orderedArray = array => {
   const orderedArray = array.sort((a, b) => {
     const dateA = new Date(a.createdAt);
     const dateB = new Date(b.createdAt);
@@ -38,7 +38,6 @@ export const orderedArray = (array) => {
   });
   return orderedArray;
 };
-
 
 export function checkDeliveryDate(Response) {
   //console.log("checkDeliveryDate", Response)
@@ -50,47 +49,48 @@ export function checkDeliveryDate(Response) {
   const createdOnDate = new Date(Ordered[0].createdAt);
 
   if (currentDate.toDateString() === createdOnDate.toDateString()) {
-    return "delivered today";
+    return 'delivered today';
   } else {
     return false;
   }
 }
 
-
-export  const FormattDateFormDownloadTable = (formattDate) => {
+export const FormattDateFormDownloadTable = formattDate => {
   const dateString = formattDate;
   const date = new Date(dateString);
-  const formattedDate = date.toLocaleDateString("en-GB", {
-    day: "numeric",
-    month: "numeric",
-    year: "numeric",
-
+  const formattedDate = date.toLocaleDateString('en-GB', {
+    day: 'numeric',
+    month: 'numeric',
+    year: 'numeric',
   });
   return formattedDate;
-}; 
+};
 
-export const FormattReadableDateFormDownloadTable = (formattDate) => {
+export const FormattReadableDateFormDownloadTable = formattDate => {
   const date = new Date(formattDate);
   const day = date.getDate();
   const month = date.toLocaleString('en-GB', { month: 'long' });
 
   // Function to add ordinal suffix to day
-  const getOrdinalSuffix = (day) => {
+  const getOrdinalSuffix = day => {
     if (day > 3 && day < 21) return 'th';
     switch (day % 10) {
-      case 1:  return "st";
-      case 2:  return "nd";
-      case 3:  return "rd";
-      default: return "th";
+      case 1:
+        return 'st';
+      case 2:
+        return 'nd';
+      case 3:
+        return 'rd';
+      default:
+        return 'th';
     }
   };
 
   return `${day}${getOrdinalSuffix(day)} ${month}`;
 };
 
-
-export const isBefore2024 = (dateString) => {
-  const cutoffDate = new Date("2024-01-01");
+export const isBefore2024 = dateString => {
+  const cutoffDate = new Date('2024-01-01');
   const date = new Date(dateString);
   return date < cutoffDate;
 };

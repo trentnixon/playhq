@@ -1,17 +1,17 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 import {
   darkenColor,
   getContrastColor,
   lightenColor,
-} from "../../../../../utils/colors";
-import { useCurrentFrame } from "remotion";
-import { interpolateOpacityByFrame } from "../../../../../Animation/interpolate";
-import { FromLeftToRight } from "../../../../../Animation/ClipWipe";
-import useImageDimensions from "../../../../../hooks/useImageDimensions";
+} from '../../../../../utils/colors';
+import { useCurrentFrame } from 'remotion';
+import { interpolateOpacityByFrame } from '../../../../../Animation/interpolate';
+import { FromLeftToRight } from '../../../../../Animation/ClipWipe';
+import useImageDimensions from '../../../../../hooks/useImageDimensions';
 
-import { ImageWithFallback } from "../../../Components/Common/ImageWithFallback";
-import { restrictString } from "../../../../../utils/copy";
-import { SpringToFrom } from "../../../../../Animation/RemotionSpring";
+import { ImageWithFallback } from '../../../Components/Common/ImageWithFallback';
+import { restrictString } from '../../../../../utils/copy';
+import { SpringToFrom } from '../../../../../Animation/RemotionSpring';
 
 const LadderPositionContainer = styled.div`
   display: flex;
@@ -22,14 +22,14 @@ const LadderPositionContainer = styled.div`
   margin: 2px auto;
   padding: 5px 10px;
   width: 100%;
-  height: ${(props) => props.Height}px;
+  height: ${props => props.Height}px;
   background-color: white;
-  font-family: ${(props) => props.fontFamily};
-  background-color: ${(props) => props.bgColor};
+  font-family: ${props => props.fontFamily};
+  background-color: ${props => props.bgColor};
 `;
 
 const MetaContainer = styled.div`
-  background-color: ${(props) => props.bgColor};
+  background-color: ${props => props.bgColor};
   width: 33.5%;
   display: flex;
   flex-direction: row;
@@ -42,7 +42,7 @@ const ImgContainer = styled.div``;
 const Name = styled.span`
   font-size: 1.6em;
   font-weight: 400;
-  color: ${(props) => props.color};
+  color: ${props => props.color};
   width: 60%;
   margin-left: 10px;
 `;
@@ -50,13 +50,13 @@ const Name = styled.span`
 const Performance = styled.span`
   font-size: 1.4em;
   font-weight: 400;
-  color: ${(props) => props.color};
+  color: ${props => props.color};
   text-align: center;
   max-width: 20%;
   min-width: 20%;
 `;
 
-export const LadderPosition = (props) => {
+export const LadderPosition = props => {
   const {
     LadderItem,
     THEME,
@@ -84,9 +84,9 @@ export const LadderPosition = (props) => {
   return (
     <LadderPositionContainer
       style={{
-        width: `${SpringToFrom(LADDERINT * 1, 0, 100, "Wobbly")}%`,
-        paddingLeft: `${SpringToFrom(LADDERINT * 1, 0, 10, "Wobbly")}px`,
-        paddingRight: `${SpringToFrom(LADDERINT * 1, 0, 10, "Wobbly")}px`,
+        width: `${SpringToFrom(LADDERINT * 1, 0, 100, 'Wobbly')}%`,
+        paddingLeft: `${SpringToFrom(LADDERINT * 1, 0, 10, 'Wobbly')}px`,
+        paddingRight: `${SpringToFrom(LADDERINT * 1, 0, 10, 'Wobbly')}px`,
         /* clipPath: FromLeftToRight(30 + INT * 3, 'Slow'), */
         opacity: interpolateOpacityByFrame(
           frame,
@@ -103,7 +103,7 @@ export const LadderPosition = (props) => {
       <ImgContainer
         style={{
           width: `${ContainerHeight / NumTeams / 1.5}px`,
-          textAlign: "center",
+          textAlign: 'center',
           opacity: interpolateOpacityByFrame(
             frame,
             LADDERINT * 2,
@@ -114,51 +114,51 @@ export const LadderPosition = (props) => {
         }}
       >
         <ImageWithFallback
-          fallbackSrc="https://fixtura.s3.ap-southeast-2.amazonaws.com/Default_ICON_171b58a21b.png" // Replace with your fallback image URL
+          fallbackSrc='https://fixtura.s3.ap-southeast-2.amazonaws.com/Default_ICON_171b58a21b.png' // Replace with your fallback image URL
           src={teamLogo}
-          style={{ ...TemLogoStyles, borderRadius: "100%" }}
+          style={{ ...TemLogoStyles, borderRadius: '100%' }}
         />
       </ImgContainer>
       <Name
         color={getContrastColor(useTHEMECOLOR)}
-        style={{ clipPath: FromLeftToRight(30 + LADDERINT * 3, "Slow") }}
+        style={{ clipPath: FromLeftToRight(30 + LADDERINT * 3, 'Slow') }}
       >
         {position}. {restrictString(teamName, 38)}
       </Name>
       <MetaContainer
         bgColor={darkenColor(THEME.primary)}
         style={{
-          minHeight: "80%",
-          clipPath: FromLeftToRight(15 + LADDERINT * 2, "Slow"),
+          minHeight: '80%',
+          clipPath: FromLeftToRight(15 + LADDERINT * 2, 'Slow'),
         }}
       >
         <Performance
           color={getContrastColor(THEME.primary)}
-          style={{ clipPath: FromLeftToRight(30 + LADDERINT * 3, "Slow") }}
+          style={{ clipPath: FromLeftToRight(30 + LADDERINT * 3, 'Slow') }}
         >
           {P}
         </Performance>
         <Performance
           color={getContrastColor(THEME.primary)}
-          style={{ clipPath: FromLeftToRight(30 + LADDERINT * 3, "Slow") }}
+          style={{ clipPath: FromLeftToRight(30 + LADDERINT * 3, 'Slow') }}
         >
           {W}
         </Performance>
         <Performance
           color={getContrastColor(THEME.primary)}
-          style={{ clipPath: FromLeftToRight(30 + LADDERINT * 3, "Slow") }}
+          style={{ clipPath: FromLeftToRight(30 + LADDERINT * 3, 'Slow') }}
         >
           {L}
         </Performance>
         <Performance
           color={getContrastColor(THEME.primary)}
-          style={{ clipPath: FromLeftToRight(30 + LADDERINT * 3, "Slow") }}
+          style={{ clipPath: FromLeftToRight(30 + LADDERINT * 3, 'Slow') }}
         >
           {TIE}
         </Performance>
         <Performance
           color={getContrastColor(THEME.primary)}
-          style={{ clipPath: FromLeftToRight(30 + LADDERINT * 3, "Slow") }}
+          style={{ clipPath: FromLeftToRight(30 + LADDERINT * 3, 'Slow') }}
         >
           {PTS}
         </Performance>

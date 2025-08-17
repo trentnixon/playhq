@@ -1,16 +1,18 @@
 // Refactored version with error handling, optimization, and adherence to SOLID principles.
 
 import styled from 'styled-components';
-import {SpringToFrom} from '../../../../Animation/RemotionSpring';
-import {EraseToMiddleFromTop} from '../../../../Animation/ClipWipe';
-import {Img} from 'remotion';
+import { SpringToFrom } from '../../../../Animation/RemotionSpring';
+import { EraseToMiddleFromTop } from '../../../../Animation/ClipWipe';
+import { Img } from 'remotion';
 import PropTypes from 'prop-types'; // For prop type validation
 
 // Logo Component - A reusable component for rendering logos with specific animations
-const LogoComponent = ({FPS_MAIN, LOGO, isCircle = false}) => {
+const LogoComponent = ({ FPS_MAIN, LOGO, isCircle = false }) => {
   // Validate inputs
   if (!FPS_MAIN || !LOGO) {
-    console.error('LogoComponent requires FPS_MAIN and LOGO to function properly.');
+    console.error(
+      'LogoComponent requires FPS_MAIN and LOGO to function properly.'
+    );
     return null;
   }
 
@@ -26,7 +28,7 @@ const LogoComponent = ({FPS_MAIN, LOGO, isCircle = false}) => {
     <StyledLogo isCircle={isCircle} style={logoStyles}>
       <Img
         src={LOGO}
-        width="100%"
+        width='100%'
         style={{
           borderRadius: '10%',
         }}
@@ -50,7 +52,9 @@ const StyledLogo = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  ${({ isCircle }) => !isCircle && `
+  ${({ isCircle }) =>
+    !isCircle &&
+    `
     padding-right: 10px;
     margin-right: 10px;
     border-right: 3px solid white;
@@ -58,11 +62,11 @@ const StyledLogo = styled.div`
 `;
 
 // Exported specific components utilizing the LogoComponent for specific use cases
-export const HeaderLogo = ({FPS_MAIN, LOGO}) => {
-  return <LogoComponent FPS_MAIN={FPS_MAIN} LOGO={LOGO} isCircle={false}/>;
+export const HeaderLogo = ({ FPS_MAIN, LOGO }) => {
+  return <LogoComponent FPS_MAIN={FPS_MAIN} LOGO={LOGO} isCircle={false} />;
 };
 
-export const SingleResultHeaderLogo = ({FPS_MAIN, LOGO}) => {
+export const SingleResultHeaderLogo = ({ FPS_MAIN, LOGO }) => {
   return <LogoComponent isCircle FPS_MAIN={FPS_MAIN} LOGO={LOGO} />;
 };
 

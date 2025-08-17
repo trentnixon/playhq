@@ -1,12 +1,12 @@
-import { useState, useEffect } from "react";
-import { fetcher } from "../../../../lib/api";
-import Cookies from "js-cookie";
-import { Select, Group, Box, ActionIcon } from "@mantine/core";
+import { useState, useEffect } from 'react';
+import { fetcher } from '../../../../lib/api';
+import Cookies from 'js-cookie';
+import { Select, Group, Box, ActionIcon } from '@mantine/core';
 
-import { IconSquareX, IconEdit, IconCheck } from "@tabler/icons";
-import { P } from "../Type";
-import { FixturaLoading } from "../Loading";
-import { BTN_ONCLICK } from "../utils/Buttons";
+import { IconSquareX, IconEdit, IconCheck } from '@tabler/icons';
+import { P } from '../Type';
+import { FixturaLoading } from '../Loading';
+import { BTN_ONCLICK } from '../utils/Buttons';
 
 export function SelectFixturaSetting({
   setHasUpdated,
@@ -19,6 +19,7 @@ export function SelectFixturaSetting({
   COLLECTIONID,
   WithIcon = false,
   showSelectInit = false,
+  onSelectionChange,
 }) {
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -26,14 +27,26 @@ export function SelectFixturaSetting({
   const [showSelect, setShowSelect] = useState(showSelectInit);
   const [error, setError] = useState(null);
 
+  // Update selected state when SelectedBaseValueObject changes
+  useEffect(() => {
+    if (SelectedBaseValueObject) {
+      setSelected(SelectedBaseValueObject);
+    }
+  }, [SelectedBaseValueObject]);
+
+  // Update showSelect state when showSelectInit prop changes
+  useEffect(() => {
+    setShowSelect(showSelectInit);
+  }, [showSelectInit]);
+
   useEffect(() => {
     async function fetchData() {
       const response = await fetcher(
         `${process.env.NEXT_PUBLIC_STRAPI_URL}/${CollectionFrom}/`,
         {
           headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${Cookies.get("jwt")}`,
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${Cookies.get('jwt')}`,
           },
         }
       );
@@ -43,8 +56,8 @@ export function SelectFixturaSetting({
     fetchData();
   }, []);
 
-  const handleChange = async (event) => {
-    if (typeof event !== "object") {
+  const handleChange = async event => {
+    if (typeof event !== 'string') {
       return;
     }
 
@@ -52,30 +65,47 @@ export function SelectFixturaSetting({
     setError(null);
 
     try {
-      const response = await fetcher(
-        `${process.env.NEXT_PUBLIC_STRAPI_URL}/${CollectionSaveTo}/${COLLECTIONID}`,
-        {
-          method: "PUT",
-          headers: {
-            Accept: "application/json",
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${Cookies.get("jwt")}`,
-          },
-          body: JSON.stringify({
-            data: {
-              [RelationProperty]: event.ID,
-            },
-          }),
-        }
-      );
+      // Find the selected item data
+      const selectedItem = items.find(item => item.id.toString() === event);
+      const selectedData = selectedItem
+        ? { ID: selectedItem.id, Name: selectedItem.attributes.Name }
+        : null;
 
-      //console.log("response", response);
-      if (response) {
-        setLoading(false);
-        setSelected(event);
-        setShowSelect(false);
-        setHasUpdated();
+      // Only save to database if we have a real account ID
+      if (COLLECTIONID) {
+        const response = await fetcher(
+          `${process.env.NEXT_PUBLIC_STRAPI_URL}/${CollectionSaveTo}/${COLLECTIONID}`,
+          {
+            method: 'PUT',
+            headers: {
+              Accept: 'application/json',
+              'Content-Type': 'application/json',
+              Authorization: `Bearer ${Cookies.get('jwt')}`,
+            },
+            body: JSON.stringify({
+              data: {
+                [RelationProperty]: parseInt(event),
+              },
+            }),
+          }
+        );
+
+        if (!response) {
+          throw new Error('Failed to save to database');
+        }
       }
+
+      // Update UI state regardless of database save
+      setSelected(selectedData);
+      setShowSelect(false);
+      setHasUpdated();
+
+      // Call the onSelectionChange callback if provided
+      if (onSelectionChange) {
+        onSelectionChange(selectedData);
+      }
+
+      setLoading(false);
     } catch (err) {
       setError(err.message);
       setLoading(false);
@@ -86,10 +116,11 @@ export function SelectFixturaSetting({
     setShowSelect(!showSelect);
   };
 
-  const List = (items) => {
-    return items.map((item) => ({
-      value: { ID: item.id, Name: item.attributes.Name },
+  const List = items => {
+    return items.map(item => ({
+      value: item.id.toString(), // Use string ID as value
       label: item.attributes.Name,
+      data: { ID: item.id, Name: item.attributes.Name }, // Store full data separately
     }));
   };
 
@@ -131,7 +162,7 @@ const UI_WithSelectedAndButton = ({
   toggleSelect,
 }) => {
   return (
-    <Group position="apart">
+    <Group position='apart'>
       <Box>
         {error ? (
           <P color={2}>{error}</P>
@@ -148,11 +179,11 @@ const UI_WithSelectedAndButton = ({
               textTransform={`uppercase`}
               size={`sm`}
               marginBottom={0}
-            >{`${selected ? selected.Name : "Select Option"}`}</P>
+            >{`${selected ? selected.Name : 'Select Option'}`}</P>
             {selected ? (
               <ActionIcon
-                variant="filled"
-                sx={(theme) => ({
+                variant='filled'
+                sx={theme => ({
                   backgroundColor: theme.colors.members[6],
                 })}
               >
@@ -166,9 +197,9 @@ const UI_WithSelectedAndButton = ({
       </Box>
 
       <BTN_ONCLICK
-        LABEL={showSelect ? "Cancel" : "Edit"}
+        LABEL={showSelect ? 'Cancel' : 'Edit'}
         HANDLE={toggleSelect}
-        THEME={showSelect ? "error" : "cta"}
+        THEME={showSelect ? 'error' : 'cta'}
       />
     </Group>
   );
@@ -185,7 +216,7 @@ const UI_WithButton = ({
   SelectLabel,
 }) => {
   return (
-    <Group position="apart">
+    <Group position='apart'>
       {showSelect ? (
         false
       ) : (
@@ -196,7 +227,7 @@ const UI_WithButton = ({
 
       <Box>
         {error ? (
-          <p className="text-danger">{error}</p>
+          <p className='text-danger'>{error}</p>
         ) : showSelect ? (
           <Group>
             <Select
@@ -204,12 +235,12 @@ const UI_WithButton = ({
               placeholder={SelectPlaceholder}
               data={Data}
             />
-            <ActionIcon color="teal" size="lg" onClick={toggleSelect}>
+            <ActionIcon color='teal' size='lg' onClick={toggleSelect}>
               <IconSquareX size={26} />
             </ActionIcon>
           </Group>
         ) : (
-          <ActionIcon color="teal" size="lg" onClick={toggleSelect}>
+          <ActionIcon color='teal' size='lg' onClick={toggleSelect}>
             <IconEdit size={26} />
           </ActionIcon>
         )}

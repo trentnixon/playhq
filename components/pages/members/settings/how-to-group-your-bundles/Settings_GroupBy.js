@@ -1,9 +1,9 @@
-import { Group } from "@mantine/core";
-import { P } from "../../../../Members/Common/Type";
-import { BTN_TOINTERALLINK } from "../../../../Members/Common/utils/Buttons";
-import { useAccountDetails } from "../../../../../context/userContext";
-import { FindAccountType } from "../../../../../lib/actions";
-import { RoundedSectionContainer } from "../../../../UI/Containers/SectionContainer";
+import { Group } from '@mantine/core';
+import { P } from '../../../../Members/Common/Type';
+import { BTN_TOINTERALLINK } from '../../../../Members/Common/utils/Buttons';
+import { useAccountDetails } from '../../../../../context/userContext';
+import { FindAccountType } from '../../../../../lib/actions';
+import { RoundedSectionContainer } from '../../../../UI/Containers/SectionContainer';
 
 export const Setting_GroupBy = () => {
   const { account } = useAccountDetails();
@@ -15,30 +15,30 @@ export const Setting_GroupBy = () => {
   const GroupByValue = account?.attributes.group_assets_by;
   const settings = {
     Association: {
-      label: "How would you like your Competitions Grouped?",
+      label: 'How would you like your Competitions Grouped?',
       descriptions: {
-        true: "Your assets are currently grouped by Grade, ensuring that each grade within every competition has its own distinct set of assets.",
+        true: 'Your assets are currently grouped by Grade, ensuring that each grade within every competition has its own distinct set of assets.',
         false:
-          "Your assets are currently grouped by Competition Name, meaning all grades within a specific competition will be consolidated, allowing for a comprehensive assessment of the entire competition as a unified entity.",
+          'Your assets are currently grouped by Competition Name, meaning all grades within a specific competition will be consolidated, allowing for a comprehensive assessment of the entire competition as a unified entity.',
       },
-      true: "Grade",
-      false: "Competition Name",
+      true: 'Grade',
+      false: 'Competition Name',
     },
     Club: {
-      label: "How would you like your Teams Grouped?",
+      label: 'How would you like your Teams Grouped?',
       descriptions: {
-        true: "Your assets are currently grouped by Age Group, distinguishing between Juniors, Seniors, Masters, and others.",
+        true: 'Your assets are currently grouped by Age Group, distinguishing between Juniors, Seniors, Masters, and others.',
         false:
-          "Your assets are currently grouped under Juniors and Seniors, with Masters and Special included in Seniors.",
+          'Your assets are currently grouped under Juniors and Seniors, with Masters and Special included in Seniors.',
       },
-      true: "All Age groups",
-      false: "Junior/Senior",
+      true: 'All Age groups',
+      false: 'Junior/Senior',
     },
   };
 
   return (
     <RoundedSectionContainer
-      headerContent="Bundle Groupings"
+      headerContent='Bundle Groupings'
       topContent={<ContainerTopSection />}
       bottomContent={
         <ContainerBottomSection
@@ -51,13 +51,13 @@ export const Setting_GroupBy = () => {
 
 const ContainerTopSection = () => {
   return (
-    <Group position="apart">
+    <Group position='apart'>
       <P Weight={600} marginBottom={0}>
         Select how your weekly bundles will be grouped
       </P>
       <BTN_TOINTERALLINK
-        LABEL={"Group by"}
-        URL={"/members/settings/how-to-group-your-bundles/"}
+        LABEL={'Group by'}
+        URL={'/members/settings/how-to-group-your-bundles/'}
       />
     </Group>
   );

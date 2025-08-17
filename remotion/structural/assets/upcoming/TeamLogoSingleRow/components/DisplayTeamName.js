@@ -1,66 +1,66 @@
 // /components/DisplayTeamName.js
-import {useCurrentFrame} from 'remotion';
-import {TeamScoreContainer} from './SharedStyles';
+import { useCurrentFrame } from 'remotion';
+import { TeamScoreContainer } from './SharedStyles';
 import {
-	FromLeftToRight,
-	FromRightToLeft,
+  FromLeftToRight,
+  FromRightToLeft,
 } from '../../../../../Animation/ClipWipe';
-import {interpolateOpacityByFrame} from '../../../../../Animation/interpolate';
-import {FixtureLabels} from '../../../../../common/components/copy/commonAssetTypes';
-import {useStylesContext} from '../../../../../context/StyleContext';
-import {useLayoutContext} from '../../../../../context/LayoutContext';
+import { interpolateOpacityByFrame } from '../../../../../Animation/interpolate';
+import { FixtureLabels } from '../../../../../common/components/copy/commonAssetTypes';
+import { useStylesContext } from '../../../../../context/StyleContext';
+import { useLayoutContext } from '../../../../../context/LayoutContext';
 
-const getDynamicFontSize = (textLength) => {
-	if (textLength <= 10) return '50px'; // Normal size
-	if (textLength <= 20) return '45px'; // Large size
-	return '35px'; // Extra-large size for longer texts
+const getDynamicFontSize = textLength => {
+  if (textLength <= 10) return '50px'; // Normal size
+  if (textLength <= 20) return '45px'; // Large size
+  return '35px'; // Extra-large size for longer texts
 };
 
-const DisplayTeamName = ({Value, bgColor, FontColor, LTR = true}) => {
-	const {StyleConfig, BuildProps, TextStyles} = useStylesContext();
-	const {TIMINGS} = useLayoutContext();
-	const {TemplateVariation} = BuildProps;
-	const {FPS_SCORECARD} = TIMINGS;
-	const {Font} = StyleConfig;
+const DisplayTeamName = ({ Value, bgColor, FontColor, LTR = true }) => {
+  const { StyleConfig, BuildProps, TextStyles } = useStylesContext();
+  const { TIMINGS } = useLayoutContext();
+  const { TemplateVariation } = BuildProps;
+  const { FPS_SCORECARD } = TIMINGS;
+  const { Font } = StyleConfig;
 
-	const frame = useCurrentFrame();
+  const frame = useCurrentFrame();
 
-	const AnimationStyles = {
-		clipPath: LTR ? FromLeftToRight(7, 'Wobbly') : FromRightToLeft(7, 'Wobbly'),
-		opacity: interpolateOpacityByFrame(
-			frame,
-			FPS_SCORECARD - 30,
-			FPS_SCORECARD,
-			1,
-			0
-		),
-	};
+  const AnimationStyles = {
+    clipPath: LTR ? FromLeftToRight(7, 'Wobbly') : FromRightToLeft(7, 'Wobbly'),
+    opacity: interpolateOpacityByFrame(
+      frame,
+      FPS_SCORECARD - 30,
+      FPS_SCORECARD,
+      1,
+      0
+    ),
+  };
 
-	const DisplayTeamNameStyles = {
-		...Font.Copy,
-		...TextStyles.copyMediumBold,
-		color: FontColor,
+  const DisplayTeamNameStyles = {
+    ...Font.Copy,
+    ...TextStyles.copyMediumBold,
+    color: FontColor,
 
-		width: '100%',
-		margin: '0%',
+    width: '100%',
+    margin: '0%',
 
-		textTransform: 'uppercase',
-		textAlign: LTR ? 'right' : 'left',
-	};
+    textTransform: 'uppercase',
+    textAlign: LTR ? 'right' : 'left',
+  };
 
-	return (
-		<TeamScoreContainer
-			style={{...AnimationStyles}}
-			borderRadius={TemplateVariation.borderRadius}
-			bgColor={bgColor}
-		>
-			<FixtureLabels
-				customStyles={{...DisplayTeamNameStyles, ...AnimationStyles}}
-			>
-				{Value}
-			</FixtureLabels>
-		</TeamScoreContainer>
-	);
+  return (
+    <TeamScoreContainer
+      style={{ ...AnimationStyles }}
+      borderRadius={TemplateVariation.borderRadius}
+      bgColor={bgColor}
+    >
+      <FixtureLabels
+        customStyles={{ ...DisplayTeamNameStyles, ...AnimationStyles }}
+      >
+        {Value}
+      </FixtureLabels>
+    </TeamScoreContainer>
+  );
 };
 
 export default DisplayTeamName;

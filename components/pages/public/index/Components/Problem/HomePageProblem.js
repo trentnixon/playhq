@@ -1,11 +1,11 @@
 // HomePageProblem.jsx
-import React from "react";
-import ProblemContent from "./components/ProblemContent";
-import ProblemStats from "./components/ProblemStats";
-import ProblemDashboard from "./components/ProblemDashboard";
+import React from 'react';
+import ProblemContent from './components/ProblemContent';
+import ProblemStats from './components/ProblemStats';
+import ProblemDashboard from './components/ProblemDashboard';
 
-import styles from "./Problem.module.scss";
-import { Container, GradientContainer } from "../Primitives/Containers";
+import styles from './Problem.module.scss';
+import { Container, GradientContainer } from '../Primitives/Containers';
 
 const HomePageProblem = () => {
   return (
@@ -15,7 +15,8 @@ const HomePageProblem = () => {
       </Container>
 
       <GradientContainer
-        className={`${styles.problemSection} ${styles.gradientSection}`}>
+        className={`${styles.problemSection} ${styles.gradientSection}`}
+      >
         <ProblemStats />
       </GradientContainer>
 

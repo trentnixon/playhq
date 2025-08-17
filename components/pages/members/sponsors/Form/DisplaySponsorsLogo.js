@@ -1,11 +1,11 @@
-import { Box, Image } from "@mantine/core";
-import { BTN_ONCLICK } from "../../../../Members/Common/utils/Buttons";
+import { Box, Image } from '@mantine/core';
+import { BTN_ONCLICK } from '../../../../Members/Common/utils/Buttons';
 
 export const DisplaySponsorsLogo = ({ LOGO, setLogoPath }) => {
   const USELOGO =
     LOGO?.attributes?.height === undefined ? LOGO[0] : LOGO.attributes;
 
-  const calculateImageDimensions = (USELOGO) => {
+  const calculateImageDimensions = USELOGO => {
     const aspectRatio = USELOGO.width / USELOGO.height;
     let newHeight, newWidth;
     if (USELOGO.width > USELOGO.height) {
@@ -23,16 +23,16 @@ export const DisplaySponsorsLogo = ({ LOGO, setLogoPath }) => {
 
   return (
     <Box
-      sx={(theme) => ({
-        textAlign: "center",
+      sx={theme => ({
+        textAlign: 'center',
       })}
     >
       <div
         style={{
           width: 200,
-          marginLeft: "auto",
-          marginRight: "auto",
-          marginBottom: "10px",
+          marginLeft: 'auto',
+          marginRight: 'auto',
+          marginBottom: '10px',
         }}
       >
         <Image
@@ -42,7 +42,8 @@ export const DisplaySponsorsLogo = ({ LOGO, setLogoPath }) => {
           radius={10}
         />
       </div>
-      <BTN_ONCLICK        LABEL={`Change`}
+      <BTN_ONCLICK
+        LABEL={`Change`}
         HANDLE={() => {
           setLogoPath(false);
         }}

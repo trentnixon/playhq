@@ -1,14 +1,14 @@
-import { IconCircleCheck } from "@tabler/icons-react";
-import { FixturaLoading } from "../../../Common/Loading";
-import { P } from "../../../Common/Type";
-import { BTN_ONCLICK } from "../../../Common/utils/Buttons";
-import { Stack } from "@mantine/core";
+import { IconCircleCheck } from '@tabler/icons-react';
+import { FixturaLoading } from '../../../Common/Loading';
+import { P } from '../../../Common/Type';
+import { BTN_ONCLICK } from '../../../Common/utils/Buttons';
+import { Stack } from '@mantine/core';
 
 // Loading message component during trial creation process
 export const LoadingMessage = () => (
   <>
-    <P textAlign="center">Creating your trial...</P>
-    <P textAlign="center">
+    <P textAlign='center'>Creating your trial...</P>
+    <P textAlign='center'>
       <FixturaLoading />
     </P>
   </>
@@ -17,27 +17,27 @@ export const LoadingMessage = () => (
 // Success message component displayed once the trial is successfully created
 export const SuccessMessage = () => (
   <>
-    <P textAlign="center">
-      <IconCircleCheck size="4em" color="green" />
+    <P textAlign='center'>
+      <IconCircleCheck size='4em' color='green' />
     </P>
-    <P textAlign="center">Trial created successfully!</P>
+    <P textAlign='center'>Trial created successfully!</P>
   </>
 );
 
 // Error message component displayed if trial creation fails
 export const ErrorMessage = ({ error }) => (
-  <P textAlign="center" color="red">
+  <P textAlign='center' color='red'>
     Error: {error}
   </P>
 );
 
 // Activation button component for initiating the trial creation process
 export const TrialActivation = ({ handleClick }) => (
-  <Stack align="center">
-    <BTN_ONCLICK HANDLE={handleClick} LABEL="Activate Trial" THEME="success" />
-    <P textAlign="center" marginBottom={0}>
+  <Stack align='center'>
+    <BTN_ONCLICK HANDLE={handleClick} LABEL='Activate Trial' THEME='success' />
+    <P textAlign='center' marginBottom={0}>
       Unlock all premium features and experience the full power of our platform.
-    </P>  
+    </P>
   </Stack>
 );
 

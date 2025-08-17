@@ -1,54 +1,54 @@
-import { useState } from "react";
+import { useState } from 'react';
 
-import { Divider, Group, Switch } from "@mantine/core";
-import { P, PageTitle } from "../../../../components/Members/Common/Type";
-import { FindAccountType } from "../../../../lib/actions";
-import { useSetGroupAssetsBySetting } from "../../../../Hooks/useAccountSettings";
-import { useAccountDetails } from "../../../../context/userContext";
-import { DisplayKeys } from "../../../../components/pages/members/settings/how-to-group-your-bundles/_components/DisplayKeys";
-import { IconSettings } from "@tabler/icons";
-import { BackToSettings } from "../../../../components/pages/members/settings/_components/BackToSettings";
-import { RoundedSectionContainer } from "../../../../components/UI/Containers/SectionContainer";
-import SecureRouteHOC from "../../../../components/Layouts/members/security/SecureRouteHC";
-import { PageMetaData } from "../../../../components/Layouts/members/Meta/pageMetaData";
-import HandleJuniorSurnames from "./components/handleJuniorSurnames";
+import { Divider, Group, Switch } from '@mantine/core';
+import { P, PageTitle } from '../../../../components/Members/Common/Type';
+import { FindAccountType } from '../../../../lib/actions';
+import { useSetGroupAssetsBySetting } from '../../../../Hooks/useAccountSettings';
+import { useAccountDetails } from '../../../../context/userContext';
+import { DisplayKeys } from '../../../../components/pages/members/settings/how-to-group-your-bundles/_components/DisplayKeys';
+import { IconSettings } from '@tabler/icons';
+import { BackToSettings } from '../../../../components/pages/members/settings/_components/BackToSettings';
+import { RoundedSectionContainer } from '../../../../components/UI/Containers/SectionContainer';
+import SecureRouteHOC from '../../../../components/Layouts/members/security/SecureRouteHC';
+import { PageMetaData } from '../../../../components/Layouts/members/Meta/pageMetaData';
+import HandleJuniorSurnames from './components/handleJuniorSurnames';
 
 const GroupBySwitch = () => {
   const { account } = useAccountDetails();
   //console.log(account.attributes.group_assets_by);
   const AccType = FindAccountType(account);
 
-  if (!account) return;
-
   const [GroupAssetsBy, putGroupAssetsBy] = useSetGroupAssetsBySetting();
 
   // Updated labels, descriptions, and ON/OFF labels based on AccType
   const settings = {
     Association: {
-      label: "How would you like your Competitions Grouped?",
+      label: 'How would you like your Competitions Grouped?',
       descriptions: {
-        true: "Your assets are currently grouped by Grade, ensuring that each grade within every competition has its own distinct set of assets.",
+        true: 'Your assets are currently grouped by Grade, ensuring that each grade within every competition has its own distinct set of assets.',
         false:
-          "Your assets are currently grouped by Competition Name, meaning all grades within a specific competition will be consolidated, allowing for a comprehensive assessment of the entire competition as a unified entity.",
+          'Your assets are currently grouped by Competition Name, meaning all grades within a specific competition will be consolidated, allowing for a comprehensive assessment of the entire competition as a unified entity.',
       },
-      onLabel: "By Grade",
-      offLabel: "By Competition Name",
+      onLabel: 'By Grade',
+      offLabel: 'By Competition Name',
     },
     Club: {
-      label: "How would you like your Teams Grouped?",
+      label: 'How would you like your Teams Grouped?',
       descriptions: {
-        true: "Your assets are currently grouped by Age Group, distinguishing between Juniors, Seniors, Masters, and others.",
+        true: 'Your assets are currently grouped by Age Group, distinguishing between Juniors, Seniors, Masters, and others.',
         false:
-          "Your assets are currently grouped under Juniors and Seniors, with Masters and Special included in Seniors.",
+          'Your assets are currently grouped under Juniors and Seniors, with Masters and Special included in Seniors.',
       },
-      onLabel: "By All Age groups",
-      offLabel: "By Junior/Senior",
+      onLabel: 'By All Age groups',
+      offLabel: 'By Junior/Senior',
     },
   };
 
   const [switchValue, setSwitchValue] = useState(
-    GroupAssetsBy || account.attributes.group_assets_by
+    GroupAssetsBy || account?.attributes?.group_assets_by
   );
+
+  if (!account) return;
 
   // create use hook for ass and club data to show the grouped by labels
 
@@ -58,9 +58,9 @@ const GroupBySwitch = () => {
   };
 
   const MetaOBJ = {
-    title: "How to Group your Bundles - Fixtura",
-    description: "How to Group your Bundles",
-    keywords: "How to group your Fixtura Bundles",
+    title: 'How to Group your Bundles - Fixtura',
+    description: 'How to Group your Bundles',
+    keywords: 'How to group your Fixtura Bundles',
   };
 
   return (
@@ -74,9 +74,9 @@ const GroupBySwitch = () => {
       <BackToSettings />
 
       <HandleJuniorSurnames />
-      <Divider my="xl" />
+      <Divider my='xl' />
       <RoundedSectionContainer
-        headerContent="Bundle Groupings"
+        headerContent='Bundle Groupings'
         topContent={
           <ContainerTopSection
             setting={settings[AccType]}
@@ -109,7 +109,7 @@ const ContainerBottomSection = ({ setting, switchValue }) => {
 
 const ContainerTopSection = ({ setting, handleSwitchChange, switchValue }) => {
   return (
-    <Group position="apart">
+    <Group position='apart'>
       <P marginBottom={0} Weight={600}>
         {setting.label}
       </P>
@@ -118,9 +118,9 @@ const ContainerTopSection = ({ setting, handleSwitchChange, switchValue }) => {
         onChange={event => handleSwitchChange(event.currentTarget.checked)}
         onLabel={setting.onLabel}
         offLabel={setting.offLabel}
-        size="xl"
-        color="indigo"
-        labelPosition="left"
+        size='xl'
+        color='indigo'
+        labelPosition='left'
       />
     </Group>
   );

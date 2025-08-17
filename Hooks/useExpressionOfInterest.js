@@ -1,9 +1,9 @@
-import { useState } from "react";
-import { fetcher } from "../lib/api";
-import fetcherV2 from "../lib/fetcher";
-import qs from "qs";
+import { useState } from 'react';
+import { fetcher } from '../lib/api';
+import fetcherV2 from '../lib/fetcher';
+import qs from 'qs';
 
-const buildQueryString = (name) => {
+const buildQueryString = name => {
   return qs.stringify(
     {
       filters: {
@@ -11,7 +11,7 @@ const buildQueryString = (name) => {
           $containsi: name,
         },
       },
-      fields: ["Name","Sport"],
+      fields: ['Name', 'Sport'],
     },
     {
       encodeValuesOnly: true,
@@ -19,20 +19,20 @@ const buildQueryString = (name) => {
   );
 };
 
-const buildQueryStringClubs = (name,ID) => {
+const buildQueryStringClubs = (name, ID) => {
   return qs.stringify(
     {
       filters: {
         Name: {
           $containsi: name,
         },
-        associations :{
-          id:{
-            $in:[ID]
-          }
-        }
+        associations: {
+          id: {
+            $in: [ID],
+          },
+        },
       },
-      fields: ["Name","PlayHQID","Sport"],
+      fields: ['Name', 'PlayHQID', 'Sport'],
     },
     {
       encodeValuesOnly: true,
@@ -40,12 +40,12 @@ const buildQueryStringClubs = (name,ID) => {
   );
 };
 
-const fetchData = async (url) => {
+const fetchData = async url => {
   try {
     const response = await fetcher(url, {
       headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
       },
     });
 
@@ -75,7 +75,7 @@ export const useClubs = () => {
 export const useAssociations = () => {
   const [associations, setAssociations] = useState(null);
 
-  const fetchAssociations = async (name) => {
+  const fetchAssociations = async name => {
     setAssociations(true);
     const query = buildQueryString(name);
     const data = await fetchData(
@@ -85,16 +85,15 @@ export const useAssociations = () => {
   };
 
   return [associations, fetchAssociations];
-}; 
-
+};
 
 export const useSendExpressionOfInterestForm = () => {
   const [expression, setExpression] = useState(null);
 
-  const createExpression = async (DATA) => {
+  const createExpression = async DATA => {
     return new Promise(async (resolve, reject) => {
       setExpression(true);
-      const res = await fetcherV2("/expression-of-interests", "POST", {
+      const res = await fetcherV2('/expression-of-interests', 'POST', {
         data: DATA,
       });
       setExpression(res);
@@ -109,4 +108,3 @@ export const useSendExpressionOfInterestForm = () => {
 
   return [expression, createExpression];
 };
-

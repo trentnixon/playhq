@@ -1,4 +1,4 @@
-import { getTokenFromLocalCookie } from "../lib/auth";
+/* import { getTokenFromLocalCookie } from "../lib/auth";
 import { useEffect, useState } from "react";
 import { fetcher } from "../lib/api";
 
@@ -38,9 +38,11 @@ export const useCreateScheduler = () => {
           },
         }
       );
+      console.log("[fetchData]", res);
       setData(res.data);
     }
   };
 
   return [data, fetchData];
 };
+ */

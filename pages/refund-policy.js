@@ -1,23 +1,23 @@
-import React from "react";
-import PageBanner from "../components/Common/PageBanner";
-import Meta from "../components/Layouts/Meta";
+import React from 'react';
+import PageBanner from '../components/Common/PageBanner';
+import Meta from '../components/Layouts/Meta';
 
 const RefundPolicy = () => {
   return (
     <>
       <Meta
-        title="Refund Policy - Fixtura: Understanding Our Terms"
+        title='Refund Policy - Fixtura: Understanding Our Terms'
         description="Read Fixtura's refund policy to understand the terms and conditions for refunds on our subscription plans."
-        keywords="Refund policy, Fixtura subscription, digital media refund, user terms, refund conditions"
+        keywords='Refund policy, Fixtura subscription, digital media refund, user terms, refund conditions'
       />
       <PageBanner
-        pageTitle="Refund Policy"
-        BGImage="/images/BG-Images/f180918696.jpg"
+        pageTitle='Refund Policy'
+        BGImage='/images/BG-Images/f180918696.jpg'
         position={`center center`}
       />
 
-      <div className="text-container ptb-100">
-        <div className="container">
+      <div className='text-container ptb-100'>
+        <div className='container'>
           <h1>Refund Policy</h1>
 
           <h2>Introduction</h2>
@@ -83,8 +83,8 @@ const RefundPolicy = () => {
             <li>
               <span>Requesting a Refund:</span>
               <p>
-                To request a refund, contact us via Facebook or email at{" "}
-                <a href="mailto:admin@fixtura.com.au">admin@fixtura.com.au</a>{" "}
+                To request a refund, contact us via Facebook or email at{' '}
+                <a href='mailto:admin@fixtura.com.au'>admin@fixtura.com.au</a>{' '}
                 with your order number and reason for cancellation. Refund
                 requests must be submitted within 30 days of the subscription
                 start date.
@@ -164,8 +164,8 @@ const RefundPolicy = () => {
             <li>
               <span>Requesting a Refund:</span>
               <p>
-                Contact us via Facebook or email at{" "}
-                <a href="mailto:admin@fixtura.com.au">admin@fixtura.com.au</a>.
+                Contact us via Facebook or email at{' '}
+                <a href='mailto:admin@fixtura.com.au'>admin@fixtura.com.au</a>.
                 Provide your order number and the reason for the refund request.
               </p>
             </li>
@@ -196,8 +196,8 @@ const RefundPolicy = () => {
               <span>Response Time:</span>
               <p>
                 We aim to respond to refund requests within 2 business days.
-                Contact us via Facebook or email at{" "}
-                <a href="mailto:admin@fixtura.com.au">admin@fixtura.com.au</a>{" "}
+                Contact us via Facebook or email at{' '}
+                <a href='mailto:admin@fixtura.com.au'>admin@fixtura.com.au</a>{' '}
                 for assistance.
               </p>
             </li>

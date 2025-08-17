@@ -6,11 +6,11 @@ import {
   Paper,
   rem,
   Box,
-} from "@mantine/core";
+} from '@mantine/core';
 
-import { useStyles } from "../../DashboardCardStyles"; // Import the styles
+import { useStyles } from '../../DashboardCardStyles'; // Import the styles
 
-import { BTN_TOINTERALLINK } from "../../../../../../Members/Common/utils/Buttons";
+import { BTN_TOINTERALLINK } from '../../../../../../Members/Common/utils/Buttons';
 
 const ICON_SIZE = rem(60);
 
@@ -22,57 +22,57 @@ export const DashBoardTheme = ({
 }) => {
   // Consistent variable naming
   const { classes } = useStyles();
-/*   const { Name: templateName = "N/A" } = template;
+  /*   const { Name: templateName = "N/A" } = template;
   const { Name: audioOptionName = "N/A" } = audio_option; */
-/*   const isDefaultTemplate = templateName === "Basic Sqaure";
+  /*   const isDefaultTemplate = templateName === "Basic Sqaure";
   const isDefaultAudioOption = audioOptionName === "Groover"; */
 
   return (
     <Paper
-      radius="md"
+      radius='md'
       withBorder
-      shadow="md"
+      shadow='md'
       className={classes.card}
       mt={`calc(${ICON_SIZE} / 3)`}
     >
       <ThemeIcon
-        color={"green.5"}
+        color={'green.5'}
         className={classes.icon}
         size={ICON_SIZE}
         radius={ICON_SIZE}
       >
-        <IconComponent size="2rem" stroke={1.5} color={"white"} />
+        <IconComponent size='2rem' stroke={1.5} color={'white'} />
       </ThemeIcon>
-      <Text ta="center" fw={700} className={classes.title}>
+      <Text ta='center' fw={700} className={classes.title}>
         &nbsp;
       </Text>
-      <Text c="dimmed" ta="center" fz="sm">
+      <Text c='dimmed' ta='center' fz='sm'>
         Theming
       </Text>
 
-      <Group position="apart" mt="xs">
-        <Text fz="sm" color="dimmed">
+      <Group position='apart' mt='xs'>
+        <Text fz='sm' color='dimmed'>
           Theme
         </Text>
       </Group>
       <Box
-        sx={(theme) => ({
+        sx={theme => ({
           backgroundColor: theme.colors.gray[2],
 
           padding: theme.spacing.xs,
           borderRadius: theme.radius.md,
-          cursor: "pointer",
+          cursor: 'pointer',
 
-          "&:hover": {
+          '&:hover': {
             backgroundColor:
-              theme.colorScheme === "dark"
+              theme.colorScheme === 'dark'
                 ? theme.colors.dark[5]
                 : theme.colors.gray[1],
           },
         })}
       >
         <Progress
-          size="xl"
+          size='xl'
           sections={[
             {
               value: 50,
@@ -87,8 +87,8 @@ export const DashBoardTheme = ({
           ]}
         />
       </Box>
-      <Group position="right" mt="md">
-        <BTN_TOINTERALLINK LABEL={"Change"} URL={"members/templates/"} />
+      <Group position='right' mt='md'>
+        <BTN_TOINTERALLINK LABEL={'Change'} URL={'members/templateBuilder/'} />
       </Group>
     </Paper>
   );

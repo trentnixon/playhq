@@ -1,7 +1,7 @@
-import React from "react";
-import { useEffect, useState } from "react";
-import { useRouter } from "next/router";
-import { useUser } from "../../context/authContext";
+import React from 'react';
+import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
+import { useUser } from '../../context/authContext';
 import {
   createStyles,
   SimpleGrid,
@@ -13,10 +13,10 @@ import {
   Space,
   Group,
   Box,
-} from "@mantine/core";
-import Cookies from "js-cookie";
+} from '@mantine/core';
+import Cookies from 'js-cookie';
 
-import { fetcher } from "../../lib/api";
+import { fetcher } from '../../lib/api';
 // components
 
 import {
@@ -24,46 +24,46 @@ import {
   PageCopyWrapper,
   ShadowWrapper,
   Wrapper,
-} from "../../components/Members/Common/Containers";
+} from '../../components/Members/Common/Containers';
 
-import { P, PageTitle, SubHeaders } from "../../components/Members/Common/Type";
-import { IconQuestionMark } from "@tabler/icons";
-import Meta from "../../components/Layouts/Meta";
+import { P, PageTitle, SubHeaders } from '../../components/Members/Common/Type';
+import { IconQuestionMark } from '@tabler/icons';
+import Meta from '../../components/Layouts/Meta';
 
 const OBJ = {
   sections: [
     {
-      title: "Deliveries",
+      title: 'Deliveries',
       image: `/images/HowToBannerDefault.jpg`,
       content:
         "To select the delivery days for your assets, go to the 'Deliveries' tab in your account. From there, you can choose the days of the week that you want to receive your assets. You can also change the delivery email address by clicking the 'Edit' button next to the current email address. Make sure to click 'Save' to apply any changes you make.",
     },
     {
-      title: "Videos and Images",
+      title: 'Videos and Images',
       image: `/images/HowToBannerDefault.jpg`,
       content:
         "Fixtura offers a range of videos and images that you can use to showcase your club or association. To select the videos and images you want to receive, go to the 'Videos and Images' tab in your account. From there, you can browse the available options and select the ones you want to include in your deliveries. You can also preview the assets to see how they will look before you add them to your selection.",
     },
     {
-      title: "Articles and Writeups",
+      title: 'Articles and Writeups',
       image: `/images/HowToBannerDefault.jpg`,
       content:
         "In addition to videos and images, Fixtura also offers AI-generated articles and writeups that you can use to share news and updates about your club or association. To access these assets, go to the 'Articles and Writeups' tab in your account. From there, you can browse the available options and select the ones you want to include in your deliveries. You can also customize the look and feel of the articles and writeups to match your branding.",
     },
     {
-      title: "Branding",
+      title: 'Branding',
       image: `/images/HowToBannerDefault.jpg`,
       content:
         "To customize the look and feel of your assets, go to the 'Branding' tab in your account. From there, you can upload your club or association's logo and select the brand colors that you want to use. You can also preview how the assets will look with your branding applied. Make sure to click 'Save' to apply any changes you make.",
     },
     {
-      title: "Sponsorships",
+      title: 'Sponsorships',
       image: `/images/HowToBannerDefault.jpg`,
       content:
         "If you have sponsors that you want to feature in your assets, you can add their logos and information to the 'Sponsorships' tab in your account. From there, you can choose which assets you want to include the sponsors in and customize the look and feel of the sponsor information. Make sure to click 'Save' to apply any changes you make.",
     },
     {
-      title: "Partners",
+      title: 'Partners',
       image: `/images/HowToBannerDefault.jpg`,
       content:
         "To promote your club or association through partnerships, go to the 'Partners' tab in your account. From there, you can browse the available partnerships and select the ones you want to join. You can also customize the look and feel of the partner information to match your branding. Make sure to click 'Save' to apply any changes you make.",
@@ -71,12 +71,12 @@ const OBJ = {
   ],
 };
 
-const useStyles = createStyles((theme) => ({
+const useStyles = createStyles(theme => ({
   card: {
-    transition: "transform 150ms ease, box-shadow 150ms ease",
+    transition: 'transform 150ms ease, box-shadow 150ms ease',
 
-    "&:hover": {
-      transform: "scale(1.01)",
+    '&:hover': {
+      transform: 'scale(1.01)',
       boxShadow: theme.shadows.md,
     },
   },
@@ -89,7 +89,7 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-const HowToUse = (props) => {
+const HowToUse = props => {
   const { Response } = props;
   const { classes } = useStyles();
   /* is User Auth */
@@ -101,19 +101,19 @@ const HowToUse = (props) => {
   }, []); */
   /* End User Check*/
 
-  const cards = OBJ.sections.map((article) => (
+  const cards = OBJ.sections.map(article => (
     <Card
       key={article.title}
-      p="md"
-      radius="md"
-      component="a"
-      href="#"
+      p='md'
+      radius='md'
+      component='a'
+      href='#'
       className={classes.card}
     >
       <AspectRatio ratio={1920 / 1080}>
         <Image src={article.image} />
       </AspectRatio>
-      <Text color="dimmed" size="lg" transform="uppercase" weight={900} mt="md">
+      <Text color='dimmed' size='lg' transform='uppercase' weight={900} mt='md'>
         {article.title}
       </Text>
       <Text className={classes.content} mt={5}>
@@ -127,11 +127,11 @@ const HowToUse = (props) => {
   return (
     <MembersWrapper>
       <Meta
-        title="Member Tutorial - Fixtura: Learn to Maximize Benefits"
+        title='Member Tutorial - Fixtura: Learn to Maximize Benefits'
         description="Learn how to effectively use Fixtura's tools as a member. Maximize the impact of your sports club's digital media strategy."
-        keywords="Member tutorial, Fixtura guide, sports media usage, club content tips, digital media learning"
+        keywords='Member tutorial, Fixtura guide, sports media usage, club content tips, digital media learning'
       />
-      <PageTitle Copy={"How to use"} ICON={<IconQuestionMark size={40} />} />
+      <PageTitle Copy={'How to use'} ICON={<IconQuestionMark size={40} />} />
       <PageCopyWrapper>
         <P
           Copy={`Welcome to Fixtura! We're excited to have you on board as a new member. Here's a quick guide on how to use our platform to get the most out of your subscription.`}
@@ -139,7 +139,7 @@ const HowToUse = (props) => {
       </PageCopyWrapper>
 
       <Wrapper>
-        <SimpleGrid cols={2} breakpoints={[{ maxWidth: "sm", cols: 1 }]}>
+        <SimpleGrid cols={2} breakpoints={[{ maxWidth: 'sm', cols: 1 }]}>
           {cards}
         </SimpleGrid>
       </Wrapper>

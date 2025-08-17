@@ -1,16 +1,16 @@
-import { Img } from "remotion";
-import styled from "styled-components";
+import { Img } from 'remotion';
+import styled from 'styled-components';
 
-import { useCurrentFrame } from "remotion";
+import { useCurrentFrame } from 'remotion';
 
-import { interpolateOpacityByFrame } from "../../../../Animation/interpolate";
-import { FromTopToBottom } from "../../../../Animation/ClipWipe";
+import { interpolateOpacityByFrame } from '../../../../Animation/interpolate';
+import { FromTopToBottom } from '../../../../Animation/ClipWipe';
 import {
   getContrastColor,
   darkenColor,
   GetBackgroundContractColorForText,
-} from "../../../../utils/colors";
-import useImageDimensions from "../../../../hooks/useImageDimensions";
+} from '../../../../utils/colors';
+import useImageDimensions from '../../../../hooks/useImageDimensions';
 
 const SponsorsNameContianer = styled.div`
   width: 100%;
@@ -34,10 +34,10 @@ const SponsorImg = styled.div`
 export const SponsorRows = ({ DATA, fontFamily, theme, FPS }) => {
   const frame = useCurrentFrame();
   const findPrimarySponsor = (sponsors, value) => {
-    return sponsors.find((sponsor) => sponsor.isPrimary === value);
+    return sponsors.find(sponsor => sponsor.isPrimary === value);
   };
   const filterPrimarySponsor = (sponsors, value) => {
-    return sponsors.filter((sponsor) => sponsor.isPrimary === value);
+    return sponsors.filter(sponsor => sponsor.isPrimary === value);
   };
 
   // Determine the number of sponsors
@@ -48,36 +48,36 @@ export const SponsorRows = ({ DATA, fontFamily, theme, FPS }) => {
   let SupportingSponsors = {};
   if (sponsorCount === 1) {
     containerStyles = {
-      justifyContent: "center",
-      alignItems: "center",
-      alignContent: "center",
+      justifyContent: 'center',
+      alignItems: 'center',
+      alignContent: 'center',
     };
   } else if (sponsorCount === 2) {
     containerStyles = {
-      flexDirection: "column",
-      justifyContent: "center",
-      alignItems: "center",
-      alignContent: "center",
+      flexDirection: 'column',
+      justifyContent: 'center',
+      alignItems: 'center',
+      alignContent: 'center',
     };
     SupportingSponsors = {
-      width: "100%",
-      display: "flex",
-      flexDirection: "row",
-      justifyContent: "center",
+      width: '100%',
+      display: 'flex',
+      flexDirection: 'row',
+      justifyContent: 'center',
     };
   } else if (sponsorCount > 2) {
     containerStyles = {
-      flexDirection: "column",
-      justifyContent: "center",
-      alignItems: "center",
-      alignContent: "center",
+      flexDirection: 'column',
+      justifyContent: 'center',
+      alignItems: 'center',
+      alignContent: 'center',
     };
     SupportingSponsors = {
-      width: "100%",
-      display: "flex",
-      flexDirection: "row",
-      justifyContent: "center",
-      flexWrap: "wrap",
+      width: '100%',
+      display: 'flex',
+      flexDirection: 'row',
+      justifyContent: 'center',
+      flexWrap: 'wrap',
     };
   }
 
@@ -106,7 +106,7 @@ export const SponsorRows = ({ DATA, fontFamily, theme, FPS }) => {
                 src={s.Logo}
                 frame={frame}
                 FPS={FPS}
-                Height="100px"
+                Height='100px'
               />
             </SponsorImg>
           )
@@ -116,17 +116,17 @@ export const SponsorRows = ({ DATA, fontFamily, theme, FPS }) => {
   );
 };
 
-const SponsorLogo = ({ src, frame, FPS, Height = "300px", IMGStyles }) => {
+const SponsorLogo = ({ src, frame, FPS, Height = '300px', IMGStyles }) => {
   return (
     <Img
       src={src}
       style={{
-        clipPath: FromTopToBottom(25, "Wobbly"),
+        clipPath: FromTopToBottom(25, 'Wobbly'),
         opacity: interpolateOpacityByFrame(frame, FPS - 15, FPS, 1, 0),
 
         height: IMGStyles.height,
         width: IMGStyles.width,
-        marginBottom: "10px",
+        marginBottom: '10px',
       }}
     />
   );
@@ -137,12 +137,12 @@ const SponsorTitle = ({ name, fontFamily, frame, FPS, theme }) => {
     <h1
       style={{
         fontFamily,
-        fontSize: "2em",
-        lineHeight: "1em",
-        fontFamily: "Heebo",
+        fontSize: '2em',
+        lineHeight: '1em',
+        fontFamily: 'Heebo',
         margin: 0,
         padding: 0,
-        clipPath: FromTopToBottom(25, "Wobbly"),
+        clipPath: FromTopToBottom(25, 'Wobbly'),
         color: GetBackgroundContractColorForText(
           theme.primary,
           theme.secondary
@@ -160,12 +160,12 @@ const SponsorTagline = ({ tagline, fontFamily, frame, FPS, theme }) => {
     <p
       style={{
         fontFamily,
-        fontSize: "1.8em",
-        lineHeight: ".9em",
-        fontFamily: "Heebo",
+        fontSize: '1.8em',
+        lineHeight: '.9em',
+        fontFamily: 'Heebo',
         margin: 0,
         padding: 0,
-        clipPath: FromTopToBottom(25, "Wobbly"),
+        clipPath: FromTopToBottom(25, 'Wobbly'),
         color: GetBackgroundContractColorForText(
           theme.primary,
           theme.secondary

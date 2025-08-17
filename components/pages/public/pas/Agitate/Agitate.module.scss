@@ -1,4 +1,4 @@
-@import "../PAS.module.scss";
+@import '../PAS.module.scss';
 
 .agitate {
   @include gray-gradient;
@@ -8,7 +8,7 @@
   overflow: hidden;
   .header {
     text-align: center;
-    margin-bottom: 40px; 
+    margin-bottom: 40px;
 
     h1 {
       color: $highlight-color-1;

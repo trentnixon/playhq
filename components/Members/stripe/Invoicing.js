@@ -1,12 +1,12 @@
-import React, { useState } from "react";
-import { useEffect } from "react";
-import { Table, ActionIcon, useMantineTheme, Tooltip } from "@mantine/core";
+import React, { useState } from 'react';
+import { useEffect } from 'react';
+import { Table, ActionIcon, useMantineTheme, Tooltip } from '@mantine/core';
 import {
   useGetInvoice,
   useGetUpcomingInvoice,
-} from "../../../Hooks/useInvoicing";
-import { ShadowWrapper } from "../Common/Containers";
-import { P, PageTitle } from "../Common/Type";
+} from '../../../Hooks/useInvoicing';
+import { ShadowWrapper } from '../Common/Containers';
+import { P, PageTitle } from '../Common/Type';
 import {
   IconAppWindowFilled,
   IconCalendarDue,
@@ -17,12 +17,10 @@ import {
   IconFileTypePdf,
   IconReceipt2,
   IconStatusChange,
-} from "@tabler/icons-react";
-import { useAccountDetails } from "../../../context/userContext";
-import { LoadingStateWrapper } from "../Account/HOC/LoadingStateWrapper";
-import { convertUnixTimestamp } from "../../../lib/actions";
-
-
+} from '@tabler/icons-react';
+import { useAccountDetails } from '../../../context/userContext';
+import { LoadingStateWrapper } from '../Account/HOC/LoadingStateWrapper';
+import { convertUnixTimestamp } from '../../../lib/actions';
 
 export const Invoicing = () => {
   const [invoice, getInvoice, loading] = useGetInvoice();
@@ -40,7 +38,7 @@ export const Invoicing = () => {
         <ShadowWrapper>
           <P
             marginBottom={0}
-            textAlign={"center"}
+            textAlign={'center'}
             Copy={`Sorry, but there are no invoices available at the moment. `}
           />
         </ShadowWrapper>
@@ -51,7 +49,7 @@ export const Invoicing = () => {
   return (
     <LoadingStateWrapper conditions={[!loading]}>
       <PageTitle
-        Copy={"Invoice History"}
+        Copy={'Invoice History'}
         ICON={<IconFileInvoice size={40} />}
       />
       <ShadowWrapper>
@@ -61,71 +59,71 @@ export const Invoicing = () => {
               <th></th>
               <th>
                 <Tooltip
-                  label="From"
+                  label='From'
                   color={theme.colors.cyan[3]}
-                  position="bottom-start"
+                  position='bottom-start'
                   withArrow
                 >
                   <IconCalendarStats
-                    size="1.5rem"
+                    size='1.5rem'
                     color={theme.colors.cyan[5]}
                   />
                 </Tooltip>
               </th>
               <th>
                 <Tooltip
-                  label="To"
+                  label='To'
                   color={theme.colors.cyan[3]}
-                  position="bottom-start"
+                  position='bottom-start'
                   withArrow
                 >
-                  <IconCalendarDue size="1.5rem" color={theme.colors.cyan[5]} />
+                  <IconCalendarDue size='1.5rem' color={theme.colors.cyan[5]} />
                 </Tooltip>
               </th>
               <th>
                 <Tooltip
-                  label="Total"
+                  label='Total'
                   color={theme.colors.cyan[3]}
-                  position="bottom-start"
+                  position='bottom-start'
                   withArrow
                 >
-                  <IconReceipt2 size="1.5rem" color={theme.colors.cyan[5]} />
+                  <IconReceipt2 size='1.5rem' color={theme.colors.cyan[5]} />
                 </Tooltip>
               </th>
               <th>
                 <Tooltip
-                  label="Status"
+                  label='Status'
                   color={theme.colors.cyan[3]}
-                  position="bottom-start"
+                  position='bottom-start'
                   withArrow
                 >
                   <IconStatusChange
-                    size="1.5rem"
+                    size='1.5rem'
                     color={theme.colors.cyan[5]}
                   />
                 </Tooltip>
               </th>
               <th>
                 <Tooltip
-                  label="View Invoice"
+                  label='View Invoice'
                   color={theme.colors.cyan[3]}
-                  position="bottom-start"
+                  position='bottom-start'
                   withArrow
                 >
                   <IconAppWindowFilled
-                    size="1.5rem"
+                    size='1.5rem'
                     color={theme.colors.cyan[5]}
                   />
                 </Tooltip>
               </th>
               <th>
                 <Tooltip
-                  label="Download Invoice"
+                  label='Download Invoice'
                   color={theme.colors.cyan[3]}
-                  position="bottom-start"
+                  position='bottom-start'
                   withArrow
                 >
-                  <IconDownload size="1.5rem" color={theme.colors.cyan[5]} />
+                  <IconDownload size='1.5rem' color={theme.colors.cyan[5]} />
                 </Tooltip>
               </th>
             </tr>
@@ -141,18 +139,18 @@ export const Invoicing = () => {
                   <td>{inv.status}</td>
                   <td>
                     <Tooltip
-                      label="View Invoice of Stripe"
+                      label='View Invoice of Stripe'
                       color={theme.colors.blue[3]}
-                      position="bottom-start"
+                      position='bottom-start'
                       withArrow
                     >
                       <ActionIcon
-                        component="a"
-                        target="_blank"
+                        component='a'
+                        target='_blank'
                         href={inv.hosted_invoice_url}
                       >
                         <IconExternalLink
-                          size="1.5rem"
+                          size='1.5rem'
                           color={theme.colors.blue[5]}
                         />
                       </ActionIcon>
@@ -160,14 +158,14 @@ export const Invoicing = () => {
                   </td>
                   <td>
                     <Tooltip
-                      label="Download PDF"
+                      label='Download PDF'
                       color={theme.colors.blue[3]}
-                      position="bottom-start"
+                      position='bottom-start'
                       withArrow
                     >
-                      <ActionIcon component="a" href={inv.invoice_pdf}>
+                      <ActionIcon component='a' href={inv.invoice_pdf}>
                         <IconFileTypePdf
-                          size="1.5rem"
+                          size='1.5rem'
                           color={theme.colors.blue[5]}
                         />
                       </ActionIcon>
@@ -206,7 +204,7 @@ export const UpcomingInvoicing = () => {
         <ShadowWrapper>
           <P
             marginBottom={0}
-            textAlign={"center"}
+            textAlign={'center'}
             Copy={`Sorry, but there are no invoices available at the moment. `}
           />
         </ShadowWrapper>
@@ -217,7 +215,7 @@ export const UpcomingInvoicing = () => {
   return (
     <LoadingStateWrapper conditions={[!loading]}>
       <PageTitle
-        Copy={"Upcoming Invoice"}
+        Copy={'Upcoming Invoice'}
         ICON={<IconFileInvoice size={40} />}
       />
       <ShadowWrapper>
@@ -227,35 +225,35 @@ export const UpcomingInvoicing = () => {
               <th></th>
               <th>
                 <Tooltip
-                  label="From"
+                  label='From'
                   color={theme.colors.cyan[3]}
-                  position="bottom-start"
+                  position='bottom-start'
                   withArrow
                 >
                   <IconCalendarStats
-                    size="1.5rem"
+                    size='1.5rem'
                     color={theme.colors.cyan[5]}
                   />
                 </Tooltip>
               </th>
               <th>
                 <Tooltip
-                  label="To"
+                  label='To'
                   color={theme.colors.cyan[3]}
-                  position="bottom-start"
+                  position='bottom-start'
                   withArrow
                 >
-                  <IconCalendarDue size="1.5rem" color={theme.colors.cyan[5]} />
+                  <IconCalendarDue size='1.5rem' color={theme.colors.cyan[5]} />
                 </Tooltip>
               </th>
               <th>
                 <Tooltip
-                  label="Total"
+                  label='Total'
                   color={theme.colors.cyan[3]}
-                  position="bottom-start"
+                  position='bottom-start'
                   withArrow
                 >
-                  <IconReceipt2 size="1.5rem" color={theme.colors.cyan[5]} />
+                  <IconReceipt2 size='1.5rem' color={theme.colors.cyan[5]} />
                 </Tooltip>
               </th>
             </tr>

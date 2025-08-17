@@ -1,13 +1,16 @@
 // Import necessary dependencies from remotion and local files
 import { useCurrentFrame } from 'remotion';
-import { FromLeftToRight, FromTopToBottom } from '../../../../Animation/ClipWipe';
+import {
+  FromLeftToRight,
+  FromTopToBottom,
+} from '../../../../Animation/ClipWipe';
 import { GetBackgroundContractColorForText } from '../../../../utils/colors';
 import { interpolateOpacityByFrame } from '../../../../Animation/interpolate';
 import { getDynamicFontSize } from '../../utils/Copy';
 import { VideoHeader } from '../../../../common/components/copy/titles';
 
 // Define a functional component to display asset titles
-export const AssetTitle = (props) => {
+export const AssetTitle = props => {
   // Destructuring props is not used to maintain flexibility and prop forwarding
   return (
     <>

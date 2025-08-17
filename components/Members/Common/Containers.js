@@ -1,6 +1,6 @@
-import { Box, Container, Paper } from "@mantine/core";
-import { useMediaQuery } from "@mantine/hooks";
-export const MembersWrapper = (props) => {
+import { Box, Container, Paper } from '@mantine/core';
+import { useMediaQuery } from '@mantine/hooks';
+export const MembersWrapper = props => {
   return (
     <Container fluid pt={40} pb={100} px={0}>
       {props.children}
@@ -8,21 +8,21 @@ export const MembersWrapper = (props) => {
   );
 };
 
-export const Wrapper = (props) => {
-  const { px = "sm", py = "xs" } = props;
+export const Wrapper = props => {
+  const { px = 'sm', py = 'xs' } = props;
   return (
-    <Container size={"lg"} px={px} py={py}>
+    <Container size={'lg'} px={px} py={py}>
       {props.children}
     </Container>
   );
 };
 
-export const PageCopyWrapper = (props) => {
-  const matches = useMediaQuery("(min-width: 48em)");
+export const PageCopyWrapper = props => {
+  const matches = useMediaQuery('(min-width: 48em)');
   return (
     <Box
-      sx={(theme) => ({
-        width: matches ? "80%" : "100%",
+      sx={theme => ({
+        width: matches ? '80%' : '100%',
       })}
     >
       {props.children}
@@ -30,20 +30,20 @@ export const PageCopyWrapper = (props) => {
   );
 };
 
-export const ShadowWrapper = (props) => {
+export const ShadowWrapper = props => {
   const { BGColor = 0, mb = 40, p = 10 } = props;
   return (
     <Container
-      size={"lg"}
+      size={'lg'}
       p={p}
       mb={mb}
-      sx={(theme) => ({
+      sx={theme => ({
         backgroundColor: theme.colors[theme.primaryColor][BGColor],
-        borderRadius: "5px",
+        borderRadius: '5px',
 
         boxShadow:
-          "0 1px 3px rgba(0, 0, 0, 0.05),rgba(0, 0, 0, 0.05) 0px 36px 28px -7px,rgba(0, 0, 0, 0.04) 0px 17px 17px -7px",
-        "@media (max-width: 565px)": { padding: "5px" },
+          '0 1px 3px rgba(0, 0, 0, 0.05),rgba(0, 0, 0, 0.05) 0px 36px 28px -7px,rgba(0, 0, 0, 0.04) 0px 17px 17px -7px',
+        '@media (max-width: 565px)': { padding: '5px' },
       })}
     >
       {props.children}
@@ -51,14 +51,14 @@ export const ShadowWrapper = (props) => {
   );
 };
 
-export const PaperWithBorder = ({ children }) => {
+export const PaperWithBorder = ({ children, mb = 20 }) => {
   return (
     <Paper
-      radius="md"
+      radius='md'
       withBorder
-      p="sm"
-      mb={20}
-      sx={(theme) => ({
+      p='sm'
+      mb={mb}
+      sx={theme => ({
         backgroundColor: theme.white,
       })}
     >

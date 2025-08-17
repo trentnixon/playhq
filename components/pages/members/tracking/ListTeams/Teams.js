@@ -1,9 +1,9 @@
-import { Badge, Card, Group, Stack, useMantineTheme } from "@mantine/core";
-import { P } from "../../../../Members/Common/Type";
-import { RoundedSectionContainer } from "../../../../UI/Containers/SectionContainer";
-import { ListTeams } from "./ListTeams";
+import { Badge, Card, Group, Stack, useMantineTheme } from '@mantine/core';
+import { P } from '../../../../Members/Common/Type';
+import { RoundedSectionContainer } from '../../../../UI/Containers/SectionContainer';
+import { ListTeams } from './ListTeams';
 
-export const TeamList = (props) => {
+export const TeamList = props => {
   const { organizationDetails } = props;
   const theme = useMantineTheme();
   //console.log(organizationDetails);
@@ -16,8 +16,8 @@ export const TeamList = (props) => {
   return (
     <>
       <RoundedSectionContainer
-        headerContent={"Team List"}
-        topContent={""}
+        headerContent={'Team List'}
+        topContent={''}
         bottomContent={<ListTeams teams={teams} />}
       />
     </>

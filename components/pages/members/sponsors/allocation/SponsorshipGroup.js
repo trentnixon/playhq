@@ -1,8 +1,8 @@
-import React from "react";
-import { Table } from "@mantine/core";
-import SponsorshipForm from "./SponsorshipForm";
-import { RoundedSectionContainer } from "../../../../UI/Containers/SectionContainer";
-import { SponsorGroupTitles } from "./SponsorshipTitle";
+import React from 'react';
+import { Table } from '@mantine/core';
+import SponsorshipForm from './SponsorshipForm';
+import { RoundedSectionContainer } from '../../../../UI/Containers/SectionContainer';
+import { SponsorGroupTitles } from './SponsorshipTitle';
 
 const SponsorshipGroup = ({
   title,
@@ -15,14 +15,14 @@ const SponsorshipGroup = ({
 
   return (
     <RoundedSectionContainer
-      headerContent={""}
+      headerContent={''}
       topContent={
         <SponsorGroupTitles title={title} description={description} />
       }
       bottomContent={
         <Table>
           <tbody>
-            {levels.map((level) => (
+            {levels.map(level => (
               <SponsorshipForm
                 key={level.id}
                 level={level}
@@ -32,7 +32,7 @@ const SponsorshipGroup = ({
             ))}
           </tbody>
         </Table>
-      } 
+      }
     />
   );
 };

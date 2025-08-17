@@ -1,12 +1,12 @@
-import { Paper } from "@mantine/core";
-import { DatePicker } from "@mantine/dates";
-import { IconCalendarEvent } from "@tabler/icons";
+import { Paper } from '@mantine/core';
+import { DatePicker } from '@mantine/dates';
+import { IconCalendarEvent } from '@tabler/icons';
 
 export const DateSelector = ({ selectedDate, onDateChange }) => (
-  <Paper p="xs" withBorder shadow="md" sx={{ backgroundColor: "white" }}>
+  <Paper p='xs' withBorder shadow='md' sx={{ backgroundColor: 'white' }}>
     <DatePicker
-      label="Select the start date for your plan"
-      placeholder="Pick date"
+      label='Select the start date for your plan'
+      placeholder='Pick date'
       value={selectedDate}
       onChange={onDateChange}
       required

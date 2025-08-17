@@ -5,10 +5,10 @@ import {
   Tooltip,
   Paper,
   Container,
-} from "@mantine/core";
-import { IconAlertTriangleFilled } from "@tabler/icons-react";
-import { P } from "../Common/Type";
-import { BTN_TOEXTLINK } from "../Common/utils/Buttons";
+} from '@mantine/core';
+import { IconAlertTriangleFilled } from '@tabler/icons-react';
+import { P } from '../Common/Type';
+import { BTN_TOEXTLINK } from '../Common/utils/Buttons';
 
 export const IsFreeTrial = ({ user }) => {
   const theme = useMantineTheme();
@@ -16,15 +16,15 @@ export const IsFreeTrial = ({ user }) => {
   if (user.attributes.trialStatus === true) {
     // Free trial is active
     return (
-      <Tooltip label="Free trial is Active" position="top">
+      <Tooltip label='Free trial is Active' position='top'>
         <Card
           withBorder
-          padding="sm"
-          radius="md"
+          padding='sm'
+          radius='md'
           mt={5}
           style={{ backgroundColor: theme.colors.yellow[5] }}
         >
-          <Group position="center">
+          <Group position='center'>
             <IconAlertTriangleFilled
               style={{ marginRight: theme.spacing.sm }}
             />
@@ -37,17 +37,17 @@ export const IsFreeTrial = ({ user }) => {
     // Free trial has completed
     return (
       <Tooltip
-        label="Your trial has ended. Please subscribe to continue using all features."
-        position="top"
+        label='Your trial has ended. Please subscribe to continue using all features.'
+        position='top'
       >
         <Card
           withBorder
-          padding="sm"
-          radius="md"
+          padding='sm'
+          radius='md'
           mt={5}
           style={{ backgroundColor: theme.colors.red[5] }}
         >
-          <Group position="center">
+          <Group position='center'>
             <IconAlertTriangleFilled
               style={{ marginRight: theme.spacing.sm }}
             />
@@ -60,17 +60,17 @@ export const IsFreeTrial = ({ user }) => {
     // Free trial is available but hasn't been activated
     return (
       <Tooltip
-        label="You have a free trial available. Activate now to access all features for two weeks!"
-        position="top"
+        label='You have a free trial available. Activate now to access all features for two weeks!'
+        position='top'
       >
         <Card
           withBorder
-          padding="sm"
-          radius="md"
+          padding='sm'
+          radius='md'
           mt={5}
           style={{ backgroundColor: theme.colors.green[5] }}
         >
-          <Group position="center">
+          <Group position='center'>
             <IconAlertTriangleFilled
               style={{ marginRight: theme.spacing.sm }}
             />
@@ -87,12 +87,12 @@ export const IsFreeTrialFeedback = () => {
   return (
     <Container fluid={true} mt={40}>
       <Paper
-        p="md"
+        p='md'
         mt={5}
-        shadow="xs"
+        shadow='xs'
         style={{ backgroundColor: theme.colors.gray[0] }}
       >
-        <Group position="right">
+        <Group position='right'>
           <P marginBottom={0}>
             We would greatly appreciate it if you could take a moment to message
             us on our Facebook channel with any issues or feedback you might
@@ -103,13 +103,13 @@ export const IsFreeTrialFeedback = () => {
           </P>
         </Group>
       </Paper>
-      <Group position="apart" mt={20}>
+      <Group position='apart' mt={20}>
         <P marginBottom={0} Weight={900}>
           Do you have any suggestions or thoughts to share?
         </P>
         <BTN_TOEXTLINK
-          LABEL="Contact Us"
-          URL="https://www.facebook.com/profile.php?id=100095406210560"
+          LABEL='Contact Us'
+          URL='https://www.facebook.com/profile.php?id=100095406210560'
         />
       </Group>
     </Container>

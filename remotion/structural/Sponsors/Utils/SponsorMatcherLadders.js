@@ -8,9 +8,13 @@ class SponsorMatcherLadders {
     const sponsors = [];
 
     // Check for league sponsors
-    if (ladder.assignSponsors && ladder.assignSponsors.competition && this.sponsors.league) {
+    if (
+      ladder.assignSponsors &&
+      ladder.assignSponsors.competition &&
+      this.sponsors.league
+    ) {
       const leagueSponsors = this.sponsors.league.filter(
-        (s) => s.id === ladder.assignSponsors.competition.id
+        s => s.id === ladder.assignSponsors.competition.id
       );
       if (leagueSponsors.length > 0) {
         sponsors.push(...leagueSponsors);
@@ -18,9 +22,13 @@ class SponsorMatcherLadders {
     }
 
     // Check for grade sponsors
-    if (ladder.assignSponsors && ladder.assignSponsors.grade && this.sponsors.grade) {
+    if (
+      ladder.assignSponsors &&
+      ladder.assignSponsors.grade &&
+      this.sponsors.grade
+    ) {
       const gradeSponsors = this.sponsors.grade.filter(
-        (s) => s.id === ladder.assignSponsors.grade.id
+        s => s.id === ladder.assignSponsors.grade.id
       );
       if (gradeSponsors.length > 0) {
         sponsors.push(...gradeSponsors);
@@ -28,9 +36,13 @@ class SponsorMatcherLadders {
     }
 
     // Check for team sponsors
-    if (ladder.assignSponsors && ladder.assignSponsors.Team && this.sponsors.team) {
+    if (
+      ladder.assignSponsors &&
+      ladder.assignSponsors.Team &&
+      this.sponsors.team
+    ) {
       const teamSponsors = this.sponsors.team.filter(
-        (s) => s.allocationName === ladder.assignSponsors.Team.name
+        s => s.allocationName === ladder.assignSponsors.Team.name
       );
       if (teamSponsors.length > 0) {
         sponsors.push(...teamSponsors);
@@ -44,7 +56,7 @@ class SponsorMatcherLadders {
     const uniqueSponsors = [];
     const sponsorIds = new Set();
 
-    sponsors.forEach((sponsor) => {
+    sponsors.forEach(sponsor => {
       if (!sponsorIds.has(sponsor.sponsorId)) {
         sponsorIds.add(sponsor.sponsorId);
         uniqueSponsors.push(sponsor);
@@ -55,7 +67,7 @@ class SponsorMatcherLadders {
   }
 
   matchSponsors() {
-    const groupedSponsors = this.ladders.map((ladder) => {
+    const groupedSponsors = this.ladders.map(ladder => {
       let sponsors = this.getSponsorsForLadder(ladder);
 
       // Add the primary sponsor as the first item

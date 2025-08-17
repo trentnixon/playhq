@@ -11,7 +11,7 @@ export const ImageWithFallback = ({
   const [imageSrc, setImageSrc] = useState(src);
   const [handle, setHandle] = useState(null);
 
-  const isValidUrl = (urlString) => {
+  const isValidUrl = urlString => {
     try {
       new URL(urlString);
       return true;
@@ -56,10 +56,10 @@ export const ImageWithFallback = ({
     };
   }, [src, fallbackSrc, maxRetries, retryDelay]);
 
-  const handleError = (handle) => {
+  const handleError = handle => {
     console.error(`Failed to load image after ${maxRetries} retries: ${src}`);
     setImageSrc(fallbackSrc); // Set fallback image
-    continueRender(handle); 
+    continueRender(handle);
   };
 
   return <Img src={imageSrc} onError={() => handleError(handle)} {...rest} />;

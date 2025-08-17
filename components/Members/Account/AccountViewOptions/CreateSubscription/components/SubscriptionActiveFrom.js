@@ -5,16 +5,16 @@ import {
   IconClock,
   IconClockPause,
   IconX,
-} from "@tabler/icons-react";
-import { useMantineTheme, Group} from "@mantine/core";
-import { useMediaQuery } from "@mantine/hooks";
-import { P } from "../../../../Common/Type";
+} from '@tabler/icons-react';
+import { useMantineTheme, Group } from '@mantine/core';
+import { useMediaQuery } from '@mantine/hooks';
+import { P } from '../../../../Common/Type';
 
 const SubscriptionActiveFrom = ({ ORDER }) => {
   const theme = useMantineTheme();
   const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
-  let formattedDate = "Waiting Subscription";
-  let statusMessage = "Unknown status";
+  let formattedDate = 'Waiting Subscription';
+  let statusMessage = 'Unknown status';
   let statusColor = theme.colors.blue[4];
   let StatusIcon = IconCheck;
 
@@ -22,44 +22,44 @@ const SubscriptionActiveFrom = ({ ORDER }) => {
   if (ORDER?.strapi_created) {
     try {
       const date = new Date(ORDER.strapi_created * 1000);
-      formattedDate = date.toLocaleDateString("en-US", {
-        year: "numeric",
-        month: "long",
-        day: "numeric",
+      formattedDate = date.toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
       });
     } catch (err) {
-      console.error("Error formatting date: ", err);
+      console.error('Error formatting date: ', err);
     }
   }
 
   // Define status properties based on subscription state
   if (ORDER?.isActive) {
-    statusMessage = "Subscription is active";
+    statusMessage = 'Subscription is active';
     statusColor = theme.colors.green[5];
     StatusIcon = IconCheck;
   } else if (ORDER?.isPaused) {
-    statusMessage = "Subscription is paused";
+    statusMessage = 'Subscription is paused';
     statusColor = theme.colors.yellow[9];
     StatusIcon = IconClockPause;
   } else if (ORDER?.cancel_at_period_end) {
     const cancelDate = new Date(ORDER.cancel_at * 1000);
     statusMessage = `Subscription will be cancelled after ${cancelDate.toLocaleDateString(
-      "en-US"
+      'en-US'
     )}`;
     statusColor = theme.colors.red[9];
     StatusIcon = IconClock;
   } else {
-    statusMessage = "Subscription is cancelled";
+    statusMessage = 'Subscription is cancelled';
     statusColor = theme.colors.red[9];
     StatusIcon = IconX;
   }
 
   return (
-    <Group position={mobile ? "center" : "apart"}>
-      <P size="sm" color="dark" style={{ fontWeight: 600 }}>
-        <StatusIcon size="1.4em" color={statusColor} /> {statusMessage}
+    <Group position={mobile ? 'center' : 'apart'}>
+      <P size='sm' color='dark' style={{ fontWeight: 600 }}>
+        <StatusIcon size='1.4em' color={statusColor} /> {statusMessage}
       </P>
-      <P size="xs" color="gray">
+      <P size='xs' color='gray'>
         Active since: {formattedDate}
       </P>
     </Group>

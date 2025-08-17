@@ -1,13 +1,13 @@
-import { useEffect, useState } from "react";
-import { Group } from "@mantine/core";
-import { useCreateInvoice } from "../../../../../../../../Hooks/useCreateInvoice";
-import { BTN_ONCLICK } from "../../../../../../Common/utils/Buttons";
-import { useAccountDetails } from "../../../../../../../../context/userContext";
-import { useCouponContext } from "../../../../../../../../context/CouponContext";
+import { useEffect, useState } from 'react';
+import { Group } from '@mantine/core';
+import { useCreateInvoice } from '../../../../../../../../Hooks/useCreateInvoice';
+import { BTN_ONCLICK } from '../../../../../../Common/utils/Buttons';
+import { useAccountDetails } from '../../../../../../../../context/userContext';
+import { useCouponContext } from '../../../../../../../../context/CouponContext';
 
 //import { loadStripe } from "@stripe/stripe-js";
 
-export const CreateNewInvoice = (props) => {
+export const CreateNewInvoice = props => {
   const { productId, onConfirm, startDate, endDate } = props;
   const { coupon } = useCouponContext();
   const [invoice, createInvoice] = useCreateInvoice();
@@ -15,10 +15,15 @@ export const CreateNewInvoice = (props) => {
   const [confirmState, setConfirmState] = useState(false);
   const { ReRender } = useAccountDetails();
 
-  const handleBuy = async (productId) => {
+  const handleBuy = async productId => {
     setLoading(true);
     //console.log("handleBuy ", productId, startDate, endDate);
-    await createInvoice(productId, startDate, endDate,coupon ? coupon.APIID : null).catch((err) => {
+    await createInvoice(
+      productId,
+      startDate,
+      endDate,
+      coupon ? coupon.APIID : null
+    ).catch(err => {
       console.error(err);
     });
   };
@@ -43,19 +48,18 @@ export const CreateNewInvoice = (props) => {
     onConfirm(null);
   };
 
-
   return (
-    <Group position="apart">
+    <Group position='apart'>
       <BTN_ONCLICK
         LABEL={
-          loading ? "Processing..." : confirmState ? "Confirm" : "Select Plan"
+          loading ? 'Processing...' : confirmState ? 'Confirm' : 'Select Plan'
         }
         HANDLE={handleClick}
-        THEME="success"
+        THEME='success'
         idDisabled={loading}
       />
       {confirmState && (
-        <BTN_ONCLICK LABEL="Cancel" HANDLE={resetConfirmState} THEME="error" />
+        <BTN_ONCLICK LABEL='Cancel' HANDLE={resetConfirmState} THEME='error' />
       )}
     </Group>
   );

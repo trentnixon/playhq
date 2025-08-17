@@ -1,6 +1,6 @@
-import { Paper, Table } from "@mantine/core";
-import dayjs from "dayjs";
-import { P } from "../../../../Common/Type";
+import { Paper, Table } from '@mantine/core';
+import dayjs from 'dayjs';
+import { P } from '../../../../Common/Type';
 
 // Functional component to display plan details in a table format
 export const PlanDetailsTable = ({ selectedDate, endDate }) => {
@@ -12,23 +12,23 @@ export const PlanDetailsTable = ({ selectedDate, endDate }) => {
     !endDate.month3 ||
     !endDate.month6
   ) {
-    throw new Error("Missing or invalid date parameters.");
+    throw new Error('Missing or invalid date parameters.');
   }
 
   // Helper function to format date using dayjs
-  const formatDate = (date) => dayjs(date).format("MMMM DD, YYYY");
+  const formatDate = date => dayjs(date).format('MMMM DD, YYYY');
 
   // Array of plan details to render table rows dynamically
   const planDetails = [
-    { duration: "1 Month Pass:", days: 30, end: endDate.month1 },
-    { duration: "3 Months Pass:", days: 90, end: endDate.month3 },
-    { duration: "12 Months Pass:", days: 365, end: endDate.month6 },
+    { duration: '1 Month Pass:', days: 30, end: endDate.month1 },
+    { duration: '3 Months Pass:', days: 90, end: endDate.month3 },
+    { duration: '12 Months Pass:', days: 365, end: endDate.month6 },
   ];
 
   return (
     <>
       <P marginBottom={0}>Available Plans</P>
-      <Paper p="xs" withBorder shadow="md" sx={{ backgroundColor: "white" }}>
+      <Paper p='xs' withBorder shadow='md' sx={{ backgroundColor: 'white' }}>
         <Table striped>
           <thead>
             <tr>
@@ -43,19 +43,19 @@ export const PlanDetailsTable = ({ selectedDate, endDate }) => {
                 </P>
               </th>
               <th>
-                <P marginBottom={0} Weight={800} textAlign="center">
+                <P marginBottom={0} Weight={800} textAlign='center'>
                   Start Date
                 </P>
               </th>
               <th>
-                <P marginBottom={0} Weight={800} textAlign="right">
+                <P marginBottom={0} Weight={800} textAlign='right'>
                   End Date
                 </P>
               </th>
             </tr>
           </thead>
           <tbody>
-            {planDetails.map((plan) => (
+            {planDetails.map(plan => (
               <tr key={plan.duration}>
                 <td>
                   <P marginBottom={0}>{plan.duration}</P>
@@ -64,12 +64,12 @@ export const PlanDetailsTable = ({ selectedDate, endDate }) => {
                   <P marginBottom={0}>{plan.days} days</P>
                 </td>
                 <td>
-                  <P marginBottom={0} textAlign="center">
+                  <P marginBottom={0} textAlign='center'>
                     {formatDate(selectedDate)}
                   </P>
                 </td>
                 <td>
-                  <P marginBottom={0} textAlign="right">
+                  <P marginBottom={0} textAlign='right'>
                     {formatDate(plan.end)}
                   </P>
                 </td>

@@ -15,7 +15,7 @@ export const H1 = ({ children, className = '', ...props }) => (
 
 export const H2 = ({ children, className = '', ...props }) => (
   <h2 className={`${styles.h2} ${className}`} {...props}>
-    {children} 
+    {children}
   </h2>
 );
 

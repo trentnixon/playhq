@@ -1,38 +1,38 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from 'react';
 import {
   ActionIcon,
   Group,
   Paper,
   Tooltip,
   useMantineTheme,
-} from "@mantine/core";
-import { IconSquareX } from "@tabler/icons";
-import { P } from "../../Type";
+} from '@mantine/core';
+import { IconSquareX } from '@tabler/icons';
+import { P } from '../../Type';
 import {
   IconEyePause,
   IconPlayerPause,
   IconPlayerPlay,
-} from "@tabler/icons-react";
+} from '@tabler/icons-react';
 
 const audioStyles = {
-  width: "100%",
-  backgroundColor: "white",
-  borderRadius: "5px",
-  padding: "5px",
-  display: "flex",
-  alignItems: "center",
+  width: '100%',
+  backgroundColor: 'white',
+  borderRadius: '5px',
+  padding: '5px',
+  display: 'flex',
+  alignItems: 'center',
 };
 
 const playButtonStyles = {
-  cursor: "pointer",
-  marginRight: "10px",
+  cursor: 'pointer',
+  marginRight: '10px',
 };
 
 const progressBarStyles = {
   flex: 1,
-  height: "15px",
-  borderRadius: "5px",
-  background: "#DEE2E6",
+  height: '15px',
+  borderRadius: '5px',
+  background: '#DEE2E6',
 };
 
 export const PreviewAudioPlayer = ({ currentSong, DeSelectAudio }) => {
@@ -60,13 +60,13 @@ export const PreviewAudioPlayer = ({ currentSong, DeSelectAudio }) => {
     };
 
     if (audioElem.current) {
-      audioElem.current.addEventListener("timeupdate", updateProgress);
+      audioElem.current.addEventListener('timeupdate', updateProgress);
     }
 
     // Cleanup
     return () => {
       if (audioElem.current) {
-        audioElem.current.removeEventListener("timeupdate", updateProgress);
+        audioElem.current.removeEventListener('timeupdate', updateProgress);
       }
     };
   }, []);
@@ -82,26 +82,26 @@ export const PreviewAudioPlayer = ({ currentSong, DeSelectAudio }) => {
 
   return (
     <Paper
-      radius="md"
-      shadow="md"
+      radius='md'
+      shadow='md'
       withBorder
       mb={20}
-      p="xs"
-      sx={(theme) => ({
+      p='xs'
+      sx={theme => ({
         backgroundColor: theme.colors.white,
       })}
     >
-      <Group position="apart" my={0}>
+      <Group position='apart' my={0}>
         <P
           marginBottom={0}
-          size="md"
-          textTransform="uppercase"
+          size='md'
+          textTransform='uppercase'
           color={6}
-          fontStyle="italic"
+          fontStyle='italic'
         >
           {`Preview  : ${currentSong.attributes.Name}`}
         </P>
-        <Tooltip label="Close Player" color="cyan.5" withArrow>
+        <Tooltip label='Close Player' color='cyan.5' withArrow>
           <ActionIcon
             onClick={() => {
               DeSelectAudio();
@@ -125,13 +125,13 @@ export const PreviewAudioPlayer = ({ currentSong, DeSelectAudio }) => {
             style={{
               width: `${progress}%`,
               background: theme.colors.blue[5],
-              height: "100%",
-              borderRadius: "5px",
+              height: '100%',
+              borderRadius: '5px',
             }}
           ></div>
         </div>
       </div>
-      <audio ref={audioElem} style={{ display: "none" }} />
+      <audio ref={audioElem} style={{ display: 'none' }} />
     </Paper>
   );
 };

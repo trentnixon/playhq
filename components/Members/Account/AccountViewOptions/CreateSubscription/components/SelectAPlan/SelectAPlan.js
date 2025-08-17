@@ -1,12 +1,12 @@
-import { useEffect, useState } from "react";
-import { Group } from "@mantine/core";
-import { useGetSubscriptionTiers } from "../../../../../../../Hooks/useSubscriptionTiers";
-import { useAccountDetails } from "../../../../../../../context/userContext";
-import { FindAccountType } from "../../../../../../../lib/actions";
-import { CreateNewInvoice } from "./components/CreateANewInvoice";
-import dayjs from "dayjs";
-import { FixturaLoading } from "../../../../../Common/Loading";
-import { ProductCard } from "../../../../../../pages/public/FixturaPricingCards/components/ProductCard";
+import { useEffect, useState } from 'react';
+import { Group } from '@mantine/core';
+import { useGetSubscriptionTiers } from '../../../../../../../Hooks/useSubscriptionTiers';
+import { useAccountDetails } from '../../../../../../../context/userContext';
+import { FindAccountType } from '../../../../../../../lib/actions';
+import { CreateNewInvoice } from './components/CreateANewInvoice';
+import dayjs from 'dayjs';
+import { FixturaLoading } from '../../../../../Common/Loading';
+import { ProductCard } from '../../../../../../pages/public/FixturaPricingCards/components/ProductCard';
 
 // Custom hook to handle fetching of subscription tiers
 const useFetchSubscriptionTiers = () => {
@@ -17,7 +17,7 @@ const useFetchSubscriptionTiers = () => {
     if (products === null) {
       getSetSubscriptionTiers()
         .then(() => setLoading(false))
-        .catch((err) => {
+        .catch(err => {
           console.error(err);
           setLoading(false);
         });
@@ -29,7 +29,7 @@ const useFetchSubscriptionTiers = () => {
 
 // Shared component for creating cards
 
-export const SelectAPlan = (props) => {
+export const SelectAPlan = props => {
   const { products, loading } = useFetchSubscriptionTiers();
   const [selectedProductId, setSelectedProductId] = useState(null);
   const { account } = useAccountDetails();
@@ -38,13 +38,13 @@ export const SelectAPlan = (props) => {
   if (!products) return <div>Error loading Subscriptions Options</div>;
 
   const accountType = FindAccountType(account);
-  const isAccountClub = accountType === "Club";
+  const isAccountClub = accountType === 'Club';
 
-  const handleConfirm = (productId) => setSelectedProductId(productId);
+  const handleConfirm = productId => setSelectedProductId(productId);
 
   return (
     <>
-      <div className="row justify-content-center">
+      <div className='row justify-content-center'>
         {products.map((product, i) => {
           const { isActive, isClub: productIsClub } = product.attributes;
 
@@ -54,7 +54,7 @@ export const SelectAPlan = (props) => {
             (selectedProductId === null || product.id === selectedProductId)
           ) {
             const endDate = dayjs(props.startDate)
-              .add(product.attributes.DaysInPass, "day")
+              .add(product.attributes.DaysInPass, 'day')
               .format();
 
             return (
@@ -66,7 +66,7 @@ export const SelectAPlan = (props) => {
                 selected={product.id === selectedProductId}
                 selectedEndDate={endDate}
                 BTN={
-                  <Group position="center" px={10}>
+                  <Group position='center' px={10}>
                     <CreateNewInvoice
                       productId={product.id}
                       selected={product.id === selectedProductId}
@@ -87,11 +87,11 @@ export const SelectAPlan = (props) => {
   );
 };
 
-const CreateCards = (props) => {
+export const CreateCards = props => {
   const { selected } = props;
   return (
     <ProductCard
-      className={selected ? "col-lg-12" : "opacity-5"}
+      className={selected ? 'col-lg-12' : 'opacity-5'}
       withTool={false}
       {...props}
     />

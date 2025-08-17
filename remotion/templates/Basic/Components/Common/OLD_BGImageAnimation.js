@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
-import { useCurrentFrame, Img } from "remotion";
-import { interpolateValueByFrame } from "../../../../Animation/interpolate";
-import { getBackgroundColor } from "../../../../utils/colors";
-import { NoiseComp } from "./niose3D";
+import { useEffect, useState } from 'react';
+import { useCurrentFrame, Img } from 'remotion';
+import { interpolateValueByFrame } from '../../../../Animation/interpolate';
+import { getBackgroundColor } from '../../../../utils/colors';
+import { NoiseComp } from './niose3D';
 
 // Helper function to check the image size ratio compared to the screen size
 const imageSizeRatio = (imageWidth, imageHeight, screenWidth, screenHeight) => {
@@ -18,42 +18,42 @@ export const BGImageAnimation = ({ HeroImage, TIMINGS, THEME }) => {
   const backgroundColor = getBackgroundColor(THEME.primary, THEME.secondary);
 
   useEffect(() => {
-    if (ratio === "landscape") {
-      setDirection("leftToRight");
+    if (ratio === 'landscape') {
+      setDirection('leftToRight');
     } else {
-      setDirection("topToBottom"); 
+      setDirection('topToBottom');
     }
   }, [ratio]);
 
   let style = {};
 
   if (url) {
-    if (ratio === "landscape") {
+    if (ratio === 'landscape') {
       style = landscapeAnimation(frame, TIMINGS, direction, width, height);
-    } else if (ratio === "portrait") {
+    } else if (ratio === 'portrait') {
       style = portraitAnimation(frame, TIMINGS, direction, width, height);
     }
 
     return (
-      <div style={{ marginLeft: "-1px" }}>
+      <div style={{ marginLeft: '-1px' }}>
         <div
           style={{
             backgroundColor: backgroundColor,
-            width: "100%",
-            height: "100%",
+            width: '100%',
+            height: '100%',
             zIndex: 1,
-            position: "absolute",
+            position: 'absolute',
             opacity: 0.8,
           }}
         ></div>
         <div
           style={{
             backgroundColor,
-            mixBlendMode: "color",
-            width: "100%",
-            height: "100%",
+            mixBlendMode: 'color',
+            width: '100%',
+            height: '100%',
             zIndex: 1,
-            position: "absolute",
+            position: 'absolute',
           }}
         ></div>
         <Img src={url} style={style} />
@@ -74,8 +74,8 @@ const CreateNoise = ({ backgroundColor, THEME }) => {
     <div
       style={{
         backgroundColor: backgroundColor,
-        height: "100%",
-        width: "100%",
+        height: '100%',
+        width: '100%',
       }}
     >
       <NoiseComp speed={0.01} circleRadius={5} maxOffset={60} THEME={THEME} />
@@ -116,18 +116,18 @@ const landscapeAnimation = (
     frame,
     0,
     TIMINGS,
-    direction === "leftToRight" ? -10 : 10,
-    direction === "leftToRight" ? 10 : -10
+    direction === 'leftToRight' ? -10 : 10,
+    direction === 'leftToRight' ? 10 : -10
   );
 
   // Calculate the actual left position including the interpolated movement
   const leftPosition = leftCenter + interpolatedPosition;
 
   return {
-    position: "absolute",
+    position: 'absolute',
     maxHeight: `${newHeight}px`,
     maxWidth: `${newWidth}px`,
-    top: "50%",
+    top: '50%',
     left: `calc(${leftPosition}%)`,
     transform: `translate(-50%, -50%) scale(${zoomScale})`,
   };
@@ -163,19 +163,19 @@ const portraitAnimation = (
     frame,
     0,
     TIMINGS,
-    direction === "topToBottom" ? -10 : 10, // Reduced to 10%
-    direction === "topToBottom" ? 10 : -10 // Reduced to 10%
+    direction === 'topToBottom' ? -10 : 10, // Reduced to 10%
+    direction === 'topToBottom' ? 10 : -10 // Reduced to 10%
   );
 
   // Calculate the actual top position including the interpolated movement
   const topPosition = topCenter + interpolatedPosition;
 
   return {
-    position: "absolute",
+    position: 'absolute',
     maxHeight: `${screenHeight * scale}px`,
     maxWidth: `${screenWidth * scale}px`,
     top: `calc(${topPosition}%)`,
-    left: "50%",
+    left: '50%',
 
     transform: `translate(-50%, -50%) scale(${zoomScale})`,
   };

@@ -10,7 +10,10 @@ export const GlobalProvider = ({ children, settings, DATA }) => {
 
   return (
     <VideoDataProvider Video={Video} DATA={DATA}>
-      <StylesProvider THEME={THEME} settings={{ ...settings, Video, TIMINGS, Club }}>
+      <StylesProvider
+        THEME={THEME}
+        settings={{ ...settings, Video, TIMINGS, Club }}
+      >
         <LayoutProvider TIMINGS={TIMINGS} Club={Club} settings={settings}>
           {children}
         </LayoutProvider>

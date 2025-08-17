@@ -1,6 +1,6 @@
-import Meta from "../../Meta";
+import Meta from '../../Meta';
 
-export const PageMetaData = (props) => {
+export const PageMetaData = props => {
   const { MetaOBJ } = props;
 
   return (

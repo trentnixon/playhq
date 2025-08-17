@@ -1,15 +1,15 @@
-import React, { useEffect, useRef } from "react";
-import { gsap } from "gsap";
-import styles from "./Hero.module.scss";
-import { H1, P } from "../Primitives/Text";
+import React, { useEffect, useRef } from 'react';
+import { gsap } from 'gsap';
+import styles from './Hero.module.scss';
+import { H1, P } from '../Primitives/Text';
 
 const Hero = () => {
   const heroRef = useRef(null);
   const highlightRef = useRef(null);
   const images = [
     {
-      src: "https://fixtura.s3.ap-southeast-2.amazonaws.com/POS_Site_Human_010_6ae3f3eee5.png",
-      alt: "Header Item 1",
+      src: 'https://fixtura.s3.ap-southeast-2.amazonaws.com/POS_Site_Human_010_6ae3f3eee5.png',
+      alt: 'Header Item 1',
     },
   ];
 
@@ -17,11 +17,11 @@ const Hero = () => {
     const heroElement = heroRef.current;
     gsap.fromTo(heroElement, { opacity: 0 }, { opacity: 1, duration: 0 });
 
-    const images = heroElement.querySelectorAll(".imageItem");
+    const images = heroElement.querySelectorAll('.imageItem');
     gsap.fromTo(
       images,
       { x: 450, opacity: 0 },
-      { x: 0, opacity: 1, duration: 0.9, stagger: 0.2, ease: "power1.out" }
+      { x: 0, opacity: 1, duration: 0.9, stagger: 0.2, ease: 'power1.out' }
     );
 
     const highlight = highlightRef.current;
@@ -32,7 +32,7 @@ const Hero = () => {
         y: 0,
         opacity: 1,
         duration: 0.3,
-        ease: "power1.out",
+        ease: 'power1.out',
       }
     );
   }, []);
@@ -51,17 +51,17 @@ const HeroText = ({ highlightRef }) => {
   return (
     <div className={styles.textContent}>
       <H1>
-        Struggling to Keep Up with Your{" "}
+        Struggling to Keep Up with Your{' '}
         <span ref={highlightRef} className={styles.highlight}>
           Club&rsquo;s Digital Content
-        </span>{" "}
+        </span>{' '}
         Schedule?
       </H1>
       <P>
-        Let{" "}
+        Let{' '}
         <span ref={highlightRef} className={styles.highlight}>
           Fixtura
-        </span>{" "}
+        </span>{' '}
         Streamline the Process
       </P>
     </div>

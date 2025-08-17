@@ -1,4 +1,4 @@
-@import "../HomePage.module.scss";
+@import '../HomePage.module.scss';
 
 .howItWorks {
   padding: 50px 0;
@@ -15,7 +15,6 @@
     text-transform: uppercase;
     @media (max-width: 768px) {
       top: 65px;
-    
     }
 
     &.shrink {
@@ -24,7 +23,6 @@
       padding: 10px 0 5px;
       @media (max-width: 768px) {
         top: 65px;
-      
       }
       h1 {
         //transition: all 0.3s ease;

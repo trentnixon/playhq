@@ -1,17 +1,17 @@
-import { useMemo } from "react";
-import { Card, useMantineTheme } from "@mantine/core";
-import { useMediaQuery } from "@mantine/hooks";
+import { useMemo } from 'react';
+import { Card, useMantineTheme } from '@mantine/core';
+import { useMediaQuery } from '@mantine/hooks';
 
 import {
   AwaitingActivation,
   IsUserSubscriptionDetails,
   SeasonPassRequired,
-} from "./components/IsUserSubscriptionDetails";
-import { UserDetailsDisplay } from "./components/UserDetailsDisplay";
-import { SideBarTrialNotification } from "../../../Members/Account/components/isTrialNotifications.js/sideBarNotification";
-import { IsSetupDetails } from "./components/IsSetupDetails";
-import { getTrialNotificationStatus } from "../../../../lib/members/getTrialNotificationStatus";
-import { P } from "../../../Members/Common/Type";
+} from './components/IsUserSubscriptionDetails';
+import { UserDetailsDisplay } from './components/UserDetailsDisplay';
+import { SideBarTrialNotification } from '../../../Members/Account/components/isTrialNotifications.js/sideBarNotification';
+import { IsSetupDetails } from './components/IsSetupDetails';
+import { getTrialNotificationStatus } from '../../../../lib/members/getTrialNotificationStatus';
+import { P } from '../../../Members/Common/Type';
 
 export function UserDetailsCard({ user }) {
   const theme = useMantineTheme();
@@ -45,7 +45,7 @@ export function UserDetailsCard({ user }) {
 
   if (mobile) return false;
   return (
-    <Card withBorder padding="xl" radius="md" mt={60}>
+    <Card withBorder padding='xl' radius='md' mt={60}>
       <Card.Section
         sx={{
           background: theme.fn.linearGradient(
@@ -54,7 +54,7 @@ export function UserDetailsCard({ user }) {
             UserTheme?.secondary
           ),
           height: 70,
-          "@media (max-width: 768px)": {
+          '@media (max-width: 768px)': {
             height: 30,
           },
         }}

@@ -1,56 +1,56 @@
-import React, { useEffect, useState } from "react";
-import Cookies from "js-cookie";
+import React, { useEffect, useState } from 'react';
+import Cookies from 'js-cookie';
 import {
   useClubs,
   useAssociations,
-  useSendExpressionOfInterestForm, 
-} from "../../../../Hooks/useExpressionOfInterest";
-import { motion, AnimatePresence } from "framer-motion";
+  useSendExpressionOfInterestForm,
+} from '../../../../Hooks/useExpressionOfInterest';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export const ExpressionOfInterestForm = ({ setHasSent }) => {
   const [clubs, fetchClubs] = useClubs();
   const [associations, fetchAssociations] = useAssociations();
   const [expression, createExpression] = useSendExpressionOfInterestForm();
-  const [registerAs, setRegisterAs] = useState("");
-  const [submissionStatus, setSubmissionStatus] = useState(""); // Add this line
+  const [registerAs, setRegisterAs] = useState('');
+  const [submissionStatus, setSubmissionStatus] = useState(''); // Add this line
   const [submitting, setSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [hasSubmittedBefore, setHasSubmittedBefore] = useState(false);
   const [formData, setFormData] = useState({
-    fullName: "",
-    email: "",
-    registerAs: "",
-    clubOrAssociation: "",
+    fullName: '',
+    email: '',
+    registerAs: '',
+    clubOrAssociation: '',
     consent: false,
   });
   const [loading, setLoading] = useState(false);
   const [showAutocomplete, setShowAutocomplete] = useState(false);
 
-  const handleFormDataChange = (event) => {
+  const handleFormDataChange = event => {
     const { name, value } = event.target;
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleCheckboxChange = (event) => {
+  const handleCheckboxChange = event => {
     const { name, checked } = event.target;
     setFormData({ ...formData, [name]: checked });
   };
 
-  const handleRegisterAsChange = (event) => {
+  const handleRegisterAsChange = event => {
     const { value } = event.target;
     setRegisterAs(value);
-    setFormData({ ...formData, registerAs: value, clubOrAssociation: "" });
+    setFormData({ ...formData, registerAs: value, clubOrAssociation: '' });
   };
 
-  const handleInputClubOrAssociationChange = (event) => {
+  const handleInputClubOrAssociationChange = event => {
     const inputValue = event.target.value;
     handleFormDataChange(event);
 
     if (inputValue.length >= 3) {
       setShowAutocomplete(true);
-      if (registerAs === "club") {
+      if (registerAs === 'club') {
         fetchClubs(inputValue);
-      } else if (registerAs === "association") {
+      } else if (registerAs === 'association') {
         fetchAssociations(inputValue);
       }
     } else {
@@ -58,7 +58,7 @@ export const ExpressionOfInterestForm = ({ setHasSent }) => {
     }
   };
 
-  const handleAutocompleteClick = (name) => {
+  const handleAutocompleteClick = name => {
     setFormData({ ...formData, clubOrAssociation: name });
     setShowAutocomplete(false);
   };
@@ -69,7 +69,7 @@ export const ExpressionOfInterestForm = ({ setHasSent }) => {
     return fullName && email && registerAs && clubOrAssociation && consent;
   };
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = async event => {
     event.preventDefault();
     if (isFormValid()) {
       setSubmitting(true);
@@ -78,9 +78,9 @@ export const ExpressionOfInterestForm = ({ setHasSent }) => {
         setSubmitted(true);
         setHasSent(true);
         // Set the cookie with an expiration of 30 days
-        Cookies.set("submitted_form", "true", { expires: 30 });
+        Cookies.set('submitted_form', 'true', { expires: 30 });
       } catch (error) {
-        console.error("Error submitting form:", error);
+        console.error('Error submitting form:', error);
       } finally {
         setSubmitting(false);
       }
@@ -88,7 +88,7 @@ export const ExpressionOfInterestForm = ({ setHasSent }) => {
   };
   const renderAutocompleteOptions = () => {
     const options =
-      registerAs === "club"
+      registerAs === 'club'
         ? Array.isArray(clubs)
           ? clubs
           : []
@@ -96,10 +96,10 @@ export const ExpressionOfInterestForm = ({ setHasSent }) => {
         ? associations
         : [];
     //console.log(options);
-    return options.map((option) => (
+    return options.map(option => (
       <li
         key={option.id}
-        className="list-group-item"
+        className='list-group-item'
         onClick={() => handleAutocompleteClick(option.attributes.Name)}
       >
         {option.attributes.Name}
@@ -107,15 +107,15 @@ export const ExpressionOfInterestForm = ({ setHasSent }) => {
     ));
   };
   const renderConfirmationMessage = () => {
-    if (submissionStatus === "success") {
+    if (submissionStatus === 'success') {
       return (
-        <div className="alert alert-success" role="alert">
+        <div className='alert alert-success' role='alert'>
           Your form has been submitted successfully!
         </div>
       );
-    } else if (submissionStatus === "error") {
+    } else if (submissionStatus === 'error') {
       return (
-        <div className="alert alert-danger" role="alert">
+        <div className='alert alert-danger' role='alert'>
           An error occurred while submitting the form. Please try again.
         </div>
       );
@@ -127,7 +127,7 @@ export const ExpressionOfInterestForm = ({ setHasSent }) => {
   }, [formData]);
 
   useEffect(() => {
-    const submittedBefore = Cookies.get("submitted_form");
+    const submittedBefore = Cookies.get('submitted_form');
     if (submittedBefore) {
       setHasSubmittedBefore(true);
       setHasSent(true); // Add this line
@@ -136,16 +136,15 @@ export const ExpressionOfInterestForm = ({ setHasSent }) => {
 
   return (
     <AnimatePresence>
-      
       {!submitted && !hasSubmittedBefore && (
         <motion.div
-        initial={{ opacity: 0, y: -50 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: -50 }}
-        transition={{ duration: 0.5 }}
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -50 }}
+          transition={{ duration: 0.5 }}
         >
           {submitting ? (
-            <div className="text-center">
+            <div className='text-center'>
               <h3>Sending...</h3>
               {/* Add a loading animation of your choice here */}
             </div>
@@ -173,11 +172,11 @@ export const ExpressionOfInterestForm = ({ setHasSent }) => {
       )}
       {submitted && (
         <motion.div
-        initial={{ opacity: 0, y: -50 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: -50 }}
-        transition={{ duration: 0.5 }}
-        className="text-center"
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -50 }}
+          transition={{ duration: 0.5 }}
+          className='text-center'
         >
           <h3>Form submitted successfully!</h3>
           <p>
@@ -192,21 +191,23 @@ export const ExpressionOfInterestForm = ({ setHasSent }) => {
       )}
       {hasSubmittedBefore && (
         <motion.div
-        initial={{ opacity: 0, y: -50 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: -50 }}
-        transition={{ duration: 0.5 }}
-        className="text-center"
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -50 }}
+          transition={{ duration: 0.5 }}
+          className='text-center'
         >
           <h3>We already have a request from you!</h3>
           <p>
-            Thank you for your interest in early access to Fixtura. We have already received your expression of interest. We will be in touch soon with more information on how to access the platform before the official launch. Stay tuned!
+            Thank you for your interest in early access to Fixtura. We have
+            already received your expression of interest. We will be in touch
+            soon with more information on how to access the platform before the
+            official launch. Stay tuned!
           </p>
         </motion.div>
       )}
     </AnimatePresence>
   );
-  
 };
 
 const Form_ExpressionofInterest = ({
@@ -228,96 +229,96 @@ const Form_ExpressionofInterest = ({
   return (
     <form onSubmit={handleSubmit}>
       {renderConfirmationMessage()}
-      <div className="mb-3">
-        <label htmlFor="inputName" className="form-label">
+      <div className='mb-3'>
+        <label htmlFor='inputName' className='form-label'>
           Full Name
         </label>
         <input
-          type="text"
-          className="form-control"
-          id="inputName"
-          name="fullName"
+          type='text'
+          className='form-control'
+          id='inputName'
+          name='fullName'
           value={formData.fullName}
           onChange={handleFormDataChange}
           required
         />
       </div>
-      <div className="mb-3">
-        <label htmlFor="inputEmail" className="form-label">
+      <div className='mb-3'>
+        <label htmlFor='inputEmail' className='form-label'>
           Email Address
         </label>
         <input
-          type="email"
-          className="form-control"
-          id="inputEmail"
-          name="email"
+          type='email'
+          className='form-control'
+          id='inputEmail'
+          name='email'
           value={formData.email}
           onChange={handleFormDataChange}
-          aria-describedby="emailHelp"
+          aria-describedby='emailHelp'
           required
         />
 
-        <div id="emailHelp" className="form-text">
+        <div id='emailHelp' className='form-text'>
           We'll never share your email with anyone else.
         </div>
       </div>
-      <div className="mb-3">
-        <label htmlFor="registerAs" className="form-label">
+      <div className='mb-3'>
+        <label htmlFor='registerAs' className='form-label'>
           I am registering as a
         </label>
         <select
-          className="form-select"
-          id="registerAs"
+          className='form-select'
+          id='registerAs'
           value={registerAs}
           onChange={handleRegisterAsChange}
           required
         >
-          <option value="">Select</option>
-          <option value="club">Club</option>
-          <option value="association">Association</option>
+          <option value=''>Select</option>
+          <option value='club'>Club</option>
+          <option value='association'>Association</option>
         </select>
       </div>
 
-      <div className="mb-3">
-        <label htmlFor="inputClubOrAssociation" className="form-label">
+      <div className='mb-3'>
+        <label htmlFor='inputClubOrAssociation' className='form-label'>
           Name of Club or Association
         </label>
         <input
-          type="text"
-          className="form-control"
-          id="inputClubOrAssociation"
-          name="clubOrAssociation"
+          type='text'
+          className='form-control'
+          id='inputClubOrAssociation'
+          name='clubOrAssociation'
           value={formData.clubOrAssociation}
-          minLength="3"
+          minLength='3'
           onChange={handleInputClubOrAssociationChange}
           disabled={!registerAs}
           required
         />
         {(clubs || associations) && showAutocomplete && (
-          <ul className="list-group">{renderAutocompleteOptions()}</ul>
+          <ul className='list-group'>{renderAutocompleteOptions()}</ul>
         )}
       </div>
-      <div className="mb-3 form-check">
+      <div className='mb-3 form-check'>
         <input
-          type="checkbox"
-          className="form-check-input"
-          id="consentCheck"
-          name="consent"
+          type='checkbox'
+          className='form-check-input'
+          id='consentCheck'
+          name='consent'
           checked={formData.consent}
           onChange={handleCheckboxChange}
           required
         />
 
-        <label className="form-check-label" htmlFor="consentCheck">
+        <label className='form-check-label' htmlFor='consentCheck'>
           I agree to the terms and conditions.
         </label>
       </div>
       <button
-        type="submit"
-        className="btn btn-secondary"
+        type='submit'
+        className='btn btn-secondary'
         disabled={!isFormValid() || loading}
       >
-        {loading ? "Loading..." : "Submit"}
+        {loading ? 'Loading...' : 'Submit'}
       </button>
     </form>
   );

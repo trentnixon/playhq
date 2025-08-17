@@ -1,10 +1,10 @@
-import React from "react";
-import styled from "styled-components";
-import { Sequence, Series } from "remotion";
-import { Match } from "./Sections";
-import { MatchContainer } from "./Sections/MatchContainer";
+import React from 'react';
+import styled from 'styled-components';
+import { Sequence, Series } from 'remotion';
+import { Match } from './Sections';
+import { MatchContainer } from './Sections/MatchContainer';
 
-export const Results = (props) => {
+export const Results = props => {
   const { DATA, FPS_SCORECARD } = props;
 
   const groupsOfTwo = splitIntoGroupsOfTwo(DATA);

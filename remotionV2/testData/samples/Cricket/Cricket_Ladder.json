@@ -1,0 +1,691 @@
+{
+  "data": [
+    {
+      "ID": 6670,
+      "gradeStrapiID": 6670,
+      "gradeName": "International Cricket",
+      "name": "International Cricket",
+      "ageGroup": "Senior",
+      "gender": "Men",
+      "League": [
+        {
+          "position": "1",
+          "teamName": "Australia National Team",
+          "teamHref": "/cricket-australia/team/australia-national-team",
+          "P": "5",
+          "PTS": "40.0",
+          "W": "4",
+          "L": "1",
+          "TIE": "0",
+          "N/R": "0",
+          "BYE": "0",
+          "teamLogo": {
+            "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
+            "width": 128,
+            "height": 128
+          },
+          "prompt": "Australia National Team is currently positioned 1 in the International Cricket, with 4 wins and 1 loss, totaling 40.0 points."
+        },
+        {
+          "position": "2",
+          "teamName": "New Zealand National Team",
+          "teamHref": "/cricket-newzealand/team/new-zealand-national-team",
+          "P": "4",
+          "PTS": "32.0",
+          "W": "4",
+          "L": "0",
+          "TIE": "0",
+          "N/R": "0",
+          "BYE": "0",
+          "teamLogo": {
+            "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
+            "width": 128,
+            "height": 128
+          },
+          "prompt": "New Zealand National Team is currently positioned 2 in the International Cricket, with 4 wins and 0 losses, totaling 32.0 points."
+        },
+        {
+          "position": "3",
+          "teamName": "England National Team",
+          "teamHref": "/cricket-england/team/england-national-team",
+          "P": "4",
+          "PTS": "28.0",
+          "W": "3",
+          "L": "1",
+          "TIE": "0",
+          "N/R": "0",
+          "BYE": "0",
+          "teamLogo": {
+            "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
+            "width": 128,
+            "height": 128
+          },
+          "prompt": "England National Team is currently positioned 3 in the International Cricket, with 3 wins and 1 loss, totaling 28.0 points."
+        },
+        {
+          "position": "4",
+          "teamName": "India National Team",
+          "teamHref": "/cricket-india/team/india-national-team",
+          "P": "4",
+          "PTS": "24.0",
+          "W": "3",
+          "L": "1",
+          "TIE": "0",
+          "N/R": "0",
+          "BYE": "0",
+          "teamLogo": {
+            "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
+            "width": 128,
+            "height": 128
+          },
+          "prompt": "India National Team is currently positioned 4 in the International Cricket, with 3 wins and 1 loss, totaling 24.0 points."
+        },
+        {
+          "position": "5",
+          "teamName": "South Africa National Team",
+          "teamHref": "/cricket-southafrica/team/south-africa-national-team",
+          "P": "4",
+          "PTS": "20.0",
+          "W": "2",
+          "L": "2",
+          "TIE": "0",
+          "N/R": "0",
+          "BYE": "0",
+          "teamLogo": {
+            "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
+            "width": 128,
+            "height": 128
+          },
+          "prompt": "South Africa National Team is currently positioned 5 in the International Cricket, with 2 wins and 2 losses, totaling 20.0 points."
+        },
+        {
+          "position": "6",
+          "teamName": "Pakistan National Team",
+          "teamHref": "/cricket-pakistan/team/pakistan-national-team",
+          "P": "4",
+          "PTS": "16.0",
+          "W": "2",
+          "L": "2",
+          "TIE": "0",
+          "N/R": "0",
+          "BYE": "0",
+          "teamLogo": {
+            "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
+            "width": 128,
+            "height": 128
+          },
+          "prompt": "Pakistan National Team is currently positioned 6 in the International Cricket, with 2 wins and 2 losses, totaling 16.0 points."
+        },
+        {
+          "position": "7",
+          "teamName": "West Indies National Team",
+          "teamHref": "/cricket-westindies/team/west-indies-national-team",
+          "P": "4",
+          "PTS": "12.0",
+          "W": "1",
+          "L": "3",
+          "TIE": "0",
+          "N/R": "0",
+          "BYE": "0",
+          "teamLogo": {
+            "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
+            "width": 128,
+            "height": 128
+          },
+          "prompt": "West Indies National Team is currently positioned 7 in the International Cricket, with 1 win and 3 losses, totaling 12.0 points."
+        },
+        {
+          "position": "8",
+          "teamName": "Sri Lanka National Team",
+          "teamHref": "/cricket-srilanka/team/sri-lanka-national-team",
+          "P": "4",
+          "PTS": "8.0",
+          "W": "1",
+          "L": "3",
+          "TIE": "0",
+          "N/R": "0",
+          "BYE": "0",
+          "teamLogo": {
+            "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
+            "width": 128,
+            "height": 128
+          },
+          "prompt": "Sri Lanka National Team is currently positioned 8 in the International Cricket, with 1 win and 3 losses, totaling 8.0 points."
+        }
+      ],
+      "gradeId": "f172fd5b",
+      "bias": null,
+      "competition": "ICC Cricket",
+      "competitionId": 12345,
+      "competitionName": "ICC Cricket",
+      "prompt": "Overview of International Cricket: Featuring teams such as Australia National Team, New Zealand National Team, England National Team, India National Team, South Africa National Team, Pakistan National Team, West Indies National Team, Sri Lanka National Team, each competing vigorously within the league.",
+      "assignSponsors": {
+        "competition": [],
+        "grade": [],
+        "team": [
+          {
+            "id": 151,
+            "isPrimary": true,
+            "isActive": true,
+            "isArticle": true,
+            "isVideo": true,
+            "url": "test",
+            "tagline": "test",
+            "description": null,
+            "name": "test",
+            "logo": {
+              "id": 12784,
+              "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png"
+            }
+          },
+          {
+            "id": 152,
+            "isPrimary": false,
+            "isActive": true,
+            "isArticle": true,
+            "isVideo": true,
+            "url": "test",
+            "tagline": "test",
+            "description": null,
+            "name": "test",
+            "logo": {
+              "id": 12785,
+              "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "ID": 6671,
+      "gradeStrapiID": 6671,
+      "gradeName": "T20 International",
+      "name": "T20 International",
+      "ageGroup": "Senior",
+      "gender": "Men",
+      "League": [
+        {
+          "position": "1",
+          "teamName": "India National Team",
+          "teamHref": "/cricket-india/team/india-national-team",
+          "P": "6",
+          "PTS": "48.0",
+          "W": "5",
+          "L": "1",
+          "TIE": "0",
+          "N/R": "0",
+          "BYE": "0",
+          "teamLogo": {
+            "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
+            "width": 128,
+            "height": 128
+          },
+          "prompt": "India National Team is currently positioned 1 in the T20 International, with 5 wins and 1 loss, totaling 48.0 points."
+        },
+        {
+          "position": "2",
+          "teamName": "England National Team",
+          "teamHref": "/cricket-england/team/england-national-team",
+          "P": "6",
+          "PTS": "44.0",
+          "W": "4",
+          "L": "1",
+          "TIE": "0",
+          "N/R": "1",
+          "BYE": "0",
+          "teamLogo": {
+            "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
+            "width": 128,
+            "height": 128
+          },
+          "prompt": "England National Team is currently positioned 2 in the T20 International, with 4 wins and 1 loss, totaling 44.0 points."
+        },
+        {
+          "position": "3",
+          "teamName": "Australia National Team",
+          "teamHref": "/cricket-australia/team/australia-national-team",
+          "P": "6",
+          "PTS": "40.0",
+          "W": "4",
+          "L": "2",
+          "TIE": "0",
+          "N/R": "0",
+          "BYE": "0",
+          "teamLogo": {
+            "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
+            "width": 128,
+            "height": 128
+          },
+          "prompt": "Australia National Team is currently positioned 3 in the T20 International, with 4 wins and 2 losses, totaling 40.0 points."
+        },
+        {
+          "position": "4",
+          "teamName": "Pakistan National Team",
+          "teamHref": "/cricket-pakistan/team/pakistan-national-team",
+          "P": "6",
+          "PTS": "36.0",
+          "W": "3",
+          "L": "2",
+          "TIE": "0",
+          "N/R": "1",
+          "BYE": "0",
+          "teamLogo": {
+            "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
+            "width": 128,
+            "height": 128
+          },
+          "prompt": "Pakistan National Team is currently positioned 4 in the T20 International, with 3 wins and 2 losses, totaling 36.0 points."
+        },
+        {
+          "position": "5",
+          "teamName": "New Zealand National Team",
+          "teamHref": "/cricket-newzealand/team/new-zealand-national-team",
+          "P": "6",
+          "PTS": "32.0",
+          "W": "3",
+          "L": "3",
+          "TIE": "0",
+          "N/R": "0",
+          "BYE": "0",
+          "teamLogo": {
+            "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
+            "width": 128,
+            "height": 128
+          },
+          "prompt": "New Zealand National Team is currently positioned 5 in the T20 International, with 3 wins and 3 losses, totaling 32.0 points."
+        },
+        {
+          "position": "6",
+          "teamName": "South Africa National Team",
+          "teamHref": "/cricket-southafrica/team/south-africa-national-team",
+          "P": "6",
+          "PTS": "28.0",
+          "W": "2",
+          "L": "3",
+          "TIE": "0",
+          "N/R": "1",
+          "BYE": "0",
+          "teamLogo": {
+            "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
+            "width": 128,
+            "height": 128
+          },
+          "prompt": "South Africa National Team is currently positioned 6 in the T20 International, with 2 wins and 3 losses, totaling 28.0 points."
+        },
+        {
+          "position": "7",
+          "teamName": "West Indies National Team",
+          "teamHref": "/cricket-westindies/team/west-indies-national-team",
+          "P": "6",
+          "PTS": "24.0",
+          "W": "2",
+          "L": "4",
+          "TIE": "0",
+          "N/R": "0",
+          "BYE": "0",
+          "teamLogo": {
+            "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
+            "width": 128,
+            "height": 128
+          },
+          "prompt": "West Indies National Team is currently positioned 7 in the T20 International, with 2 wins and 4 losses, totaling 24.0 points."
+        },
+        {
+          "position": "8",
+          "teamName": "Sri Lanka National Team",
+          "teamHref": "/cricket-srilanka/team/sri-lanka-national-team",
+          "P": "6",
+          "PTS": "20.0",
+          "W": "1",
+          "L": "4",
+          "TIE": "0",
+          "N/R": "1",
+          "BYE": "0",
+          "teamLogo": {
+            "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
+            "width": 128,
+            "height": 128
+          },
+          "prompt": "Sri Lanka National Team is currently positioned 8 in the T20 International, with 1 win and 4 losses, totaling 20.0 points."
+        },
+        {
+          "position": "9",
+          "teamName": "Bangladesh National Team",
+          "teamHref": "/cricket-bangladesh/team/bangladesh-national-team",
+          "P": "6",
+          "PTS": "16.0",
+          "W": "1",
+          "L": "5",
+          "TIE": "0",
+          "N/R": "0",
+          "BYE": "0",
+          "teamLogo": {
+            "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
+            "width": 128,
+            "height": 128
+          },
+          "prompt": "Bangladesh National Team is currently positioned 9 in the T20 International, with 1 win and 5 losses, totaling 16.0 points."
+        },
+        {
+          "position": "10",
+          "teamName": "Afghanistan National Team",
+          "teamHref": "/cricket-afghanistan/team/afghanistan-national-team",
+          "P": "6",
+          "PTS": "12.0",
+          "W": "0",
+          "L": "5",
+          "TIE": "0",
+          "N/R": "1",
+          "BYE": "0",
+          "teamLogo": {
+            "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
+            "width": 128,
+            "height": 128
+          },
+          "prompt": "Afghanistan National Team is currently positioned 10 in the T20 International, with 0 wins and 5 losses, totaling 12.0 points."
+        }
+      ],
+      "gradeId": "f172fd5c",
+      "bias": null,
+      "competition": "ICC T20 World Cup",
+      "competitionId": 12346,
+      "competitionName": "ICC T20 World Cup",
+      "prompt": "Overview of T20 International: Featuring teams such as India National Team, England National Team, Australia National Team, Pakistan National Team, New Zealand National Team, South Africa National Team, West Indies National Team, Sri Lanka National Team, Bangladesh National Team, Afghanistan National Team, each competing vigorously within the league.",
+      "assignSponsors": {
+        "competition": [],
+        "grade": [],
+        "team": [
+          {
+            "id": 152,
+            "isPrimary": false,
+            "isActive": true,
+            "isArticle": true,
+            "isVideo": true,
+            "url": "test",
+            "tagline": "test",
+            "description": null,
+            "name": "test",
+            "logo": {
+              "id": 12785,
+              "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Sponsor1_a6752b0a5f.png"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "asset": {
+    "assetID": 18,
+    "assetTypeID": 3,
+    "assetCategoryID": 2,
+    "assetsLinkID": "6918ed5e2dd1e9145c47cb652e34c4115523fa8ef6cbb194c35921ac4b772fcb"
+  },
+  "render": {
+    "schedulerId": 207,
+    "renderId": 8270
+  },
+  "account": {
+    "accountId": 319
+  },
+  "timings": {
+    "FPS_MAIN": 585,
+    "FPS_INTRO": 90,
+    "FPS_OUTRO": 90,
+    "FPS_LADDER": 300,
+    "FPS_SCORECARD": 0
+  },
+  "frames": [45, 240, 525, 705],
+  "videoMeta": {
+    "club": {
+      "logo": {
+        "hasLogo": true,
+        "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
+        "width": 379,
+        "height": 303
+      },
+      "name": "Gold Coast Veterans Cricket",
+      "sport": "Cricket",
+      "sponsors": {
+        "primary": [
+          {
+            "id": 151,
+            "isPrimary": true,
+            "isActive": true,
+            "isArticle": true,
+            "isVideo": true,
+            "url": "test",
+            "tagline": "test",
+            "description": null,
+            "name": "test",
+            "logo": {
+              "id": 12784,
+              "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Sponsor1_a6752b0a5f.png"
+            }
+          }
+        ],
+        "default": {
+          "primary_sponsor": [
+            {
+              "id": 151,
+              "isPrimary": true,
+              "isActive": true,
+              "isArticle": true,
+              "isVideo": true,
+              "url": "test",
+              "tagline": "test",
+              "description": null,
+              "name": "test",
+              "logo": {
+                "id": 12784,
+                "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Sponsor1_a6752b0a5f.png"
+              }
+            }
+          ],
+          "general_sponsor_1": [
+            {
+              "id": 152,
+              "isPrimary": false,
+              "isActive": true,
+              "isArticle": true,
+              "isVideo": true,
+              "url": "test",
+              "tagline": "test",
+              "description": null,
+              "name": "test",
+              "logo": {
+                "id": 12785,
+                "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Sponsor2_39eebf9c1b.png"
+              }
+            }
+          ],
+          "general_sponsor_2": [
+            {
+              "id": 153,
+              "isPrimary": false,
+              "isActive": true,
+              "isArticle": true,
+              "isVideo": true,
+              "url": "test",
+              "tagline": "test",
+              "description": null,
+              "name": "test",
+              "logo": {
+                "id": 12786,
+                "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Sponsor3_d65a61808c.png"
+              }
+            }
+          ],
+          "general_sponsor_3": [
+            {
+              "id": 167,
+              "isPrimary": false,
+              "isActive": true,
+              "isArticle": true,
+              "isVideo": true,
+              "url": "4",
+              "tagline": "4",
+              "description": null,
+              "name": "4",
+              "logo": {
+                "id": 13159,
+                "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Sponsor4_2e99a89b64.png"
+              }
+            }
+          ],
+          "general_sponsor_4": [
+            {
+              "id": 168,
+              "isPrimary": false,
+              "isActive": true,
+              "isArticle": true,
+              "isVideo": true,
+              "url": "5",
+              "tagline": "5",
+              "description": null,
+              "name": "5",
+              "logo": {
+                "id": 13160,
+                "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Sponsor5_5830015159.png"
+              }
+            }
+          ],
+          "general_sponsor_5": [
+            {
+              "id": 169,
+              "isPrimary": false,
+              "isActive": true,
+              "isArticle": true,
+              "isVideo": true,
+              "url": "6",
+              "tagline": "6",
+              "description": null,
+              "name": "6",
+              "logo": {
+                "id": 13161,
+                "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Sponsor6_ffce411e69.png"
+              }
+            }
+          ],
+          "general_sponsor_6": [
+            {
+              "id": 170,
+              "isPrimary": false,
+              "isActive": true,
+              "isArticle": true,
+              "isVideo": true,
+              "url": "7",
+              "tagline": "7",
+              "description": null,
+              "name": "7",
+              "logo": {
+                "id": 13162,
+                "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Sponsor7_6d12274c46.png"
+              }
+            }
+          ]
+        }
+      }
+    },
+    "video": {
+      "fixtureCategory": "MASTERS",
+      "groupingCategory": "MASTERS",
+      "metadata": {
+        "title": "Ladder",
+        "titleSplit": ["Ladder", ""],
+        "videoTitle": "League Tables",
+        "compositionId": "CricketLadder",
+        "assetId": 18,
+        "assetTypeId": 3,
+        "frames": [390],
+        "includeSponsors": true
+      },
+      "appearance": {
+        "theme": {
+          "dark": "#FFF",
+          "white": "#111",
+          "primary": "#00843d",
+          "secondary": "#ffcd00"
+        },
+        "template": "Basic"
+      },
+      "media": {
+        "HeroImage": {
+          "url": "",
+          "ratio": "",
+          "width": 0,
+          "height": 0,
+          "AgeGroup": "",
+          "AssetType": "",
+          "markerPosition": ""
+        },
+        "audio": {
+          "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Audiio_Marscott_Wild_Neon_Get_The_Gains_inst_3251aaa9af.mp3",
+          "audioOption": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Audiio_Kidpenny_Single_Better_Start_Now_Inst_53b898d9ef.mp3"
+        }
+      },
+      "contentLayout": {
+        "divideFixturesBy": {
+          "CricketLadder": 1,
+          "CricketRoster": 1,
+          "CricketResults": 2,
+          "CricketUpcoming": 3,
+          "CricketResultSingle": 1
+        }
+      },
+      "templateVariation": {
+        "useBackground": "Graphics",
+        "video": {
+          "url": null,
+          "fallbackUrl": null,
+          "position": "left",
+          "size": "cover",
+          "loop": null,
+          "muted": true,
+          "overlay": {
+            "color": "rgba(0,0,0,0.5)",
+            "opacity": 0.7
+          },
+          "useOffthreadVideo": null,
+          "volume": 0.8,
+          "playbackRate": null
+        },
+        "image": {
+          "url": null,
+          "ratio": null,
+          "width": null,
+          "height": null,
+          "type": "focusblur",
+          "direction": "in",
+          "overlayStyle": "duotone",
+          "gradientType": "linear",
+          "overlayOpacity": 0.7
+        },
+        "palette": "primary",
+        "gradient": {
+          "type": "primaryRadial",
+          "direction": "DEFAULT"
+        },
+        "noise": {
+          "type": "floatingParticles"
+        },
+        "pattern": {
+          "type": "dots",
+          "animation": "rotate",
+          "scale": 0.5,
+          "rotation": null,
+          "opacity": 0.3,
+          "animationDuration": 1500,
+          "animationSpeed": 0.5
+        },
+        "particle": {
+          "type": "snow",
+          "particleCount": "150",
+          "speed": 1,
+          "direction": "down",
+          "animation": "fade"
+        }
+      }
+    }
+  },
+  "errors": []
+}

@@ -1,18 +1,11 @@
-import {
-  Box,
-  Group,
-  List,
-  Text,
-  ThemeIcon,
-  useMantineTheme,
-} from "@mantine/core";
-import { IconUpload, IconCircleCheck } from "@tabler/icons";
-import { Dropzone, MIME_TYPES } from "@mantine/dropzone";
-import { useUploadImageViaDropzone } from "../../../../../Hooks/useUploadViaDropzone";
-import { useEffect, useState } from "react";
-import { BTN_ONCLICK } from "../../../../Members/Common/utils/Buttons";
-import { P, SubHeaders } from "../../../../Members/Common/Type";
-import { IconError404 } from "@tabler/icons-react";
+import { Box, Group, List, Text, ThemeIcon } from '@mantine/core';
+import { IconUpload, IconCircleCheck } from '@tabler/icons';
+import { Dropzone, MIME_TYPES } from '@mantine/dropzone';
+import { useUploadImageViaDropzone } from '../../../../../Hooks/useUploadViaDropzone';
+import { useEffect, useState } from 'react';
+import { BTN_ONCLICK } from '../../../../Members/Common/utils/Buttons';
+import { P, SubHeaders } from '../../../../Members/Common/Type';
+import { IconError404 } from '@tabler/icons-react';
 
 /*
   !IMOPORTANT!
@@ -21,7 +14,7 @@ import { IconError404 } from "@tabler/icons-react";
 */
 
 export function StrapiImageUploader({ setLogo, setLogoPath, SAVEDLOGO }) {
-  const theme = useMantineTheme();
+  //const theme = useMantineTheme();
   // useSTate
   const [ProcessingImage, setProcessingImage] = useState(false);
   const [rejected, setRejected] = useState(false);
@@ -29,7 +22,7 @@ export function StrapiImageUploader({ setLogo, setLogoPath, SAVEDLOGO }) {
   const [DropZoneImage, UploadDropZoneImage] = useUploadImageViaDropzone();
 
   // FUNC
-  const handleFileUpload = (_FILE) => {
+  const handleFileUpload = _FILE => {
     //console.log(_FILE);
     UploadDropZoneImage(_FILE);
     setProcessingImage(true);
@@ -48,14 +41,14 @@ export function StrapiImageUploader({ setLogo, setLogoPath, SAVEDLOGO }) {
     return <RejectedFiles setRejected={setRejected} rejected={rejected} />;
   return (
     <Box
-      sx={(theme) => ({
-        textAlign: "center",
+      sx={theme => ({
+        textAlign: 'center',
       })}
     >
       <Dropzone
-        onDrop={(files) => handleFileUpload(files)}
-        onReject={(files) => {
-          setRejected(files);
+        onDrop={files => handleFileUpload(files)}
+        onReject={files => {
+          setRejected(true);
           //console.log("rejected files", files);
         }}
         maxSize={10 * 1024 ** 2}
@@ -64,16 +57,16 @@ export function StrapiImageUploader({ setLogo, setLogoPath, SAVEDLOGO }) {
         loading={ProcessingImage}
       >
         <Group
-          position="center"
-          spacing="xl"
-          style={{ minHeight: 220, pointerEvents: "none" }}
+          position='center'
+          spacing='xl'
+          style={{ minHeight: 220, pointerEvents: 'none' }}
         >
           <Dropzone.Idle>
             <IconUpload />
           </Dropzone.Idle>
 
           <div>
-            <Text size="xl" inline>
+            <Text size='xl' inline>
               Select a file
             </Text>
           </div>
@@ -105,16 +98,16 @@ const RejectedFiles = ({ rejected, setRejected }) => {
       </P>
 
       <List
-        size="lg"
+        size='lg'
         withPadding
         center
         icon={
-          <ThemeIcon color="red" size={24} radius="xl">
+          <ThemeIcon color='red' size={24} radius='xl'>
             <IconCircleCheck size={16} />
           </ThemeIcon>
         }
         style={{
-          margin: "2em 0",
+          margin: '2em 0',
         }}
       >
         {rejected[0].errors.map((err, i) => {
@@ -126,7 +119,7 @@ const RejectedFiles = ({ rejected, setRejected }) => {
         HANDLE={() => {
           setRejected(false);
         }}
-        LABEL="Retry"
+        LABEL='Retry'
       />
     </>
   );

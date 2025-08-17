@@ -5,27 +5,27 @@ import {
   Image,
   Paper,
   useMantineTheme,
-} from "@mantine/core";
-import { P, SubHeaders } from "../Common/Type";
-import { useAccountDetails } from "../../../context/userContext";
-import { useEffect, useState } from "react";
+} from '@mantine/core';
+import { P, SubHeaders } from '../Common/Type';
+import { useAccountDetails } from '../../../context/userContext';
+import { useEffect, useState } from 'react';
 import {
   FindAccountLogo,
   FindAccountTypeOBJ,
   FindAccountType,
   FindAccountLabel,
   FindAccountTypeAPI,
-} from "../../../lib/actions";
+} from '../../../lib/actions';
 
-import { BTN_ONCLICK } from "../Common/utils/Buttons";
-import { useSetLogo } from "../../../Hooks/useOrganisationLogo";
-import { IconUpload } from "@tabler/icons";
-import { useMediaQuery } from "@mantine/hooks";
+import { BTN_ONCLICK } from '../Common/utils/Buttons';
+import { useSetLogo } from '../../../Hooks/useOrganisationLogo';
+import { IconUpload } from '@tabler/icons';
+import { useMediaQuery } from '@mantine/hooks';
 
-import { IconPhotoFilled } from "@tabler/icons-react";
-import StrapiImageUploader from "../../pages/members/sponsors/Form/ImageUploader";
-import { RoundedSectionContainer } from "../../UI/Containers/SectionContainer";
-import { StepHeaderandDescription } from "../../pages/members/setup/phases/SetupSteps/Steps/StepHeaderandDescription";
+import { IconPhotoFilled } from '@tabler/icons-react';
+import StrapiImageUploader from '../../pages/members/sponsors/Form/ImageUploader';
+import { RoundedSectionContainer } from '../../UI/Containers/SectionContainer';
+import { StepHeaderandDescription } from '../../pages/members/setup/phases/SetupSteps/Steps/StepHeaderandDescription';
 
 export const AccountLogo = () => {
   const theme = useMantineTheme();
@@ -61,24 +61,24 @@ export const AccountLogo = () => {
   return (
     <>
       <RoundedSectionContainer
-        headerContent={""}
+        headerContent={''}
         topContent={
           <StepHeaderandDescription
             Header={`${FindAccountType(userAccount)} Logo`}
             Description={
-              "Upload a high-resolution image of your logo to ensure the best quality representation for your organization."
+              'Upload a high-resolution image of your logo to ensure the best quality representation for your organization.'
             }
           />
         }
         bottomContent={
           <>
             <Paper
-              radius="md"
+              radius='md'
               mb={0}
-              p="0"
-              sx={(theme) => ({ backgroundColor: theme.white })}
+              p='0'
+              sx={theme => ({ backgroundColor: theme.white })}
             >
-              <Group position="right" mb={20}>
+              <Group position='right' mb={20}>
                 <BTN_ONCLICK
                   LABEL={uploadLogo ? `Close` : `Upload a Logo`}
                   THEME={`cta`}
@@ -126,14 +126,14 @@ export const AccountLogo = () => {
 const CurrentLogo = ({ LOGO }) => {
   return (
     <Box
-      sx={(theme) => ({
+      sx={theme => ({
         backgroundColor: theme.colors.gray[3],
-        textAlign: "center",
+        textAlign: 'center',
         padding: theme.spacing.xl,
         borderRadius: theme.radius.md,
-        cursor: "pointer",
+        cursor: 'pointer',
 
-        margin: "20px auto",
+        margin: '20px auto',
       })}
     >
       <Center>
@@ -146,15 +146,15 @@ const CurrentLogo = ({ LOGO }) => {
 const NewLogoImageAndStore = ({ image, saveLogoToAccount, setLogoPath }) => {
   return (
     <Box
-      sx={(theme) => ({
+      sx={theme => ({
         backgroundColor: theme.colors.gray[0],
-        textAlign: "center",
+        textAlign: 'center',
         padding: theme.spacing.xl,
         borderRadius: theme.radius.md,
-        cursor: "pointer",
-        width: "60%",
-        margin: "20px auto",
-        "&:hover": {
+        cursor: 'pointer',
+        width: '60%',
+        margin: '20px auto',
+        '&:hover': {
           backgroundColor: theme.colors.gray[1],
         },
       })}
@@ -162,7 +162,7 @@ const NewLogoImageAndStore = ({ image, saveLogoToAccount, setLogoPath }) => {
       <Center mb={20}>
         <Image src={image} width={200} />
       </Center>
-      <Group position="center">
+      <Group position='center'>
         <BTN_ONCLICK
           LABEL={`Save Logo`}
           THEME={`cta`}
@@ -184,18 +184,18 @@ const NewLogoCopy = ({ org }) => {
   const theme = useMantineTheme();
   const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
   return (
-    <Group position="center">
-      <IconUpload size={"4em"} color={theme.colors.blue[5]} />
+    <Group position='center'>
+      <IconUpload size={'4em'} color={theme.colors.blue[5]} />
       <Box
-        sx={(theme) => ({
+        sx={theme => ({
           backgroundColor: theme.colors.gray[0],
-          textAlign: "center",
+          textAlign: 'center',
           padding: theme.spacing.xl,
           borderRadius: theme.radius.md,
-          cursor: "pointer",
-          width: "60%",
-          margin: "20px",
-          "&:hover": {
+          cursor: 'pointer',
+          width: '60%',
+          margin: '20px',
+          '&:hover': {
             backgroundColor: theme.colors.gray[1],
           },
         })}

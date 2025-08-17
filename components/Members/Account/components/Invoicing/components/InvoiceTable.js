@@ -1,11 +1,12 @@
-import { Paper, Table } from "@mantine/core";
-import { convertUnixTimestamp } from "../../../../../../lib/actions";
-import { IconReceipt2, IconCalendarDue, IconStatusChange } from "@tabler/icons";
-import { DisplayItem } from "./helper";
-import { ProductDetails } from "./ProductDetails";
+import { Paper, Table } from '@mantine/core';
+import { convertUnixTimestamp } from '../../../../../../lib/actions';
+import { IconReceipt2, IconCalendarDue, IconStatusChange } from '@tabler/icons';
+import { DisplayItem } from './helper';
+import { ProductDetails } from './ProductDetails';
 
-export const InvoiceTable = (props) => {
-  const { invoice_number, isActive, total, currency, invoice_due_date } = props.order.attributes;
+export const InvoiceTable = props => {
+  const { invoice_number, isActive, total, currency, invoice_due_date } =
+    props.order.attributes;
 
   return (
     <Paper p={20}>
@@ -21,8 +22,8 @@ export const InvoiceTable = (props) => {
             <td>
               <DisplayItem
                 icon={<IconStatusChange size={20} stroke={1} />}
-                label={`${isActive ? "Paid" : "Pending"}`}
-                position="right"
+                label={`${isActive ? 'Paid' : 'Pending'}`}
+                position='right'
               />
             </td>
           </tr>
@@ -38,7 +39,7 @@ export const InvoiceTable = (props) => {
               <DisplayItem
                 icon={<IconReceipt2 size={20} stroke={1} />}
                 label={`$${parseInt(total / 100).toFixed(2)}(${currency})`}
-                position="right"
+                position='right'
               />
             </td>
           </tr>

@@ -1,4 +1,3 @@
-
 import styled from 'styled-components';
 const MatchContainerStyles = styled.div`
   display: flex;
@@ -7,9 +6,13 @@ const MatchContainerStyles = styled.div`
   height: auto;
   max-width: 100%;
   margin: 0 auto;
-  margin-bottom:${props=>props.MarginBottom || 60}px;
+  margin-bottom: ${props => props.MarginBottom || 60}px;
 `;
 
-export const AFLMatchContainer = (props)=>{
-  return(<MatchContainerStyles MarginBottom={props.MarginBottom} >{props.children}</MatchContainerStyles>)
-} 
+export const AFLMatchContainer = props => {
+  return (
+    <MatchContainerStyles MarginBottom={props.MarginBottom}>
+      {props.children}
+    </MatchContainerStyles>
+  );
+};

@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useState } from 'react';
 
-import { P } from "../../Common/Type";
+import { P } from '../../Common/Type';
 
-import { FindAccountType } from "../../../../lib/actions";
+import { FindAccountType } from '../../../../lib/actions';
 
-import { ChangePlanBtn } from "./ChangePlanBtn";
+import { ChangePlanBtn } from './ChangePlanBtn';
+import { CreateCards } from '../SelectAPlan';
 
 export const UpdateYourPlan = ({ user, setHasUpdated }) => {
   const { products, loading } = useFetchSubscriptionTiers();
@@ -12,7 +13,7 @@ export const UpdateYourPlan = ({ user, setHasUpdated }) => {
   const [planState, setPlanState] = useState(null);
 
   const accountType = FindAccountType(user); // Assuming user contains account details
-  const isClub = accountType === "Club";
+  const isClub = accountType === 'Club';
   //
 
   if (loading)
@@ -20,7 +21,7 @@ export const UpdateYourPlan = ({ user, setHasUpdated }) => {
       <>
         <P
           color={6}
-          textAlign={"center"}
+          textAlign={'center'}
           marginBottom={0}
           Weight={600}
           Copy={`Loading Subscriptions Options...`}
@@ -35,7 +36,7 @@ export const UpdateYourPlan = ({ user, setHasUpdated }) => {
       <>
         <P
           color={8}
-          textAlign={"center"}
+          textAlign={'center'}
           marginBottom={0}
           Weight={600}
           Copy={`Error loading Subscriptions Options`}
@@ -47,7 +48,7 @@ export const UpdateYourPlan = ({ user, setHasUpdated }) => {
       </>
     );
 
-  const onConfirm = (productId) => {
+  const onConfirm = productId => {
     setSelectedProductId(productId);
   };
 
@@ -59,7 +60,7 @@ export const UpdateYourPlan = ({ user, setHasUpdated }) => {
       <>
         <P
           color={4}
-          textAlign={"center"}
+          textAlign={'center'}
           Weight={600}
           Copy={`Subscription Updated`}
         />
@@ -74,7 +75,7 @@ export const UpdateYourPlan = ({ user, setHasUpdated }) => {
   return (
     <>
       <>
-        <div className="row justify-content-center">
+        <div className='row justify-content-center'>
           {products.map((product, i) => {
             const { isActive, isClub: productIsClub } = product.attributes;
             if (

@@ -1,15 +1,15 @@
-import { useState, useEffect, useRef } from "react";
-import { fetcher } from "../../../lib/api";
-import Cookies from "js-cookie";
-import { Box, Container, SimpleGrid, Space, Switch } from "@mantine/core";
-import { P, SubHeaders } from "./Type";
-import { ShadowWrapper } from "./Containers";
+import { useState, useEffect, useRef } from 'react';
+import { fetcher } from '../../../lib/api';
+import Cookies from 'js-cookie';
+import { Box, Container, SimpleGrid, Space, Switch } from '@mantine/core';
+import { P, SubHeaders } from './Type';
+import { ShadowWrapper } from './Containers';
 import { showNotification } from '@mantine/notifications';
-const qs = require("qs");
+const qs = require('qs');
 
 const query = qs.stringify(
   {
-    populate: ["Name", "description", "asset_category"],
+    populate: ['Name', 'description', 'asset_category'],
   },
   {
     encodeValuesOnly: true,
@@ -27,15 +27,15 @@ export const SwitchAssets = ({
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const previousValue = useRef();
- 
+
   useEffect(() => {
     async function fetchData() {
       const response = await fetcher(
         `${process.env.NEXT_PUBLIC_STRAPI_URL}/assets/?${query}`,
         {
           headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${Cookies.get("jwt")}`,
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${Cookies.get('jwt')}`,
           },
         }
       );
@@ -63,14 +63,14 @@ export const SwitchAssets = ({
     fetchData();
   }, []);
 
-  const handleChange = async (Asset) => {
+  const handleChange = async Asset => {
     const isIncluded = UserSelectedAssets.some(
-      (USERASSET) => USERASSET.id === Asset.id
+      USERASSET => USERASSET.id === Asset.id
     );
 
     if (isIncluded) {
       const updatedAssets = UserSelectedAssets.filter(
-        (USERASSET) => USERASSET.id !== Asset.id
+        USERASSET => USERASSET.id !== Asset.id
       );
       setUserSelected(updatedAssets);
     } else {
@@ -80,18 +80,18 @@ export const SwitchAssets = ({
     }
   };
 
-  const updateAPI = async (UserSelectedAssets) => {
-    const assetIds = UserSelectedAssets.map((USERASSET) => USERASSET.id);
+  const updateAPI = async UserSelectedAssets => {
+    const assetIds = UserSelectedAssets.map(USERASSET => USERASSET.id);
 
     try {
-     await fetcher(
+      await fetcher(
         `${process.env.NEXT_PUBLIC_STRAPI_URL}/accounts/${COLLECTIONID}`,
         {
-          method: "PUT",
+          method: 'PUT',
           headers: {
-            Accept: "application/json",
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${Cookies.get("jwt")}`,
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${Cookies.get('jwt')}`,
           },
           body: JSON.stringify({
             data: {
@@ -104,8 +104,7 @@ export const SwitchAssets = ({
       showNotification({
         title: 'Sync Completed',
         message: 'Your assets have been updated on your Account',
-      })
-
+      });
     } catch (err) {
       setError(err.message);
     }
@@ -114,16 +113,14 @@ export const SwitchAssets = ({
   };
 
   useEffect(() => {
-    
     if (UserSelectedAssets !== previousValue.current) {
       updateAPI(UserSelectedAssets);
       previousValue.current = UserSelectedAssets;
     }
-    
   }, [UserSelectedAssets]);
 
-  const isAssetTrue = (ID) => {
-    return UserSelectedAssets.some((USERASSET) => USERASSET.id === ID);
+  const isAssetTrue = ID => {
+    return UserSelectedAssets.some(USERASSET => USERASSET.id === ID);
   };
 
   if (loading) {
@@ -133,32 +130,31 @@ export const SwitchAssets = ({
     return <p>{error}</p>;
   }
   return (
-    <Container size={"md"}>
+    <Container size={'md'}>
       {Object.entries(items).map(([key, value]) => {
         return (
           <div key={key}>
             <SubHeaders Copy={key} />
-            <P >{AssetCategories[key]}</P>
+            <P>{AssetCategories[key]}</P>
             <ShadowWrapper BGColor={1} p={20}>
-              
-              <SimpleGrid cols={1} breakpoints={[{ minWidth: "lg", cols: 2 }]}>
+              <SimpleGrid cols={1} breakpoints={[{ minWidth: 'lg', cols: 2 }]}>
                 {value.map((Asset, i) => {
                   return (
                     <Box
                       key={i}
-                      sx={(theme) => ({
+                      sx={theme => ({
                         padding: theme.spacing.xl,
                         border: `1px solid ${theme.colors.members[3]}`,
-                        backgroundColor:theme.colors.members[0],
-                        borderRadius: "5px",
+                        backgroundColor: theme.colors.members[0],
+                        borderRadius: '5px',
                       })}
                     >
                       <Switch
                         label={Asset.attributes.Name}
                         description={Asset.attributes.description}
-                        error=""
-                        size="md"
-                        color="green"
+                        error=''
+                        size='md'
+                        color='green'
                         checked={isAssetTrue(Asset.id)}
                         onChange={() => handleChange(Asset)}
                       />

@@ -1,9 +1,9 @@
 // CTA.jsx
-import React from "react";
-import styles from "./CTA.module.scss";
-import { H1, H2, HighlightSpan, P } from "../Primitives/Text";
-import { Container } from "../Primitives/Containers";
-import Link from "next/link";
+import React from 'react';
+import styles from './CTA.module.scss';
+import { H1, H2, HighlightSpan, P } from '../Primitives/Text';
+import { Container } from '../Primitives/Containers';
+import Link from 'next/link';
 
 const CTA = () => {
   return (
@@ -23,23 +23,23 @@ const CTA = () => {
         <H2 className={styles.fadeInUp}>Start Your Free Trial Now</H2>
         <div className={styles.images}>
           <img
-            src="https://fixtura.s3.ap-southeast-2.amazonaws.com/Example_Small_5_7e6c0b5c0f.png"
-            alt="Image 1"
+            src='https://fixtura.s3.ap-southeast-2.amazonaws.com/Example_Small_5_7e6c0b5c0f.png'
+            alt='Image 1'
             className={styles.scaleIn}
           />
           <img
-            src="https://fixtura.s3.ap-southeast-2.amazonaws.com/Example_Small_6_d29b2f6086.png"
-            alt="Image 2"
+            src='https://fixtura.s3.ap-southeast-2.amazonaws.com/Example_Small_6_d29b2f6086.png'
+            alt='Image 2'
             className={styles.scaleIn}
           />
           <img
-            src="https://fixtura.s3.ap-southeast-2.amazonaws.com/Example_Small_7_d2363485df.png"
-            alt="Image 3"
+            src='https://fixtura.s3.ap-southeast-2.amazonaws.com/Example_Small_7_d2363485df.png'
+            alt='Image 3'
             className={styles.scaleIn}
           />
           <img
-            src="https://fixtura.s3.ap-southeast-2.amazonaws.com/Example_Small_8_d665e00bce.png"
-            alt="Image 4"
+            src='https://fixtura.s3.ap-southeast-2.amazonaws.com/Example_Small_8_d665e00bce.png'
+            alt='Image 4'
             className={styles.scaleIn}
           />
         </div>
@@ -59,7 +59,7 @@ export default CTA;
 
 const CTABUTTON = ({ styles }) => {
   return (
-    <Link legacyBehavior href="/sign-up/">
+    <Link legacyBehavior href='/sign-up/'>
       <a className={`${styles.getStartedButton} btn btn-secondary`}>
         Get Started with Fixtura
       </a>

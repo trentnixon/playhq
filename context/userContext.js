@@ -1,28 +1,48 @@
-import { createContext, useContext, useEffect, useState } from "react";
-import { useAccount } from "../Hooks/useAccount";
-import { getTrialStatus } from "../lib/actions";
-import { getTrialNotificationStatus } from "../lib/members/getTrialNotificationStatus";
+import {
+  createContext,
+  useContext,
+  useEffect,
+  useState,
+  useCallback,
+  useRef,
+} from 'react';
+import { useAccount } from '../Hooks/useAccount';
+import { getTrialStatus } from '../lib/actions';
+import { getTrialNotificationStatus } from '../lib/members/getTrialNotificationStatus';
 
-export const AccountDetails = createContext({ account: null });
+export const AccountDetails = createContext({
+  account: null,
+  ReRender: () => {},
+  forceRefresh: () => {},
+});
 export const useAccountDetails = () => useContext(AccountDetails);
 
 export const AccountDetailsProvider = ({ children }) => {
   const [account, setAccount] = useState(null);
   const [Accountdata, fetch] = useAccount();
-  const [settings, setSettings] = useState(false);
+  const processedDataRef = useRef(null);
 
-  const ReRender = () => {
-    setSettings(!settings);
-  };
-
-  useEffect(() => {
-    console.log("Fetching data...");
+  const ReRender = useCallback(() => {
+    // Clear processed data to force fresh processing
+    processedDataRef.current = null;
+    // Force a fresh fetch by calling fetch directly
     fetch();
-  }, [settings]);
+  }, [fetch]);
+
+  // Force refresh function that clears processed data and fetches new data
+  const forceRefresh = useCallback(() => {
+    processedDataRef.current = null;
+    fetch();
+  }, [fetch]);
 
   useEffect(() => {
-    if (Accountdata) {
-      console.log("Data fetched: ", Accountdata);
+    fetch();
+  }, [fetch]);
+
+  useEffect(() => {
+    if (Accountdata && processedDataRef.current !== Accountdata.id) {
+      processedDataRef.current = Accountdata.id;
+
       // Determine the trial status
       const trialStatus = getTrialStatus(Accountdata);
 
@@ -31,8 +51,11 @@ export const AccountDetailsProvider = ({ children }) => {
         ...Accountdata,
         attributes: {
           ...Accountdata.attributes,
-          trialStatus: trialStatus.status,
-          trialNotificationStatus: getTrialNotificationStatus(account),
+          trialStatus:
+            trialStatus && typeof trialStatus === 'object'
+              ? trialStatus.status
+              : false,
+          trialNotificationStatus: getTrialNotificationStatus(Accountdata),
         },
       };
       setAccount(updatedAccountData);
@@ -40,7 +63,7 @@ export const AccountDetailsProvider = ({ children }) => {
   }, [Accountdata]);
 
   return (
-    <AccountDetails.Provider value={{ account, ReRender }}>
+    <AccountDetails.Provider value={{ account, ReRender, forceRefresh }}>
       {children}
     </AccountDetails.Provider>
   );

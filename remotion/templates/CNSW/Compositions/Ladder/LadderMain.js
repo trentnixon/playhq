@@ -1,11 +1,11 @@
-import React from "react";
-import styled from "styled-components";
-import { Sequence, Series } from "remotion";
+import React from 'react';
+import styled from 'styled-components';
+import { Sequence, Series } from 'remotion';
 
-import { LadderPositions } from "./Sections";
-import { LadderContainer } from "./Sections/LadderContainer";
+import { LadderPositions } from './Sections';
+import { LadderContainer } from './Sections/LadderContainer';
 
-export const LadderMain = (props) => {
+export const LadderMain = props => {
   const { DATA, FPS_LADDER } = props;
   return (
     <FixtureContainer>

@@ -1,8 +1,8 @@
-import { useState } from "react";
-import { CreateaSponsorForm } from "../Form/TheForm";
+import { useState } from 'react';
+import { CreateaSponsorForm } from '../Form/TheForm';
 
-import { BTN_ONCLICK } from "../../../../Members/Common/utils/Buttons";
-import { useAccountDetails } from "../../../../../context/userContext";
+import { BTN_ONCLICK } from '../../../../Members/Common/utils/Buttons';
+import { useAccountDetails } from '../../../../../context/userContext';
 
 export const EditSponsor = ({ Sponsor, setHasEdit, Order }) => {
   // HOOKS

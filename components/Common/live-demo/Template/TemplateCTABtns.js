@@ -1,6 +1,6 @@
-import { Group, Button } from "@mantine/core";
-import { BTN_ONCLICK } from "../../../Members/Common/utils/Buttons";
-import { FixturaLoading } from "../../../Members/Common/Loading";
+import { Group, Button } from '@mantine/core';
+import { BTN_ONCLICK } from '../../../Members/Common/utils/Buttons';
+import { FixturaLoading } from '../../../Members/Common/Loading';
 
 const TemplateCTABtns = ({
   loading,
@@ -9,20 +9,20 @@ const TemplateCTABtns = ({
   isSelectedTemplate,
   error,
 }) => (
-  <Group position="right" mb="md"> 
+  <Group position='right' mb='md'>
     {loading ? (
       <FixturaLoading />
     ) : (
       <>
         <BTN_ONCLICK
-          THEME="error"
-          LABEL="Back to Templates"
+          THEME='error'
+          LABEL='Back to Templates'
           HANDLE={handleBackClick}
         />
         {!isSelectedTemplate ? (
           <BTN_ONCLICK
-            THEME="success"
-            LABEL="Select this template"
+            THEME='success'
+            LABEL='Select this template'
             HANDLE={handleSelectTemplate}
           />
         ) : (
@@ -30,7 +30,7 @@ const TemplateCTABtns = ({
         )}
       </>
     )}
-    {error && <div style={{ color: "red" }}>{error}</div>}
+    {error && <div style={{ color: 'red' }}>{error}</div>}
   </Group>
 );
 

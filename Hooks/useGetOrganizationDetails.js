@@ -1,8 +1,8 @@
-import Cookies from "js-cookie";
-import { useEffect, useState } from "react";
-import { fetcher } from "../lib/api";
-import { getAccountFromLocalCookie } from "../lib/auth";
-const qs = require("qs");
+import Cookies from 'js-cookie';
+import { useEffect, useState } from 'react';
+import { fetcher } from '../lib/api';
+import { getAccountFromLocalCookie } from '../lib/auth';
+const qs = require('qs');
 
 export const useGetOrganizationDetails = (accountType, accountId) => {
   const [data, setData] = useState(null);
@@ -17,16 +17,16 @@ export const useGetOrganizationDetails = (accountType, accountId) => {
             gameHistory: {
               fields: [], // Leave empty to exclude all fields from gameHistory
             },
-            grades:true
+            grades: true,
           },
           fields: [
-            "teamName",
-            "gamesPlayed",
-            "wins",
-            "losses",
-            "form",
-            "href",
-            "teamID",
+            'teamName',
+            'gamesPlayed',
+            'wins',
+            'losses',
+            'form',
+            'href',
+            'teamID',
           ], // Specify the fields you want to include
         },
         associations: true, // Include all fields for associations
@@ -51,7 +51,7 @@ export const useGetOrganizationDetails = (accountType, accountId) => {
                 },
               },
               // Include only the 'teamName' field for each team
-              fields: ["teamName"],
+              fields: ['teamName'],
             },
           },
         },
@@ -74,21 +74,21 @@ export const useGetOrganizationDetails = (accountType, accountId) => {
       try {
         //console.log("accountType", accountType)
         const endpoint =
-          accountType === "Association"
+          accountType === 'Association'
             ? `/associations/${accountId}`
             : `/clubs/${accountId}`;
 
         const query =
-          accountType === "Association" ? Assoicationquery : Clubquery;
+          accountType === 'Association' ? Assoicationquery : Clubquery;
 
         const response = await fetcher(
           `${process.env.NEXT_PUBLIC_STRAPI_URL}${endpoint}?${query}`,
           {
-            method: "GET",
+            method: 'GET',
             headers: {
-              Accept: "application/json",
-              "Content-Type": "application/json",
-              Authorization: `Bearer ${Cookies.get("jwt")}`,
+              Accept: 'application/json',
+              'Content-Type': 'application/json',
+              Authorization: `Bearer ${Cookies.get('jwt')}`,
             },
           }
         );
@@ -96,7 +96,7 @@ export const useGetOrganizationDetails = (accountType, accountId) => {
         setData(response);
       } catch (err) {
         setError(err);
-        console.error("Error fetching organization details:", err);
+        console.error('Error fetching organization details:', err);
       } finally {
         setLoading(false);
       }

@@ -1,6 +1,6 @@
-import React from "react";
-import { H1, HighlightSpan } from "../../Primitives/Text";
-import styles from "./AgitateHeader.module.scss";
+import React from 'react';
+import { H1, HighlightSpan } from '../../Primitives/Text';
+import styles from './AgitateHeader.module.scss';
 
 const AgitateHeader = () => {
   return (

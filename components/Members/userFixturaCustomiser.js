@@ -1,8 +1,8 @@
 //import { Stack, Space } from "@mantine/core";
 //import { Wrapper } from "./Common/Containers";
 //import { SelectFixturaSetting } from "./Common/formelements/Select_FixturaSettings";
-import { P } from "./Common/Type";
-import { SelectATheme } from "./Common/Customiser/Design/SelectATheme";
+import { P } from './Common/Type';
+import { SelectATheme } from './Common/Customiser/Design/SelectATheme';
 
 export const FixturaCustomiser = ({ user, setHasUpdated }) => {
   //console.log(user);
@@ -24,13 +24,13 @@ export const FixturaCustomiser = ({ user, setHasUpdated }) => {
 }; */
 
 /* <LabelMe label="Select a Template" />
-      <ShadowWrapper size={"lg"}> 
+      <ShadowWrapper size={"lg"}>
         <SelectFixturaSetting
           CollectionFrom={"templates"}
           CollectionSaveTo={"accounts"}
           RelationProperty={"template"}
           COLLECTIONID={user.id}
-          SelectedBaseValueObject={user.attributes?.template?.data?.attributes}
+          SelectedBaseValueObject={user.attributes?.template_option?.data?.attributes}
           SelectLabel={"Select a Template"}
           SelectPlaceholder={"Select a Template"}
           user={user}
@@ -40,7 +40,7 @@ export const FixturaCustomiser = ({ user, setHasUpdated }) => {
 /* <Space h="lg" />
       <LabelMe label="Select Background Music" />
       <ShadowWrapper size={"lg"}>
-      
+
       <SelectFixturaSetting
         CollectionFrom={"audio-options"}
         CollectionSaveTo={"accounts"}
@@ -55,7 +55,7 @@ export const FixturaCustomiser = ({ user, setHasUpdated }) => {
         setHasUpdated={setHasUpdated}
       />
       </ShadowWrapper> */
-/* 
+/*
       <SelectFixturaSetting
         CollectionFrom={"themes"}
         CollectionSaveTo={"accounts"}

@@ -12,9 +12,9 @@ const AnimatedScene = () => {
     zCoef: 10,
     lightIntensity: 0.9,
     ambientColor: 0x000000,
-    light1Color: 0x0E09DC,
-    light2Color: 0x1CD1E1,
-    light3Color: 0x18C02C,
+    light1Color: 0x0e09dc,
+    light2Color: 0x1cd1e1,
+    light3Color: 0x18c02c,
     light4Color: 0xee3bcf,
     width: 100,
     height: 100,
@@ -31,19 +31,35 @@ const AnimatedScene = () => {
     const time = frame * 0.01; // Adjust the animation speed
     const d = 50;
 
-    const light1 = new THREE.PointLight(conf.light1Color, conf.lightIntensity, lightDistance);
+    const light1 = new THREE.PointLight(
+      conf.light1Color,
+      conf.lightIntensity,
+      lightDistance
+    );
     light1.position.set(Math.sin(time * 0.1) * d, y, Math.cos(time * 0.2) * d);
     scene.add(light1);
 
-    const light2 = new THREE.PointLight(conf.light2Color, conf.lightIntensity, lightDistance);
+    const light2 = new THREE.PointLight(
+      conf.light2Color,
+      conf.lightIntensity,
+      lightDistance
+    );
     light2.position.set(Math.cos(time * 0.3) * d, -y, Math.sin(time * 0.4) * d);
     scene.add(light2);
 
-    const light3 = new THREE.PointLight(conf.light3Color, conf.lightIntensity, lightDistance);
+    const light3 = new THREE.PointLight(
+      conf.light3Color,
+      conf.lightIntensity,
+      lightDistance
+    );
     light3.position.set(Math.sin(time * 0.5) * d, y, Math.sin(time * 0.6) * d);
     scene.add(light3);
 
-    const light4 = new THREE.PointLight(conf.light4Color, conf.lightIntensity, lightDistance);
+    const light4 = new THREE.PointLight(
+      conf.light4Color,
+      conf.lightIntensity,
+      lightDistance
+    );
     light4.position.set(Math.sin(time * 0.7) * d, y, Math.cos(time * 0.8) * d);
     scene.add(light4);
 

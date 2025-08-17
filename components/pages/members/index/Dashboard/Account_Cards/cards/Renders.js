@@ -1,10 +1,13 @@
-import { ThemeIcon, Progress, Text, Group, Paper, rem } from "@mantine/core";
-import React, { useEffect, useState } from "react";
-import { useStyles } from "../../DashboardCardStyles"; // Import the styles
-import { useGetSchedulerDetails } from "../../../../../../../Hooks/useDashBoard";
-import { FixturaLoading } from "../../../../../../Members/Common/Loading";
-import { BTN_TOINTERALLINK } from "../../../../../../Members/Common/utils/Buttons";
-import { getContrastColor, lightenColor } from "../../../../../../../utils/actions";
+import { ThemeIcon, Progress, Text, Group, Paper, rem } from '@mantine/core';
+import React, { useEffect, useState } from 'react';
+import { useStyles } from '../../DashboardCardStyles'; // Import the styles
+import { useGetSchedulerDetails } from '../../../../../../../Hooks/useDashBoard';
+import { FixturaLoading } from '../../../../../../Members/Common/Loading';
+import { BTN_TOINTERALLINK } from '../../../../../../Members/Common/utils/Buttons';
+import {
+  getContrastColor,
+  lightenColor,
+} from '../../../../../../../utils/actions';
 
 const ICON_SIZE = rem(60);
 
@@ -40,37 +43,43 @@ export const DashBoardRenders = ({ IconComponent, schedulerID, Theme }) => {
   }
 
   if (!stats.totalRenders) {
-    return <ZeroItemsState classes={classes} IconComponent={IconComponent} stats={stats}/>;
+    return (
+      <ZeroItemsState
+        classes={classes}
+        IconComponent={IconComponent}
+        stats={stats}
+      />
+    );
   }
   return (
     <Paper
-      radius="md"
+      radius='md'
       withBorder
-      shadow="md"
+      shadow='md'
       className={classes.card}
       mt={`calc(${ICON_SIZE} / 3)`}
     >
       <ThemeIcon
-        color={"green.5"}
+        color={'green.5'}
         className={classes.icon}
         size={ICON_SIZE}
         radius={ICON_SIZE}
       >
-        <IconComponent size="2rem" stroke={1.5} color={"white"} />
+        <IconComponent size='2rem' stroke={1.5} color={'white'} />
       </ThemeIcon>
 
-      <Text ta="center" fw={700} className={classes.title}>
+      <Text ta='center' fw={700} className={classes.title}>
         {stats.totalRenders}
       </Text>
-      <Text c="dimmed" ta="center" fz="sm">
+      <Text c='dimmed' ta='center' fz='sm'>
         Bundles
       </Text>
 
-      <Group position="apart" mt="xs">
-        <Text fz="sm" color="dimmed">
+      <Group position='apart' mt='xs'>
+        <Text fz='sm' color='dimmed'>
           Email Sent
         </Text>
-        <Text fz="sm" color="dimmed">
+        <Text fz='sm' color='dimmed'>
           {((stats.emailSent / stats.totalRenders) * 100).toFixed(0)}%
         </Text>
       </Group>
@@ -78,29 +87,26 @@ export const DashBoardRenders = ({ IconComponent, schedulerID, Theme }) => {
       <Progress
         value={(stats.emailSent / stats.totalRenders) * 100}
         mt={5}
-        color="cyan.5"
+        color='cyan.5'
       />
-      <Group position="apart" mt="md">
-        <Text fz="sm">{`${stats.emailSent} / ${stats.totalRenders}`}</Text>
-        <Text c="dimmed" ta="center" fz="sm">
+      <Group position='apart' mt='md'>
+        <Text fz='sm'>{`${stats.emailSent} / ${stats.totalRenders}`}</Text>
+        <Text c='dimmed' ta='center' fz='sm'>
           Next Order: {stats.DeliveryDay}
         </Text>
       </Group>
-      <Group position="right" mt="md">
-        <BTN_TOINTERALLINK
-          LABEL={"View Bundles"}
-          URL={"members/bundles/"}
-        />
+      <Group position='right' mt='md'>
+        <BTN_TOINTERALLINK LABEL={'View Bundles'} URL={'members/bundles/'} />
       </Group>
     </Paper>
   );
 };
 
-const ZeroItemsState = ({ classes, IconComponent,stats }) => (
+const ZeroItemsState = ({ classes, IconComponent, stats }) => (
   <Paper
-    radius="md"
+    radius='md'
     withBorder
-    shadow="md"
+    shadow='md'
     className={classes.card}
     mt={`calc(${ICON_SIZE} / 3)`}
   >
@@ -110,30 +116,30 @@ const ZeroItemsState = ({ classes, IconComponent,stats }) => (
       size={ICON_SIZE}
       radius={ICON_SIZE}
     >
-      <IconComponent size="2rem" stroke={1.5} color={`white`} />
+      <IconComponent size='2rem' stroke={1.5} color={`white`} />
     </ThemeIcon>
-    <Text ta="center" fw={700} className={classes.title}>
+    <Text ta='center' fw={700} className={classes.title}>
       {0}
     </Text>
-    <Text c="dimmed" ta="center" fz="sm">
+    <Text c='dimmed' ta='center' fz='sm'>
       Bundles
     </Text>
-    <Text c="dimmed" ta="center" fz="sm">
+    <Text c='dimmed' ta='center' fz='sm'>
       Your first bundle will be ready 1 week before the first fixture.
     </Text>
     <Progress
-        value={(stats.emailSent / stats.totalRenders) * 100}
-        mt={5}
-        color="cyan.5"
-      />
-    <Group position="apart" mt="md">
-        <Text fz="sm">{`${stats.emailSent} / ${stats.totalRenders}`}</Text>
-        <Text c="dimmed" ta="center" fz="sm">
-          Next Order: {stats.DeliveryDay}
-        </Text>
-      </Group>
-    <Group position="center" mt="md">
-      <BTN_TOINTERALLINK LABEL={"View Bundles"} URL={"members/bundles/"} />
+      value={(stats.emailSent / stats.totalRenders) * 100}
+      mt={5}
+      color='cyan.5'
+    />
+    <Group position='apart' mt='md'>
+      <Text fz='sm'>{`${stats.emailSent} / ${stats.totalRenders}`}</Text>
+      <Text c='dimmed' ta='center' fz='sm'>
+        Next Order: {stats.DeliveryDay}
+      </Text>
+    </Group>
+    <Group position='center' mt='md'>
+      <BTN_TOINTERALLINK LABEL={'View Bundles'} URL={'members/bundles/'} />
     </Group>
   </Paper>
 );
@@ -144,16 +150,16 @@ const ZeroItemsState = ({ classes, IconComponent,stats }) => (
  * @param {Object} schedulerData - The scheduler data object
  * @returns {Object} Calculated statistics
  */
-const calculateStats = (schedulerData) => {
+const calculateStats = schedulerData => {
   const totalRenders = schedulerData.renders.data.length;
   const completedRenders = schedulerData.renders.data.filter(
-    (render) => render.attributes.Complete
+    render => render.attributes.Complete
   ).length;
   const processingRenders = schedulerData.renders.data.filter(
-    (render) => render.attributes.Processing
+    render => render.attributes.Processing
   ).length;
   const emailSent = schedulerData.renders.data.filter(
-    (render) => render.attributes.sendEmail
+    render => render.attributes.sendEmail
   ).length;
 
   return {

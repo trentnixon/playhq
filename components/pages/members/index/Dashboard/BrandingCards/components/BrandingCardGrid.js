@@ -1,24 +1,24 @@
-import { SimpleGrid } from "@mantine/core";
+import { SimpleGrid } from '@mantine/core';
 
-import { IconBrush } from "@tabler/icons";
-import { useAccountDetails } from "../../../../../../../context/userContext";
-import { DashBoardGalleryItems } from "../cards/GalleryItems";
-import { IconPhotoPlus } from "@tabler/icons-react";
-import { DashBoardTheme } from "../cards/Theme";
-import { DashBoardAssets } from "../cards/Assets";
+import { IconBrush } from '@tabler/icons';
+import { useAccountDetails } from '../../../../../../../context/userContext';
+import { DashBoardGalleryItems } from '../cards/GalleryItems';
+import { IconPhotoPlus } from '@tabler/icons-react';
+import { DashBoardTheme } from '../cards/Theme';
+import { DashBoardAssets } from '../cards/Assets';
 
 export const BrandingCardGrid = ({ commonProps }) => {
   const { account } = useAccountDetails();
 
   const brandingConfig = [
     {
-      title: "Gallery",
+      title: 'Gallery',
       component: DashBoardGalleryItems,
       icon: IconPhotoPlus,
       extraProps: {},
     },
     {
-      title: "Theme",
+      title: 'Theme',
       component: DashBoardTheme,
       icon: IconBrush,
       extraProps: {
@@ -26,11 +26,11 @@ export const BrandingCardGrid = ({ commonProps }) => {
       },
     },
     {
-      title: "Assets",
+      title: 'Assets',
       component: DashBoardAssets,
       icon: IconBrush,
       extraProps: {
-        template: account.attributes.template.data,
+        template: account.attributes.template_option?.data?.attributes || null,
       },
     },
   ];
@@ -38,11 +38,11 @@ export const BrandingCardGrid = ({ commonProps }) => {
   return (
     <SimpleGrid
       cols={3}
-      spacing="xs"
+      spacing='xs'
       breakpoints={[
-        { maxWidth: "62rem", cols: 3, spacing: "md" },
-        { maxWidth: "48rem", cols: 2, spacing: "sm" },
-        { maxWidth: "36rem", cols: 1, spacing: "sm" },
+        { maxWidth: '62rem', cols: 3, spacing: 'md' },
+        { maxWidth: '48rem', cols: 2, spacing: 'sm' },
+        { maxWidth: '36rem', cols: 1, spacing: 'sm' },
       ]}
     >
       {brandingConfig.map((item, index) => {

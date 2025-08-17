@@ -1,9 +1,9 @@
-import { P } from "../../../../Members/Common/Type";
+import { P } from '../../../../Members/Common/Type';
 
 export const ClubName = ({ ClubName }) => {
-    return (
-      <P marginBottom={0} size={20} Weight={600}>
-        {ClubName}
-      </P>
-    );
-  };
+  return (
+    <P marginBottom={0} size={20} Weight={600}>
+      {ClubName}
+    </P>
+  );
+};

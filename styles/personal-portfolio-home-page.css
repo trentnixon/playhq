@@ -20,7 +20,7 @@
   content: '';
   position: absolute;
   -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  transform: translateY(-50%);
   background-color: #111;
 }
 
@@ -56,8 +56,8 @@
   content: '';
   position: absolute;
   -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  background-color: #339AF0;
+  transform: translateY(-50%);
+  background-color: #339af0;
 }
 
 .personal-portfolio-banner-content h1 {
@@ -90,7 +90,7 @@
   top: 100px;
   z-index: -1;
   -webkit-animation: moveleftbounce 5s linear infinite;
-          animation: moveleftbounce 5s linear infinite;
+  animation: moveleftbounce 5s linear infinite;
 }
 
 .pp-shape1 img {
@@ -186,7 +186,7 @@
   -webkit-transition: all 0.6s ease;
   transition: all 0.6s ease;
   -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  transform: translateY(-50%);
   color: #fff;
   background-color: rgba(0, 0, 0, 0.75);
   padding: 15px;
@@ -197,7 +197,7 @@
 
 .pp-works-box:hover img {
   -webkit-transform: scale(1.05);
-          transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 .pp-works-box:hover h3 {
@@ -256,7 +256,9 @@
   padding-bottom: 0;
 }
 
-.short-brief-content .timeline-item:not(.period):hover .timeline-marker::before {
+.short-brief-content
+  .timeline-item:not(.period):hover
+  .timeline-marker::before {
   background: transparent;
   border: 3px solid var(--blackColor);
 }
@@ -270,8 +272,12 @@
 }
 
 .short-brief-content .timeline-marker::before {
-  -webkit-transition: background 0.3s ease-in-out, border 0.3s ease-in-out;
-  transition: background 0.3s ease-in-out, border 0.3s ease-in-out;
+  -webkit-transition:
+    background 0.3s ease-in-out,
+    border 0.3s ease-in-out;
+  transition:
+    background 0.3s ease-in-out,
+    border 0.3s ease-in-out;
   background: var(--blackColor);
   border: 3px solid transparent;
   border-radius: 100%;
@@ -279,7 +285,7 @@
   display: block;
   height: 15px;
   width: 15px;
-  content: "";
+  content: '';
   top: 4px;
   left: 0;
 }
@@ -288,7 +294,7 @@
   background: #eeeeee;
   position: absolute;
   display: block;
-  content: "";
+  content: '';
   top: 24px;
   bottom: 0;
   left: 6px;
@@ -371,7 +377,7 @@
   display: block;
   font-weight: 500;
   color: #111;
-  opacity: .85;
+  opacity: 0.85;
 }
 
 .pp-testimonials-box:hover {
@@ -423,7 +429,7 @@
 
 .pp-testimonials-slides .swiper-button-prev::after {
   font-family: FontAwesome;
-  content: "\f060";
+  content: '\f060';
   color: #18181b;
   font-size: 18px;
 }
@@ -440,16 +446,18 @@
 
 .pp-testimonials-slides .swiper-button-next::after {
   font-family: FontAwesome;
-  content: "\f061";
+  content: '\f061';
   color: #18181b;
   font-size: 18px;
 }
 
-.pp-testimonials-slides .swiper-button-prev:hover, .pp-testimonials-slides .swiper-button-next:hover {
-  background-color: #339AF0;
+.pp-testimonials-slides .swiper-button-prev:hover,
+.pp-testimonials-slides .swiper-button-next:hover {
+  background-color: #339af0;
 }
 
-.pp-testimonials-slides .swiper-button-prev:hover::after, .pp-testimonials-slides .swiper-button-next:hover::after {
+.pp-testimonials-slides .swiper-button-prev:hover::after,
+.pp-testimonials-slides .swiper-button-next:hover::after {
   color: #fff;
 }
 
@@ -527,7 +535,7 @@
 }
 
 .pp-post-item .post-content h3 a:hover {
-  color: #339AF0;
+  color: #339af0;
 }
 
 .pp-post-item .post-content .link-btn {
@@ -588,7 +596,7 @@
 }
 
 .pp-contact-area .contact-title p a:hover {
-  color: #339AF0;
+  color: #339af0;
 }
 
 /* Responsive CSS 

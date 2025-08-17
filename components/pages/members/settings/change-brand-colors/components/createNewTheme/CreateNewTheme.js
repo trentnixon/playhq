@@ -1,24 +1,24 @@
-import { useEffect, useState } from "react";
-import hexRgb from "hex-rgb";
-import { Table, useMantineTheme } from "@mantine/core";
-import { useMediaQuery } from "@mantine/hooks";
+import { useEffect, useState } from 'react';
+import hexRgb from 'hex-rgb';
+import { Table, useMantineTheme } from '@mantine/core';
+import { useMediaQuery } from '@mantine/hooks';
 import {
-  UserCreateTheme, 
+  UserCreateTheme,
   UserUpdateTheme,
-} from "../../../../../../../Hooks/useCustomizer";
-import SketchExample from "../../../../../../Members/Common/Customiser/Design/Components/ColorPicker";
-import { FixturaLoading } from "../../../../../../Members/Common/Loading";
-import { CreateANewTheme, UseBaseColor } from "./functions";
-import { CTA_BTNS } from "./CTA_BTNS";
-import { SelectColorLabel } from "./SelectColorLabel";
-import { BTN_ReverseColors } from "./BTN_ReverseColors";
+} from '../../../../../../../Hooks/useCustomizer';
+import SketchExample from '../../../../../../Members/Common/Customiser/Design/Components/ColorPicker';
+import { FixturaLoading } from '../../../../../../Members/Common/Loading';
+import { CreateANewTheme, UseBaseColor } from './functions';
+import { CTA_BTNS } from './CTA_BTNS';
+import { SelectColorLabel } from './SelectColorLabel';
+import { BTN_ReverseColors } from './BTN_ReverseColors';
 /* CreateNewTheme * ***************************** */
- 
-export const CreateNewTheme = (props) => {
+
+export const CreateNewTheme = props => {
   const { userAccount, setCreateNew, ReRender, GetElement } = props;
 
-  const [Primary, SetPrimary] = useState(false);
-  const [Secondary, SetSecondary] = useState(false);
+  const [Primary, SetPrimary] = useState(null);
+  const [Secondary, SetSecondary] = useState(null);
   const [disabled, setDisabled] = useState(true);
 
   const [THEME, CreateTHEME] = UserCreateTheme();
@@ -27,11 +27,11 @@ export const CreateNewTheme = (props) => {
   const theme = useMantineTheme();
   const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
   const CTHEME = GetElement.filter(
-    (item) => item.attributes.CreatedBy === userAccount.id
+    item => item.attributes.CreatedBy === userAccount.id
   );
- 
+
   useEffect(() => {
-    if (Primary !== false && Secondary !== false) {
+    if (Primary !== null && Secondary !== null) {
       setDisabled(false);
     } else {
       setDisabled(true);
@@ -81,8 +81,9 @@ export const CreateNewTheme = (props) => {
     const CreatedOBJ = CreateANewTheme(userInfo, { Primary, Secondary });
 
     ThemeID
-      ? UpdateTHEME(CreatedOBJ.Theme, ThemeID)
-      : CreateTHEME(CreatedOBJ.Theme);
+      ? typeof UpdateTHEME === 'function' &&
+        UpdateTHEME(CreatedOBJ.Theme, ThemeID)
+      : typeof CreateTHEME === 'function' && CreateTHEME(CreatedOBJ.Theme);
   };
 
   if (IsLoading) return <FixturaLoading />;
@@ -90,7 +91,7 @@ export const CreateNewTheme = (props) => {
     <>
       <BTN_ReverseColors handleReverseColors={handleReverseColors} />
 
-      <Table verticalSpacing="md">
+      <Table verticalSpacing='md'>
         <tbody>
           <tr>
             {mobile ? (
@@ -101,9 +102,9 @@ export const CreateNewTheme = (props) => {
               </td>
             )}
 
-            <td style={{ textAlign: "right" }}>
+            <td style={{ textAlign: 'right' }}>
               <SketchExample
-                key={Primary + Secondary}
+                key='primary-color-picker'
                 SetColor={SetPrimary}
                 UsersTheme={UseBaseColor(Primary)}
               />
@@ -129,9 +130,9 @@ export const CreateNewTheme = (props) => {
               </td>
             )}
 
-            <td style={{ textAlign: "right" }}>
+            <td style={{ textAlign: 'right' }}>
               <SketchExample
-                key={Secondary + Primary}
+                key='secondary-color-picker'
                 SetColor={SetSecondary}
                 UsersTheme={UseBaseColor(Secondary)}
               />

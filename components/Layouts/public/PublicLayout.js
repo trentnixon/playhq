@@ -1,3 +1,3 @@
 export const PublicLayout = ({ children }) => {
-    return <main>{children}</main>;
-  };
+  return <main>{children}</main>;
+};

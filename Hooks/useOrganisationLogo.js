@@ -1,9 +1,9 @@
-import Cookies from "js-cookie";
-import { useState } from "react";
-import { fetcher } from "../lib/api";
-import { getAccountIDFromServer } from "../lib/auth";
+import Cookies from 'js-cookie';
+import { useState } from 'react';
+import { fetcher } from '../lib/api';
+import { getAccountIDFromServer } from '../lib/auth';
 
-export const useSetLogo = (ctx) => {
+export const useSetLogo = ctx => {
   const [Logo, setLogo] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
@@ -20,11 +20,11 @@ export const useSetLogo = (ctx) => {
         const res = await fetcher(
           `${process.env.NEXT_PUBLIC_STRAPI_URL}${PATH}${_ID}`,
           {
-            method: "PUT",
+            method: 'PUT',
             headers: {
-              Accept: "application/json",
-              "Content-Type": "application/json",
-              Authorization: `Bearer ${Cookies.get("jwt")}`,
+              Accept: 'application/json',
+              'Content-Type': 'application/json',
+              Authorization: `Bearer ${Cookies.get('jwt')}`,
             },
             body: JSON.stringify(OBJ),
           }

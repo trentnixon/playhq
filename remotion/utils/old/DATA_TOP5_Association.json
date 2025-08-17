@@ -1,10 +1,7 @@
 {
   "Video": {
     "Title": "Top 5",
-    "TitleSplit": [
-      "Weekend",
-      "Run-Scorers"
-    ],
+    "TitleSplit": ["Weekend", "Run-Scorers"],
     "CompositionID": "Top5BattingList",
     "includeSponsors": true,
     "VideoTitle": "Logan District Cricket Association Top 5",
@@ -26,11 +23,7 @@
   "Club": {
     "Name": "AKS Jets Cricket Club",
     "Logo": "https://fixturaassets.s3.ap-southeast-2.amazonaws.com/runawaybayLogo.png",
-    "Sponsors": [
-      [
-        null
-      ]
-    ]
+    "Sponsors": [[null]]
   },
   "DATA": [
     {

@@ -1,7 +1,7 @@
 // ProblemStats.jsx
-import React from "react";
-import { H2, P } from "../../Primitives/Text";
-import styles from "./ProblemStats.module.scss";
+import React from 'react';
+import { H2, P } from '../../Primitives/Text';
+import styles from './ProblemStats.module.scss';
 
 const ProblemStats = () => {
   return (
