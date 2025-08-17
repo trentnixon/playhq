@@ -1,6 +1,9 @@
 import { useEffect, useRef, useCallback, useState } from 'react';
-import { useOnboarding } from '../hooks/useOnboarding';
-import { saveOnboardingProgress } from '../lib/onboardingApi';
+import { useOnboarding } from '../Hooks/useOnboarding';
+import {
+  saveOnboardingProgress,
+  loadOnboardingProgress,
+} from '../lib/onboardingApi';
 import {
   saveToLocalStorage,
   loadFromLocalStorage,
