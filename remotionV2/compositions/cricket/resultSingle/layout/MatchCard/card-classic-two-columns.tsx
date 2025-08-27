@@ -13,7 +13,7 @@ interface MatchCardProps {
   match: MatchResult;
 }
 
-const SixersMatchCard: React.FC<MatchCardProps> = ({ match }) => {
+const ClassicTwoColumnsMatchCard: React.FC<MatchCardProps> = ({ match }) => {
   const { animations } = useAnimationContext();
 
   // Animation setup
@@ -32,7 +32,7 @@ const SixersMatchCard: React.FC<MatchCardProps> = ({ match }) => {
   return (
     <AnimatedContainer
       type="full"
-      className="rounded-lg w-auto mx-8 overflow-hidden h-full"
+      className="rounded-lg w-auto mx-8 overflow-hidden h-full flex flex-col justify-center "
       backgroundColor="none"
       animation={containerAnimation.containerIn}
       animationDelay={baseDelay}
@@ -103,4 +103,4 @@ const SixersMatchCard: React.FC<MatchCardProps> = ({ match }) => {
   );
 };
 
-export default SixersMatchCard;
+export default ClassicTwoColumnsMatchCard;

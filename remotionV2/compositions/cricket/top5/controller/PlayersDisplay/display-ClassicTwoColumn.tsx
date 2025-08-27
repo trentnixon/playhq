@@ -1,6 +1,5 @@
 import React from "react";
 import { PlayerData } from "../../types";
-import PlayerRowSixersThunder from "../PlayerRow/row-SixersThunder";
 import { useThemeContext } from "../../../../../core/context/ThemeContext";
 import { AnimatedContainer } from "../../../../../components/containers/AnimatedContainer";
 import { useAnimationContext } from "../../../../../core/context/AnimationContext";
@@ -8,6 +7,7 @@ import { Sponsor } from "../../../../../core/types/data/sponsors";
 
 import { AssignSponsors } from "../../../composition-types";
 import { SponsorFooter } from "../../../sponsorFooter";
+import PlayerRowClassicTwoColumn from "../PlayerRow/row-ClassicTwoCoulmn";
 
 interface PlayersDisplayProps {
   players: PlayerData[];
@@ -15,7 +15,7 @@ interface PlayersDisplayProps {
   sponsors: Sponsor[];
 }
 
-const PlayersDisplayClassic: React.FC<PlayersDisplayProps> = ({
+const PlayersDisplayClassicTwoColumn: React.FC<PlayersDisplayProps> = ({
   players,
   sponsors,
 }) => {
@@ -24,28 +24,26 @@ const PlayersDisplayClassic: React.FC<PlayersDisplayProps> = ({
   const { animations } = useAnimationContext();
   const ContainerAnimations = animations.container;
 
-  const { rowHeight } = calculateRowDimensions(heights.asset, players.length);
-
   return (
-    <div className="flex flex-col h-full ">
+    <div className="flex flex-col h-full w-full">
       <AnimatedContainer
         type="full"
         className="flex-1 flex flex-col mx-4 overflow-hidden py-32 "
         style={{
-          height: heights.asset,
+          minHeight: heights.asset,
         }}
         backgroundColor="none"
         animation={ContainerAnimations.main.parent.containerIn}
         animationDelay={0}
         exitAnimation={ContainerAnimations.main.parent.containerOut}
       >
-        <div className="flex-1 grid grid-cols-1 gap-2">
+        <div className="flex flex-col h-full gap-2 justify-center ">
           {players.map((player, index) => (
-            <PlayerRowSixersThunder
+            <PlayerRowClassicTwoColumn
               key={player.name}
               player={player}
               index={index}
-              rowHeight={rowHeight}
+              rowHeight={140}
             />
           ))}
         </div>
@@ -57,19 +55,4 @@ const PlayersDisplayClassic: React.FC<PlayersDisplayProps> = ({
   );
 };
 
-// Utility function to calculate row dimensions
-const calculateRowDimensions = (totalHeight: number, playerCount: number) => {
-  const VERTICAL_GAP = 8; // 8rem gap between rows
-  const PADDING = 8; // 8rem padding top and bottom
-  const TITLE_HEIGHT = 48; // Height for the title if present
-
-  const totalVerticalGaps = (playerCount - 1) * VERTICAL_GAP;
-  const availableHeight = totalHeight / 1.3 - PADDING * 2 - TITLE_HEIGHT;
-  const rowHeight = (availableHeight - totalVerticalGaps) / playerCount;
-
-  return {
-    rowHeight,
-  };
-};
-
-export default PlayersDisplayClassic;
+export default PlayersDisplayClassicTwoColumn;

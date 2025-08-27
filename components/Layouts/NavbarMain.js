@@ -69,25 +69,6 @@ const NavbarMain = () => {
                     </a>
                   </Link>
                 </li>
-
-                <li className='nav-item'>
-                  <Link
-                    legacyBehavior
-                    href='/live-demo'
-                    activeClassName='active'
-                  >
-                    <a onClick={closeMenu} className='nav-link'>
-                      Live Demo
-                    </a>
-                  </Link>
-                </li>
-                {/*  <li className="nav-item">
-                  <Link  legacyBehavior  href="/Media-Options" activeClassName="active">
-                    <a onClick={closeMenu} className="nav-link">
-                      Digital Cricket Assets
-                    </a>
-                  </Link>
-                </li> */}
                 <li className='nav-item'>
                   <Link
                     legacyBehavior
@@ -118,29 +99,6 @@ const NavbarMain = () => {
                     </a>
                   </Link>
                 </li>
-                {/*  <li className="nav-item">
-                  <Link  legacyBehavior href="/resources" activeClassName="active">
-                    <a className="nav-link" onClick={() => setMenu(true)}>
-                      Resources
-                    </a>
-                  </Link>
-                </li> */}
-
-                {/* <li className="nav-item">
-                  <Link  legacyBehavior href="/faq" activeClassName="active">
-                    <a onClick={closeMenu} className="nav-link">
-                      FAQ
-                    </a>
-                  </Link>
-                </li> */}
-                {/* <li className="nav-item">
-                  <Link legacyBehavior  href="/contact" activeClassName="active">
-                    <a onClick={closeMenu} className="nav-link">
-                      Contact
-                    </a>
-                  </Link>
-                </li> */}
-
                 <SignIn closeMenu={closeMenu} />
               </ul>
 

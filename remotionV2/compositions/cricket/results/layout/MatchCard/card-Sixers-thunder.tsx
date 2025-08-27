@@ -74,11 +74,6 @@ const MatchCardSixersThunder: React.FC<MatchCardProps> = ({
             height={statsHeight}
             delay={statsDelay}
             maxPlayersPerStat={2}
-            matchType={match.type}
-            matchStatus={match.status}
-            teamHasBatted={
-              (match.homeTeam.battingPerformances || []).length > 0
-            }
           />
 
           <Horizontal_SingleTeam_LogoWithName_Score
@@ -98,11 +93,6 @@ const MatchCardSixersThunder: React.FC<MatchCardProps> = ({
             height={statsHeight}
             delay={statsDelay}
             maxPlayersPerStat={2}
-            matchType={match.type}
-            matchStatus={match.status}
-            teamHasBatted={
-              (match.awayTeam.battingPerformances || []).length > 0
-            }
           />
         </>
       )}

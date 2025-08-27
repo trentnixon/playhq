@@ -47,7 +47,8 @@ const StatItem: React.FC<StatItemProps> = ({
     >
       <div>
         <ResultPlayerName
-          value={truncateText(playerName, 25)}
+          className="whitespace-nowrap"
+          value={truncateText(playerName, 20)}
           variant={textColor}
           animation={{
             ...TextAnimations.copyIn,
@@ -57,6 +58,7 @@ const StatItem: React.FC<StatItemProps> = ({
       </div>
 
       <ResultPlayerScore
+        className="whitespace-nowrap"
         value={statValue}
         variant={textColor}
         animation={{
