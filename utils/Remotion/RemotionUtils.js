@@ -6,7 +6,7 @@ import {
 } from '../../lib/actions';
 
 // Import JSDoc types
-import './types.js';
+import './delete/types.js';
 
 // Define the missing update functions
 export const updateUpComingFixtures = (data, useLOGO, accountName) => {

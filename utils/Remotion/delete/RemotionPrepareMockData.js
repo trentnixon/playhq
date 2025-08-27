@@ -1,7 +1,7 @@
 // prepareMockData.js
 
-import { ASSETS } from './RemotionAssets';
-import { createPreviewObject } from './RemotionUtils';
+import { ASSETS } from '../Remotion/RemotionAssets';
+import { createPreviewObject } from '../RemotionUtils.js';
 
 // Import JSDoc types
 import './types.js';
