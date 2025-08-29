@@ -24,10 +24,10 @@ export const MembersLayout = ({ children }) => {
       <MembersHero />
       <Container size={'xl'}>
         <Grid>
-          <Grid.Col span={12} sm={4} md={3}>
+          <Grid.Col span={12} sm={0} md={3}>
             <MembersSidebar />
           </Grid.Col>
-          <Grid.Col span={12} sm={8} md={9}>
+          <Grid.Col span={12} sm={12} md={9}>
             <main>{children}</main>
           </Grid.Col>
         </Grid>

@@ -42,7 +42,7 @@ export const AccountCardGrid = ({ commonProps }) => {
       cols={4}
       spacing='xs'
       breakpoints={[
-        { maxWidth: '62rem', cols: 3, spacing: 'md' },
+        { maxWidth: '62rem', cols: 2, spacing: 'md' },
         { maxWidth: '48rem', cols: 2, spacing: 'sm' },
         { maxWidth: '36rem', cols: 1, spacing: 'sm' },
       ]}
