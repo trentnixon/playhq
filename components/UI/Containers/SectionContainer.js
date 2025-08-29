@@ -33,6 +33,7 @@ export const RoundedSectionContainer = ({
   headerContent,
   topContent,
   bottomContent,
+  className,
   ICON = null,
   padding = 'xl',
 }) => (
@@ -41,7 +42,11 @@ export const RoundedSectionContainer = ({
     <Container p={3} fluid sx={sectionStyles}>
       <Container size='xl' p={0}>
         <Wrapper px={padding}>{topContent}</Wrapper>
-        <RoundedBottomSection content={bottomContent} padding={padding} />
+        <RoundedBottomSection
+          content={bottomContent}
+          padding={padding}
+          className={className}
+        />
       </Container>
     </Container>
   </>

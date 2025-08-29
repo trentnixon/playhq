@@ -18,6 +18,7 @@ import Layout from '../components/Layouts/Layout';
 import '../styles/style.scss';
 import '../styles/responsive.scss';
 import '../styles/tailwind.css';
+import '../styles/navbar-members-mobile.css';
 
 //import Head from "next/head";
 import GoTop from '../components/Layouts/GoTop';

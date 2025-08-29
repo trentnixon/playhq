@@ -1,0 +1,620 @@
+/* Mobile-First Responsive Navbar Styles for Members */
+
+/* Prevent body scroll when mobile menu is open */
+body.mobile-menu-open {
+  overflow: hidden !important;
+}
+
+/* Base nav element styling */
+.navbar-area.navbar-style-2 nav {
+  padding: 0.85rem !important;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  #navbarTwo {
+    padding-top: 0px !important;
+    nav {
+      padding: 0.55rem !important;
+    }
+  }
+}
+/* Base mobile styles */
+@media (max-width: 767px) {
+  .navbar-area.navbar-style-2 {
+    padding: 0.5rem 0;
+    background: transparent;
+    backdrop-filter: none;
+    border-bottom: none;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 1000 !important;
+    transition: all 0.3s ease !important;
+  }
+
+  /* Hide free trial notification on mobile */
+  .navbar-area.navbar-style-2 .flex.flex-row.gap-4 .mantine-Group-root {
+    display: none !important;
+  }
+
+  /* Ensure navbar doesn't constrain mobile menu */
+  .navbar-area.navbar-style-2 .navbar-collapse {
+    position: fixed !important;
+    z-index: 9999 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    left: 0 !important;
+    top: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    transform: translateX(-100%) !important;
+    background: rgba(0, 0, 0, 0.8) !important;
+    backdrop-filter: blur(10px) !important;
+    /* Force full viewport coverage */
+    min-width: 100vw !important;
+    min-height: 100vh !important;
+    max-width: none !important;
+    max-height: none !important;
+    /* Position relative to viewport, not parent */
+    margin: 0 !important;
+    padding: 0 !important;
+    /* Ensure full coverage */
+    overflow: hidden !important;
+    /* Break out of any parent containers */
+    transform-origin: top left !important;
+    contain: none !important;
+    isolation: isolate !important;
+    /* Ensure no parent transforms affect this */
+    transform-style: flat !important;
+    backface-visibility: hidden !important;
+    perspective: none !important;
+    /* Additional styling */
+    border: none !important;
+    border-radius: 0 !important;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    overflow-y: auto !important;
+  }
+
+  .navbar-area.navbar-style-2 .navbar-collapse.show {
+    transform: translateX(0) !important;
+  }
+
+  /* Ensure close button is visible when mobile menu is open */
+  .navbar-area.navbar-style-2 .navbar-collapse.show + .mobile-close-btn,
+  .navbar-area.navbar-style-2 .navbar-collapse.show ~ .mobile-close-btn {
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: flex !important;
+  }
+
+  .navbar-area.navbar-style-2 nav {
+    padding: 0 1rem;
+  }
+
+  .navbar-area.navbar-style-2 .grid {
+    grid-template-columns: 1fr auto !important;
+    gap: 1rem !important;
+    align-items: center;
+    padding: 0 1rem;
+  }
+
+  /* Logo and brand positioning */
+  .navbar-area.navbar-style-2 .navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0 !important;
+  }
+
+  .navbar-area.navbar-style-2 .navbar-brand img {
+    height: 28px;
+    width: auto;
+  }
+
+  .navbar-area.navbar-style-2 .white-logo {
+    height: 28px !important;
+    width: auto !important;
+  }
+
+  /* Header container for logo and free trial notification */
+  .navbar-area.navbar-style-2 .navbar-nav > *:first-child {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    width: 100% !important;
+    margin-bottom: 1.5rem !important;
+    /* Ensure this is positioned at the top */
+    order: -1 !important;
+    flex-shrink: 0 !important;
+  }
+
+  /* Burger menu button styling */
+  .navbar-area.navbar-style-2 .navbar-toggler {
+    background: transparent !important;
+    border: none !important;
+    padding: 0.5rem !important;
+    border-radius: 8px !important;
+    transition: all 0.3s ease !important;
+    position: relative !important;
+    z-index: 1001 !important;
+    /* Override inline styles */
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 44px !important;
+    height: 44px !important;
+    cursor: pointer !important;
+  }
+
+  .navbar-area.navbar-style-2 .navbar-toggler:hover {
+    background: rgba(0, 0, 0, 0.05) !important;
+  }
+
+  .navbar-area.navbar-style-2 .navbar-toggler:focus {
+    outline: none !important;
+    box-shadow: 0 0 0 3px rgba(51, 154, 240, 0.3) !important;
+  }
+
+  /* Burger menu icon bars */
+  .navbar-area.navbar-style-2 .navbar-toggler .icon-bar {
+    width: 24px !important;
+    height: 3px !important;
+    background: #339af0 !important;
+    border-radius: 2px !important;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55) !important;
+    position: relative !important;
+    left: 0 !important;
+    transform-origin: center !important;
+    /* Ensure proper spacing */
+    margin: 0 !important;
+    flex-shrink: 0 !important;
+  }
+
+  .navbar-area.navbar-style-2 .navbar-toggler .top-bar {
+    margin-bottom: 4px !important;
+  }
+
+  .navbar-area.navbar-style-2 .navbar-toggler .middle-bar {
+    margin-bottom: 4px !important;
+    opacity: 1 !important;
+  }
+
+  .navbar-area.navbar-style-2 .navbar-toggler .bottom-bar {
+    margin-bottom: 0 !important;
+  }
+
+  /* Active burger menu state */
+  .navbar-area.navbar-style-2 .navbar-toggler:not(.collapsed) .top-bar {
+    transform: rotate(45deg) translate(6px, 6px) !important;
+  }
+
+  .navbar-area.navbar-style-2 .navbar-toggler:not(.collapsed) .middle-bar {
+    opacity: 0 !important;
+    transform: scaleX(0) !important;
+  }
+
+  .navbar-area.navbar-style-2 .navbar-toggler:not(.collapsed) .bottom-bar {
+    transform: rotate(-45deg) translate(6px, -6px) !important;
+  }
+
+  /* Navigation menu content */
+  .navbar-area.navbar-style-2 .navbar-nav {
+    background: white !important;
+    margin: 0 !important;
+    padding: 3rem 2rem 2rem 2rem !important;
+    height: 100vh !important;
+    width: 100vw !important;
+    max-width: none !important;
+    box-shadow: 2px 0 20px rgba(0, 0, 0, 0.1) !important;
+    overflow-y: auto !important;
+    position: relative !important;
+    z-index: 10000 !important;
+    left: 0 !important;
+    top: 0 !important;
+    /* Use flexbox column layout for proper stacking */
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    /* Ensure content doesn't clip on right side */
+    box-sizing: border-box !important;
+    padding-right: 2rem !important;
+    /* Ensure navigation content fills entire screen */
+    min-width: 100% !important;
+    min-height: 100% !important;
+    /* Account for fixed navbar */
+    margin-top: 0 !important;
+  }
+
+  /* Navigation items */
+  .navbar-area.navbar-style-2 .navbar-nav .nav-item {
+    margin: 0 !important;
+    padding: 0 !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
+    width: 100% !important;
+    max-width: none !important;
+    /* Ensure proper spacing in column layout */
+    margin-bottom: 0.5rem !important;
+    /* Ensure items are positioned at the top since no header */
+    order: 0 !important;
+    flex-shrink: 0 !important;
+    position: relative !important;
+  }
+
+  .navbar-area.navbar-style-2 .navbar-nav .nav-item:last-child {
+    border-bottom: none !important;
+  }
+
+  .navbar-area.navbar-style-2 .navbar-nav .nav-link {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 1rem 0 !important;
+    color: #333 !important;
+    font-size: 1.1rem !important;
+    font-weight: 500 !important;
+    text-decoration: none !important;
+    transition: color 0.2s ease !important;
+    width: 100% !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+    white-space: normal !important;
+    /* Ensure text doesn't clip on right side */
+    padding-right: 0.5rem !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Dropdown menu styling */
+  .navbar-area.navbar-style-2 .dropdown-menu {
+    position: static !important;
+    float: none !important;
+    width: 100% !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    z-index: 1003 !important;
+    max-height: none !important;
+    overflow: visible !important;
+    border-top: 1px solid rgba(0, 0, 0, 0.1) !important;
+    margin-top: 0.5rem !important;
+    padding-top: 0.5rem !important;
+    /* Ensure dropdown doesn't clip on right side */
+    padding-right: 1rem !important;
+    margin-right: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  .navbar-area.navbar-style-2 .dropdown-menu .nav-item {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    border-bottom: none !important;
+    /* Ensure dropdown items don't clip */
+    box-sizing: border-box !important;
+    width: 100% !important;
+  }
+
+  .navbar-area.navbar-style-2 .dropdown-menu .nav-link {
+    padding: 0.75rem 0 !important;
+    font-size: 1rem !important;
+    color: #666 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+  }
+
+  /* Member navigation items */
+  .navbar-area.navbar-style-2 .members-item {
+    position: relative !important;
+  }
+
+  .navbar-area.navbar-style-2 .members-item .mantine-Group-root {
+    width: 100% !important;
+    padding: 0 !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    flex-wrap: nowrap !important;
+  }
+
+  .navbar-area.navbar-style-2 .members-item .nav-link {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 1rem 0 !important;
+    width: 100% !important;
+    flex-wrap: nowrap !important;
+    white-space: nowrap !important;
+  }
+
+  /* Ensure members-item nav-item takes full width */
+  .navbar-area.navbar-style-2 .nav-item.members-item {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* Member dropdown specific styling */
+  .navbar-area.navbar-style-2 .nav-item .dropdown-menu .nav-item {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
+    /* Ensure proper spacing from right edge */
+    box-sizing: border-box !important;
+    width: 100% !important;
+  }
+
+  .navbar-area.navbar-style-2 .nav-item .dropdown-menu .nav-item:last-child {
+    border-bottom: none !important;
+  }
+
+  /* Ensure dropdown menu list items are full width */
+  .navbar-area.navbar-style-2 nav .navbar-nav .nav-item .dropdown-menu li {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Logout button styling - ensure it has the same layout as other nav items */
+  .navbar-area.navbar-style-2 .nav-item:last-child .mantine-Group-root {
+    width: 100% !important;
+    padding: 0 !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    flex-wrap: nowrap !important;
+  }
+
+  .navbar-area.navbar-style-2 .nav-item:last-child .nav-link {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 1rem 0 !important;
+    width: 100% !important;
+    flex-wrap: nowrap !important;
+    white-space: nowrap !important;
+  }
+
+  /* Close button for mobile menu */
+  .navbar-area.navbar-style-2 .mobile-close-btn {
+    position: fixed !important;
+    top: 1.5rem !important;
+    right: 1.5rem !important;
+    width: 44px !important;
+    height: 44px !important;
+    background: white !important;
+    border: none !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+    z-index: 10002 !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important;
+    font-size: 1.5rem !important;
+    color: #333 !important;
+    font-weight: bold !important;
+    transition: all 0.2s ease !important;
+    /* Ensure it's always visible when mobile menu is open */
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+
+  .navbar-area.navbar-style-2 .mobile-close-btn:hover {
+    background: #f5f5f5 !important;
+    transform: scale(1.05) !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15) !important;
+  }
+
+  .navbar-area.navbar-style-2 .mobile-close-btn:active {
+    transform: scale(0.95) !important;
+  }
+
+  /* Hide the old pseudo-element close button */
+  .navbar-area.navbar-style-2 .navbar-collapse::before {
+    display: none !important;
+  }
+
+  /* Sticky state adjustments */
+  .navbar-area.navbar-style-2.is-sticky {
+    background: rgba(255, 255, 255, 0.98) !important;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1) !important;
+    /* Integrate with header when sticky */
+    border-bottom: none !important;
+    backdrop-filter: blur(15px) !important;
+  }
+
+  /* Non-sticky state - integrate with header */
+  .navbar-area.navbar-style-2:not(.is-sticky) {
+    background: transparent !important;
+    border-bottom: none !important;
+    backdrop-filter: none !important;
+    box-shadow: none !important;
+  }
+
+  /* Ensure content below doesn't hide behind fixed navbar */
+  body {
+    padding-top: 80px !important;
+  }
+}
+
+/* Tablet styles */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .navbar-area.navbar-style-2 .navbar-toggler {
+    display: none !important;
+  }
+
+  .navbar-area.navbar-style-2 .grid {
+    grid-template-columns: 1fr auto !important;
+    gap: 1rem !important;
+  }
+
+  .navbar-area.navbar-style-2 .navbar-brand img {
+    height: 32px;
+    width: auto;
+  }
+
+  .navbar-area.navbar-style-2 .white-logo {
+    height: 32px !important;
+    width: auto !important;
+  }
+}
+
+/* Desktop styles */
+@media (min-width: 1024px) {
+  .navbar-area.navbar-style-2 .navbar-toggler {
+    display: none !important;
+  }
+
+  .navbar-area.navbar-style-2 .mobile-close-btn {
+    display: none !important;
+  }
+
+  .navbar-area.navbar-style-2 .navbar-collapse {
+    display: block !important;
+    position: static !important;
+    background: transparent !important;
+    backdrop-filter: none !important;
+    transform: none !important;
+    overflow: visible !important;
+    width: auto !important;
+    height: auto !important;
+    left: auto !important;
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    z-index: auto !important;
+  }
+
+  .navbar-area.navbar-style-2 .navbar-nav {
+    background: transparent !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    height: auto !important;
+    width: auto !important;
+    max-width: none !important;
+    box-shadow: none !important;
+    overflow: visible !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-end !important;
+    gap: 0.5rem !important;
+    margin-left: auto !important;
+  }
+
+  .navbar-area.navbar-style-2 .navbar-nav .nav-item {
+    display: block !important;
+    border-bottom: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    position: relative !important;
+    width: auto !important;
+    text-align: right !important;
+  }
+
+  .navbar-area.navbar-style-2 .navbar-nav .nav-link {
+    padding: 0.5rem 1rem !important;
+    font-size: 1rem !important;
+    color: white !important;
+    text-decoration: none !important;
+    transition: color 0.2s ease !important;
+    white-space: nowrap !important;
+  }
+
+  .navbar-area.navbar-style-2 .dropdown-menu {
+    position: absolute !important;
+    top: 100% !important;
+    right: 0 !important;
+    background: white !important;
+    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1) !important;
+    border-radius: 8px !important;
+    padding: 0.5rem 0 !important;
+    min-width: 200px !important;
+    display: none !important;
+    z-index: 1000 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    float: none !important;
+  }
+
+  .navbar-area.navbar-style-2 .nav-item:hover .dropdown-menu {
+    display: block !important;
+  }
+
+  /* Ensure member dropdown items are properly styled on desktop */
+  .navbar-area.navbar-style-2 .dropdown-menu .nav-item {
+    padding: 0 !important;
+    border-bottom: none !important;
+    margin: 0 !important;
+  }
+
+  .navbar-area.navbar-style-2 .dropdown-menu .nav-link {
+    padding: 0.5rem 1rem !important;
+    font-size: 0.9rem !important;
+    color: #333 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    white-space: nowrap !important;
+  }
+
+  /* Reset mobile-specific overrides for desktop */
+  .navbar-area.navbar-style-2 .navbar-nav > *:first-child {
+    display: block !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    width: auto !important;
+    margin-bottom: 0 !important;
+  }
+
+  .navbar-area.navbar-style-2 .flex.flex-row.gap-4 {
+    flex-direction: row !important;
+    align-items: center !important;
+    margin-bottom: 0 !important;
+  }
+
+  /* Desktop sticky state navigation text color */
+  .navbar-area.navbar-style-2.is-sticky .navbar-nav .nav-link {
+    color: #333 !important;
+  }
+}
+
+/* Smooth transitions for all interactive elements */
+.navbar-area.navbar-style-2 * {
+  transition: all 0.2s ease !important;
+}
+
+/* Focus states for accessibility */
+.navbar-area.navbar-style-2 .navbar-toggler:focus-visible,
+.navbar-area.navbar-style-2 .nav-link:focus-visible {
+  outline: 2px solid #339af0 !important;
+  outline-offset: 2px !important;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .navbar-area.navbar-style-2 {
+    border-bottom: 2px solid #000 !important;
+  }
+
+  .navbar-area.navbar-style-2 .navbar-nav .nav-link {
+    color: #000 !important;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .navbar-area.navbar-style-2 * {
+    transition: none !important;
+    animation: none !important;
+  }
+}

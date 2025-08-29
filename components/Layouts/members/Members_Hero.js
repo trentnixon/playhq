@@ -1,9 +1,17 @@
-import { Box, Container } from '@mantine/core';
-import { useAccountDetails } from '../../../context/userContext';
+import { Container, Box } from '@mantine/core';
+import { useMediaQuery } from '@mantine/hooks';
 import { FixturaHeaderMeta } from '../../Members/Account/userFixturaSettings';
+import { useAccountDetails } from '../../../context/userContext';
 
 export const MembersHero = () => {
   const { account } = useAccountDetails();
+  const isMobile = useMediaQuery('(max-width: 767px)');
+
+  // Don't render on mobile
+  if (isMobile) {
+    return null;
+  }
+
   return (
     <Container fluid mx={0} p={0}>
       <Box
