@@ -91,7 +91,7 @@ export const CreateCards = props => {
   const { selected } = props;
   return (
     <ProductCard
-      className={selected ? 'col-lg-12' : 'opacity-5'}
+      className={selected ? 'col-lg-12' : 'opacity-100'}
       withTool={false}
       {...props}
     />
