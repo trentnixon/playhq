@@ -42,6 +42,7 @@ export const Gradient = ({
   return (
     <FixturaCustomSelect
       label='Gradient Options'
+      description='Select a gradient style for your template'
       placeholder='Preview Gradient Options'
       data={getTemplatePaletteOptions(templateGradients)}
       value={secondaryFilterOptions.gradient?.id || 'None'}
