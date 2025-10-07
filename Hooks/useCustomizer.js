@@ -380,3 +380,29 @@ export const useGetTemplateParticles = () => {
 
   return [templateParticles, fetchTemplateParticles];
 };
+
+// Get Template Textures
+export const useGetTemplateTextures = () => {
+  const [templateTextures, setTemplateTextures] = useState(null);
+
+  const fetchTemplateTextures = async (useAuth = true) => {
+    try {
+      const headers = {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      };
+      if (useAuth) {
+        headers.Authorization = `Bearer ${Cookies.get('jwt')}`;
+      }
+      const response = await fetcher(
+        `${process.env.NEXT_PUBLIC_STRAPI_URL}/template-textures?populate=*`,
+        { headers }
+      );
+      setTemplateTextures(response);
+    } catch (err) {
+      setTemplateTextures(null);
+    }
+  };
+
+  return [templateTextures, fetchTemplateTextures];
+};

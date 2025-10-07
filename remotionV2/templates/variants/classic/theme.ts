@@ -14,6 +14,9 @@ export const basicTheme: TemplateThemeConfig = {
     title: {
       family: "Impact",
     },
+    subtitle: {
+      family: "Impact",
+    },
     copy: {
       family: "Heebo",
     },
@@ -69,7 +72,7 @@ export const basicTheme: TemplateThemeConfig = {
       className: "text-3xl font-medium tracking-tight leading-tight",
     },
     ladderTeamPoints: {
-      className: "text-4xl font-normal tracking-tight leading-tight",
+      className: "text-3xl font-normal tracking-tight leading-tight",
     },
     Top5PlayerName: {
       className: "text-5xl font-black tracking-tight leading-tight",
@@ -132,9 +135,9 @@ export const basicTheme: TemplateThemeConfig = {
   // ===== LAYOUT CONFIGURATION =====
   layout: {
     heights: {
-      asset: 1000,
-      header: 230,
-      footer: 120,
+      asset: 1010,
+      header: 190,
+      footer: 150,
     },
     spacing: {
       section: "space-y-8",

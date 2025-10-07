@@ -47,6 +47,7 @@ export const Graphics = ({
       value={secondaryFilterOptions.noise?.id || ''}
       onChange={handleChange}
       marginBottom={0}
+      description=''
     />
   );
 };

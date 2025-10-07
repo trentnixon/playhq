@@ -26,7 +26,7 @@ export const GamesListing = ({ gamesData }) => {
       date: new Date(date),
       games,
     }))
-    .sort((a, b) => a.date - b.date);
+    .sort((a, b) => a.date.getTime() - b.date.getTime());
 
   // Split into upcoming and previous games
   const upcomingGames = gamesWithDateObjects.filter(
@@ -62,8 +62,10 @@ export const GamesListing = ({ gamesData }) => {
                 <FixtureTable
                   gameDays={gameDays}
                   isNextFixtureList={isNextFixtureList}
+                  monthIndex={monthIndex}
                 />
               }
+              className=''
             />
           ))}
         </Grid>

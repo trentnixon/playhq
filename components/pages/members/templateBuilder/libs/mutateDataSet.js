@@ -39,8 +39,11 @@ export const mutateDataSet = (
   }
 
   // Apply template variation settings
+  // Handle special case for textures - useBackground should be "Texture" not "Textures"
+  const useBackgroundValue = selectedDesignOptions.selectedBackgroundOptions;
+
   datasetData.videoMeta.video.templateVariation.useBackground =
-    selectedDesignOptions.selectedBackgroundOptions || null;
+    useBackgroundValue || null;
   datasetData.videoMeta.video.templateVariation.palette =
     selectedDesignOptions.selectedTemplatePalette.value || null;
   datasetData.videoMeta.video.appearance.theme = userAccountSettings.theme;
@@ -61,6 +64,25 @@ export const mutateDataSet = (
 
   datasetData.videoMeta.video.templateVariation.particle =
     selectedDesignOptions.selectedSecondaryFilterOptions?.particle || null;
+
+  // Apply texture settings
+  if (selectedDesignOptions.selectedSecondaryFilterOptions?.texture) {
+    const textureData =
+      selectedDesignOptions.selectedSecondaryFilterOptions.texture;
+    console.log('[mutateDataSet] Texture data received:', textureData);
+    datasetData.videoMeta.video.templateVariation.texture = {
+      name: textureData.name || null,
+      url: textureData.url || null,
+      repeat: 'cover',
+      scale: '100%',
+      overlay: {
+        opacity: textureData.opacity,
+        blendMode: textureData.blendMode || 'multiply',
+      },
+    };
+  } else {
+    datasetData.videoMeta.video.templateVariation.texture = null;
+  }
 
   // Apply image settings with user media gallery
   datasetData.videoMeta.video.templateVariation.image = {

@@ -62,6 +62,8 @@ export const useGetTemplateOptions = () => {
         'template_noise',
         'template_particle',
         'template_pattern',
+        'template_texture',
+        'template_texture.texture',
         'template_video',
         'useBackground',
         'template_category',

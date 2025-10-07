@@ -90,11 +90,12 @@ const StatSection: React.FC<StatSectionProps> = ({
   backgroundColor,
   textColor,
 }) => {
+  const { layout } = useThemeContext();
   if (players.length === 0) return null;
 
   return (
     <div
-      className={`${isBatting ? "mb-4 py-1" : "mb-1"} rounded-md px-4 `}
+      className={`${isBatting ? "mb-4 py-1" : "mb-1"} px-4 ${layout.borderRadius.container}`}
       style={{ background: backgroundColor }}
     >
       {players.map((player, i) => (
@@ -199,7 +200,6 @@ export const PlayerStatsBasic: React.FC<PlayerStatsProps> = ({
       className="w-full p-1"
       backgroundColor="none"
       style={{
-        /*  background: backgroundColor, */
         height: `${height}px`,
       }}
       animation={animations.container.main.itemContainer.containerIn}

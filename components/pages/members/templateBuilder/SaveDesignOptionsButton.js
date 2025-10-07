@@ -13,11 +13,23 @@ export function SaveDesignOptionsButton({ selectedDesignOptions }) {
 
   const handleSave = async () => {
     if (!account?.id) return;
+
+    console.log(
+      '[Save Design Options] Full selectedDesignOptions:',
+      selectedDesignOptions
+    );
+    console.log(
+      '[Save Design Options] Texture data:',
+      selectedDesignOptions.selectedSecondaryFilterOptions?.texture
+    );
+
     const OBJ = {
       collectionSaveTo: 'template-option/put-template-options',
       accountId: account.id,
       Body: selectedDesignOptions,
     };
+
+    console.log('[Save Design Options] Saving object:', OBJ);
     await CreateDesignElement(OBJ);
     if (!error) setShowSuccess(true);
     setTimeout(() => setShowSuccess(false), 2000);

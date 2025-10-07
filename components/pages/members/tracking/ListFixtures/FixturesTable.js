@@ -1,7 +1,7 @@
 import { Table } from '@mantine/core';
 
 export const FixtureTable = props => {
-  const { gameDays, isNextFixtureList } = props;
+  const { gameDays, isNextFixtureList, monthIndex } = props;
   return (
     <>
       {gameDays.map(({ date, games }, index) => (

@@ -19,6 +19,8 @@ export interface Video {
   media: VideoMedia;
   contentLayout: VideoContentLayout;
   templateVariation: VideoTemplateVariation;
+  fixtureCategory: string;
+  groupingCategory: string;
 }
 
 // Video theme definition to match structure in data
@@ -101,11 +103,11 @@ export interface VideoTemplateVariation {
     overlayOpacity?: number;
   };
   texture?: {
-    url?: string;
     name?: string;
+    url?: string;
     position?: string;
     size?: string;
-    repeat?: "no-repeat" | "repeat" | "repeat-x" | "repeat-y";
+    repeat?: "no-repeat" | "repeat" | "repeat-x" | "repeat-y" | "cover";
     scale?: number | string;
     overlay?: {
       color?: string;

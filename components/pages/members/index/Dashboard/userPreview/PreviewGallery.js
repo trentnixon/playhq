@@ -1,5 +1,5 @@
 import { Center } from '@mantine/core';
-import { useMediaQuery } from '@mantine/hooks';
+//import { useMediaQuery } from '@mantine/hooks';
 import { useMantineTheme } from '@mantine/styles';
 import { useEffect, useState } from 'react';
 import { RoundedSectionContainer } from '../../../../../UI/Containers/SectionContainer';
@@ -13,11 +13,10 @@ export const PreviewGallery = () => {
   const [previewObj, setPreviewObj] = useState(null);
 
   const theme = useMantineTheme();
-  const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
+  //const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
 
   useEffect(() => {
     const updatedPreviewObj = createPreviewObject(account);
-    console.log('[updatedPreviewObj]', updatedPreviewObj);
     setPreviewObj(updatedPreviewObj);
   }, [account]);
 
@@ -30,6 +29,7 @@ export const PreviewGallery = () => {
       headerContent={`Preview`}
       topContent={<UserPreviewTitle />}
       bottomContent={<Previewer account={account} />}
+      className='mb-4'
     />
   );
 };

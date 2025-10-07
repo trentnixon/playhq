@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback, useMemo } from 'react';
+import { useEffect, useState, useCallback, useMemo } from 'react';
 import { useAccountDetails } from '../../../context/userContext';
 import { useUser } from '../../../context/authContext';
 import cookie from 'cookie';
@@ -14,7 +14,7 @@ import { useGetTemplateOptions } from '../../../Hooks/useGetTemplate';
 import { useGetTemplateCategories } from '../../../Hooks/useCustomizer';
 import { Grid } from '@mantine/core';
 import { SaveDesignOptionsButton } from '../../../components/pages/members/templateBuilder/SaveDesignOptionsButton';
-import { P, SubHeaders } from '../../../components/Members/Common/Type';
+import { SubHeaders } from '../../../components/Members/Common/Type';
 import { TemplateBuilderFilterContainer } from '../../../components/pages/members/templateBuilder/TemplateBuilderFilterContainer';
 import { extractDesignOptions } from '../../../components/pages/members/templateBuilder/libs/extractDesignOptions';
 
@@ -45,13 +45,17 @@ const Design = ({ Response }) => {
     useGetTemplateCategories();
 
   // Memoize initial state to avoid unnecessary recalculations
-  const initialDesignOptions = useMemo(
-    () =>
-      extractDesignOptions({
-        attributes: { template_option: { data: templateOptions } },
-      }),
-    [templateOptions]
-  );
+  const initialDesignOptions = useMemo(() => {
+    const options = extractDesignOptions({
+      attributes: { template_option: { data: templateOptions } },
+    });
+    console.log('[Template Builder] Initial design options loaded:', options);
+    console.log(
+      '[Template Builder] Saved texture data:',
+      options.selectedSecondaryFilterOptions?.texture
+    );
+    return options;
+  }, [templateOptions]);
 
   const [selectedDesignOptions, setSelectedDesignOptions] =
     useState(initialDesignOptions);

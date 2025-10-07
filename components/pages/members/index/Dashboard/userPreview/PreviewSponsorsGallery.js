@@ -33,6 +33,7 @@ export const PreviewSponsorsGallery = () => {
       headerContent={`Sponsorship Positioning Preview`}
       topContent={``}
       bottomContent={<SponsorsPreviewer account={account} />}
+      className=''
     />
   );
 };

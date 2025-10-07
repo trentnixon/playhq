@@ -9,8 +9,9 @@ export const BackgroundOptions = props => {
     'Image',
     'Graphics',
     'Gradient',
-    'Pattern',
+    /* 'Pattern', */
     'Particle',
+    'Texture',
   ].map(option => ({ label: option, value: option }));
 
   const handleChange = value => {

@@ -2,6 +2,7 @@ import React from "react";
 import { AnimatedContainer } from "../../../../../../components/containers/AnimatedContainer";
 import { useAnimationContext } from "../../../../../../core/context/AnimationContext";
 import { ResultMetaData } from "../../../../utils/primitives/ResultMetaData";
+import { mergeWithPriority } from "../../../../../../core/utils/classNames";
 
 interface MatchHeaderProps {
   date?: string;
@@ -11,6 +12,8 @@ interface MatchHeaderProps {
   height: number;
   delay: number;
   backgroundColor: string;
+  className?: string;
+  CopyVariant?: string;
 }
 
 // Helper function to truncate text
@@ -27,6 +30,8 @@ export const MatchHeader: React.FC<MatchHeaderProps> = ({
   height,
   delay,
   backgroundColor,
+  className,
+  CopyVariant = "onContainerCopy",
 }) => {
   const { animations } = useAnimationContext();
   const TextAnimations = animations.text.main;
@@ -41,7 +46,10 @@ export const MatchHeader: React.FC<MatchHeaderProps> = ({
   return (
     <AnimatedContainer
       type="full"
-      className="w-full flex justify-between items-center p-4"
+      className={mergeWithPriority(
+        "w-full flex justify-between items-center p-4",
+        className || "",
+      )}
       backgroundColor="none"
       style={{
         background: backgroundColor,
@@ -54,14 +62,14 @@ export const MatchHeader: React.FC<MatchHeaderProps> = ({
         value={leftText}
         animation={{ ...TextAnimations.copyIn, delay: delay + 1 }}
         className=""
-        variant="onContainerCopyNoBg"
+        variant={CopyVariant}
       />
 
       <ResultMetaData
         value={truncateText(ground, 50)}
         animation={{ ...TextAnimations.copyIn, delay: delay + 1 }}
         className="text-right"
-        variant="onContainerCopyNoBg"
+        variant={CopyVariant}
       />
     </AnimatedContainer>
   );

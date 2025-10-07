@@ -10,6 +10,7 @@ const DefaultPrimaryOptions = {
     noise: null,
     particle: null,
     pattern: null,
+    texture: null,
   },
   user_media_gallery: {
     url: null,
@@ -36,10 +37,23 @@ const extractDesignOptionsFromTemplate = options => {
     template_noise,
     template_particle,
     template_pattern,
+    template_texture,
     template_mode,
   } = attrs;
 
-  console.log('[attrs]', attrs);
+  console.log('[extractDesignOptionsFromTemplate] All attributes:', attrs);
+  console.log(
+    '[extractDesignOptionsFromTemplate] template_texture from CMS:',
+    template_texture
+  );
+  console.log(
+    '[extractDesignOptionsFromTemplate] template_texture.data:',
+    template_texture?.data
+  );
+  console.log(
+    '[extractDesignOptionsFromTemplate] template_texture.data.attributes:',
+    template_texture?.data?.attributes
+  );
   return {
     template_category: {
       value: template_category?.data?.attributes?.slug ?? 'Basic',
@@ -91,6 +105,20 @@ const extractDesignOptionsFromTemplate = options => {
         template_pattern?.data?.attributes?.animationDuration ?? 1500,
       animationSpeed: template_pattern?.data?.attributes?.animationSpeed ?? 0.5,
     },
+    template_texture: (() => {
+      const textureData = {
+        id: template_texture?.data?.id ?? null,
+        name: template_texture?.data?.attributes?.Name ?? null,
+        opacity: template_texture?.data?.attributes?.opacity ?? 50,
+        blendMode: template_texture?.data?.attributes?.blendMode ?? 'multiply',
+        url: template_texture?.data?.attributes?.url ?? null,
+      };
+      console.log(
+        '[extractDesignOptions] Extracted texture data:',
+        textureData
+      );
+      return textureData;
+    })(),
     user_media_gallery: {
       url: null,
       width: null,
@@ -121,6 +149,7 @@ const getInitialDesignOptions = options => {
       noise: designOptions.template_noise,
       particle: designOptions.template_particle,
       pattern: designOptions.template_pattern,
+      texture: designOptions.template_texture,
     },
   };
 };
