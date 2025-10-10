@@ -33,8 +33,31 @@ const AGE_GROUPS = {
     'Colts Y9 & 10',
     'Mixed Age Group',
   ],
-  SENIOR: ['Senior', 'Senior/Open', '', ' '], // Removed duplicate "Senior"
-  MASTERS: ['Over 35', 'Over 40', 'Over 50', 'Over 60'],
+  SENIOR: [
+    'Open',
+    'Premier',
+    'First Grade',
+    'Second Grade',
+    'Third Grade',
+    'Fourth Grade',
+    'Fifth Grade',
+    'Sixth Grade',
+    'Seventh Grade',
+    'Senior',
+    'Senior/Open',
+    'senior/open',
+    'Mixed Age Group',
+  ], // Removed duplicate "Senior"
+  MASTERS: [
+    'Over 35',
+    'Over 40',
+    'Over 45',
+    'Over 50',
+    'Over 55',
+    'Over 60',
+    'Over 65',
+    'Over 70',
+  ],
 };
 
 function isAgeGroupInList(ageGroup, ageGroupList) {
