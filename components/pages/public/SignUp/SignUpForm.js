@@ -10,7 +10,7 @@ const INITIAL_STATE = {
   name: '',
   email: '',
   password: '',
-  confirmPassword: null,
+  confirmPassword: '',
   termsAccepted: false,
 };
 

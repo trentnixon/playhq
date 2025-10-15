@@ -34,8 +34,15 @@ export default PageBanner;
 
 const MainCSSBanner = ({ bannerHeight }) => {
   useEffect(() => {
-    const gradient = new Gradient();
-    gradient.initGradient('#gradient-canvas-innerPage');
+    const canvas = document.querySelector('#gradient-canvas-innerPage');
+    if (!canvas) return;
+
+    // @ts-ignore - initGradient is dynamically added
+    const gradient = new Gradient().initGradient('#gradient-canvas-innerPage');
+
+    return () => {
+      gradient?.disconnect?.();
+    };
   }, []);
 
   return (

@@ -1,3 +1,4 @@
+// @ts-nocheck
 /*
  *   Stripe WebGl Gradient Animation
  *   All Credits to Stripe.com
@@ -37,12 +38,12 @@ class MiniGl {
       (_miniGl.meshes = []);
     const context = _miniGl.gl;
     width && height && this.setSize(width, height),
-      _miniGl.lastDebugMsg,
+      (_miniGl.lastDebugMsg = 0),
       (_miniGl.debug =
         debug && debug_output
           ? function (e) {
               const t = new Date();
-              t - _miniGl.lastDebugMsg > 1e3 && console.log('---'),
+              t.getTime() - _miniGl.lastDebugMsg > 1e3 && console.log('---'),
                 console.log(
                   t.toLocaleTimeString() +
                     Array(Math.max(0, 32 - e.length)).join(' ') +
@@ -50,7 +51,7 @@ class MiniGl {
                     ': ',
                   ...Array.from(arguments).slice(1)
                 ),
-                (_miniGl.lastDebugMsg = t);
+                (_miniGl.lastDebugMsg = t.getTime());
             }
           : () => {}),
       Object.defineProperties(_miniGl, {
@@ -165,6 +166,7 @@ class MiniGl {
             }
             update(value) {
               void 0 !== this.value &&
+                context &&
                 context[`uniform${this.typeFn}`](
                   value,
                   0 === this.typeFn.indexOf('Matrix')
@@ -193,7 +195,7 @@ class MiniGl {
                     (name_no_prefix =
                       name_no_prefix.charAt(0).toUpperCase() +
                       name_no_prefix.slice(1)),
-                    `uniform struct ${name_no_prefix} 
+                    `uniform struct ${name_no_prefix}
                                   {\n` +
                       Object.entries(uniform.value)
                         .map(([name, uniform]) =>
@@ -412,6 +414,7 @@ class MiniGl {
         },
       });
     const a = [1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1];
+    // @ts-ignore - Uniform is dynamically defined via Object.defineProperties
     _miniGl.commonUniforms = {
       projectionMatrix: new _miniGl.Uniform({
         type: 'mat4',
@@ -430,8 +433,14 @@ class MiniGl {
         value: 1,
       }),
     };
+
+    // Check if WebGL context was created successfully
+    if (!context) {
+      console.warn('WebGL not supported or failed to initialize');
+    }
   }
   setSize(e = 640, t = 480) {
+    if (!this.gl) return;
     (this.width = e),
       (this.height = t),
       (this.canvas.width = e),
@@ -470,6 +479,7 @@ class MiniGl {
       );
   }
   render() {
+    if (!this.gl) return;
     this.gl.clearColor(0, 0, 0, 0),
       this.gl.clearDepth(1),
       this.meshes.forEach(e => e.draw());
@@ -547,6 +557,7 @@ class Gradient {
         (this.isScrolling = !1), this.isIntersecting && this.play();
       }),
       e(this, 'resize', () => {
+        if (!this.minigl || !this.minigl.gl) return;
         (this.width = window.innerWidth),
           this.minigl.setSize(this.width, this.height),
           this.minigl.setOrthographicCamera(),
@@ -626,17 +637,20 @@ class Gradient {
       document.querySelectorAll('canvas').length < 1
         ? console.log('DID NOT LOAD HERO STRIPE CANVAS')
         : ((this.minigl = new MiniGl(this.el, null, null, !0)),
-          requestAnimationFrame(() => {
-            this.el &&
-              ((this.computedCanvasStyle = getComputedStyle(this.el)),
-              this.waitForCssVars());
-          }));
+          // Check if WebGL context was successfully created
+          !this.minigl || !this.minigl.gl
+            ? console.warn('Failed to initialize WebGL context')
+            : requestAnimationFrame(() => {
+                this.el &&
+                  ((this.computedCanvasStyle = getComputedStyle(this.el)),
+                  this.waitForCssVars());
+              }));
     /*
           this.scrollObserver = await s.create(.1, !1),
           this.scrollObserver.observe(this.el),
           this.scrollObserver.onSeparate(() => {
               window.removeEventListener("scroll", this.handleScroll), window.removeEventListener("mousedown", this.handleMouseDown), window.removeEventListener("mouseup", this.handleMouseUp), window.removeEventListener("keydown", this.handleKeyDown), this.isIntersecting = !1, this.conf.playing && this.pause()
-          }), 
+          }),
           this.scrollObserver.onIntersect(() => {
               window.addEventListener("scroll", this.handleScroll), window.addEventListener("mousedown", this.handleMouseDown), window.addEventListener("mouseup", this.handleMouseUp), window.addEventListener("keydown", this.handleKeyDown), this.isIntersecting = !0, this.addIsLoadedClass(), this.play()
           })*/
@@ -806,6 +820,12 @@ class Gradient {
    * Using default colors assigned below if no variables have been found after maxCssVarRetries
    */
   waitForCssVars() {
+    // Check if minigl is properly initialized
+    if (!this.minigl || !this.minigl.gl) {
+      console.warn('Cannot initialize gradient: WebGL context not available');
+      return;
+    }
+
     if (
       this.computedCanvasStyle &&
       -1 !==
