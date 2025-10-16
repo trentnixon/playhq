@@ -7,6 +7,7 @@ import {
   IconPhoto,
   IconSettings,
   IconTools,
+  IconUserCircle,
 } from '@tabler/icons-react';
 import SecureRouteHOC from '../../../components/Layouts/members/security/SecureRouteHC';
 import { Group, Paper, SimpleGrid, Text, ThemeIcon, rem } from '@mantine/core';
@@ -23,6 +24,13 @@ import { IconUsers } from '@tabler/icons';
 
 const Settings = () => {
   const settingsComponents = [
+    {
+      title: 'Account',
+      description: 'View and manage your account settings and information.',
+      link: '/members/settings/account/',
+      label: 'Manage Account',
+      icon: <IconUserCircle size={40} stroke={1.5} />,
+    },
     {
       title: 'Asset Delivery',
       description: 'Select a day you would like your bundles to arrive.',
