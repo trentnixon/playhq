@@ -16,6 +16,7 @@ export const ClubList = props => {
       {clubs.map(club => (
         <RoundedSectionContainer
           key={club.id}
+          className='mb-30'
           headerContent={'Club List'}
           topContent={<ClubName ClubName={club.attributes.Name} />}
           bottomContent={<ClubTeamList club={club} />}

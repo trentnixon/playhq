@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { Avatar, Container, Group, Space, Text, Title } from '@mantine/core';
 
 import { useMediaQuery } from '@mantine/hooks';
