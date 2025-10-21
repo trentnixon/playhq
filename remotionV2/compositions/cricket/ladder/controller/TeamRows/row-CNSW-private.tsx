@@ -5,7 +5,7 @@ import { useVideoDataContext } from "../../../../../core/context/VideoDataContex
 import { useAnimationContext } from "../../../../../core/context/AnimationContext";
 import StandardLadderRow from "../../layout/TableRowLayout";
 import { useThemeContext } from "../../../../../core/context/ThemeContext";
-import { CNSWLadderRow } from "../../layout/TableCNSWRow";
+import { CNSWLadderRowPrivate } from "../../layout/TableCNSWRow-private";
 interface TeamRowProps {
   team: TeamData;
   index: number;
@@ -15,7 +15,7 @@ interface TeamRowProps {
   wrapperClass?: string;
 }
 
-export const StandardRowCNSW: React.FC<TeamRowProps> = ({
+export const StandardRowCNSWPrivate: React.FC<TeamRowProps> = ({
   team,
   index,
   totalTeams,
@@ -70,13 +70,12 @@ export const StandardRowCNSW: React.FC<TeamRowProps> = ({
   );
 };
 
-export default StandardRowCNSW;
+export default StandardRowCNSWPrivate;
 
-export const StandardRowCNSWWrapped: React.FC<TeamRowProps> = ({
+export const StandardRowCNSWPrivateWrapped: React.FC<TeamRowProps> = ({
   team,
   index,
-  totalTeams,
-  isBiasTeam,
+
   LadderRowHeight,
 }) => {
   const { data } = useVideoDataContext();
@@ -91,18 +90,8 @@ export const StandardRowCNSWWrapped: React.FC<TeamRowProps> = ({
 
   // Determine background color based on position and bias team
 
-  let bgColorClass = "";
   const position = parseInt(team.position);
 
-  if (isBiasTeam) {
-    bgColorClass = "bg-blue-900/70";
-  } else if (position <= 1) {
-    bgColorClass = "bg-green-500/50";
-  } else if (position > totalTeams - 1) {
-    bgColorClass = "bg-red-500/50";
-  } else {
-    bgColorClass = index % 2 === 0 ? "bg-black/30" : "bg-black/10";
-  }
   return (
     <OverflowHiddenWrapper>
       <AnimatedContainer
@@ -114,12 +103,11 @@ export const StandardRowCNSWWrapped: React.FC<TeamRowProps> = ({
         exitAnimation={containerAnimation.containerOut}
         exitFrame={animationOutFrame}
       >
-        <CNSWLadderRow
+        <CNSWLadderRowPrivate
           team={team}
           delay={delay}
           LadderRowHeight={LadderRowHeight}
           place={position}
-          bgColorClass={bgColorClass}
         />
       </AnimatedContainer>
     </OverflowHiddenWrapper>

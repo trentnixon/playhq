@@ -6,14 +6,14 @@ import { AnimatedContainer } from "../../../../../components/containers/Animated
 // Import sections for match layout
 import { SingleDataPointHeader } from "../../../results/layout/Sections/MatchHeader/SingleDataPointHeader";
 import PlayerStatsSingleTeamOnly from "../../../results/layout/Sections/PlayerStats/PlayerStats-SingleTeamOnly";
-import Horizontal_SingleTeam_CNSW from "../../../results/layout/Sections/TeamsSection/Horizontal_SingleTeam_CNSW";
 import Round_Ground from "../Sections/MatchHeader/Round_Ground";
+import Horizontal_SingleTeam_CNSWPrivate from "../../../results/layout/Sections/TeamsSection/Horizontal_SingleTeam_CNSW-private";
 
 interface MatchCardProps {
   match: MatchResult;
 }
 
-const CNSWMatchCard: React.FC<MatchCardProps> = ({ match }) => {
+const CNSWMatchCardPrivate: React.FC<MatchCardProps> = ({ match }) => {
   const { animations } = useAnimationContext();
 
   // Animation setup
@@ -47,7 +47,7 @@ const CNSWMatchCard: React.FC<MatchCardProps> = ({ match }) => {
         delay={headerDelay}
         backgroundColor={"transparent"}
         align="right"
-        variant="onContainerCopyNoBg"
+        variant="onBackgroundMain"
       />
 
       <SingleDataPointHeader
@@ -56,9 +56,9 @@ const CNSWMatchCard: React.FC<MatchCardProps> = ({ match }) => {
         delay={headerDelay}
         backgroundColor={"transparent"}
         align="right"
-        variant="onContainerCopyNoBg"
+        variant="onBackgroundMain"
       />
-      <Horizontal_SingleTeam_CNSW
+      <Horizontal_SingleTeam_CNSWPrivate
         type={match.type}
         Team={match.homeTeam}
         delay={baseDelay}
@@ -75,7 +75,7 @@ const CNSWMatchCard: React.FC<MatchCardProps> = ({ match }) => {
           maxPlayersPerStat={3}
         />
       </div>
-      <Horizontal_SingleTeam_CNSW
+      <Horizontal_SingleTeam_CNSWPrivate
         type={match.type}
         Team={match.awayTeam}
         delay={baseDelay}
@@ -102,11 +102,11 @@ const CNSWMatchCard: React.FC<MatchCardProps> = ({ match }) => {
         height={headerHeight}
         delay={headerDelay}
         userBackgroundColor={"transparent"}
-        variant="onContainerCopyNoBg"
+        variant="onBackgroundMain"
         className="py-0 px-6"
       />
     </AnimatedContainer>
   );
 };
 
-export default CNSWMatchCard;
+export default CNSWMatchCardPrivate;

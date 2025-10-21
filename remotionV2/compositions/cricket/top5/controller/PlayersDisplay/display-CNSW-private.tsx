@@ -8,8 +8,8 @@ import { Sponsor } from "../../../../../core/types/data/sponsors";
 
 import { AssignSponsors } from "../../../composition-types";
 import { SponsorFooter } from "../../../sponsorFooter";
-import PlayerRowCNSW from "../PlayerRow/row-CNSW";
 import { Top5PlayerName } from "../../../utils/primitives/Top5PlayerName";
+import PlayerRowCNSWPrivate from "../PlayerRow/row-CNSW-private";
 
 interface PlayersDisplayProps {
   players: PlayerData[];
@@ -17,7 +17,7 @@ interface PlayersDisplayProps {
   sponsors: Sponsor[];
 }
 
-const PlayersDisplayCNSW: React.FC<PlayersDisplayProps> = ({
+const PlayersDisplayCNSWPrivate: React.FC<PlayersDisplayProps> = ({
   players,
   sponsors,
   title,
@@ -47,12 +47,12 @@ const PlayersDisplayCNSW: React.FC<PlayersDisplayProps> = ({
             value={title || ""}
             animation={null as any}
             className=""
-            variant="onContainerCopyNoBg"
+            variant="onContainerMain"
           />
         </div>
         <div className="flex-0 grid grid-cols-1 gap-1 px-16">
           {players.map((player, index) => (
-            <PlayerRowCNSW
+            <PlayerRowCNSWPrivate
               key={player.name}
               player={player}
               index={index}
@@ -83,4 +83,4 @@ const PlayersDisplayCNSW: React.FC<PlayersDisplayProps> = ({
   };
 }; */
 
-export default PlayersDisplayCNSW;
+export default PlayersDisplayCNSWPrivate;

@@ -12,7 +12,10 @@ interface GameCardProps {
   index: number;
 }
 
-export const GameCardCNSW: React.FC<GameCardProps> = ({ game, index }) => {
+export const GameCardCNSWPrivate: React.FC<GameCardProps> = ({
+  game,
+  index,
+}) => {
   const { data } = useVideoDataContext();
   const { timings } = data;
   const { animations } = useAnimationContext();
@@ -44,7 +47,7 @@ export const GameCardCNSW: React.FC<GameCardProps> = ({ game, index }) => {
             delay={delay}
             backgroundColor={"transparent"}
             align="right"
-            variant="onContainerCopyNoBg"
+            variant="onBackgroundMain"
           />
           {/* Grade/Competition Section - Top */}
           <TeamName
@@ -52,10 +55,10 @@ export const GameCardCNSW: React.FC<GameCardProps> = ({ game, index }) => {
             delay={delay + 10}
             delayName={delay + 20}
             style={{
-              background:
-                selectedPalette.container.backgroundTransparent.strong,
+              background: selectedPalette.background.userSecondary,
             }}
             className="text-left"
+            variant="onBackgroundMain"
           />
           <SingleDataPointHeader
             value={"vs"}
@@ -70,10 +73,10 @@ export const GameCardCNSW: React.FC<GameCardProps> = ({ game, index }) => {
             delay={delay + 10}
             delayName={delay + 20}
             style={{
-              background:
-                selectedPalette.container.backgroundTransparent.strong,
+              background: selectedPalette.background.userSecondary,
             }}
             className="text-left"
+            variant="onBackgroundMain"
           />
           <SingleDataPointHeader
             value={game.ground}
@@ -81,7 +84,7 @@ export const GameCardCNSW: React.FC<GameCardProps> = ({ game, index }) => {
             delay={delay}
             backgroundColor={"transparent"}
             align="right"
-            variant="onContainerCopyNoBg"
+            variant="onBackgroundMain"
           />
         </div>
       </AnimatedContainer>
@@ -89,4 +92,4 @@ export const GameCardCNSW: React.FC<GameCardProps> = ({ game, index }) => {
   );
 };
 
-export default GameCardCNSW;
+export default GameCardCNSWPrivate;

@@ -3,7 +3,7 @@ import { MatchResult } from "../../types";
 import { useThemeContext } from "../../../../../core/context/ThemeContext";
 import { AssignSponsors } from "../../../composition-types";
 import { SponsorFooter } from "../../../sponsorFooter";
-import MatchRowCNSW from "../MatchRow/row-CNSW";
+import MatchRowCNSWPrivate from "../MatchRow/row-CNSW-private";
 
 interface ResultsDisplayProps {
   results: MatchResult[];
@@ -11,7 +11,7 @@ interface ResultsDisplayProps {
   screenIndex: number;
 }
 
-const ResultsDisplayCNSW: React.FC<ResultsDisplayProps> = ({
+const ResultsDisplayCNSWPrivate: React.FC<ResultsDisplayProps> = ({
   results,
   resultsPerScreen,
   screenIndex,
@@ -49,7 +49,11 @@ const ResultsDisplayCNSW: React.FC<ResultsDisplayProps> = ({
               marginBottom: index === 0 ? "10px" : 0,
             }}
           >
-            <MatchRowCNSW match={match} index={index} rowHeight={rowHeight} />
+            <MatchRowCNSWPrivate
+              match={match}
+              index={index}
+              rowHeight={rowHeight}
+            />
           </div>
         ))}
       </div>
@@ -62,4 +66,4 @@ const ResultsDisplayCNSW: React.FC<ResultsDisplayProps> = ({
   );
 };
 
-export default ResultsDisplayCNSW;
+export default ResultsDisplayCNSWPrivate;

@@ -7,7 +7,7 @@ interface TableHeaderProps {
   headerHeight: number;
 }
 
-export const TableHeaderCNSW: React.FC<TableHeaderProps> = ({
+export const TableHeaderCNSWPrivate: React.FC<TableHeaderProps> = ({
   title,
   headerHeight,
 }) => {
@@ -35,7 +35,7 @@ export const TableHeaderCNSW: React.FC<TableHeaderProps> = ({
         <MetadataMedium
           value={title}
           animation={null}
-          variant="onContainerCopyNoBg"
+          variant="onBackgroundMain"
         ></MetadataMedium>
       </div>
       {/* Points header - Fixed width last cell */}
@@ -52,7 +52,7 @@ export const TableHeaderCNSW: React.FC<TableHeaderProps> = ({
           <MetadataMedium
             value={`POINTS`}
             animation={null}
-            variant="onContainerCopyNoBg"
+            variant="onBackgroundMain"
           ></MetadataMedium>
         </div>
       </div>
@@ -60,4 +60,4 @@ export const TableHeaderCNSW: React.FC<TableHeaderProps> = ({
   );
 };
 
-export default TableHeaderCNSW;
+export default TableHeaderCNSWPrivate;

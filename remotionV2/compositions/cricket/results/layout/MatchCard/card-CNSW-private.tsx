@@ -3,8 +3,8 @@ import { MatchResult } from "../../types";
 
 import MatchHeader from "../Sections/MatchHeader/MatchHeader";
 import { TeamsSectionScoreOverTeamNameOnly } from "../Sections/TeamsSection/index";
-import PlayerStatsCNSW from "../Sections/PlayerStats/PlayerStats-CNSW";
 import { useThemeContext } from "../../../../../core/context/ThemeContext";
+import PlayerStatsCNSWPrivate from "../Sections/PlayerStats/PlayerStats-CNSW-private";
 
 interface MatchCardProps {
   match: MatchResult;
@@ -13,7 +13,7 @@ interface MatchCardProps {
   delay: number;
 }
 
-const MatchCardCNSW: React.FC<MatchCardProps> = ({
+const MatchCardCNSWPrivate: React.FC<MatchCardProps> = ({
   match,
   rowHeight,
   delay,
@@ -47,11 +47,11 @@ const MatchCardCNSW: React.FC<MatchCardProps> = ({
         outerContainer={{
           height: teamsHeight,
         }}
-        CopyVariant="onContainerCopyNoBg"
+        CopyVariant="onBackgroundMain"
       />
 
       {/* Section 2: Player statistics */}
-      <PlayerStatsCNSW
+      <PlayerStatsCNSWPrivate
         homeTeam={match.homeTeam}
         awayTeam={match.awayTeam}
         height={statsHeight}
@@ -76,4 +76,4 @@ const MatchCardCNSW: React.FC<MatchCardProps> = ({
   );
 };
 
-export default MatchCardCNSW;
+export default MatchCardCNSWPrivate;

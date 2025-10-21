@@ -46,7 +46,7 @@ const StatItem: React.FC<StatItemProps> = ({
     <div
       className="flex justify-between items-center py-1 mb-1 pr-1 pl-4"
       style={{
-        background: selectedPalette.container.backgroundTransparent.high,
+        background: selectedPalette.background.userSecondary,
       }}
     >
       <ResultPlayerName
@@ -60,7 +60,7 @@ const StatItem: React.FC<StatItemProps> = ({
       <div
         className=" py-1 px-8"
         style={{
-          background: selectedPalette.container.backgroundTransparent.strong,
+          background: selectedPalette.background.userPrimary,
           minWidth: "160px",
           textAlign: "right",
         }}
@@ -161,10 +161,8 @@ const TeamStats: React.FC<TeamStatsProps> = ({
           players={batters}
           isBatting={true}
           delay={delay}
-          backgroundColor={
-            selectedPalette.container.backgroundTransparent.strong
-          }
-          textColor={"onContainerCopy"}
+          backgroundColor={selectedPalette.background.userSecondary}
+          textColor={"onBackgroundMain"}
         />
       )}
 
@@ -173,17 +171,15 @@ const TeamStats: React.FC<TeamStatsProps> = ({
           players={bowlers}
           isBatting={false}
           delay={delay + 2}
-          backgroundColor={
-            selectedPalette.container.backgroundTransparent.strong
-          }
-          textColor={"onContainerCopy"}
+          backgroundColor={selectedPalette.background.userSecondary}
+          textColor={"onBackgroundMain"}
         />
       )}
     </div>
   );
 };
 
-export const PlayerStatsCNSW: React.FC<PlayerStatsProps> = ({
+export const PlayerStatsCNSWPrivate: React.FC<PlayerStatsProps> = ({
   homeTeam,
   awayTeam,
   height,
@@ -240,4 +236,4 @@ export const PlayerStatsCNSW: React.FC<PlayerStatsProps> = ({
   );
 };
 
-export default PlayerStatsCNSW;
+export default PlayerStatsCNSWPrivate;

@@ -13,14 +13,14 @@ const truncateText = (text: string, maxLength: number): string => {
   return text.substring(0, maxLength - 3) + "...";
 };
 
-export const Horizontal_SingleTeam_CNSW: React.FC<
+export const Horizontal_SingleTeam_CNSWPrivate: React.FC<
   HorizontalTeamsSectionProps
 > = ({ type, Team, delay, outerContainer, firstInningsScore }) => {
   const { selectedPalette, layout } = useThemeContext();
   const { animations } = useAnimationContext();
   const TextAnimations = animations.text.main; // Get colors from theme
-  const backgroundColor = selectedPalette.container.backgroundTransparent.high;
-  const primaryColor = selectedPalette.container.backgroundTransparent.strong;
+  const backgroundColor = selectedPalette.background.userSecondary;
+  const primaryColor = selectedPalette.background.userPrimary;
 
   // Normalizes scores so that "N/A" renders as "Yet to Bat"
   const normalizeScore = (rawScore?: string | null): string => {
@@ -77,7 +77,7 @@ export const Horizontal_SingleTeam_CNSW: React.FC<
               value={truncateText(Team.name, 50).toUpperCase()}
               animation={{ ...TextAnimations.copyIn, delay: delay + 2 }}
               className=""
-              variant="onContainerCopy"
+              variant="onBackgroundMain"
             />
           </div>
         </div>
@@ -96,13 +96,13 @@ export const Horizontal_SingleTeam_CNSW: React.FC<
               value={getFirstInningsDisplay(type, firstInningsScore).value}
               animation={{ ...TextAnimations.copyIn, delay: delay + 1 }}
               className="mr-2"
-              variant="onContainerCopy"
+              variant="onBackgroundMain"
             />
           )}
           <MetadataMedium
             value={normalizeScore(Team.score)}
             animation={{ ...TextAnimations.copyIn, delay: delay + 1 }}
-            variant="onContainerCopy"
+            variant="onBackgroundMain"
           />
         </AnimatedContainer>
       </div>
@@ -110,4 +110,4 @@ export const Horizontal_SingleTeam_CNSW: React.FC<
   );
 };
 
-export default Horizontal_SingleTeam_CNSW;
+export default Horizontal_SingleTeam_CNSWPrivate;

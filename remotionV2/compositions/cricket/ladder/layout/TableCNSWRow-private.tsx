@@ -4,9 +4,9 @@ import React from "react";
 import LadderTeamName from "../../utils/primitives/ladderTeamName";
 import LadderTeamPoints from "../../utils/primitives/ladderTeamPoints";
 import { TeamData } from "../types";
+import { useThemeContext } from "../../../../core/context/ThemeContext";
 import { MetadataSmall } from "../../utils/primitives/metadataSmall";
 import { stripGradeNumberFromTeamName } from "../../utils/utils-text";
-import { useThemeContext } from "../../../../core/context/ThemeContext";
 
 // Base props interface for all layouts
 interface BaseLayoutProps {
@@ -14,25 +14,25 @@ interface BaseLayoutProps {
   delay: number;
   LadderRowHeight: number;
   place: number;
-  bgColorClass: string;
 }
 
 // Balanced layout - logo on right, alternating backgrounds for stats
-export const CNSWLadderRow: React.FC<BaseLayoutProps> = ({
+export const CNSWLadderRowPrivate: React.FC<BaseLayoutProps> = ({
   team,
   delay,
   LadderRowHeight,
-  bgColorClass,
 }) => {
-  const { selectedPalette } = useThemeContext();
+  const { selectedPalette, layout } = useThemeContext();
+
   // Calculate the actual height with max constraint
   const actualHeight = Math.min(LadderRowHeight, 120);
 
   return (
     <div
-      className={`flex items-center p-1 rounded mb-1 ${bgColorClass}`}
+      className={`flex items-center overflow-hidden ${layout.borderRadius.container} mb-1`}
       style={{
-        height: `${LadderRowHeight}px`,
+        height: `${actualHeight}px`,
+        background: selectedPalette.background.userSecondary,
       }}
     >
       {/* Position Number - Square cell matching height */}
@@ -40,14 +40,14 @@ export const CNSWLadderRow: React.FC<BaseLayoutProps> = ({
         className="flex items-center justify-center h-full"
         style={{
           width: `${actualHeight}px`,
+          background: "#FF0000", // Red background
           minWidth: `${actualHeight}px`,
-          background: selectedPalette.background.userSecondary,
         }}
       >
         <MetadataSmall
           value={`${team.position}`}
           className="text-center font-bold"
-          variant="onContainerSecondary"
+          variant="onBackgroundMain"
           animation={null}
         />
       </div>
