@@ -1,0 +1,623 @@
+{
+  "data": [
+    {
+      "SR": 115.79,
+      "name": "Virat Kohli",
+      "runs": 88,
+      "balls": 76,
+      "notOut": false,
+      "prompt": "Virat Kohli played for India Men's ODI, scoring 88 runs from 76 balls with a strike rate of 115.79. Game details: This was a One Day International in the ICC ODI Series grade, and the current match status is Match Completed. India Men's ODI, (1) vs Australia Men's ODI (1), the match result was India Men's ODI won by 4 wickets.",
+      "teamLogo": {
+        "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
+        "width": 128,
+        "height": 128
+      },
+      "playedFor": "India Men's ODI",
+      "assignSponsors": {
+        "competition": [],
+        "grade": [],
+        "team": [
+          {
+            "id": 151,
+            "isPrimary": true,
+            "isActive": true,
+            "isArticle": true,
+            "isVideo": true,
+            "url": "test",
+            "tagline": "test",
+            "description": null,
+            "name": "test",
+            "logo": {
+              "id": 12784,
+              "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Sponsor1_a6752b0a5f.png"
+            }
+          },
+          {
+            "id": 152,
+            "isPrimary": false,
+            "isActive": true,
+            "isArticle": true,
+            "isVideo": true,
+            "url": "test",
+            "tagline": "test",
+            "description": null,
+            "name": "test",
+            "logo": {
+              "id": 12785,
+              "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Sponsor1_a6752b0a5f.png"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "SR": 75.79,
+      "name": "Steve Smith",
+      "runs": 72,
+      "balls": 95,
+      "notOut": true,
+      "prompt": "Steve Smith played for Australia Men's Test, scoring 72 runs from 95 balls with a strike rate of 75.79. Game details: This was a Test Match in the ICC World Test Championship grade, and the current match status is In Progress. Australia Men's Test, (1) vs England Men's Test (), the match result was Match is still in progress.",
+      "teamLogo": {
+        "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
+        "width": 128,
+        "height": 128
+      },
+      "playedFor": "Australia Men's Test",
+      "assignSponsors": {
+        "Team": {
+          "name": "Australia Men's Test"
+        },
+        "grade": {
+          "id": 90002,
+          "name": "ICC World Test Championship"
+        },
+        "competition": {
+          "id": 20001,
+          "name": "International Men's Cricket"
+        }
+      }
+    },
+    {
+      "SR": 105.21,
+      "name": "Babar Azam",
+      "runs": 101,
+      "balls": 96,
+      "notOut": true,
+      "prompt": "Babar Azam played for Pakistan Men's ODI, scoring 101 runs from 96 balls with a strike rate of 105.21. Game details: This was a One Day International in the ICC ODI Series grade, and the current match status is Match Completed. Pakistan Men's ODI, (1) vs New Zealand Men's ODI (1), the match result was Pakistan Men's ODI won by 3 wickets.",
+      "teamLogo": {
+        "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
+        "width": 128,
+        "height": 128
+      },
+      "playedFor": "Pakistan Men's ODI",
+      "assignSponsors": {
+        "Team": {
+          "name": "Pakistan Men's ODI"
+        },
+        "grade": {
+          "id": 90001,
+          "name": "ICC ODI Series"
+        },
+        "competition": {
+          "id": 20001,
+          "name": "International Men's Cricket"
+        }
+      }
+    },
+    {
+      "SR": 125.0,
+      "name": "Kane Williamson",
+      "runs": 65,
+      "balls": 52,
+      "notOut": false,
+      "prompt": "Kane Williamson played for New Zealand Men's T20I, scoring 65 runs from 52 balls with a strike rate of 125.00. Game details: This was a T20 International in the ICC T20I Series grade, and the current match status is Match Completed. New Zealand Men's T20I, (1) vs South Africa Men's T20I (1), the match result was New Zealand Men's T20I won by 12 runs.",
+      "teamLogo": {
+        "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
+        "width": 128,
+        "height": 128
+      },
+      "playedFor": "New Zealand Men's T20I",
+      "assignSponsors": {
+        "Team": {
+          "name": "New Zealand Men's T20I"
+        },
+        "grade": {
+          "id": 90003,
+          "name": "ICC T20I Series"
+        },
+        "competition": {
+          "id": 20001,
+          "name": "International Men's Cricket"
+        }
+      }
+    },
+    {
+      "SR": 90.0,
+      "name": "Joe Root",
+      "runs": 54,
+      "balls": 60,
+      "notOut": false,
+      "prompt": "Joe Root played for England Men's Test, scoring 54 runs from 60 balls with a strike rate of 90.00. Game details: This was a Test Match in the ICC World Test Championship grade, and the current match status is In Progress. England Men's Test, (1) vs India Men's Test (), the match result was Match is still in progress.",
+      "teamLogo": {
+        "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
+        "width": 128,
+        "height": 128
+      },
+      "playedFor": "England Men's Test",
+      "assignSponsors": {
+        "Team": {
+          "name": "England Men's Test"
+        },
+        "grade": {
+          "id": 90002,
+          "name": "ICC World Test Championship"
+        },
+        "competition": {
+          "id": 20001,
+          "name": "International Men's Cricket"
+        }
+      }
+    },
+    {
+      "SR": 154.17,
+      "name": "Rohit Sharma",
+      "runs": 37,
+      "balls": 24,
+      "notOut": true,
+      "prompt": "Rohit Sharma played for India Men's T20I, scoring 37 runs from 24 balls with a strike rate of 154.17. Game details: This was a T20 International in the ICC T20I Series grade, and the current match status is Match Completed. India Men's T20I, (1) vs Pakistan Men's T20I (1), the match result was India Men's T20I won by 6 wickets.",
+      "teamLogo": {
+        "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
+        "width": 128,
+        "height": 128
+      },
+      "playedFor": "India Men's T20I",
+      "assignSponsors": {
+        "Team": {
+          "name": "India Men's T20I"
+        },
+        "grade": {
+          "id": 90003,
+          "name": "ICC T20I Series"
+        },
+        "competition": {
+          "id": 20001,
+          "name": "International Men's Cricket"
+        }
+      }
+    },
+    {
+      "SR": 160.71,
+      "name": "Ben Stokes",
+      "runs": 45,
+      "balls": 28,
+      "notOut": true,
+      "prompt": "Ben Stokes played for England Men's ODI, scoring 45 runs from 28 balls with a strike rate of 160.71. Game details: This was a One Day International in the ICC ODI Series grade, and the current match status is In Progress. England Men's ODI, (1) vs New Zealand Men's ODI (), the match result was Match is still in progress.",
+      "teamLogo": {
+        "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
+        "width": 128,
+        "height": 128
+      },
+      "playedFor": "England Men's ODI",
+      "assignSponsors": {
+        "Team": {
+          "name": "England Men's ODI"
+        },
+        "grade": {
+          "id": 90001,
+          "name": "ICC ODI Series"
+        },
+        "competition": {
+          "id": 20001,
+          "name": "International Men's Cricket"
+        }
+      }
+    },
+    {
+      "SR": 138.89,
+      "name": "Pat Cummins",
+      "runs": 25,
+      "balls": 18,
+      "notOut": false,
+      "prompt": "Pat Cummins played for Australia Men's ODI, scoring 25 runs from 18 balls with a strike rate of 138.89. Game details: This was a One Day International in the ICC ODI Series grade, and the current match status is Match Completed. Australia Men's ODI, (1) vs Sri Lanka Men's ODI (1), the match result was Sri Lanka Men's ODI won by 2 wickets.",
+      "teamLogo": {
+        "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
+        "width": 128,
+        "height": 128
+      },
+      "playedFor": "Australia Men's ODI",
+      "assignSponsors": {
+        "Team": {
+          "name": "Australia Men's ODI"
+        },
+        "grade": {
+          "id": 90001,
+          "name": "ICC ODI Series"
+        },
+        "competition": {
+          "id": 20001,
+          "name": "International Men's Cricket"
+        }
+      }
+    }
+  ],
+  "asset": {
+    "assetID": 64,
+    "assetTypeID": 3,
+    "assetCategoryID": 2,
+    "assetsLinkID": "31d7f46e2f5451b900a9ab3ec75f5a2850265841c8200ed806aefc2987f053d0"
+  },
+  "render": {
+    "schedulerId": 317,
+    "renderId": 8607
+  },
+  "account": {
+    "accountId": 430
+  },
+  "timings": {
+    "FPS_MAIN": 345,
+    "FPS_INTRO": 90,
+    "FPS_OUTRO": 30,
+    "FPS_LADDER": 0,
+    "FPS_SCORECARD": 0,
+    "FPS_PREFORMANCECARD": 180
+  },
+  "frames": [45, 180, 345],
+  "videoMeta": {
+    "club": {
+      "logo": {
+        "hasLogo": true,
+        "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Logo_On_Plus_67bd326044.png",
+        "width": 379,
+        "height": 303
+      },
+      "name": "Gold Coast Veterans Cricket",
+      "sport": "Cricket",
+      "sponsors": {
+        "primary": [
+          {
+            "id": 151,
+            "isPrimary": true,
+            "isActive": true,
+            "isArticle": true,
+            "isVideo": true,
+            "url": "test",
+            "tagline": "test",
+            "description": null,
+            "name": "test",
+            "logo": {
+              "id": 12784,
+              "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Sponsor1_a6752b0a5f.png"
+            }
+          }
+        ],
+        "default": {
+          "primary_sponsor": [
+            {
+              "id": 151,
+              "isPrimary": true,
+              "isActive": true,
+              "isArticle": true,
+              "isVideo": true,
+              "url": "test",
+              "tagline": "test",
+              "description": null,
+              "name": "test",
+              "logo": {
+                "id": 12784,
+                "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Sponsor1_a6752b0a5f.png"
+              }
+            }
+          ],
+          "general_sponsor_1": [
+            {
+              "id": 152,
+              "isPrimary": false,
+              "isActive": true,
+              "isArticle": true,
+              "isVideo": true,
+              "url": "test",
+              "tagline": "test",
+              "description": null,
+              "name": "test",
+              "logo": {
+                "id": 12785,
+                "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Sponsor2_39eebf9c1b.png"
+              }
+            }
+          ],
+          "general_sponsor_2": [
+            {
+              "id": 153,
+              "isPrimary": false,
+              "isActive": true,
+              "isArticle": true,
+              "isVideo": true,
+              "url": "test",
+              "tagline": "test",
+              "description": null,
+              "name": "test",
+              "logo": {
+                "id": 12786,
+                "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Sponsor3_d65a61808c.png"
+              }
+            }
+          ],
+          "general_sponsor_3": [
+            {
+              "id": 167,
+              "isPrimary": false,
+              "isActive": true,
+              "isArticle": true,
+              "isVideo": true,
+              "url": "4",
+              "tagline": "4",
+              "description": null,
+              "name": "4",
+              "logo": {
+                "id": 13159,
+                "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Sponsor4_2e99a89b64.png"
+              }
+            }
+          ],
+          "general_sponsor_4": [
+            {
+              "id": 168,
+              "isPrimary": false,
+              "isActive": true,
+              "isArticle": true,
+              "isVideo": true,
+              "url": "5",
+              "tagline": "5",
+              "description": null,
+              "name": "5",
+              "logo": {
+                "id": 13160,
+                "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Sponsor5_5830015159.png"
+              }
+            }
+          ],
+          "general_sponsor_5": [
+            {
+              "id": 169,
+              "isPrimary": false,
+              "isActive": true,
+              "isArticle": true,
+              "isVideo": true,
+              "url": "6",
+              "tagline": "6",
+              "description": null,
+              "name": "6",
+              "logo": {
+                "id": 13161,
+                "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Sponsor6_ffce411e69.png"
+              }
+            }
+          ],
+          "general_sponsor_6": [
+            {
+              "id": 170,
+              "isPrimary": false,
+              "isActive": true,
+              "isArticle": true,
+              "isVideo": true,
+              "url": "7",
+              "tagline": "7",
+              "description": null,
+              "name": "7",
+              "logo": {
+                "id": 13162,
+                "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Sponsor7_6d12274c46.png"
+              }
+            }
+          ]
+        }
+      }
+    },
+    "video": {
+      "fixtureCategory": "SENIOR",
+      "groupingCategory": "SENIOR",
+      "metadata": {
+        "title": "Batting Performances",
+        "titleSplit": [""],
+        "videoTitle": "Batting Performances",
+        "compositionId": "CricketBattingPerformances",
+        "assetId": 64,
+        "assetTypeId": 3,
+        "frames": [],
+        "includeSponsors": false
+      },
+      "appearance": {
+        "theme": {
+          "dark": "#111",
+          "white": "#FFF",
+          "primary": "#352466",
+          "secondary": "#ffa500"
+        },
+        "template": "TwoColumnClassic"
+      },
+      "media": {
+        "HeroImage": {
+          "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/524abe1dc7ebb37effc4d4d3cd959eb3_fbf19bb25a.jpg",
+          "ratio": "portrait",
+          "width": 702,
+          "height": 1024,
+          "AgeGroup": "Both",
+          "AssetType": "ALL",
+          "markerPosition": null
+        },
+        "audio": {
+          "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Audiio_Marscott_Wild_Neon_Get_The_Gains_inst_3251aaa9af.mp3",
+          "audioOption": null
+        }
+      },
+      "contentLayout": {
+        "divideFixturesBy": {
+          "CricketLadder": 1,
+          "CricketRoster": 1,
+          "CricketResults": 2,
+          "CricketUpcoming": 3,
+          "CricketResultSingle": 1,
+          "CricketBattingPerformances": 5,
+          "CricketBowlingPerformances": 5
+        }
+      },
+      "templateVariation": {
+        "useBackground": "Texture",
+        "mode": "lightAlt",
+        "category": {
+          "slug": "TwoColumnClassic",
+          "name": "Classic Two Column",
+          "divideFixturesBy": {
+            "CricketUpcoming": 3,
+            "CricketResults": 2,
+            "CricketResultSingle": 1,
+            "CricketLadder": 1,
+            "CricketRoster": 1,
+            "CricketBowlingPerformances": 5,
+            "CricketBattingPerformances": 5
+          },
+          "bundleAudio": {
+            "id": 1,
+            "Name": "Basic",
+            "createdAt": "2023-09-27T10:36:24.428Z",
+            "updatedAt": "2025-06-15T04:50:57.910Z",
+            "publishedAt": "2023-09-27T10:36:25.639Z",
+            "audio_options": [
+              {
+                "id": 4,
+                "Name": "Better Start Now",
+                "createdAt": "2023-09-27T10:34:46.702Z",
+                "updatedAt": "2025-06-15T04:53:45.558Z",
+                "publishedAt": "2023-09-27T10:34:48.455Z",
+                "URL": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Audiio_Kidpenny_Single_Better_Start_Now_Inst_53b898d9ef.mp3",
+                "CompositionID": "CricketLadder",
+                "ComponentName": "CricketLadder"
+              },
+              {
+                "id": 2,
+                "Name": "Fifteen on Me",
+                "createdAt": "2022-12-20T01:59:28.337Z",
+                "updatedAt": "2025-06-15T04:53:11.194Z",
+                "publishedAt": "2022-12-20T01:59:29.080Z",
+                "URL": "https://lmssocialmediamanager.s3.ap-southeast-2.amazonaws.com/assets/Fifteen%20on%20Me.mp3",
+                "CompositionID": "CricketUpcoming",
+                "ComponentName": "CricketUpcoming"
+              },
+              {
+                "id": 5,
+                "Name": "Get The Gains",
+                "createdAt": "2023-09-27T10:35:01.053Z",
+                "updatedAt": "2025-06-15T04:53:59.493Z",
+                "publishedAt": "2023-09-27T10:35:29.163Z",
+                "URL": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Audiio_Marscott_Wild_Neon_Get_The_Gains_inst_3251aaa9af.mp3",
+                "CompositionID": "CricketTop5Bowling",
+                "ComponentName": "CricketTop5Bowling"
+              },
+              {
+                "id": 3,
+                "Name": "Groover",
+                "createdAt": "2022-12-20T01:59:34.014Z",
+                "updatedAt": "2025-06-15T04:53:28.656Z",
+                "publishedAt": "2022-12-20T01:59:34.670Z",
+                "URL": "https://lmssocialmediamanager.s3.ap-southeast-2.amazonaws.com/assets/TournamentTitleMusic_v2.mp3",
+                "CompositionID": "CricketTop5Batting",
+                "ComponentName": "CricketTop5Batting"
+              },
+              {
+                "id": 1,
+                "Name": "Saltine",
+                "createdAt": "2022-12-12T05:19:56.353Z",
+                "updatedAt": "2025-06-15T04:50:50.079Z",
+                "publishedAt": "2022-12-12T05:19:57.408Z",
+                "URL": "https://lmssocialmediamanager.s3.ap-southeast-2.amazonaws.com/assets/Saltine_1.mp3",
+                "CompositionID": "CricketResults",
+                "ComponentName": "CricketResults"
+              },
+              {
+                "id": 16,
+                "Name": "BEECH LOVE",
+                "createdAt": "2024-06-05T04:31:26.640Z",
+                "updatedAt": "2024-06-07T12:45:43.674Z",
+                "publishedAt": "2024-06-07T12:45:32.118Z",
+                "URL": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Audiio_BEECH_LOVE_Pieces_Inst_0b547f2b20.mp3",
+                "CompositionID": "Top5AFLScorers",
+                "ComponentName": "Top 5 Scorers"
+              },
+              {
+                "id": 17,
+                "Name": "FAY V",
+                "createdAt": "2024-06-05T04:33:33.970Z",
+                "updatedAt": "2024-06-07T12:48:03.161Z",
+                "publishedAt": "2024-06-07T12:47:53.394Z",
+                "URL": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Audiio_FAYV_Single_Encore_INST_d7b21f5451.mp3",
+                "CompositionID": "WeekendResultsAFL",
+                "ComponentName": "Weekend Results"
+              }
+            ]
+          }
+        },
+        "video": {
+          "url": null,
+          "fallbackUrl": null,
+          "position": "left",
+          "size": "cover",
+          "loop": null,
+          "muted": true,
+          "overlay": {
+            "color": "rgba(0,0,0,0.5)",
+            "opacity": 0.7
+          },
+          "useOffthreadVideo": null,
+          "volume": 0.8,
+          "playbackRate": null
+        },
+        "image": {
+          "url": null,
+          "ratio": null,
+          "width": null,
+          "height": null,
+          "type": "pan",
+          "direction": "left",
+          "overlayStyle": "vignette",
+          "gradientType": "linear",
+          "overlayOpacity": 0.3
+        },
+        "palette": "primaryOnWhite",
+        "gradient": {
+          "type": "primary",
+          "direction": "HORIZONTAL"
+        },
+        "noise": {
+          "type": "floatingParticles"
+        },
+        "pattern": {
+          "type": "dots",
+          "animation": "none",
+          "scale": 0.75,
+          "rotation": null,
+          "opacity": 0.35,
+          "animationDuration": null,
+          "animationSpeed": 0.8
+        },
+        "particle": {
+          "type": "lines",
+          "particleCount": "300",
+          "speed": 0.8,
+          "direction": "up",
+          "animation": "scale"
+        },
+        "texture": {
+          "name": "Print Texture",
+          "url": "https://fixtura.s3.ap-southeast-2.amazonaws.com/Geometric_Halftone_Print_Texture_cb888287e4.png",
+          "repeat": "cover",
+          "scale": "100%",
+          "overlay": {
+            "opacity": 0.8,
+            "blendMode": "multiply"
+          }
+        }
+      }
+    }
+  },
+  "errors": []
+}

@@ -26,6 +26,14 @@ const AssetTypes = [
     name: 'Player Roster',
     slug: 'CricketRoster',
   },
+  {
+    name: 'Bowling Performances',
+    slug: 'CricketBowlingPerformances',
+  },
+  {
+    name: 'Batting Performances',
+    slug: 'CricketBattingPerformances',
+  },
 ];
 
 const assetTypeOptions = AssetTypes.map(type => ({
@@ -48,6 +56,7 @@ export const AssetTypeSelector = ({
         setSelectedAssetType(selected);
       }}
       marginBottom={0}
+      description=''
     />
   );
 };

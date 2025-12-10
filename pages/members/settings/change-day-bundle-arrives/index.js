@@ -39,12 +39,14 @@ const ChangeDayBundleArrives = props => {
         headerContent='Bundle Delivery Day'
         topContent={<Setting_Action renders={Renders.renders} />}
         bottomContent={<Setting_Explainer />}
+        className='mb-4'
       />
 
       <RoundedSectionContainer
         headerContent=''
         topContent={<Additional_Information_Title />}
         bottomContent={<TipsAndWarnings />}
+        className='mb-4'
       />
     </SecureRouteHOC>
   );

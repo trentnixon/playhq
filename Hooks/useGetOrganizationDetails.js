@@ -8,6 +8,8 @@ export const useGetOrganizationDetails = (accountType, accountId) => {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [refreshTrigger, setRefreshTrigger] = useState(0);
+
   const Clubquery = qs.stringify(
     {
       populate: {
@@ -27,6 +29,7 @@ export const useGetOrganizationDetails = (accountType, accountId) => {
             'form',
             'href',
             'teamID',
+            'sortOrder',
           ], // Specify the fields you want to include
         },
         associations: true, // Include all fields for associations
@@ -57,7 +60,9 @@ export const useGetOrganizationDetails = (accountType, accountId) => {
         },
         competitions: {
           populate: {
-            grades: true,
+            grades: {
+              fields: ['gradeName', 'ageGroup', 'sortOrder'],
+            },
           },
         },
         // Including other relevant fields or relationships if needed
@@ -105,7 +110,12 @@ export const useGetOrganizationDetails = (accountType, accountId) => {
     if (accountId) {
       fetchData();
     }
-  }, [accountType, accountId]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [accountType, accountId, refreshTrigger]);
 
-  return { data, loading, error };
+  const refetch = () => {
+    setRefreshTrigger(prev => prev + 1);
+  };
+
+  return { data, loading, error, refetch };
 };

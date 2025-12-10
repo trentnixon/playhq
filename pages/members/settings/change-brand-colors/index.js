@@ -35,6 +35,7 @@ const ChangeBrandColors = () => {
         headerContent='How to Customize'
         topContent={`Select from a pre-made palette or click 'Edit' to customize the hex codes in your personal palette on the Settings page, ensuring a unified brand presence across all your content.`}
         bottomContent={<UpdateYourTheme />}
+        className='mb-4'
       />
 
       <Divider my={50} />
@@ -45,6 +46,7 @@ const ChangeBrandColors = () => {
           'Check the preview carousel to see how your assets look with the new colors.'
         }
         bottomContent={<Previewer account={account} />}
+        className='mb-4'
       />
     </SecureRouteHOC>
   );

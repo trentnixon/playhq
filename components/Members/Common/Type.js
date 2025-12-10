@@ -1,5 +1,13 @@
 // @ts-nocheck
-import { Avatar, Container, Group, Space, Text, Title } from '@mantine/core';
+import {
+  Avatar,
+  Container,
+  Group,
+  Space,
+  Text,
+  Title,
+  useMantineTheme,
+} from '@mantine/core';
 
 import { useMediaQuery } from '@mantine/hooks';
 
@@ -45,6 +53,28 @@ export const SubHeaders = props => {
         >
           {Copy}
         </Title>
+      </Group>
+    </Container>
+  );
+};
+
+export const SubHeadersWithBadge = props => {
+  const { Copy, Badge } = props;
+  const theme = useMantineTheme();
+  return (
+    <Container fluid px={0}>
+      <Group my={10} spacing={5}>
+        <Title
+          order={3}
+          transform='uppercase'
+          sx={theme => ({
+            color: theme.colors.gray[8],
+            fontFamily: theme.fontFamily,
+          })}
+        >
+          {Copy}
+        </Title>
+        {Badge}
       </Group>
     </Container>
   );
