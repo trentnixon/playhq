@@ -56,12 +56,12 @@ const TeamGradeOrdering = () => {
         'The order you set here will be reflected in your asset bundles, galleries, and anywhere grades are displayed.',
     },
     Club: {
-      title: 'Settings - Team Ordering',
-      header: 'Manage Team Order',
+      title: 'Settings - Grade Ordering',
+      header: 'Manage Grade Order',
       description:
-        'Drag and drop to reorder your teams. This will affect how your assets and bundles are organized and delivered throughout the application.',
+        'Drag and drop to reorder your grades. This will affect how your assets and bundles are organized and delivered throughout the application.',
       impactText:
-        'The order you set here will be reflected in your asset bundles, galleries, and anywhere teams are displayed.',
+        'The order you set here will be reflected in your asset bundles, galleries, and anywhere grades are displayed.',
     },
   };
 
@@ -98,6 +98,7 @@ const TeamGradeOrdering = () => {
             loadingOrgDetails={loadingOrgDetails}
           />
         }
+        className='mb-20'
       />
 
       {/* Floating Save Button */}

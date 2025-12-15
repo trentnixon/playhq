@@ -12,7 +12,7 @@ export const OrderingList = ({
   if (loadingOrgDetails) {
     return (
       <Text color='dimmed' align='center'>
-        Loading {AccType === 'Association' ? 'grades' : 'teams'}...
+        Loading grades...
       </Text>
     );
   }
@@ -20,7 +20,7 @@ export const OrderingList = ({
   if (Object.keys(orderedGroups).length === 0) {
     return (
       <Text color='dimmed' align='center'>
-        No {AccType === 'Association' ? 'grades' : 'teams'} found.
+        No grades found.
       </Text>
     );
   }
@@ -38,8 +38,7 @@ export const OrderingList = ({
               }
               Badge={
                 <Badge ml='sm' variant='light' color='members' size='sm'>
-                  {items.length}{' '}
-                  {AccType === 'Association' ? ' grades' : ' teams'}
+                  {items.length} grades
                 </Badge>
               }
             />
@@ -64,11 +63,7 @@ export const OrderingList = ({
                       key={`${groupName}-${item.id}`}
                       item={item}
                       index={index}
-                      name={
-                        AccType === 'Club'
-                          ? item.attributes?.teamName || 'Unknown Team'
-                          : item.attributes?.gradeName || 'Unknown Grade'
-                      }
+                      name={item.attributes?.gradeName || 'Unknown Grade'}
                       groupName={groupName}
                     />
                   ))}

@@ -65,7 +65,7 @@ const Settings = () => {
           label: 'Bundle Settings',
           icon: <IconStack size={40} stroke={1.5} />,
         },
-        /* {
+        /*  {
           title: 'Team and Grade Ordering',
           description: 'Adjust the sort order for your teams or grades.',
           link: '/members/settings/team-grade-ordering/',

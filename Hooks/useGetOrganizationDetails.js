@@ -19,7 +19,9 @@ export const useGetOrganizationDetails = (accountType, accountId) => {
             gameHistory: {
               fields: [], // Leave empty to exclude all fields from gameHistory
             },
-            grades: true,
+            grades: {
+              fields: ['gradeName', 'ageGroup', 'sortOrder'],
+            },
           },
           fields: [
             'teamName',

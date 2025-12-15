@@ -23,7 +23,7 @@ export const DraggableItem = ({ item, index, name, groupName }) => {
         >
           <Group position='apart' noWrap>
             <Group spacing='md' noWrap>
-              {/* Order Number */}
+              {/* Order Number - shows sortOrder if available, otherwise index + 1 */}
               <ThemeIcon
                 color='members.3'
                 variant='filled'
@@ -31,14 +31,19 @@ export const DraggableItem = ({ item, index, name, groupName }) => {
                 radius='sm'
               >
                 <Text size='sm' weight={700} color='white'>
-                  {index + 1}
+                  {item.attributes?.sortOrder ?? index + 1}
                 </Text>
               </ThemeIcon>
 
-              {/* Item Name */}
-              <Text weight={500} size='md' color='members.2'>
-                {name}
-              </Text>
+              {/* Item Name, ID, and sortOrder */}
+              <Box>
+                <Text weight={500} size='md' color='members.2'>
+                  {name}
+                </Text>
+                <Text size='xs' color='dimmed'>
+                  ID: {item.id} | Order: {item.attributes?.sortOrder ?? 'null'}
+                </Text>
+              </Box>
             </Group>
 
             {/* Drag Handle */}
