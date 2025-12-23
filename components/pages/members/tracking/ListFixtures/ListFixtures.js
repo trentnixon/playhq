@@ -43,6 +43,7 @@ export const GamesListing = props => {
       date: new Date(date),
       games,
     }))
+    .filter(({ date }) => !isNaN(date.getTime()))
     .sort((a, b) => a.date.getTime() - b.date.getTime());
 
   // Filter games based on search and date range
@@ -143,7 +144,12 @@ export const GamesListing = props => {
   // Convert filtered games to calendar format
   const filteredGamesForCalendar = filteredGames.reduce(
     (acc, { date, games }) => {
-      const dateKey = date.toISOString().split('T')[0];
+      // Use local date string YYYY-MM-DD for the calendar key
+      const year = date.getFullYear();
+      const month = String(date.getMonth() + 1).padStart(2, '0');
+      const day = String(date.getDate()).padStart(2, '0');
+      const dateKey = `${year}-${month}-${day}`;
+
       acc[dateKey] = games;
       return acc;
     },

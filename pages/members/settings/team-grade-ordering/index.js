@@ -49,17 +49,17 @@ const TeamGradeOrdering = () => {
   const settings = {
     Association: {
       title: 'Settings - Grade Ordering',
-      header: 'Manage Grade Order',
+      header: 'Drag and drop to reorder your grades.',
       description:
-        'Drag and drop to reorder your grades. This will affect how your assets and bundles are organized and delivered throughout the application.',
+        'This ordering will affect how your grades appear in upcoming matches, ladders, and weekend results. Arrange your grades in the order you want them displayed across assets.',
       impactText:
         'The order you set here will be reflected in your asset bundles, galleries, and anywhere grades are displayed.',
     },
     Club: {
       title: 'Settings - Grade Ordering',
-      header: 'Manage Grade Order',
+      header: 'Drag and drop to reorder your grades. ',
       description:
-        'Drag and drop to reorder your grades. This will affect how your assets and bundles are organized and delivered throughout the application.',
+        'This ordering will affect how your grades appear in upcoming matches, ladders, and weekend results. Arrange your grades in the order you want them displayed across assets.',
       impactText:
         'The order you set here will be reflected in your asset bundles, galleries, and anywhere grades are displayed.',
     },

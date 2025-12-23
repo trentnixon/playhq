@@ -65,13 +65,13 @@ const Settings = () => {
           label: 'Bundle Settings',
           icon: <IconStack size={40} stroke={1.5} />,
         },
-        /*  {
+        {
           title: 'Team and Grade Ordering',
           description: 'Adjust the sort order for your teams or grades.',
           link: '/members/settings/team-grade-ordering/',
           label: 'Manage Order',
           icon: <IconArrowsSort size={40} stroke={1.5} />,
-        }, */
+        },
       ],
     },
     {
@@ -134,7 +134,7 @@ const Settings = () => {
       <Stack spacing='xl'>
         {settingsCategories.map((section, sectionIndex) => (
           <Box key={sectionIndex}>
-            <Title order={3} mb='md' color='blue.7'>
+            <Title order={3} mb='md' >
               {section.category}
             </Title>
             <Paper shadow='sm' radius='md' withBorder>
@@ -161,8 +161,8 @@ const SettingsRow = ({ item }) => {
 
   return (
     <tr>
-      <td style={{ width: '60px' }}>
-        <ThemeIcon color='blue.5' size={44} radius='md' variant='light'>
+      <td style={{ width: '40px' }}>
+        <ThemeIcon color='blue.5' size={25} radius='md' variant='light'>
           {icon}
         </ThemeIcon>
       </td>

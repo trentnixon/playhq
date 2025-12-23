@@ -35,15 +35,10 @@ export const DraggableItem = ({ item, index, name, groupName }) => {
                 </Text>
               </ThemeIcon>
 
-              {/* Item Name, ID, and sortOrder */}
-              <Box>
-                <Text weight={500} size='md' color='members.2'>
-                  {name}
-                </Text>
-                <Text size='xs' color='dimmed'>
-                  ID: {item.id} | Order: {item.attributes?.sortOrder ?? 'null'}
-                </Text>
-              </Box>
+              {/* Item Name */}
+              <Text weight={500} size='md' color='members.2'>
+                {name}
+              </Text>
             </Group>
 
             {/* Drag Handle */}
